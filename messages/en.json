@@ -158,7 +158,29 @@
     },
     "all": "All Questions",
     "stillNeedHelp": "Still have a question?",
-    "whatsappUs": "WhatsApp us for instant help →"
+    "whatsappUs": "WhatsApp us for instant help →",
+    "ctaSkip": "Skip the 2-hour queue",
+    "ctaTitle": "Book Bahia Palace Tickets Online",
+    "ctaBody": "Instant confirmation · Free cancellation · Mobile tickets accepted",
+    "ctaBtn": "See All Ticket Options",
+    "teamAvail": "Our team is available daily 8 AM – 8 PM Marrakech time.",
+    "items": [
+      { "question": "Is Bahia Palace worth visiting in 2026?", "answer": "Absolutely. Bahia Palace is one of the best-preserved examples of 19th-century Moroccan architecture. With 150 rooms, intricate zellige tilework, hand-painted cedar ceilings, and lush inner gardens, it offers an unmatched glimpse into Moroccan royal life. Most visitors rate it as the highlight of their Marrakech trip. At 70 MAD (≈$7), it's exceptional value — and with a skip-the-line ticket, the experience becomes completely seamless." },
+      { "question": "How much does Bahia Palace cost to enter?", "answer": "The official gate entrance fee is 70 MAD (approximately $7 USD or €6.50). Children under 12 enter free, and students with a valid ID pay 35 MAD. If you book online, skip-the-line tickets start from $10 — this includes priority entry and avoids queues that can reach 1–2 hours during peak season." },
+      { "question": "How long do you need at Bahia Palace?", "answer": "Most visitors spend 1 to 1.5 hours exploring independently. With a guided tour, expect 1.5 to 2 hours. Private tours are flexible and can last up to 2.5 hours. We recommend arriving early (9–10 AM) to enjoy the space without crowds." },
+      { "question": "When is the best time to visit Bahia Palace?", "answer": "The best time is 9:00–10:30 AM when the palace first opens — fewest visitors and soft morning light ideal for photography. Avoid 10:30 AM–2:00 PM when tour groups arrive in force. Spring (March–May) and autumn (September–November) offer the most pleasant temperatures at 20–28°C." },
+      { "question": "Is Bahia Palace free to enter?", "answer": "Bahia Palace is not free for adult visitors. The entrance fee is 70 MAD (≈$7 USD). Children under 12 enter free, and students with a valid ID pay 35 MAD (≈$3.50). Photography is included in the ticket price with no extra charges." },
+      { "question": "How do I get to Bahia Palace from Jemaa el-Fnaa?", "answer": "Bahia Palace is a 10–15 minute walk south from Jemaa el-Fnaa through the medina. Follow the signs for 'Palais Bahia' or use Google Maps. A petit taxi takes about 5 minutes and costs 15–25 MAD. The palace address is Rue Riad Zitoun el Jedid, Marrakech Medina." },
+      { "question": "Are guided tours worth it at Bahia Palace?", "answer": "Yes, especially for a first visit. Bahia Palace has 150 rooms and historical layers that are invisible without explanation. A guide will tell you about Ba Ahmed's political rise, why the palace was looted overnight after his death in 1900, and identify architectural details most visitors walk past. Our certified guides speak English, French, Spanish, and German." },
+      { "question": "What is Bahia Palace famous for?", "answer": "Bahia Palace is famous for its extraordinary Moroccan craftsmanship — particularly the hand-cut zellige tile mosaics, elaborately carved stucco plasterwork, and painted cedar wood ceilings. It is one of the largest palaces in Marrakech at 8 hectares with 150 rooms. Built by Grand Vizier Ba Ahmed between 1894 and 1900." },
+      { "question": "Can you visit Bahia Palace without a guide?", "answer": "Yes, Bahia Palace can be visited independently. Most visitors explore comfortably in 1–1.5 hours at their own pace. No official audio guide is available on-site, so booking a guided tour is recommended if you want the full story." },
+      { "question": "Is Bahia Palace suitable for children?", "answer": "Yes, Bahia Palace is very family-friendly. Children under 12 enter free. The open courtyards, colourful tiles, and garden spaces fascinate younger visitors. The grounds are mostly flat and accessible with a pushchair or wheelchair." },
+      { "question": "What should I wear at Bahia Palace?", "answer": "Bahia Palace does not enforce a strict dress code, but modest attire is respectful and recommended. Covering shoulders and knees is appropriate. Comfortable walking shoes are essential — the floors mix polished marble, zellige tiles, and stone, which can be slippery." },
+      { "question": "Is photography allowed inside Bahia Palace?", "answer": "Yes, photography is freely allowed throughout Bahia Palace for personal use at no extra charge. The best light for photography is early morning (9–10:30 AM). Tripods and professional equipment require prior authorisation." },
+      { "question": "How do I book skip-the-line tickets for Bahia Palace online?", "answer": "Select your visit date and number of guests on this website, choose the Skip-the-Line option, and complete your secure payment. You'll receive your ticket by email within seconds — a QR code to show on your phone or print at the palace entrance." },
+      { "question": "Can I cancel or change my Bahia Palace ticket?", "answer": "Yes, all tickets booked through our platform include free cancellation up to 24 hours before your scheduled visit date. To cancel, click the link in your booking confirmation email or contact us via WhatsApp. Refunds are processed within 5–7 business days." },
+      { "question": "What else is near Bahia Palace?", "answer": "The Saadian Tombs are just a 7-minute walk — stunning 16th-century royal mausoleums. El Badi Palace ruins are 10 minutes on foot. Jemaa el-Fnaa square is a 15-minute walk north. Most visitors combine Bahia Palace with the Saadian Tombs in a half-day." }
+    ]
   },
   "blog": {
     "title": "Marrakech & Bahia Palace Travel Guide",

@@ -36,6 +36,9 @@
       "tagline": "Accesso prioritario al Palazzo Bahia",
       "duration": "Visita libera • ~1–2 ore",
       "includes": ["Biglietto d'ingresso prioritario", "Biglietto mobile o stampato", "Conferma immediata", "Cancellazione gratuita 24h prima"],
+      "excludes": ["Commento guidato", "Trasporto al palazzo", "Cibo e bevande"],
+      "meetingPoint": "Ingresso principale del Palazzo Bahia, Rue Riad Zitoun el Jedid, Medina di Marrakech",
+      "longDesc": "Salta la coda alla biglietteria ed entra direttamente in uno dei palazzi più magnifici di Marrakech. Il tuo biglietto QR pre-validato significa zero tempo perso allo sportello. Esplora al tuo ritmo — la maggior parte dei visitatori trascorre 1-2 ore scoprendo gli intricati mosaici di zellige, i soffitti di cedro intagliato e i lussureggianti giardini interni.",
       "whyOnline": "Le code possono durare 2 ore — prenota online ed entra direttamente"
     },
     "guidedTour": {
@@ -43,6 +46,9 @@
       "tagline": "Scopri i segreti del palazzo con una guida locale",
       "duration": "Guidato • ~2 ore",
       "includes": ["Accesso salta fila", "Guida locale certificata", "Storia e curiosità", "Piccolo gruppo (max 12)", "Cancellazione gratuita 24h prima"],
+      "excludes": ["Trasporto al palazzo", "Cibo e bevande", "Mance (facoltative)"],
+      "meetingPoint": "Ingresso principale del Palazzo Bahia — cerca la guida con il cartello Bahia Palace Tickets",
+      "longDesc": "Scopri i veri segreti del Palazzo Bahia con una guida certificata appassionata. Impara perché il palazzo fu costruito in segreto, scopri le intrighe politiche dietro la sua architettura e rivela storie che non troverai in nessuna guida turistica. Gruppi piccoli di massimo 12 persone garantiscono un'esperienza personalizzata.",
       "whyOnline": "Le guide certificate si esauriscono in fretta — prenota il tuo posto online ora"
     },
     "privateTour": {
@@ -50,6 +56,9 @@
       "tagline": "Un'esperienza esclusiva solo per te",
       "duration": "Privato • ~2,5 ore",
       "includes": ["Guida certificata privata", "Accesso salta fila", "Esperienza personalizzata", "Orari flessibili", "Cancellazione gratuita 24h prima"],
+      "excludes": ["Trasporto al palazzo", "Cibo e bevande"],
+      "meetingPoint": "Ingresso principale del Palazzo Bahia — la tua guida privata ti aspetterà lì",
+      "longDesc": "L'esperienza definitiva al Palazzo Bahia. La tua guida certificata privata dedica l'intera visita a te e al tuo gruppo. Vai al tuo ritmo, fai tutte le domande che vuoi ed esplora le aree a piacere. Perfetto per famiglie, coppie e chiunque voglia che la storia del palazzo venga raccontata esclusivamente per loro.",
       "whyOnline": "Prenotazione anticipata obbligatoria — tour privati non prenotabili in loco"
     },
     "combo": {
@@ -57,6 +66,9 @@
       "tagline": "Due monumenti iconici di Marrakech in un giorno",
       "duration": "Visita libera • ~3–4 ore",
       "includes": ["Ingresso Palazzo Bahia", "Ingresso Tombe Saadiane", "Salta fila in entrambi i siti", "Orari flessibili", "Cancellazione gratuita 24h prima"],
+      "excludes": ["Commento guidato", "Trasporto tra i siti", "Cibo e bevande"],
+      "meetingPoint": "Prima l'ingresso principale del Palazzo Bahia, poi le Tombe Saadiane (10 minuti a piedi)",
+      "longDesc": "Due dei siti storici più mozzafiato di Marrakech, un unico biglietto conveniente. Inizia dai cortili abbaglianti del Palazzo Bahia, poi cammina 10 minuti fino alle Tombe Saadiane — sontuosi mausolei reali sigillati per 200 anni e riscoperti solo nel 1917. Il miglior rapporto qualità-prezzo per gli appassionati di storia.",
       "whyOnline": "Biglietto combinato disponibile solo online — risparmia tempo in entrambi i siti"
     }
   },
@@ -209,7 +221,29 @@
     "categories": { "booking": "Prenotazione & Pagamento", "tickets": "Biglietti & Ingresso", "palace": "Il Palazzo", "service": "Il Nostro Servizio", "safety": "Sicurezza & Pratico" },
     "all": "Tutte le Domande",
     "stillNeedHelp": "Hai ancora una domanda?",
-    "whatsappUs": "Scrivici su WhatsApp per aiuto immediato →"
+    "whatsappUs": "Scrivici su WhatsApp per aiuto immediato →",
+    "ctaSkip": "Evita la coda di 2 ore",
+    "ctaTitle": "Acquista Biglietti Online per il Palazzo Bahia",
+    "ctaBody": "Conferma immediata · Cancellazione gratuita · Biglietti mobili accettati",
+    "ctaBtn": "Vedi Tutte le Opzioni Biglietti",
+    "teamAvail": "Il nostro team è disponibile tutti i giorni dalle 8 alle 20, ora di Marrakech.",
+    "items": [
+      { "question": "Vale la pena visitare il Palazzo Bahia nel 2026?", "answer": "Assolutamente. Il Palazzo Bahia è uno dei migliori esempi conservati di architettura marocchina del XIX secolo. Con 150 stanze, intricati zellige, soffitti in cedro dipinti a mano e lussureggianti giardini interni, offre uno sguardo incomparabile sulla vita reale marocchina. A 70 MAD (≈7$) è un valore eccezionale — e con un biglietto salta fila, l'esperienza diventa completamente senza stress." },
+      { "question": "Quanto costa l'ingresso al Palazzo Bahia?", "answer": "Il prezzo ufficiale è 70 MAD (circa 7$ USD o 6,50€). I bambini sotto i 12 anni entrano gratis, e gli studenti con documento valido pagano 35 MAD. I biglietti salta fila prenotati online partono da 10$ — incluso accesso prioritario ed evitando code che possono durare 1-2 ore in alta stagione." },
+      { "question": "Quanto tempo è necessario al Palazzo Bahia?", "answer": "La maggior parte dei visitatori trascorre 1-1,5 ore in visita autonoma. Con una guida, pianifica 1,5-2 ore. I tour privati sono flessibili e possono durare fino a 2,5 ore. Consigliamo di arrivare presto (9-10) per evitare la folla." },
+      { "question": "Qual è il momento migliore per visitare?", "answer": "Il momento migliore è tra le 9 e le 10:30 — pochi visitatori e bella luce mattutina ideale per le foto. Evita le 10:30-14:00 quando arrivano i gruppi. Primavera (marzo-maggio) e autunno (settembre-novembre) offrono le temperature più piacevoli (20-28°C)." },
+      { "question": "L'ingresso è gratuito?", "answer": "No, l'ingresso costa 70 MAD (≈7$ USD) per gli adulti. I bambini sotto i 12 anni entrano gratis, gli studenti con documento valido pagano 35 MAD. La fotografia è inclusa nel prezzo del biglietto." },
+      { "question": "Come si arriva al Palazzo Bahia da Jemaa el-Fnaa?", "answer": "Il Palazzo Bahia è a 10-15 minuti a piedi a sud di Jemaa el-Fnaa attraverso la medina. Segui i cartelli 'Palais Bahia' o usa Google Maps. Un petit taxi impiega circa 5 minuti e costa 15-25 MAD. L'indirizzo è Rue Riad Zitoun el Jedid, Medina di Marrakech." },
+      { "question": "Vale la pena il tour guidato?", "answer": "Sì, specialmente per una prima visita. Una guida ti racconta l'ascesa politica di Ba Ahmed, perché il palazzo fu saccheggiato in una notte dopo la sua morte nel 1900, e identifica dettagli architettonici che la maggior parte dei visitatori non nota. Le nostre guide certificate parlano inglese, francese, spagnolo e tedesco." },
+      { "question": "Per cosa è famoso il Palazzo Bahia?", "answer": "Il Palazzo Bahia è famoso per la sua straordinaria artigianato marocchino — in particolare i mosaici di zellige tagliati a mano, gli elaborati stucchi intagliati e i soffitti in legno di cedro dipinto. È uno dei più grandi palazzi di Marrakech con 8 ettari e 150 stanze." },
+      { "question": "Si può visitare senza guida?", "answer": "Sì, il palazzo può essere visitato autonomamente. I visitatori lo esplorano comodamente in 1-1,5 ore. Non è disponibile una audioguida ufficiale in loco, quindi si consiglia un tour guidato per conoscere la storia completa." },
+      { "question": "Il Palazzo Bahia è adatto ai bambini?", "answer": "Sì, molto a misura di famiglia. I bambini sotto i 12 anni entrano gratis. I cortili aperti, le piastrelle colorate e i giardini affascinano i visitatori più giovani. Il terreno è principalmente pianeggiante e accessibile con passeggini." },
+      { "question": "Cosa indossare al Palazzo Bahia?", "answer": "Nessun codice di abbigliamento rigido, ma un abbigliamento sobrio è rispettoso — coprire spalle e ginocchia. Scarpe comode sono essenziali poiché i pavimenti mischiano marmo levigato, zellige e pietra che possono essere scivolosi." },
+      { "question": "È permesso fotografare?", "answer": "Sì, la fotografia è liberamente consentita per uso personale senza costi aggiuntivi. La luce migliore è al mattino presto (9-10:30). Treppiedi e attrezzature professionali richiedono autorizzazione speciale." },
+      { "question": "Come si prenotano i biglietti salta fila?", "answer": "Seleziona la data della visita e il numero di ospiti su questo sito, scegli l'opzione Salta Fila e completa il pagamento sicuro. Riceverai il biglietto via email in pochi secondi — un QR code da mostrare sullo smartphone." },
+      { "question": "Posso cancellare o modificare il biglietto?", "answer": "Sì, tutti i biglietti includono cancellazione gratuita fino a 24 ore prima della visita. Clicca sul link nell'email di conferma o contattaci via WhatsApp. I rimborsi vengono elaborati entro 5-7 giorni lavorativi." },
+      { "question": "Cosa c'è da vedere vicino al Palazzo Bahia?", "answer": "Le Tombe Saadiane sono a 7 minuti a piedi. Le rovine del Palazzo El Badi sono a 10 minuti. Piazza Jemaa el-Fnaa è a 15 minuti a nord. La maggior parte dei visitatori combina il Palazzo Bahia con le Tombe Saadiane in mezza giornata." }
+    ]
   },
   "blog": {
     "title": "Guida di Viaggio Marrakech & Palazzo Bahia",

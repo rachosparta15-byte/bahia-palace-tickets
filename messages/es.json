@@ -158,7 +158,29 @@
     },
     "all": "Todas las Preguntas",
     "stillNeedHelp": "¿Sigues teniendo preguntas?",
-    "whatsappUs": "Escríbenos por WhatsApp para ayuda inmediata →"
+    "whatsappUs": "Escríbenos por WhatsApp para ayuda inmediata →",
+    "ctaSkip": "Evita la cola de 2 horas",
+    "ctaTitle": "Compra Entradas Online para el Palacio Bahia",
+    "ctaBody": "Confirmación instantánea · Cancelación gratuita · Entradas móviles aceptadas",
+    "ctaBtn": "Ver Todas las Opciones de Entradas",
+    "teamAvail": "Nuestro equipo está disponible todos los días de 8 a 20h, hora de Marrakech.",
+    "items": [
+      { "question": "¿Vale la pena visitar el Palacio Bahia en 2026?", "answer": "Absolutamente. El Palacio Bahia es uno de los mejores ejemplos conservados de arquitectura marroquí del siglo XIX. Con 150 habitaciones, intrincados zellige, techos de cedro pintados a mano y exuberantes jardines interiores, ofrece una visión incomparable de la vida real marroquí. A 70 MAD (≈7$) es un valor excepcional — y con una entrada sin colas, la experiencia se vuelve completamente fluida." },
+      { "question": "¿Cuánto cuesta la entrada al Palacio Bahia?", "answer": "El precio oficial en taquilla es de 70 MAD (aproximadamente 7$ USD o 6,50€). Los niños menores de 12 años entran gratis, y los estudiantes con DNI válido pagan 35 MAD. Si reservas online, las entradas sin colas empiezan desde 10$ — incluye acceso prioritario y evita colas que pueden durar 1-2 horas en temporada alta." },
+      { "question": "¿Cuánto tiempo se necesita en el Palacio Bahia?", "answer": "La mayoría de los visitantes pasan 1 a 1,5 horas en visita autónoma. Con una visita guiada, planea 1,5 a 2 horas. Los tours privados son flexibles y pueden durar hasta 2,5 horas. Recomendamos llegar pronto (9-10h) para disfrutar sin aglomeraciones." },
+      { "question": "¿Cuándo es el mejor momento para visitar?", "answer": "El mejor momento es entre las 9 y las 10:30h — menos visitantes y luz matutina ideal para fotos. Evita las 10:30-14h cuando llegan los grupos. Primavera (marzo-mayo) y otoño (septiembre-noviembre) ofrecen las temperaturas más agradables (20-28°C)." },
+      { "question": "¿Es gratuita la entrada?", "answer": "No, la entrada cuesta 70 MAD (≈7$ USD) para adultos. Los niños menores de 12 años entran gratis y los estudiantes con DNI válido pagan 35 MAD. La fotografía está incluida en el precio de la entrada." },
+      { "question": "¿Cómo llegar al Palacio Bahia desde Jemaa el-Fna?", "answer": "El Palacio Bahia está a 10-15 minutos caminando al sur de Jemaa el-Fna por la medina. Sigue los carteles de 'Palais Bahia' o usa Google Maps. Un petit taxi tarda unos 5 minutos y cuesta 15-25 MAD. La dirección es Rue Riad Zitoun el Jedid, Medina de Marrakech." },
+      { "question": "¿Merece la pena la visita guiada?", "answer": "Sí, especialmente en la primera visita. Una guía te contará sobre el ascenso político de Ba Ahmed, por qué el palacio fue saqueado en una sola noche tras su muerte en 1900, e identificará detalles arquitectónicos que la mayoría de los visitantes no notan. Nuestros guías certificados hablan inglés, francés, español y alemán." },
+      { "question": "¿Por qué es famoso el Palacio Bahia?", "answer": "El Palacio Bahia es famoso por su extraordinaria artesanía marroquí — en particular los mosaicos de zellige cortados a mano, las elaboradas tallas de estuco y los techos de madera de cedro pintados. Es uno de los palacios más grandes de Marrakech con 8 hectáreas y 150 habitaciones." },
+      { "question": "¿Se puede visitar sin guía?", "answer": "Sí, el palacio puede visitarse de forma autónoma. La mayoría de los visitantes lo exploran cómodamente en 1-1,5 horas. No hay audioguía oficial disponible in situ, por lo que se recomienda un tour guiado si quieres conocer la historia completa." },
+      { "question": "¿Es el Palacio Bahia adecuado para niños?", "answer": "Sí, muy familiar. Los niños menores de 12 años entran gratis. Los patios abiertos, los coloridos azulejos y los jardines fascinan a los más jóvenes. El terreno es principalmente plano y accesible con cochecito." },
+      { "question": "¿Qué ropa llevar al Palacio Bahia?", "answer": "No hay código de vestimenta estricto, pero se recomienda ropa modesta — cubrir hombros y rodillas. El calzado cómodo es esencial ya que los suelos combinan mármol pulido, zellige y piedra que pueden ser resbaladizos." },
+      { "question": "¿Está permitida la fotografía?", "answer": "Sí, la fotografía está permitida en todo el palacio para uso personal sin cargos adicionales. La mejor luz es por la mañana temprano (9-10:30h). Los trípodes y equipos profesionales requieren autorización previa." },
+      { "question": "¿Cómo reservar entradas sin colas online?", "answer": "Selecciona tu fecha de visita y número de visitantes en este sitio, elige la opción Sin Colas y completa el pago seguro. Recibirás tu entrada por email en segundos — un código QR para mostrar en tu móvil o imprimir." },
+      { "question": "¿Puedo cancelar o cambiar mi entrada?", "answer": "Sí, todas las entradas incluyen cancelación gratuita hasta 24 horas antes de la visita. Haz clic en el enlace de tu email de confirmación o contáctanos por WhatsApp. Los reembolsos se procesan en 5-7 días hábiles." },
+      { "question": "¿Qué más hay cerca del Palacio Bahia?", "answer": "Las Tumbas Saadíes están a solo 7 minutos caminando. Las ruinas del Palacio El Badi están a 10 minutos. La plaza Jemaa el-Fna está a 15 minutos al norte. La mayoría de los visitantes combinan el Palacio Bahia con las Tumbas Saadíes en medio día." }
+    ]
   },
   "blog": {
     "title": "Guía de Viaje de Marrakech y el Palacio Bahia",

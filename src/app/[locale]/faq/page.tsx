@@ -1,3 +1,4 @@
+import { getTranslations } from 'next-intl/server';
 import { BOOKING_URL } from '@/lib/booking';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
@@ -27,72 +28,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const faqs = [
-  {
-    question: 'Is Bahia Palace worth visiting in 2026?',
-    answer: 'Absolutely. Bahia Palace is one of the best-preserved examples of 19th-century Moroccan architecture. With 150 rooms, intricate zellige tilework, hand-painted cedar ceilings, and lush inner gardens, it offers an unmatched glimpse into Moroccan royal life. Most visitors rate it as the highlight of their Marrakech trip. At 70 MAD (≈$7), it\'s exceptional value — and with a skip-the-line ticket, the experience becomes completely seamless.',
-  },
-  {
-    question: 'How much does Bahia Palace cost to enter?',
-    answer: 'The official gate entrance fee is 70 MAD (approximately $7 USD or €6.50 EUR). Children under 12 enter free, and students with a valid ID pay 35 MAD. If you book online, skip-the-line tickets start from $10 — this includes priority entry and avoids queues that can reach 1–2 hours during peak season. The online price reflects added convenience, not a price increase.',
-  },
-  {
-    question: 'How long do you need at Bahia Palace?',
-    answer: 'Most visitors spend 1 to 1.5 hours exploring Bahia Palace independently. With a guided tour, expect 1.5 to 2 hours as your guide brings the palace\'s history to life with stories about Ba Ahmed, the harem, and architectural details you\'d otherwise miss. Private tours are flexible and can last up to 2.5 hours. We recommend arriving early (9–10 AM) to enjoy the space without crowds.',
-  },
-  {
-    question: 'When is the best time to visit Bahia Palace?',
-    answer: 'The best time is 9:00–10:30 AM when the palace first opens — fewest visitors and soft morning light ideal for photography. Avoid 10:30 AM–2:00 PM when tour groups arrive in force. For seasons: spring (March–May) and autumn (September–November) offer the most pleasant temperatures at 20–28°C. Summers are very hot (35–42°C) so visit early morning. Ramadan hours typically end at 4 PM.',
-  },
-  {
-    question: 'Is Bahia Palace free to enter?',
-    answer: 'Bahia Palace is not free for adult visitors. The entrance fee is 70 MAD (≈$7 USD). Children under 12 enter for free, and students with a valid ID pay 35 MAD (≈$3.50). Photography is included in the ticket price with no extra charges. The palace is managed by Morocco\'s Ministry of Culture, and the admission fee contributes to its ongoing preservation and restoration.',
-  },
-  {
-    question: 'How do I get to Bahia Palace from Jemaa el-Fnaa?',
-    answer: 'Bahia Palace is a 10–15 minute walk south from Jemaa el-Fnaa through the medina. Follow the signs for "Palais Bahia" or use Google Maps. A petit taxi (red taxis) takes about 5 minutes and costs 15–25 MAD — always insist on the meter. A calèche (horse carriage) takes 10 minutes and costs 50–80 MAD. The palace address is Rue Riad Zitoun el Jedid, Marrakech Medina.',
-  },
-  {
-    question: 'Are guided tours worth it at Bahia Palace?',
-    answer: 'Yes, especially for a first visit. Bahia Palace has 150 rooms and historical layers that are invisible without explanation. A guide will tell you about Ba Ahmed\'s political rise, why the palace was looted overnight after his death in 1900, and identify architectural details most visitors walk past. Our certified guides speak English, French, Spanish, and German. Group tours (max 12 people) start from $10.',
-  },
-  {
-    question: 'What is Bahia Palace famous for?',
-    answer: 'Bahia Palace is famous for its extraordinary Moroccan craftsmanship — particularly the hand-cut zellige tile mosaics, elaborately carved stucco plasterwork, and painted cedar wood ceilings. It is one of the largest palaces in Marrakech at 8 hectares with 150 rooms. Built by Grand Vizier Ba Ahmed between 1894 and 1900, it tells a fascinating story of power, intrigue, and beauty. The palace has appeared in numerous films about Morocco.',
-  },
-  {
-    question: 'Can you visit Bahia Palace without a guide?',
-    answer: 'Yes, Bahia Palace can be visited independently with a standard or skip-the-line ticket. The palace is entirely self-guided with information panels at key points. Most visitors explore comfortably in 1–1.5 hours at their own pace. However, without a guide, many historical and architectural details are easy to miss. No official audio guide is available on-site, so booking a guided tour is recommended if you want the full story.',
-  },
-  {
-    question: 'Is Bahia Palace suitable for children?',
-    answer: 'Yes, Bahia Palace is very family-friendly. Children under 12 enter free. The open courtyards, colourful tiles, and garden spaces fascinate younger visitors. The grounds are mostly flat and accessible with a pushchair or wheelchair. The visit duration (1–1.5 hours) is manageable even for young children. Early morning visits are best for families to avoid the busiest periods and the heat during summer months.',
-  },
-  {
-    question: 'What should I wear at Bahia Palace?',
-    answer: 'Bahia Palace does not enforce a strict dress code, but modest attire is respectful and recommended. Covering shoulders and knees is appropriate given the palace\'s cultural significance. Comfortable walking shoes are essential — the floors mix polished marble, zellige tiles, and stone, which can be slippery. Sunscreen is advisable as the grand courtyard is open-air. A light layer is useful in cooler months (December–February) when temperatures drop to 10–15°C.',
-  },
-  {
-    question: 'Is photography allowed inside Bahia Palace?',
-    answer: 'Yes, photography is freely allowed throughout Bahia Palace for personal use at no extra charge. The palace is one of the most photogenic in Morocco — the painted cedar ceilings, tiled courtyards, and ornate doorways make for spectacular images. The best light for photography is early morning (9–10:30 AM). Tripods and professional camera equipment (with lighting rigs) require prior authorisation from the palace administration.',
-  },
-  {
-    question: 'How do I book skip-the-line tickets for Bahia Palace online?',
-    answer: 'Select your visit date and number of guests on this website, choose the Skip-the-Line option, and complete your secure payment via Stripe. You\'ll receive your ticket by email within seconds — a QR code to show on your phone or print at the palace entrance. No need to queue at the ticket booth. Online booking also guarantees your entry on high-demand days when the gate can have 1–2 hour queues. Free cancellation up to 24 hours before your visit.',
-  },
-  {
-    question: 'Can I cancel or change my Bahia Palace ticket?',
-    answer: 'Yes, all tickets booked through our platform include free cancellation up to 24 hours before your scheduled visit date. To cancel, click the link in your booking confirmation email or contact us via WhatsApp. Refunds are processed to your original payment method within 5–7 business days. Cancellations made less than 24 hours before the visit are non-refundable. Date changes (reschedules) are free and can be made up to 24 hours in advance.',
-  },
-  {
-    question: 'What else is near Bahia Palace?',
-    answer: 'Bahia Palace is surrounded by unmissable Marrakech attractions. The Saadian Tombs are just a 7-minute walk — stunning 16th-century royal mausoleums. El Badi Palace ruins are 10 minutes on foot. Jemaa el-Fnaa square is a 15-minute walk north. The Mellah (Jewish Quarter) is 4 minutes away. Most visitors combine Bahia Palace with the Saadian Tombs in a half-day, then explore the souks and Jemaa el-Fnaa in the afternoon.',
-  },
-];
-
 export default async function FaqPage({ params }: Props) {
   const { locale } = await params;
   const meta = META[locale] ?? META.en;
+  const t  = await getTranslations('faqPage');
+  const tb = await getTranslations('breadcrumb');
+
+  const faqs = t.raw('items') as Array<{ question: string; answer: string }>;
   const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '212600000000';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hi! I have a question about Bahia Palace tickets.')}`;
 
@@ -112,9 +54,9 @@ export default async function FaqPage({ params }: Props) {
 
       <div className="bg-[#3D2817] text-white px-6 py-12 md:px-10">
         <div className="max-w-3xl mx-auto">
-          <Breadcrumb variant="light" items={[{ label: 'Home', href: '/' }, { label: 'FAQ' }]} />
+          <Breadcrumb variant="light" items={[{ label: tb('home'), href: '/' }, { label: tb('faq') }]} />
           <h1 className="mt-6 font-bold text-white" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 4vw, 2.75rem)' }}>
-            Bahia Palace — Frequently Asked Questions
+            {t('title')}
           </h1>
           <p className="mt-3 text-white/75 text-lg max-w-2xl">
             {meta.description}
@@ -140,26 +82,22 @@ export default async function FaqPage({ params }: Props) {
           ))}
         </div>
 
-        {/* CTA */}
         <div className="mt-10 bg-[#3D2817] rounded-2xl p-8 text-center">
-          <p className="text-[#E8A33D] text-xs font-bold uppercase tracking-widest mb-2">Skip the 2-hour queue</p>
+          <p className="text-[#E8A33D] text-xs font-bold uppercase tracking-widest mb-2">{t('ctaSkip')}</p>
           <h2 className="text-white font-bold text-2xl mb-3" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
-            Book Bahia Palace Tickets Online
+            {t('ctaTitle')}
           </h2>
-          <p className="text-white/70 text-sm mb-5 max-w-md mx-auto">
-            Instant confirmation · Free cancellation · Mobile tickets accepted
-          </p>
+          <p className="text-white/70 text-sm mb-5 max-w-md mx-auto">{t('ctaBody')}</p>
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
-            See All Ticket Options <ArrowRight size={16} />
+            {t('ctaBtn')} <ArrowRight size={16} />
           </a>
         </div>
 
-        {/* WhatsApp CTA */}
         <div className="mt-6 bg-white rounded-2xl border border-[#E8D5B7] p-8 text-center">
           <h2 className="text-xl font-bold text-[#3D2817] mb-2" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
-            Still have a question?
+            {t('stillNeedHelp')}
           </h2>
-          <p className="text-sm text-[#5C3D20] mb-4">Our team is available daily 8 AM – 8 PM Marrakech time.</p>
+          <p className="text-sm text-[#5C3D20] mb-4">{t('teamAvail')}</p>
           <a
             href={whatsappUrl}
             target="_blank"
@@ -167,7 +105,7 @@ export default async function FaqPage({ params }: Props) {
             className="inline-flex items-center gap-2 text-[#25D366] font-semibold hover:underline"
           >
             <MessageCircle size={16} />
-            WhatsApp us for instant help →
+            {t('whatsappUs')}
           </a>
         </div>
       </div>
