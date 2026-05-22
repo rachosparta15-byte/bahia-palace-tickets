@@ -1,0 +1,325 @@
+{
+  "nav": {
+    "home": "Home",
+    "tickets": "Tickets",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "safetyGuide": "Safety Guide",
+    "bookNow": "Book Now"
+  },
+  "hero": {
+    "badge": "Book Online · Skip the Line",
+    "headline": "Bahia Palace Tickets — Skip the Line in Marrakech",
+    "subheadline": "Instant confirmation • Mobile tickets • Free cancellation up to 24h",
+    "ctaBook": "Book Tickets Now",
+    "ctaTours": "See Tour Options",
+    "trustNote": "Trusted by 50,000+ visitors"
+  },
+  "trust": {
+    "instant": "Instant Confirmation",
+    "freeCancellation": "Free Cancellation",
+    "mobile": "Mobile Tickets",
+    "rating": "4.9★ Rating",
+    "secure": "Secure Payment"
+  },
+  "tickets": {
+    "title": "Choose Your Bahia Palace Experience",
+    "subtitle": "Skip the queues and enjoy a seamless visit to one of Marrakech's most stunning palaces",
+    "from": "From",
+    "perPerson": "per person",
+    "bookNow": "Book Now",
+    "learnMore": "Learn More",
+    "skipTheLine": {
+      "name": "Skip-the-Line Entry",
+      "tagline": "Fast-track access to Bahia Palace",
+      "duration": "Self-guided • ~1–2 hours",
+      "includes": ["Priority entry ticket", "Mobile or printed ticket", "Instant confirmation", "Free cancellation 24h prior"],
+      "excludes": ["Guided commentary", "Transport to palace", "Food & drinks"],
+      "meetingPoint": "Main entrance of Bahia Palace, Rue Riad Zitoun el Jedid, Marrakech Medina",
+      "longDesc": "Skip the ticket queue and walk straight into one of Marrakech's most magnificent palaces. Your pre-validated QR ticket means zero time wasted at the booth. Explore at your own pace — most visitors spend 1 to 2 hours discovering the intricate zellige tilework, carved cedar ceilings, and lush inner gardens.",
+      "whyOnline": "Queues can reach 2 hours — book online and walk straight in"
+    },
+    "guidedTour": {
+      "name": "Expert Guided Tour",
+      "tagline": "Discover the palace's secrets with a local guide",
+      "duration": "Guided • ~2 hours",
+      "includes": ["Skip-the-line access", "Certified local guide", "History & stories", "Small group (max 12)", "Free cancellation 24h prior"],
+      "excludes": ["Transport to palace", "Food & drinks", "Tips (optional)"],
+      "meetingPoint": "Main entrance of Bahia Palace — look for the guide holding the Bahia Palace Tickets sign",
+      "longDesc": "Unlock the real secrets of Bahia Palace with a passionate certified guide. Learn why the palace was built in secret, discover the political intrigue behind its architecture, and uncover stories you simply won't find in any guidebook. Small groups of maximum 12 people ensure a personalised experience.",
+      "whyOnline": "Certified guides book out fast — secure your slot online now"
+    },
+    "privateTour": {
+      "name": "Private Tour",
+      "tagline": "Exclusive palace experience just for you",
+      "duration": "Private • ~2.5 hours",
+      "includes": ["Private certified guide", "Skip-the-line access", "Personalised experience", "Flexible schedule", "Free cancellation 24h prior"],
+      "excludes": ["Transport to palace", "Food & drinks"],
+      "meetingPoint": "Main entrance of Bahia Palace — your private guide will meet you there",
+      "longDesc": "The ultimate Bahia Palace experience. Your private certified guide dedicates the entire visit to you and your group. Set your own pace, ask any question, and explore areas at your leisure. Perfect for families, couples, and anyone who wants the palace story told exclusively for them.",
+      "whyOnline": "Advance reservation required — private tours cannot be booked on-site"
+    },
+    "combo": {
+      "name": "Combo: Bahia + Saadian Tombs",
+      "tagline": "Two iconic Marrakech monuments in one day",
+      "duration": "Self-guided • ~3–4 hours",
+      "includes": ["Bahia Palace entry", "Saadian Tombs entry", "Skip-the-line both sites", "Flexible timing", "Free cancellation 24h prior"],
+      "excludes": ["Guided commentary", "Transport between sites", "Food & drinks"],
+      "meetingPoint": "Bahia Palace main entrance first, then Saadian Tombs (10-min walk)",
+      "longDesc": "Two of Marrakech's most breathtaking historic sites, one convenient ticket. Start at Bahia Palace's dazzling courtyards, then walk 10 minutes to the Saadian Tombs — opulent royal mausoleums sealed for 200 years and only rediscovered in 1917. Best value for history lovers.",
+      "whyOnline": "Combined ticket only available online — saves time at both sites"
+    }
+  },
+  "ticketDetail": {
+    "includes": "What's included",
+    "excludes": "Not included",
+    "meetingPoint": "Meeting point",
+    "bookingInfo": "Booking info",
+    "dateLabel": "Select date",
+    "adultsLabel": "Adults",
+    "childrenLabel": "Children (under 12)",
+    "childFree": "Free",
+    "total": "Total",
+    "proceedToCheckout": "Proceed to Checkout",
+    "instantConfirm": "Instant confirmation",
+    "freeCancelNote": "Free cancellation up to 24h before",
+    "mobileTicket": "Mobile ticket accepted",
+    "duration": "Duration",
+    "groupSize": "Group size",
+    "language": "Available in",
+    "gallery": "Gallery",
+    "faqTitle": "Questions about this tour",
+    "alsoConsider": "You might also like",
+    "whatsappCta": "Have a question? WhatsApp us →",
+    "whatsappMsg": "Hi! I have a question about the {ticket} ticket.",
+    "adult": "adult",
+    "child": "child",
+    "adults": "adults",
+    "children": "children",
+    "openingHours": "Opening hours",
+    "openingHoursVal": "Daily 9:00 AM – 5:00 PM (last entry 4:30 PM)"
+  },
+  "whyUs": {
+    "title": "Why Book With Us?",
+    "items": [
+      { "title": "Instant Ticket Delivery", "desc": "Receive your ticket by email within seconds. No waiting, no uncertainty." },
+      { "title": "Guaranteed Entry", "desc": "Your ticket is pre-validated. Show your phone and walk straight in." },
+      { "title": "Local Expertise", "desc": "We're based in Marrakech. We know the palace inside out." },
+      { "title": "Secure & Private", "desc": "Your payment and data are protected with bank-level encryption." }
+    ]
+  },
+  "about": {
+    "title": "About Bahia Palace",
+    "body": "Built in the late 19th century for Si Moussa, grand vizier of the sultan, Bahia Palace (\"Palace of the Beautiful\") is a masterpiece of Moroccan architecture. Its 8 hectares of intricate zellige tilework, carved cedar ceilings, and lush gardens have enchanted visitors for over a century.",
+    "readMore": "Read the full history →"
+  },
+  "aboutPage": {
+    "hero": "About Our Service",
+    "heroSub": "Your trusted source for authentic Bahia Palace tickets",
+    "missionTitle": "Our Mission",
+    "missionBody": "We make visiting Bahia Palace effortless. No confusing queues, no over-priced tickets from street vendors — just a simple online booking, instant confirmation, and a magical visit. We are a Marrakech-based team that loves this palace and wants every visitor to experience it at its best.",
+    "whyTitle": "Why We Started",
+    "whyBody": "Too many tourists arrive at Bahia Palace to find long queues, misleading prices, or fake 'guides' at the entrance. We built this service to give travellers a trustworthy, transparent way to book — so they can focus on the beauty of the palace, not the hassle around it.",
+    "teamTitle": "Local Team, Global Reach",
+    "teamBody": "Our team is based in Marrakech's medina, just minutes from the palace. We speak English, French, Arabic, and Darija. We handle bookings for visitors from over 50 countries every year.",
+    "contactCta": "Get in Touch"
+  },
+  "contactPage": {
+    "title": "Contact Us",
+    "subtitle": "Questions, feedback, or special requests — we're here to help.",
+    "nameLabel": "Your name",
+    "emailLabel": "Email address",
+    "subjectLabel": "Subject",
+    "messageLabel": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent! We'll reply within 24 hours.",
+    "error": "Something went wrong. Please try again or WhatsApp us.",
+    "orWhatsapp": "Or reach us instantly on WhatsApp",
+    "whatsappBtn": "Open WhatsApp Chat",
+    "addressTitle": "Our Address",
+    "addressVal": "Near Bahia Palace, Derb el Cadi, Medina, Marrakech 40000, Morocco",
+    "hoursTitle": "Support Hours",
+    "hoursVal": "Daily 8:00 AM – 8:00 PM (Marrakech time, GMT+1)",
+    "emailTitle": "Email",
+    "emailVal": "support@bahia-palace-tickets.com"
+  },
+  "faqPage": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about visiting Bahia Palace",
+    "categories": {
+      "booking": "Booking & Payment",
+      "tickets": "Tickets & Entry",
+      "palace": "About the Palace",
+      "service": "Our Service",
+      "safety": "Safety & Practical"
+    },
+    "all": "All Questions",
+    "stillNeedHelp": "Still have a question?",
+    "whatsappUs": "WhatsApp us for instant help →"
+  },
+  "blog": {
+    "title": "Marrakech & Bahia Palace Travel Guide",
+    "subtitle": "Tips, history, and everything you need to plan your perfect visit",
+    "readMore": "Read article",
+    "readTime": "{min} min read",
+    "categories": {
+      "visit-tips": "Visit Tips",
+      "history": "History",
+      "practical": "Practical Info",
+      "comparisons": "Comparisons",
+      "safety": "Safety"
+    },
+    "all": "All articles",
+    "bookCta": "Book your skip-the-line ticket →",
+    "relatedPosts": "Related articles",
+    "share": "Share this article"
+  },
+  "safetyGuide": {
+    "badge": "Traveller Safety",
+    "title": "Visit Marrakech Smart — Avoid the Common Scams",
+    "subtitle": "Marrakech is a wonderful city. Like any major tourist destination, it has a small number of scams targeting visitors. Know them before you go — and enjoy your trip with confidence.",
+    "topScams": "Top 10 Scams to Know",
+    "howToAvoid": "How to avoid it",
+    "practicalTips": "10 Practical Safety Tips",
+    "emergencyTitle": "Emergency Contacts",
+    "emergencyNote": "Save these before you travel",
+    "ctaTitle": "Book from a Trusted Source",
+    "ctaBody": "The safest way to buy Bahia Palace tickets is directly online — before you arrive. No street vendors, no \"official\" touts at the entrance.",
+    "ctaBtn": "Book Your Authentic Ticket →",
+    "contributeTitle": "Have you experienced a scam?",
+    "contributeBody": "Help other travellers by sharing your experience. WhatsApp us and we'll add it to this guide (anonymously).",
+    "scams": [
+      {
+        "title": "The \"Closed Monument\" Trick",
+        "desc": "A stranger approaches and tells you the palace is closed today for a private event, holiday, or renovation — but offers to take you to an \"equally beautiful\" alternative.",
+        "avoid": "Ignore them. Bahia Palace is open daily 9 AM–5 PM. Check the official website. Walk directly to the entrance."
+      },
+      {
+        "title": "Fake Guides at the Entrance",
+        "desc": "People standing near the entrance offering unofficial tours, often insisting they are official or licensed. They may demand large sums at the end.",
+        "avoid": "Book your guide through our platform in advance. Official guides wear a badge issued by the regional tourist board."
+      },
+      {
+        "title": "The Henna Ambush",
+        "desc": "A woman in Jemaa el-Fna or narrow streets grabs your hand and begins applying henna without asking. When done, she demands €20–50 for it.",
+        "avoid": "Keep your hands to yourself in busy areas. If approached, firmly say \"No thank you\" and keep walking."
+      },
+      {
+        "title": "Taxi Without a Meter",
+        "desc": "Drivers agree on a fare verbally, then claim they said a much higher price on arrival, or take a longer route to inflate the cost.",
+        "avoid": "Always insist the driver use the meter (compteur). Agree on a price before getting in. Use Careem or inDrive apps for transparent pricing."
+      },
+      {
+        "title": "The \"I'll Show You the Way\" Pickpocket",
+        "desc": "A friendly local offers to show you to a nearby landmark. While walking through narrow alleys, an accomplice pickpockets you.",
+        "avoid": "Download offline maps (Maps.me or Google Maps) before exploring. Politely decline unsolicited guides."
+      },
+      {
+        "title": "Overpriced Spice Shops",
+        "desc": "A \"guide\" takes you to a spice shop where items are massively overpriced and you feel pressured to buy.",
+        "avoid": "Avoid following anyone into shops. Prices in the souk are negotiable — start at 30–40% of the asking price."
+      },
+      {
+        "title": "Fake Tannery Viewpoint",
+        "desc": "You're told a viewpoint over the famous tanneries is \"free\" — but you must enter through a leather shop and are pressured to buy.",
+        "avoid": "This is normal for the tanneries — you do pass through shops. Just be firm: look, smell the mint, and say you're not buying."
+      },
+      {
+        "title": "Snake Charmer Photo Trap",
+        "desc": "Snake charmers in Jemaa el-Fna place a snake or monkey on you and demand €10–30 for a photo you didn't ask for.",
+        "avoid": "Do not stand near snake charmers unless you intend to pay. Keep your camera in your bag in that area."
+      },
+      {
+        "title": "Currency Exchange Confusion",
+        "desc": "Informal money changers offer great rates but use sleight of hand to shortchange you, or give you old/void notes.",
+        "avoid": "Only exchange money at official bank branches or ATMs. Never use street money changers."
+      },
+      {
+        "title": "Restaurant Menu Switcheroo",
+        "desc": "You're shown a menu with low prices outside, then given a different menu inside, or charged far more than agreed.",
+        "avoid": "Check the menu carefully before sitting down. Ask to confirm prices before ordering. Pay by card if possible."
+      }
+    ],
+    "tips": [
+      "Download offline maps before you arrive — GPS works without data.",
+      "Dress modestly in the medina — it reduces unwanted attention.",
+      "Keep a small amount of cash in a front pocket, the rest hidden.",
+      "Book tickets and tours online before arrival whenever possible.",
+      "If you feel followed, walk into any shop and ask for help.",
+      "Learn a few words of Arabic or Darija — locals deeply appreciate it.",
+      "Negotiate prices at the souk — it's expected and part of the culture.",
+      "Trust your instincts — if something feels wrong, walk away.",
+      "Use licensed taxis (petit taxi, cream-coloured) for safer rides.",
+      "Keep copies of your passport and insurance in a cloud service."
+    ],
+    "emergency": [
+      { "label": "Tourist Police", "value": "+212 524 38 46 01", "note": "Specifically for tourist-related incidents" },
+      { "label": "General Police (Brigade Touristique)", "value": "190", "note": "Available 24/7" },
+      { "label": "SAMU (Emergency Medical)", "value": "150", "note": "" },
+      { "label": "Fire / Emergency", "value": "15", "note": "" }
+    ]
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "tickets": "Tickets",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "about": "About",
+    "contact": "Contact",
+    "safetyGuide": "Safety Guide"
+  },
+  "reviews": {
+    "title": "What Visitors Say",
+    "subtitle": "Over 10,000 happy travellers — read their experiences"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "viewAll": "View all FAQs →",
+    "items": [
+      { "question": "How do I receive my ticket?", "answer": "You'll receive your ticket by email immediately after booking. It includes a QR code you can show directly on your phone at the palace entrance." },
+      { "question": "Can I cancel or change my booking?", "answer": "Yes! We offer free cancellation up to 24 hours before your scheduled visit. Just email us or use your booking confirmation link." },
+      { "question": "What are Bahia Palace's opening hours?", "answer": "Bahia Palace is open daily from 9:00 AM to 5:00 PM (last entry 4:30 PM). Hours may vary during Ramadan and public holidays." },
+      { "question": "Is there a dress code?", "answer": "Bahia Palace does not have a strict dress code, but modest attire is appreciated as a sign of respect. Covering shoulders and knees is recommended." },
+      { "question": "Is photography allowed inside?", "answer": "Yes, photography is allowed throughout Bahia Palace for personal use. Tripods and professional equipment require special permission." },
+      { "question": "How do I skip the line?", "answer": "With our skip-the-line ticket, you go directly to the priority entrance. Our tickets are pre-validated, so there's no need to queue at the ticket booth." }
+    ]
+  },
+  "scamBanner": {
+    "text": "Avoid common Marrakech scams — protect your visit.",
+    "link": "Read our Safety Guide →"
+  },
+  "cta": {
+    "title": "Ready to Visit Bahia Palace?",
+    "subtitle": "Book now and skip the queue. Instant confirmation guaranteed.",
+    "button": "Book Your Tickets",
+    "stickyMobile": "Book from $10"
+  },
+  "footer": {
+    "tagline": "The easiest way to visit Bahia Palace.",
+    "tickets": "Tickets",
+    "skipTheLine": "Skip-the-Line",
+    "guidedTour": "Guided Tour",
+    "privateTour": "Private Tour",
+    "combo": "Combo Tickets",
+    "explore": "Explore",
+    "blog": "Travel Blog",
+    "safetyGuide": "Safety Guide",
+    "faq": "FAQ",
+    "about": "About Us",
+    "legal": "Legal",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "refund": "Refund Policy",
+    "cookies": "Cookie Policy",
+    "contact": "Contact",
+    "copyright": "© {year} Bahia Palace Tickets. All rights reserved.",
+    "paymentNote": "Secure payments powered by Stripe"
+  },
+  "whatsapp": {
+    "tooltip": "Chat with us",
+    "message": "Hi! I have a question about Bahia Palace tickets."
+  }
+}

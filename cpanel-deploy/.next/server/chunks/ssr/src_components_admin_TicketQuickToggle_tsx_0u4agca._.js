@@ -1,0 +1,5 @@
+module.exports=[32347,a=>{"use strict";var b=a.i(87924),c=a.i(72131),d=a.i(50944);a.s(["TicketQuickToggle",0,function({slug:a,available:e}){let[f,g]=(0,c.useState)(e),[h,i]=(0,c.useTransition)(),j=(0,d.useRouter)();async function k(){let b=!f;g(b),await fetch(`/api/admin/tickets/${a}`,{method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify({available:b})}),i(()=>j.refresh())}return(0,b.jsx)("button",{onClick:k,disabled:h,className:`relative inline-flex h-7 w-12 items-center rounded-full transition-colors focus:outline-none
+        ${f?"bg-emerald-500":"bg-[#D5C5A8]"} ${h?"opacity-60":""}`,title:f?"Click to set Coming Soon":"Click to set Live",children:(0,b.jsx)("span",{className:`inline-block h-5 w-5 transform rounded-full bg-white shadow transition-transform
+          ${f?"translate-x-6":"translate-x-1"}`})})}])}];
+
+//# sourceMappingURL=src_components_admin_TicketQuickToggle_tsx_0u4agca._.js.map

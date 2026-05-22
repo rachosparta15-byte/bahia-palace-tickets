@@ -1,0 +1,3 @@
+module.exports=[63316,e=>{"use strict";async function o(e){return await new Promise(e=>setTimeout(e,1500)),console.log("[MOCK PAYMENT] Checkout session created:",e),{id:`mock_session_${Date.now()}`,url:`/booking/${e.bookingId}?mock_success=1`}}async function n(e,o){return!0}async function s(e,o){return console.log("[MOCK PAYMENT] Refund processed:",{paymentSessionId:e,amount:o}),!0}e.s(["createCheckoutSession",0,o,"refundPayment",0,s,"verifyWebhookSignature",0,n])}];
+
+//# sourceMappingURL=src_lib_payments_mock_ts_0ssm.2x._.js.map

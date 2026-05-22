@@ -1,0 +1,291 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "tickets": "Billets",
+    "blog": "Blog",
+    "about": "À propos",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "safetyGuide": "Guide Sécurité",
+    "bookNow": "Réserver"
+  },
+  "hero": {
+    "badge": "Réservez en ligne · Sautez la file",
+    "headline": "Billets Palais Bahia — Coupe-File à Marrakech",
+    "subheadline": "Confirmation instantanée • Billets mobiles • Annulation gratuite jusqu'à 24h",
+    "ctaBook": "Réserver mes Billets",
+    "ctaTours": "Voir les Tours",
+    "trustNote": "Plus de 50 000 visiteurs satisfaits"
+  },
+  "trust": {
+    "instant": "Confirmation Instantanée",
+    "freeCancellation": "Annulation Gratuite",
+    "mobile": "Billets Mobiles",
+    "rating": "Note 4,9★",
+    "secure": "Paiement Sécurisé"
+  },
+  "tickets": {
+    "title": "Choisissez votre Expérience au Palais Bahia",
+    "subtitle": "Évitez les files d'attente et profitez d'une visite sans stress dans l'un des palais les plus magnifiques de Marrakech",
+    "from": "À partir de",
+    "perPerson": "par personne",
+    "bookNow": "Réserver",
+    "learnMore": "En savoir plus",
+    "skipTheLine": {
+      "name": "Entrée Coupe-File",
+      "tagline": "Accès prioritaire au Palais Bahia",
+      "duration": "Visite libre • ~1–2 heures",
+      "includes": ["Billet d'entrée prioritaire", "Billet mobile ou imprimé", "Confirmation instantanée", "Annulation gratuite 24h avant"],
+      "whyOnline": "Les files d'attente peuvent durer 2h — réservez en ligne et entrez directement"
+    },
+    "guidedTour": {
+      "name": "Visite Guidée par un Expert",
+      "tagline": "Découvrez les secrets du palais avec un guide local",
+      "duration": "Guidée • ~2 heures",
+      "includes": ["Accès coupe-file", "Guide local certifié", "Histoire et anecdotes", "Petit groupe (max 12)", "Annulation gratuite 24h avant"],
+      "whyOnline": "Les guides certifiés se réservent vite — bloquez votre place en ligne maintenant"
+    },
+    "privateTour": {
+      "name": "Visite Privée",
+      "tagline": "Une expérience exclusive rien que pour vous",
+      "duration": "Privée • ~2,5 heures",
+      "includes": ["Guide certifié privé", "Accès coupe-file", "Expérience personnalisée", "Horaires flexibles", "Annulation gratuite 24h avant"],
+      "whyOnline": "Réservation obligatoire — visites privées impossibles sur place"
+    },
+    "combo": {
+      "name": "Combo : Bahia + Tombeaux Saadiens",
+      "tagline": "Deux monuments iconiques de Marrakech en une journée",
+      "duration": "Visite libre • ~3–4 heures",
+      "includes": ["Entrée Palais Bahia", "Entrée Tombeaux Saadiens", "Coupe-file sur les deux sites", "Horaires flexibles", "Annulation gratuite 24h avant"],
+      "whyOnline": "Billet combiné disponible uniquement en ligne — gagnez du temps sur les deux sites"
+    }
+  },
+  "whyUs": {
+    "title": "Pourquoi Réserver chez Nous ?",
+    "items": [
+      { "title": "Livraison Instantanée du Billet", "desc": "Recevez votre billet par e-mail en quelques secondes. Sans attente, sans incertitude." },
+      { "title": "Entrée Garantie", "desc": "Votre billet est pré-validé. Montrez votre téléphone et entrez directement." },
+      { "title": "Expertise Locale", "desc": "Nous sommes basés à Marrakech. Nous connaissons le palais sur le bout des doigts." },
+      { "title": "Sécurisé & Privé", "desc": "Vos données et votre paiement sont protégés par un chiffrement de niveau bancaire." }
+    ]
+  },
+  "about": {
+    "title": "À propos du Palais Bahia",
+    "body": "Construit à la fin du XIXe siècle pour Si Moussa, grand vizir du sultan, le Palais Bahia (« Palais de la Belle ») est un chef-d'œuvre de l'architecture marocaine. Ses 8 hectares de zelliges, plafonds en cèdre sculptés et jardins luxuriants enchantent les visiteurs depuis plus d'un siècle.",
+    "readMore": "Lire toute l'histoire →"
+  },
+  "reviews": {
+    "title": "Ce que Disent les Visiteurs",
+    "subtitle": "Plus de 10 000 voyageurs satisfaits — lisez leurs témoignages"
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "viewAll": "Voir toutes les FAQ →",
+    "items": [
+      {
+        "question": "Comment vais-je recevoir mon billet ?",
+        "answer": "Vous recevez votre billet par e-mail immédiatement après la réservation. Il contient un QR code à présenter directement sur votre téléphone à l'entrée du palais."
+      },
+      {
+        "question": "Puis-je annuler ou modifier ma réservation ?",
+        "answer": "Oui ! Nous offrons l'annulation gratuite jusqu'à 24 heures avant votre visite. Contactez-nous par e-mail ou utilisez le lien de votre confirmation."
+      },
+      {
+        "question": "Quels sont les horaires d'ouverture du Palais Bahia ?",
+        "answer": "Le Palais Bahia est ouvert tous les jours de 9h à 17h (dernière entrée 16h30). Les horaires peuvent varier pendant le Ramadan et les jours fériés."
+      },
+      {
+        "question": "Y a-t-il un code vestimentaire ?",
+        "answer": "Le Palais Bahia n'impose pas de code vestimentaire strict, mais une tenue modeste est appréciée. Il est recommandé de couvrir les épaules et les genoux."
+      },
+      {
+        "question": "La photographie est-elle autorisée ?",
+        "answer": "Oui, la photographie est autorisée dans tout le Palais Bahia à usage personnel. Les trépieds et équipements professionnels nécessitent une autorisation spéciale."
+      },
+      {
+        "question": "Comment fonctionne le coupe-file ?",
+        "answer": "Avec notre billet coupe-file, vous accédez directement à l'entrée prioritaire. Nos billets sont pré-validés, vous n'avez donc pas besoin de faire la queue à la billetterie."
+      }
+    ]
+  },
+  "scamBanner": {
+    "text": "Évitez les arnaques courantes à Marrakech — protégez votre visite.",
+    "link": "Lire notre Guide Sécurité →"
+  },
+  "cta": {
+    "title": "Prêt à Visiter le Palais Bahia ?",
+    "subtitle": "Réservez maintenant et évitez la file d'attente. Confirmation instantanée garantie.",
+    "button": "Réserver mes Billets",
+    "stickyMobile": "Réserver dès $10"
+  },
+  "footer": {
+    "tagline": "La façon la plus simple de visiter le Palais Bahia.",
+    "tickets": "Billets",
+    "skipTheLine": "Coupe-File",
+    "guidedTour": "Visite Guidée",
+    "privateTour": "Visite Privée",
+    "combo": "Billets Combo",
+    "explore": "Explorer",
+    "blog": "Blog Voyage",
+    "safetyGuide": "Guide Sécurité",
+    "faq": "FAQ",
+    "about": "À propos",
+    "legal": "Légal",
+    "terms": "Conditions Générales",
+    "privacy": "Politique de Confidentialité",
+    "refund": "Politique de Remboursement",
+    "cookies": "Politique Cookies",
+    "contact": "Contact",
+    "copyright": "© {year} Bahia Palace Tickets. Tous droits réservés.",
+    "paymentNote": "Paiements sécurisés par Stripe"
+  },
+  "whatsapp": {
+    "tooltip": "Discutez avec nous",
+    "message": "Bonjour ! J'ai une question sur les billets du Palais Bahia."
+  },
+  "ticketDetail": {
+    "includes": "Ce qui est inclus",
+    "excludes": "Non inclus",
+    "meetingPoint": "Point de rendez-vous",
+    "bookingInfo": "Informations de réservation",
+    "dateLabel": "Choisir une date",
+    "adultsLabel": "Adultes",
+    "childrenLabel": "Enfants (moins de 12 ans)",
+    "childFree": "Gratuit",
+    "total": "Total",
+    "proceedToCheckout": "Procéder au paiement",
+    "instantConfirm": "Confirmation instantanée",
+    "freeCancelNote": "Annulation gratuite jusqu'à 24h avant",
+    "mobileTicket": "Billet mobile accepté",
+    "duration": "Durée",
+    "groupSize": "Taille du groupe",
+    "language": "Disponible en",
+    "gallery": "Galerie",
+    "faqTitle": "Questions sur ce tour",
+    "alsoConsider": "Vous pourriez aussi aimer",
+    "whatsappCta": "Une question ? WhatsApp nous →",
+    "whatsappMsg": "Bonjour ! J'ai une question sur le billet {ticket}.",
+    "adult": "adulte",
+    "child": "enfant",
+    "adults": "adultes",
+    "children": "enfants",
+    "openingHours": "Horaires d'ouverture",
+    "openingHoursVal": "Tous les jours 9h00 – 17h00 (dernière entrée 16h30)"
+  },
+  "aboutPage": {
+    "hero": "Notre Service",
+    "heroSub": "Votre source de confiance pour les billets du Palais Bahia",
+    "missionTitle": "Notre Mission",
+    "missionBody": "Nous rendons la visite du Palais Bahia simple et sans stress. Pas de files d'attente, pas de billets hors de prix auprès de revendeurs douteux — juste une réservation en ligne simple, une confirmation instantanée, et une visite magique.",
+    "whyTitle": "Pourquoi Nous Avons Créé Ce Service",
+    "whyBody": "Trop de touristes arrivaient au Palais Bahia pour trouver de longues files d'attente, des prix trompeurs ou de faux « guides » à l'entrée. Nous avons construit ce service pour offrir aux voyageurs une solution fiable et transparente.",
+    "teamTitle": "Équipe Locale, Portée Mondiale",
+    "teamBody": "Notre équipe est basée dans la médina de Marrakech, à quelques minutes du palais. Nous parlons anglais, français, arabe et darija. Nous gérons des réservations pour des visiteurs de plus de 50 pays chaque année.",
+    "contactCta": "Nous Contacter"
+  },
+  "contactPage": {
+    "title": "Contactez-Nous",
+    "subtitle": "Questions, retours ou demandes spéciales — nous sommes là pour vous aider.",
+    "nameLabel": "Votre nom",
+    "emailLabel": "Adresse e-mail",
+    "subjectLabel": "Sujet",
+    "messageLabel": "Message",
+    "send": "Envoyer le Message",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé ! Nous vous répondrons dans les 24 heures.",
+    "error": "Une erreur s'est produite. Réessayez ou contactez-nous sur WhatsApp.",
+    "orWhatsapp": "Ou contactez-nous instantanément sur WhatsApp",
+    "whatsappBtn": "Ouvrir WhatsApp",
+    "addressTitle": "Notre Adresse",
+    "addressVal": "Près du Palais Bahia, Derb el Cadi, Médina, Marrakech 40000, Maroc",
+    "hoursTitle": "Heures de Support",
+    "hoursVal": "Tous les jours 8h00 – 20h00 (heure de Marrakech, GMT+1)",
+    "emailTitle": "E-mail",
+    "emailVal": "support@bahia-palace-tickets.com"
+  },
+  "faqPage": {
+    "title": "Questions Fréquemment Posées",
+    "subtitle": "Tout ce que vous devez savoir sur la visite du Palais Bahia",
+    "categories": {
+      "booking": "Réservation & Paiement",
+      "tickets": "Billets & Entrée",
+      "palace": "Le Palais",
+      "service": "Notre Service",
+      "safety": "Sécurité & Pratique"
+    },
+    "all": "Toutes les Questions",
+    "stillNeedHelp": "Vous avez encore une question ?",
+    "whatsappUs": "WhatsApp nous pour une aide instantanée →"
+  },
+  "blog": {
+    "title": "Guide de Voyage Marrakech & Palais Bahia",
+    "subtitle": "Conseils, histoire et tout ce qu'il faut savoir pour une visite parfaite",
+    "readMore": "Lire l'article",
+    "readTime": "{min} min de lecture",
+    "categories": {
+      "visit-tips": "Conseils de Visite",
+      "history": "Histoire",
+      "practical": "Infos Pratiques",
+      "comparisons": "Comparaisons",
+      "safety": "Sécurité"
+    },
+    "all": "Tous les articles",
+    "bookCta": "Réservez votre billet coupe-file →",
+    "relatedPosts": "Articles connexes",
+    "share": "Partager cet article"
+  },
+  "safetyGuide": {
+    "badge": "Sécurité Voyageur",
+    "title": "Visitez Marrakech en Toute Sécurité",
+    "subtitle": "Marrakech est une ville magnifique. Comme toute grande destination touristique, elle compte quelques arnaques ciblant les visiteurs. Sachez les identifier avant de partir.",
+    "topScams": "Top 10 des Arnaques à Connaître",
+    "howToAvoid": "Comment l'éviter",
+    "practicalTips": "10 Conseils de Sécurité Pratiques",
+    "emergencyTitle": "Contacts d'Urgence",
+    "emergencyNote": "À sauvegarder avant de voyager",
+    "ctaTitle": "Réservez auprès d'une Source Fiable",
+    "ctaBody": "La façon la plus sûre d'acheter vos billets est en ligne, avant d'arriver. Pas de revendeurs de rue, pas de rabatteurs à l'entrée.",
+    "ctaBtn": "Réserver Votre Billet Authentique →",
+    "contributeTitle": "Vous avez vécu une arnaque ?",
+    "contributeBody": "Aidez les autres voyageurs en partageant votre expérience. WhatsApp-nous et nous l'ajouterons à ce guide (anonymement).",
+    "scams": [
+      { "title": "Le Truc du « Monument Fermé »", "desc": "Un inconnu vous dit que le palais est fermé pour un événement privé et vous propose une alternative.", "avoid": "Ignorez-les. Le Palais Bahia est ouvert tous les jours de 9h à 17h. Allez directement à l'entrée." },
+      { "title": "Faux Guides à l'Entrée", "desc": "Des personnes près de l'entrée proposent des visites non officielles et réclament des sommes importantes à la fin.", "avoid": "Réservez votre guide via notre plateforme. Les vrais guides portent un badge officiel." },
+      { "title": "L'Embuscade au Henné", "desc": "Une femme sur la place Jemaa el-Fna vous attrape la main et applique du henné sans demander, puis réclame 20–50€.", "avoid": "Gardez vos mains occupées dans les zones fréquentées. Dites fermement « Non merci »." },
+      { "title": "Taxi Sans Compteur", "desc": "Le chauffeur accepte un prix verbalement, puis prétend avoir dit bien plus à l'arrivée.", "avoid": "Exigez toujours le compteur. Utilisez Careem ou inDrive pour des prix transparents." },
+      { "title": "Le Pickpocket « Sympa »", "desc": "Un local vous propose de vous guider. Dans les ruelles, un complice vous vole.", "avoid": "Téléchargez des cartes hors ligne. Refusez poliment les guides non sollicités." },
+      { "title": "Épices Hors de Prix", "desc": "Un « guide » vous emmène dans une boutique d'épices avec des prix excessifs.", "avoid": "N'entrez dans aucune boutique sur invitation d'un inconnu." },
+      { "title": "Faux Point de Vue sur les Tanneries", "desc": "On vous dit que la vue est gratuite mais vous devez traverser une boutique de maroquinerie.", "avoid": "C'est la norme pour les tanneries. Regardez, profitez de la menthe et dites que vous n'achetez pas." },
+      { "title": "Piège du Charmeur de Serpents", "desc": "Un serpent ou singe est posé sur vous et on réclame 10–30€ pour une photo non demandée.", "avoid": "Ne vous approchez pas des charmeurs de serpents sauf si vous voulez payer." },
+      { "title": "Confusion au Change", "desc": "Des changeurs informels utilisent des tours de passe-passe pour vous remettre moins que prévu.", "avoid": "Changez votre argent uniquement dans des banques officielles ou aux distributeurs." },
+      { "title": "Menu Différent au Restaurant", "desc": "Le menu à l'extérieur affiche des prix bas, mais à l'intérieur tout coûte plus cher.", "avoid": "Vérifiez le menu avant de vous asseoir et confirmez les prix avant de commander." }
+    ],
+    "tips": [
+      "Téléchargez des cartes hors ligne avant d'arriver.",
+      "Habillez-vous modestement dans la médina.",
+      "Gardez un peu d'argent liquide dans une poche avant, le reste caché.",
+      "Réservez vos billets en ligne avant d'arriver.",
+      "Si vous vous sentez suivi, entrez dans une boutique et demandez de l'aide.",
+      "Quelques mots d'arabe ou de darija sont très appréciés.",
+      "Négociez les prix au souk — c'est attendu et culturel.",
+      "Faites confiance à vos instincts — si quelque chose semble bizarre, partez.",
+      "Utilisez des petits taxis agréés (couleur crème) pour plus de sécurité.",
+      "Gardez des copies de votre passeport dans un service cloud."
+    ],
+    "emergency": [
+      { "label": "Police Touristique", "value": "+212 524 38 46 01", "note": "Pour les incidents liés au tourisme" },
+      { "label": "Police Générale", "value": "190", "note": "Disponible 24h/24" },
+      { "label": "SAMU (Urgences Médicales)", "value": "150", "note": "" },
+      { "label": "Pompiers / Urgences", "value": "15", "note": "" }
+    ]
+  },
+  "breadcrumb": {
+    "home": "Accueil",
+    "tickets": "Billets",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "about": "À propos",
+    "contact": "Contact",
+    "safetyGuide": "Guide Sécurité"
+  }
+}

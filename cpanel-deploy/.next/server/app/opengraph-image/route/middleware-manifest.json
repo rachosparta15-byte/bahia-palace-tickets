@@ -1,0 +1,55 @@
+{
+  "sorted_middleware": [
+    "/opengraph-image/route"
+  ],
+  "middleware": {},
+  "instrumentation": null,
+  "functions": {
+    "/opengraph-image/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "required-server-files.js",
+        "server/server-reference-manifest.js",
+        "server/app/opengraph-image/route_client-reference-manifest.js",
+        "server/edge/chunks/_next-internal_server_app_opengraph-image_route_actions_064c5ks.js",
+        "server/edge/chunks/[root-of-the-server]__06nb4us._.js",
+        "server/edge/chunks/node_modules_next_dist_0i0go52._.js",
+        "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_11csqje._.js",
+        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_0.jv4_1.js"
+      ],
+      "name": "app/opengraph-image/route",
+      "page": "/opengraph-image/route",
+      "entrypoint": "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_0.jv4_1.js",
+      "matchers": [
+        {
+          "regexp": "^/opengraph-image(?:/)?$",
+          "originalSource": "/opengraph-image"
+        }
+      ],
+      "wasm": [
+        {
+          "name": "wasm_10a187050363648b49a36c79d5266d2c",
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_yoga_0656eb_.wasm"
+        },
+        {
+          "name": "wasm_151b7f7b511bd6dda63695d2c75c87a3",
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_resvg_0656eb_.wasm"
+        }
+      ],
+      "assets": [
+        {
+          "name": "server/edge/assets/Geist-Regular.01xk7kbsv57y-.ttf",
+          "filePath": "server/edge/assets/Geist-Regular.01xk7kbsv57y-.ttf"
+        }
+      ],
+      "env": {
+        "__NEXT_BUILD_ID": "E2orTRNNQmo79tIXS70-0",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "1DiZ/D3mOYdtHdRwyrVUi62l2x/Gj8fozgSxUof5Z9g=",
+        "__NEXT_PREVIEW_MODE_ID": "db45f55bf4338c8f7c2988a8dc321b09",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "7af3987cc85fac95b1db1e7680b552dbdb160152d2ca67d0a3e3f30e4ad4421a",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "f66a03e2e9b442741a3d8f24c06d3ed923d1ad131a06820bc4a760ca695880f6"
+      }
+    }
+  }
+}

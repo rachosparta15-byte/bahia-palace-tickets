@@ -1,0 +1,143 @@
+import { getTranslations } from 'next-intl/server';
+import Image from 'next/image';
+import { Link } from '@/i18n/navigation';
+import { Breadcrumb } from '@/components/tickets/Breadcrumb';
+import { Shield, MapPin, Globe, Heart } from 'lucide-react';
+import type { Metadata } from 'next';
+import { buildAlternates, buildOG } from '@/lib/seo';
+
+interface Props {
+  params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'aboutPage' });
+  const title = `${t('hero')} — Bahia Palace Tickets`;
+  const description = t('heroSub') as string;
+  return {
+    title,
+    description,
+    alternates: buildAlternates(locale, '/about'),
+    openGraph: buildOG(title, description, locale, '/about'),
+  };
+}
+
+export default async function AboutPage() {
+  const t  = await getTranslations('aboutPage');
+  const tb = await getTranslations('breadcrumb');
+
+  return (
+    <div className="bg-[#FAF3E7] min-h-screen">
+      {/* Hero */}
+      <div className="relative h-72 md:h-96">
+        <Image
+          src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=1400&q=80"
+          alt="Bahia Palace"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#3D2817]/60 to-[#3D2817]/70" />
+        <div className="absolute inset-0 flex flex-col justify-between px-6 py-8 md:px-10 max-w-5xl mx-auto w-full left-0 right-0">
+          <Breadcrumb variant="light" items={[
+            { label: tb('home'), href: '/' },
+            { label: tb('about') },
+          ]} />
+          <div>
+            <h1
+              className="text-white font-bold leading-tight"
+              style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 5vw, 3rem)' }}
+            >
+              {t('hero')}
+            </h1>
+            <p className="text-white/80 mt-2 text-lg">{t('heroSub')}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="max-w-4xl mx-auto px-6 py-16 space-y-16">
+
+        {/* Mission */}
+        <section className="grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <div className="w-10 h-10 bg-[#C4452D]/10 rounded-xl flex items-center justify-center mb-4">
+              <Heart size={20} className="text-[#C4452D]" />
+            </div>
+            <h2 style={{ fontFamily: 'Cormorant Garamond, serif' }} className="text-2xl font-bold text-[#3D2817] mb-4">
+              {t('missionTitle')}
+            </h2>
+            <p className="text-[#5C3D20] leading-relaxed">{t('missionBody')}</p>
+          </div>
+          <div className="relative h-64 rounded-2xl overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1560148218-1a83060f7b32?w=800&q=75"
+              alt="Bahia Palace courtyard"
+              fill
+              className="object-cover"
+              sizes="(max-width:768px) 100vw, 400px"
+            />
+          </div>
+        </section>
+
+        {/* Why we started */}
+        <section className="bg-white rounded-2xl border border-[#E8D5B7] p-8 md:p-10">
+          <div className="w-10 h-10 bg-[#2E4A7B]/10 rounded-xl flex items-center justify-center mb-4">
+            <Shield size={20} className="text-[#2E4A7B]" />
+          </div>
+          <h2 style={{ fontFamily: 'Cormorant Garamond, serif' }} className="text-2xl font-bold text-[#3D2817] mb-4">
+            {t('whyTitle')}
+          </h2>
+          <p className="text-[#5C3D20] leading-relaxed text-lg">{t('whyBody')}</p>
+        </section>
+
+        {/* Team */}
+        <section className="grid md:grid-cols-2 gap-10 items-center">
+          <div className="relative h-64 rounded-2xl overflow-hidden order-2 md:order-1">
+            <Image
+              src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=800&q=75"
+              alt="Marrakech medina"
+              fill
+              className="object-cover"
+              sizes="(max-width:768px) 100vw, 400px"
+            />
+          </div>
+          <div className="order-1 md:order-2">
+            <div className="w-10 h-10 bg-[#6B7B3A]/10 rounded-xl flex items-center justify-center mb-4">
+              <Globe size={20} className="text-[#6B7B3A]" />
+            </div>
+            <h2 style={{ fontFamily: 'Cormorant Garamond, serif' }} className="text-2xl font-bold text-[#3D2817] mb-4">
+              {t('teamTitle')}
+            </h2>
+            <p className="text-[#5C3D20] leading-relaxed">{t('teamBody')}</p>
+          </div>
+        </section>
+
+        {/* Location */}
+        <section className="bg-[#3D2817] text-white rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
+          <div className="flex-1">
+            <div className="flex items-center gap-2 mb-3">
+              <MapPin size={18} className="text-[#E8A33D]" />
+              <span className="text-sm text-white/70 uppercase tracking-wide">Marrakech, Morocco</span>
+            </div>
+            <h2 style={{ fontFamily: 'Cormorant Garamond, serif' }} className="text-2xl font-bold mb-3">
+              Based in the Medina
+            </h2>
+            <p className="text-white/80 leading-relaxed text-sm">
+              Our office is a 5-minute walk from Bahia Palace, in the heart of Marrakech's historic medina.
+              We know every entrance, every trick, and every reason visitors leave unhappy — and we've built our
+              service to fix all of them.
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="shrink-0 bg-[#C4452D] text-white font-semibold px-8 py-3.5 rounded-xl hover:bg-[#A33824] transition-colors"
+          >
+            {t('contactCta')}
+          </Link>
+        </section>
+      </div>
+    </div>
+  );
+}

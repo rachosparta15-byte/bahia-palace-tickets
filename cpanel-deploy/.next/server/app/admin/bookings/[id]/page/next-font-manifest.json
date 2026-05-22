@@ -1,0 +1,25 @@
+{
+  "pages": {},
+  "app": {
+    "[project]/src/app/admin/bookings/[id]/page": [
+      "static/media/01e4147cff8141ee-s.p.10ked.7w885.g.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2",
+      "static/media/05d29f0ed5b0e698-s.p.0ipr5zwy0u.~f.woff2",
+      "static/media/648474ecaeaf4c9a-s.p.0~rf1n5_6ke06.woff2",
+      "static/media/291696193ea1e96b-s.p.0mmds2ktxtq7_.woff2",
+      "static/media/1062333f2bd32cfe-s.p.0l7ssxdh8f0nb.woff2",
+      "static/media/2a65768255d6b625-s.p.14by5b4al-y~f.woff2",
+      "static/media/8e451580e5e95631-s.p.0put2--9ix-3p.woff2",
+      "static/media/345c85a432359eed-s.p.0az0.9544w3d6.woff2",
+      "static/media/248e1dc0efc99276-s.p.0ft7o6kv5bp14.woff2",
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2",
+      "static/media/c825fd02acae0153-s.p.0js52-zd~6bs8.woff2",
+      "static/media/8c2eb9ceedecfc8e-s.p.0oeo8epbafgia.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pagesUsingSizeAdjust": false
+}
