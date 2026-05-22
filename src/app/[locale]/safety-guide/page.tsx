@@ -2,7 +2,8 @@ import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import { BOOKING_URL } from '@/lib/booking';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
-import { ShieldCheck, ChevronDown, Phone, AlertTriangle } from 'lucide-react';
+import { Link } from '@/i18n/navigation';
+import { ShieldCheck, ChevronDown, Phone, AlertTriangle, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -174,6 +175,39 @@ export default async function SafetyGuidePage() {
           >
             {t('ctaBtn')}
           </a>
+        </section>
+
+        {/* Related article */}
+        <section className="bg-white rounded-2xl border border-[#E8D5B7] overflow-hidden">
+          <div className="flex flex-col sm:flex-row">
+            <div className="relative h-48 sm:h-auto sm:w-48 shrink-0">
+              <Image
+                src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=600&q=75"
+                alt="Marrakech safety fears"
+                fill
+                className="object-cover"
+                sizes="(max-width:640px) 100vw, 192px"
+              />
+            </div>
+            <div className="p-6 flex flex-col justify-center gap-3">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#C4452D]">Deep Dive</span>
+              <h3
+                className="text-lg font-bold text-[#3D2817] leading-snug"
+                style={{ fontFamily: 'Cormorant Garamond, serif' }}
+              >
+                Marrakech Safety 2026: Honest Answers to What Tourists Fear Most
+              </h3>
+              <p className="text-sm text-[#5C3D20] leading-relaxed">
+                Fake taxis, fake guides, henna traps, snake photos — the exact fears first-time visitors post before every trip, explained with the precise script each scam follows.
+              </p>
+              <Link
+                href="/blog/marrakech-tourist-fears-taxi-scam-fake-guide-2026"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C4452D] hover:underline mt-1"
+              >
+                Read the full guide <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
         </section>
 
         {/* Contribute */}
