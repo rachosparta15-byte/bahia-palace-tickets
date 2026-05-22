@@ -1,7 +1,7 @@
 import type { NextConfig } from 'next';
-import createNextIntlPlugin from 'next-intl/plugin';
+import path from 'path';
 
-const withNextIntl = createNextIntlPlugin();
+const I18N_REQUEST = './src/i18n/request.ts';
 
 const securityHeaders = [
   { key: 'X-DNS-Prefetch-Control', value: 'on' },
@@ -29,12 +29,23 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: securityHeaders,
-      },
-    ];
+    return [{ source: '/(.*)', headers: securityHeaders }];
+  },
+  // next-intl alias — replaces createNextIntlPlugin() which crashes on Vercel
+  // due to path.resolve(config.context, ...) being called with context=undefined
+  // during Vercel's modifyConfig phase.
+  turbopack: {
+    resolveAlias: { 'next-intl/config': I18N_REQUEST },
+  },
+  webpack(config) {
+    // Guard: Vercel's modifyConfig calls this early with context=undefined
+    if (config.context) {
+      const aliases = config.resolve?.alias as Record<string, string> | undefined;
+      if (aliases) {
+        aliases['next-intl/config'] = path.resolve(config.context, I18N_REQUEST);
+      }
+    }
+    return config;
   },
   images: {
     remotePatterns: [
@@ -42,9 +53,9 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'source.unsplash.com' },
     ],
     formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 2592000, // 30 days
+    minimumCacheTTL: 2592000,
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
   },
 };
 
-export default withNextIntl(nextConfig);
+export default nextConfig;
