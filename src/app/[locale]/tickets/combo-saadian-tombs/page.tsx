@@ -2,6 +2,8 @@ import { TicketDetailPage } from '@/components/tickets/TicketDetailPage';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
+const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://visitbahiapalace.com';
+
 interface Props {
   params: Promise<{ locale: string }>;
 }
@@ -13,13 +15,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${t('combo.name')} — Bahia Palace Tickets`,
     description: t('combo.tagline' as any),
     alternates: {
-      canonical: `/${locale}/tickets/combo-saadian-tombs`,
+      canonical: `${BASE}/${locale}/tickets/combo-saadian-tombs`,
       languages: {
-        en: '/en/tickets/combo-saadian-tombs',
-        fr: '/fr/tickets/combo-saadian-tombs',
-        it: '/it/tickets/combo-saadian-tombs',
-        de: '/de/tickets/combo-saadian-tombs',
-        es: '/es/tickets/combo-saadian-tombs',
+        en: `${BASE}/en/tickets/combo-saadian-tombs`,
+        fr: `${BASE}/fr/tickets/combo-saadian-tombs`,
+        it: `${BASE}/it/tickets/combo-saadian-tombs`,
+        de: `${BASE}/de/tickets/combo-saadian-tombs`,
+        es: `${BASE}/es/tickets/combo-saadian-tombs`,
       },
     },
   };

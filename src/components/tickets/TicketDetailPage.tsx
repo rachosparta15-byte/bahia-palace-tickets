@@ -1,9 +1,12 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, getLocale } from 'next-intl/server';
 import Image from 'next/image';
 import { Check, X, MapPin, Clock, ChevronDown } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { Breadcrumb } from './Breadcrumb';
 import { BookingWidget } from './BookingWidget';
+import { JsonLd } from '@/components/seo/JsonLd';
+
+const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://visitbahiapalace.com';
 
 export type TicketKey = 'skipTheLine' | 'guidedTour' | 'privateTour' | 'combo';
 
@@ -61,6 +64,7 @@ const ALL_TICKETS: { key: TicketKey; slug: string; price: number }[] = [
 ];
 
 export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
+  const locale = await getLocale();
   const t  = await getTranslations('tickets');
   const td = await getTranslations('ticketDetail');
   const tf = await getTranslations('faq');
@@ -78,8 +82,29 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
   const heroImg      = HERO_IMAGES[ticketKey];
   const gallery      = GALLERY_IMAGES[ticketKey];
 
+  const pageUrl = `${BASE}/${locale}/tickets/${slug}`;
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name,
+    description: tagline,
+    image: heroImg,
+    url: pageUrl,
+    brand: { '@type': 'Brand', name: 'Bahia Palace Tickets' },
+    offers: {
+      '@type': 'Offer',
+      url: pageUrl,
+      priceCurrency: 'USD',
+      price: price.toFixed(2),
+      priceValidUntil: '2026-12-31',
+      availability: 'https://schema.org/InStock',
+      seller: { '@type': 'Organization', name: 'Bahia Palace Tickets' },
+    },
+  };
+
   return (
     <div className="bg-[#FAF3E7] min-h-screen">
+      <JsonLd data={productSchema} />
       {/* ── Hero ── */}
       <div className="relative h-56 sm:h-72 md:h-[500px]">
         <Image
@@ -96,7 +121,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
             variant="light"
             items={[
               { label: tb('home'),    href: '/' },
-              { label: tb('tickets'), href: '/' },
+              { label: tb('tickets'), href: '/tickets' },
               { label: name },
             ]}
           />

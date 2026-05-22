@@ -12,7 +12,8 @@ const STATIC: { path: string; priority: number; freq: MetadataRoute.Sitemap[numb
   { path: '/location',       priority: 0.88, freq: 'monthly' },
   { path: '/history',        priority: 0.85, freq: 'monthly' },
   { path: '/safety',         priority: 0.82, freq: 'weekly'  },
-  { path: '/blog',           priority: 0.80, freq: 'weekly'  },
+  { path: '/safety-guide',  priority: 0.80, freq: 'monthly' },
+  { path: '/blog',           priority: 0.78, freq: 'weekly'  },
   { path: '/faq',            priority: 0.75, freq: 'monthly' },
   { path: '/about',          priority: 0.60, freq: 'monthly' },
   { path: '/contact',        priority: 0.55, freq: 'monthly' },
@@ -59,19 +60,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
-  // Published blog posts
+  // Published blog posts — grouped by slug for hreflang
   try {
     const posts = await prisma.blogPost.findMany({
       where: { published: true },
       select: { slug: true, locale: true, updatedAt: true },
     });
+    // Group by slug so each locale entry carries alternates for all other locales
+    const bySlug = new Map<string, typeof posts>();
     for (const post of posts) {
-      entries.push({
-        url: `${BASE}/${post.locale}/blog/${post.slug}`,
-        lastModified: post.updatedAt,
-        changeFrequency: 'monthly',
-        priority: 0.65,
-      });
+      const group = bySlug.get(post.slug) ?? [];
+      group.push(post);
+      bySlug.set(post.slug, group);
+    }
+    for (const group of bySlug.values()) {
+      const languages = Object.fromEntries(
+        group.map(p => [p.locale, `${BASE}/${p.locale}/blog/${p.slug}`])
+      );
+      for (const post of group) {
+        entries.push({
+          url: `${BASE}/${post.locale}/blog/${post.slug}`,
+          lastModified: post.updatedAt,
+          changeFrequency: 'monthly',
+          priority: 0.65,
+          alternates: { languages },
+        });
+      }
     }
   } catch { /* DB unavailable at build time — skip */ }
 

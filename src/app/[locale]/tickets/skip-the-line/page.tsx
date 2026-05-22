@@ -2,6 +2,8 @@ import { TicketDetailPage } from '@/components/tickets/TicketDetailPage';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
+const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://visitbahiapalace.com';
+
 interface Props {
   params: Promise<{ locale: string }>;
 }
@@ -13,13 +15,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${t('skipTheLine.name')} — Bahia Palace Tickets`,
     description: t('skipTheLine.tagline' as any),
     alternates: {
-      canonical: `/${locale}/tickets/skip-the-line`,
+      canonical: `${BASE}/${locale}/tickets/skip-the-line`,
       languages: {
-        en: '/en/tickets/skip-the-line',
-        fr: '/fr/tickets/skip-the-line',
-        it: '/it/tickets/skip-the-line',
-        de: '/de/tickets/skip-the-line',
-        es: '/es/tickets/skip-the-line',
+        en: `${BASE}/en/tickets/skip-the-line`,
+        fr: `${BASE}/fr/tickets/skip-the-line`,
+        it: `${BASE}/it/tickets/skip-the-line`,
+        de: `${BASE}/de/tickets/skip-the-line`,
+        es: `${BASE}/es/tickets/skip-the-line`,
       },
     },
   };
