@@ -36,6 +36,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# deployment packages
+/cpanel-deploy/
+/bahia-palace-cpanel.zip
+/dev.db
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

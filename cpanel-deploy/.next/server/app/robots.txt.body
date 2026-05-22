@@ -1,7 +1,0 @@
-User-Agent: *
-Allow: /
-Disallow: /admin
-Disallow: /api/
-
-Host: https://visitbahiapalace.com
-Sitemap: https://visitbahiapalace.com/sitemap.xml
