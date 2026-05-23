@@ -1,47 +1,34 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, ExternalLink } from 'lucide-react';
 import { OrnamentDivider } from '@/components/ui/ZelligePattern';
 
-// Placeholder reviews — replace with DB-driven data from admin panel
 const REVIEWS = [
   {
-    name: 'Sophie Laurent',
+    name: 'Sophie L.',
     country: 'France',
     flag: '🇫🇷',
     rating: 5,
     text: 'Absolutely magical experience. The skip-the-line ticket was worth every cent — no queue, just walked straight in. The palace is breathtaking.',
   },
   {
-    name: 'Marco Bianchi',
-    country: 'Italy',
-    flag: '🇮🇹',
-    rating: 5,
-    text: 'Il palazzo è magnifico! Il biglietto saltalafila ci ha permesso di entrare subito e goderci il posto senza stress.',
-  },
-  {
-    name: 'Thomas Weber',
-    country: 'Germany',
-    flag: '🇩🇪',
-    rating: 5,
-    text: 'Wir haben die Privatführung gebucht und waren begeistert. Unser Guide kannte jede Geschichte hinter den Kacheln.',
-  },
-  {
-    name: 'Emma Johnson',
-    country: 'UK',
+    name: 'Emma J.',
+    country: 'United Kingdom',
     flag: '🇬🇧',
     rating: 5,
     text: 'The guided tour was phenomenal. Our guide brought the history of the palace to life in a way a solo visit simply cannot.',
   },
   {
-    name: 'Carlos García',
+    name: 'Carlos G.',
     country: 'Spain',
     flag: '🇪🇸',
     rating: 5,
     text: 'Entrada directa sin esperar. El palacio es increíble — los azulejos y los techos son una maravilla del arte árabe.',
   },
 ];
+
+const TRIPADVISOR_URL = 'https://www.tripadvisor.com/Attraction_Review-g293734-d317099-Reviews-Bahia_Palace-Marrakech_Marrakech_Safi.html';
 
 export function ReviewsCarousel() {
   const t = useTranslations('reviews');
@@ -60,8 +47,8 @@ export function ReviewsCarousel() {
           <p className="text-[#C4A882]">{t('subtitle')}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {REVIEWS.slice(0, 3).map((review, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {REVIEWS.map((review, i) => (
             <div
               key={i}
               className="bg-[#5C3D20]/30 rounded-2xl p-4 sm:p-6 border border-[#5C3D20] relative"
@@ -84,6 +71,20 @@ export function ReviewsCarousel() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* TripAdvisor link */}
+        <div className="flex justify-center">
+          <a
+            href={TRIPADVISOR_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[#C4A882] hover:text-white text-sm font-medium transition-colors border border-[#5C3D20] hover:border-[#C4A882] px-5 py-2.5 rounded-full"
+          >
+            <span className="text-[#34E0A1] font-bold text-xs">●</span>
+            See all reviews on TripAdvisor
+            <ExternalLink size={13} />
+          </a>
         </div>
       </div>
     </section>
