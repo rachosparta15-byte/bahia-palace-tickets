@@ -41,6 +41,7 @@ export function Header() {
 
   const navLinks = [
     { href: '/tickets', label: t('tickets'), style: 'normal' },
+    { href: '/gallery', label: t('gallery'), style: 'normal' },
     { href: '/blog',    label: t('blog'),    style: 'normal' },
     { href: '/faq',     label: t('faq'),     style: 'normal' },
     { href: '/about',   label: t('about'),   style: 'normal' },
