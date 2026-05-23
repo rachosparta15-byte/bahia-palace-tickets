@@ -41,7 +41,13 @@ function extractFaqSchema(html: string) {
   };
 }
 
-export const revalidate = 3600; // re-generate at most once per hour
+export const revalidate = 3600;
+
+function toISO(v: Date | string | null | undefined): string {
+  if (!v) return new Date().toISOString();
+  const d = v instanceof Date ? v : new Date(v as string);
+  return isNaN(d.getTime()) ? new Date().toISOString() : d.toISOString();
+}
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -67,8 +73,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type:   'article',
       url:    canonical,
       images: ogImg ? [{ url: ogImg, width: 1200, height: 630, alt: post.title }] : undefined,
-      publishedTime: (post.publishedAt ?? post.createdAt).toISOString(),
-      modifiedTime:  post.updatedAt.toISOString(),
+      publishedTime: toISO(post.publishedAt ?? post.createdAt),
+      modifiedTime:  toISO(post.updatedAt),
       authors:       [post.author],
       locale,
     },
@@ -120,8 +126,8 @@ export default async function BlogPostPage({ params }: Props) {
       name: 'Bahia Palace Tickets',
       logo: { '@type': 'ImageObject', url: `${BASE}/og-image.jpg` },
     },
-    datePublished: (post.publishedAt ?? post.createdAt).toISOString(),
-    dateModified: post.updatedAt.toISOString(),
+    datePublished: toISO(post.publishedAt ?? post.createdAt),
+    dateModified: toISO(post.updatedAt),
     mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE}/${locale}/blog/${slug}` },
     inLanguage: locale,
   };
@@ -166,7 +172,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <Clock size={13} /> {t('readTime', { min: mins })}
               </span>
               {post.publishedAt && (
-                <time dateTime={post.publishedAt.toISOString()}>
+                <time dateTime={toISO(post.publishedAt)}>
                   {post.publishedAt.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' })}
                 </time>
               )}
