@@ -11,12 +11,14 @@ export const revalidate = 3600;
 const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://visitbahiapalace.com';
 
 const META: Record<string, { title: string; description: string; subtitle: string; inDepth: string; readGuide: string; bottomNote: string }> = {
-  en: { title: 'Safety Guide Marrakech 2026 — Scams & Tips for Tourists | Bahia Palace', description: 'Essential safety tips for tourists visiting Marrakech: avoid scams, fake guides, taxi overcharging, henna traps and more. Updated guide for 2026.', subtitle: 'Essential tips to stay safe and avoid common tourist traps in Marrakech', inDepth: 'In-depth safety guides', readGuide: 'Read guide', bottomNote: 'Stay vigilant and enjoy your visit to Bahia Palace. When in doubt, ask official staff inside the palace.' },
-  fr: { title: 'Guide de Sécurité Marrakech 2026 — Arnaques & Conseils | Palais Bahia', description: 'Conseils essentiels pour les touristes visitant Marrakech : éviter les arnaques, les faux guides, les surcharges de taxi, les pièges au henné et plus encore.', subtitle: 'Conseils essentiels pour rester en sécurité et éviter les pièges touristiques à Marrakech', inDepth: 'Guides de sécurité approfondis', readGuide: 'Lire le guide', bottomNote: 'Restez vigilant et profitez de votre visite au Palais Bahia. En cas de doute, demandez au personnel officiel à l\'intérieur du palais.' },
-  es: { title: 'Guía de Seguridad Marrakech 2026 — Estafas y Consejos | Palacio Bahia', description: 'Consejos esenciales para turistas en Marrakech: evitar estafas, guías falsos, tarifas de taxi abusivas, trampas de henna y más.', subtitle: 'Consejos esenciales para estar seguro y evitar las trampas turísticas en Marrakech', inDepth: 'Guías de seguridad detalladas', readGuide: 'Leer guía', bottomNote: 'Permanece alerta y disfruta tu visita al Palacio Bahia. En caso de duda, consulta al personal oficial dentro del palacio.' },
-  de: { title: 'Sicherheitsratgeber Marrakesch 2026 — Betrug & Tipps | Bahia Palast', description: 'Wichtige Sicherheitstipps für Touristen in Marrakesch: Betrug vermeiden, Falschführer, Taxiübervorteilung, Henna-Fallen und mehr.', subtitle: 'Wesentliche Tipps, um sicher zu bleiben und typische Touristenfallen in Marrakesch zu vermeiden', inDepth: 'Ausführliche Sicherheitsratgeber', readGuide: 'Ratgeber lesen', bottomNote: 'Bleiben Sie wachsam und genießen Sie Ihren Besuch im Bahia Palast. Im Zweifelsfall wenden Sie sich an das offizielle Personal im Palast.' },
-  it: { title: 'Guida alla Sicurezza Marrakech 2026 — Truffe e Consigli | Palazzo Bahia', description: 'Consigli essenziali per i turisti che visitano Marrakech: evitare truffe, guide false, sovraccaricare taxi, trappole dell\'henné e altro ancora.', subtitle: 'Consigli essenziali per stare al sicuro ed evitare le trappole turistiche comuni a Marrakech', inDepth: 'Guide sulla sicurezza approfondite', readGuide: 'Leggi la guida', bottomNote: 'Rimani vigile e goditi la tua visita al Palazzo Bahia. In caso di dubbio, chiedi al personale ufficiale all\'interno del palazzo.' },
+  en: { title: 'Safety Guide Marrakech 2026 — Scams & Tips | Bahia Palace', description: 'Essential safety tips for tourists visiting Marrakech: avoid scams, fake guides, taxi overcharging, henna traps and more.', subtitle: 'Essential tips to stay safe and avoid common tourist traps in Marrakech', inDepth: 'In-depth safety guides', readGuide: 'Read guide', bottomNote: 'Stay vigilant and enjoy your visit to Bahia Palace. When in doubt, ask official staff inside the palace.' },
+  fr: { title: 'Guide Sécurité Marrakech 2026 — Arnaques & Conseils | Palais Bahia', description: 'Conseils essentiels pour les touristes à Marrakech : arnaques, faux guides, taxi, henné et plus.', subtitle: 'Conseils essentiels pour rester en sécurité et éviter les pièges touristiques à Marrakech', inDepth: 'Guides de sécurité approfondis', readGuide: 'Lire le guide', bottomNote: "Restez vigilant et profitez de votre visite au Palais Bahia. En cas de doute, demandez au personnel officiel." },
+  es: { title: 'Guía de Seguridad Marrakech 2026 — Estafas y Consejos | Palacio Bahia', description: 'Consejos esenciales para turistas en Marrakech: estafas, guías falsos, taxi, henna y más.', subtitle: 'Consejos esenciales para estar seguro y evitar las trampas turísticas en Marrakech', inDepth: 'Guías de seguridad detalladas', readGuide: 'Leer guía', bottomNote: 'Permanece alerta y disfruta tu visita al Palacio Bahia. En caso de duda, consulta al personal oficial.' },
+  de: { title: 'Sicherheitsratgeber Marrakesch 2026 — Betrug & Tipps | Bahia Palast', description: 'Wichtige Sicherheitstipps für Touristen in Marrakesch: Betrug, Falschführer, Taxi, Henna und mehr.', subtitle: 'Wesentliche Tipps, um sicher zu bleiben und Touristenfallen in Marrakesch zu vermeiden', inDepth: 'Ausführliche Sicherheitsratgeber', readGuide: 'Ratgeber lesen', bottomNote: 'Bleiben Sie wachsam und genießen Sie Ihren Besuch im Bahia Palast. Im Zweifelsfall wenden Sie sich an das Personal.' },
+  it: { title: 'Guida alla Sicurezza Marrakech 2026 — Truffe e Consigli | Palazzo Bahia', description: 'Consigli essenziali per i turisti a Marrakech: truffe, guide false, taxi, henné e altro ancora.', subtitle: 'Consigli essenziali per stare al sicuro ed evitare le trappole turistiche a Marrakech', inDepth: 'Guide sulla sicurezza approfondite', readGuide: 'Leggi la guida', bottomNote: "Rimani vigile e goditi la tua visita al Palazzo Bahia. In caso di dubbio, chiedi al personale ufficiale." },
 };
+
+const ICONS = ['warning', 'guide', 'scam', 'taxi', 'warning', 'shop', 'shop', 'photo', 'money', 'shop'];
 
 const ICON_MAP: Record<string, string> = {
   warning: '⚠️', scam: '🚨', money: '💰', photo: '📸',
@@ -34,22 +36,22 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       canonical: `${BASE}/${locale}/safety`,
       languages: { en: `${BASE}/en/safety`, fr: `${BASE}/fr/safety`, it: `${BASE}/it/safety`, de: `${BASE}/de/safety`, es: `${BASE}/es/safety`, 'x-default': `${BASE}/en/safety` },
     },
-    openGraph: {
-      title: meta.title,
-      description: meta.description,
-      url: `${BASE}/${locale}/safety`,
-      type: 'article',
-    },
+    openGraph: { title: meta.title, description: meta.description, url: `${BASE}/${locale}/safety`, type: 'article' },
   };
 }
 
 export default async function SafetyPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const tNav = await getTranslations({ locale, namespace: 'nav' });
-  const tSafety = await getTranslations({ locale, namespace: 'safetyPage' });
+  const tGuide = await getTranslations({ locale, namespace: 'safetyGuide' });
   const meta = META[locale] ?? META.en;
 
-  const tips = tSafety.raw('tips') as Array<{ icon: string; title: string; body: string }>;
+  const scams = tGuide.raw('scams') as Array<{ title: string; desc: string; avoid: string }>;
+  const tips = scams.map((scam, i) => ({
+    icon: ICONS[i] ?? 'warning',
+    title: scam.title,
+    body: scam.desc + '\n\n' + scam.avoid,
+  }));
 
   const articles = await prisma.blogPost.findMany({
     where: { published: true, category: 'safety', locale },
@@ -70,7 +72,6 @@ export default async function SafetyPage({ params }: { params: Promise<{ locale:
   return (
     <div className="min-h-screen bg-[#FAF3E7]">
       <JsonLd data={faqSchema} />
-      {/* Hero banner */}
       <div className="bg-amber-600 text-white pt-24 pb-10 px-6 text-center">
         <div className="flex justify-center mb-6">
           <div className="relative">
@@ -91,7 +92,6 @@ export default async function SafetyPage({ params }: { params: Promise<{ locale:
         </p>
       </div>
 
-      {/* Tips grid */}
       <div className="max-w-4xl mx-auto px-6 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {tips.map((tip, i) => (
@@ -115,12 +115,10 @@ export default async function SafetyPage({ params }: { params: Promise<{ locale:
           ))}
         </div>
 
-        {/* Bottom note */}
         <div className="mt-12 bg-amber-50 border border-amber-200 rounded-2xl p-6 text-center">
           <p className="text-amber-800 text-sm font-medium">{meta.bottomNote}</p>
         </div>
 
-        {/* Safety articles */}
         {articles.length > 0 && (
           <section className="mt-16">
             <h2
