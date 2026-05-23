@@ -11,7 +11,11 @@ function b64url(buf: Buffer): string {
 }
 
 function secret(): string {
-  return process.env.NEXTAUTH_SECRET ?? 'dev-secret-change-in-production';
+  const s = process.env.NEXTAUTH_SECRET;
+  if (!s && process.env.NODE_ENV === 'production') {
+    throw new Error('NEXTAUTH_SECRET environment variable is not set');
+  }
+  return s ?? 'dev-secret-change-in-production';
 }
 
 export async function signAdminToken(payload: AdminPayload): Promise<string> {

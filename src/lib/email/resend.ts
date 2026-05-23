@@ -4,7 +4,11 @@
 
 import type { BookingEmailParams, RefundEmailParams, ContactEmailParams } from './mock';
 
-const FROM = process.env.EMAIL_FROM ?? 'tickets@bahia-palace.com';
+const FROM = process.env.EMAIL_FROM ?? 'tickets@visitbahiapalace.com';
+
+function esc(s: string): string {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
 
 export async function sendBookingConfirmation(params: BookingEmailParams): Promise<void> {
   // @ts-ignore — installed in Phase B: npm install resend
@@ -28,7 +32,7 @@ export async function sendRefundConfirmation(params: RefundEmailParams): Promise
     from: `Bahia Palace Tickets <${FROM}>`,
     to: params.to,
     subject: `Refund Processed — ${params.reference}`,
-    html: `<p>Hi ${params.customerName},</p><p>Your refund of ${params.amount} ${params.currency} for booking <strong>${params.reference}</strong> has been processed.</p>`,
+    html: `<p>Hi ${esc(params.customerName)},</p><p>Your refund of ${esc(String(params.amount))} ${esc(params.currency)} for booking <strong>${esc(params.reference)}</strong> has been processed.</p>`,
   });
 }
 
@@ -41,7 +45,7 @@ export async function sendContactNotification(params: ContactEmailParams): Promi
     from: `Bahia Palace Tickets <${FROM}>`,
     to: process.env.SUPPORT_EMAIL ?? 'support@visitbahiapalace.com',
     subject: `Contact Form: ${params.subject}`,
-    html: `<p><strong>From:</strong> ${params.name} &lt;${params.from}&gt;</p><p><strong>Message:</strong></p><p>${params.message}</p>`,
+    html: `<p><strong>From:</strong> ${esc(params.name)} &lt;${esc(params.from)}&gt;</p><p><strong>Message:</strong></p><p>${esc(params.message)}</p>`,
   });
 }
 
