@@ -492,5 +492,59 @@
     "about": "Über uns",
     "contact": "Kontakt",
     "safetyGuide": "Sicherheitsratgeber"
+  },
+  "safetyPage": {
+    "tips": [
+      {
+        "icon": "warning",
+        "title": "Der \"Geschlossenes Denkmal\"-Trick",
+        "body": "Ein Fremder sagt, der Palast sei wegen eines privaten Events geschlossen, und bietet eine Alternative an.\n\nWie man es vermeidet: Ignorieren Sie ihn. Der Bahia Palast ist täglich von 9–17 Uhr geöffnet. Gehen Sie direkt zum Eingang."
+      },
+      {
+        "icon": "guide",
+        "title": "Falsche Guides am Eingang",
+        "body": "Personen am Eingang bieten inoffizielle Führungen an und verlangen am Ende große Beträge.\n\nWie man es vermeidet: Buchen Sie Ihren Guide über unsere Plattform im Voraus."
+      },
+      {
+        "icon": "scam",
+        "title": "Der Henna-Hinterhalt",
+        "body": "Eine Frau greift Ihre Hand und trägt Henna auf, ohne zu fragen, dann verlangt sie 20–50€.\n\nWie man es vermeidet: Halten Sie Ihre Hände in belebten Bereichen beschäftigt. Sagen Sie bestimmt 'Nein danke'."
+      },
+      {
+        "icon": "taxi",
+        "title": "Taxi ohne Taxameter",
+        "body": "Der Fahrer einigt sich mündlich auf einen Preis, behauptet dann bei Ankunft einen viel höheren genannt zu haben.\n\nWie man es vermeidet: Bestehen Sie immer auf dem Taxameter. Nutzen Sie Careem oder inDrive für transparente Preise."
+      },
+      {
+        "icon": "warning",
+        "title": "Der 'Freundliche' Taschendieb",
+        "body": "Ein Einheimischer bietet an, Sie zu führen. In engen Gassen stiehlt ein Komplize.\n\nWie man es vermeidet: Laden Sie Offline-Karten herunter. Lehnen Sie ungebetene Führer höflich ab."
+      },
+      {
+        "icon": "shop",
+        "title": "Überteuerte Gewürzläden",
+        "body": "Ein 'Guide' führt Sie in einen Gewürzladen mit massiv überteuerten Preisen.\n\nWie man es vermeidet: Betreten Sie keine Läden auf Einladung Unbekannter."
+      },
+      {
+        "icon": "shop",
+        "title": "Falscher Gerbereiaussichtspunkt",
+        "body": "Man sagt Ihnen, die Aussicht sei kostenlos, aber Sie müssen durch einen Ledershop.\n\nWie man es vermeidet: Das ist bei den Gerbereien normal. Schauen Sie, genießen Sie die Minze und sagen Sie, dass Sie nicht kaufen."
+      },
+      {
+        "icon": "photo",
+        "title": "Die Schlangenbeschwörer-Falle",
+        "body": "Eine Schlange oder ein Affe wird auf Sie gesetzt und man verlangt 10–30€ für ein ungebetenes Foto.\n\nWie man es vermeidet: Nähern Sie sich Schlangenbeschwörern nur, wenn Sie zahlen möchten."
+      },
+      {
+        "icon": "money",
+        "title": "Währungsumtausch-Verwirrung",
+        "body": "Informelle Wechsler nutzen Taschenspielertricks, um Ihnen weniger zu geben.\n\nWie man es vermeidet: Tauschen Sie Geld nur bei offiziellen Banken oder Geldautomaten."
+      },
+      {
+        "icon": "shop",
+        "title": "Restaurantmenü-Wechsel",
+        "body": "Draußen günstiges Menü, drinnen alles viel teurer.\n\nWie man es vermeidet: Prüfen Sie die Karte vor dem Hinsetzen und bestätigen Sie Preise vor der Bestellung."
+      }
+    ]
   }
 }

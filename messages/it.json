@@ -492,5 +492,59 @@
     "about": "Chi siamo",
     "contact": "Contatti",
     "safetyGuide": "Guida Sicurezza"
+  },
+  "safetyPage": {
+    "tips": [
+      {
+        "icon": "warning",
+        "title": "Il Trucco del \"Monumento Chiuso\"",
+        "body": "Uno sconosciuto ti dice che il palazzo è chiuso e ti offre un'alternativa.\n\nCome evitarlo: Ignorali. Il Palazzo Bahia è aperto tutti i giorni dalle 9 alle 17. Vai direttamente all'ingresso."
+      },
+      {
+        "icon": "guide",
+        "title": "False Guide all'Ingresso",
+        "body": "Persone vicino all'ingresso propongono tour non ufficiali e richiedono grandi somme alla fine.\n\nCome evitarlo: Prenota la tua guida tramite la nostra piattaforma in anticipo."
+      },
+      {
+        "icon": "scam",
+        "title": "L'Agguato dell'Henné",
+        "body": "Una donna ti prende la mano e applica l'henné senza chiedere, poi chiede 20–50€.\n\nCome evitarlo: Tieni le mani occupate nelle zone affollate. Di' fermamente \"No grazie\"."
+      },
+      {
+        "icon": "taxi",
+        "title": "Taxi Senza Tassametro",
+        "body": "L'autista accorda un prezzo verbalmente, poi pretende di aver detto molto di più.\n\nCome evitarlo: Insisti sempre sul tassametro. Usa Careem o inDrive per prezzi trasparenti."
+      },
+      {
+        "icon": "warning",
+        "title": "Il Borseggiatore \"Amichevole\"",
+        "body": "Un locale ti offre di guidarti. Nelle viuzze, un complice ti ruba.\n\nCome evitarlo: Scarica mappe offline. Rifiuta educatamente le guide non richieste."
+      },
+      {
+        "icon": "shop",
+        "title": "Negozi di Spezie Cari",
+        "body": "Una \"guida\" ti porta in un negozio di spezie con prezzi eccessivi.\n\nCome evitarlo: Non entrare in nessun negozio su invito di uno sconosciuto."
+      },
+      {
+        "icon": "shop",
+        "title": "Falso Belvedere sulle Concerie",
+        "body": "Ti dicono che la vista è gratis ma devi passare per un negozio di pelletteria.\n\nCome evitarlo: È normale per le concerie. Guarda, odora la menta e di' che non compri."
+      },
+      {
+        "icon": "photo",
+        "title": "La Trappola dell'Incantatore di Serpenti",
+        "body": "Un serpente o scimmia viene messo su di te e ti chiedono 10–30€ per una foto non richiesta.\n\nCome evitarlo: Non avvicinarti agli incantatori di serpenti a meno che tu non voglia pagare."
+      },
+      {
+        "icon": "money",
+        "title": "Confusione al Cambio Valuta",
+        "body": "I cambiavalute informali usano trucchi per darti meno del previsto.\n\nCome evitarlo: Cambia denaro solo in banche ufficiali o bancomat."
+      },
+      {
+        "icon": "shop",
+        "title": "Menu Diverso al Ristorante",
+        "body": "Il menu fuori ha prezzi bassi, ma dentro tutto costa di più.\n\nCome evitarlo: Controlla il menu prima di sederti e conferma i prezzi prima di ordinare."
+      }
+    ]
   }
 }

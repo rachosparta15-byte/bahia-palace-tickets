@@ -492,5 +492,59 @@
   "whatsapp": {
     "tooltip": "Chatea con nosotros",
     "message": "¡Hola! Tengo una pregunta sobre las entradas del Palacio Bahia."
+  },
+  "safetyPage": {
+    "tips": [
+      {
+        "icon": "warning",
+        "title": "El Truco del \"Monumento Cerrado\"",
+        "body": "Un desconocido se acerca y te dice que el palacio está cerrado hoy por un evento privado, festivo o renovación — pero te ofrece llevarte a una alternativa \"igualmente hermosa\".\n\nComo evitarlo: Ignóralo. El Palacio Bahia está abierto todos los días de 9 a 17 h. Consulta el sitio oficial. Ve directamente a la entrada."
+      },
+      {
+        "icon": "guide",
+        "title": "Guías Falsos en la Entrada",
+        "body": "Personas cerca de la entrada que ofrecen tours no oficiales, insistiendo en que son oficiales o licenciados. Pueden exigir grandes sumas al final.\n\nComo evitarlo: Reserva tu guía con antelación a través de nuestra plataforma. Los guías oficiales llevan una insignia emitida por el consejo regional de turismo."
+      },
+      {
+        "icon": "scam",
+        "title": "La Trampa del Henna",
+        "body": "Una mujer en Jemaa el-Fna o calles estrechas te agarra la mano y empieza a aplicarte henna sin preguntar. Cuando termina, exige 20–50 € por ello.\n\nComo evitarlo: Mantén las manos recogidas en zonas concurridas. Si te abordan, di firmemente \"No, gracias\" y sigue caminando."
+      },
+      {
+        "icon": "taxi",
+        "title": "Taxi Sin Taxímetro",
+        "body": "Los conductores acuerdan una tarifa verbalmente, luego afirman haber dicho un precio mucho más alto al llegar, o toman una ruta más larga para inflar el costo.\n\nComo evitarlo: Insiste siempre en que el conductor use el taxímetro (compteur). Acuerda el precio antes de subir. Usa las aplicaciones Careem o inDrive para precios transparentes."
+      },
+      {
+        "icon": "warning",
+        "title": "El Carterista del \"Te Muestro el Camino\"",
+        "body": "Un local amable se ofrece a llevarte a un monumento cercano. Mientras caminas por callejones estrechos, un cómplice te roba la cartera.\n\nComo evitarlo: Descarga mapas sin conexión (Maps.me o Google Maps) antes de explorar. Rechaza cortésmente a los guías no solicitados."
+      },
+      {
+        "icon": "shop",
+        "title": "Tiendas de Especias con Precios Inflados",
+        "body": "Un \"guía\" te lleva a una tienda de especias donde los artículos tienen precios excesivos y te presionan para comprar.\n\nComo evitarlo: Evita seguir a alguien hacia las tiendas. Los precios en el zoco son negociables — empieza al 30–40% del precio pedido."
+      },
+      {
+        "icon": "shop",
+        "title": "Falso Mirador de la Curtidora",
+        "body": "Te dicen que un mirador sobre las famosas curtidurías es \"gratis\" — pero debes entrar por una tienda de cuero y te presionan para comprar.\n\nComo evitarlo: Esto es normal en las curtidurías — sí pasas por las tiendas. Solo sé firme: mira, huele la menta y di que no vas a comprar."
+      },
+      {
+        "icon": "photo",
+        "title": "La Trampa del Fotógrafo de Serpientes",
+        "body": "Los encantadores de serpientes en Jemaa el-Fna te ponen una serpiente o mono encima y exigen 10–30 € por una foto que no pediste.\n\nComo evitarlo: No te acerques a los encantadores de serpientes a menos que tengas intención de pagar. Mantén la cámara guardada en esa zona."
+      },
+      {
+        "icon": "money",
+        "title": "Confusión con el Cambio de Divisas",
+        "body": "Cambistas informales ofrecen buenas tarifas pero usan trucos de manos para darte menos dinero, o te dan billetes viejos o anulados.\n\nComo evitarlo: Solo cambia dinero en sucursales bancarias oficiales o cajeros automáticos. Nunca uses cambistas callejeros."
+      },
+      {
+        "icon": "shop",
+        "title": "El Cambiazo en el Restaurante",
+        "body": "Te muestran un menú con precios bajos fuera, luego te dan un menú diferente dentro, o te cobran mucho más de lo acordado.\n\nComo evitarlo: Revisa el menú con cuidado antes de sentarte. Pide confirmar los precios antes de pedir. Paga con tarjeta si es posible."
+      }
+    ]
   }
 }

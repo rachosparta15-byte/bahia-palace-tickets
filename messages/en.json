@@ -35,8 +35,17 @@
       "name": "Skip-the-Line Entry",
       "tagline": "Fast-track access to Bahia Palace",
       "duration": "Self-guided • ~1–2 hours",
-      "includes": ["Priority entry ticket", "Mobile or printed ticket", "Instant confirmation", "Free cancellation 24h prior"],
-      "excludes": ["Guided commentary", "Transport to palace", "Food & drinks"],
+      "includes": [
+        "Priority entry ticket",
+        "Mobile or printed ticket",
+        "Instant confirmation",
+        "Free cancellation 24h prior"
+      ],
+      "excludes": [
+        "Guided commentary",
+        "Transport to palace",
+        "Food & drinks"
+      ],
       "meetingPoint": "Main entrance of Bahia Palace, Rue Riad Zitoun el Jedid, Marrakech Medina",
       "longDesc": "Skip the ticket queue and walk straight into one of Marrakech's most magnificent palaces. Your pre-validated QR ticket means zero time wasted at the booth. Explore at your own pace — most visitors spend 1 to 2 hours discovering the intricate zellige tilework, carved cedar ceilings, and lush inner gardens.",
       "whyOnline": "Queues can reach 2 hours — book online and walk straight in"
@@ -45,8 +54,18 @@
       "name": "Expert Guided Tour",
       "tagline": "Discover the palace's secrets with a local guide",
       "duration": "Guided • ~2 hours",
-      "includes": ["Skip-the-line access", "Certified local guide", "History & stories", "Small group (max 12)", "Free cancellation 24h prior"],
-      "excludes": ["Transport to palace", "Food & drinks", "Tips (optional)"],
+      "includes": [
+        "Skip-the-line access",
+        "Certified local guide",
+        "History & stories",
+        "Small group (max 12)",
+        "Free cancellation 24h prior"
+      ],
+      "excludes": [
+        "Transport to palace",
+        "Food & drinks",
+        "Tips (optional)"
+      ],
       "meetingPoint": "Main entrance of Bahia Palace — look for the guide holding the Bahia Palace Tickets sign",
       "longDesc": "Unlock the real secrets of Bahia Palace with a passionate certified guide. Learn why the palace was built in secret, discover the political intrigue behind its architecture, and uncover stories you simply won't find in any guidebook. Small groups of maximum 12 people ensure a personalised experience.",
       "whyOnline": "Certified guides book out fast — secure your slot online now"
@@ -55,8 +74,17 @@
       "name": "Private Tour",
       "tagline": "Exclusive palace experience just for you",
       "duration": "Private • ~2.5 hours",
-      "includes": ["Private certified guide", "Skip-the-line access", "Personalised experience", "Flexible schedule", "Free cancellation 24h prior"],
-      "excludes": ["Transport to palace", "Food & drinks"],
+      "includes": [
+        "Private certified guide",
+        "Skip-the-line access",
+        "Personalised experience",
+        "Flexible schedule",
+        "Free cancellation 24h prior"
+      ],
+      "excludes": [
+        "Transport to palace",
+        "Food & drinks"
+      ],
       "meetingPoint": "Main entrance of Bahia Palace — your private guide will meet you there",
       "longDesc": "The ultimate Bahia Palace experience. Your private certified guide dedicates the entire visit to you and your group. Set your own pace, ask any question, and explore areas at your leisure. Perfect for families, couples, and anyone who wants the palace story told exclusively for them.",
       "whyOnline": "Advance reservation required — private tours cannot be booked on-site"
@@ -65,8 +93,18 @@
       "name": "Combo: Bahia + Saadian Tombs",
       "tagline": "Two iconic Marrakech monuments in one day",
       "duration": "Self-guided • ~3–4 hours",
-      "includes": ["Bahia Palace entry", "Saadian Tombs entry", "Skip-the-line both sites", "Flexible timing", "Free cancellation 24h prior"],
-      "excludes": ["Guided commentary", "Transport between sites", "Food & drinks"],
+      "includes": [
+        "Bahia Palace entry",
+        "Saadian Tombs entry",
+        "Skip-the-line both sites",
+        "Flexible timing",
+        "Free cancellation 24h prior"
+      ],
+      "excludes": [
+        "Guided commentary",
+        "Transport between sites",
+        "Food & drinks"
+      ],
       "meetingPoint": "Bahia Palace main entrance first, then Saadian Tombs (10-min walk)",
       "longDesc": "Two of Marrakech's most breathtaking historic sites, one convenient ticket. Start at Bahia Palace's dazzling courtyards, then walk 10 minutes to the Saadian Tombs — opulent royal mausoleums sealed for 200 years and only rediscovered in 1917. Best value for history lovers.",
       "whyOnline": "Combined ticket only available online — saves time at both sites"
@@ -104,10 +142,22 @@
   "whyUs": {
     "title": "Why Book With Us?",
     "items": [
-      { "title": "Instant Ticket Delivery", "desc": "Receive your ticket by email within seconds. No waiting, no uncertainty." },
-      { "title": "Guaranteed Entry", "desc": "Your ticket is pre-validated. Show your phone and walk straight in." },
-      { "title": "Local Expertise", "desc": "We're based in Marrakech. We know the palace inside out." },
-      { "title": "Secure & Private", "desc": "Your payment and data are protected with bank-level encryption." }
+      {
+        "title": "Instant Ticket Delivery",
+        "desc": "Receive your ticket by email within seconds. No waiting, no uncertainty."
+      },
+      {
+        "title": "Guaranteed Entry",
+        "desc": "Your ticket is pre-validated. Show your phone and walk straight in."
+      },
+      {
+        "title": "Local Expertise",
+        "desc": "We're based in Marrakech. We know the palace inside out."
+      },
+      {
+        "title": "Secure & Private",
+        "desc": "Your payment and data are protected with bank-level encryption."
+      }
     ]
   },
   "about": {
@@ -165,26 +215,86 @@
     "ctaBtn": "See All Ticket Options",
     "teamAvail": "Our team is available daily 8 AM – 8 PM Marrakech time.",
     "items": [
-      { "question": "Is Bahia Palace worth visiting in 2026?", "answer": "Absolutely. Bahia Palace is one of the best-preserved examples of 19th-century Moroccan architecture. With 150 rooms, intricate zellige tilework, hand-painted cedar ceilings, and lush inner gardens, it offers an unmatched glimpse into Moroccan royal life. Most visitors rate it as the highlight of their Marrakech trip. At 70 MAD (≈$7), it's exceptional value — and with a skip-the-line ticket, the experience becomes completely seamless." },
-      { "question": "How much does Bahia Palace cost to enter?", "answer": "The official gate entrance fee is 70 MAD (approximately $7 USD or €6.50). Children under 12 enter free, and students with a valid ID pay 35 MAD. If you book online, skip-the-line tickets start from $10 — this includes priority entry and avoids queues that can reach 1–2 hours during peak season." },
-      { "question": "How long do you need at Bahia Palace?", "answer": "Most visitors spend 1 to 1.5 hours exploring independently. With a guided tour, expect 1.5 to 2 hours. Private tours are flexible and can last up to 2.5 hours. We recommend arriving early (9–10 AM) to enjoy the space without crowds." },
-      { "question": "When is the best time to visit Bahia Palace?", "answer": "The best time is 9:00–10:30 AM when the palace first opens — fewest visitors and soft morning light ideal for photography. Avoid 10:30 AM–2:00 PM when tour groups arrive in force. Spring (March–May) and autumn (September–November) offer the most pleasant temperatures at 20–28°C." },
-      { "question": "Is Bahia Palace free to enter?", "answer": "Bahia Palace is not free for adult visitors. The entrance fee is 70 MAD (≈$7 USD). Children under 12 enter free, and students with a valid ID pay 35 MAD (≈$3.50). Photography is included in the ticket price with no extra charges." },
-      { "question": "How do I get to Bahia Palace from Jemaa el-Fnaa?", "answer": "Bahia Palace is a 10–15 minute walk south from Jemaa el-Fnaa through the medina. Follow the signs for 'Palais Bahia' or use Google Maps. A petit taxi takes about 5 minutes and costs 15–25 MAD. The palace address is Rue Riad Zitoun el Jedid, Marrakech Medina." },
-      { "question": "Are guided tours worth it at Bahia Palace?", "answer": "Yes, especially for a first visit. Bahia Palace has 150 rooms and historical layers that are invisible without explanation. A guide will tell you about Ba Ahmed's political rise, why the palace was looted overnight after his death in 1900, and identify architectural details most visitors walk past. Our certified guides speak English, French, Spanish, and German." },
-      { "question": "What is Bahia Palace famous for?", "answer": "Bahia Palace is famous for its extraordinary Moroccan craftsmanship — particularly the hand-cut zellige tile mosaics, elaborately carved stucco plasterwork, and painted cedar wood ceilings. It is one of the largest palaces in Marrakech at 8 hectares with 150 rooms. Built by Grand Vizier Ba Ahmed between 1894 and 1900." },
-      { "question": "Can you visit Bahia Palace without a guide?", "answer": "Yes, Bahia Palace can be visited independently. Most visitors explore comfortably in 1–1.5 hours at their own pace. No official audio guide is available on-site, so booking a guided tour is recommended if you want the full story." },
-      { "question": "Is Bahia Palace suitable for children?", "answer": "Yes, Bahia Palace is very family-friendly. Children under 12 enter free. The open courtyards, colourful tiles, and garden spaces fascinate younger visitors. The grounds are mostly flat and accessible with a pushchair or wheelchair." },
-      { "question": "What should I wear at Bahia Palace?", "answer": "Bahia Palace does not enforce a strict dress code, but modest attire is respectful and recommended. Covering shoulders and knees is appropriate. Comfortable walking shoes are essential — the floors mix polished marble, zellige tiles, and stone, which can be slippery." },
-      { "question": "Is photography allowed inside Bahia Palace?", "answer": "Yes, photography is freely allowed throughout Bahia Palace for personal use at no extra charge. The best light for photography is early morning (9–10:30 AM). Tripods and professional equipment require prior authorisation." },
-      { "question": "How do I book skip-the-line tickets for Bahia Palace online?", "answer": "Select your visit date and number of guests on this website, choose the Skip-the-Line option, and complete your secure payment. You'll receive your ticket by email within seconds — a QR code to show on your phone or print at the palace entrance." },
-      { "question": "Can I cancel or change my Bahia Palace ticket?", "answer": "Yes, all tickets booked through our platform include free cancellation up to 24 hours before your scheduled visit date. To cancel, click the link in your booking confirmation email or contact us via WhatsApp. Refunds are processed within 5–7 business days." },
-      { "question": "What else is near Bahia Palace?", "answer": "The Saadian Tombs are just a 7-minute walk — stunning 16th-century royal mausoleums. El Badi Palace ruins are 10 minutes on foot. Jemaa el-Fnaa square is a 15-minute walk north. Most visitors combine Bahia Palace with the Saadian Tombs in a half-day." },
-      { "question": "Can you buy Bahia Palace tickets at the door?", "answer": "Yes, tickets can be purchased at the entrance gate in cash (Moroccan dirhams only — no cards accepted). However, queues can reach 45–90 minutes during peak season (March–May, October–November) and on weekends. Buying skip-the-line tickets online in advance guarantees your entry time and bypasses the queue entirely — especially important for morning slots." },
-      { "question": "Is Bahia Palace free on Fridays?", "answer": "No, Bahia Palace is not free on Fridays for tourists. The entrance fee of 70 MAD applies every day of the week. Free admission applies only to Moroccan nationals on specific national and religious holidays. There is no reduced or free entry for foreign visitors on any day, including Fridays." },
-      { "question": "What are Bahia Palace opening hours in 2026?", "answer": "Bahia Palace is open daily from 9:00 AM to 5:00 PM (last entry 4:30 PM). Hours vary during Ramadan — typically 9:30 AM to 3:00 PM. The palace is open every day of the year including weekends and most public holidays, though hours may be reduced on major religious holidays. We recommend arriving at opening time (9 AM) to avoid the worst of the crowds." },
-      { "question": "Is Bahia Palace wheelchair accessible?", "answer": "Yes, most of Bahia Palace is accessible for wheelchair users and visitors with reduced mobility. The main courtyards, gardens, and principal rooms have smooth paved surfaces. A few inner chambers have small raised thresholds. Pushchairs and prams navigate the palace comfortably. The main entrance has a ramped access route. If you need assistance, palace staff can help at the entrance." },
-      { "question": "Bahia Palace or Majorelle Garden — which should I visit?", "answer": "They offer completely different experiences. Bahia Palace is 19th-century Moroccan royal architecture: carved plaster, zellige tile mosaics, painted cedar ceilings, and the fascinating story of Grand Vizier Ba Ahmed. Majorelle Garden is a botanical garden with Art Déco architecture and the Yves Saint Laurent Museum. Most visitors do both in a single day (they are 25 minutes apart by taxi). If you must choose one: pick Bahia Palace for Moroccan history and architecture, or Majorelle if you prefer gardens and fashion/design." }
+      {
+        "question": "Is Bahia Palace worth visiting in 2026?",
+        "answer": "Absolutely. Bahia Palace is one of the best-preserved examples of 19th-century Moroccan architecture. With 150 rooms, intricate zellige tilework, hand-painted cedar ceilings, and lush inner gardens, it offers an unmatched glimpse into Moroccan royal life. Most visitors rate it as the highlight of their Marrakech trip. At 70 MAD (≈$7), it's exceptional value — and with a skip-the-line ticket, the experience becomes completely seamless."
+      },
+      {
+        "question": "How much does Bahia Palace cost to enter?",
+        "answer": "The official gate entrance fee is 70 MAD (approximately $7 USD or €6.50). Children under 12 enter free, and students with a valid ID pay 35 MAD. If you book online, skip-the-line tickets start from $10 — this includes priority entry and avoids queues that can reach 1–2 hours during peak season."
+      },
+      {
+        "question": "How long do you need at Bahia Palace?",
+        "answer": "Most visitors spend 1 to 1.5 hours exploring independently. With a guided tour, expect 1.5 to 2 hours. Private tours are flexible and can last up to 2.5 hours. We recommend arriving early (9–10 AM) to enjoy the space without crowds."
+      },
+      {
+        "question": "When is the best time to visit Bahia Palace?",
+        "answer": "The best time is 9:00–10:30 AM when the palace first opens — fewest visitors and soft morning light ideal for photography. Avoid 10:30 AM–2:00 PM when tour groups arrive in force. Spring (March–May) and autumn (September–November) offer the most pleasant temperatures at 20–28°C."
+      },
+      {
+        "question": "Is Bahia Palace free to enter?",
+        "answer": "Bahia Palace is not free for adult visitors. The entrance fee is 70 MAD (≈$7 USD). Children under 12 enter free, and students with a valid ID pay 35 MAD (≈$3.50). Photography is included in the ticket price with no extra charges."
+      },
+      {
+        "question": "How do I get to Bahia Palace from Jemaa el-Fnaa?",
+        "answer": "Bahia Palace is a 10–15 minute walk south from Jemaa el-Fnaa through the medina. Follow the signs for 'Palais Bahia' or use Google Maps. A petit taxi takes about 5 minutes and costs 15–25 MAD. The palace address is Rue Riad Zitoun el Jedid, Marrakech Medina."
+      },
+      {
+        "question": "Are guided tours worth it at Bahia Palace?",
+        "answer": "Yes, especially for a first visit. Bahia Palace has 150 rooms and historical layers that are invisible without explanation. A guide will tell you about Ba Ahmed's political rise, why the palace was looted overnight after his death in 1900, and identify architectural details most visitors walk past. Our certified guides speak English, French, Spanish, and German."
+      },
+      {
+        "question": "What is Bahia Palace famous for?",
+        "answer": "Bahia Palace is famous for its extraordinary Moroccan craftsmanship — particularly the hand-cut zellige tile mosaics, elaborately carved stucco plasterwork, and painted cedar wood ceilings. It is one of the largest palaces in Marrakech at 8 hectares with 150 rooms. Built by Grand Vizier Ba Ahmed between 1894 and 1900."
+      },
+      {
+        "question": "Can you visit Bahia Palace without a guide?",
+        "answer": "Yes, Bahia Palace can be visited independently. Most visitors explore comfortably in 1–1.5 hours at their own pace. No official audio guide is available on-site, so booking a guided tour is recommended if you want the full story."
+      },
+      {
+        "question": "Is Bahia Palace suitable for children?",
+        "answer": "Yes, Bahia Palace is very family-friendly. Children under 12 enter free. The open courtyards, colourful tiles, and garden spaces fascinate younger visitors. The grounds are mostly flat and accessible with a pushchair or wheelchair."
+      },
+      {
+        "question": "What should I wear at Bahia Palace?",
+        "answer": "Bahia Palace does not enforce a strict dress code, but modest attire is respectful and recommended. Covering shoulders and knees is appropriate. Comfortable walking shoes are essential — the floors mix polished marble, zellige tiles, and stone, which can be slippery."
+      },
+      {
+        "question": "Is photography allowed inside Bahia Palace?",
+        "answer": "Yes, photography is freely allowed throughout Bahia Palace for personal use at no extra charge. The best light for photography is early morning (9–10:30 AM). Tripods and professional equipment require prior authorisation."
+      },
+      {
+        "question": "How do I book skip-the-line tickets for Bahia Palace online?",
+        "answer": "Select your visit date and number of guests on this website, choose the Skip-the-Line option, and complete your secure payment. You'll receive your ticket by email within seconds — a QR code to show on your phone or print at the palace entrance."
+      },
+      {
+        "question": "Can I cancel or change my Bahia Palace ticket?",
+        "answer": "Yes, all tickets booked through our platform include free cancellation up to 24 hours before your scheduled visit date. To cancel, click the link in your booking confirmation email or contact us via WhatsApp. Refunds are processed within 5–7 business days."
+      },
+      {
+        "question": "What else is near Bahia Palace?",
+        "answer": "The Saadian Tombs are just a 7-minute walk — stunning 16th-century royal mausoleums. El Badi Palace ruins are 10 minutes on foot. Jemaa el-Fnaa square is a 15-minute walk north. Most visitors combine Bahia Palace with the Saadian Tombs in a half-day."
+      },
+      {
+        "question": "Can you buy Bahia Palace tickets at the door?",
+        "answer": "Yes, tickets can be purchased at the entrance gate in cash (Moroccan dirhams only — no cards accepted). However, queues can reach 45–90 minutes during peak season (March–May, October–November) and on weekends. Buying skip-the-line tickets online in advance guarantees your entry time and bypasses the queue entirely — especially important for morning slots."
+      },
+      {
+        "question": "Is Bahia Palace free on Fridays?",
+        "answer": "No, Bahia Palace is not free on Fridays for tourists. The entrance fee of 70 MAD applies every day of the week. Free admission applies only to Moroccan nationals on specific national and religious holidays. There is no reduced or free entry for foreign visitors on any day, including Fridays."
+      },
+      {
+        "question": "What are Bahia Palace opening hours in 2026?",
+        "answer": "Bahia Palace is open daily from 9:00 AM to 5:00 PM (last entry 4:30 PM). Hours vary during Ramadan — typically 9:30 AM to 3:00 PM. The palace is open every day of the year including weekends and most public holidays, though hours may be reduced on major religious holidays. We recommend arriving at opening time (9 AM) to avoid the worst of the crowds."
+      },
+      {
+        "question": "Is Bahia Palace wheelchair accessible?",
+        "answer": "Yes, most of Bahia Palace is accessible for wheelchair users and visitors with reduced mobility. The main courtyards, gardens, and principal rooms have smooth paved surfaces. A few inner chambers have small raised thresholds. Pushchairs and prams navigate the palace comfortably. The main entrance has a ramped access route. If you need assistance, palace staff can help at the entrance."
+      },
+      {
+        "question": "Bahia Palace or Majorelle Garden — which should I visit?",
+        "answer": "They offer completely different experiences. Bahia Palace is 19th-century Moroccan royal architecture: carved plaster, zellige tile mosaics, painted cedar ceilings, and the fascinating story of Grand Vizier Ba Ahmed. Majorelle Garden is a botanical garden with Art Déco architecture and the Yves Saint Laurent Museum. Most visitors do both in a single day (they are 25 minutes apart by taxi). If you must choose one: pick Bahia Palace for Moroccan history and architecture, or Majorelle if you prefer gardens and fashion/design."
+      }
     ]
   },
   "blog": {
@@ -283,10 +393,26 @@
       "Keep copies of your passport and insurance in a cloud service."
     ],
     "emergency": [
-      { "label": "Tourist Police", "value": "+212 524 38 46 01", "note": "Specifically for tourist-related incidents" },
-      { "label": "General Police (Brigade Touristique)", "value": "190", "note": "Available 24/7" },
-      { "label": "SAMU (Emergency Medical)", "value": "150", "note": "" },
-      { "label": "Fire / Emergency", "value": "15", "note": "" }
+      {
+        "label": "Tourist Police",
+        "value": "+212 524 38 46 01",
+        "note": "Specifically for tourist-related incidents"
+      },
+      {
+        "label": "General Police (Brigade Touristique)",
+        "value": "190",
+        "note": "Available 24/7"
+      },
+      {
+        "label": "SAMU (Emergency Medical)",
+        "value": "150",
+        "note": ""
+      },
+      {
+        "label": "Fire / Emergency",
+        "value": "15",
+        "note": ""
+      }
     ]
   },
   "breadcrumb": {
@@ -306,12 +432,30 @@
     "title": "Frequently Asked Questions",
     "viewAll": "View all FAQs →",
     "items": [
-      { "question": "How do I receive my ticket?", "answer": "You'll receive your ticket by email immediately after booking. It includes a QR code you can show directly on your phone at the palace entrance." },
-      { "question": "Can I cancel or change my booking?", "answer": "Yes! We offer free cancellation up to 24 hours before your scheduled visit. Just email us or use your booking confirmation link." },
-      { "question": "What are Bahia Palace's opening hours?", "answer": "Bahia Palace is open daily from 9:00 AM to 5:00 PM (last entry 4:30 PM). Hours may vary during Ramadan and public holidays." },
-      { "question": "Is there a dress code?", "answer": "Bahia Palace does not have a strict dress code, but modest attire is appreciated as a sign of respect. Covering shoulders and knees is recommended." },
-      { "question": "Is photography allowed inside?", "answer": "Yes, photography is allowed throughout Bahia Palace for personal use. Tripods and professional equipment require special permission." },
-      { "question": "How do I skip the line?", "answer": "With our skip-the-line ticket, you go directly to the priority entrance. Our tickets are pre-validated, so there's no need to queue at the ticket booth." }
+      {
+        "question": "How do I receive my ticket?",
+        "answer": "You'll receive your ticket by email immediately after booking. It includes a QR code you can show directly on your phone at the palace entrance."
+      },
+      {
+        "question": "Can I cancel or change my booking?",
+        "answer": "Yes! We offer free cancellation up to 24 hours before your scheduled visit. Just email us or use your booking confirmation link."
+      },
+      {
+        "question": "What are Bahia Palace's opening hours?",
+        "answer": "Bahia Palace is open daily from 9:00 AM to 5:00 PM (last entry 4:30 PM). Hours may vary during Ramadan and public holidays."
+      },
+      {
+        "question": "Is there a dress code?",
+        "answer": "Bahia Palace does not have a strict dress code, but modest attire is appreciated as a sign of respect. Covering shoulders and knees is recommended."
+      },
+      {
+        "question": "Is photography allowed inside?",
+        "answer": "Yes, photography is allowed throughout Bahia Palace for personal use. Tripods and professional equipment require special permission."
+      },
+      {
+        "question": "How do I skip the line?",
+        "answer": "With our skip-the-line ticket, you go directly to the priority entrance. Our tickets are pre-validated, so there's no need to queue at the ticket booth."
+      }
     ]
   },
   "scamBanner": {
@@ -348,5 +492,59 @@
   "whatsapp": {
     "tooltip": "Chat with us",
     "message": "Hi! I have a question about Bahia Palace tickets."
+  },
+  "safetyPage": {
+    "tips": [
+      {
+        "icon": "warning",
+        "title": "The \"Closed Monument\" Trick",
+        "body": "A stranger approaches and tells you the palace is closed today for a private event, holiday, or renovation — but offers to take you to an \"equally beautiful\" alternative.\n\nHow to avoid: Ignore them. Bahia Palace is open daily 9 AM–5 PM. Check the official website. Walk directly to the entrance."
+      },
+      {
+        "icon": "guide",
+        "title": "Fake Guides at the Entrance",
+        "body": "People standing near the entrance offering unofficial tours, often insisting they are official or licensed. They may demand large sums at the end.\n\nHow to avoid: Book your guide through our platform in advance. Official guides wear a badge issued by the regional tourist board."
+      },
+      {
+        "icon": "scam",
+        "title": "The Henna Ambush",
+        "body": "A woman in Jemaa el-Fna or narrow streets grabs your hand and begins applying henna without asking. When done, she demands €20–50 for it.\n\nHow to avoid: Keep your hands to yourself in busy areas. If approached, firmly say \"No thank you\" and keep walking."
+      },
+      {
+        "icon": "taxi",
+        "title": "Taxi Without a Meter",
+        "body": "Drivers agree on a fare verbally, then claim they said a much higher price on arrival, or take a longer route to inflate the cost.\n\nHow to avoid: Always insist the driver use the meter (compteur). Agree on a price before getting in. Use Careem or inDrive apps for transparent pricing."
+      },
+      {
+        "icon": "warning",
+        "title": "The \"I'll Show You the Way\" Pickpocket",
+        "body": "A friendly local offers to show you to a nearby landmark. While walking through narrow alleys, an accomplice pickpockets you.\n\nHow to avoid: Download offline maps (Maps.me or Google Maps) before exploring. Politely decline unsolicited guides."
+      },
+      {
+        "icon": "shop",
+        "title": "Overpriced Spice Shops",
+        "body": "A \"guide\" takes you to a spice shop where items are massively overpriced and you feel pressured to buy.\n\nHow to avoid: Avoid following anyone into shops. Prices in the souk are negotiable — start at 30–40% of the asking price."
+      },
+      {
+        "icon": "shop",
+        "title": "Fake Tannery Viewpoint",
+        "body": "You're told a viewpoint over the famous tanneries is \"free\" — but you must enter through a leather shop and are pressured to buy.\n\nHow to avoid: This is normal for the tanneries — you do pass through shops. Just be firm: look, smell the mint, and say you're not buying."
+      },
+      {
+        "icon": "photo",
+        "title": "Snake Charmer Photo Trap",
+        "body": "Snake charmers in Jemaa el-Fna place a snake or monkey on you and demand €10–30 for a photo you didn't ask for.\n\nHow to avoid: Do not stand near snake charmers unless you intend to pay. Keep your camera in your bag in that area."
+      },
+      {
+        "icon": "money",
+        "title": "Currency Exchange Confusion",
+        "body": "Informal money changers offer great rates but use sleight of hand to shortchange you, or give you old/void notes.\n\nHow to avoid: Only exchange money at official bank branches or ATMs. Never use street money changers."
+      },
+      {
+        "icon": "shop",
+        "title": "Restaurant Menu Switcheroo",
+        "body": "You're shown a menu with low prices outside, then given a different menu inside, or charged far more than agreed.\n\nHow to avoid: Check the menu carefully before sitting down. Ask to confirm prices before ordering. Pay by card if possible."
+      }
+    ]
   }
 }
