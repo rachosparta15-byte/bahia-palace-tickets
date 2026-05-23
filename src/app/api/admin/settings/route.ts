@@ -12,7 +12,7 @@ async function requireAdmin() {
 const DEFAULT_SETTINGS = [
   { key: 'whatsapp_number',    value: '',                             label: 'WhatsApp Number',      group: 'contact' },
   { key: 'contact_phone',      value: '',                             label: 'Phone Number',         group: 'contact' },
-  { key: 'contact_email',      value: 'contact@bahia-palace.com',    label: 'Contact Email',        group: 'contact' },
+  { key: 'contact_email',      value: 'contact@visitbahiapalace.com', label: 'Contact Email',        group: 'contact' },
   { key: 'contact_address',    value: 'Rue Riad Zitoun el Jedid, Marrakech Medina', label: 'Address', group: 'contact' },
   { key: 'opening_hours',      value: '09:00 – 17:00 (daily)',       label: 'Opening Hours',        group: 'info' },
   { key: 'last_entry',         value: '16:30',                        label: 'Last Entry',           group: 'info' },
