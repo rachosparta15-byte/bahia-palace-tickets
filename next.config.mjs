@@ -42,12 +42,22 @@ if (!_wa || _wa.replace(/^\+/, '') === '212600000000') {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async redirects() {
+    const TEST_SLUGS = ['z', 'xdxxxxxxxx', 'test'];
+    const LOCALES    = ['en', 'fr', 'it', 'de', 'es'];
+    const testRedirects = TEST_SLUGS.flatMap(slug =>
+      LOCALES.map(locale => ({
+        source:      `/${locale}/blog/${slug}`,
+        destination: `/${locale}/blog`,
+        permanent:   true,
+      }))
+    );
     return [
       {
         source:      '/en/blog/bahia-palace-vs-saadian-tombs-comparison',
         destination: '/en/blog/bahia-palace-vs-saadian-tombs-which-to-visit',
-        statusCode:  301,
+        permanent:   true,
       },
+      ...testRedirects,
     ];
   },
   async headers() {
