@@ -41,6 +41,15 @@ if (!_wa || _wa.replace(/^\+/, '') === '212600000000') {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source:      '/en/blog/bahia-palace-vs-saadian-tombs-comparison',
+        destination: '/en/blog/bahia-palace-vs-saadian-tombs-which-to-visit',
+        statusCode:  301,
+      },
+    ];
+  },
   async headers() {
     return [{ source: '/(.*)', headers: securityHeaders }];
   },

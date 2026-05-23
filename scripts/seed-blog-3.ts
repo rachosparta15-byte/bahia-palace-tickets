@@ -151,9 +151,9 @@ const ARTICLES = [
 <p>They're not competitors — they're a pair. Bahia shows you what Moroccan court life looked like at its richest. Badi shows you what happens to power when it passes. Together they make one of the best half-days in Marrakech.</p>`,
   },
   {
-    slug: 'bahia-palace-vs-saadian-tombs-comparison',
+    slug: 'bahia-palace-vs-saadian-tombs-which-to-visit',
     locale: 'en',
-    title: 'Bahia Palace vs Saadian Tombs: Which Is Better for First-Time Visitors?',
+    title: 'Bahia Palace vs Saadian Tombs: Which One Should You Visit?',
     excerpt: 'Both are within walking distance, both are stunning — but they offer completely different experiences. Here\'s how to decide which to prioritize.',
     category: 'comparisons',
     author: 'Bahia Palace Tickets',
