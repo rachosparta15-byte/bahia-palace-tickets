@@ -1,5 +1,23 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Required Environment Variables
+
+These must be set in Vercel → Settings → Environment Variables (and in `.env.local` for local dev).
+
+| Variable | Required | Format | Description |
+|---|---|---|---|
+| `DATABASE_URL` | ✅ Yes | `https://<name>.turso.io` | Turso database URL |
+| `TURSO_AUTH_TOKEN` | ✅ Yes | string | Turso auth token |
+| `NEXTAUTH_SECRET` | ✅ Yes | random 32+ char string | JWT signing secret — **must be set in production** |
+| `NEXT_PUBLIC_SITE_URL` | ✅ Yes | `https://visitbahiapalace.com` | Canonical base URL (no trailing slash) |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | ⚠️ Set before launch | `212XXXXXXXXX` | WhatsApp Business number without `+`. If missing or set to `212600000000`, all WhatsApp buttons are hidden site-wide |
+| `BLOB_READ_WRITE_TOKEN` | ⚠️ Set before launch | Vercel Blob token | Required for admin image uploads in production |
+| `SUPPORT_EMAIL` | Optional | email address | Recipient of contact form notifications (defaults to `support@visitbahiapalace.com`) |
+| `RESEND_API_KEY` | Optional | `re_…` | Resend API key — required if `EMAIL_PROVIDER=resend` |
+| `NEXT_PUBLIC_GOOGLE_VERIFY` | Optional | string | Google Search Console verification token |
+
+> **Generate `NEXTAUTH_SECRET`:** `openssl rand -base64 32`
+
 ## Getting Started
 
 First, run the development server:

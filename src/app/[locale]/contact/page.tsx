@@ -4,6 +4,7 @@ import { ContactForm } from '@/components/contact/ContactForm';
 import { MapPin, Clock, Mail, MessageCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 import { buildAlternates, buildOG } from '@/lib/seo';
+import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -25,9 +26,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ContactPage() {
   const t  = await getTranslations('contactPage');
   const tb = await getTranslations('breadcrumb');
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '212600000000';
-  const whatsappMsg    = encodeURIComponent('Hi! I have a question about Bahia Palace tickets.');
-  const whatsappUrl    = `https://wa.me/${whatsappNumber}?text=${whatsappMsg}`;
+  const whatsappNumber = getWhatsAppNumber();
+  const whatsappUrl    = whatsappNumber
+    ? buildWhatsAppUrl(whatsappNumber, 'Hi! I have a question about Bahia Palace tickets.')
+    : null;
 
   return (
     <div className="bg-[#FAF3E7] min-h-screen">
@@ -57,19 +59,21 @@ export default async function ContactPage() {
               <ContactForm />
             </div>
 
-            {/* WhatsApp */}
-            <div className="mt-6 bg-[#25D366]/8 border border-[#25D366]/20 rounded-2xl p-6 text-center">
-              <p className="text-sm font-semibold text-[#3D2817] mb-1">{t('orWhatsapp')}</p>
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-xl hover:bg-[#20B858] transition-colors mt-3"
-              >
-                <MessageCircle size={16} />
-                {t('whatsappBtn')}
-              </a>
-            </div>
+            {/* WhatsApp — hidden until a real number is configured */}
+            {whatsappUrl && (
+              <div className="mt-6 bg-[#25D366]/8 border border-[#25D366]/20 rounded-2xl p-6 text-center">
+                <p className="text-sm font-semibold text-[#3D2817] mb-1">{t('orWhatsapp')}</p>
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-xl hover:bg-[#20B858] transition-colors mt-3"
+                >
+                  <MessageCircle size={16} />
+                  {t('whatsappBtn')}
+                </a>
+              </div>
+            )}
           </div>
 
           {/* Info sidebar */}

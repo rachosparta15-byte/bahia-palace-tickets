@@ -5,6 +5,7 @@ import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { buildAlternates, buildOG } from '@/lib/seo';
 import { MessageCircle, ChevronDown, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
+import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
 
 const META: Record<string, { title: string; description: string }> = {
   en: { title: 'Bahia Palace FAQ 2026 | Top Questions About Tickets & Visiting', description: 'Answers to the most common questions about Bahia Palace: ticket prices, opening hours, skip-the-line access, guided tours, how to get there, and what to expect.' },
@@ -35,8 +36,10 @@ export default async function FaqPage({ params }: Props) {
   const tb = await getTranslations('breadcrumb');
 
   const faqs = t.raw('items') as Array<{ question: string; answer: string }>;
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '212600000000';
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hi! I have a question about Bahia Palace tickets.')}`;
+  const whatsappNumber = getWhatsAppNumber();
+  const whatsappUrl = whatsappNumber
+    ? buildWhatsAppUrl(whatsappNumber, 'Hi! I have a question about Bahia Palace tickets.')
+    : null;
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -98,15 +101,17 @@ export default async function FaqPage({ params }: Props) {
             {t('stillNeedHelp')}
           </h2>
           <p className="text-sm text-[#5C3D20] mb-4">{t('teamAvail')}</p>
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#25D366] font-semibold hover:underline"
-          >
-            <MessageCircle size={16} />
-            {t('whatsappUs')}
-          </a>
+          {whatsappUrl && (
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[#25D366] font-semibold hover:underline"
+            >
+              <MessageCircle size={16} />
+              {t('whatsappUs')}
+            </a>
+          )}
         </div>
       </div>
     </div>

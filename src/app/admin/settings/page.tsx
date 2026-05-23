@@ -23,8 +23,8 @@ export default async function SettingsPage() {
   const count = await prisma.siteSetting.count();
   if (count === 0) {
     const defaults = [
-      { key: 'whatsapp_number',    value: '+212600000000' },
-      { key: 'contact_phone',      value: '+212600000000' },
+      { key: 'whatsapp_number',    value: '' },
+      { key: 'contact_phone',      value: '' },
       { key: 'contact_email',      value: 'contact@bahia-palace.com' },
       { key: 'contact_address',    value: 'Rue Riad Zitoun el Jedid, Marrakech Medina' },
       { key: 'opening_hours',      value: '09:00 – 17:00 (daily)' },

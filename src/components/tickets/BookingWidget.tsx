@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { CheckCircle2, MessageCircle, ExternalLink } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/booking';
+import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
 
 interface BookingWidgetProps {
   price: number;
@@ -12,9 +13,10 @@ export function BookingWidget({ price, ticketName }: BookingWidgetProps) {
   const t  = useTranslations('ticketDetail');
   const tt = useTranslations('tickets');
 
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '212600000000';
-  const whatsappMsg = encodeURIComponent(t('whatsappMsg', { ticket: ticketName }));
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMsg}`;
+  const whatsappNumber = getWhatsAppNumber();
+  const whatsappUrl = whatsappNumber
+    ? buildWhatsAppUrl(whatsappNumber, t('whatsappMsg', { ticket: ticketName }))
+    : null;
 
   return (
     <div className="bg-white rounded-2xl border border-[#E8D5B7] shadow-[0_4px_24px_rgba(61,40,23,0.1)] overflow-hidden">
@@ -66,16 +68,18 @@ export function BookingWidget({ price, ticketName }: BookingWidgetProps) {
           ))}
         </div>
 
-        {/* WhatsApp */}
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-sm text-[#25D366] font-semibold hover:underline"
-        >
-          <MessageCircle size={15} />
-          {t('whatsappCta')}
-        </a>
+        {/* WhatsApp — hidden until a real number is configured */}
+        {whatsappUrl && (
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-[#25D366] font-semibold hover:underline"
+          >
+            <MessageCircle size={15} />
+            {t('whatsappCta')}
+          </a>
+        )}
       </div>
     </div>
   );

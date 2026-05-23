@@ -2,14 +2,16 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import { MessageCircle } from 'lucide-react';
+import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
 
 export function WhatsAppButton() {
   const t = useTranslations('whatsapp');
   const locale = useLocale();
 
-  const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '212600000000';
-  const message = encodeURIComponent(t('message'));
-  const href = `https://wa.me/${number}?text=${message}`;
+  const number = getWhatsAppNumber();
+  if (!number) return null;
+
+  const href = buildWhatsAppUrl(number, t('message'));
 
   const handleClick = () => {
     // Fire analytics event
