@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import prisma from '@/lib/db';
 import { verifyAdminToken, ADMIN_COOKIE } from '@/lib/auth';
+import { validateSlug, validateTitle, validateContentForPublish } from '@/lib/blog-validation';
 
 async function requireAdmin() {
   const store = await cookies();
@@ -21,6 +22,12 @@ export async function POST(req: NextRequest) {
     if (!body.title || !body.slug) {
       return NextResponse.json({ error: 'Title and slug are required' }, { status: 400 });
     }
+
+    const slugErr  = validateSlug(body.slug);
+    const titleErr = validateTitle(body.title);
+    const contentErr = body.published ? validateContentForPublish(body.content) : undefined;
+    const firstErr = slugErr ?? titleErr ?? contentErr;
+    if (firstErr) return NextResponse.json({ error: firstErr }, { status: 422 });
 
     const post = await prisma.blogPost.create({
       data: {

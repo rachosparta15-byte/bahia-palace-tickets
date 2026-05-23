@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import prisma from '@/lib/db';
 import { verifyAdminToken, ADMIN_COOKIE } from '@/lib/auth';
+import { validateSlug, validateTitle, validateContentForPublish } from '@/lib/blog-validation';
 
 async function requireAdmin() {
   const store = await cookies();
@@ -24,6 +25,14 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
 
     const wasUnpublished = !existing.published;
     const nowPublished   = body.published === true;
+
+    if (body.slug  !== undefined) { const e = validateSlug(body.slug);   if (e) return NextResponse.json({ error: e }, { status: 422 }); }
+    if (body.title !== undefined) { const e = validateTitle(body.title); if (e) return NextResponse.json({ error: e }, { status: 422 }); }
+    if (wasUnpublished && nowPublished) {
+      const contentToCheck = body.content ?? existing.content;
+      const e = validateContentForPublish(contentToCheck);
+      if (e) return NextResponse.json({ error: e }, { status: 422 });
+    }
 
     await prisma.blogPost.update({
       where: { id },
