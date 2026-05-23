@@ -37,7 +37,7 @@ export function BookingWidget({ price, ticketName }: BookingWidgetProps) {
           <p className="text-xs text-[#5C3D20] uppercase tracking-wide mb-1">{tt('from')}</p>
           <p className="text-4xl font-bold text-[#C4452D] leading-none tabular-nums lining-nums"
              style={{ fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif', fontVariantNumeric: 'lining-nums tabular-nums' }}>
-            {price} MAD
+            ${price}
             <span className="text-sm font-normal text-[#5C3D20] ml-1.5">{tt('perPerson')}</span>
           </p>
         </div>
