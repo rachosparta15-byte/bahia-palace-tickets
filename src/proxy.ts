@@ -9,12 +9,13 @@ export default async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   if (pathname.startsWith('/admin')) {
-    // Protect all admin routes except the login page itself
+    // Protect all admin routes except the login page itself.
+    // Return 404 (not redirect) so scanners cannot confirm the admin panel exists.
     if (pathname !== '/admin/login') {
       const token = req.cookies.get(ADMIN_COOKIE)?.value;
       const valid = token ? !!(await verifyAdminToken(token)) : false;
       if (!valid) {
-        return NextResponse.redirect(new URL('/admin/login', req.url));
+        return new NextResponse(null, { status: 404 });
       }
     }
     // Forward pathname so the admin layout can conditionally show the sidebar
