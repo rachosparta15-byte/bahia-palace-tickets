@@ -40,10 +40,16 @@ export default function AdminGalleryPage() {
 
   async function load() {
     setLoading(true);
-    const res = await fetch('/api/admin/gallery');
-    const data = await res.json() as GalleryImage[];
-    setImages(data);
-    setLoading(false);
+    try {
+      const res = await fetch('/api/admin/gallery');
+      const data = await res.json();
+      setImages(Array.isArray(data) ? data : []);
+      if (!res.ok) setError((data as { error?: string }).error ?? 'Failed to load');
+    } catch {
+      setError('Network error — could not load gallery');
+    } finally {
+      setLoading(false);
+    }
   }
 
   useEffect(() => { load(); }, []);
