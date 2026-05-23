@@ -1,6 +1,8 @@
 import { getTranslations } from 'next-intl/server';
 import prisma from '@/lib/db';
-import { AlertTriangle } from 'lucide-react';
+import Image from 'next/image';
+import { Link } from '@/i18n/navigation';
+import { AlertTriangle, ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/seo/JsonLd';
 import type { Metadata } from 'next';
 
@@ -35,10 +37,17 @@ const ICON_MAP: Record<string, string> = {
 export default async function SafetyPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'nav' });
-  const tips = await prisma.safetyTip.findMany({
-    where: { published: true },
-    orderBy: { order: 'asc' },
-  });
+  const [tips, articles] = await Promise.all([
+    prisma.safetyTip.findMany({
+      where: { published: true },
+      orderBy: { order: 'asc' },
+    }),
+    prisma.blogPost.findMany({
+      where: { published: true, category: 'safety', locale },
+      orderBy: { publishedAt: 'desc' },
+      select: { slug: true, title: true, excerpt: true, coverImage: true },
+    }),
+  ]);
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -110,6 +119,54 @@ export default async function SafetyPage({ params }: { params: Promise<{ locale:
             Stay vigilant and enjoy your visit to Bahia Palace. When in doubt, ask official staff inside the palace.
           </p>
         </div>
+
+        {/* Safety articles */}
+        {articles.length > 0 && (
+          <section className="mt-16">
+            <h2
+              className="text-2xl font-bold text-[#3D2817] mb-6"
+              style={{ fontFamily: 'Cormorant Garamond, serif' }}
+            >
+              In-depth safety guides
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {articles.map(article => (
+                <Link
+                  key={article.slug}
+                  href={`/blog/${article.slug}` as any}
+                  className="group bg-white rounded-2xl border border-[#E8D5B7] overflow-hidden hover:shadow-md transition-shadow flex flex-col"
+                >
+                  <div className="relative h-40 overflow-hidden">
+                    <Image
+                      src={article.coverImage ?? 'https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=800&q=75'}
+                      alt={article.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#3D2817]/50 to-transparent" />
+                  </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <h3
+                      className="font-bold text-[#3D2817] mb-2 leading-snug flex-1"
+                      style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.05rem' }}
+                    >
+                      {article.title}
+                    </h3>
+                    {article.excerpt && (
+                      <p className="text-xs text-[#5C3D20] leading-relaxed mb-3 line-clamp-2">
+                        {article.excerpt}
+                      </p>
+                    )}
+                    <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#C4452D] group-hover:underline mt-auto">
+                      Read guide <ArrowRight size={12} />
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );

@@ -146,7 +146,7 @@ async function main() {
   /* ─── 3. Summer heat ────────────────────────────────────────── */
   await seed('marrakech-summer-heat-too-hot-what-to-expect-2026', {
     title: 'Is Marrakech Too Hot in Summer? What to Expect & How to Cope (2026)',
-    category: 'visit-tips',
+    category: 'safety',
     excerpt: 'July and August in Marrakech regularly hit 40°C. It\'s genuinely intense — but completely manageable with the right approach. Here\'s what to expect and what not to do.',
     seoTitle: 'Marrakech Summer Heat 2026: Is It Too Hot? How to Cope',
     seoDesc: 'Is Marrakech too hot in summer? Honest guide to July–August heat in Marrakech: real temperatures, best times to go out, and how to avoid heatstroke.',
@@ -234,7 +234,7 @@ async function main() {
   /* ─── 4. Do they speak English ──────────────────────────────── */
   await seed('do-they-speak-english-marrakech-language-guide-2026', {
     title: 'Do They Speak English in Marrakech? A Practical Language Guide (2026)',
-    category: 'visit-tips',
+    category: 'safety',
     excerpt: 'English works fine in tourist areas. Outside them, it gets patchier. Here\'s exactly where you\'ll be understood, where you won\'t, and the 10 words that open every door.',
     seoTitle: 'Do They Speak English in Marrakech? Language Guide 2026',
     seoDesc: 'Do people speak English in Marrakech? Honest 2026 guide: where English works, where it doesn\'t, and the key Arabic and French phrases every visitor needs.',
@@ -316,7 +316,7 @@ async function main() {
   /* ─── 5. Vaccinations ───────────────────────────────────────── */
   await seed('vaccinations-marrakech-morocco-what-you-need-2026', {
     title: 'Do You Need Vaccinations for Marrakech? (2026 Health Guide)',
-    category: 'visit-tips',
+    category: 'safety',
     excerpt: 'No mandatory vaccines are required to enter Morocco. But there are 3 that doctors consistently recommend. Here\'s what to know and when to book your appointment.',
     seoTitle: 'Vaccinations for Marrakech 2026: What You Actually Need',
     seoDesc: 'Do you need vaccinations to visit Marrakech in 2026? No mandatory jabs required — but here\'s what doctors recommend and the health prep that actually matters.',
