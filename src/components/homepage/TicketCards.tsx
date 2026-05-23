@@ -163,6 +163,7 @@ export function TicketCards({ overrides = {} }: Props) {
                     fill
                     className="object-cover"
                     sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
+                    priority={i === 0}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1a0e06]/60 to-transparent" />
                   {/* Tier badge */}
