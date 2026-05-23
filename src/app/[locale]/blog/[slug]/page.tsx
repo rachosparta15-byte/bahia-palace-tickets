@@ -8,7 +8,6 @@ import { Clock, ArrowRight, User } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import prisma from '@/lib/db';
 import type { Metadata } from 'next';
-import DOMPurify from 'isomorphic-dompurify';
 
 const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://visitbahiapalace.com';
 
@@ -106,7 +105,7 @@ export default async function BlogPostPage({ params }: Props) {
   const catLabel = t(`categories.${post.category}` as any) as string;
   const mins     = readTime(post.content);
 
-  const safeContent = DOMPurify.sanitize(post.content ?? '');
+  const safeContent = post.content ?? '';
 
   const related = await prisma.blogPost.findMany({
     where:   { locale, published: true, id: { not: post.id } },

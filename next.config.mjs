@@ -41,7 +41,6 @@ if (!_wa || _wa.replace(/^\+/, '') === '212600000000') {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  serverExternalPackages: ['isomorphic-dompurify', 'jsdom'],
   async redirects() {
     return [
       {
