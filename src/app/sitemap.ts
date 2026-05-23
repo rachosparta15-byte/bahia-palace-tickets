@@ -7,10 +7,12 @@ const LOCALES = ['en', 'fr', 'it', 'de', 'es'] as const;
 const STATIC: { path: string; priority: number; freq: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
   { path: '',                priority: 1.0,  freq: 'weekly'  },
   { path: '/tickets',        priority: 0.95, freq: 'weekly'  },
+  { path: '/entrance-fee',   priority: 0.92, freq: 'monthly' },
   { path: '/opening-hours',  priority: 0.90, freq: 'monthly' },
   { path: '/location',       priority: 0.88, freq: 'monthly' },
   { path: '/history',        priority: 0.85, freq: 'monthly' },
   { path: '/safety',         priority: 0.82, freq: 'weekly'  },
+  { path: '/safety-guide',   priority: 0.80, freq: 'monthly' },
   { path: '/blog',           priority: 0.78, freq: 'weekly'  },
   { path: '/faq',            priority: 0.75, freq: 'monthly' },
   { path: '/gallery',        priority: 0.72, freq: 'monthly' },
