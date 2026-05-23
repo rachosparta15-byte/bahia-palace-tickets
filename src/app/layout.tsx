@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import { Cormorant_Garamond, Inter, Amiri } from 'next/font/google';
 import './globals.css';
 
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         {children}
         <Analytics />
+        <GoogleAnalytics />
       </body>
     </html>
   );
