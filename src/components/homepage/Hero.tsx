@@ -21,7 +21,7 @@ export function Hero() {
 
       {/* TOP — badge pill */}
       <div className="hero-badge relative z-10 pt-24 pb-4 px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto flex justify-center">
           {/* Spinning border wrapper */}
           <div className="relative inline-flex p-[2px] rounded-full overflow-hidden">
             {/* Rotating gradient border */}
