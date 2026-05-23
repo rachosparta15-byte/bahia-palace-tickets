@@ -8,7 +8,7 @@ export function Hero() {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1570133435536-7ececf000ef6?w=1600&q=80"
+          src="/images/gallery/bahia-palace-inner-courtyard-central-fountain-stucco.jpg"
           alt="Bahia Palace interior courtyard with zellige tiles and arched columns"
           fill
           className="object-cover"
