@@ -1,5 +1,4 @@
 import { ArrowRight, Clock, CheckCircle2 } from 'lucide-react';
-import Image from 'next/image';
 import { BOOKING_URL } from '@/lib/booking';
 
 export function Hero() {
@@ -7,13 +6,13 @@ export function Hero() {
     <section className="relative flex flex-col overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/gallery/bahia-palace-inner-courtyard-central-fountain-stucco.jpg"
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/hero-bg.webp"
           alt="Bahia Palace interior courtyard with zellige tiles and arched columns"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
+          className="absolute inset-0 w-full h-full object-cover"
+          fetchPriority="high"
+          decoding="sync"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#3D2817]/90 via-[#3D2817]/65 to-[#3D2817]/35" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#3D2817]/40 via-transparent to-[#3D2817]/60" />

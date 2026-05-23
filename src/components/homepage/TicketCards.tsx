@@ -3,7 +3,6 @@
 import { useTranslations } from 'next-intl';
 import { BOOKING_URL } from '@/lib/booking';
 import { Check, ArrowRight, Clock, Star, Zap, ChevronRight } from 'lucide-react';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const TICKET_IMAGES = {
@@ -45,10 +44,6 @@ const TICKET_SLUGS: Record<TicketKey, string> = {
 
 const TIER_NUMS = ['01', '02', '03', '04'];
 
-const fadeUp = (i: number) => ({
-  hidden:  { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.45, delay: i * 0.08, ease: 'easeOut' as const } },
-});
 
 interface TicketOverride {
   price?: number;
@@ -133,13 +128,8 @@ export function TicketCards({ overrides = {} }: Props) {
             const includes  = (t.raw(`${key}.includes` as any) as string[]).slice(0, 3);
 
             return (
-              <motion.div
+              <div
                 key={slug}
-                custom={i}
-                variants={fadeUp(i)}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.1 }}
                 className={`relative flex flex-col rounded-2xl overflow-hidden border transition-all
                   ${live
                     ? 'bg-white border-[#C4452D] shadow-[0_12px_48px_rgba(196,69,45,0.28)] lg:scale-[1.07] lg:-translate-y-2 lg:z-10'
@@ -244,7 +234,7 @@ export function TicketCards({ overrides = {} }: Props) {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>

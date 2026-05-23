@@ -2,7 +2,6 @@
 
 import { useTranslations } from 'next-intl';
 import { Star, Quote } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { OrnamentDivider } from '@/components/ui/ZelligePattern';
 
 // Placeholder reviews — replace with DB-driven data from admin panel
@@ -63,12 +62,8 @@ export function ReviewsCarousel() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {REVIEWS.slice(0, 3).map((review, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
               className="bg-[#5C3D20]/30 rounded-2xl p-4 sm:p-6 border border-[#5C3D20] relative"
             >
               <Quote size={28} className="text-[#E8A33D]/30 absolute top-4 right-4" />
@@ -87,7 +82,7 @@ export function ReviewsCarousel() {
                   <p className="text-[#C4A882] text-xs">{review.country}</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
