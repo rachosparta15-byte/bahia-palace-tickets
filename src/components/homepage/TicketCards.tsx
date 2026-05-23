@@ -6,7 +6,7 @@ import { Check, ArrowRight, Clock, Star, Zap, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 
 const TICKET_IMAGES = {
-  'skip-the-line':       'https://images.unsplash.com/photo-1663297824621-27c5ff4cc826?w=800&q=80',
+  'skip-the-line':       '/images/ticket-skip-the-line.webp',
   'guided-tour':         'https://images.unsplash.com/photo-1678030560595-85b1efd78392?w=800&q=80',
   'private-tour':        'https://images.unsplash.com/photo-1705600974255-f36a837ebd97?w=800&q=80',
   'combo-saadian-tombs': 'https://images.unsplash.com/photo-1572018350822-3c2bbfcba459?w=800&q=80',
