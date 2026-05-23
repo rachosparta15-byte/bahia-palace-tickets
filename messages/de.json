@@ -35,8 +35,17 @@
       "name": "Skip-the-Line Eintrittskarte",
       "tagline": "Schnellzugang zum Bahia Palast",
       "duration": "Selbstführung • ~1–2 Stunden",
-      "includes": ["Prioritäts-Eintrittskarte", "Mobile oder gedruckte Karte", "Sofortige Bestätigung", "Kostenlose Stornierung 24 Std. vorher"],
-      "excludes": ["Führungskommentar", "Transport zum Palast", "Essen & Getränke"],
+      "includes": [
+        "Prioritäts-Eintrittskarte",
+        "Mobile oder gedruckte Karte",
+        "Sofortige Bestätigung",
+        "Kostenlose Stornierung 24 Std. vorher"
+      ],
+      "excludes": [
+        "Führungskommentar",
+        "Transport zum Palast",
+        "Essen & Getränke"
+      ],
       "meetingPoint": "Haupteingang des Bahia Palastes, Rue Riad Zitoun el Jedid, Medina von Marrakesch",
       "longDesc": "Überspringen Sie die Kassenschlange und treten Sie direkt in einen der prächtigsten Paläste Marrakeschs ein. Ihr vorvalidiertes QR-Ticket bedeutet null verschwendete Zeit. Erkunden Sie in Ihrem eigenen Tempo — die meisten Besucher verbringen 1 bis 2 Stunden damit, die aufwendigen Zellij-Kacheln, geschnitzten Zedernholzdecken und üppigen Innengärten zu entdecken.",
       "whyOnline": "Wartezeiten bis zu 2 Stunden — online buchen und direkt eintreten"
@@ -45,8 +54,18 @@
       "name": "Expertengeführte Tour",
       "tagline": "Entdecken Sie die Geheimnisse des Palastes mit einem lokalen Führer",
       "duration": "Geführt • ~2 Stunden",
-      "includes": ["Skip-the-Line-Zugang", "Zertifizierter lokaler Führer", "Geschichte und Geschichten", "Kleine Gruppe (max. 12)", "Kostenlose Stornierung 24 Std. vorher"],
-      "excludes": ["Transport zum Palast", "Essen & Getränke", "Trinkgelder (optional)"],
+      "includes": [
+        "Skip-the-Line-Zugang",
+        "Zertifizierter lokaler Führer",
+        "Geschichte und Geschichten",
+        "Kleine Gruppe (max. 12)",
+        "Kostenlose Stornierung 24 Std. vorher"
+      ],
+      "excludes": [
+        "Transport zum Palast",
+        "Essen & Getränke",
+        "Trinkgelder (optional)"
+      ],
       "meetingPoint": "Haupteingang des Bahia Palastes — achten Sie auf den Führer mit dem Bahia Palace Tickets-Schild",
       "longDesc": "Entdecken Sie die wahren Geheimnisse des Bahia Palastes mit einem leidenschaftlichen zertifizierten Führer. Erfahren Sie, warum der Palast im Geheimen gebaut wurde, und enthüllen Sie Geschichten, die Sie in keinem Reiseführer finden werden. Kleine Gruppen von maximal 12 Personen garantieren ein persönliches Erlebnis.",
       "whyOnline": "Zertifizierte Führer sind schnell ausgebucht — jetzt online buchen"
@@ -55,8 +74,17 @@
       "name": "Privatführung",
       "tagline": "Exklusives Palasterlebnis nur für Sie",
       "duration": "Privat • ~2,5 Stunden",
-      "includes": ["Privater zertifizierter Führer", "Skip-the-Line-Zugang", "Persönliches Erlebnis", "Flexibler Zeitplan", "Kostenlose Stornierung 24 Std. vorher"],
-      "excludes": ["Transport zum Palast", "Essen & Getränke"],
+      "includes": [
+        "Privater zertifizierter Führer",
+        "Skip-the-Line-Zugang",
+        "Persönliches Erlebnis",
+        "Flexibler Zeitplan",
+        "Kostenlose Stornierung 24 Std. vorher"
+      ],
+      "excludes": [
+        "Transport zum Palast",
+        "Essen & Getränke"
+      ],
       "meetingPoint": "Haupteingang des Bahia Palastes — Ihr privater Führer erwartet Sie dort",
       "longDesc": "Das ultimative Bahia Palast-Erlebnis. Ihr privater zertifizierter Führer widmet den gesamten Besuch Ihnen und Ihrer Gruppe. Gehen Sie in Ihrem eigenen Tempo, stellen Sie alle Fragen und erkunden Sie Bereiche nach Belieben. Perfekt für Familien, Paare und alle, die die Geschichte des Palastes exklusiv erzählt bekommen möchten.",
       "whyOnline": "Voranmeldung erforderlich — Privatführungen nicht vor Ort buchbar"
@@ -65,8 +93,18 @@
       "name": "Kombi: Bahia + Saadier-Gräber",
       "tagline": "Zwei ikonische Marrakescher Sehenswürdigkeiten an einem Tag",
       "duration": "Selbstführung • ~3–4 Stunden",
-      "includes": ["Bahia Palast Eintritt", "Saadier-Gräber Eintritt", "Skip-the-Line an beiden Standorten", "Flexible Zeiten", "Kostenlose Stornierung 24 Std. vorher"],
-      "excludes": ["Führungskommentar", "Transport zwischen den Standorten", "Essen & Getränke"],
+      "includes": [
+        "Bahia Palast Eintritt",
+        "Saadier-Gräber Eintritt",
+        "Skip-the-Line an beiden Standorten",
+        "Flexible Zeiten",
+        "Kostenlose Stornierung 24 Std. vorher"
+      ],
+      "excludes": [
+        "Führungskommentar",
+        "Transport zwischen den Standorten",
+        "Essen & Getränke"
+      ],
       "meetingPoint": "Zuerst Haupteingang Bahia Palast, dann Saadier-Gräber (10 Minuten Fußweg)",
       "longDesc": "Zwei der atemberaubendsten historischen Sehenswürdigkeiten Marrakeschs, ein praktisches Ticket. Beginnen Sie bei den glänzenden Innenhöfen des Bahia Palastes, dann gehen Sie 10 Minuten zu den Saadier-Gräbern — prunkvolle königliche Mausoleen, die 200 Jahre versiegelt und erst 1917 wiederentdeckt wurden. Bestes Preis-Leistungs-Verhältnis für Geschichtsliebhaber.",
       "whyOnline": "Kombiticket nur online erhältlich — spart Zeit an beiden Standorten"
@@ -75,10 +113,22 @@
   "whyUs": {
     "title": "Warum bei uns buchen?",
     "items": [
-      { "title": "Sofortige Ticketzustellung", "desc": "Erhalten Sie Ihr Ticket innerhalb von Sekunden per E-Mail. Kein Warten, keine Unsicherheit." },
-      { "title": "Garantierter Einlass", "desc": "Ihr Ticket ist vorvalidiert. Zeigen Sie einfach Ihr Handy und gehen Sie direkt hinein." },
-      { "title": "Lokale Expertise", "desc": "Wir sind in Marrakesch ansässig. Wir kennen den Palast in- und auswendig." },
-      { "title": "Sicher & Privat", "desc": "Ihre Zahlung und Daten sind mit bankähnlicher Verschlüsselung geschützt." }
+      {
+        "title": "Sofortige Ticketzustellung",
+        "desc": "Erhalten Sie Ihr Ticket innerhalb von Sekunden per E-Mail. Kein Warten, keine Unsicherheit."
+      },
+      {
+        "title": "Garantierter Einlass",
+        "desc": "Ihr Ticket ist vorvalidiert. Zeigen Sie einfach Ihr Handy und gehen Sie direkt hinein."
+      },
+      {
+        "title": "Lokale Expertise",
+        "desc": "Wir sind in Marrakesch ansässig. Wir kennen den Palast in- und auswendig."
+      },
+      {
+        "title": "Sicher & Privat",
+        "desc": "Ihre Zahlung und Daten sind mit bankähnlicher Verschlüsselung geschützt."
+      }
     ]
   },
   "about": {
@@ -218,7 +268,13 @@
   "faqPage": {
     "title": "Häufig Gestellte Fragen",
     "subtitle": "Alles, was Sie über den Besuch des Bahia Palastes wissen müssen",
-    "categories": { "booking": "Buchung & Zahlung", "tickets": "Tickets & Einlass", "palace": "Der Palast", "service": "Unser Service", "safety": "Sicherheit & Praktisches" },
+    "categories": {
+      "booking": "Buchung & Zahlung",
+      "tickets": "Tickets & Einlass",
+      "palace": "Der Palast",
+      "service": "Unser Service",
+      "safety": "Sicherheit & Praktisches"
+    },
     "all": "Alle Fragen",
     "stillNeedHelp": "Haben Sie noch eine Frage?",
     "whatsappUs": "WhatsApp uns für sofortige Hilfe →",
@@ -228,21 +284,86 @@
     "ctaBtn": "Alle Ticket-Optionen ansehen",
     "teamAvail": "Unser Team ist täglich von 8–20 Uhr Marrakesch-Zeit erreichbar.",
     "items": [
-      { "question": "Lohnt sich ein Besuch des Bahia Palastes 2026?", "answer": "Absolut. Der Bahia Palast ist eines der besten erhaltenen Beispiele marokkanischer Architektur aus dem 19. Jahrhundert. Mit 150 Räumen, aufwendigen Zellij-Kacheln, handbemalten Zedernholzdecken und üppigen Innengärten bietet er einen unvergleichlichen Einblick in das marokkanische Königsleben. Zu 70 MAD (≈7$) ist es ein außergewöhnliches Preis-Leistungs-Verhältnis — und mit einem Skip-the-Line-Ticket wird das Erlebnis vollkommen entspannt." },
-      { "question": "Wie viel kostet der Eintritt in den Bahia Palast?", "answer": "Der offizielle Eintrittspreis beträgt 70 MAD (ca. 7$ USD oder 6,50€). Kinder unter 12 Jahren haben freien Eintritt, Studenten mit gültigem Ausweis zahlen 35 MAD. Online gebuchte Skip-the-Line-Tickets beginnen ab 10$ — inklusive Prioritätszugang und ohne lange Warteschlangen." },
-      { "question": "Wie lange benötigt man für den Bahia Palast?", "answer": "Die meisten Besucher verbringen 1 bis 1,5 Stunden bei einer selbstgeführten Tour. Mit einer Führung sollten Sie 1,5 bis 2 Stunden einplanen. Privatführungen sind flexibel und können bis zu 2,5 Stunden dauern. Wir empfehlen, früh morgens anzukommen (9–10 Uhr)." },
-      { "question": "Wann ist die beste Zeit für einen Besuch?", "answer": "Die beste Zeit ist zwischen 9 und 10:30 Uhr — wenig Besucher und schönes Morgenlicht ideal für Fotos. Meiden Sie 10:30–14 Uhr, wenn Reisegruppen ankommen. Frühling (März–Mai) und Herbst (September–November) bieten die angenehmsten Temperaturen (20–28°C)." },
-      { "question": "Ist der Eintritt kostenlos?", "answer": "Nein, der Eintritt kostet 70 MAD (≈7$ USD) für Erwachsene. Kinder unter 12 Jahren haben freien Eintritt, Studenten mit gültigem Ausweis zahlen 35 MAD. Fotografieren ist im Ticketpreis enthalten." },
-      { "question": "Wie komme ich vom Jemaa el-Fnaa zum Bahia Palast?", "answer": "Der Bahia Palast ist 10–15 Minuten südlich des Jemaa el-Fnaa durch die Medina zu Fuß erreichbar. Folgen Sie den Schildern für 'Palais Bahia' oder nutzen Sie Google Maps. Ein Petit Taxi dauert etwa 5 Minuten und kostet 15–25 MAD. Die Adresse ist Rue Riad Zitoun el Jedid, Medina Marrakesch." },
-      { "question": "Lohnen sich Führungen im Bahia Palast?", "answer": "Ja, besonders beim ersten Besuch. Der Palast hat 150 Räume und historische Schichten, die ohne Erklärung unsichtbar bleiben. Ein Führer erzählt von Ba Ahmeds politischem Aufstieg und warum der Palast nach seinem Tod 1900 über Nacht geplündert wurde. Unsere zertifizierten Führer sprechen Englisch, Französisch, Spanisch und Deutsch." },
-      { "question": "Wofür ist der Bahia Palast bekannt?", "answer": "Der Bahia Palast ist für sein außergewöhnliches marokkanisches Handwerk bekannt — insbesondere die handgeschnittenen Zellij-Kachelmosaike, aufwendig geschnitzte Stuckarbeiten und bemalte Zedernholzdecken. Er ist einer der größten Paläste Marrakeschs mit 8 Hektar und 150 Räumen." },
-      { "question": "Kann man den Palast ohne Führung besichtigen?", "answer": "Ja, der Bahia Palast kann selbstständig besichtigt werden. Besucher erkunden ihn bequem in 1 bis 1,5 Stunden. Es gibt keinen offiziellen Audioguide vor Ort, daher wird eine geführte Tour empfohlen, wenn Sie die vollständige Geschichte kennenlernen möchten." },
-      { "question": "Ist der Bahia Palast für Kinder geeignet?", "answer": "Ja, sehr familienfreundlich. Kinder unter 12 Jahren haben freien Eintritt. Die offenen Innenhöfe, bunten Kacheln und Gärten begeistern junge Besucher. Das Gelände ist überwiegend flach und mit Kinderwagen zugänglich." },
-      { "question": "Was soll ich im Bahia Palast tragen?", "answer": "Keine strikte Kleiderordnung, aber dezente Kleidung wird empfohlen — Schultern und Knie bedecken. Bequeme Schuhe sind unbedingt erforderlich, da die Böden aus poliertem Marmor, Zellij-Kacheln und Stein bestehen." },
-      { "question": "Ist Fotografieren erlaubt?", "answer": "Ja, Fotografieren ist im gesamten Palast für den persönlichen Gebrauch kostenlos erlaubt. Das beste Licht ist früh morgens (9–10:30 Uhr). Stative und professionelle Ausrüstung benötigen eine spezielle Genehmigung." },
-      { "question": "Wie buche ich Skip-the-Line-Tickets?", "answer": "Wählen Sie Ihr Besuchsdatum und die Personenanzahl auf dieser Website, wählen Sie die Skip-the-Line-Option und schließen Sie die sichere Zahlung ab. Sie erhalten Ihr Ticket innerhalb von Sekunden per E-Mail — ein QR-Code zum Vorzeigen auf dem Handy." },
-      { "question": "Kann ich mein Ticket stornieren oder ändern?", "answer": "Ja, alle Tickets beinhalten kostenlose Stornierung bis zu 24 Stunden vor dem geplanten Besuch. Klicken Sie auf den Link in Ihrer Buchungsbestätigung oder kontaktieren Sie uns per WhatsApp. Rückerstattungen werden innerhalb von 5–7 Werktagen bearbeitet." },
-      { "question": "Was gibt es in der Nähe des Bahia Palastes zu sehen?", "answer": "Die Saadier-Gräber sind 7 Minuten zu Fuß entfernt. Die Ruinen des El Badi Palastes sind 10 Minuten entfernt. Der Jemaa el-Fnaa-Platz ist 15 Minuten nördlich. Die meisten Besucher kombinieren den Bahia Palast mit den Saadier-Gräbern an einem halben Tag." }
+      {
+        "question": "Lohnt sich ein Besuch des Bahia Palastes 2026?",
+        "answer": "Absolut. Der Bahia Palast ist eines der besten erhaltenen Beispiele marokkanischer Architektur aus dem 19. Jahrhundert. Mit 150 Räumen, aufwendigen Zellij-Kacheln, handbemalten Zedernholzdecken und üppigen Innengärten bietet er einen unvergleichlichen Einblick in das marokkanische Königsleben. Zu 70 MAD (≈7$) ist es ein außergewöhnliches Preis-Leistungs-Verhältnis — und mit einem Skip-the-Line-Ticket wird das Erlebnis vollkommen entspannt."
+      },
+      {
+        "question": "Wie viel kostet der Eintritt in den Bahia Palast?",
+        "answer": "Der offizielle Eintrittspreis beträgt 70 MAD (ca. 7$ USD oder 6,50€). Kinder unter 12 Jahren haben freien Eintritt, Studenten mit gültigem Ausweis zahlen 35 MAD. Online gebuchte Skip-the-Line-Tickets beginnen ab 10$ — inklusive Prioritätszugang und ohne lange Warteschlangen."
+      },
+      {
+        "question": "Wie lange benötigt man für den Bahia Palast?",
+        "answer": "Die meisten Besucher verbringen 1 bis 1,5 Stunden bei einer selbstgeführten Tour. Mit einer Führung sollten Sie 1,5 bis 2 Stunden einplanen. Privatführungen sind flexibel und können bis zu 2,5 Stunden dauern. Wir empfehlen, früh morgens anzukommen (9–10 Uhr)."
+      },
+      {
+        "question": "Wann ist die beste Zeit für einen Besuch?",
+        "answer": "Die beste Zeit ist zwischen 9 und 10:30 Uhr — wenig Besucher und schönes Morgenlicht ideal für Fotos. Meiden Sie 10:30–14 Uhr, wenn Reisegruppen ankommen. Frühling (März–Mai) und Herbst (September–November) bieten die angenehmsten Temperaturen (20–28°C)."
+      },
+      {
+        "question": "Ist der Eintritt kostenlos?",
+        "answer": "Nein, der Eintritt kostet 70 MAD (≈7$ USD) für Erwachsene. Kinder unter 12 Jahren haben freien Eintritt, Studenten mit gültigem Ausweis zahlen 35 MAD. Fotografieren ist im Ticketpreis enthalten."
+      },
+      {
+        "question": "Wie komme ich vom Jemaa el-Fnaa zum Bahia Palast?",
+        "answer": "Der Bahia Palast ist 10–15 Minuten südlich des Jemaa el-Fnaa durch die Medina zu Fuß erreichbar. Folgen Sie den Schildern für 'Palais Bahia' oder nutzen Sie Google Maps. Ein Petit Taxi dauert etwa 5 Minuten und kostet 15–25 MAD. Die Adresse ist Rue Riad Zitoun el Jedid, Medina Marrakesch."
+      },
+      {
+        "question": "Lohnen sich Führungen im Bahia Palast?",
+        "answer": "Ja, besonders beim ersten Besuch. Der Palast hat 150 Räume und historische Schichten, die ohne Erklärung unsichtbar bleiben. Ein Führer erzählt von Ba Ahmeds politischem Aufstieg und warum der Palast nach seinem Tod 1900 über Nacht geplündert wurde. Unsere zertifizierten Führer sprechen Englisch, Französisch, Spanisch und Deutsch."
+      },
+      {
+        "question": "Wofür ist der Bahia Palast bekannt?",
+        "answer": "Der Bahia Palast ist für sein außergewöhnliches marokkanisches Handwerk bekannt — insbesondere die handgeschnittenen Zellij-Kachelmosaike, aufwendig geschnitzte Stuckarbeiten und bemalte Zedernholzdecken. Er ist einer der größten Paläste Marrakeschs mit 8 Hektar und 150 Räumen."
+      },
+      {
+        "question": "Kann man den Palast ohne Führung besichtigen?",
+        "answer": "Ja, der Bahia Palast kann selbstständig besichtigt werden. Besucher erkunden ihn bequem in 1 bis 1,5 Stunden. Es gibt keinen offiziellen Audioguide vor Ort, daher wird eine geführte Tour empfohlen, wenn Sie die vollständige Geschichte kennenlernen möchten."
+      },
+      {
+        "question": "Ist der Bahia Palast für Kinder geeignet?",
+        "answer": "Ja, sehr familienfreundlich. Kinder unter 12 Jahren haben freien Eintritt. Die offenen Innenhöfe, bunten Kacheln und Gärten begeistern junge Besucher. Das Gelände ist überwiegend flach und mit Kinderwagen zugänglich."
+      },
+      {
+        "question": "Was soll ich im Bahia Palast tragen?",
+        "answer": "Keine strikte Kleiderordnung, aber dezente Kleidung wird empfohlen — Schultern und Knie bedecken. Bequeme Schuhe sind unbedingt erforderlich, da die Böden aus poliertem Marmor, Zellij-Kacheln und Stein bestehen."
+      },
+      {
+        "question": "Ist Fotografieren erlaubt?",
+        "answer": "Ja, Fotografieren ist im gesamten Palast für den persönlichen Gebrauch kostenlos erlaubt. Das beste Licht ist früh morgens (9–10:30 Uhr). Stative und professionelle Ausrüstung benötigen eine spezielle Genehmigung."
+      },
+      {
+        "question": "Wie buche ich Skip-the-Line-Tickets?",
+        "answer": "Wählen Sie Ihr Besuchsdatum und die Personenanzahl auf dieser Website, wählen Sie die Skip-the-Line-Option und schließen Sie die sichere Zahlung ab. Sie erhalten Ihr Ticket innerhalb von Sekunden per E-Mail — ein QR-Code zum Vorzeigen auf dem Handy."
+      },
+      {
+        "question": "Kann ich mein Ticket stornieren oder ändern?",
+        "answer": "Ja, alle Tickets beinhalten kostenlose Stornierung bis zu 24 Stunden vor dem geplanten Besuch. Klicken Sie auf den Link in Ihrer Buchungsbestätigung oder kontaktieren Sie uns per WhatsApp. Rückerstattungen werden innerhalb von 5–7 Werktagen bearbeitet."
+      },
+      {
+        "question": "Was gibt es in der Nähe des Bahia Palastes zu sehen?",
+        "answer": "Die Saadier-Gräber sind 7 Minuten zu Fuß entfernt. Die Ruinen des El Badi Palastes sind 10 Minuten entfernt. Der Jemaa el-Fnaa-Platz ist 15 Minuten nördlich. Die meisten Besucher kombinieren den Bahia Palast mit den Saadier-Gräbern an einem halben Tag."
+      },
+      {
+        "question": "Kann man Tickets am Eingang des Bahia Palastes kaufen ?",
+        "answer": "Ja, Barkauf (Marokkanische Dirham) an der Kasse. In der Hochsaison Marz-Mai und Oktober-November bis zu 45-90 Minuten Wartezeit. Mit Online-Ticket ohne Wartezeit garantieren Sie Ihren Einlasstermin und umgehen die Schlange."
+      },
+      {
+        "question": "Ist der Bahia Palast freitags kostenlos ?",
+        "answer": "Nein. Der Eintrittspreis von 70 MAD gilt fur auslandische Besucher an allen Wochentagen. Kostenloser Eintritt gilt nur fur marokkanische Staatsangehorige an nationalen und religiosenFeiertagen."
+      },
+      {
+        "question": "Offnungszeiten des Bahia Palastes 2026 ?",
+        "answer": "Taglich 9:00-17:00 Uhr, letzter Einlass 16:30. Wahrend des Ramadans ca. 9:30-15:00. Ganzjahrig geoffnet inkl. Wochenenden. Empfehlung: bei Offnung (9 Uhr) ankommen, um den Andrang zu vermeiden."
+      },
+      {
+        "question": "Ist der Bahia Palast fur Rollstuhlfahrer zuganglich ?",
+        "answer": "Ja. Haupthofe, Garten und wichtigste Raume auf gepflastertem Untergrund zuganglich. Wenige Innenkammern haben kleine Schwellen. Kinderwagen problemlos. Rampe am Haupteingang."
+      },
+      {
+        "question": "Bahia Palast oder Majorelle Garten : was ist besser ?",
+        "answer": "Zwei vollig verschiedene Erlebnisse. Bahia: konigliche Architektur des 19. Jh., Zellige, Zederndecken, Geschichte des Grobwesirs. Majorelle: botanischer Garten im Art-Deco-Stil und YSL-Museum. Die meisten besuchen beide an einem Tag (25 Min. Taxi). Bahia fur Geschichte, Majorelle fur Garten und Design."
+      }
     ]
   },
   "blog": {
@@ -250,7 +371,13 @@
     "subtitle": "Tipps, Geschichte und alles, was Sie für einen perfekten Besuch brauchen",
     "readMore": "Artikel lesen",
     "readTime": "{min} Min. Lesezeit",
-    "categories": { "visit-tips": "Besuchstipps", "history": "Geschichte", "practical": "Praktische Infos", "comparisons": "Vergleiche", "safety": "Sicherheit" },
+    "categories": {
+      "visit-tips": "Besuchstipps",
+      "history": "Geschichte",
+      "practical": "Praktische Infos",
+      "comparisons": "Vergleiche",
+      "safety": "Sicherheit"
+    },
     "all": "Alle Artikel",
     "bookCta": "Skip-the-Line-Ticket buchen →",
     "relatedPosts": "Verwandte Artikel",
@@ -271,16 +398,56 @@
     "contributeTitle": "Haben Sie einen Betrug erlebt?",
     "contributeBody": "Helfen Sie anderen Reisenden, indem Sie Ihre Erfahrung teilen. Schreiben Sie uns auf WhatsApp.",
     "scams": [
-      { "title": "Der \"Geschlossenes Denkmal\"-Trick", "desc": "Ein Fremder sagt, der Palast sei wegen eines privaten Events geschlossen, und bietet eine Alternative an.", "avoid": "Ignorieren Sie ihn. Der Bahia Palast ist täglich von 9–17 Uhr geöffnet. Gehen Sie direkt zum Eingang." },
-      { "title": "Falsche Guides am Eingang", "desc": "Personen am Eingang bieten inoffizielle Führungen an und verlangen am Ende große Beträge.", "avoid": "Buchen Sie Ihren Guide über unsere Plattform im Voraus." },
-      { "title": "Der Henna-Hinterhalt", "desc": "Eine Frau greift Ihre Hand und trägt Henna auf, ohne zu fragen, dann verlangt sie 20–50€.", "avoid": "Halten Sie Ihre Hände in belebten Bereichen beschäftigt. Sagen Sie bestimmt 'Nein danke'." },
-      { "title": "Taxi ohne Taxameter", "desc": "Der Fahrer einigt sich mündlich auf einen Preis, behauptet dann bei Ankunft einen viel höheren genannt zu haben.", "avoid": "Bestehen Sie immer auf dem Taxameter. Nutzen Sie Careem oder inDrive für transparente Preise." },
-      { "title": "Der 'Freundliche' Taschendieb", "desc": "Ein Einheimischer bietet an, Sie zu führen. In engen Gassen stiehlt ein Komplize.", "avoid": "Laden Sie Offline-Karten herunter. Lehnen Sie ungebetene Führer höflich ab." },
-      { "title": "Überteuerte Gewürzläden", "desc": "Ein 'Guide' führt Sie in einen Gewürzladen mit massiv überteuerten Preisen.", "avoid": "Betreten Sie keine Läden auf Einladung Unbekannter." },
-      { "title": "Falscher Gerbereiaussichtspunkt", "desc": "Man sagt Ihnen, die Aussicht sei kostenlos, aber Sie müssen durch einen Ledershop.", "avoid": "Das ist bei den Gerbereien normal. Schauen Sie, genießen Sie die Minze und sagen Sie, dass Sie nicht kaufen." },
-      { "title": "Die Schlangenbeschwörer-Falle", "desc": "Eine Schlange oder ein Affe wird auf Sie gesetzt und man verlangt 10–30€ für ein ungebetenes Foto.", "avoid": "Nähern Sie sich Schlangenbeschwörern nur, wenn Sie zahlen möchten." },
-      { "title": "Währungsumtausch-Verwirrung", "desc": "Informelle Wechsler nutzen Taschenspielertricks, um Ihnen weniger zu geben.", "avoid": "Tauschen Sie Geld nur bei offiziellen Banken oder Geldautomaten." },
-      { "title": "Restaurantmenü-Wechsel", "desc": "Draußen günstiges Menü, drinnen alles viel teurer.", "avoid": "Prüfen Sie die Karte vor dem Hinsetzen und bestätigen Sie Preise vor der Bestellung." }
+      {
+        "title": "Der \"Geschlossenes Denkmal\"-Trick",
+        "desc": "Ein Fremder sagt, der Palast sei wegen eines privaten Events geschlossen, und bietet eine Alternative an.",
+        "avoid": "Ignorieren Sie ihn. Der Bahia Palast ist täglich von 9–17 Uhr geöffnet. Gehen Sie direkt zum Eingang."
+      },
+      {
+        "title": "Falsche Guides am Eingang",
+        "desc": "Personen am Eingang bieten inoffizielle Führungen an und verlangen am Ende große Beträge.",
+        "avoid": "Buchen Sie Ihren Guide über unsere Plattform im Voraus."
+      },
+      {
+        "title": "Der Henna-Hinterhalt",
+        "desc": "Eine Frau greift Ihre Hand und trägt Henna auf, ohne zu fragen, dann verlangt sie 20–50€.",
+        "avoid": "Halten Sie Ihre Hände in belebten Bereichen beschäftigt. Sagen Sie bestimmt 'Nein danke'."
+      },
+      {
+        "title": "Taxi ohne Taxameter",
+        "desc": "Der Fahrer einigt sich mündlich auf einen Preis, behauptet dann bei Ankunft einen viel höheren genannt zu haben.",
+        "avoid": "Bestehen Sie immer auf dem Taxameter. Nutzen Sie Careem oder inDrive für transparente Preise."
+      },
+      {
+        "title": "Der 'Freundliche' Taschendieb",
+        "desc": "Ein Einheimischer bietet an, Sie zu führen. In engen Gassen stiehlt ein Komplize.",
+        "avoid": "Laden Sie Offline-Karten herunter. Lehnen Sie ungebetene Führer höflich ab."
+      },
+      {
+        "title": "Überteuerte Gewürzläden",
+        "desc": "Ein 'Guide' führt Sie in einen Gewürzladen mit massiv überteuerten Preisen.",
+        "avoid": "Betreten Sie keine Läden auf Einladung Unbekannter."
+      },
+      {
+        "title": "Falscher Gerbereiaussichtspunkt",
+        "desc": "Man sagt Ihnen, die Aussicht sei kostenlos, aber Sie müssen durch einen Ledershop.",
+        "avoid": "Das ist bei den Gerbereien normal. Schauen Sie, genießen Sie die Minze und sagen Sie, dass Sie nicht kaufen."
+      },
+      {
+        "title": "Die Schlangenbeschwörer-Falle",
+        "desc": "Eine Schlange oder ein Affe wird auf Sie gesetzt und man verlangt 10–30€ für ein ungebetenes Foto.",
+        "avoid": "Nähern Sie sich Schlangenbeschwörern nur, wenn Sie zahlen möchten."
+      },
+      {
+        "title": "Währungsumtausch-Verwirrung",
+        "desc": "Informelle Wechsler nutzen Taschenspielertricks, um Ihnen weniger zu geben.",
+        "avoid": "Tauschen Sie Geld nur bei offiziellen Banken oder Geldautomaten."
+      },
+      {
+        "title": "Restaurantmenü-Wechsel",
+        "desc": "Draußen günstiges Menü, drinnen alles viel teurer.",
+        "avoid": "Prüfen Sie die Karte vor dem Hinsetzen und bestätigen Sie Preise vor der Bestellung."
+      }
     ],
     "tips": [
       "Laden Sie Offline-Karten vor der Ankunft herunter.",
@@ -295,10 +462,26 @@
       "Bewahren Sie Kopien Ihres Reisepasses in einem Cloud-Dienst auf."
     ],
     "emergency": [
-      { "label": "Touristenpolizei", "value": "+212 524 38 46 01", "note": "Speziell für touristenbezogene Vorfälle" },
-      { "label": "Allgemeine Polizei", "value": "190", "note": "Rund um die Uhr verfügbar" },
-      { "label": "SAMU (Medizinischer Notfall)", "value": "150", "note": "" },
-      { "label": "Feuerwehr / Notfall", "value": "15", "note": "" }
+      {
+        "label": "Touristenpolizei",
+        "value": "+212 524 38 46 01",
+        "note": "Speziell für touristenbezogene Vorfälle"
+      },
+      {
+        "label": "Allgemeine Polizei",
+        "value": "190",
+        "note": "Rund um die Uhr verfügbar"
+      },
+      {
+        "label": "SAMU (Medizinischer Notfall)",
+        "value": "150",
+        "note": ""
+      },
+      {
+        "label": "Feuerwehr / Notfall",
+        "value": "15",
+        "note": ""
+      }
     ]
   },
   "breadcrumb": {

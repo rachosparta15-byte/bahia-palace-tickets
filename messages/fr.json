@@ -35,8 +35,17 @@
       "name": "Entrée Coupe-File",
       "tagline": "Accès prioritaire au Palais Bahia",
       "duration": "Visite libre • ~1–2 heures",
-      "includes": ["Billet d'entrée prioritaire", "Billet mobile ou imprimé", "Confirmation instantanée", "Annulation gratuite 24h avant"],
-      "excludes": ["Commentaire guidé", "Transport jusqu'au palais", "Nourriture & boissons"],
+      "includes": [
+        "Billet d'entrée prioritaire",
+        "Billet mobile ou imprimé",
+        "Confirmation instantanée",
+        "Annulation gratuite 24h avant"
+      ],
+      "excludes": [
+        "Commentaire guidé",
+        "Transport jusqu'au palais",
+        "Nourriture & boissons"
+      ],
       "meetingPoint": "Entrée principale du Palais Bahia, Rue Riad Zitoun el Jedid, Médina de Marrakech",
       "longDesc": "Évitez la file à la billetterie et entrez directement dans l'un des palais les plus magnifiques de Marrakech. Votre ticket QR pré-validé signifie zéro temps perdu au guichet. Explorez à votre rythme — la plupart des visiteurs passent 1 à 2 heures à découvrir les zeliges complexes, les plafonds en cèdre sculpté et les jardins intérieurs luxuriants.",
       "whyOnline": "Les files d'attente peuvent durer 2h — réservez en ligne et entrez directement"
@@ -45,8 +54,18 @@
       "name": "Visite Guidée par un Expert",
       "tagline": "Découvrez les secrets du palais avec un guide local",
       "duration": "Guidée • ~2 heures",
-      "includes": ["Accès coupe-file", "Guide local certifié", "Histoire et anecdotes", "Petit groupe (max 12)", "Annulation gratuite 24h avant"],
-      "excludes": ["Transport jusqu'au palais", "Nourriture & boissons", "Pourboires (facultatif)"],
+      "includes": [
+        "Accès coupe-file",
+        "Guide local certifié",
+        "Histoire et anecdotes",
+        "Petit groupe (max 12)",
+        "Annulation gratuite 24h avant"
+      ],
+      "excludes": [
+        "Transport jusqu'au palais",
+        "Nourriture & boissons",
+        "Pourboires (facultatif)"
+      ],
       "meetingPoint": "Entrée principale du Palais Bahia — cherchez le guide avec le panneau Bahia Palace Tickets",
       "longDesc": "Découvrez les véritables secrets du Palais Bahia avec un guide certifié passionné. Apprenez pourquoi le palais a été construit en secret, découvrez les intrigues politiques derrière son architecture et révélez des histoires introuvables dans les guides de voyage. Des groupes de maximum 12 personnes garantissent une expérience personnalisée.",
       "whyOnline": "Les guides certifiés se réservent vite — bloquez votre place en ligne maintenant"
@@ -55,8 +74,17 @@
       "name": "Visite Privée",
       "tagline": "Une expérience exclusive rien que pour vous",
       "duration": "Privée • ~2,5 heures",
-      "includes": ["Guide certifié privé", "Accès coupe-file", "Expérience personnalisée", "Horaires flexibles", "Annulation gratuite 24h avant"],
-      "excludes": ["Transport jusqu'au palais", "Nourriture & boissons"],
+      "includes": [
+        "Guide certifié privé",
+        "Accès coupe-file",
+        "Expérience personnalisée",
+        "Horaires flexibles",
+        "Annulation gratuite 24h avant"
+      ],
+      "excludes": [
+        "Transport jusqu'au palais",
+        "Nourriture & boissons"
+      ],
       "meetingPoint": "Entrée principale du Palais Bahia — votre guide privé vous y attendra",
       "longDesc": "L'expérience ultime au Palais Bahia. Votre guide certifié privé dédie toute la visite à vous et votre groupe. Allez à votre rythme, posez toutes vos questions, explorez à votre guise. Parfait pour les familles, les couples et tous ceux qui souhaitent vivre le palais en exclusivité.",
       "whyOnline": "Réservation obligatoire — visites privées impossibles sur place"
@@ -65,8 +93,18 @@
       "name": "Combo : Bahia + Tombeaux Saadiens",
       "tagline": "Deux monuments iconiques de Marrakech en une journée",
       "duration": "Visite libre • ~3–4 heures",
-      "includes": ["Entrée Palais Bahia", "Entrée Tombeaux Saadiens", "Coupe-file sur les deux sites", "Horaires flexibles", "Annulation gratuite 24h avant"],
-      "excludes": ["Commentaire guidé", "Transport entre les sites", "Nourriture & boissons"],
+      "includes": [
+        "Entrée Palais Bahia",
+        "Entrée Tombeaux Saadiens",
+        "Coupe-file sur les deux sites",
+        "Horaires flexibles",
+        "Annulation gratuite 24h avant"
+      ],
+      "excludes": [
+        "Commentaire guidé",
+        "Transport entre les sites",
+        "Nourriture & boissons"
+      ],
       "meetingPoint": "D'abord l'entrée principale du Palais Bahia, puis les Tombeaux Saadiens (10 min à pied)",
       "longDesc": "Deux des sites historiques les plus époustouflants de Marrakech, un seul billet pratique. Commencez par les cours éblouissantes du Palais Bahia, puis marchez 10 minutes jusqu'aux Tombeaux Saadiens — des mausolées royaux somptueux scellés pendant 200 ans et redécouverts en 1917. Le meilleur rapport qualité-prix pour les amoureux de l'histoire.",
       "whyOnline": "Billet combiné disponible uniquement en ligne — gagnez du temps sur les deux sites"
@@ -75,10 +113,22 @@
   "whyUs": {
     "title": "Pourquoi Réserver chez Nous ?",
     "items": [
-      { "title": "Livraison Instantanée du Billet", "desc": "Recevez votre billet par e-mail en quelques secondes. Sans attente, sans incertitude." },
-      { "title": "Entrée Garantie", "desc": "Votre billet est pré-validé. Montrez votre téléphone et entrez directement." },
-      { "title": "Expertise Locale", "desc": "Nous sommes basés à Marrakech. Nous connaissons le palais sur le bout des doigts." },
-      { "title": "Sécurisé & Privé", "desc": "Vos données et votre paiement sont protégés par un chiffrement de niveau bancaire." }
+      {
+        "title": "Livraison Instantanée du Billet",
+        "desc": "Recevez votre billet par e-mail en quelques secondes. Sans attente, sans incertitude."
+      },
+      {
+        "title": "Entrée Garantie",
+        "desc": "Votre billet est pré-validé. Montrez votre téléphone et entrez directement."
+      },
+      {
+        "title": "Expertise Locale",
+        "desc": "Nous sommes basés à Marrakech. Nous connaissons le palais sur le bout des doigts."
+      },
+      {
+        "title": "Sécurisé & Privé",
+        "desc": "Vos données et votre paiement sont protégés par un chiffrement de niveau bancaire."
+      }
     ]
   },
   "about": {
@@ -234,21 +284,86 @@
     "ctaBtn": "Voir Toutes les Options de Billets",
     "teamAvail": "Notre équipe est disponible tous les jours de 8h à 20h, heure de Marrakech.",
     "items": [
-      { "question": "Le Palais Bahia vaut-il la visite en 2026 ?", "answer": "Absolument. Le Palais Bahia est l'un des meilleurs exemples d'architecture marocaine du XIXe siècle. Avec 150 pièces, des zeliges complexes, des plafonds en cèdre peints à la main et des jardins intérieurs luxuriants, il offre un aperçu incomparable de la vie royale marocaine. À 70 MAD (≈7$), c'est une valeur exceptionnelle — et avec un billet coupe-file, l'expérience devient parfaitement fluide." },
-      { "question": "Combien coûte l'entrée du Palais Bahia ?", "answer": "Le tarif officiel est de 70 MAD (environ 7$ USD ou 6,50€). Les enfants de moins de 12 ans entrent gratuitement, et les étudiants avec une carte valide paient 35 MAD. En réservant en ligne, les billets coupe-file commencent à partir de 10$ — cela inclut l'entrée prioritaire et évite des files pouvant durer 1 à 2 heures en haute saison." },
-      { "question": "Combien de temps faut-il prévoir au Palais Bahia ?", "answer": "La plupart des visiteurs passent 1 à 1h30 en autonomie. Avec une visite guidée, prévoyez 1h30 à 2h. Les visites privées sont flexibles et peuvent durer jusqu'à 2h30. Nous recommandons d'arriver tôt (9h–10h) pour profiter du lieu sans foule." },
-      { "question": "Quel est le meilleur moment pour visiter le Palais Bahia ?", "answer": "Le meilleur moment est entre 9h et 10h30 — moins de visiteurs et une belle lumière matinale idéale pour la photographie. Évitez 10h30–14h quand les groupes arrivent. Le printemps (mars–mai) et l'automne (septembre–novembre) offrent les températures les plus agréables (20–28°C)." },
-      { "question": "L'entrée est-elle gratuite ?", "answer": "Non, l'entrée coûte 70 MAD (≈7$ USD) pour les adultes. Les enfants de moins de 12 ans entrent gratuitement, et les étudiants avec une carte valide paient 35 MAD. La photographie est incluse dans le prix." },
-      { "question": "Comment me rendre au Palais Bahia depuis Jemaa el-Fnaa ?", "answer": "Le Palais Bahia est à 10–15 minutes à pied au sud de Jemaa el-Fnaa à travers la médina. Suivez les panneaux « Palais Bahia » ou utilisez Google Maps. Un petit taxi prend environ 5 minutes et coûte 15–25 MAD. L'adresse est Rue Riad Zitoun el Jedid, Médina de Marrakech." },
-      { "question": "Les visites guidées valent-elles la peine ?", "answer": "Oui, surtout pour une première visite. Un guide vous racontera la montée en puissance de Ba Ahmed, pourquoi le palais a été pillé en une nuit après sa mort en 1900, et identifiera des détails architecturaux que la plupart des visiteurs ne remarquent pas. Nos guides certifiés parlent anglais, français, espagnol et allemand." },
-      { "question": "Pour quoi le Palais Bahia est-il célèbre ?", "answer": "Le Palais Bahia est célèbre pour son artisanat marocain extraordinaire — les mosaïques de zeliges coupés à la main, les stucs sculptés et les plafonds en bois de cèdre peint. C'est l'un des plus grands palais de Marrakech avec 8 hectares et 150 pièces. Construit par le Grand Vizir Ba Ahmed entre 1894 et 1900." },
-      { "question": "Peut-on visiter sans guide ?", "answer": "Oui, le palais peut être visité en autonomie. Les visiteurs explorent confortablement en 1 à 1h30. Il n'y a pas d'audioguide officiel sur place, donc une visite guidée est recommandée si vous voulez connaître la véritable histoire." },
-      { "question": "Le Palais Bahia est-il adapté aux enfants ?", "answer": "Oui, très convivial pour les familles. Les enfants de moins de 12 ans entrent gratuitement. Les cours ouvertes, les carrelages colorés et les jardins fascinent les jeunes visiteurs. Le terrain est principalement plat et accessible avec une poussette." },
-      { "question": "Que mettre pour visiter le Palais Bahia ?", "answer": "Aucun code vestimentaire strict, mais une tenue modeste est recommandée — couvrir épaules et genoux. Des chaussures confortables sont essentielles car les sols mélangent marbre poli, zeliges et pierre, ce qui peut être glissant." },
-      { "question": "La photographie est-elle autorisée ?", "answer": "Oui, la photographie est librement autorisée pour usage personnel sans frais supplémentaires. La meilleure lumière est tôt le matin (9h–10h30). Les trépieds et équipements professionnels nécessitent une autorisation spéciale." },
-      { "question": "Comment réserver des billets coupe-file ?", "answer": "Sélectionnez votre date et le nombre de personnes sur ce site, choisissez l'option Coupe-File, et finalisez votre paiement sécurisé. Vous recevrez votre billet par e-mail en quelques secondes — un QR code à présenter sur votre téléphone." },
-      { "question": "Puis-je annuler ou modifier mon billet ?", "answer": "Oui, tous les billets incluent l'annulation gratuite jusqu'à 24 heures avant votre visite. Pour annuler, cliquez sur le lien dans votre e-mail de confirmation ou contactez-nous via WhatsApp. Les remboursements sont traités dans les 5 à 7 jours ouvrables." },
-      { "question": "Que voir d'autre près du Palais Bahia ?", "answer": "Les Tombeaux Saadiens sont à 7 minutes à pied. Les ruines du Palais El Badi sont à 10 minutes. La place Jemaa el-Fnaa est à 15 minutes au nord. La plupart des visiteurs combinent le Palais Bahia avec les Tombeaux Saadiens en une demi-journée." }
+      {
+        "question": "Le Palais Bahia vaut-il la visite en 2026 ?",
+        "answer": "Absolument. Le Palais Bahia est l'un des meilleurs exemples d'architecture marocaine du XIXe siècle. Avec 150 pièces, des zeliges complexes, des plafonds en cèdre peints à la main et des jardins intérieurs luxuriants, il offre un aperçu incomparable de la vie royale marocaine. À 70 MAD (≈7$), c'est une valeur exceptionnelle — et avec un billet coupe-file, l'expérience devient parfaitement fluide."
+      },
+      {
+        "question": "Combien coûte l'entrée du Palais Bahia ?",
+        "answer": "Le tarif officiel est de 70 MAD (environ 7$ USD ou 6,50€). Les enfants de moins de 12 ans entrent gratuitement, et les étudiants avec une carte valide paient 35 MAD. En réservant en ligne, les billets coupe-file commencent à partir de 10$ — cela inclut l'entrée prioritaire et évite des files pouvant durer 1 à 2 heures en haute saison."
+      },
+      {
+        "question": "Combien de temps faut-il prévoir au Palais Bahia ?",
+        "answer": "La plupart des visiteurs passent 1 à 1h30 en autonomie. Avec une visite guidée, prévoyez 1h30 à 2h. Les visites privées sont flexibles et peuvent durer jusqu'à 2h30. Nous recommandons d'arriver tôt (9h–10h) pour profiter du lieu sans foule."
+      },
+      {
+        "question": "Quel est le meilleur moment pour visiter le Palais Bahia ?",
+        "answer": "Le meilleur moment est entre 9h et 10h30 — moins de visiteurs et une belle lumière matinale idéale pour la photographie. Évitez 10h30–14h quand les groupes arrivent. Le printemps (mars–mai) et l'automne (septembre–novembre) offrent les températures les plus agréables (20–28°C)."
+      },
+      {
+        "question": "L'entrée est-elle gratuite ?",
+        "answer": "Non, l'entrée coûte 70 MAD (≈7$ USD) pour les adultes. Les enfants de moins de 12 ans entrent gratuitement, et les étudiants avec une carte valide paient 35 MAD. La photographie est incluse dans le prix."
+      },
+      {
+        "question": "Comment me rendre au Palais Bahia depuis Jemaa el-Fnaa ?",
+        "answer": "Le Palais Bahia est à 10–15 minutes à pied au sud de Jemaa el-Fnaa à travers la médina. Suivez les panneaux « Palais Bahia » ou utilisez Google Maps. Un petit taxi prend environ 5 minutes et coûte 15–25 MAD. L'adresse est Rue Riad Zitoun el Jedid, Médina de Marrakech."
+      },
+      {
+        "question": "Les visites guidées valent-elles la peine ?",
+        "answer": "Oui, surtout pour une première visite. Un guide vous racontera la montée en puissance de Ba Ahmed, pourquoi le palais a été pillé en une nuit après sa mort en 1900, et identifiera des détails architecturaux que la plupart des visiteurs ne remarquent pas. Nos guides certifiés parlent anglais, français, espagnol et allemand."
+      },
+      {
+        "question": "Pour quoi le Palais Bahia est-il célèbre ?",
+        "answer": "Le Palais Bahia est célèbre pour son artisanat marocain extraordinaire — les mosaïques de zeliges coupés à la main, les stucs sculptés et les plafonds en bois de cèdre peint. C'est l'un des plus grands palais de Marrakech avec 8 hectares et 150 pièces. Construit par le Grand Vizir Ba Ahmed entre 1894 et 1900."
+      },
+      {
+        "question": "Peut-on visiter sans guide ?",
+        "answer": "Oui, le palais peut être visité en autonomie. Les visiteurs explorent confortablement en 1 à 1h30. Il n'y a pas d'audioguide officiel sur place, donc une visite guidée est recommandée si vous voulez connaître la véritable histoire."
+      },
+      {
+        "question": "Le Palais Bahia est-il adapté aux enfants ?",
+        "answer": "Oui, très convivial pour les familles. Les enfants de moins de 12 ans entrent gratuitement. Les cours ouvertes, les carrelages colorés et les jardins fascinent les jeunes visiteurs. Le terrain est principalement plat et accessible avec une poussette."
+      },
+      {
+        "question": "Que mettre pour visiter le Palais Bahia ?",
+        "answer": "Aucun code vestimentaire strict, mais une tenue modeste est recommandée — couvrir épaules et genoux. Des chaussures confortables sont essentielles car les sols mélangent marbre poli, zeliges et pierre, ce qui peut être glissant."
+      },
+      {
+        "question": "La photographie est-elle autorisée ?",
+        "answer": "Oui, la photographie est librement autorisée pour usage personnel sans frais supplémentaires. La meilleure lumière est tôt le matin (9h–10h30). Les trépieds et équipements professionnels nécessitent une autorisation spéciale."
+      },
+      {
+        "question": "Comment réserver des billets coupe-file ?",
+        "answer": "Sélectionnez votre date et le nombre de personnes sur ce site, choisissez l'option Coupe-File, et finalisez votre paiement sécurisé. Vous recevrez votre billet par e-mail en quelques secondes — un QR code à présenter sur votre téléphone."
+      },
+      {
+        "question": "Puis-je annuler ou modifier mon billet ?",
+        "answer": "Oui, tous les billets incluent l'annulation gratuite jusqu'à 24 heures avant votre visite. Pour annuler, cliquez sur le lien dans votre e-mail de confirmation ou contactez-nous via WhatsApp. Les remboursements sont traités dans les 5 à 7 jours ouvrables."
+      },
+      {
+        "question": "Que voir d'autre près du Palais Bahia ?",
+        "answer": "Les Tombeaux Saadiens sont à 7 minutes à pied. Les ruines du Palais El Badi sont à 10 minutes. La place Jemaa el-Fnaa est à 15 minutes au nord. La plupart des visiteurs combinent le Palais Bahia avec les Tombeaux Saadiens en une demi-journée."
+      },
+      {
+        "question": "Peut-on acheter des billets au Palais Bahia sans reservation ?",
+        "answer": "Oui, les billets sont vendus directement a la caisse en especes (dirhams uniquement). En haute saison mars-mai et octobre-novembre les files atteignent 45-90 min. Avec un billet coupe-file en ligne vous garantissez votre creneau et evitez toute attente."
+      },
+      {
+        "question": "Le Palais Bahia est-il gratuit le vendredi ?",
+        "answer": "Non. Le tarif de 70 MAD s applique tous les jours sans exception pour les touristes etrangers. La gratuite concerne uniquement les ressortissants marocains lors de fetes nationales ou religieuses."
+      },
+      {
+        "question": "Quels sont les horaires du Palais Bahia en 2026 ?",
+        "answer": "Ouvert tous les jours de 9h a 17h, derniere entree 16h30. Pendant le Ramadan environ 9h30-15h. Ouvert week-ends et jours feries. Arrivez a 9h pour eviter la foule."
+      },
+      {
+        "question": "Le Palais Bahia est-il accessible en fauteuil roulant ?",
+        "answer": "Oui, les cours, jardins et salles principales sont accessibles sur surface pavee lisse. Quelques chambres ont de petits seuils. Les poussettes circulent facilement. Rampe d acces a l entree principale."
+      },
+      {
+        "question": "Palais Bahia ou Jardin Majorelle : lequel choisir ?",
+        "answer": "Deux experiences tres differentes. Bahia Palace : architecture royale marocaine du XIXe, zellige, plafonds cedre, histoire du Grand Vizir. Majorelle : jardin botanique Art Deco + musee YSL. La plupart font les deux en une journee (25 min en taxi). Choisissez Bahia pour l histoire, Majorelle pour le design."
+      }
     ]
   },
   "blog": {
@@ -283,16 +398,56 @@
     "contributeTitle": "Vous avez vécu une arnaque ?",
     "contributeBody": "Aidez les autres voyageurs en partageant votre expérience. WhatsApp-nous et nous l'ajouterons à ce guide (anonymement).",
     "scams": [
-      { "title": "Le Truc du « Monument Fermé »", "desc": "Un inconnu vous dit que le palais est fermé pour un événement privé et vous propose une alternative.", "avoid": "Ignorez-les. Le Palais Bahia est ouvert tous les jours de 9h à 17h. Allez directement à l'entrée." },
-      { "title": "Faux Guides à l'Entrée", "desc": "Des personnes près de l'entrée proposent des visites non officielles et réclament des sommes importantes à la fin.", "avoid": "Réservez votre guide via notre plateforme. Les vrais guides portent un badge officiel." },
-      { "title": "L'Embuscade au Henné", "desc": "Une femme sur la place Jemaa el-Fna vous attrape la main et applique du henné sans demander, puis réclame 20–50€.", "avoid": "Gardez vos mains occupées dans les zones fréquentées. Dites fermement « Non merci »." },
-      { "title": "Taxi Sans Compteur", "desc": "Le chauffeur accepte un prix verbalement, puis prétend avoir dit bien plus à l'arrivée.", "avoid": "Exigez toujours le compteur. Utilisez Careem ou inDrive pour des prix transparents." },
-      { "title": "Le Pickpocket « Sympa »", "desc": "Un local vous propose de vous guider. Dans les ruelles, un complice vous vole.", "avoid": "Téléchargez des cartes hors ligne. Refusez poliment les guides non sollicités." },
-      { "title": "Épices Hors de Prix", "desc": "Un « guide » vous emmène dans une boutique d'épices avec des prix excessifs.", "avoid": "N'entrez dans aucune boutique sur invitation d'un inconnu." },
-      { "title": "Faux Point de Vue sur les Tanneries", "desc": "On vous dit que la vue est gratuite mais vous devez traverser une boutique de maroquinerie.", "avoid": "C'est la norme pour les tanneries. Regardez, profitez de la menthe et dites que vous n'achetez pas." },
-      { "title": "Piège du Charmeur de Serpents", "desc": "Un serpent ou singe est posé sur vous et on réclame 10–30€ pour une photo non demandée.", "avoid": "Ne vous approchez pas des charmeurs de serpents sauf si vous voulez payer." },
-      { "title": "Confusion au Change", "desc": "Des changeurs informels utilisent des tours de passe-passe pour vous remettre moins que prévu.", "avoid": "Changez votre argent uniquement dans des banques officielles ou aux distributeurs." },
-      { "title": "Menu Différent au Restaurant", "desc": "Le menu à l'extérieur affiche des prix bas, mais à l'intérieur tout coûte plus cher.", "avoid": "Vérifiez le menu avant de vous asseoir et confirmez les prix avant de commander." }
+      {
+        "title": "Le Truc du « Monument Fermé »",
+        "desc": "Un inconnu vous dit que le palais est fermé pour un événement privé et vous propose une alternative.",
+        "avoid": "Ignorez-les. Le Palais Bahia est ouvert tous les jours de 9h à 17h. Allez directement à l'entrée."
+      },
+      {
+        "title": "Faux Guides à l'Entrée",
+        "desc": "Des personnes près de l'entrée proposent des visites non officielles et réclament des sommes importantes à la fin.",
+        "avoid": "Réservez votre guide via notre plateforme. Les vrais guides portent un badge officiel."
+      },
+      {
+        "title": "L'Embuscade au Henné",
+        "desc": "Une femme sur la place Jemaa el-Fna vous attrape la main et applique du henné sans demander, puis réclame 20–50€.",
+        "avoid": "Gardez vos mains occupées dans les zones fréquentées. Dites fermement « Non merci »."
+      },
+      {
+        "title": "Taxi Sans Compteur",
+        "desc": "Le chauffeur accepte un prix verbalement, puis prétend avoir dit bien plus à l'arrivée.",
+        "avoid": "Exigez toujours le compteur. Utilisez Careem ou inDrive pour des prix transparents."
+      },
+      {
+        "title": "Le Pickpocket « Sympa »",
+        "desc": "Un local vous propose de vous guider. Dans les ruelles, un complice vous vole.",
+        "avoid": "Téléchargez des cartes hors ligne. Refusez poliment les guides non sollicités."
+      },
+      {
+        "title": "Épices Hors de Prix",
+        "desc": "Un « guide » vous emmène dans une boutique d'épices avec des prix excessifs.",
+        "avoid": "N'entrez dans aucune boutique sur invitation d'un inconnu."
+      },
+      {
+        "title": "Faux Point de Vue sur les Tanneries",
+        "desc": "On vous dit que la vue est gratuite mais vous devez traverser une boutique de maroquinerie.",
+        "avoid": "C'est la norme pour les tanneries. Regardez, profitez de la menthe et dites que vous n'achetez pas."
+      },
+      {
+        "title": "Piège du Charmeur de Serpents",
+        "desc": "Un serpent ou singe est posé sur vous et on réclame 10–30€ pour une photo non demandée.",
+        "avoid": "Ne vous approchez pas des charmeurs de serpents sauf si vous voulez payer."
+      },
+      {
+        "title": "Confusion au Change",
+        "desc": "Des changeurs informels utilisent des tours de passe-passe pour vous remettre moins que prévu.",
+        "avoid": "Changez votre argent uniquement dans des banques officielles ou aux distributeurs."
+      },
+      {
+        "title": "Menu Différent au Restaurant",
+        "desc": "Le menu à l'extérieur affiche des prix bas, mais à l'intérieur tout coûte plus cher.",
+        "avoid": "Vérifiez le menu avant de vous asseoir et confirmez les prix avant de commander."
+      }
     ],
     "tips": [
       "Téléchargez des cartes hors ligne avant d'arriver.",
@@ -307,10 +462,26 @@
       "Gardez des copies de votre passeport dans un service cloud."
     ],
     "emergency": [
-      { "label": "Police Touristique", "value": "+212 524 38 46 01", "note": "Pour les incidents liés au tourisme" },
-      { "label": "Police Générale", "value": "190", "note": "Disponible 24h/24" },
-      { "label": "SAMU (Urgences Médicales)", "value": "150", "note": "" },
-      { "label": "Pompiers / Urgences", "value": "15", "note": "" }
+      {
+        "label": "Police Touristique",
+        "value": "+212 524 38 46 01",
+        "note": "Pour les incidents liés au tourisme"
+      },
+      {
+        "label": "Police Générale",
+        "value": "190",
+        "note": "Disponible 24h/24"
+      },
+      {
+        "label": "SAMU (Urgences Médicales)",
+        "value": "150",
+        "note": ""
+      },
+      {
+        "label": "Pompiers / Urgences",
+        "value": "15",
+        "note": ""
+      }
     ]
   },
   "breadcrumb": {

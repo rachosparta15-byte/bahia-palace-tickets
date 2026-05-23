@@ -35,8 +35,17 @@
       "name": "Entrada Sin Colas",
       "tagline": "Acceso prioritario al Palacio Bahia",
       "duration": "Visita libre • ~1–2 horas",
-      "includes": ["Entrada prioritaria", "Entrada móvil o impresa", "Confirmación instantánea", "Cancelación gratuita 24h antes"],
-      "excludes": ["Comentario guiado", "Transporte al palacio", "Comida y bebida"],
+      "includes": [
+        "Entrada prioritaria",
+        "Entrada móvil o impresa",
+        "Confirmación instantánea",
+        "Cancelación gratuita 24h antes"
+      ],
+      "excludes": [
+        "Comentario guiado",
+        "Transporte al palacio",
+        "Comida y bebida"
+      ],
       "meetingPoint": "Entrada principal del Palacio Bahia, Calle Riad Zitoun el Jedid, Medina de Marrakech",
       "longDesc": "Sáltate la cola de entradas y entra directamente en uno de los palacios más magníficos de Marrakech. Tu ticket QR prevalidado significa cero tiempo perdido en taquilla. Explora a tu propio ritmo — la mayoría de los visitantes pasan entre 1 y 2 horas descubriendo los intrincados azulejos de zellige, los techos de cedro tallado y los exuberantes jardines interiores.",
       "whyOnline": "Las colas pueden durar 2 horas — reserva online y entra directamente"
@@ -45,8 +54,18 @@
       "name": "Tour Guiado por un Experto",
       "tagline": "Descubre los secretos del palacio con un guía local",
       "duration": "Guiado • ~2 horas",
-      "includes": ["Acceso sin colas", "Guía local certificado", "Historia y curiosidades", "Grupo reducido (máx. 12)", "Cancelación gratuita 24h antes"],
-      "excludes": ["Transporte al palacio", "Comida y bebida", "Propinas (opcional)"],
+      "includes": [
+        "Acceso sin colas",
+        "Guía local certificado",
+        "Historia y curiosidades",
+        "Grupo reducido (máx. 12)",
+        "Cancelación gratuita 24h antes"
+      ],
+      "excludes": [
+        "Transporte al palacio",
+        "Comida y bebida",
+        "Propinas (opcional)"
+      ],
       "meetingPoint": "Entrada principal del Palacio Bahia — busca al guía con el cartel de Bahia Palace Tickets",
       "longDesc": "Descubre los verdaderos secretos del Palacio Bahia con un apasionado guía certificado. Aprende por qué el palacio se construyó en secreto, descubre las intrigas políticas detrás de su arquitectura y desvela historias que simplemente no encontrarás en ninguna guía. Grupos reducidos de máximo 12 personas garantizan una experiencia personalizada.",
       "whyOnline": "Los guías certificados se agotan rápido — reserva tu plaza online ahora"
@@ -55,8 +74,17 @@
       "name": "Tour Privado",
       "tagline": "Una experiencia exclusiva solo para ti",
       "duration": "Privado • ~2,5 horas",
-      "includes": ["Guía certificado privado", "Acceso sin colas", "Experiencia personalizada", "Horario flexible", "Cancelación gratuita 24h antes"],
-      "excludes": ["Transporte al palacio", "Comida y bebida"],
+      "includes": [
+        "Guía certificado privado",
+        "Acceso sin colas",
+        "Experiencia personalizada",
+        "Horario flexible",
+        "Cancelación gratuita 24h antes"
+      ],
+      "excludes": [
+        "Transporte al palacio",
+        "Comida y bebida"
+      ],
       "meetingPoint": "Entrada principal del Palacio Bahia — tu guía privado te esperará allí",
       "longDesc": "La experiencia definitiva en el Palacio Bahia. Tu guía certificado privado dedica toda la visita a ti y a tu grupo. Marca tu propio ritmo, haz cualquier pregunta y explora las áreas a tu antojo. Perfecto para familias, parejas y cualquiera que quiera que la historia del palacio le sea contada exclusivamente para ellos.",
       "whyOnline": "Reserva anticipada obligatoria — los tours privados no se pueden reservar in situ"
@@ -65,8 +93,18 @@
       "name": "Combo: Bahia + Tumbas Saadíes",
       "tagline": "Dos monumentos icónicos de Marrakech en un día",
       "duration": "Visita libre • ~3–4 horas",
-      "includes": ["Entrada Palacio Bahia", "Entrada Tumbas Saadíes", "Sin colas en ambos sitios", "Horario flexible", "Cancelación gratuita 24h antes"],
-      "excludes": ["Comentario guiado", "Transporte entre sitios", "Comida y bebida"],
+      "includes": [
+        "Entrada Palacio Bahia",
+        "Entrada Tumbas Saadíes",
+        "Sin colas en ambos sitios",
+        "Horario flexible",
+        "Cancelación gratuita 24h antes"
+      ],
+      "excludes": [
+        "Comentario guiado",
+        "Transporte entre sitios",
+        "Comida y bebida"
+      ],
       "meetingPoint": "Primero la entrada principal del Palacio Bahia, luego las Tumbas Saadíes (10 min a pie)",
       "longDesc": "Dos de los monumentos históricos más impresionantes de Marrakech, una sola entrada cómoda. Empieza en los deslumbrantes patios del Palacio Bahia, luego camina 10 minutos hasta las Tumbas Saadíes — opulentos mausoleos reales sellados durante 200 años y redescubiertos en 1917. El mejor valor para los amantes de la historia.",
       "whyOnline": "Entrada combinada disponible solo online — ahorra tiempo en ambos sitios"
@@ -104,10 +142,22 @@
   "whyUs": {
     "title": "¿Por Qué Reservar con Nosotros?",
     "items": [
-      { "title": "Entrega Instantánea de Entrada", "desc": "Recibe tu entrada por email en segundos. Sin esperas, sin incertidumbre." },
-      { "title": "Entrada Garantizada", "desc": "Tu entrada está prevalidada. Muestra el teléfono y entra directamente." },
-      { "title": "Experiencia Local", "desc": "Estamos ubicados en Marrakech. Conocemos el palacio a la perfección." },
-      { "title": "Seguro y Privado", "desc": "Tu pago y datos están protegidos con cifrado de nivel bancario." }
+      {
+        "title": "Entrega Instantánea de Entrada",
+        "desc": "Recibe tu entrada por email en segundos. Sin esperas, sin incertidumbre."
+      },
+      {
+        "title": "Entrada Garantizada",
+        "desc": "Tu entrada está prevalidada. Muestra el teléfono y entra directamente."
+      },
+      {
+        "title": "Experiencia Local",
+        "desc": "Estamos ubicados en Marrakech. Conocemos el palacio a la perfección."
+      },
+      {
+        "title": "Seguro y Privado",
+        "desc": "Tu pago y datos están protegidos con cifrado de nivel bancario."
+      }
     ]
   },
   "about": {
@@ -165,21 +215,86 @@
     "ctaBtn": "Ver Todas las Opciones de Entradas",
     "teamAvail": "Nuestro equipo está disponible todos los días de 8 a 20h, hora de Marrakech.",
     "items": [
-      { "question": "¿Vale la pena visitar el Palacio Bahia en 2026?", "answer": "Absolutamente. El Palacio Bahia es uno de los mejores ejemplos conservados de arquitectura marroquí del siglo XIX. Con 150 habitaciones, intrincados zellige, techos de cedro pintados a mano y exuberantes jardines interiores, ofrece una visión incomparable de la vida real marroquí. A 70 MAD (≈7$) es un valor excepcional — y con una entrada sin colas, la experiencia se vuelve completamente fluida." },
-      { "question": "¿Cuánto cuesta la entrada al Palacio Bahia?", "answer": "El precio oficial en taquilla es de 70 MAD (aproximadamente 7$ USD o 6,50€). Los niños menores de 12 años entran gratis, y los estudiantes con DNI válido pagan 35 MAD. Si reservas online, las entradas sin colas empiezan desde 10$ — incluye acceso prioritario y evita colas que pueden durar 1-2 horas en temporada alta." },
-      { "question": "¿Cuánto tiempo se necesita en el Palacio Bahia?", "answer": "La mayoría de los visitantes pasan 1 a 1,5 horas en visita autónoma. Con una visita guiada, planea 1,5 a 2 horas. Los tours privados son flexibles y pueden durar hasta 2,5 horas. Recomendamos llegar pronto (9-10h) para disfrutar sin aglomeraciones." },
-      { "question": "¿Cuándo es el mejor momento para visitar?", "answer": "El mejor momento es entre las 9 y las 10:30h — menos visitantes y luz matutina ideal para fotos. Evita las 10:30-14h cuando llegan los grupos. Primavera (marzo-mayo) y otoño (septiembre-noviembre) ofrecen las temperaturas más agradables (20-28°C)." },
-      { "question": "¿Es gratuita la entrada?", "answer": "No, la entrada cuesta 70 MAD (≈7$ USD) para adultos. Los niños menores de 12 años entran gratis y los estudiantes con DNI válido pagan 35 MAD. La fotografía está incluida en el precio de la entrada." },
-      { "question": "¿Cómo llegar al Palacio Bahia desde Jemaa el-Fna?", "answer": "El Palacio Bahia está a 10-15 minutos caminando al sur de Jemaa el-Fna por la medina. Sigue los carteles de 'Palais Bahia' o usa Google Maps. Un petit taxi tarda unos 5 minutos y cuesta 15-25 MAD. La dirección es Rue Riad Zitoun el Jedid, Medina de Marrakech." },
-      { "question": "¿Merece la pena la visita guiada?", "answer": "Sí, especialmente en la primera visita. Una guía te contará sobre el ascenso político de Ba Ahmed, por qué el palacio fue saqueado en una sola noche tras su muerte en 1900, e identificará detalles arquitectónicos que la mayoría de los visitantes no notan. Nuestros guías certificados hablan inglés, francés, español y alemán." },
-      { "question": "¿Por qué es famoso el Palacio Bahia?", "answer": "El Palacio Bahia es famoso por su extraordinaria artesanía marroquí — en particular los mosaicos de zellige cortados a mano, las elaboradas tallas de estuco y los techos de madera de cedro pintados. Es uno de los palacios más grandes de Marrakech con 8 hectáreas y 150 habitaciones." },
-      { "question": "¿Se puede visitar sin guía?", "answer": "Sí, el palacio puede visitarse de forma autónoma. La mayoría de los visitantes lo exploran cómodamente en 1-1,5 horas. No hay audioguía oficial disponible in situ, por lo que se recomienda un tour guiado si quieres conocer la historia completa." },
-      { "question": "¿Es el Palacio Bahia adecuado para niños?", "answer": "Sí, muy familiar. Los niños menores de 12 años entran gratis. Los patios abiertos, los coloridos azulejos y los jardines fascinan a los más jóvenes. El terreno es principalmente plano y accesible con cochecito." },
-      { "question": "¿Qué ropa llevar al Palacio Bahia?", "answer": "No hay código de vestimenta estricto, pero se recomienda ropa modesta — cubrir hombros y rodillas. El calzado cómodo es esencial ya que los suelos combinan mármol pulido, zellige y piedra que pueden ser resbaladizos." },
-      { "question": "¿Está permitida la fotografía?", "answer": "Sí, la fotografía está permitida en todo el palacio para uso personal sin cargos adicionales. La mejor luz es por la mañana temprano (9-10:30h). Los trípodes y equipos profesionales requieren autorización previa." },
-      { "question": "¿Cómo reservar entradas sin colas online?", "answer": "Selecciona tu fecha de visita y número de visitantes en este sitio, elige la opción Sin Colas y completa el pago seguro. Recibirás tu entrada por email en segundos — un código QR para mostrar en tu móvil o imprimir." },
-      { "question": "¿Puedo cancelar o cambiar mi entrada?", "answer": "Sí, todas las entradas incluyen cancelación gratuita hasta 24 horas antes de la visita. Haz clic en el enlace de tu email de confirmación o contáctanos por WhatsApp. Los reembolsos se procesan en 5-7 días hábiles." },
-      { "question": "¿Qué más hay cerca del Palacio Bahia?", "answer": "Las Tumbas Saadíes están a solo 7 minutos caminando. Las ruinas del Palacio El Badi están a 10 minutos. La plaza Jemaa el-Fna está a 15 minutos al norte. La mayoría de los visitantes combinan el Palacio Bahia con las Tumbas Saadíes en medio día." }
+      {
+        "question": "¿Vale la pena visitar el Palacio Bahia en 2026?",
+        "answer": "Absolutamente. El Palacio Bahia es uno de los mejores ejemplos conservados de arquitectura marroquí del siglo XIX. Con 150 habitaciones, intrincados zellige, techos de cedro pintados a mano y exuberantes jardines interiores, ofrece una visión incomparable de la vida real marroquí. A 70 MAD (≈7$) es un valor excepcional — y con una entrada sin colas, la experiencia se vuelve completamente fluida."
+      },
+      {
+        "question": "¿Cuánto cuesta la entrada al Palacio Bahia?",
+        "answer": "El precio oficial en taquilla es de 70 MAD (aproximadamente 7$ USD o 6,50€). Los niños menores de 12 años entran gratis, y los estudiantes con DNI válido pagan 35 MAD. Si reservas online, las entradas sin colas empiezan desde 10$ — incluye acceso prioritario y evita colas que pueden durar 1-2 horas en temporada alta."
+      },
+      {
+        "question": "¿Cuánto tiempo se necesita en el Palacio Bahia?",
+        "answer": "La mayoría de los visitantes pasan 1 a 1,5 horas en visita autónoma. Con una visita guiada, planea 1,5 a 2 horas. Los tours privados son flexibles y pueden durar hasta 2,5 horas. Recomendamos llegar pronto (9-10h) para disfrutar sin aglomeraciones."
+      },
+      {
+        "question": "¿Cuándo es el mejor momento para visitar?",
+        "answer": "El mejor momento es entre las 9 y las 10:30h — menos visitantes y luz matutina ideal para fotos. Evita las 10:30-14h cuando llegan los grupos. Primavera (marzo-mayo) y otoño (septiembre-noviembre) ofrecen las temperaturas más agradables (20-28°C)."
+      },
+      {
+        "question": "¿Es gratuita la entrada?",
+        "answer": "No, la entrada cuesta 70 MAD (≈7$ USD) para adultos. Los niños menores de 12 años entran gratis y los estudiantes con DNI válido pagan 35 MAD. La fotografía está incluida en el precio de la entrada."
+      },
+      {
+        "question": "¿Cómo llegar al Palacio Bahia desde Jemaa el-Fna?",
+        "answer": "El Palacio Bahia está a 10-15 minutos caminando al sur de Jemaa el-Fna por la medina. Sigue los carteles de 'Palais Bahia' o usa Google Maps. Un petit taxi tarda unos 5 minutos y cuesta 15-25 MAD. La dirección es Rue Riad Zitoun el Jedid, Medina de Marrakech."
+      },
+      {
+        "question": "¿Merece la pena la visita guiada?",
+        "answer": "Sí, especialmente en la primera visita. Una guía te contará sobre el ascenso político de Ba Ahmed, por qué el palacio fue saqueado en una sola noche tras su muerte en 1900, e identificará detalles arquitectónicos que la mayoría de los visitantes no notan. Nuestros guías certificados hablan inglés, francés, español y alemán."
+      },
+      {
+        "question": "¿Por qué es famoso el Palacio Bahia?",
+        "answer": "El Palacio Bahia es famoso por su extraordinaria artesanía marroquí — en particular los mosaicos de zellige cortados a mano, las elaboradas tallas de estuco y los techos de madera de cedro pintados. Es uno de los palacios más grandes de Marrakech con 8 hectáreas y 150 habitaciones."
+      },
+      {
+        "question": "¿Se puede visitar sin guía?",
+        "answer": "Sí, el palacio puede visitarse de forma autónoma. La mayoría de los visitantes lo exploran cómodamente en 1-1,5 horas. No hay audioguía oficial disponible in situ, por lo que se recomienda un tour guiado si quieres conocer la historia completa."
+      },
+      {
+        "question": "¿Es el Palacio Bahia adecuado para niños?",
+        "answer": "Sí, muy familiar. Los niños menores de 12 años entran gratis. Los patios abiertos, los coloridos azulejos y los jardines fascinan a los más jóvenes. El terreno es principalmente plano y accesible con cochecito."
+      },
+      {
+        "question": "¿Qué ropa llevar al Palacio Bahia?",
+        "answer": "No hay código de vestimenta estricto, pero se recomienda ropa modesta — cubrir hombros y rodillas. El calzado cómodo es esencial ya que los suelos combinan mármol pulido, zellige y piedra que pueden ser resbaladizos."
+      },
+      {
+        "question": "¿Está permitida la fotografía?",
+        "answer": "Sí, la fotografía está permitida en todo el palacio para uso personal sin cargos adicionales. La mejor luz es por la mañana temprano (9-10:30h). Los trípodes y equipos profesionales requieren autorización previa."
+      },
+      {
+        "question": "¿Cómo reservar entradas sin colas online?",
+        "answer": "Selecciona tu fecha de visita y número de visitantes en este sitio, elige la opción Sin Colas y completa el pago seguro. Recibirás tu entrada por email en segundos — un código QR para mostrar en tu móvil o imprimir."
+      },
+      {
+        "question": "¿Puedo cancelar o cambiar mi entrada?",
+        "answer": "Sí, todas las entradas incluyen cancelación gratuita hasta 24 horas antes de la visita. Haz clic en el enlace de tu email de confirmación o contáctanos por WhatsApp. Los reembolsos se procesan en 5-7 días hábiles."
+      },
+      {
+        "question": "¿Qué más hay cerca del Palacio Bahia?",
+        "answer": "Las Tumbas Saadíes están a solo 7 minutos caminando. Las ruinas del Palacio El Badi están a 10 minutos. La plaza Jemaa el-Fna está a 15 minutos al norte. La mayoría de los visitantes combinan el Palacio Bahia con las Tumbas Saadíes en medio día."
+      },
+      {
+        "question": "Se pueden comprar entradas en la puerta del Palacio Bahia ?",
+        "answer": "Si, en la taquilla del palacio solo en efectivo (dirhams marroquies). En temporada alta (marzo-mayo, octubre-noviembre) las colas alcanzan 45-90 min. Comprando online la entrada sin colas garantiza tu hora de acceso y evita cualquier espera."
+      },
+      {
+        "question": "El Palacio Bahia es gratis los viernes ?",
+        "answer": "No. La tarifa de 70 MAD se aplica todos los dias para visitantes extranjeros. La entrada gratuita esta reservada a ciudadanos marroquies en festividades nacionales o religiosas especificas."
+      },
+      {
+        "question": "Cual es el horario del Palacio Bahia en 2026 ?",
+        "answer": "Abierto todos los dias de 9:00 a 17:00 h, ultima entrada 16:30. Durante el Ramadan aprox. 9:30-15:00. Abierto fines de semana y festivos. Recomendamos llegar a la apertura (9:00) para evitar aglomeraciones."
+      },
+      {
+        "question": "El Palacio Bahia es accesible para personas con discapacidad ?",
+        "answer": "Si. Patios, jardines y salas principales tienen superficies pavimentadas accesibles. Algunas habitaciones interiores tienen pequenos escalones. Los cochecitos circulan bien. La entrada principal tiene rampa de acceso."
+      },
+      {
+        "question": "Palacio Bahia o Jardin Majorelle : cual es mejor ?",
+        "answer": "Son experiencias distintas. Bahia : arquitectura real del s.XIX, zellige, techos de cedro, historia del Gran Visir. Majorelle : jardin botanico Art Deco + Museo YSL. La mayoria visita los dos en un dia (25 min en taxi). Elige Bahia para historia, Majorelle para diseno."
+      }
     ]
   },
   "blog": {
@@ -278,10 +393,26 @@
       "Guarda copias de tu pasaporte y seguro en un servicio en la nube."
     ],
     "emergency": [
-      { "label": "Policía Turística", "value": "+212 524 38 46 01", "note": "Específicamente para incidentes turísticos" },
-      { "label": "Policía General (Brigade Touristique)", "value": "190", "note": "Disponible 24/7" },
-      { "label": "SAMU (Emergencias Médicas)", "value": "150", "note": "" },
-      { "label": "Bomberos / Emergencias", "value": "15", "note": "" }
+      {
+        "label": "Policía Turística",
+        "value": "+212 524 38 46 01",
+        "note": "Específicamente para incidentes turísticos"
+      },
+      {
+        "label": "Policía General (Brigade Touristique)",
+        "value": "190",
+        "note": "Disponible 24/7"
+      },
+      {
+        "label": "SAMU (Emergencias Médicas)",
+        "value": "150",
+        "note": ""
+      },
+      {
+        "label": "Bomberos / Emergencias",
+        "value": "15",
+        "note": ""
+      }
     ]
   },
   "breadcrumb": {
