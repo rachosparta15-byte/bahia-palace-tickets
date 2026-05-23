@@ -212,7 +212,7 @@
     "bookingInfo": "Informations de réservation",
     "dateLabel": "Choisir une date",
     "adultsLabel": "Adultes",
-    "childrenLabel": "Enfants (moins de 12 ans)",
+    "childrenLabel": "Enfants (moins de 7 ans)",
     "childFree": "Gratuit",
     "total": "Total",
     "proceedToCheckout": "Procéder au paiement",
@@ -286,11 +286,11 @@
     "items": [
       {
         "question": "Le Palais Bahia vaut-il la visite en 2026 ?",
-        "answer": "Absolument. Le Palais Bahia est l'un des meilleurs exemples d'architecture marocaine du XIXe siècle. Avec 150 pièces, des zeliges complexes, des plafonds en cèdre peints à la main et des jardins intérieurs luxuriants, il offre un aperçu incomparable de la vie royale marocaine. À 70 MAD (≈7$), c'est une valeur exceptionnelle — et avec un billet coupe-file, l'expérience devient parfaitement fluide."
+        "answer": "Absolument. Le Palais Bahia est l'un des meilleurs exemples d'architecture marocaine du XIXe siècle. Avec 150 pièces, des zeliges complexes, des plafonds en cèdre peints à la main et des jardins intérieurs luxuriants, il offre un aperçu incomparable de la vie royale marocaine. À 100 MAD (≈7$), c'est une valeur exceptionnelle — et avec un billet coupe-file, l'expérience devient parfaitement fluide."
       },
       {
         "question": "Combien coûte l'entrée du Palais Bahia ?",
-        "answer": "Le tarif officiel est de 70 MAD (environ 7$ USD ou 6,50€). Les enfants de moins de 12 ans entrent gratuitement, et les étudiants avec une carte valide paient 35 MAD. En réservant en ligne, les billets coupe-file commencent à partir de 10$ — cela inclut l'entrée prioritaire et évite des files pouvant durer 1 à 2 heures en haute saison."
+        "answer": "Le tarif officiel est de 100 MAD (environ 7$ USD ou 9€). Les enfants de moins de 7 ans entrent gratuitement, et les étudiants avec une carte valide paient 50 MAD. En réservant en ligne, les billets coupe-file commencent à partir de 10$ — cela inclut l'entrée prioritaire et évite des files pouvant durer 1 à 2 heures en haute saison."
       },
       {
         "question": "Combien de temps faut-il prévoir au Palais Bahia ?",
@@ -302,7 +302,7 @@
       },
       {
         "question": "L'entrée est-elle gratuite ?",
-        "answer": "Non, l'entrée coûte 70 MAD (≈7$ USD) pour les adultes. Les enfants de moins de 12 ans entrent gratuitement, et les étudiants avec une carte valide paient 35 MAD. La photographie est incluse dans le prix."
+        "answer": "Non, l'entrée coûte 100 MAD (≈7$ USD) pour les adultes. Les enfants de moins de 7 ans entrent gratuitement, et les étudiants avec une carte valide paient 50 MAD. La photographie est incluse dans le prix."
       },
       {
         "question": "Comment me rendre au Palais Bahia depuis Jemaa el-Fnaa ?",
@@ -322,7 +322,7 @@
       },
       {
         "question": "Le Palais Bahia est-il adapté aux enfants ?",
-        "answer": "Oui, très convivial pour les familles. Les enfants de moins de 12 ans entrent gratuitement. Les cours ouvertes, les carrelages colorés et les jardins fascinent les jeunes visiteurs. Le terrain est principalement plat et accessible avec une poussette."
+        "answer": "Oui, très convivial pour les familles. Les enfants de moins de 7 ans entrent gratuitement. Les cours ouvertes, les carrelages colorés et les jardins fascinent les jeunes visiteurs. Le terrain est principalement plat et accessible avec une poussette."
       },
       {
         "question": "Que mettre pour visiter le Palais Bahia ?",
@@ -350,7 +350,7 @@
       },
       {
         "question": "Le Palais Bahia est-il gratuit le vendredi ?",
-        "answer": "Non. Le tarif de 70 MAD s applique tous les jours sans exception pour les touristes etrangers. La gratuite concerne uniquement les ressortissants marocains lors de fetes nationales ou religieuses."
+        "answer": "Non. Le tarif de 100 MAD s applique tous les jours sans exception pour les touristes etrangers. La gratuite concerne uniquement les ressortissants marocains lors de fetes nationales ou religieuses."
       },
       {
         "question": "Quels sont les horaires du Palais Bahia en 2026 ?",

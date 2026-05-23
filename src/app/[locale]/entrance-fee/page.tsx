@@ -8,11 +8,11 @@ import type { Metadata } from 'next';
 const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://visitbahiapalace.com';
 
 const META: Record<string, { title: string; description: string }> = {
-  en: { title: 'Bahia Palace Entrance Fee 2026 | Current Ticket Prices in MAD & USD', description: 'Bahia Palace entrance fee is 70 MAD (≈$7 USD) in 2026. Compare ticket prices, discounts for students, children, and group rates. Updated pricing guide.' },
-  fr: { title: 'Prix Entrée Palais Bahia 2026 | Tarifs en MAD & EUR', description: 'Le prix d\'entrée du Palais Bahia est 70 MAD (≈7€) en 2026. Tarifs étudiants, enfants, groupes. Guide complet des tarifs mis à jour.' },
-  es: { title: 'Precio Entrada Palacio Bahia 2026 | Tarifas en MAD y EUR', description: 'La entrada al Palacio Bahia cuesta 70 MAD (≈7€) en 2026. Descuentos para estudiantes, niños y grupos. Guía de precios actualizada.' },
-  de: { title: 'Bahia Palast Eintrittspreis 2026 | Aktuelle Ticketpreise', description: 'Der Eintrittspreis für den Bahia Palast beträgt 70 MAD (≈7€) im Jahr 2026. Rabatte für Studenten, Kinder und Gruppen.' },
-  it: { title: 'Prezzo Biglietto Palazzo Bahia 2026 | Tariffe Aggiornate', description: 'Il biglietto d\'ingresso al Palazzo Bahia costa 70 MAD (≈7€) nel 2026. Sconti per studenti, bambini e gruppi. Guida prezzi aggiornata.' },
+  en: { title: 'Bahia Palace Entrance Fee 2026 | Current Ticket Prices in MAD & USD', description: 'Bahia Palace entrance fee is 100 MAD (≈$10 USD) for foreign adults in 2026. Children under 7 free. Compare ticket prices, skip-the-line options and guided tours.' },
+  fr: { title: 'Prix Entrée Palais Bahia 2026 | Tarifs en MAD & EUR', description: 'Le prix d\'entrée du Palais Bahia est 100 MAD (≈10€) pour les étrangers en 2026. Enfants de moins de 7 ans gratuit. Guide complet des tarifs mis à jour.' },
+  es: { title: 'Precio Entrada Palacio Bahia 2026 | Tarifas en MAD y EUR', description: 'La entrada al Palacio Bahia cuesta 100 MAD (≈10€) para adultos extranjeros en 2026. Niños menores de 7 años gratis. Guía de precios actualizada.' },
+  de: { title: 'Bahia Palast Eintrittspreis 2026 | Aktuelle Ticketpreise', description: 'Der Eintrittspreis für den Bahia Palast beträgt 100 MAD (≈10€) für ausländische Erwachsene im Jahr 2026. Kinder unter 7 Jahren frei.' },
+  it: { title: 'Prezzo Biglietto Palazzo Bahia 2026 | Tariffe Aggiornate', description: 'Il biglietto d\'ingresso al Palazzo Bahia costa 100 MAD (≈10€) per adulti stranieri nel 2026. Bambini sotto i 7 anni gratis. Guida prezzi aggiornata.' },
 };
 
 interface Props { params: Promise<{ locale: string }> }
@@ -35,7 +35,7 @@ const priceSchema = {
   name: 'Bahia Palace',
   url: `${BASE}/en/entrance-fee`,
   offers: [
-    { '@type': 'Offer', name: 'Standard Entry', price: '7', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
+    { '@type': 'Offer', name: 'Standard Entry', price: '10', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
     { '@type': 'Offer', name: 'Skip-the-Line Entry', price: '10', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
     { '@type': 'Offer', name: 'Guided Tour', price: '10', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
   ],
@@ -70,7 +70,7 @@ export default async function EntranceFeePage({ params }: Props) {
         {/* Price cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {[
-            { label: 'Standard Entry', mad: '70 MAD', usd: '≈ $7 USD', note: 'At the gate — queue included', highlight: false },
+            { label: 'Standard Entry', mad: '100 MAD', usd: '≈ $10 USD', note: 'At the gate — queue included', highlight: false },
             { label: 'Skip-the-Line', mad: 'From $10', usd: 'Online booking', note: 'Walk straight in, no waiting', highlight: true },
             { label: 'Guided Tour', mad: 'From $10', usd: 'Expert guide included', note: 'Includes entry + 90-min tour', highlight: false },
           ].map(({ label, mad, usd, note, highlight }) => (
@@ -92,9 +92,10 @@ export default async function EntranceFeePage({ params }: Props) {
           </div>
           <div className="divide-y divide-[#E8D5B7]">
             {[
-              { category: 'Adults (standard)', price: '70 MAD', usd: '$7', note: 'Gate price — long queues possible' },
-              { category: 'Children under 12', price: 'Free', usd: 'Free', note: 'No ticket required' },
-              { category: 'Students (with ID)', price: '35 MAD', usd: '~$3.50', note: 'Valid student card required' },
+              { category: 'Foreign adults', price: '100 MAD', usd: '~$10', note: 'Gate price — long queues possible' },
+              { category: 'Foreign children (7–13)', price: '50 MAD', usd: '~$5', note: 'Official Ministry of Culture rate' },
+              { category: 'Children under 7', price: 'Free', usd: 'Free', note: 'No ticket required' },
+              { category: 'Moroccan adults', price: '30 MAD', usd: '~$3', note: 'Valid Moroccan ID required' },
               { category: 'Skip-the-Line (online)', price: 'From $10', usd: '$10', note: 'Instant entry, no queue' },
               { category: 'Guided Tour (online)', price: 'From $10', usd: '$10', note: 'Entry + expert English guide' },
               { category: 'Private Tour', price: 'From $10', usd: '$10', note: 'Exclusive private guide' },
@@ -116,7 +117,7 @@ export default async function EntranceFeePage({ params }: Props) {
               <h3 className="font-bold text-[#3D2817] text-sm">Why is the online price higher?</h3>
             </div>
             <p className="text-sm text-[#5C3D20] leading-relaxed">
-              The <strong>70 MAD gate price</strong> covers standard entry with potentially 1–2 hour queues. Our online tickets include <strong>skip-the-line access</strong>, instant mobile confirmation, free cancellation, and English-language support — all included in the service fee.
+              The <strong>100 MAD gate price</strong> covers standard entry with potentially 1–2 hour queues. Our online tickets include <strong>skip-the-line access</strong>, instant mobile confirmation, free cancellation, and English-language support — all included in the service fee.
             </p>
           </div>
           <div className="bg-[#E8A33D]/10 rounded-xl p-5 border border-[#E8A33D]/20">
@@ -125,7 +126,7 @@ export default async function EntranceFeePage({ params }: Props) {
               <h3 className="font-bold text-[#3D2817] text-sm">How much is Bahia Palace in MAD?</h3>
             </div>
             <p className="text-sm text-[#5C3D20] leading-relaxed">
-              The official <strong>Bahia Palace entrance fee</strong> is <strong>70 MAD</strong> (approximately $7 USD or €6.50 EUR at 2026 exchange rates). This is the price set by the Moroccan Ministry of Culture and applies to all adult foreign visitors.
+              The official <strong>Bahia Palace entrance fee</strong> is <strong>100 MAD</strong> (approximately $10 USD or €9 EUR at 2026 exchange rates) for foreign adult visitors. Moroccan nationals pay 30 MAD. This is the price set by the Moroccan Ministry of Culture.
             </p>
           </div>
         </div>

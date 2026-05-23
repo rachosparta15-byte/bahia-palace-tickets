@@ -117,7 +117,7 @@
     "bookingInfo": "Información de reserva",
     "dateLabel": "Seleccionar fecha",
     "adultsLabel": "Adultos",
-    "childrenLabel": "Niños (menores de 12 años)",
+    "childrenLabel": "Niños (menores de 7 años)",
     "childFree": "Gratis",
     "total": "Total",
     "proceedToCheckout": "Proceder al pago",
@@ -217,11 +217,11 @@
     "items": [
       {
         "question": "¿Vale la pena visitar el Palacio Bahia en 2026?",
-        "answer": "Absolutamente. El Palacio Bahia es uno de los mejores ejemplos conservados de arquitectura marroquí del siglo XIX. Con 150 habitaciones, intrincados zellige, techos de cedro pintados a mano y exuberantes jardines interiores, ofrece una visión incomparable de la vida real marroquí. A 70 MAD (≈7$) es un valor excepcional — y con una entrada sin colas, la experiencia se vuelve completamente fluida."
+        "answer": "Absolutamente. El Palacio Bahia es uno de los mejores ejemplos conservados de arquitectura marroquí del siglo XIX. Con 150 habitaciones, intrincados zellige, techos de cedro pintados a mano y exuberantes jardines interiores, ofrece una visión incomparable de la vida real marroquí. A 100 MAD (≈7$) es un valor excepcional — y con una entrada sin colas, la experiencia se vuelve completamente fluida."
       },
       {
         "question": "¿Cuánto cuesta la entrada al Palacio Bahia?",
-        "answer": "El precio oficial en taquilla es de 70 MAD (aproximadamente 7$ USD o 6,50€). Los niños menores de 12 años entran gratis, y los estudiantes con DNI válido pagan 35 MAD. Si reservas online, las entradas sin colas empiezan desde 10$ — incluye acceso prioritario y evita colas que pueden durar 1-2 horas en temporada alta."
+        "answer": "El precio oficial en taquilla es de 100 MAD (aproximadamente 7$ USD o 6,50€). Los niños menores de 7 años entran gratis, y los estudiantes con DNI válido pagan 50 MAD. Si reservas online, las entradas sin colas empiezan desde 10$ — incluye acceso prioritario y evita colas que pueden durar 1-2 horas en temporada alta."
       },
       {
         "question": "¿Cuánto tiempo se necesita en el Palacio Bahia?",
@@ -233,7 +233,7 @@
       },
       {
         "question": "¿Es gratuita la entrada?",
-        "answer": "No, la entrada cuesta 70 MAD (≈7$ USD) para adultos. Los niños menores de 12 años entran gratis y los estudiantes con DNI válido pagan 35 MAD. La fotografía está incluida en el precio de la entrada."
+        "answer": "No, la entrada cuesta 100 MAD (≈7$ USD) para adultos. Los niños menores de 7 años entran gratis y los estudiantes con DNI válido pagan 50 MAD. La fotografía está incluida en el precio de la entrada."
       },
       {
         "question": "¿Cómo llegar al Palacio Bahia desde Jemaa el-Fna?",
@@ -253,7 +253,7 @@
       },
       {
         "question": "¿Es el Palacio Bahia adecuado para niños?",
-        "answer": "Sí, muy familiar. Los niños menores de 12 años entran gratis. Los patios abiertos, los coloridos azulejos y los jardines fascinan a los más jóvenes. El terreno es principalmente plano y accesible con cochecito."
+        "answer": "Sí, muy familiar. Los niños menores de 7 años entran gratis. Los patios abiertos, los coloridos azulejos y los jardines fascinan a los más jóvenes. El terreno es principalmente plano y accesible con cochecito."
       },
       {
         "question": "¿Qué ropa llevar al Palacio Bahia?",
@@ -281,7 +281,7 @@
       },
       {
         "question": "El Palacio Bahia es gratis los viernes ?",
-        "answer": "No. La tarifa de 70 MAD se aplica todos los dias para visitantes extranjeros. La entrada gratuita esta reservada a ciudadanos marroquies en festividades nacionales o religiosas especificas."
+        "answer": "No. La tarifa de 100 MAD se aplica todos los dias para visitantes extranjeros. La entrada gratuita esta reservada a ciudadanos marroquies en festividades nacionales o religiosas especificas."
       },
       {
         "question": "Cual es el horario del Palacio Bahia en 2026 ?",
