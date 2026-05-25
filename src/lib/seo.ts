@@ -1,8 +1,10 @@
-// Normalize to plain origin — guards against NEXT_PUBLIC_SITE_URL being set
-// with a trailing path (e.g. "https://www.visitbahiapalace.com/en") which
-// would produce double-locale URLs like /en/en/blog everywhere.
+// Normalise to plain www origin — defensive against two common Vercel
+// misconfigurations: (1) trailing path like /en causing double-locale URLs,
+// (2) missing www causing canonical/og:url without the subdomain.
 const _raw = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
-export const BASE = new URL(_raw).origin;
+const _url  = new URL(_raw);
+if (_url.hostname === 'visitbahiapalace.com') _url.hostname = 'www.visitbahiapalace.com';
+export const BASE = _url.origin; // always https://www.visitbahiapalace.com
 
 const LOCALES = ['en', 'fr', 'it', 'de', 'es'] as const;
 
