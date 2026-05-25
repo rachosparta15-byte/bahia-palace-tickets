@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { LogoMark } from '@/components/ui/LogoMark';
 
 export function Footer() {
@@ -27,10 +27,6 @@ export function Footer() {
             </div>
             <p className="text-[#C4A882] text-sm leading-relaxed mb-5">{t('tagline')}</p>
             <div className="space-y-2 text-sm text-[#C4A882]">
-              <div className="flex items-center gap-2">
-                <MapPin size={14} className="text-[#E8A33D] shrink-0" />
-                <span>Rue Riad Zitoun el Jedid, Marrakech</span>
-              </div>
               <div className="flex items-center gap-2">
                 <Mail size={14} className="text-[#E8A33D] shrink-0" />
                 <span>support@visitbahiapalace.com</span>
@@ -95,6 +91,11 @@ export function Footer() {
               ))}
             </ul>
           </div>
+        </div>
+
+        {/* Disclaimer */}
+        <div className="border-t border-[#5C3D20] pt-6 mb-6">
+          <p className="text-[#C4A882] text-xs leading-relaxed text-center">{t('disclaimer')}</p>
         </div>
 
         {/* Bottom bar */}

@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { ContactForm } from '@/components/contact/ContactForm';
-import { MapPin, Clock, Mail, MessageCircle } from 'lucide-react';
+import { Info, Clock, Mail, MessageCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 import { buildAlternates, buildOG } from '@/lib/seo';
 import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
@@ -80,7 +80,7 @@ export default async function ContactPage() {
           <div className="lg:col-span-2 space-y-4">
             <div className="bg-white rounded-2xl border border-[#E8D5B7] p-6">
               <div className="flex gap-3 mb-5">
-                <MapPin size={18} className="text-[#C4452D] mt-0.5 shrink-0" />
+                <Info size={18} className="text-[#C4452D] mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-semibold text-[#3D2817] mb-1">{t('addressTitle')}</p>
                   <p className="text-sm text-[#5C3D20] leading-relaxed">{t('addressVal')}</p>

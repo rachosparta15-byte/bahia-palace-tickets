@@ -122,8 +122,8 @@
         "desc": "Il tuo biglietto è pre-validato. Mostra il telefono e accedi direttamente."
       },
       {
-        "title": "Esperienza Locale",
-        "desc": "Siamo basati a Marrakech. Conosciamo il palazzo nei minimi dettagli."
+        "title": "Informazioni Affidabili",
+        "desc": "Info per visitatori indipendenti, tratte da fonti ufficiali e verificate."
       },
       {
         "title": "Sicuro e Privato",
@@ -203,7 +203,8 @@
     "cookies": "Politica Cookie",
     "contact": "Contatti",
     "copyright": "© {year} Bahia Palace Tickets. Tutti i diritti riservati.",
-    "paymentNote": "Pagamenti sicuri con Stripe"
+    "paymentNote": "Pagamenti sicuri con Stripe",
+    "disclaimer": "visitbahiapalace.com è un sito di informazioni turistiche indipendente. Non siamo affiliati al Palazzo Bahia ufficiale né al Ministero della Cultura del Marocco. Per i biglietti ufficiali, visita: e-services.minculture.gov.ma"
   },
   "whatsapp": {
     "tooltip": "Chatta con noi",
@@ -262,10 +263,10 @@
     "error": "Qualcosa è andato storto. Riprova o scrivici su WhatsApp.",
     "orWhatsapp": "O contattaci istantaneamente su WhatsApp",
     "whatsappBtn": "Apri WhatsApp",
-    "addressTitle": "Il Nostro Indirizzo",
-    "addressVal": "Vicino al Palazzo Bahia, Derb el Cadi, Medina, Marrakech 40000, Marocco",
-    "hoursTitle": "Orari di Supporto",
-    "hoursVal": "Tutti i giorni 8:00 – 20:00 (ora di Marrakech, GMT+1)",
+    "addressTitle": "Informazioni sul sito",
+    "addressVal": "Sito di informazioni indipendente per visitatori — non affiliato al Palazzo Bahia ufficiale né al Ministero della Cultura marocchino.",
+    "hoursTitle": "Tempo di risposta",
+    "hoursVal": "Rispondiamo a tutti i messaggi entro 24 ore.",
     "emailTitle": "Email",
     "emailVal": "support@visitbahiapalace.com"
   },
