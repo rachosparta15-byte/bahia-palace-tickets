@@ -240,15 +240,19 @@
     "openingHoursVal": "Tutti i giorni 9:00 – 17:00 (ultimo ingresso 16:30)"
   },
   "aboutPage": {
-    "hero": "Il Nostro Servizio",
-    "heroSub": "La tua fonte affidabile per i biglietti del Palazzo Bahia",
+    "metaTitle": "Chi siamo — Guida indipendente al Palazzo Bahia",
+    "metaDesc": "Informazioni su visitbahiapalace.com — una guida turistica indipendente per il Palazzo Bahia a Marrakech.",
+    "hero": "Chi siamo — visitbahiapalace.com",
+    "heroSub": "Un sito di informazioni turistiche indipendente per il Palazzo Bahia, uno dei più bei monumenti marocchini del XIX secolo.",
     "missionTitle": "La Nostra Missione",
-    "missionBody": "Rendiamo la visita al Palazzo Bahia semplice e senza stress. Nessuna fila confusionaria, nessun biglietto a prezzi gonfiati — solo una prenotazione online semplice, conferma immediata e una visita magica.",
-    "whyTitle": "Perché Abbiamo Creato Questo Servizio",
-    "whyBody": "Troppi turisti arrivavano al Palazzo Bahia trovando lunghe code e false guide all'ingresso. Abbiamo creato questo servizio per offrire ai viaggiatori un modo affidabile e trasparente per prenotare.",
-    "teamTitle": "Il Nostro Servizio",
-    "teamBody": "Offriamo una prenotazione online semplice e sicura con conferma immediata.",
-    "contactCta": "Contattaci"
+    "missionBody": "Aiutare i viaggiatori internazionali a pianificare la loro visita al Palazzo Bahia con informazioni accurate e utili — storia, consigli pratici, informazioni di sicurezza e link alla biglietteria ufficiale.",
+    "whyTitle": "Cosa Offriamo",
+    "whyBody": "Guide turistiche complete e contesto storico · Consigli pratici su orari e prezzi · Informazioni di sicurezza per i turisti · Risposte alle domande frequenti · Link diretti alla biglietteria ufficiale su e-services.minculture.gov.ma",
+    "teamTitle": "Avviso Importante",
+    "teamBody": "visitbahiapalace.com NON è affiliato all'amministrazione ufficiale del Palazzo Bahia né al Ministero della Cultura del Marocco. Siamo un sito di informazioni indipendente. Per i biglietti ufficiali, visita: e-services.minculture.gov.ma",
+    "contactCta": "Contattaci",
+    "ctaTitle": "Hai Domande sulla Tua Visita?",
+    "ctaBody": "Domande sulla visita al Palazzo Bahia? Consulta le nostre FAQ o inviaci un messaggio."
   },
   "contactPage": {
     "title": "Contattaci",

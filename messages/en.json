@@ -166,15 +166,19 @@
     "readMore": "Read the full history →"
   },
   "aboutPage": {
-    "hero": "About Our Service",
-    "heroSub": "Your trusted source for authentic Bahia Palace tickets",
+    "metaTitle": "About Us — Independent Bahia Palace Visitor Guide",
+    "metaDesc": "About visitbahiapalace.com — an independent visitor information guide for Bahia Palace in Marrakech.",
+    "hero": "About visitbahiapalace.com",
+    "heroSub": "An independent visitor information website for Bahia Palace, one of Morocco's most beautiful 19th-century monuments.",
     "missionTitle": "Our Mission",
-    "missionBody": "We make visiting Bahia Palace effortless. No confusing queues, no over-priced tickets from street vendors — just a simple online booking, instant confirmation, and a magical visit.",
-    "whyTitle": "Why We Started",
-    "whyBody": "Too many tourists arrive at Bahia Palace to find long queues, misleading prices, or fake 'guides' at the entrance. We built this service to give travellers a trustworthy, transparent way to book — so they can focus on the beauty of the palace, not the hassle around it.",
-    "teamTitle": "Our Booking Service",
-    "teamBody": "We offer a simple, secure online booking experience with instant confirmation. We speak English, French, Arabic, and Darija.",
-    "contactCta": "Get in Touch"
+    "missionBody": "To help international travelers plan their visit to Bahia Palace with accurate, helpful information — including history, practical tips, safety guidance, and direct links to official ticket booking.",
+    "whyTitle": "What We Provide",
+    "whyBody": "Comprehensive visitor guides and historical context · Practical tips on opening hours and entrance fees · Safety information for tourists · Answers to frequently asked questions · Direct links to official ticket booking at e-services.minculture.gov.ma",
+    "teamTitle": "Important Notice",
+    "teamBody": "visitbahiapalace.com is NOT affiliated with the official Bahia Palace administration or the Moroccan Ministry of Culture. We are an independent visitor information website. For official tickets, visit: e-services.minculture.gov.ma",
+    "contactCta": "Contact Us",
+    "ctaTitle": "Have a Question About Your Visit?",
+    "ctaBody": "Questions about visiting Bahia Palace? Browse our FAQ or send us a message."
   },
   "contactPage": {
     "title": "Contact Us",

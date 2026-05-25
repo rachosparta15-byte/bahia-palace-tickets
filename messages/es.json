@@ -166,15 +166,19 @@
     "readMore": "Leer la historia completa →"
   },
   "aboutPage": {
-    "hero": "Sobre Nuestro Servicio",
-    "heroSub": "Tu fuente de confianza para entradas auténticas del Palacio Bahia",
+    "metaTitle": "Sobre Nosotros — Guía Independiente del Palacio Bahia",
+    "metaDesc": "Acerca de visitbahiapalace.com — una guía de información turística independiente para el Palacio Bahia en Marrakech.",
+    "hero": "Sobre visitbahiapalace.com",
+    "heroSub": "Un sitio web de información turística independiente para el Palacio Bahia, uno de los monumentos marroquíes más hermosos del siglo XIX.",
     "missionTitle": "Nuestra Misión",
-    "missionBody": "Hacemos que visitar el Palacio Bahia sea fácil. Sin colas confusas, sin entradas sobrepreciadas de vendedores callejeros — solo una reserva en línea sencilla, confirmación instantánea y una visita mágica.",
-    "whyTitle": "Por Qué Lo Creamos",
-    "whyBody": "Demasiados turistas llegan al Palacio Bahia y se encuentran con largas colas, precios engañosos o falsos 'guías' en la entrada. Creamos este servicio para dar a los viajeros una forma confiable y transparente de reservar — para que puedan centrarse en la belleza del palacio, no en el caos que lo rodea.",
-    "teamTitle": "Nuestro Servicio de Reservas",
-    "teamBody": "Ofrecemos una reserva en línea sencilla y segura con confirmación instantánea. Hablamos inglés, francés, árabe y dárija.",
-    "contactCta": "Ponerse en Contacto"
+    "missionBody": "Ayudar a los viajeros internacionales a planificar su visita al Palacio Bahia con información precisa y útil — historia, consejos prácticos, información de seguridad y enlaces directos a la venta oficial de entradas.",
+    "whyTitle": "Lo que Ofrecemos",
+    "whyBody": "Guías turísticas completas y contexto histórico · Consejos prácticos sobre horarios y precios · Información de seguridad para turistas · Respuestas a preguntas frecuentes · Enlaces directos a la venta oficial de entradas en e-services.minculture.gov.ma",
+    "teamTitle": "Aviso Importante",
+    "teamBody": "visitbahiapalace.com NO está afiliado a la administración oficial del Palacio Bahia ni al Ministerio de Cultura de Marruecos. Somos un sitio web de información independiente. Para entradas oficiales, visita: e-services.minculture.gov.ma",
+    "contactCta": "Contáctanos",
+    "ctaTitle": "¿Tienes Preguntas sobre tu Visita?",
+    "ctaBody": "¿Preguntas sobre visitar el Palacio Bahia? Consulta nuestras FAQ o envíanos un mensaje."
   },
   "contactPage": {
     "title": "Contáctanos",

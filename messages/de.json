@@ -240,15 +240,19 @@
     "openingHoursVal": "Täglich 9:00 – 17:00 Uhr (letzter Einlass 16:30 Uhr)"
   },
   "aboutPage": {
-    "hero": "Unser Service",
-    "heroSub": "Ihre vertrauenswürdige Quelle für Bahia Palast Tickets",
+    "metaTitle": "Über uns — Unabhängiger Bahia-Palast-Reiseführer",
+    "metaDesc": "Über visitbahiapalace.com — ein unabhängiger Besucherinformationsführer für den Bahia-Palast in Marrakesch.",
+    "hero": "Über visitbahiapalace.com",
+    "heroSub": "Eine unabhängige Besucherinformationswebsite für den Bahia-Palast, eines der schönsten marokkanischen Denkmäler des 19. Jahrhunderts.",
     "missionTitle": "Unsere Mission",
-    "missionBody": "Wir machen den Besuch des Bahia Palastes unkompliziert. Keine verwirrenden Warteschlangen, keine überteuerten Tickets — nur eine einfache Online-Buchung, sofortige Bestätigung und ein magischer Besuch.",
-    "whyTitle": "Warum Wir Diesen Service Gestartet Haben",
-    "whyBody": "Zu viele Touristen kamen zum Bahia Palast und fanden lange Schlangen und falsche Guides am Eingang. Wir haben diesen Service aufgebaut, um Reisenden eine vertrauenswürdige und transparente Buchungsmöglichkeit zu bieten.",
-    "teamTitle": "Unser Buchungsservice",
-    "teamBody": "Wir bieten eine einfache, sichere Online-Buchung mit sofortiger Bestätigung an.",
-    "contactCta": "Kontakt aufnehmen"
+    "missionBody": "Internationalen Reisenden bei der Planung ihres Besuchs im Bahia-Palast zu helfen — mit genauen, hilfreichen Informationen zu Geschichte, praktischen Tipps, Sicherheitshinweisen und Links zur offiziellen Ticketbuchung.",
+    "whyTitle": "Was wir bieten",
+    "whyBody": "Umfassende Besucherführer und historischer Kontext · Praktische Tipps zu Öffnungszeiten und Eintrittspreisen · Sicherheitsinformationen für Touristen · Antworten auf häufig gestellte Fragen · Direkte Links zur offiziellen Ticketbuchung auf e-services.minculture.gov.ma",
+    "teamTitle": "Wichtiger Hinweis",
+    "teamBody": "visitbahiapalace.com ist NICHT mit der offiziellen Verwaltung des Bahia-Palastes oder dem marokkanischen Kulturministerium verbunden. Wir sind eine unabhängige Besucherinformationswebsite. Für offizielle Tickets besuchen Sie: e-services.minculture.gov.ma",
+    "contactCta": "Kontakt aufnehmen",
+    "ctaTitle": "Fragen zu Ihrem Besuch?",
+    "ctaBody": "Fragen zum Besuch des Bahia-Palastes? Besuchen Sie unsere FAQ oder senden Sie uns eine Nachricht."
   },
   "contactPage": {
     "title": "Kontaktieren Sie Uns",

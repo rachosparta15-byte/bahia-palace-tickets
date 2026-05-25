@@ -240,15 +240,19 @@
     "openingHoursVal": "Tous les jours 9h00 – 17h00 (dernière entrée 16h30)"
   },
   "aboutPage": {
-    "hero": "Notre Service",
-    "heroSub": "Votre source de confiance pour les billets du Palais Bahia",
+    "metaTitle": "À propos — Guide indépendant du Palais Bahia",
+    "metaDesc": "À propos de visitbahiapalace.com — un guide d'information touristique indépendant pour le Palais Bahia à Marrakech.",
+    "hero": "À propos de visitbahiapalace.com",
+    "heroSub": "Un site d'information touristique indépendant pour le Palais Bahia, l'un des plus beaux monuments marocains du XIXe siècle.",
     "missionTitle": "Notre Mission",
-    "missionBody": "Nous rendons la visite du Palais Bahia simple et sans stress. Pas de files d'attente, pas de billets hors de prix auprès de revendeurs douteux — juste une réservation en ligne simple, une confirmation instantanée, et une visite magique.",
-    "whyTitle": "Pourquoi Nous Avons Créé Ce Service",
-    "whyBody": "Trop de touristes arrivaient au Palais Bahia pour trouver de longues files d'attente, des prix trompeurs ou de faux « guides » à l'entrée. Nous avons construit ce service pour offrir aux voyageurs une solution fiable et transparente.",
-    "teamTitle": "Notre Service de Réservation",
-    "teamBody": "Nous proposons une réservation en ligne simple et sécurisée avec confirmation instantanée. Nous parlons anglais, français, arabe et darija.",
-    "contactCta": "Nous Contacter"
+    "missionBody": "Aider les voyageurs internationaux à planifier leur visite au Palais Bahia avec des informations précises et utiles — histoire, conseils pratiques, informations de sécurité et liens vers la billetterie officielle.",
+    "whyTitle": "Ce que nous offrons",
+    "whyBody": "Guides touristiques complets et contexte historique · Conseils pratiques sur les horaires et les tarifs · Informations de sécurité pour les touristes · Réponses aux questions fréquentes · Liens directs vers la billetterie officielle sur e-services.minculture.gov.ma",
+    "teamTitle": "Avis Important",
+    "teamBody": "visitbahiapalace.com n'est PAS affilié à l'administration officielle du Palais Bahia ni au Ministère de la Culture du Maroc. Nous sommes un site d'information indépendant. Pour les billets officiels, visitez : e-services.minculture.gov.ma",
+    "contactCta": "Nous Contacter",
+    "ctaTitle": "Une Question sur Votre Visite ?",
+    "ctaBody": "Des questions sur la visite du Palais Bahia ? Consultez notre FAQ ou envoyez-nous un message."
   },
   "contactPage": {
     "title": "Contactez-Nous",

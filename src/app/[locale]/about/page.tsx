@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
-import { Shield, Globe, Heart } from 'lucide-react';
+import { Heart, Globe, AlertTriangle, CheckCircle2 } from 'lucide-react';
 import type { Metadata } from 'next';
 import { buildAlternates, buildOG } from '@/lib/seo';
 
@@ -13,8 +13,8 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'aboutPage' });
-  const title = `${t('hero')} — Bahia Palace Tickets`;
-  const description = t('heroSub') as string;
+  const title       = t('metaTitle');
+  const description = t('metaDesc');
   return {
     title,
     description,
@@ -26,6 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function AboutPage() {
   const t  = await getTranslations('aboutPage');
   const tb = await getTranslations('breadcrumb');
+
+  const provideItems = t('whyBody').split(' · ').filter(Boolean);
 
   return (
     <div className="bg-[#FAF3E7] min-h-screen">
@@ -51,7 +53,7 @@ export default async function AboutPage() {
             >
               {t('hero')}
             </h1>
-            <p className="text-white/80 mt-2 text-lg">{t('heroSub')}</p>
+            <p className="text-white/80 mt-2 text-lg max-w-2xl">{t('heroSub')}</p>
           </div>
         </div>
       </div>
@@ -68,7 +70,7 @@ export default async function AboutPage() {
             <h2 style={{ fontFamily: 'Cormorant Garamond, serif' }} className="text-2xl font-bold text-[#3D2817] mb-4">
               {t('missionTitle')}
             </h2>
-            <p className="text-[#5C3D20] leading-relaxed">{t('missionBody')}</p>
+            <p className="text-[#5C3D20] leading-relaxed text-lg">{t('missionBody')}</p>
           </div>
           <div className="relative h-64 rounded-2xl overflow-hidden">
             <Image
@@ -81,48 +83,42 @@ export default async function AboutPage() {
           </div>
         </section>
 
-        {/* Why we started */}
+        {/* What We Provide */}
         <section className="bg-white rounded-2xl border border-[#E8D5B7] p-8 md:p-10">
           <div className="w-10 h-10 bg-[#2E4A7B]/10 rounded-xl flex items-center justify-center mb-4">
-            <Shield size={20} className="text-[#2E4A7B]" />
+            <Globe size={20} className="text-[#2E4A7B]" />
           </div>
-          <h2 style={{ fontFamily: 'Cormorant Garamond, serif' }} className="text-2xl font-bold text-[#3D2817] mb-4">
+          <h2 style={{ fontFamily: 'Cormorant Garamond, serif' }} className="text-2xl font-bold text-[#3D2817] mb-6">
             {t('whyTitle')}
           </h2>
-          <p className="text-[#5C3D20] leading-relaxed text-lg">{t('whyBody')}</p>
+          <ul className="space-y-4">
+            {provideItems.map((item, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <CheckCircle2 size={18} className="text-[#6B7B3A] shrink-0 mt-0.5" />
+                <span className="text-[#5C3D20] leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
         </section>
 
-        {/* Team */}
-        <section className="grid md:grid-cols-2 gap-10 items-center">
-          <div className="relative h-64 rounded-2xl overflow-hidden order-2 md:order-1">
-            <Image
-              src="/images/gallery/bahia-palace-tourists-visiting-grand-courtyard.jpg"
-              alt="Bahia Palace visitors"
-              fill
-              className="object-cover"
-              sizes="(max-width:768px) 100vw, 400px"
-            />
+        {/* Important Notice */}
+        <section className="bg-amber-50 border-2 border-amber-200 rounded-2xl p-8 md:p-10">
+          <div className="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+            <AlertTriangle size={20} className="text-amber-700" />
           </div>
-          <div className="order-1 md:order-2">
-            <div className="w-10 h-10 bg-[#6B7B3A]/10 rounded-xl flex items-center justify-center mb-4">
-              <Globe size={20} className="text-[#6B7B3A]" />
-            </div>
-            <h2 style={{ fontFamily: 'Cormorant Garamond, serif' }} className="text-2xl font-bold text-[#3D2817] mb-4">
-              {t('teamTitle')}
-            </h2>
-            <p className="text-[#5C3D20] leading-relaxed">{t('teamBody')}</p>
-          </div>
+          <h2 style={{ fontFamily: 'Cormorant Garamond, serif' }} className="text-2xl font-bold text-amber-900 mb-4">
+            {t('teamTitle')}
+          </h2>
+          <p className="text-amber-800 leading-relaxed text-lg">{t('teamBody')}</p>
         </section>
 
         {/* CTA */}
         <section className="bg-[#3D2817] text-white rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1">
             <h2 style={{ fontFamily: 'Cormorant Garamond, serif' }} className="text-2xl font-bold mb-3">
-              Have Questions?
+              {t('ctaTitle')}
             </h2>
-            <p className="text-white/80 leading-relaxed text-sm">
-              Questions about your visit? We know every detail about Bahia Palace and we&apos;ve built our service to give you a seamless experience.
-            </p>
+            <p className="text-white/80 leading-relaxed text-sm">{t('ctaBody')}</p>
           </div>
           <Link
             href="/contact"
