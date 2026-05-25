@@ -1,3 +1,5 @@
+export const revalidate = 60;
+
 import { Hero } from '@/components/homepage/Hero';
 import { TrustStrip } from '@/components/homepage/TrustStrip';
 import { TicketSection } from '@/components/homepage/TicketSection';
