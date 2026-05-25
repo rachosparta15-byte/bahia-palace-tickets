@@ -31,7 +31,7 @@ export function AboutSection() {
           {/* REPLACE with actual Bahia Palace photo */}
           <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=800&q=80"
+              src="/images/gallery/bahia-palace-arabic-calligraphy-stucco-zellige-courtyard.jpg"
               alt="Bahia Palace intricate zellige tiles and carved stucco — Marrakech"
               fill
               className="object-cover"

@@ -20,11 +20,11 @@ interface Props {
    A: courtyard arches  B: painted ceiling  C: tiled hallway
    D: marble fountain   E: zellige courtyard
    ────────────────────────────────────────────────────────────── */
-const BP_A = 'https://images.unsplash.com/photo-1663297824621-27c5ff4cc826';
-const BP_B = 'https://images.unsplash.com/photo-1678030560595-85b1efd78392';
-const BP_C = 'https://images.unsplash.com/photo-1705600974255-f36a837ebd97';
-const BP_D = 'https://images.unsplash.com/photo-1572018350822-3c2bbfcba459';
-const BP_E = 'https://images.unsplash.com/photo-1570133435536-7ececf000ef6';
+const BP_A = '/images/gallery/bahia-palace-main-gate-lanterns-full-view.jpg';
+const BP_B = '/images/gallery/bahia-palace-octagonal-cedar-ceiling-carved-wood.jpg';
+const BP_C = '/images/gallery/bahia-palace-grand-courtyard-balcony-view-fountain.jpg';
+const BP_D = '/images/gallery/bahia-palace-inner-courtyard-central-fountain-stucco.jpg';
+const BP_E = '/images/gallery/bahia-palace-zellige-mosaic-arabic-calligraphy-stucco.jpg';
 
 const HERO_IMAGES: Record<TicketKey, string> = {
   skipTheLine:  `${BP_A}?w=1400&q=80`,

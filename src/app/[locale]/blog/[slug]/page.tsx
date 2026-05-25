@@ -12,11 +12,15 @@ import type { Metadata } from 'next';
 const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://visitbahiapalace.com';
 
 const CATEGORY_IMAGES: Record<string, string> = {
-  'visit-tips': 'https://images.unsplash.com/photo-1663297824621-27c5ff4cc826?w=1400&q=80',
-  'history':    'https://images.unsplash.com/photo-1678030560595-85b1efd78392?w=1400&q=80',
-  'safety':     'https://images.unsplash.com/photo-1570133435536-7ececf000ef6?w=1400&q=80',
-  'practical':  'https://images.unsplash.com/photo-1705600974255-f36a837ebd97?w=1400&q=80',
-  'comparisons':'https://images.unsplash.com/photo-1572018350822-3c2bbfcba459?w=1400&q=80',
+  'visit-tips':   '/images/gallery/bahia-palace-tourists-visiting-grand-courtyard.jpg',
+  'history':      '/images/gallery/bahia-palace-zellige-column-entrance-arch.jpg',
+  'safety':       '/images/gallery/bahia-palace-zellige-floor-stucco-calligraphy-low-angle.jpg',
+  'practical':    '/images/gallery/bahia-palace-stucco-column-zellige-floor-fountain.jpg',
+  'comparisons':  '/images/gallery/bahia-palace-arch-view-green-dome-fountain-palm.jpg',
+  'guides':       '/images/gallery/bahia-palace-main-entrance-sign-lantern-marrakech.jpg',
+  'tips':         '/images/gallery/bahia-palace-bahia-inscription-arch-zellige-garden.jpg',
+  'reviews':      '/images/gallery/bahia-palace-arabic-calligraphy-stucco-zellige-courtyard.jpg',
+  'itineraries':  '/images/gallery/bahia-palace-aerial-view-marrakech-medina-drone.jpg',
 };
 
 function extractFaqSchema(html: string) {

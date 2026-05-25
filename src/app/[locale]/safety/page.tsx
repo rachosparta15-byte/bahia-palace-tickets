@@ -136,7 +136,7 @@ export default async function SafetyPage({ params }: { params: Promise<{ locale:
                 >
                   <div className="relative h-40 overflow-hidden">
                     <Image
-                      src={article.coverImage ?? 'https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=800&q=75'}
+                      src={article.coverImage ?? '/images/gallery/bahia-palace-zellige-mosaic-arabic-calligraphy-stucco.jpg'}
                       alt={article.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"

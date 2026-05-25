@@ -8,10 +8,10 @@ import Image from 'next/image';
 import prisma from '@/lib/db';
 
 const IMAGES: Record<string, string> = {
-  'skip-the-line':       'https://images.unsplash.com/photo-1663297824621-27c5ff4cc826?w=800&q=80',
-  'guided-tour':         'https://images.unsplash.com/photo-1678030560595-85b1efd78392?w=800&q=80',
-  'private-tour':        'https://images.unsplash.com/photo-1705600974255-f36a837ebd97?w=800&q=80',
-  'combo-saadian-tombs': 'https://images.unsplash.com/photo-1572018350822-3c2bbfcba459?w=800&q=80',
+  'skip-the-line':       '/images/gallery/bahia-palace-main-gate-lanterns-full-view.jpg',
+  'guided-tour':         '/images/gallery/bahia-palace-octagonal-cedar-ceiling-carved-wood.jpg',
+  'private-tour':        '/images/gallery/bahia-palace-grand-courtyard-balcony-view-fountain.jpg',
+  'combo-saadian-tombs': '/images/gallery/bahia-palace-inner-courtyard-central-fountain-stucco.jpg',
 };
 
 interface Props {

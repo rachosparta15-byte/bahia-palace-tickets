@@ -63,7 +63,7 @@ export default async function HistoryPage({ params }: Props) {
 
       {/* Hero */}
       <div className="relative h-72 md:h-96">
-        <Image src="https://images.unsplash.com/photo-1678030560595-85b1efd78392?w=1400&q=80" alt="Bahia Palace Marrakech ornate painted cedar wood ceiling — 19th century Moroccan architecture" fill className="object-cover" sizes="100vw" />
+        <Image src="/images/gallery/bahia-palace-octagonal-cedar-ceiling-carved-wood.jpg" alt="Bahia Palace Marrakech ornate painted cedar wood ceiling — 19th century Moroccan architecture" fill className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#3D2817]/50 to-[#3D2817]/85" />
         <div className="absolute inset-0 flex flex-col justify-between px-6 py-8 md:px-10 max-w-4xl mx-auto w-full left-0 right-0">
           <Breadcrumb variant="light" items={[{ label: 'Home', href: '/' }, { label: 'History' }]} />
