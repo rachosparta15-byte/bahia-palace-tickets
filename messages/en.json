@@ -307,7 +307,11 @@
       "history": "History",
       "practical": "Practical Info",
       "comparisons": "Comparisons",
-      "safety": "Safety"
+      "safety": "Safety",
+      "guides": "Guides",
+      "tips": "Tips",
+      "reviews": "Reviews",
+      "itineraries": "Itineraries"
     },
     "all": "All articles",
     "bookCta": "Book your skip-the-line ticket →",

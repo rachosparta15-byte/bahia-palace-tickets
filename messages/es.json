@@ -307,7 +307,11 @@
       "history": "Historia",
       "practical": "Información Práctica",
       "comparisons": "Comparaciones",
-      "safety": "Seguridad"
+      "safety": "Seguridad",
+      "guides": "Guías",
+      "tips": "Consejos",
+      "reviews": "Reseñas",
+      "itineraries": "Itinerarios"
     },
     "all": "Todos los artículos",
     "bookCta": "Reserva tu entrada sin colas →",

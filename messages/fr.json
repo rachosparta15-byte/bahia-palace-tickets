@@ -376,7 +376,11 @@
       "history": "Histoire",
       "practical": "Infos Pratiques",
       "comparisons": "Comparaisons",
-      "safety": "Sécurité"
+      "safety": "Sécurité",
+      "guides": "Guides",
+      "tips": "Conseils",
+      "reviews": "Avis",
+      "itineraries": "Itinéraires"
     },
     "all": "Tous les articles",
     "bookCta": "Réservez votre billet coupe-file →",
