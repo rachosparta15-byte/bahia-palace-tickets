@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { BASE } from '@/lib/seo';
 import { Analytics } from '@vercel/analytics/next';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import { Cormorant_Garamond, Inter, Amiri } from 'next/font/google';
@@ -23,8 +24,6 @@ const amiri = Amiri({
   variable: '--font-amiri',
   display: 'swap',
 });
-
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),

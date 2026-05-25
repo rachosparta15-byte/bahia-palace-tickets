@@ -8,6 +8,7 @@ import { WhatsAppButton } from '@/components/layout/WhatsAppButton';
 import { StickyMobileCTA } from '@/components/layout/StickyMobileCTA';
 import { Analytics } from '@/components/analytics/Analytics';
 import type { Metadata } from 'next';
+import { BASE } from '@/lib/seo';
 
 interface Props {
   children: React.ReactNode;
@@ -17,8 +18,6 @@ interface Props {
 export async function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
-
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;

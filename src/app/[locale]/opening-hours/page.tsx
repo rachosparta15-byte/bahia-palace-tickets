@@ -1,11 +1,9 @@
 import { BOOKING_URL } from '@/lib/booking';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
-import { buildAlternates, buildOG } from '@/lib/seo';
+import { buildAlternates, buildOG, BASE } from '@/lib/seo';
 import { Clock, Sun, Moon, AlertTriangle, CheckCircle2, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
-
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
 
 const META: Record<string, { title: string; description: string }> = {
   en: { title: 'Bahia Palace Opening Hours 2026 | Daily Times & Best Visit Time', description: 'Bahia Palace is open daily 9:00 AM – 5:00 PM. Check 2026 schedule, Ramadan hours, holiday closures, and the best time to visit to avoid crowds.' },

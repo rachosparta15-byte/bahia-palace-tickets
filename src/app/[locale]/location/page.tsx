@@ -1,11 +1,9 @@
 import { BOOKING_URL } from '@/lib/booking';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
-import { buildAlternates, buildOG } from '@/lib/seo';
+import { buildAlternates, buildOG, BASE } from '@/lib/seo';
 import { MapPin, Navigation, Clock, ArrowRight, Car, Footprints } from 'lucide-react';
 import type { Metadata } from 'next';
-
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
 
 const META: Record<string, { title: string; description: string }> = {
   en: { title: 'How to Get to Bahia Palace Marrakech | Address, Map & Directions 2026', description: 'Bahia Palace is in Marrakech Medina, 10 minutes walking from Jemaa el-Fnaa. Get directions, taxi prices, parking info, and an interactive map.' },

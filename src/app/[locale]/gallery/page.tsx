@@ -2,14 +2,12 @@ import prisma from '@/lib/db';
 import Image from 'next/image';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
-import { buildAlternates, buildOG } from '@/lib/seo';
+import { buildAlternates, buildOG, BASE } from '@/lib/seo';
 import { BOOKING_URL } from '@/lib/booking';
 import { ArrowRight, Camera } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const revalidate = 3600;
-
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
 
 const META: Record<string, { title: string; description: string; heading: string; sub: string; bookCta: string; bookBtn: string }> = {
   en: {

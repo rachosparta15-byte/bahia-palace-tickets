@@ -1,4 +1,8 @@
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
+// Normalize to plain origin — guards against NEXT_PUBLIC_SITE_URL being set
+// with a trailing path (e.g. "https://www.visitbahiapalace.com/en") which
+// would produce double-locale URLs like /en/en/blog everywhere.
+const _raw = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
+export const BASE = new URL(_raw).origin;
 
 const LOCALES = ['en', 'fr', 'it', 'de', 'es'] as const;
 
@@ -16,6 +20,8 @@ export function buildOG(title: string, description: string, locale: string, path
     type: 'website' as const,
     locale,
     siteName: 'Bahia Palace Tickets',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: title }],
+    // Absolute URL — avoids Next.js resolving a relative path against the
+    // request URL (which includes the locale segment) and producing /en/og-image.jpg
+    images: [{ url: `${BASE}/og-image.jpg`, width: 1200, height: 630, alt: title }],
   };
 }

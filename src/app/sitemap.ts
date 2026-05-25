@@ -1,7 +1,6 @@
 import type { MetadataRoute } from 'next';
 import prisma from '@/lib/db';
-
-const BASE    = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
+import { BASE } from '@/lib/seo';
 const LOCALES = ['en', 'fr', 'it', 'de', 'es'] as const;
 
 const STATIC: { path: string; priority: number; freq: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
