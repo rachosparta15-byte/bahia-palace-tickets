@@ -18,7 +18,7 @@ export async function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://visitbahiapalace.com';
+const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;

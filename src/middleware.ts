@@ -6,6 +6,13 @@ import { verifyAdminToken, ADMIN_COOKIE } from './lib/auth';
 const intlMiddleware = createMiddleware(routing);
 
 export default async function middleware(req: NextRequest) {
+  const host = req.headers.get('host') ?? '';
+  if (host === 'visitbahiapalace.com') {
+    const url = req.nextUrl.clone();
+    url.host = 'www.visitbahiapalace.com';
+    return NextResponse.redirect(url, 301);
+  }
+
   const { pathname } = req.nextUrl;
 
   if (pathname.startsWith('/admin')) {

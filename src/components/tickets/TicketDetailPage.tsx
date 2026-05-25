@@ -6,7 +6,7 @@ import { Breadcrumb } from './Breadcrumb';
 import { BookingWidget } from './BookingWidget';
 import { JsonLd } from '@/components/seo/JsonLd';
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://visitbahiapalace.com';
+const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
 
 export type TicketKey = 'skipTheLine' | 'guidedTour' | 'privateTour' | 'combo';
 

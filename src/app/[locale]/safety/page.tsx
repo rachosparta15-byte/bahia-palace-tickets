@@ -8,7 +8,7 @@ import type { Metadata } from 'next';
 
 export const revalidate = 3600;
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://visitbahiapalace.com';
+const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
 
 const META: Record<string, { title: string; description: string; subtitle: string; inDepth: string; readGuide: string; bottomNote: string }> = {
   en: { title: 'Safety Guide Marrakech 2026 — Scams & Tips | Bahia Palace', description: 'Essential safety tips for tourists visiting Marrakech: avoid scams, fake guides, taxi overcharging, henna traps and more.', subtitle: 'Essential tips to stay safe and avoid common tourist traps in Marrakech', inDepth: 'In-depth safety guides', readGuide: 'Read guide', bottomNote: 'Stay vigilant and enjoy your visit to Bahia Palace. When in doubt, ask official staff inside the palace.' },

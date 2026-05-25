@@ -24,7 +24,7 @@ const amiri = Amiri({
   display: 'swap',
 });
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://visitbahiapalace.com';
+const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),

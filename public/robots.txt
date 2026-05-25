@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 
-Sitemap: https://visitbahiapalace.com/sitemap.xml
+Sitemap: https://www.visitbahiapalace.com/sitemap.xml

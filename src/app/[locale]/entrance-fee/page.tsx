@@ -5,7 +5,7 @@ import { buildAlternates, buildOG } from '@/lib/seo';
 import { CheckCircle2, Info, ArrowRight, Tag } from 'lucide-react';
 import type { Metadata } from 'next';
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://visitbahiapalace.com';
+const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
 
 const META: Record<string, { title: string; description: string }> = {
   en: { title: 'Bahia Palace Entrance Fee 2026 | Current Ticket Prices in MAD & USD', description: 'Bahia Palace entrance fee is 100 MAD (≈$10 USD) for foreign adults in 2026. Children under 7 free. Compare ticket prices, skip-the-line options and guided tours.' },

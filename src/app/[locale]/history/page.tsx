@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://visitbahiapalace.com';
+const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
 
 const META: Record<string, { title: string; description: string }> = {
   en: { title: 'Bahia Palace History | Ba Ahmed & The Story Behind The Palace', description: 'Discover the fascinating history of Bahia Palace, built between 1866–1900 by Grand Vizier Ba Ahmed. Learn about its architects, the harem, and royal Moroccan past.' },

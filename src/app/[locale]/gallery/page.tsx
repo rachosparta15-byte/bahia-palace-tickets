@@ -9,7 +9,7 @@ import type { Metadata } from 'next';
 
 export const revalidate = 3600;
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://visitbahiapalace.com';
+const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
 
 const META: Record<string, { title: string; description: string; heading: string; sub: string; bookCta: string; bookBtn: string }> = {
   en: {
