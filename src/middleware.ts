@@ -69,7 +69,17 @@ export default async function middleware(req: NextRequest) {
     return res;
   }
 
-  // ── 3. Admin protection ─────────────────────────────────────────
+  // ── 3. Non-localized /tickets/* → 301 to /en/tickets/* ──────────
+  // These URLs have no locale prefix; next-intl would issue a 307 (temporary),
+  // which causes Google to keep re-crawling them. A 301 tells crawlers
+  // the canonical location is the /en/ variant, fixing Search Console issues.
+  if (pathname.startsWith('/tickets/') || pathname === '/tickets') {
+    const target = req.nextUrl.clone();
+    target.pathname = `/en${pathname}`;
+    return NextResponse.redirect(target, 301);
+  }
+
+  // ── 4. Admin protection ─────────────────────────────────────────
   if (pathname.startsWith('/admin')) {
     if (pathname !== '/admin/login') {
       const token = req.cookies.get(ADMIN_COOKIE)?.value;
