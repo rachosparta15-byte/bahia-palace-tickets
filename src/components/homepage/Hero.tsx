@@ -62,10 +62,11 @@ export function Hero() {
       <div className="relative z-10 px-6 pt-8 pb-10">
         <div className="max-w-6xl mx-auto w-full">
           <div className="max-w-2xl">
-            <h1 className="hero-title mb-6 leading-none" aria-label="Bahia Palace Tickets — Skip the Line in Marrakech">
+            <h1 className="hero-title mb-6 leading-none">
               <span className="block text-[#E8A33D] text-xs sm:text-sm font-bold tracking-[0.3em] uppercase mb-3">
                 Bahia Palace Tickets
               </span>
+              <span className="sr-only"> — </span>
               <span
                 className="block text-white"
                 style={{
@@ -78,6 +79,7 @@ export function Hero() {
               >
                 Skip the Line
               </span>
+              <span className="sr-only"> </span>
               <span
                 className="block text-white/55 mt-2"
                 style={{
