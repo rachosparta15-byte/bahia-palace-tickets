@@ -102,7 +102,11 @@ export default async function middleware(req: NextRequest) {
     if (pathname !== '/admin/login') {
       const token = req.cookies.get(ADMIN_COOKIE)?.value;
       const valid = token ? !!(await verifyAdminToken(token)) : false;
-      if (!valid) return new NextResponse(null, { status: 404 });
+      if (!valid) {
+        const loginUrl = req.nextUrl.clone();
+        loginUrl.pathname = '/admin/login';
+        return NextResponse.redirect(loginUrl, 302);
+      }
     }
     const reqHeaders = new Headers(req.headers);
     reqHeaders.set('x-pathname', pathname);
