@@ -15,6 +15,18 @@ export default async function middleware(req: NextRequest) {
 
   const { pathname } = req.nextUrl;
 
+  // Root path: 301 to /en for SEO (fixes duplicate content issue).
+  // Honour the NEXT_LOCALE cookie so returning users land in their language.
+  if (pathname === '/') {
+    const cookie = req.cookies.get('NEXT_LOCALE')?.value;
+    const supported = ['en', 'fr', 'it', 'de', 'es'];
+    const locale = cookie && supported.includes(cookie) ? cookie : 'en';
+    const isPermanent = locale === 'en';
+    const target = req.nextUrl.clone();
+    target.pathname = `/${locale}`;
+    return NextResponse.redirect(target, isPermanent ? 301 : 302);
+  }
+
   if (pathname.startsWith('/admin')) {
     // Protect all admin routes except the login page itself.
     // Return 404 (not redirect) so scanners cannot confirm the admin panel exists.
