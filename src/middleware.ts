@@ -77,7 +77,17 @@ export default async function middleware(req: NextRequest) {
     return new NextResponse(null, { status: 410 });
   }
 
-  // ── 4. Non-localized /tickets/* → 301 to /en/tickets/* ──────────
+  // ── 4. /safety-guide → /safety (301, locale-aware) ────────────────
+  // The page-level permanentRedirect() returned 308 and caused a double-hop
+  // (/en/safety-guide → /safety → /en/safety). A single middleware 301 that
+  // keeps the locale prefix in place collapses it to one hop.
+  if (pathname.endsWith('/safety-guide')) {
+    const target = req.nextUrl.clone();
+    target.pathname = pathname.slice(0, -'/safety-guide'.length) + '/safety';
+    return NextResponse.redirect(target, 301);
+  }
+
+  // ── 5. Non-localized /tickets/* → 301 to /en/tickets/* ─────────
   // These URLs have no locale prefix; next-intl would issue a 307 (temporary),
   // which causes Google to keep re-crawling them. A 301 tells crawlers
   // the canonical location is the /en/ variant, fixing Search Console issues.
@@ -87,7 +97,7 @@ export default async function middleware(req: NextRequest) {
     return NextResponse.redirect(target, 301);
   }
 
-  // ── 4. Admin protection ─────────────────────────────────────────
+  // ── 6. Admin protection ─────────────────────────────────────────
   if (pathname.startsWith('/admin')) {
     if (pathname !== '/admin/login') {
       const token = req.cookies.get(ADMIN_COOKIE)?.value;
