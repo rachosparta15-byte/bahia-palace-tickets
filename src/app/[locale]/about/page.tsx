@@ -32,7 +32,7 @@ export default async function AboutPage() {
       {/* Hero */}
       <div className="relative h-72 md:h-96">
         <Image
-          src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=1400&q=80"
+          src="/images/gallery/bahia-palace-grand-courtyard-balcony-view-fountain.jpg"
           alt="Bahia Palace"
           fill
           className="object-cover"
@@ -72,7 +72,7 @@ export default async function AboutPage() {
           </div>
           <div className="relative h-64 rounded-2xl overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-1560148218-1a83060f7b32?w=800&q=75"
+              src="/images/gallery/bahia-palace-inner-courtyard-central-fountain-stucco.jpg"
               alt="Bahia Palace courtyard"
               fill
               className="object-cover"
@@ -96,8 +96,8 @@ export default async function AboutPage() {
         <section className="grid md:grid-cols-2 gap-10 items-center">
           <div className="relative h-64 rounded-2xl overflow-hidden order-2 md:order-1">
             <Image
-              src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=800&q=75"
-              alt="Marrakech medina"
+              src="/images/gallery/bahia-palace-tourists-visiting-grand-courtyard.jpg"
+              alt="Bahia Palace visitors"
               fill
               className="object-cover"
               sizes="(max-width:768px) 100vw, 400px"

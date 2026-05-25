@@ -63,7 +63,7 @@ export function Footer() {
             <ul className="space-y-2">
               {[
                 { href: '/blog', label: t('blog') },
-                { href: '/safety-guide', label: t('safetyGuide') },
+                { href: '/safety', label: t('safetyGuide') },
                 { href: '/faq', label: t('faq') },
                 { href: '/about', label: t('about') },
                 { href: '/contact', label: t('contact') },

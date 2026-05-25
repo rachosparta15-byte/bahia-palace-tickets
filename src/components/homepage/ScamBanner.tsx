@@ -12,7 +12,7 @@ export function ScamBanner() {
           <AlertTriangle size={18} className="text-[#C8882A] shrink-0" />
           <p className="text-sm text-[#5C3D20]">{t('text')}</p>
           <Link
-            href="/safety-guide"
+            href="/safety"
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C4452D] hover:underline"
           >
             {t('link')}
