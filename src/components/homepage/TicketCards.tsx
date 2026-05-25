@@ -182,7 +182,7 @@ export function TicketCards({ overrides = {} }: Props) {
                     {/* Trust line */}
                     <div className="flex items-center gap-1.5 mt-3 text-[11px] text-[#8B6344]">
                       <ShieldCheck size={12} className="text-[#6B7B3A]" />
-                      Official booking via Moroccan Ministry of Culture
+                      Links to the official government booking portal
                     </div>
                   </div>
                 </div>

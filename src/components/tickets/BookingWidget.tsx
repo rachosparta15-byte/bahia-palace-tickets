@@ -55,7 +55,7 @@ export function BookingWidget({ price, ticketName }: BookingWidgetProps) {
 
         {/* Official site note */}
         <p className="text-center text-xs text-[#5C3D20] mb-5">
-          🔒 Official booking via Moroccan Ministry of Culture
+          🔒 Links to the official government booking portal
         </p>
 
         {/* Trust badges */}
