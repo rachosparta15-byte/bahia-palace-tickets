@@ -97,13 +97,13 @@ export function TicketCards({ overrides = {} }: Props) {
                 key={slug}
                 className={`relative flex overflow-hidden rounded-2xl border border-[#C4452D] bg-white shadow-[0_16px_56px_rgba(196,69,45,0.22)] transition-all
                   ${isSingle
-                    ? 'w-full max-w-2xl flex-row'
+                    ? 'w-full max-w-2xl flex-col sm:flex-row'
                     : 'flex-col'
                   }`}
               >
                 {/* ── Image side (left on single, top on grid) ── */}
                 <div className={`relative overflow-hidden shrink-0
-                  ${isSingle ? 'w-72 min-h-full' : 'h-44 w-full'}`}
+                  ${isSingle ? 'h-56 w-full sm:w-72 sm:h-auto sm:min-h-full' : 'h-44 w-full'}`}
                 >
                   <Image
                     src={imgSrc}
