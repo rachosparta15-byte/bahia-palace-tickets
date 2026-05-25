@@ -19,11 +19,9 @@ const STATIC: { path: string; priority: number; freq: MetadataRoute.Sitemap[numb
   { path: '/contact',        priority: 0.55, freq: 'monthly' },
 ];
 
+// Only include tickets that are live (available). Coming-soon tickets are noindexed.
 const TICKET_SLUGS = [
   'skip-the-line',
-  'guided-tour',
-  'private-tour',
-  'combo-saadian-tombs',
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

@@ -69,7 +69,15 @@ export default async function middleware(req: NextRequest) {
     return res;
   }
 
-  // ── 3. Non-localized /tickets/* → 301 to /en/tickets/* ──────────
+  // ── 3. Test/junk blog slugs → 410 Gone ─────────────────────────
+  // These were crawled by Google during development. 410 signals permanent
+  // removal so Googlebot stops revisiting them.
+  const BAD_BLOG_SLUGS = /^\/([a-z]{2}\/)?blog\/(z|test|xdxxxxxxxx)(\/.*)?$/;
+  if (BAD_BLOG_SLUGS.test(pathname)) {
+    return new NextResponse(null, { status: 410 });
+  }
+
+  // ── 4. Non-localized /tickets/* → 301 to /en/tickets/* ──────────
   // These URLs have no locale prefix; next-intl would issue a 307 (temporary),
   // which causes Google to keep re-crawling them. A 301 tells crawlers
   // the canonical location is the /en/ variant, fixing Search Console issues.

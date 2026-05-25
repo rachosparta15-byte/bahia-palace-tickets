@@ -3,5 +3,8 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 Disallow: /tickets/
+Disallow: /*/blog/z
+Disallow: /*/blog/test
+Disallow: /*/blog/xdxxxxxxxx
 
 Sitemap: https://www.visitbahiapalace.com/sitemap.xml

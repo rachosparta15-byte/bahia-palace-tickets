@@ -2,8 +2,6 @@ import { TicketDetailPage } from '@/components/tickets/TicketDetailPage';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
-
 interface Props {
   params: Promise<{ locale: string }>;
 }
@@ -14,16 +12,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${t('guidedTour.name')} — Bahia Palace Tickets`,
     description: t('guidedTour.tagline' as any),
-    alternates: {
-      canonical: `${BASE}/${locale}/tickets/guided-tour`,
-      languages: {
-        en: `${BASE}/en/tickets/guided-tour`,
-        fr: `${BASE}/fr/tickets/guided-tour`,
-        it: `${BASE}/it/tickets/guided-tour`,
-        de: `${BASE}/de/tickets/guided-tour`,
-        es: `${BASE}/es/tickets/guided-tour`,
-      },
-    },
+    robots: { index: false, follow: false },
   };
 }
 
