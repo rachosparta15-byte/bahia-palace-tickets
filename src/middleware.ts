@@ -5,7 +5,29 @@ import { verifyAdminToken, ADMIN_COOKIE } from './lib/auth';
 
 const intlMiddleware = createMiddleware(routing);
 
+const SUPPORTED = ['en', 'fr', 'it', 'de', 'es'] as const;
+type Locale = (typeof SUPPORTED)[number];
+
+const BOT_RE =
+  /Googlebot|bingbot|DuckDuckBot|YandexBot|Baiduspider|Slurp|facebot|ia_archiver|AhrefsBot|SemrushBot|MJ12bot|DotBot/i;
+
+function detectLocale(acceptLanguage: string | null): Locale {
+  if (!acceptLanguage) return 'en';
+  const langs = acceptLanguage
+    .split(',')
+    .map(part => {
+      const [tag, q] = part.trim().split(';q=');
+      return { lang: (tag ?? '').trim().split('-')[0].toLowerCase(), q: parseFloat(q ?? '1') };
+    })
+    .sort((a, b) => b.q - a.q);
+  for (const { lang } of langs) {
+    if (SUPPORTED.includes(lang as Locale)) return lang as Locale;
+  }
+  return 'en';
+}
+
 export default async function middleware(req: NextRequest) {
+  // ── 1. Force www ────────────────────────────────────────────────
   const host = req.headers.get('host') ?? '';
   if (host === 'visitbahiapalace.com') {
     const url = req.nextUrl.clone();
@@ -15,29 +37,45 @@ export default async function middleware(req: NextRequest) {
 
   const { pathname } = req.nextUrl;
 
-  // Root path: 301 to /en for SEO (fixes duplicate content issue).
-  // Honour the NEXT_LOCALE cookie so returning users land in their language.
+  // ── 2. Root redirect with locale detection ───────────────────────
   if (pathname === '/') {
+    const ua = req.headers.get('user-agent') ?? '';
+
+    // Bots → 301 to /en (canonical for search engines)
+    if (BOT_RE.test(ua)) {
+      const target = req.nextUrl.clone();
+      target.pathname = '/en';
+      return NextResponse.redirect(target, 301);
+    }
+
+    // Returning user with cookie → 302 to their locale
     const cookie = req.cookies.get('NEXT_LOCALE')?.value;
-    const supported = ['en', 'fr', 'it', 'de', 'es'];
-    const locale = cookie && supported.includes(cookie) ? cookie : 'en';
-    const isPermanent = locale === 'en';
+    if (cookie && SUPPORTED.includes(cookie as Locale)) {
+      const target = req.nextUrl.clone();
+      target.pathname = `/${cookie}`;
+      return NextResponse.redirect(target, 302);
+    }
+
+    // New user → parse Accept-Language, set cookie, 302
+    const detected = detectLocale(req.headers.get('accept-language'));
     const target = req.nextUrl.clone();
-    target.pathname = `/${locale}`;
-    return NextResponse.redirect(target, isPermanent ? 301 : 302);
+    target.pathname = `/${detected}`;
+    const res = NextResponse.redirect(target, 302);
+    res.cookies.set('NEXT_LOCALE', detected, {
+      maxAge: 365 * 24 * 60 * 60,
+      path: '/',
+      sameSite: 'lax',
+    });
+    return res;
   }
 
+  // ── 3. Admin protection ─────────────────────────────────────────
   if (pathname.startsWith('/admin')) {
-    // Protect all admin routes except the login page itself.
-    // Return 404 (not redirect) so scanners cannot confirm the admin panel exists.
     if (pathname !== '/admin/login') {
       const token = req.cookies.get(ADMIN_COOKIE)?.value;
       const valid = token ? !!(await verifyAdminToken(token)) : false;
-      if (!valid) {
-        return new NextResponse(null, { status: 404 });
-      }
+      if (!valid) return new NextResponse(null, { status: 404 });
     }
-    // Forward pathname so the admin layout can conditionally show the sidebar
     const reqHeaders = new Headers(req.headers);
     reqHeaders.set('x-pathname', pathname);
     return NextResponse.next({ request: { headers: reqHeaders } });
