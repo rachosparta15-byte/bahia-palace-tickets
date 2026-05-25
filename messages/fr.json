@@ -138,7 +138,11 @@
   },
   "reviews": {
     "title": "Ce que Disent les Visiteurs",
-    "subtitle": "Expériences réelles de visiteurs du monde entier"
+    "subtitle": "Expériences réelles de visiteurs du monde entier",
+    "tripAdvisorPrompt": "Lisez les vrais avis des visiteurs sur TripAdvisor — la plus grande plateforme de voyage au monde.",
+    "tripAdvisorCta": "Lire les avis sur TripAdvisor",
+    "tripAdvisorNote": "Palais Bahia · Marrakech · Médina",
+    "seeAllOnTripAdvisor": "Voir tous les avis sur TripAdvisor"
   },
   "faq": {
     "title": "Questions Fréquemment Posées",

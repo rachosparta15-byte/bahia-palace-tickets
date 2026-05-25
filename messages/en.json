@@ -430,7 +430,11 @@
   },
   "reviews": {
     "title": "What Visitors Say",
-    "subtitle": "Real experiences from visitors around the world"
+    "subtitle": "Real experiences from visitors around the world",
+    "tripAdvisorPrompt": "Read genuine reviews from visitors on TripAdvisor — the world's largest travel platform.",
+    "tripAdvisorCta": "Read reviews on TripAdvisor",
+    "tripAdvisorNote": "Bahia Palace · Marrakech · Medina",
+    "seeAllOnTripAdvisor": "See all reviews on TripAdvisor"
   },
   "faq": {
     "title": "Frequently Asked Questions",

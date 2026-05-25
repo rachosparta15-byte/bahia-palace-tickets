@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { Star, Quote, ExternalLink } from 'lucide-react';
+import { Star, ExternalLink } from 'lucide-react';
 import { OrnamentDivider } from '@/components/ui/ZelligePattern';
 import prisma from '@/lib/db';
 
@@ -16,10 +16,48 @@ export async function ReviewsCarousel() {
       select: { id: true, authorName: true, country: true, rating: true, body: true },
       take: 6,
     });
-  } catch { /* DB unavailable — hide section */ }
+  } catch { /* DB unavailable — fall through to TripAdvisor CTA */ }
 
-  if (reviews.length === 0) return null;
+  // ── No verified reviews yet — show TripAdvisor CTA ──────────────
+  if (reviews.length === 0) {
+    return (
+      <section className="py-20 bg-[#3D2817]">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <OrnamentDivider label="" />
+          <h2
+            className="text-white mt-6 mb-4"
+            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
+          >
+            {t('title')}
+          </h2>
+          <p className="text-[#C4A882] mb-8 max-w-xl mx-auto">
+            {t('tripAdvisorPrompt')}
+          </p>
+          <div className="inline-flex flex-col items-center gap-4">
+            {/* TripAdvisor star row */}
+            <div className="flex items-center gap-1">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} size={22} className="text-[#34E0A1] fill-[#34E0A1]" />
+              ))}
+            </div>
+            <a
+              href={TRIPADVISOR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#34E0A1] hover:bg-[#2bc98e] text-[#1a1a1a] font-semibold px-7 py-3 rounded-full transition-colors text-sm"
+            >
+              <span className="font-bold">●</span>
+              {t('tripAdvisorCta')}
+              <ExternalLink size={14} />
+            </a>
+            <p className="text-[#5C3D20] text-xs">{t('tripAdvisorNote')}</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
+  // ── Verified reviews from DB ─────────────────────────────────────
   return (
     <section className="py-20 bg-[#3D2817] overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
@@ -42,7 +80,6 @@ export async function ReviewsCarousel() {
                 key={review.id}
                 className="bg-[#5C3D20]/30 rounded-2xl p-4 sm:p-6 border border-[#5C3D20] relative"
               >
-                <Quote size={28} className="text-[#E8A33D]/30 absolute top-4 right-4" />
                 <div className="flex items-center gap-1 mb-3">
                   {Array.from({ length: review.rating }).map((_, j) => (
                     <Star key={j} size={14} className="text-[#E8A33D] fill-[#E8A33D]" />
@@ -71,7 +108,7 @@ export async function ReviewsCarousel() {
             className="inline-flex items-center gap-2 text-[#C4A882] hover:text-white text-sm font-medium transition-colors border border-[#5C3D20] hover:border-[#C4A882] px-5 py-2.5 rounded-full"
           >
             <span className="text-[#34E0A1] font-bold text-xs">●</span>
-            See all reviews on TripAdvisor
+            {t('seeAllOnTripAdvisor')}
             <ExternalLink size={13} />
           </a>
         </div>
