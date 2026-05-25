@@ -22,7 +22,6 @@
     "instant": "Instant Confirmation",
     "freeCancellation": "Free Cancellation",
     "mobile": "Mobile Tickets",
-    "rating": "4.9★ Rating",
     "secure": "Secure Payment"
   },
   "tickets": {
@@ -170,11 +169,11 @@
     "hero": "About Our Service",
     "heroSub": "Your trusted source for authentic Bahia Palace tickets",
     "missionTitle": "Our Mission",
-    "missionBody": "We make visiting Bahia Palace effortless. No confusing queues, no over-priced tickets from street vendors — just a simple online booking, instant confirmation, and a magical visit. We are a Marrakech-based team that loves this palace and wants every visitor to experience it at its best.",
+    "missionBody": "We make visiting Bahia Palace effortless. No confusing queues, no over-priced tickets from street vendors — just a simple online booking, instant confirmation, and a magical visit.",
     "whyTitle": "Why We Started",
     "whyBody": "Too many tourists arrive at Bahia Palace to find long queues, misleading prices, or fake 'guides' at the entrance. We built this service to give travellers a trustworthy, transparent way to book — so they can focus on the beauty of the palace, not the hassle around it.",
-    "teamTitle": "Local Team, Global Reach",
-    "teamBody": "Our team is based in Marrakech's medina, just minutes from the palace. We speak English, French, Arabic, and Darija. We handle bookings for visitors from over 50 countries every year.",
+    "teamTitle": "Our Booking Service",
+    "teamBody": "We offer a simple, secure online booking experience with instant confirmation. We speak English, French, Arabic, and Darija.",
     "contactCta": "Get in Touch"
   },
   "contactPage": {
@@ -214,7 +213,7 @@
     "ctaTitle": "Book Bahia Palace Tickets Online",
     "ctaBody": "Instant confirmation · Free cancellation · Mobile tickets accepted",
     "ctaBtn": "See All Ticket Options",
-    "teamAvail": "Our team is available daily 8 AM – 8 PM Marrakech time.",
+    "teamAvail": "We respond to all booking enquiries promptly.",
     "items": [
       {
         "question": "Is Bahia Palace worth visiting in 2026?",

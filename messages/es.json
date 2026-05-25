@@ -22,7 +22,6 @@
     "instant": "Confirmación Instantánea",
     "freeCancellation": "Cancelación Gratuita",
     "mobile": "Entradas Móviles",
-    "rating": "Valoración 4,9★",
     "secure": "Pago Seguro"
   },
   "tickets": {
@@ -170,11 +169,11 @@
     "hero": "Sobre Nuestro Servicio",
     "heroSub": "Tu fuente de confianza para entradas auténticas del Palacio Bahia",
     "missionTitle": "Nuestra Misión",
-    "missionBody": "Hacemos que visitar el Palacio Bahia sea fácil. Sin colas confusas, sin entradas sobrepreciadas de vendedores callejeros — solo una reserva en línea sencilla, confirmación instantánea y una visita mágica. Somos un equipo con sede en Marrakech que ama este palacio y quiere que cada visitante lo experimente en su mejor momento.",
+    "missionBody": "Hacemos que visitar el Palacio Bahia sea fácil. Sin colas confusas, sin entradas sobrepreciadas de vendedores callejeros — solo una reserva en línea sencilla, confirmación instantánea y una visita mágica.",
     "whyTitle": "Por Qué Lo Creamos",
     "whyBody": "Demasiados turistas llegan al Palacio Bahia y se encuentran con largas colas, precios engañosos o falsos 'guías' en la entrada. Creamos este servicio para dar a los viajeros una forma confiable y transparente de reservar — para que puedan centrarse en la belleza del palacio, no en el caos que lo rodea.",
-    "teamTitle": "Equipo Local, Alcance Global",
-    "teamBody": "Nuestro equipo tiene su base en la medina de Marrakech, a pocos minutos del palacio. Hablamos inglés, francés, árabe y dárija. Gestionamos reservas para visitantes de más de 50 países cada año.",
+    "teamTitle": "Nuestro Servicio de Reservas",
+    "teamBody": "Ofrecemos una reserva en línea sencilla y segura con confirmación instantánea. Hablamos inglés, francés, árabe y dárija.",
     "contactCta": "Ponerse en Contacto"
   },
   "contactPage": {
@@ -214,7 +213,7 @@
     "ctaTitle": "Compra Entradas Online para el Palacio Bahia",
     "ctaBody": "Confirmación instantánea · Cancelación gratuita · Entradas móviles aceptadas",
     "ctaBtn": "Ver Todas las Opciones de Entradas",
-    "teamAvail": "Nuestro equipo está disponible todos los días de 8 a 20h, hora de Marrakech.",
+    "teamAvail": "Respondemos con rapidez a todas las consultas de reserva.",
     "items": [
       {
         "question": "¿Vale la pena visitar el Palacio Bahia en 2026?",

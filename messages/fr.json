@@ -22,7 +22,6 @@
     "instant": "Confirmation Instantanée",
     "freeCancellation": "Annulation Gratuite",
     "mobile": "Billets Mobiles",
-    "rating": "Note 4,9★",
     "secure": "Paiement Sécurisé"
   },
   "tickets": {
@@ -242,8 +241,8 @@
     "missionBody": "Nous rendons la visite du Palais Bahia simple et sans stress. Pas de files d'attente, pas de billets hors de prix auprès de revendeurs douteux — juste une réservation en ligne simple, une confirmation instantanée, et une visite magique.",
     "whyTitle": "Pourquoi Nous Avons Créé Ce Service",
     "whyBody": "Trop de touristes arrivaient au Palais Bahia pour trouver de longues files d'attente, des prix trompeurs ou de faux « guides » à l'entrée. Nous avons construit ce service pour offrir aux voyageurs une solution fiable et transparente.",
-    "teamTitle": "Équipe Locale, Portée Mondiale",
-    "teamBody": "Notre équipe est basée dans la médina de Marrakech, à quelques minutes du palais. Nous parlons anglais, français, arabe et darija. Nous gérons des réservations pour des visiteurs de plus de 50 pays chaque année.",
+    "teamTitle": "Notre Service de Réservation",
+    "teamBody": "Nous proposons une réservation en ligne simple et sécurisée avec confirmation instantanée. Nous parlons anglais, français, arabe et darija.",
     "contactCta": "Nous Contacter"
   },
   "contactPage": {
@@ -283,7 +282,7 @@
     "ctaTitle": "Réservez vos Billets en Ligne",
     "ctaBody": "Confirmation instantanée · Annulation gratuite · Billets mobiles acceptés",
     "ctaBtn": "Voir Toutes les Options de Billets",
-    "teamAvail": "Notre équipe est disponible tous les jours de 8h à 20h, heure de Marrakech.",
+    "teamAvail": "Nous répondons rapidement à toutes les demandes de réservation.",
     "items": [
       {
         "question": "Le Palais Bahia vaut-il la visite en 2026 ?",

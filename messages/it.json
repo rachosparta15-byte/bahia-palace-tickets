@@ -22,7 +22,6 @@
     "instant": "Conferma Immediata",
     "freeCancellation": "Cancellazione Gratuita",
     "mobile": "Biglietti Mobili",
-    "rating": "Valutazione 4,9★",
     "secure": "Pagamento Sicuro"
   },
   "tickets": {
@@ -242,8 +241,8 @@
     "missionBody": "Rendiamo la visita al Palazzo Bahia semplice e senza stress. Nessuna fila confusionaria, nessun biglietto a prezzi gonfiati — solo una prenotazione online semplice, conferma immediata e una visita magica.",
     "whyTitle": "Perché Abbiamo Creato Questo Servizio",
     "whyBody": "Troppi turisti arrivavano al Palazzo Bahia trovando lunghe code e false guide all'ingresso. Abbiamo creato questo servizio per offrire ai viaggiatori un modo affidabile e trasparente per prenotare.",
-    "teamTitle": "Team Locale, Portata Globale",
-    "teamBody": "Il nostro team è basato nella medina di Marrakech, a pochi minuti dal palazzo. Gestiamo prenotazioni per visitatori di oltre 50 paesi ogni anno.",
+    "teamTitle": "Il Nostro Servizio",
+    "teamBody": "Offriamo una prenotazione online semplice e sicura con conferma immediata.",
     "contactCta": "Contattaci"
   },
   "contactPage": {
@@ -283,7 +282,7 @@
     "ctaTitle": "Acquista Biglietti Online per il Palazzo Bahia",
     "ctaBody": "Conferma immediata · Cancellazione gratuita · Biglietti mobili accettati",
     "ctaBtn": "Vedi Tutte le Opzioni Biglietti",
-    "teamAvail": "Il nostro team è disponibile tutti i giorni dalle 8 alle 20, ora di Marrakech.",
+    "teamAvail": "Rispondiamo prontamente a tutte le richieste di prenotazione.",
     "items": [
       {
         "question": "Vale la pena visitare il Palazzo Bahia nel 2026?",

@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
-import { Shield, MapPin, Globe, Heart } from 'lucide-react';
+import { Shield, Globe, Heart } from 'lucide-react';
 import type { Metadata } from 'next';
 import { buildAlternates, buildOG } from '@/lib/seo';
 
@@ -114,20 +114,14 @@ export default async function AboutPage() {
           </div>
         </section>
 
-        {/* Location */}
+        {/* CTA */}
         <section className="bg-[#3D2817] text-white rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1">
-            <div className="flex items-center gap-2 mb-3">
-              <MapPin size={18} className="text-[#E8A33D]" />
-              <span className="text-sm text-white/70 uppercase tracking-wide">Marrakech, Morocco</span>
-            </div>
             <h2 style={{ fontFamily: 'Cormorant Garamond, serif' }} className="text-2xl font-bold mb-3">
-              Based in the Medina
+              Have Questions?
             </h2>
             <p className="text-white/80 leading-relaxed text-sm">
-              Our office is a 5-minute walk from Bahia Palace, in the heart of Marrakech's historic medina.
-              We know every entrance, every trick, and every reason visitors leave unhappy — and we've built our
-              service to fix all of them.
+              Questions about your visit? We know every detail about Bahia Palace and we&apos;ve built our service to give you a seamless experience.
             </p>
           </div>
           <Link

@@ -1,4 +1,4 @@
-import { CheckCircle, Ban, Smartphone, Star, ShieldCheck } from 'lucide-react';
+import { CheckCircle, Ban, Smartphone, ShieldCheck } from 'lucide-react';
 
 export function TrustStrip() {
 
@@ -6,7 +6,6 @@ export function TrustStrip() {
     { icon: CheckCircle, label: 'Instant confirm', color: '#6B7B3A' },
     { icon: Ban,         label: 'Free cancel',     color: '#2E4A7B' },
     { icon: Smartphone,  label: 'Mobile ticket',   color: '#C4452D' },
-    { icon: Star,        label: '4.9★ Rating',     color: '#E8A33D' },
     { icon: ShieldCheck, label: 'Secure pay',      color: '#6B7B3A' },
   ];
 

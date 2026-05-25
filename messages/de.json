@@ -22,7 +22,6 @@
     "instant": "Sofortige Bestätigung",
     "freeCancellation": "Kostenlose Stornierung",
     "mobile": "Mobile Tickets",
-    "rating": "Bewertung 4,9★",
     "secure": "Sichere Zahlung"
   },
   "tickets": {
@@ -242,8 +241,8 @@
     "missionBody": "Wir machen den Besuch des Bahia Palastes unkompliziert. Keine verwirrenden Warteschlangen, keine überteuerten Tickets — nur eine einfache Online-Buchung, sofortige Bestätigung und ein magischer Besuch.",
     "whyTitle": "Warum Wir Diesen Service Gestartet Haben",
     "whyBody": "Zu viele Touristen kamen zum Bahia Palast und fanden lange Schlangen und falsche Guides am Eingang. Wir haben diesen Service aufgebaut, um Reisenden eine vertrauenswürdige und transparente Buchungsmöglichkeit zu bieten.",
-    "teamTitle": "Lokales Team, Globale Reichweite",
-    "teamBody": "Unser Team ist in der Medina von Marrakesch ansässig, nur Minuten vom Palast entfernt. Wir bearbeiten Buchungen von Besuchern aus über 50 Ländern pro Jahr.",
+    "teamTitle": "Unser Buchungsservice",
+    "teamBody": "Wir bieten eine einfache, sichere Online-Buchung mit sofortiger Bestätigung an.",
     "contactCta": "Kontakt aufnehmen"
   },
   "contactPage": {
@@ -283,7 +282,7 @@
     "ctaTitle": "Bahia Palast Tickets Online Buchen",
     "ctaBody": "Sofortige Bestätigung · Kostenlose Stornierung · Mobile Tickets akzeptiert",
     "ctaBtn": "Alle Ticket-Optionen ansehen",
-    "teamAvail": "Unser Team ist täglich von 8–20 Uhr Marrakesch-Zeit erreichbar.",
+    "teamAvail": "Wir antworten schnell auf alle Buchungsanfragen.",
     "items": [
       {
         "question": "Lohnt sich ein Besuch des Bahia Palastes 2026?",
