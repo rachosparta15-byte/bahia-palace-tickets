@@ -169,6 +169,7 @@ export function TicketCards({ overrides = {} }: Props) {
                         </p>
                       </div>
                       <a
+                        id="ticket-book-btn"
                         href={BOOKING_URL}
                         target="_blank"
                         rel="noopener noreferrer"
