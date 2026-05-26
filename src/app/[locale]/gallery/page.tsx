@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { buildAlternates, buildOG, BASE } from '@/lib/seo';
-import { BOOKING_URL } from '@/lib/booking';
+import { LeadButton } from '@/components/layout/LeadButton';
 import { ArrowRight, Camera } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -171,14 +171,12 @@ export default async function GalleryPage({ params }: Props) {
               >
                 Bahia Palace, Marrakech
               </h2>
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <LeadButton
+                ticketType="skip-the-line"
                 className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold px-8 py-3 rounded-xl transition-colors"
               >
                 {meta.bookBtn} <ArrowRight size={16} />
-              </a>
+              </LeadButton>
             </div>
           </>
         )}

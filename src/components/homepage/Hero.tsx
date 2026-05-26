@@ -1,5 +1,5 @@
 import { ArrowRight, Clock, CheckCircle2 } from 'lucide-react';
-import { BOOKING_URL } from '@/lib/booking';
+import { LeadButton } from '@/components/layout/LeadButton';
 
 export function Hero() {
   return (
@@ -45,14 +45,12 @@ export function Hero() {
                   Walk straight in
                 </span>
               </div>
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <LeadButton
+                ticketType="skip-the-line"
                 className="flex items-center gap-1 bg-[#C4452D] hover:bg-[#a83826] text-white text-[11px] font-extrabold px-3 py-1.5 rounded-full transition-colors whitespace-nowrap min-h-[32px]"
               >
                 Book Now <ArrowRight size={10} />
-              </a>
+              </LeadButton>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { BOOKING_URL } from '@/lib/booking';
+import { LeadButton } from '@/components/layout/LeadButton';
 import { Check, ArrowRight, Clock, Star, Zap, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 
@@ -168,16 +168,13 @@ export function TicketCards({ overrides = {} }: Props) {
                           <span className="text-xs font-normal text-[#8B6344] ml-1">{t('perPerson')}</span>
                         </p>
                       </div>
-                      <a
-                        id="ticket-book-btn"
-                        href={BOOKING_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <LeadButton
+                        ticketType={slug}
                         className="flex items-center gap-2 bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold px-5 py-3 rounded-xl transition-all text-sm whitespace-nowrap shadow-md hover:shadow-lg"
                       >
                         {t('bookNow')}
                         <ArrowRight size={14} />
-                      </a>
+                      </LeadButton>
                     </div>
 
                     {/* Trust line */}

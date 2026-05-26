@@ -1,4 +1,4 @@
-import { BOOKING_URL } from '@/lib/booking';
+import { LeadButton } from '@/components/layout/LeadButton';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { buildAlternates, buildOG, BASE } from '@/lib/seo';
@@ -155,9 +155,9 @@ export default async function OpeningHoursPage({ params }: Props) {
           <p className="text-white/70 text-sm mb-5 max-w-md mx-auto">
             Secure your preferred time slot. Walk straight in without waiting at the gate.
           </p>
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <LeadButton ticketType="skip-the-line" className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
             Book Skip-the-Line <ArrowRight size={16} />
-          </a>
+          </LeadButton>
         </div>
       </div>
     </div>

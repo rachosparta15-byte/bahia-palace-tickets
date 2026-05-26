@@ -2,8 +2,8 @@
 
 import { useTranslations } from 'next-intl';
 import { Ticket } from 'lucide-react';
-import { BOOKING_URL } from '@/lib/booking';
 import { useEffect, useState } from 'react';
+import { LeadButton } from './LeadButton';
 
 export function StickyMobileCTA() {
   const t = useTranslations('cta');
@@ -29,15 +29,13 @@ export function StickyMobileCTA() {
         show ? 'translate-y-0' : 'translate-y-full'
       }`}
     >
-      <a
-        href={BOOKING_URL}
-        target="_blank"
-        rel="noopener noreferrer"
+      <LeadButton
+        ticketType="skip-the-line"
         className="btn-primary w-full justify-center gap-2 min-h-[48px]"
       >
         <Ticket size={18} />
         {t('stickyMobile')}
-      </a>
+      </LeadButton>
     </div>
   );
 }

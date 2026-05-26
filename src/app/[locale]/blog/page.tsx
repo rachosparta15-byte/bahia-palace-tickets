@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
-import { BOOKING_URL } from '@/lib/booking';
+import { LeadButton } from '@/components/layout/LeadButton';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { Clock, ArrowRight } from 'lucide-react';
 import prisma from '@/lib/db';
@@ -124,14 +124,12 @@ export default async function BlogIndexPage({ params }: Props) {
         )}
 
         <div className="mt-16 bg-[#C4452D] rounded-2xl p-8 text-center text-white">
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <LeadButton
+            ticketType="skip-the-line"
             className="inline-flex items-center gap-2 bg-white text-[#C4452D] font-semibold px-8 py-3.5 rounded-xl hover:bg-[#FAF3E7] transition-colors"
           >
             {t('bookCta')}
-          </a>
+          </LeadButton>
         </div>
       </div>
     </div>

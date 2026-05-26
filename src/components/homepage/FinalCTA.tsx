@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { ArrowRight } from 'lucide-react';
-import { BOOKING_URL } from '@/lib/booking';
 import { ZelligePattern } from '@/components/ui/ZelligePattern';
+import { LeadButton } from '@/components/layout/LeadButton';
 
 export function FinalCTA() {
   const t = useTranslations('cta');
@@ -21,15 +21,13 @@ export function FinalCTA() {
           {t('title')}
         </h2>
         <p className="text-white/80 text-lg mb-8">{t('subtitle')}</p>
-        <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+        <LeadButton
+          ticketType="skip-the-line"
           className="inline-flex items-center gap-2 bg-white text-[#C4452D] font-semibold text-base px-8 py-4 rounded-lg hover:bg-[#FAF3E7] transition-colors shadow-lg"
         >
           {t('button')}
           <ArrowRight size={18} />
-        </a>
+        </LeadButton>
       </div>
     </section>
   );

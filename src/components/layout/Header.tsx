@@ -8,7 +8,7 @@ import { Menu, X, Globe, ChevronDown, AlertTriangle, ArrowRight } from 'lucide-r
 import { cn } from '@/lib/utils';
 import { locales, type Locale } from '@/i18n/routing';
 import { LogoMark } from '@/components/ui/LogoMark';
-import { BOOKING_URL } from '@/lib/booking';
+import { LeadButton } from '@/components/layout/LeadButton';
 
 const LOCALE_LABELS: Record<Locale, string> = {
   en: 'English',
@@ -148,14 +148,12 @@ export function Header() {
           </div>
 
           {/* CTA button */}
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <LeadButton
+            ticketType="skip-the-line"
             className="hidden sm:inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#A33824] text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors border border-[#C4452D]/0 hover:border-[#E8A33D]/20"
           >
             {t('bookNow')}
-          </a>
+          </LeadButton>
 
           {/* Mobile hamburger */}
           <button
@@ -199,15 +197,12 @@ export function Header() {
                 </button>
               ))}
             </div>
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMenuOpen(false)}
+            <LeadButton
+              ticketType="skip-the-line"
               className="flex items-center justify-center w-full bg-[#C4452D] text-white font-semibold py-3 rounded-xl mt-2 hover:bg-[#A33824] transition-colors"
             >
               {t('bookNow')}
-            </a>
+            </LeadButton>
           </div>
         </div>
       )}

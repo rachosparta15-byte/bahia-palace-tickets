@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
-import { CheckCircle2, MessageCircle, ExternalLink } from 'lucide-react';
-import { BOOKING_URL } from '@/lib/booking';
+import { CheckCircle2, MessageCircle } from 'lucide-react';
 import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
+import { LeadButton } from '@/components/layout/LeadButton';
 
 interface BookingWidgetProps {
   price: number;
@@ -9,7 +9,7 @@ interface BookingWidgetProps {
   ticketName: string;
 }
 
-export function BookingWidget({ price, ticketName }: BookingWidgetProps) {
+export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
   const t  = useTranslations('ticketDetail');
   const tt = useTranslations('tickets');
 
@@ -42,16 +42,13 @@ export function BookingWidget({ price, ticketName }: BookingWidgetProps) {
           </p>
         </div>
 
-        {/* Official booking CTA */}
-        <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* Booking CTA */}
+        <LeadButton
+          ticketType={slug}
           className="flex items-center justify-center gap-2 w-full bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold py-3.5 rounded-xl transition-colors mb-3 text-sm"
         >
           {t('proceedToCheckout')}
-          <ExternalLink size={14} />
-        </a>
+        </LeadButton>
 
         <p className="text-center text-xs text-[#5C3D20] mb-5">
           🔒 Secure booking via government ticket portal
