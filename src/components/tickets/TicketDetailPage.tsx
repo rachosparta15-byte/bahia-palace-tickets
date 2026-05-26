@@ -55,11 +55,11 @@ const GALLERY_IMAGES: Record<TicketKey, [string, string, string]> = {
   ],
 };
 
-const ALL_TICKETS: { key: TicketKey; slug: string; price: number }[] = [
-  { key: 'skipTheLine',  slug: 'skip-the-line',       price: 10 },
-  { key: 'guidedTour',   slug: 'guided-tour',          price: 10 },
-  { key: 'privateTour',  slug: 'private-tour',         price: 10 },
-  { key: 'combo',        slug: 'combo-saadian-tombs',  price: 10 },
+const ALL_TICKETS: { key: TicketKey; slug: string; price: number; live: boolean }[] = [
+  { key: 'skipTheLine',  slug: 'skip-the-line',       price: 10, live: true  },
+  { key: 'guidedTour',   slug: 'guided-tour',          price: 10, live: false },
+  { key: 'privateTour',  slug: 'private-tour',         price: 10, live: false },
+  { key: 'combo',        slug: 'combo-saadian-tombs',  price: 10, live: false },
 ];
 
 export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
@@ -77,7 +77,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
   const includes     = t.raw(`${ticketKey}.includes`  as any) as string[];
   const excludes     = t.raw(`${ticketKey}.excludes`  as any) as string[];
   const faqItems     = tf.raw('items') as Array<{ question: string; answer: string }>;
-  const related      = ALL_TICKETS.filter((tk) => tk.key !== ticketKey);
+  const related      = ALL_TICKETS.filter((tk) => tk.key !== ticketKey && tk.live);
   const heroImg      = HERO_IMAGES[ticketKey];
   const gallery      = GALLERY_IMAGES[ticketKey];
 
@@ -266,6 +266,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
         </div>
 
         {/* ── Related tickets ── */}
+        {related.length > 0 && (
         <div className="mt-16 pt-10 border-t border-[#E8D5B7]">
           <h2
             className="text-2xl font-bold text-[#3D2817] mb-8 text-center"
@@ -312,6 +313,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
             })}
           </div>
         </div>
+        )}
       </div>
     </div>
   );
