@@ -16,68 +16,23 @@ const post = {
   tags: 'bahia palace vs badi palace,el badi palace,marrakech palaces,which palace to visit marrakech,bahia palace or badi palace',
   excerpt: 'Bahia Palace and El Badi Palace are both iconic Marrakech landmarks — but they are completely different experiences. This guide compares history, architecture, photography, atmosphere, and ticket prices to help you decide.',
   seoTitle: 'Bahia Palace vs El Badi Palace 2026 | Which One to Visit in Marrakech?',
-  seoDesc: 'Compare Bahia Palace vs El Badi Palace: history, architecture, ticket prices, photography, and visitor experience. Find out which Marrakech palace suits your itinerary — or visit both in one day.',
+  seoDesc: 'Bahia Palace vs El Badi Palace: discover the key differences in history, architecture, ticket prices, and visitor experience. Plan your Marrakech itinerary with our complete comparison guide.',
   coverImage: '/images/gallery/bahia-palace-arch-view-green-dome-fountain-palm.jpg',
   author: 'Bahia Palace Team',
   published: true,
   publishedAt: new Date('2026-05-26'),
   content: `<p>When travelers search for <strong>Bahia Palace vs El Badi Palace</strong>, they want a clear answer: which of Marrakech's two most iconic royal palaces deserves a spot on their itinerary? The short answer is both — but they offer radically different experiences. This guide breaks down every key difference so you can plan your visit with confidence.</p>
 
-<div style="overflow-x:auto;margin:2rem 0;">
-  <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
-    <thead>
-      <tr style="background:#3D2817;color:#fff;">
-        <th style="padding:10px 14px;text-align:left;">Feature</th>
-        <th style="padding:10px 14px;text-align:left;">Bahia Palace</th>
-        <th style="padding:10px 14px;text-align:left;">El Badi Palace</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr style="background:#FAF3E7;">
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;font-weight:600;">Construction</td>
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;">19th Century (1859–1900)</td>
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;">16th Century (Saadian dynasty)</td>
-      </tr>
-      <tr>
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;font-weight:600;">Style</td>
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;">Traditional Moroccan luxury</td>
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;">Historic Saadian ruins</td>
-      </tr>
-      <tr style="background:#FAF3E7;">
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;font-weight:600;">Main Attraction</td>
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;">Decorated interiors and gardens</td>
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;">Massive courtyards and panoramic views</td>
-      </tr>
-      <tr>
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;font-weight:600;">Best For</td>
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;">Photography and architecture</td>
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;">History and open-air exploration</td>
-      </tr>
-      <tr style="background:#FAF3E7;">
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;font-weight:600;">Atmosphere</td>
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;">Elegant and peaceful</td>
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;">Dramatic and historical</td>
-      </tr>
-      <tr>
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;font-weight:600;">Visit Duration</td>
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;">1–2 hours</td>
-        <td style="padding:9px 14px;border-bottom:1px solid #E8D5B7;">1–1.5 hours</td>
-      </tr>
-      <tr style="background:#FAF3E7;">
-        <td style="padding:9px 14px;font-weight:600;">Location</td>
-        <td style="padding:9px 14px;">Marrakech Medina</td>
-        <td style="padding:9px 14px;">Near the Kasbah area</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<h2>At a Glance: The Key Differences</h2>
+<p><strong>Bahia Palace</strong> (built 1859–1900) is a celebration of intimate Moroccan luxury. Its 150 rooms are covered in hand-cut zellige mosaics, intricately carved cedar wood ceilings, and delicate stucco plasterwork. The atmosphere is elegant, shaded, and peaceful. Most visitors spend between one and two hours inside. It is ideal for photography, architecture lovers, and anyone who wants to experience the finest Moroccan craftsmanship up close.</p>
+<p><strong>El Badi Palace</strong> (built 1578, 16th-century Saadian dynasty) is the complete opposite: vast open-air ruins with enormous pisé walls surrounding a sunken 135-metre courtyard. Where Bahia is ornate and enclosed, El Badi is dramatic and skeletal — a ghost palace stripped of its gold and marble centuries ago. Most visitors spend around one hour exploring. It suits history enthusiasts, rooftop views over Marrakech, and wide-angle photography against the Atlas Mountains.</p>
 
 <h2>History of Bahia Palace</h2>
 <p>Bahia Palace was built during the late 19th century by two Grand Viziers — <strong>Si Moussa</strong>, who began the original structure around 1859, and his son <strong>Ba Ahmed (Bou Ahmed)</strong>, who dramatically expanded it between 1894 and 1900. The word <em>Bahia</em> means <em>brilliance</em> or <em>beauty</em> in Arabic — an apt name for a palace that employed over 2,000 artisans to craft its zellige mosaics, carved cedar ceilings, and stucco plasterwork.</p>
 <p>When Ba Ahmed died in 1900, Sultan Moulay Abd al-Aziz immediately ordered the palace looted and its inhabitants expelled overnight. The palace later served as the official residence of the French Resident-General during the Protectorate era. Since Moroccan independence in 1956, it has been a protected heritage site and one of the country's most visited monuments.</p>
 
 <figure style="margin:2rem 0;">
-  <img src="/images/gallery/bahia-palace-octagonal-cedar-ceiling-carved-wood.jpg" alt="Bahia Palace octagonal carved cedar wood ceiling — 19th century Moroccan craftsmanship" style="width:100%;border-radius:12px;display:block;" />
+  <img src="/images/gallery/bahia-palace-octagonal-cedar-ceiling-carved-wood.jpg" alt="Hand-painted octagonal cedar ceiling inside Bahia Palace, Marrakech" style="width:100%;border-radius:12px;display:block;" />
   <figcaption style="text-align:center;font-size:0.8rem;color:#8B6344;margin-top:8px;">Bahia Palace's hand-painted octagonal cedar ceiling — one of the finest examples of 19th-century Moroccan craftsmanship</figcaption>
 </figure>
 
@@ -90,7 +45,7 @@ const post = {
 <p><strong>Bahia Palace</strong> is a sensory experience. Every room, corridor, and courtyard is covered in decoration — hand-cut zellige tile mosaics climbing the walls, delicate stucco arabesques framing every arch, and intricately painted cedar wood ceilings overhead. The interiors feel intimate and layered, rewarding slow exploration.</p>
 
 <figure style="margin:2rem 0;">
-  <img src="/images/gallery/bahia-palace-zellige-mosaic-arabic-calligraphy-stucco.jpg" alt="Bahia Palace zellige tiles and Arabic calligraphy stucco walls" style="width:100%;border-radius:12px;display:block;" />
+  <img src="/images/gallery/bahia-palace-zellige-mosaic-arabic-calligraphy-stucco.jpg" alt="Zellige mosaics and carved stucco inside Bahia Palace interior" style="width:100%;border-radius:12px;display:block;" />
   <figcaption style="text-align:center;font-size:0.8rem;color:#8B6344;margin-top:8px;">Bahia Palace interior: hand-cut zellige mosaics alongside carved stucco and Arabic calligraphy</figcaption>
 </figure>
 
@@ -101,7 +56,7 @@ const post = {
 <p><strong>Bahia Palace</strong> is a favorite for architectural and portrait photography. The soft light filtering through carved wooden screens (<em>mashrabiya</em>), the vibrant colors of the zellige tilework, and the reflection pools in the courtyards create shots that photograph beautifully at any time of day. Morning light (9–10 AM) is particularly golden and the crowd is thinnest.</p>
 
 <figure style="margin:2rem 0;">
-  <img src="/images/gallery/bahia-palace-inner-courtyard-central-fountain-stucco.jpg" alt="Bahia Palace inner courtyard with central fountain surrounded by stucco columns" style="width:100%;border-radius:12px;display:block;" />
+  <img src="/images/gallery/bahia-palace-inner-courtyard-central-fountain-stucco.jpg" alt="Bahia Palace inner courtyard with reflection pool, Marrakech" style="width:100%;border-radius:12px;display:block;" />
   <figcaption style="text-align:center;font-size:0.8rem;color:#8B6344;margin-top:8px;">Bahia Palace inner courtyard — one of the most photographed spaces in Marrakech</figcaption>
 </figure>
 
@@ -133,7 +88,24 @@ const post = {
   <li>Choose <strong>El Badi Palace</strong> if you prefer open-air ruins, panoramic city views, and dramatic historical atmosphere.</li>
   <li>Visit <strong>both</strong> if you want the full story of Marrakech's royal past — from the Saadian dynasty's 16th-century empire to the opulent private world of a 19th-century Grand Vizier.</li>
 </ul>
-<p>For most visitors to Marrakech with a full day available, combining Bahia Palace in the morning with El Badi Palace in the late morning gives a complete, deeply satisfying immersion in the city's royal heritage.</p>`,
+<p>For most visitors to Marrakech with a full day available, combining Bahia Palace in the morning with El Badi Palace in the late morning gives a complete, deeply satisfying immersion in the city's royal heritage.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is Bahia Palace or El Badi Palace better?</h3>
+<p>Both palaces offer unique experiences. Bahia Palace is ideal for lovers of Moroccan interior design and detailed craftsmanship, while El Badi Palace appeals to those who prefer open-air ruins and panoramic views. Most visitors recommend visiting both in a single morning.</p>
+
+<h3>How long does it take to visit both palaces?</h3>
+<p>Plan approximately 1 to 1.5 hours for Bahia Palace and 1 hour for El Badi Palace. Combined with the 10-minute walk between them, a half-day (9 AM to 1 PM) is enough to explore both comfortably.</p>
+
+<h3>What is the best time to visit Bahia Palace?</h3>
+<p>The best time to visit Bahia Palace is between 9 and 10 AM, when the crowds are thinnest and the morning light creates ideal conditions for photography inside the decorated courtyards.</p>
+
+<h3>Are Bahia Palace and El Badi Palace close to each other?</h3>
+<p>Yes — the two palaces are approximately 800 metres apart in Marrakech's southern medina, about a 10-minute walk. They are easy to combine in a single visit along with the nearby Saadian Tombs.</p>
+
+<h3>Do I need to book tickets in advance?</h3>
+<p>Advance booking is recommended for Bahia Palace, especially during peak season (March–May and September–November), as queues can be long. El Badi Palace generally has shorter wait times and tickets can be purchased at the entrance.</p>`,
 };
 
 async function main() {
