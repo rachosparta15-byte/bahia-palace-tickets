@@ -68,9 +68,7 @@ export function Footer() {
             <ul className="space-y-2">
               {[
                 { href: '/tickets/skip-the-line', label: t('skipTheLine') },
-                { href: '/tickets/guided-tour', label: t('guidedTour') },
-                { href: '/tickets/private-tour', label: t('privateTour') },
-                { href: '/tickets/combo-saadian-tombs', label: t('combo') },
+                { href: '/tickets', label: t('viewAllTickets') },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link href={href} className="text-sm text-[#C4A882] hover:text-[#E8A33D] transition-colors">
