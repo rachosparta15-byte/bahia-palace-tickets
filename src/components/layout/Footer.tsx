@@ -17,7 +17,7 @@ export function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <LogoMark className="w-10 h-10 shrink-0" />
+              <LogoMark className="w-16 h-16 shrink-0" />
               <span
                 className="text-white font-bold text-xl"
                 style={{ fontFamily: 'Cormorant Garamond, serif' }}

@@ -60,13 +60,13 @@ export function Header() {
       {/* Zellige bottom accent line */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#E8A33D]/40 to-transparent" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4 relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4 relative">
 
         {/* ── Logo ── */}
         <Link href="/" className="flex items-center gap-3 shrink-0 group">
           {/* Medallion emblem */}
-          <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 transition-transform duration-500 group-hover:scale-105">
-            <LogoMark className="w-10 h-10 sm:w-12 sm:h-12" />
+          <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 transition-transform duration-500 group-hover:scale-105">
+            <LogoMark className="w-14 h-14 sm:w-16 sm:h-16" />
           </div>
           {/* Text stack */}
           <div className="leading-none hidden min-[360px]:block">
