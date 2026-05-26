@@ -106,8 +106,6 @@ export default async function HomePage({ params }: Props) {
     ],
     offers: [
       { '@type': 'Offer', name: 'Skip-the-Line Entry', price: '10', priceCurrency: 'USD', url: `${BASE}/${locale}/tickets/skip-the-line`, availability: 'https://schema.org/InStock' },
-      { '@type': 'Offer', name: 'Expert Guided Tour',  price: '10', priceCurrency: 'USD', url: `${BASE}/${locale}/tickets/guided-tour`,   availability: 'https://schema.org/InStock' },
-      { '@type': 'Offer', name: 'Private Tour',        price: '10', priceCurrency: 'USD', url: `${BASE}/${locale}/tickets/private-tour`,  availability: 'https://schema.org/InStock' },
     ],
     touristType: ['History enthusiasts', 'Architecture lovers', 'Cultural tourists'],
   };
