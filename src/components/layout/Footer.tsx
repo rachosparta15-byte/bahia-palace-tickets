@@ -32,6 +32,34 @@ export function Footer() {
                 <span>support@visitbahiapalace.com</span>
               </div>
             </div>
+
+            {/* Social media */}
+            <div className="flex items-center gap-3 mt-5">
+              <a
+                href="https://www.instagram.com/visite_bahia_palace"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Bahia Palace on Instagram"
+                className="w-9 h-9 rounded-lg bg-[#5C3D20] hover:bg-[#E8A33D] flex items-center justify-center transition-colors group"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#E8A33D] group-hover:text-[#3D2817]">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="4.5"/>
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+              </a>
+              <a
+                href="https://www.tiktok.com/@bahia_palace"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Bahia Palace on TikTok"
+                className="w-9 h-9 rounded-lg bg-[#5C3D20] hover:bg-[#E8A33D] flex items-center justify-center transition-colors group"
+              >
+                <svg width="14" height="16" viewBox="0 0 24 28" fill="currentColor" className="text-[#E8A33D] group-hover:text-[#3D2817]">
+                  <path d="M19.6 6.1A6.2 6.2 0 0 1 16 3.7V3h-4.5v15.5a2.7 2.7 0 0 1-2.7 2.5 2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.27 0 .52.04.77.1V11l-.77-.04A7.2 7.2 0 0 0 1.5 18.3a7.2 7.2 0 0 0 7.2 7.2 7.2 7.2 0 0 0 7.2-7.2V11.6a10.6 10.6 0 0 0 6.2 2V9.1a6.2 6.2 0 0 1-2.5-.97v-.03z"/>
+                </svg>
+              </a>
+            </div>
           </div>
 
           {/* Tickets */}
