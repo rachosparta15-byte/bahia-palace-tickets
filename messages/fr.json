@@ -189,6 +189,8 @@
     "tickets": "Billets",
     "skipTheLine": "Coupe-File",
     "viewAllTickets": "Voir tous les billets",
+    "openingHours": "Horaires d'ouverture",
+    "entranceFee": "Tarifs d'entrée",
     "explore": "Explorer",
     "blog": "Blog Voyage",
     "safetyGuide": "Guide Sécurité",
@@ -317,7 +319,7 @@
       },
       {
         "question": "Les visites guidées valent-elles la peine ?",
-        "answer": "Oui, surtout pour une première visite. Un guide vous racontera la montée en puissance de Ba Ahmed, pourquoi le palais a été pillé en une nuit après sa mort en 1900, et identifiera des détails architecturaux que la plupart des visiteurs ne remarquent pas. Nos guides certifiés parlent anglais, français, espagnol et allemand."
+        "answer": "Oui, surtout pour une première visite. Un guide vous racontera la montée en puissance de Ba Ahmed, pourquoi le palais a été pillé en une nuit après sa mort en 1900, et identifiera des détails architecturaux que la plupart des visiteurs ne remarquent pas. Les visites guidées arrivent bientôt — contactez-nous pour être informé du lancement."
       },
       {
         "question": "Pour quoi le Palais Bahia est-il célèbre ?",

@@ -53,9 +53,8 @@ export function BookingWidget({ price, ticketName }: BookingWidgetProps) {
           <ExternalLink size={14} />
         </a>
 
-        {/* Official site note */}
         <p className="text-center text-xs text-[#5C3D20] mb-5">
-          🔒 Links to the official government booking portal
+          🔒 Secure booking via government ticket portal
         </p>
 
         {/* Trust badges */}

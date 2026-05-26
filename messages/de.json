@@ -189,6 +189,8 @@
     "tickets": "Tickets",
     "skipTheLine": "Skip-the-Line",
     "viewAllTickets": "Alle Tickets anzeigen",
+    "openingHours": "Öffnungszeiten",
+    "entranceFee": "Eintrittspreise",
     "explore": "Entdecken",
     "blog": "Reiseblog",
     "safetyGuide": "Sicherheitsratgeber",
@@ -317,7 +319,7 @@
       },
       {
         "question": "Lohnen sich Führungen im Bahia Palast?",
-        "answer": "Ja, besonders beim ersten Besuch. Der Palast hat 150 Räume und historische Schichten, die ohne Erklärung unsichtbar bleiben. Ein Führer erzählt von Ba Ahmeds politischem Aufstieg und warum der Palast nach seinem Tod 1900 über Nacht geplündert wurde. Unsere zertifizierten Führer sprechen Englisch, Französisch, Spanisch und Deutsch."
+        "answer": "Ja, besonders beim ersten Besuch. Der Palast hat 150 Räume und historische Schichten, die ohne Erklärung unsichtbar bleiben. Ein Führer erzählt von Ba Ahmeds politischem Aufstieg und warum der Palast nach seinem Tod 1900 über Nacht geplündert wurde. Geführte Touren kommen bald — kontaktieren Sie uns, um benachrichtigt zu werden."
       },
       {
         "question": "Wofür ist der Bahia Palast bekannt?",

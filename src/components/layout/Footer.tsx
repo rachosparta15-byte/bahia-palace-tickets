@@ -84,11 +84,13 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">{t('explore')}</h4>
             <ul className="space-y-2">
               {[
-                { href: '/blog', label: t('blog') },
-                { href: '/safety', label: t('safetyGuide') },
-                { href: '/faq', label: t('faq') },
-                { href: '/about', label: t('about') },
-                { href: '/contact', label: t('contact') },
+                { href: '/opening-hours', label: t('openingHours') },
+                { href: '/entrance-fee',  label: t('entranceFee') },
+                { href: '/blog',          label: t('blog') },
+                { href: '/safety',        label: t('safetyGuide') },
+                { href: '/faq',           label: t('faq') },
+                { href: '/about',         label: t('about') },
+                { href: '/contact',       label: t('contact') },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link href={href} className="text-sm text-[#C4A882] hover:text-[#E8A33D] transition-colors">

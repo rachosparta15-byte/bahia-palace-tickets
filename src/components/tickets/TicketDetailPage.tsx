@@ -62,6 +62,38 @@ const ALL_TICKETS: { key: TicketKey; slug: string; price: number; live: boolean 
   { key: 'combo',        slug: 'combo-saadian-tombs',  price: 10, live: false },
 ];
 
+function ComingSoonWidget({ ticketName }: { ticketName: string }) {
+  return (
+    <div className="bg-white rounded-2xl border border-[#E8D5B7] shadow-[0_4px_24px_rgba(61,40,23,0.1)] overflow-hidden">
+      <div className="bg-[#3D2817] px-5 py-3.5 text-center">
+        <p className="text-[#E8A33D] text-[11px] font-bold uppercase tracking-[0.2em] mb-0.5">
+          Coming Soon
+        </p>
+        <p className="text-white text-sm font-semibold leading-snug">
+          {ticketName}
+        </p>
+      </div>
+      <div className="p-6 space-y-4 text-center">
+        <p className="text-sm text-[#5C3D20] leading-relaxed">
+          We&apos;re putting the final touches on this experience. Only our skip-the-line ticket is available right now.
+        </p>
+        <a
+          href="/tickets/skip-the-line"
+          className="flex items-center justify-center gap-2 w-full bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold py-3.5 rounded-xl transition-colors text-sm"
+        >
+          Book Skip-the-Line Instead
+        </a>
+        <a
+          href="/contact"
+          className="block text-sm text-[#8B6344] hover:text-[#3D2817] underline transition-colors"
+        >
+          Contact us to be notified when this launches
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
   const locale = await getLocale();
   const t  = await getTranslations('tickets');
@@ -77,6 +109,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
   const includes     = t.raw(`${ticketKey}.includes`  as any) as string[];
   const excludes     = t.raw(`${ticketKey}.excludes`  as any) as string[];
   const faqItems     = tf.raw('items') as Array<{ question: string; answer: string }>;
+  const isLive       = ALL_TICKETS.find((tk) => tk.key === ticketKey)?.live ?? true;
   const related      = ALL_TICKETS.filter((tk) => tk.key !== ticketKey && tk.live);
   const heroImg      = HERO_IMAGES[ticketKey];
   const gallery      = GALLERY_IMAGES[ticketKey];
@@ -260,7 +293,10 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
           {/* Right column — booking widget */}
           <div className="lg:col-span-5">
             <div id="book" className="sticky top-24">
-              <BookingWidget price={price} slug={slug} ticketName={name} />
+              {isLive
+                ? <BookingWidget price={price} slug={slug} ticketName={name} />
+                : <ComingSoonWidget ticketName={name} />
+              }
             </div>
           </div>
         </div>

@@ -245,7 +245,7 @@
       },
       {
         "question": "Are guided tours worth it at Bahia Palace?",
-        "answer": "Yes, especially for a first visit. Bahia Palace has 150 rooms and historical layers that are invisible without explanation. A guide will tell you about Ba Ahmed's political rise, why the palace was looted overnight after his death in 1900, and identify architectural details most visitors walk past. Our certified guides speak English, French, Spanish, and German."
+        "answer": "Yes, especially for a first visit. Bahia Palace has 150 rooms and historical layers that are invisible without explanation. A guide will tell you about Ba Ahmed's political rise, why the palace was looted overnight after his death in 1900, and identify architectural details most visitors walk past. Guided tours are coming soon — contact us to be notified when they launch."
       },
       {
         "question": "What is Bahia Palace famous for?",
@@ -485,6 +485,8 @@
     "tickets": "Tickets",
     "skipTheLine": "Skip-the-Line",
     "viewAllTickets": "View all tickets",
+    "openingHours": "Opening Hours",
+    "entranceFee": "Entrance Fee",
     "explore": "Explore",
     "blog": "Travel Blog",
     "safetyGuide": "Safety Guide",

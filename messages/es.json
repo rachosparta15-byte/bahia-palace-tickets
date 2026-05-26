@@ -245,7 +245,7 @@
       },
       {
         "question": "¿Merece la pena la visita guiada?",
-        "answer": "Sí, especialmente en la primera visita. Una guía te contará sobre el ascenso político de Ba Ahmed, por qué el palacio fue saqueado en una sola noche tras su muerte en 1900, e identificará detalles arquitectónicos que la mayoría de los visitantes no notan. Nuestros guías certificados hablan inglés, francés, español y alemán."
+        "answer": "Sí, especialmente en la primera visita. Una guía te contará sobre el ascenso político de Ba Ahmed, por qué el palacio fue saqueado en una sola noche tras su muerte en 1900, e identificará detalles arquitectónicos que la mayoría de los visitantes no notan. Las visitas guiadas llegan pronto — contáctenos para recibir una notificación al lanzamiento."
       },
       {
         "question": "¿Por qué es famoso el Palacio Bahia?",
@@ -485,6 +485,8 @@
     "tickets": "Entradas",
     "skipTheLine": "Sin Colas",
     "viewAllTickets": "Ver todos los billetes",
+    "openingHours": "Horario de apertura",
+    "entranceFee": "Precio de entrada",
     "explore": "Explorar",
     "blog": "Blog de Viaje",
     "safetyGuide": "Guía de Seguridad",

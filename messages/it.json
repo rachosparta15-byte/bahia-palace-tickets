@@ -189,6 +189,8 @@
     "tickets": "Biglietti",
     "skipTheLine": "Salta Fila",
     "viewAllTickets": "Vedi tutti i biglietti",
+    "openingHours": "Orari di apertura",
+    "entranceFee": "Prezzo del biglietto",
     "explore": "Esplora",
     "blog": "Blog Viaggi",
     "safetyGuide": "Guida Sicurezza",
@@ -317,7 +319,7 @@
       },
       {
         "question": "Vale la pena il tour guidato?",
-        "answer": "Sì, specialmente per una prima visita. Una guida ti racconta l'ascesa politica di Ba Ahmed, perché il palazzo fu saccheggiato in una notte dopo la sua morte nel 1900, e identifica dettagli architettonici che la maggior parte dei visitatori non nota. Le nostre guide certificate parlano inglese, francese, spagnolo e tedesco."
+        "answer": "Sì, specialmente per una prima visita. Una guida ti racconta l'ascesa politica di Ba Ahmed, perché il palazzo fu saccheggiato in una notte dopo la sua morte nel 1900, e identifica dettagli architettonici che la maggior parte dei visitatori non nota. I tour guidati arriveranno presto — contattaci per essere avvisato al lancio."
       },
       {
         "question": "Per cosa è famoso il Palazzo Bahia?",
