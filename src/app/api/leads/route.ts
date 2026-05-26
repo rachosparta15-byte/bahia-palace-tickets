@@ -1,20 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
-import path from 'path';
-
-// Writes to data/leads.json on the server filesystem.
-// NOTE: Vercel serverless functions have a read-only filesystem — migrate to
-// Supabase (Phase B) before deploying there. On cPanel/VPS this works fine.
-const LEADS_FILE = path.join(process.cwd(), 'data', 'leads.json');
-
-async function readLeads(): Promise<unknown[]> {
-  try {
-    const raw = await fs.readFile(LEADS_FILE, 'utf-8');
-    return JSON.parse(raw) as unknown[];
-  } catch {
-    return [];
-  }
-}
+import prisma from '@/lib/db';
 
 export async function POST(req: NextRequest) {
   try {
@@ -26,24 +11,20 @@ export async function POST(req: NextRequest) {
       sourcePage?: string;
     };
 
-    const lead = {
-      id:         crypto.randomUUID(),
-      timestamp:  new Date().toISOString(),
-      email:      body.email?.trim()      || null,
-      name:       body.name?.trim()       || null,
-      ticketType: body.ticketType         || 'unknown',
-      locale:     body.locale             || 'en',
-      sourcePage: body.sourcePage         || '/',
-    };
-
-    await fs.mkdir(path.dirname(LEADS_FILE), { recursive: true });
-    const leads = await readLeads();
-    leads.push(lead);
-    await fs.writeFile(LEADS_FILE, JSON.stringify(leads, null, 2), 'utf-8');
+    await prisma.lead.create({
+      data: {
+        email:      body.email?.trim()      || null,
+        name:       body.name?.trim()       || null,
+        ticketType: body.ticketType         || 'general',
+        locale:     body.locale             || 'en',
+        sourcePage: body.sourcePage         || '/',
+      },
+    });
 
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error('[leads] save error:', err);
-    return NextResponse.json({ ok: false }, { status: 500 });
+    // best-effort — never block the user
+    return NextResponse.json({ ok: false }, { status: 200 });
   }
 }

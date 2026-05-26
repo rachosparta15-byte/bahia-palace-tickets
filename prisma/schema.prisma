@@ -176,6 +176,19 @@ model Review {
   @@index([locale, published])
 }
 
+model Lead {
+  id         String   @id @default(cuid())
+  email      String?
+  name       String?
+  ticketType String
+  locale     String
+  sourcePage String
+  createdAt  DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([email])
+}
+
 model TicketType {
   id            String   @id @default(cuid())
   slug          String   @unique

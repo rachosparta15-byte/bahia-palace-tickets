@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import {
   LayoutDashboard, Ticket, FileText, ShieldAlert,
-  LogOut, Settings, Star, BookOpen, Images,
+  LogOut, Settings, Star, BookOpen, Images, Mail,
 } from 'lucide-react';
 import { LogoMark } from '@/components/ui/LogoMark';
 
@@ -24,6 +24,7 @@ const NAV_GROUPS = [
     label: 'Operations',
     items: [
       { href: '/admin/bookings', label: 'Bookings', icon: BookOpen, style: 'normal' },
+      { href: '/admin/leads',   label: 'Leads',    icon: Mail,     style: 'normal' },
     ],
   },
   {
