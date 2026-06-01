@@ -124,11 +124,6 @@ export default async function HomePage({ params }: Props) {
       <JsonLd data={breadcrumb} />
       <Hero />
       <ArticleTicker locale={locale} />
-      <div className="bg-amber-50 border-y border-amber-200 py-3 px-6">
-        <p className="max-w-6xl mx-auto text-center text-sm text-amber-800 font-medium">
-          ⚠️ <strong>Note (May 2026):</strong> Part of Bahia Palace is currently under renovation. Some rooms may be inaccessible. Main courtyards remain open.
-        </p>
-      </div>
       <TrustStrip />
       <TicketSection />
       <WhyBookUs />
