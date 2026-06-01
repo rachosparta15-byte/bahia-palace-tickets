@@ -11,6 +11,7 @@ import { ScamBanner } from '@/components/homepage/ScamBanner';
 import { FinalCTA } from '@/components/homepage/FinalCTA';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { BASE } from '@/lib/seo';
+import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -81,6 +82,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
 
+  const tf   = await getTranslations({ locale, namespace: 'faq' });
+  const faqs = tf.raw('items') as Array<{ question: string; answer: string }>;
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: { '@type': 'Answer', text: answer },
+    })),
+  };
+
   const touristAttraction = {
     '@context': 'https://schema.org',
     '@type': 'TouristAttraction',
@@ -121,8 +135,14 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       <JsonLd data={touristAttraction} />
+      <JsonLd data={faqSchema} />
       <JsonLd data={breadcrumb} />
       <Hero />
+      <div className="bg-amber-50 border-y border-amber-200 py-3 px-6">
+        <p className="max-w-6xl mx-auto text-center text-sm text-amber-800 font-medium">
+          ⚠️ <strong>Note (May 2026):</strong> Part of Bahia Palace is currently under renovation. Some rooms may be inaccessible. Main courtyards remain open.
+        </p>
+      </div>
       <TrustStrip />
       <TicketSection />
       <WhyBookUs />

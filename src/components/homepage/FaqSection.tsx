@@ -20,6 +20,9 @@ export function FaqSection() {
             {t('title')}
           </h2>
         </div>
+        <div className="mb-6 bg-amber-50 border border-amber-200 rounded-xl px-5 py-3.5 text-sm text-amber-800">
+          <strong>⚠️ Note (May 2026):</strong> Part of Bahia Palace is currently under renovation. Some rooms may be inaccessible. Main courtyards remain open.
+        </div>
         <Accordion items={items} />
         <div className="mt-8 text-center">
           <Link href="/faq" className="inline-flex items-center gap-2 text-[#C4452D] font-semibold hover:gap-3 transition-all">

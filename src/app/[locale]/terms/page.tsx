@@ -19,7 +19,7 @@ export default async function TermsPage() {
           body: [
             'Tickets are valid for the date selected at the time of purchase.',
             'Each QR code is unique and can only be scanned once at the entrance.',
-            'Children under 12 years old enter free and do not require a separate ticket.',
+            'Children under 7 years old enter free and do not require a separate ticket.',
             'Tickets are non-transferable and non-refundable except as set out in our Refund Policy.',
           ],
         },
