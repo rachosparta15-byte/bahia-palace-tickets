@@ -1,5 +1,4 @@
 import { ArrowRight, Sun, Landmark } from 'lucide-react';
-import { LeadButton } from '@/components/layout/LeadButton';
 
 export function Hero() {
   return (
@@ -45,12 +44,6 @@ export function Hero() {
                   Cool palace, no queue
                 </span>
               </div>
-              <LeadButton
-                ticketType="skip-the-line"
-                className="flex items-center gap-1 bg-[#C4452D] hover:bg-[#a83826] text-white text-[11px] font-extrabold px-3 py-1.5 rounded-full transition-colors whitespace-nowrap min-h-[32px]"
-              >
-                Book Now <ArrowRight size={10} />
-              </LeadButton>
             </div>
           </div>
         </div>
