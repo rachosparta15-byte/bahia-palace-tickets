@@ -9,6 +9,7 @@ import { notFound } from 'next/navigation';
 import prisma from '@/lib/db';
 import type { Metadata } from 'next';
 import { BASE, buildAlternates } from '@/lib/seo';
+import { getBlogPost } from '@/lib/blog';
 
 const CATEGORY_IMAGES: Record<string, string> = {
   'visit-tips':   '/images/gallery/bahia-palace-tourists-visiting-grand-courtyard.jpg',
@@ -45,6 +46,54 @@ function extractFaqSchema(html: string) {
 
 export const revalidate = 3600;
 
+type NormalizedPost = {
+  id: string;
+  title: string;
+  slug: string;
+  locale: string;
+  excerpt: string | null;
+  content: string | null;
+  coverImage: string | null;
+  category: string;
+  seoTitle: string | null;
+  seoDesc: string | null;
+  ogImage: string | null;
+  author: string;
+  publishedAt: Date | null;
+  updatedAt: Date;
+  createdAt: Date;
+};
+
+async function getPost(locale: string, slug: string): Promise<NormalizedPost | null> {
+  try {
+    const db = await prisma.blogPost.findUnique({ where: { slug_locale: { slug, locale } } });
+    if (db?.published) return db as NormalizedPost;
+  } catch { /* db unavailable */ }
+
+  const s = getBlogPost(locale, slug);
+  if (!s) return null;
+  const body = s.body.map((p) => `<p>${p}</p>`).join('\n')
+    + (s.tips?.length ? '<ul>' + s.tips.map((t) => `<li>${t}</li>`).join('') + '</ul>' : '');
+  const now = new Date();
+  return {
+    id: s.slug,
+    title: s.title,
+    slug: s.slug,
+    locale: s.locale,
+    excerpt: s.excerpt,
+    content: body,
+    coverImage: null,
+    category: s.category,
+    seoTitle: null,
+    seoDesc: s.excerpt,
+    ogImage: null,
+    author: 'Bahia Palace Team',
+    publishedAt: new Date(s.publishedAt),
+    updatedAt: now,
+    createdAt: now,
+  };
+}
+
 function toISO(v: Date | string | null | undefined): string {
   if (!v) return new Date().toISOString();
   const d = v instanceof Date ? v : new Date(v as string);
@@ -57,7 +106,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
-  const post = await prisma.blogPost.findUnique({ where: { slug_locale: { slug, locale } } });
+  const post = await getPost(locale, slug);
   if (!post) return {};
 
   const title       = post.seoTitle ?? post.title;
@@ -96,10 +145,8 @@ function readTime(content: string | null): number {
 
 export default async function BlogPostPage({ params }: Props) {
   const { locale, slug } = await params;
-  const post = await prisma.blogPost.findUnique({
-    where: { slug_locale: { slug, locale } },
-  });
-  if (!post || !post.published) notFound();
+  const post = await getPost(locale, slug);
+  if (!post) notFound();
 
   const t   = await getTranslations('blog');
   const tb  = await getTranslations('breadcrumb');
@@ -110,11 +157,27 @@ export default async function BlogPostPage({ params }: Props) {
 
   const safeContent = post.content ?? '';
 
-  const related = await prisma.blogPost.findMany({
-    where:   { locale, published: true, id: { not: post.id } },
-    orderBy: { publishedAt: 'desc' },
-    take: 2,
-  });
+  let related: NormalizedPost[] = [];
+  try {
+    const dbRelated = await prisma.blogPost.findMany({
+      where: { locale, published: true, slug: { not: slug } },
+      orderBy: { publishedAt: 'desc' },
+      take: 2,
+    });
+    related = dbRelated as NormalizedPost[];
+  } catch { /* db unavailable */ }
+  if (related.length === 0) {
+    const { getBlogPosts } = await import('@/lib/blog');
+    related = getBlogPosts(locale)
+      .filter((p) => p.slug !== slug)
+      .slice(0, 2)
+      .map((s) => ({
+        id: s.slug, title: s.title, slug: s.slug, locale: s.locale,
+        excerpt: s.excerpt, content: null, coverImage: null, category: s.category,
+        seoTitle: null, seoDesc: null, ogImage: null, author: 'Bahia Palace Team',
+        publishedAt: new Date(s.publishedAt), updatedAt: new Date(), createdAt: new Date(),
+      }));
+  }
 
   const articleSchema = {
     '@context': 'https://schema.org',
