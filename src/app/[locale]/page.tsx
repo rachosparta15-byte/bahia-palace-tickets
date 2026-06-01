@@ -10,7 +10,6 @@ import { FaqSection } from '@/components/homepage/FaqSection';
 import { ScamBanner } from '@/components/homepage/ScamBanner';
 import { FinalCTA } from '@/components/homepage/FinalCTA';
 import { BlogPreview } from '@/components/homepage/BlogPreview';
-import { WeatherBanner } from '@/components/homepage/WeatherBanner';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { BASE, buildAlternates, buildOG } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
@@ -129,7 +128,6 @@ export default async function HomePage({ params }: Props) {
         </p>
       </div>
       <TrustStrip />
-      <WeatherBanner locale={locale} />
       <TicketSection />
       <WhyBookUs />
       <BlogPreview />

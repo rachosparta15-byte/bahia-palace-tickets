@@ -1,6 +1,21 @@
 import { ArrowRight, Sun, Landmark } from 'lucide-react';
 
-export function Hero() {
+async function getTemp(): Promise<number | null> {
+  try {
+    const res = await fetch(
+      'https://api.open-meteo.com/v1/forecast?latitude=31.6225&longitude=-7.9898&current=temperature_2m&timezone=Africa%2FCasablanca',
+      { next: { revalidate: 1800 } }
+    );
+    if (!res.ok) return null;
+    const data = await res.json();
+    return Math.round(data.current.temperature_2m);
+  } catch {
+    return null;
+  }
+}
+
+export async function Hero() {
+  const temp = await getTemp();
   return (
     <section className="relative flex flex-col overflow-hidden">
       {/* Background image */}
@@ -34,7 +49,7 @@ export function Hero() {
               <div className="flex items-center gap-2.5">
                 <Sun size={20} className="text-[#E8A33D] shrink-0" />
                 <span className="text-white text-sm sm:text-base font-semibold whitespace-nowrap">
-                  <span className="text-[#E8A33D] font-extrabold text-lg sm:text-xl">40°C</span> outside
+                  <span className="text-[#E8A33D] font-extrabold text-lg sm:text-xl">{temp ?? 40}°C</span> outside
                 </span>
               </div>
               <ArrowRight size={16} className="text-white/30 shrink-0" />
