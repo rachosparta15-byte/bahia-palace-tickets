@@ -45,6 +45,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# screenshots & temp files
+*.png
+*.jpg
+sc-*.png
+screenshot-*.png
+article-*.md
+
 /src/generated/prisma
 
 # lead capture data (migrate to Supabase for production)
