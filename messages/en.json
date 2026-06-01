@@ -7,14 +7,14 @@
     "contact": "Contact",
     "faq": "FAQ",
     "safetyGuide": "Safety Guide",
-    "bookNow": "Book Now",
+    "bookNow": "Plan Your Visit",
     "gallery": "Gallery"
   },
   "hero": {
-    "badge": "Book Online · Skip the Line",
-    "headline": "Bahia Palace Tickets — Skip the Line in Marrakech",
+    "badge": "Visitor Guide · Skip the Line",
+    "headline": "Bahia Palace Marrakech — Visitor Guide & Skip-the-Line Tickets",
     "subheadline": "Instant confirmation • Mobile tickets • Free cancellation up to 24h",
-    "ctaBook": "Book Tickets Now",
+    "ctaBook": "Plan Your Visit",
     "ctaTours": "See Tour Options",
     "trustNote": "Trusted by 50,000+ visitors"
   },
@@ -29,7 +29,7 @@
     "subtitle": "Skip the queues and enjoy a seamless visit to one of Marrakech's most stunning palaces",
     "from": "From",
     "perPerson": "per person",
-    "bookNow": "Book Now",
+    "bookNow": "Get Tickets",
     "learnMore": "Learn More",
     "skipTheLine": {
       "name": "Skip-the-Line Entry",
@@ -214,7 +214,7 @@
     "stillNeedHelp": "Still have a question?",
     "whatsappUs": "WhatsApp us for instant help →",
     "ctaSkip": "Skip the 2-hour queue",
-    "ctaTitle": "Book Bahia Palace Tickets Online",
+    "ctaTitle": "Plan Your Bahia Palace Visit",
     "ctaBody": "Instant confirmation · Free cancellation · Mobile tickets accepted",
     "ctaBtn": "See All Ticket Options",
     "teamAvail": "We respond to all booking enquiries promptly.",
@@ -318,7 +318,7 @@
       "itineraries": "Itineraries"
     },
     "all": "All articles",
-    "bookCta": "Book your skip-the-line ticket →",
+    "bookCta": "Plan your visit — skip the line →",
     "relatedPosts": "Related articles",
     "share": "Share this article"
   },
@@ -476,9 +476,9 @@
   },
   "cta": {
     "title": "Ready to Visit Bahia Palace?",
-    "subtitle": "Book now and skip the queue. Instant confirmation guaranteed.",
-    "button": "Book Your Tickets",
-    "stickyMobile": "Book from $10"
+    "subtitle": "Plan your visit and skip the queue. Instant confirmation guaranteed.",
+    "button": "Plan Your Visit",
+    "stickyMobile": "Skip the Line from $10"
   },
   "footer": {
     "tagline": "The easiest way to visit Bahia Palace.",
@@ -559,5 +559,11 @@
         "body": "You're shown a menu with low prices outside, then given a different menu inside, or charged far more than agreed.\n\nHow to avoid: Check the menu carefully before sitting down. Ask to confirm prices before ordering. Pay by card if possible."
       }
     ]
+  },
+  "blogPreview": {
+    "title": "From the Visitor Guide",
+    "subtitle": "Tips, history and practical advice for your visit to Bahia Palace",
+    "minRead": "min read",
+    "viewAll": "Read all articles"
   }
 }

@@ -7,14 +7,14 @@
     "contact": "Contacto",
     "faq": "FAQ",
     "safetyGuide": "Guía de Seguridad",
-    "bookNow": "Reservar",
+    "bookNow": "Planifica tu visita",
     "gallery": "Galería"
   },
   "hero": {
-    "badge": "Reserva online · Salta la fila",
-    "headline": "Entradas Palacio Bahia — Sin Colas en Marrakech",
+    "badge": "Guía del Visitante · Salta la fila",
+    "headline": "Palacio Bahia Marrakech — Guía del Visitante & Entradas Sin Colas",
     "subheadline": "Confirmación instantánea • Entradas móviles • Cancelación gratuita hasta 24h",
-    "ctaBook": "Comprar Entradas Ahora",
+    "ctaBook": "Planifica tu visita",
     "ctaTours": "Ver Tours",
     "trustNote": "Más de 50.000 visitantes satisfechos"
   },
@@ -29,7 +29,7 @@
     "subtitle": "Evita las colas y disfruta de una visita sin estrés a uno de los palacios más impresionantes de Marrakech",
     "from": "Desde",
     "perPerson": "por persona",
-    "bookNow": "Reservar Ahora",
+    "bookNow": "Ver entradas",
     "learnMore": "Saber más",
     "skipTheLine": {
       "name": "Entrada Sin Colas",
@@ -214,7 +214,7 @@
     "stillNeedHelp": "¿Sigues teniendo preguntas?",
     "whatsappUs": "Escríbenos por WhatsApp para ayuda inmediata →",
     "ctaSkip": "Evita la cola de 2 horas",
-    "ctaTitle": "Compra Entradas Online para el Palacio Bahia",
+    "ctaTitle": "Planifica tu visita al Palacio Bahia",
     "ctaBody": "Confirmación instantánea · Cancelación gratuita · Entradas móviles aceptadas",
     "ctaBtn": "Ver Todas las Opciones de Entradas",
     "teamAvail": "Respondemos con rapidez a todas las consultas de reserva.",
@@ -318,7 +318,7 @@
       "itineraries": "Itinerarios"
     },
     "all": "Todos los artículos",
-    "bookCta": "Reserva tu entrada sin colas →",
+    "bookCta": "Planifica tu visita →",
     "relatedPosts": "Artículos relacionados",
     "share": "Compartir este artículo"
   },
@@ -476,9 +476,9 @@
   },
   "cta": {
     "title": "¿Listo para Visitar el Palacio Bahia?",
-    "subtitle": "Reserva ahora y evita las colas. Confirmación instantánea garantizada.",
-    "button": "Comprar Entradas",
-    "stickyMobile": "Reservar desde $10"
+    "subtitle": "Planifica tu visita y evita las colas. Confirmación instantánea garantizada.",
+    "button": "Planifica tu visita",
+    "stickyMobile": "Salta la fila desde $10"
   },
   "footer": {
     "tagline": "La forma más fácil de visitar el Palacio Bahia.",
@@ -559,5 +559,11 @@
         "body": "Te muestran un menú con precios bajos fuera, luego te dan un menú diferente dentro, o te cobran mucho más de lo acordado.\n\nComo evitarlo: Revisa el menú con cuidado antes de sentarte. Pide confirmar los precios antes de pedir. Paga con tarjeta si es posible."
       }
     ]
+  },
+  "blogPreview": {
+    "title": "De la guía del visitante",
+    "subtitle": "Consejos, historia e información práctica para tu visita al Palacio Bahia",
+    "minRead": "min de lectura",
+    "viewAll": "Leer todos los artículos"
   }
 }

@@ -7,14 +7,14 @@
     "contact": "Kontakt",
     "faq": "FAQ",
     "safetyGuide": "Sicherheitsratgeber",
-    "bookNow": "Jetzt buchen",
+    "bookNow": "Besuch planen",
     "gallery": "Galerie"
   },
   "hero": {
-    "badge": "Online buchen · Schlange überspringen",
-    "headline": "Bahia Palast Tickets — Skip-the-Line in Marrakesch",
+    "badge": "Reiseführer · Schlange überspringen",
+    "headline": "Bahia Palast Marrakesch — Reiseführer & Tickets ohne Warteschlange",
     "subheadline": "Sofortige Bestätigung • Mobile Tickets • Kostenlose Stornierung bis 24 Std.",
-    "ctaBook": "Tickets jetzt buchen",
+    "ctaBook": "Besuch planen",
     "ctaTours": "Touren ansehen",
     "trustNote": "Über 50.000 zufriedene Besucher"
   },
@@ -29,7 +29,7 @@
     "subtitle": "Umgehen Sie die Warteschlangen und genießen Sie einen reibungslosen Besuch in einem der schönsten Paläste Marrakeschs",
     "from": "Ab",
     "perPerson": "pro Person",
-    "bookNow": "Jetzt buchen",
+    "bookNow": "Tickets ansehen",
     "learnMore": "Mehr erfahren",
     "skipTheLine": {
       "name": "Skip-the-Line Eintrittskarte",
@@ -180,9 +180,9 @@
   },
   "cta": {
     "title": "Bereit für den Bahia Palast?",
-    "subtitle": "Jetzt buchen und Warteschlangen vermeiden. Sofortige Bestätigung garantiert.",
-    "button": "Tickets buchen",
-    "stickyMobile": "Buchen ab $10"
+    "subtitle": "Planen Sie Ihren Besuch und überspringen Sie die Warteschlange. Sofortige Bestätigung garantiert.",
+    "button": "Besuch planen",
+    "stickyMobile": "Warteschlange überspringen ab $10"
   },
   "footer": {
     "tagline": "Der einfachste Weg, den Bahia Palast zu besuchen.",
@@ -288,7 +288,7 @@
     "stillNeedHelp": "Haben Sie noch eine Frage?",
     "whatsappUs": "WhatsApp uns für sofortige Hilfe →",
     "ctaSkip": "Überspringen Sie die 2-stündige Schlange",
-    "ctaTitle": "Bahia Palast Tickets Online Buchen",
+    "ctaTitle": "Ihren Besuch im Bahia Palast planen",
     "ctaBody": "Sofortige Bestätigung · Kostenlose Stornierung · Mobile Tickets akzeptiert",
     "ctaBtn": "Alle Ticket-Optionen ansehen",
     "teamAvail": "Wir antworten schnell auf alle Buchungsanfragen.",
@@ -392,7 +392,7 @@
       "itineraries": "Reiserouten"
     },
     "all": "Alle Artikel",
-    "bookCta": "Skip-the-Line-Ticket buchen →",
+    "bookCta": "Besuch planen →",
     "relatedPosts": "Verwandte Artikel",
     "share": "Artikel teilen"
   },
@@ -559,5 +559,11 @@
         "body": "Draußen günstiges Menü, drinnen alles viel teurer.\n\nWie man es vermeidet: Prüfen Sie die Karte vor dem Hinsetzen und bestätigen Sie Preise vor der Bestellung."
       }
     ]
+  },
+  "blogPreview": {
+    "title": "Aus dem Besucherführer",
+    "subtitle": "Tipps, Geschichte und praktische Informationen für Ihren Besuch im Bahia-Palast",
+    "minRead": "Min. Lesezeit",
+    "viewAll": "Alle Artikel lesen"
   }
 }

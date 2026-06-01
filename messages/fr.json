@@ -7,14 +7,14 @@
     "contact": "Contact",
     "faq": "FAQ",
     "safetyGuide": "Guide Sécurité",
-    "bookNow": "Réserver",
+    "bookNow": "Préparer ma visite",
     "gallery": "Galerie"
   },
   "hero": {
-    "badge": "Réservez en ligne · Sautez la file",
-    "headline": "Billets Palais Bahia — Coupe-File à Marrakech",
+    "badge": "Guide Visiteur · Sautez la file",
+    "headline": "Palais Bahia Marrakech — Guide Visiteur & Billets Coupe-File",
     "subheadline": "Confirmation instantanée • Billets mobiles • Annulation gratuite jusqu'à 24h",
-    "ctaBook": "Réserver mes Billets",
+    "ctaBook": "Préparer ma visite",
     "ctaTours": "Voir les Tours",
     "trustNote": "Plus de 50 000 visiteurs satisfaits"
   },
@@ -29,7 +29,7 @@
     "subtitle": "Évitez les files d'attente et profitez d'une visite sans stress dans l'un des palais les plus magnifiques de Marrakech",
     "from": "À partir de",
     "perPerson": "par personne",
-    "bookNow": "Réserver",
+    "bookNow": "Voir les billets",
     "learnMore": "En savoir plus",
     "skipTheLine": {
       "name": "Entrée Coupe-File",
@@ -180,9 +180,9 @@
   },
   "cta": {
     "title": "Prêt à Visiter le Palais Bahia ?",
-    "subtitle": "Réservez maintenant et évitez la file d'attente. Confirmation instantanée garantie.",
-    "button": "Réserver mes Billets",
-    "stickyMobile": "Réserver dès $10"
+    "subtitle": "Planifiez votre visite et évitez la file d'attente. Confirmation instantanée garantie.",
+    "button": "Préparer ma visite",
+    "stickyMobile": "Coupe-file dès $10"
   },
   "footer": {
     "tagline": "La façon la plus simple de visiter le Palais Bahia.",
@@ -288,7 +288,7 @@
     "stillNeedHelp": "Vous avez encore une question ?",
     "whatsappUs": "WhatsApp nous pour une aide instantanée →",
     "ctaSkip": "Évitez la file de 2h",
-    "ctaTitle": "Réservez vos Billets en Ligne",
+    "ctaTitle": "Préparez votre visite au Palais Bahia",
     "ctaBody": "Confirmation instantanée · Annulation gratuite · Billets mobiles acceptés",
     "ctaBtn": "Voir Toutes les Options de Billets",
     "teamAvail": "Nous répondons rapidement à toutes les demandes de réservation.",
@@ -392,7 +392,7 @@
       "itineraries": "Itinéraires"
     },
     "all": "Tous les articles",
-    "bookCta": "Réservez votre billet coupe-file →",
+    "bookCta": "Préparez votre visite →",
     "relatedPosts": "Articles connexes",
     "share": "Partager cet article"
   },
@@ -559,5 +559,11 @@
         "body": "Le menu à l'extérieur affiche des prix bas, mais à l'intérieur tout coûte plus cher.\n\nComment eviter: Vérifiez le menu avant de vous asseoir et confirmez les prix avant de commander."
       }
     ]
+  },
+  "blogPreview": {
+    "title": "Depuis le guide du visiteur",
+    "subtitle": "Conseils, histoire et informations pratiques pour votre visite au Palais Bahia",
+    "minRead": "min de lecture",
+    "viewAll": "Lire tous les articles"
   }
 }

@@ -7,14 +7,14 @@
     "contact": "Contatti",
     "faq": "FAQ",
     "safetyGuide": "Guida Sicurezza",
-    "bookNow": "Prenota",
+    "bookNow": "Pianifica la visita",
     "gallery": "Galleria"
   },
   "hero": {
-    "badge": "Prenota online · Salta la fila",
-    "headline": "Biglietti Palazzo Bahia — Salta la Fila a Marrakech",
+    "badge": "Guida Visitatori · Salta la fila",
+    "headline": "Palazzo Bahia Marrakech — Guida Visitatori & Biglietti Salta-Fila",
     "subheadline": "Conferma immediata • Biglietti mobili • Cancellazione gratuita fino a 24h",
-    "ctaBook": "Acquista Biglietti Ora",
+    "ctaBook": "Pianifica la visita",
     "ctaTours": "Vedi le Tour",
     "trustNote": "Oltre 50.000 visitatori soddisfatti"
   },
@@ -29,7 +29,7 @@
     "subtitle": "Salta le code e goditi una visita senza stress in uno dei palazzi più spettacolari di Marrakech",
     "from": "Da",
     "perPerson": "per persona",
-    "bookNow": "Prenota Ora",
+    "bookNow": "Vedi i biglietti",
     "learnMore": "Scopri di più",
     "skipTheLine": {
       "name": "Ingresso Salta Fila",
@@ -180,9 +180,9 @@
   },
   "cta": {
     "title": "Pronto a Visitare il Palazzo Bahia?",
-    "subtitle": "Prenota ora e salta la coda. Conferma immediata garantita.",
-    "button": "Prenota i tuoi Biglietti",
-    "stickyMobile": "Prenota da $10"
+    "subtitle": "Pianifica la tua visita e salta la coda. Conferma immediata garantita.",
+    "button": "Pianifica la visita",
+    "stickyMobile": "Salta la fila da $10"
   },
   "footer": {
     "tagline": "Il modo più semplice per visitare il Palazzo Bahia.",
@@ -288,7 +288,7 @@
     "stillNeedHelp": "Hai ancora una domanda?",
     "whatsappUs": "Scrivici su WhatsApp per aiuto immediato →",
     "ctaSkip": "Evita la coda di 2 ore",
-    "ctaTitle": "Acquista Biglietti Online per il Palazzo Bahia",
+    "ctaTitle": "Pianifica la tua visita al Palazzo Bahia",
     "ctaBody": "Conferma immediata · Cancellazione gratuita · Biglietti mobili accettati",
     "ctaBtn": "Vedi Tutte le Opzioni Biglietti",
     "teamAvail": "Rispondiamo prontamente a tutte le richieste di prenotazione.",
@@ -392,7 +392,7 @@
       "itineraries": "Itinerari"
     },
     "all": "Tutti gli articoli",
-    "bookCta": "Prenota il tuo biglietto salta fila →",
+    "bookCta": "Pianifica la tua visita →",
     "relatedPosts": "Articoli correlati",
     "share": "Condividi questo articolo"
   },
@@ -559,5 +559,11 @@
         "body": "Il menu fuori ha prezzi bassi, ma dentro tutto costa di più.\n\nCome evitarlo: Controlla il menu prima di sederti e conferma i prezzi prima di ordinare."
       }
     ]
+  },
+  "blogPreview": {
+    "title": "Dalla guida per i visitatori",
+    "subtitle": "Consigli, storia e informazioni pratiche per la tua visita al Palazzo Bahia",
+    "minRead": "min di lettura",
+    "viewAll": "Leggi tutti gli articoli"
   }
 }
