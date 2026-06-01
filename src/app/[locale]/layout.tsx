@@ -6,7 +6,9 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppButton } from '@/components/layout/WhatsAppButton';
 import { StickyMobileCTA } from '@/components/layout/StickyMobileCTA';
+import { CookieBanner } from '@/components/layout/CookieBanner';
 import { Analytics } from '@/components/analytics/Analytics';
+import { HreflangLinks } from '@/components/seo/HreflangLinks';
 import type { Metadata } from 'next';
 import { BASE } from '@/lib/seo';
 
@@ -57,12 +59,14 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
+      <HreflangLinks />
       <div className="flex flex-col min-h-screen" lang={locale}>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />
         <StickyMobileCTA />
+        <CookieBanner />
         <Analytics />
       </div>
     </NextIntlClientProvider>
