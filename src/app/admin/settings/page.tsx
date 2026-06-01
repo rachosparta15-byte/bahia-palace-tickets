@@ -4,8 +4,8 @@ import { SettingsForm } from '@/components/admin/SettingsForm';
 export const dynamic = 'force-dynamic';
 
 const SETTING_META: Record<string, { label: string; group: string; type?: string; placeholder?: string }> = {
-  whatsapp_number:     { label: 'WhatsApp Number',           group: 'Contact',  type: 'tel',  placeholder: '+212600000000' },
-  contact_phone:       { label: 'Phone Number',              group: 'Contact',  type: 'tel',  placeholder: '+212600000000' },
+  whatsapp_number:     { label: 'WhatsApp Number',           group: 'Contact',  type: 'tel',  placeholder: '+19718677020' },
+  contact_phone:       { label: 'Phone Number',              group: 'Contact',  type: 'tel',  placeholder: '+19718677020' },
   contact_email:       { label: 'Contact Email',             group: 'Contact',  type: 'email' },
   contact_address:     { label: 'Address',                   group: 'Contact',  placeholder: 'Rue Riad Zitoun el Jedid...' },
   opening_hours:       { label: 'Opening Hours',             group: 'Info',     placeholder: '09:00 – 17:00 (daily)' },

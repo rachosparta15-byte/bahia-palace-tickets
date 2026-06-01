@@ -1,4 +1,4 @@
-import { ArrowRight, Clock, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Sun, Landmark } from 'lucide-react';
 import { LeadButton } from '@/components/layout/LeadButton';
 
 export function Hero() {
@@ -33,16 +33,16 @@ export function Hero() {
             {/* Pill content */}
             <div className="relative flex flex-wrap items-center gap-2 sm:gap-3 bg-[#1a0e06] backdrop-blur-sm rounded-full px-3 py-2">
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <Clock size={12} className="text-[#E8A33D] shrink-0" />
+                <Sun size={12} className="text-[#E8A33D] shrink-0" />
                 <span className="text-white text-[11px] sm:text-xs font-semibold whitespace-nowrap">
-                  <span className="text-[#E8A33D] font-bold">2h</span> wait at gate
+                  <span className="text-[#E8A33D] font-bold">40°C</span> outside
                 </span>
               </div>
               <ArrowRight size={11} className="text-white/30 shrink-0 hidden sm:block" />
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 size={12} className="text-[#6B7B3A] shrink-0" />
+                <Landmark size={12} className="text-[#6B7B3A] shrink-0" />
                 <span className="text-white text-[11px] sm:text-xs font-semibold whitespace-nowrap">
-                  Walk straight in
+                  Cool palace, no queue
                 </span>
               </div>
               <LeadButton

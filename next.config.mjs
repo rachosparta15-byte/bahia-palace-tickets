@@ -31,11 +31,11 @@ const securityHeaders = [
 
 // Warn in build logs if required env vars are missing or still set to defaults.
 const _wa = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '';
-if (!_wa || _wa.replace(/^\+/, '') === '212600000000') {
+if (!_wa) {
   console.warn(
-    '\x1b[33m⚠️  NEXT_PUBLIC_WHATSAPP_NUMBER is not set or is still the placeholder value.\x1b[0m',
+    '\x1b[33m⚠️  NEXT_PUBLIC_WHATSAPP_NUMBER is not set.\x1b[0m',
     '\n   WhatsApp buttons will be hidden site-wide until a real number is configured.',
-    '\n   Set it in Vercel → Settings → Environment Variables (format: 212XXXXXXXXX, no +)',
+    '\n   Set it in Vercel → Settings → Environment Variables (format: 19718677020, no +)',
   );
 }
 
@@ -51,6 +51,14 @@ const nextConfig = {
         permanent:   true,
       }))
     );
+    const COMING_SOON_SLUGS = ['guided-tour', 'private-tour', 'combo-saadian-tombs'];
+    const comingSoonRedirects = COMING_SOON_SLUGS.flatMap(slug =>
+      LOCALES.map(locale => ({
+        source:      `/${locale}/tickets/${slug}`,
+        destination: `/${locale}/tickets/skip-the-line`,
+        permanent:   false,
+      }))
+    );
     return [
       {
         source:      '/en/blog/bahia-palace-vs-saadian-tombs-comparison',
@@ -58,6 +66,7 @@ const nextConfig = {
         permanent:   true,
       },
       ...testRedirects,
+      ...comingSoonRedirects,
     ];
   },
   async headers() {

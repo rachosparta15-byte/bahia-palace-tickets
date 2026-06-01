@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import { CheckCircle2, MessageCircle } from 'lucide-react';
 import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';

@@ -1,4 +1,4 @@
-const PLACEHOLDER = '212600000000';
+const PLACEHOLDER = '212000000000';
 
 /**
  * Returns the WhatsApp number from the environment, or null if it is
