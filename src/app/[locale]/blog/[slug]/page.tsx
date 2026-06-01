@@ -8,7 +8,7 @@ import { Clock, ArrowRight, User } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import prisma from '@/lib/db';
 import type { Metadata } from 'next';
-import { BASE } from '@/lib/seo';
+import { BASE, buildAlternates } from '@/lib/seo';
 
 const CATEGORY_IMAGES: Record<string, string> = {
   'visit-tips':   '/images/gallery/bahia-palace-tourists-visiting-grand-courtyard.jpg',
@@ -68,7 +68,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title:       `${title} — Bahia Palace Tickets`,
     description,
-    alternates:  { canonical },
+    alternates:  buildAlternates(locale, `/blog/${slug}`),
     openGraph: {
       title,
       description,

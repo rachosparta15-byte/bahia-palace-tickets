@@ -10,7 +10,7 @@ import { FaqSection } from '@/components/homepage/FaqSection';
 import { ScamBanner } from '@/components/homepage/ScamBanner';
 import { FinalCTA } from '@/components/homepage/FinalCTA';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { BASE } from '@/lib/seo';
+import { BASE, buildAlternates, buildOG } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
@@ -51,25 +51,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: ['bahia palace marrakech', 'bahia palace tickets 2026', 'palais bahia marrakech',
       'bahia palace morocco', 'visit bahia palace', 'skip the line marrakech',
       'moroccan architecture', 'marrakech medina attractions', 'bahia palace gardens'],
-    alternates: {
-      canonical: `${BASE}/${locale}`,
-      languages: {
-        'en': `${BASE}/en`,
-        'fr': `${BASE}/fr`,
-        'it': `${BASE}/it`,
-        'de': `${BASE}/de`,
-        'es': `${BASE}/es`,
-        'x-default': `${BASE}/en`,
-      },
-    },
-    openGraph: {
-      title: meta.title,
-      description: meta.description,
-      url: `${BASE}/${locale}`,
-      locale: locale,
-      type: 'website',
-      images: [{ url: `${BASE}/og-image.jpg`, width: 1200, height: 630, alt: 'Bahia Palace Marrakech — 19th century Moroccan palace' }],
-    },
+    alternates: buildAlternates(locale, ''),
+    openGraph: buildOG(meta.title, meta.description, locale, ''),
     twitter: {
       card: 'summary_large_image',
       title: meta.title,
