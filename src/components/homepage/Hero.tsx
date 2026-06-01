@@ -17,7 +17,7 @@ async function getTemp(): Promise<number | null> {
 export async function Hero() {
   const temp = await getTemp();
   return (
-    <section className="relative flex flex-col overflow-hidden">
+    <section className="relative flex flex-col overflow-hidden min-h-[260px] sm:min-h-0">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -33,7 +33,7 @@ export async function Hero() {
       </div>
 
       {/* TOP — badge pill */}
-      <div className="hero-badge relative z-10 pt-24 pb-4 px-6">
+      <div className="hero-badge relative z-10 pt-16 sm:pt-24 pb-3 sm:pb-4 px-6">
         <div className="max-w-6xl mx-auto flex justify-center">
           {/* Spinning border wrapper */}
           <div className="relative inline-flex p-[3px] rounded-full overflow-hidden">
@@ -45,17 +45,17 @@ export async function Hero() {
               }}
             />
             {/* Pill content */}
-            <div className="relative flex items-center gap-4 sm:gap-6 bg-[#1a0e06] backdrop-blur-sm rounded-full px-6 py-3.5">
-              <div className="flex items-center gap-2.5">
-                <Sun size={20} className="text-[#E8A33D] shrink-0" />
-                <span className="text-white text-sm sm:text-base font-semibold whitespace-nowrap">
-                  <span className="text-[#E8A33D] font-extrabold text-lg sm:text-xl">{temp ?? 40}°C</span> outside
+            <div className="relative flex items-center gap-3 sm:gap-6 bg-[#1a0e06] backdrop-blur-sm rounded-full px-4 sm:px-6 py-2.5 sm:py-3.5">
+              <div className="flex items-center gap-2">
+                <Sun size={16} className="text-[#E8A33D] shrink-0 sm:w-5 sm:h-5" />
+                <span className="text-white text-xs sm:text-base font-semibold whitespace-nowrap">
+                  <span className="text-[#E8A33D] font-extrabold text-base sm:text-xl">{temp ?? 40}°C</span> outside
                 </span>
               </div>
-              <ArrowRight size={16} className="text-white/30 shrink-0" />
-              <div className="flex items-center gap-2.5">
-                <Landmark size={20} className="text-[#6B7B3A] shrink-0" />
-                <span className="text-white text-sm sm:text-base font-semibold whitespace-nowrap">
+              <ArrowRight size={14} className="text-white/30 shrink-0" />
+              <div className="flex items-center gap-2">
+                <Landmark size={16} className="text-[#6B7B3A] shrink-0 sm:w-5 sm:h-5" />
+                <span className="text-white text-xs sm:text-base font-semibold whitespace-nowrap">
                   Cool palace, no queue
                 </span>
               </div>
@@ -65,11 +65,11 @@ export async function Hero() {
       </div>
 
       {/* CENTER — main content */}
-      <div className="relative z-10 px-6 pt-8 pb-10">
+      <div className="relative z-10 px-6 pt-4 sm:pt-8 pb-8 sm:pb-10">
         <div className="max-w-6xl mx-auto w-full">
           <div className="max-w-2xl">
-            <h1 className="hero-title mb-6 leading-none">
-              <span className="block text-[#E8A33D] text-xs sm:text-sm font-bold tracking-[0.3em] uppercase mb-3">
+            <h1 className="hero-title mb-4 sm:mb-6 leading-none">
+              <span className="block text-[#E8A33D] text-xs sm:text-sm font-bold tracking-[0.3em] uppercase mb-2 sm:mb-3">
                 Bahia Palace Tickets
               </span>
               <span className="sr-only"> — </span>
@@ -77,7 +77,7 @@ export async function Hero() {
                 className="block text-white"
                 style={{
                   fontFamily: 'Cormorant Garamond, serif',
-                  fontSize: 'clamp(3.2rem, 8vw, 5.5rem)',
+                  fontSize: 'clamp(2.4rem, 8vw, 5.5rem)',
                   fontWeight: 700,
                   lineHeight: 0.95,
                   letterSpacing: '-0.03em',
@@ -90,7 +90,7 @@ export async function Hero() {
                 className="block text-white/55 mt-2"
                 style={{
                   fontFamily: 'Cormorant Garamond, serif',
-                  fontSize: 'clamp(1.4rem, 3.5vw, 2.2rem)',
+                  fontSize: 'clamp(1.1rem, 3.5vw, 2.2rem)',
                   fontStyle: 'italic',
                   fontWeight: 400,
                   letterSpacing: '0.01em',
