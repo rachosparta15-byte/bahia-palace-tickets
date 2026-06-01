@@ -26,33 +26,17 @@ const BP_D = '/images/gallery/bahia-palace-inner-courtyard-central-fountain-stuc
 const BP_E = '/images/gallery/bahia-palace-zellige-mosaic-arabic-calligraphy-stucco.jpg';
 
 const HERO_IMAGES: Record<TicketKey, string> = {
-  skipTheLine:  `${BP_A}?w=1400&q=80`,
-  guidedTour:   `${BP_B}?w=1400&q=80`,
-  privateTour:  `${BP_C}?w=1400&q=80`,
-  combo:        `${BP_D}?w=1400&q=80`,
+  skipTheLine:  BP_A,
+  guidedTour:   BP_B,
+  privateTour:  BP_C,
+  combo:        BP_D,
 };
 
 const GALLERY_IMAGES: Record<TicketKey, [string, string, string]> = {
-  skipTheLine:  [
-    `${BP_E}?w=800&q=75`,
-    `${BP_B}?w=600&q=75`,
-    `${BP_C}?w=600&q=75`,
-  ],
-  guidedTour:   [
-    `${BP_A}?w=800&q=75`,
-    `${BP_E}?w=600&q=75`,
-    `${BP_D}?w=600&q=75`,
-  ],
-  privateTour:  [
-    `${BP_B}?w=800&q=75`,
-    `${BP_A}?w=600&q=75`,
-    `${BP_E}?w=600&q=75`,
-  ],
-  combo:        [
-    `${BP_D}?w=800&q=75`,
-    `${BP_C}?w=600&q=75`,
-    `${BP_A}?w=600&q=75`,
-  ],
+  skipTheLine:  [BP_E, BP_B, BP_C],
+  guidedTour:   [BP_A, BP_E, BP_D],
+  privateTour:  [BP_B, BP_A, BP_E],
+  combo:        [BP_D, BP_C, BP_A],
 };
 
 const ALL_TICKETS: { key: TicketKey; slug: string; price: number; live: boolean }[] = [

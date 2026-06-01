@@ -49,3 +49,5 @@ next-env.d.ts
 
 # lead capture data (migrate to Supabase for production)
 /data/leads.json
+
+.vercel
