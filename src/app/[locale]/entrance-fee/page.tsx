@@ -33,9 +33,10 @@ const priceSchema = {
   name: 'Bahia Palace',
   url: `${BASE}/en/entrance-fee`,
   offers: [
-    { '@type': 'Offer', name: 'Standard Entry', price: '10', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
-    { '@type': 'Offer', name: 'Skip-the-Line Entry', price: '10', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
-    { '@type': 'Offer', name: 'Guided Tour', price: '10', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
+    { '@type': 'Offer', name: 'Standard Entry (gate)',     price: '10', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
+    { '@type': 'Offer', name: 'Skip-the-Line (online)',   price: '14', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
+    { '@type': 'Offer', name: 'Guided Tour (online)',      price: '28', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
+    { '@type': 'Offer', name: 'Private Tour (online)',     price: '49', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
   ],
 };
 
@@ -69,8 +70,8 @@ export default async function EntranceFeePage({ params }: Props) {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {[
             { label: 'Standard Entry', mad: '100 MAD', usd: '≈ $10 USD', note: 'At the gate — queue included', highlight: false },
-            { label: 'Skip-the-Line', mad: 'From $10', usd: 'Online booking', note: 'Walk straight in, no waiting', highlight: true },
-            { label: 'Guided Tour', mad: 'From $10', usd: 'Expert guide included', note: 'Includes entry + 90-min tour', highlight: false },
+            { label: 'Skip-the-Line', mad: 'From $14', usd: 'Incl. entry + service fee', note: 'Walk straight in, no waiting', highlight: true },
+            { label: 'Guided Tour', mad: 'From $28', usd: 'Incl. entry + expert guide', note: 'Entry + 90-min English tour', highlight: false },
           ].map(({ label, mad, usd, note, highlight }) => (
             <div key={label} className={`rounded-2xl border p-6 text-center ${highlight ? 'bg-[#C4452D] border-[#C4452D] text-white shadow-[0_8px_32px_rgba(196,69,45,0.3)]' : 'bg-white border-[#E8D5B7]'}`}>
               <p className={`text-xs font-bold uppercase tracking-widest mb-3 ${highlight ? 'text-white/70' : 'text-[#8B6344]'}`}>{label}</p>
@@ -94,9 +95,9 @@ export default async function EntranceFeePage({ params }: Props) {
               { category: 'Foreign children (7–13)', price: '50 MAD', usd: '~$5', note: 'Official Ministry of Culture rate' },
               { category: 'Children under 7', price: 'Free', usd: 'Free', note: 'No ticket required' },
               { category: 'Moroccan adults', price: '30 MAD', usd: '~$3', note: 'Valid Moroccan ID required' },
-              { category: 'Skip-the-Line (online)', price: 'From $10', usd: '$10', note: 'Instant entry, no queue' },
-              { category: 'Guided Tour (online)', price: 'From $10', usd: '$10', note: 'Entry + expert English guide' },
-              { category: 'Private Tour', price: 'From $10', usd: '$10', note: 'Exclusive private guide' },
+              { category: 'Skip-the-Line (online)', price: 'From $14', usd: '$14', note: 'Incl. 100 MAD entry + service fee' },
+              { category: 'Guided Tour (online)', price: 'From $28', usd: '$28', note: 'Entry + 90-min expert English guide' },
+              { category: 'Private Tour (online)', price: 'From $49', usd: '$49', note: 'Entry + exclusive private guide' },
             ].map(({ category, price, usd, note }) => (
               <div key={category} className="grid grid-cols-3 px-6 py-4 text-sm">
                 <span className="font-semibold text-[#3D2817]">{category}</span>
@@ -115,7 +116,7 @@ export default async function EntranceFeePage({ params }: Props) {
               <h3 className="font-bold text-[#3D2817] text-sm">Why is the online price higher?</h3>
             </div>
             <p className="text-sm text-[#5C3D20] leading-relaxed">
-              The <strong>100 MAD gate price</strong> covers standard entry with potentially 1–2 hour queues. Our online tickets include <strong>skip-the-line access</strong>, instant mobile confirmation, free cancellation, and English-language support — all included in the service fee.
+              The <strong>100 MAD gate price</strong> covers standard entry with potentially 1–2 hour queues. Our online prices include the <strong>100 MAD official entrance fee</strong> plus an independent booking service fee for skip-the-line access, instant mobile confirmation, free cancellation, and English-language support. We are an independent ticketing service, not affiliated with the Moroccan government.
             </p>
           </div>
           <div className="bg-[#E8A33D]/10 rounded-xl p-5 border border-[#E8A33D]/20">

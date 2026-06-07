@@ -180,7 +180,7 @@ export function TicketCards({ overrides = {} }: Props) {
                     {/* Trust line */}
                     <div className="flex items-center gap-1.5 mt-3 text-[11px] text-[#8B6344]">
                       <ShieldCheck size={12} className="text-[#6B7B3A]" />
-                      Secure booking via government ticket portal
+                      Secure checkout — instant confirmation
                     </div>
                   </div>
                 </div>
