@@ -1,6 +1,8 @@
 import type { MetadataRoute } from 'next';
 import prisma from '@/lib/db';
 import { BASE } from '@/lib/seo';
+
+export const dynamic = 'force-dynamic';
 const LOCALES = ['en', 'fr', 'it', 'de', 'es'] as const;
 
 const STATIC: { path: string; priority: number; freq: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
