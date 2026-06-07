@@ -6,7 +6,6 @@ import { Breadcrumb } from './Breadcrumb';
 import { BookingWidget } from './BookingWidget';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { BASE } from '@/lib/seo';
-import prisma from '@/lib/db';
 
 export type TicketKey = 'skipTheLine' | 'guidedTour' | 'privateTour' | 'combo';
 
@@ -101,35 +100,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
 
   const pageUrl = `${BASE}/${locale}/tickets/${slug}`;
 
-  let dbReviews: { id: string; authorName: string; rating: number; body: string; createdAt: Date }[] = [];
-  try {
-    dbReviews = await prisma.review.findMany({
-      where: { published: true },
-      orderBy: [{ order: 'asc' }, { createdAt: 'desc' }],
-      select: { id: true, authorName: true, rating: true, body: true, createdAt: true },
-      take: 3,
-    });
-  } catch { /* DB unavailable — omit review field */ }
-
-  // Bahia Palace aggregate: TripAdvisor public data (4.5 / 5, 13 000+ reviews).
-  // When the admin populates the Review table, those override both the aggregate and individual items.
-  const aggregateRating = dbReviews.length >= 3
-    ? {
-        '@type': 'AggregateRating',
-        ratingValue: (dbReviews.reduce((s, r) => s + r.rating, 0) / dbReviews.length).toFixed(1),
-        bestRating: '5',
-        worstRating: '1',
-        reviewCount: String(dbReviews.length),
-      }
-    : {
-        '@type': 'AggregateRating',
-        ratingValue: '4.5',
-        bestRating: '5',
-        worstRating: '1',
-        reviewCount: '13420',
-      };
-
-  const productSchema: Record<string, unknown> = {
+  const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name,
@@ -146,23 +117,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
       availability: 'https://schema.org/InStock',
       seller: { '@type': 'Organization', name: 'Bahia Palace Tickets' },
     },
-    aggregateRating,
   };
-
-  if (dbReviews.length > 0) {
-    productSchema.review = dbReviews.map(r => ({
-      '@type': 'Review',
-      author: { '@type': 'Person', name: r.authorName },
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: String(r.rating),
-        bestRating: '5',
-        worstRating: '1',
-      },
-      reviewBody: r.body,
-      datePublished: r.createdAt.toISOString().split('T')[0],
-    }));
-  }
 
   return (
     <div className="bg-[#FAF3E7] min-h-screen">
