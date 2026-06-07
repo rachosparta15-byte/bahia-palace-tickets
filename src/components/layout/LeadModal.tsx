@@ -13,14 +13,53 @@ interface Props {
   onDone: () => void;
 }
 
+interface TrafficSource {
+  sourcePage:  string;
+  referrer:    string;
+  utmSource:   string;
+  utmMedium:   string;
+  utmCampaign: string;
+  device:      string;
+}
+
+function collectTrafficSource(locale: string, nextPathname: string): TrafficSource {
+  // Use window.location.pathname so we get the full path including locale prefix
+  // (next-intl's usePathname strips the locale, returning "/" for the homepage).
+  const sourcePage = typeof window !== 'undefined'
+    ? window.location.pathname
+    : `/${locale}${nextPathname}`;
+
+  const referrer = typeof document !== 'undefined' ? document.referrer : '';
+
+  const params = typeof window !== 'undefined'
+    ? new URLSearchParams(window.location.search)
+    : new URLSearchParams();
+
+  const device = typeof window !== 'undefined' &&
+    (window.matchMedia('(pointer: coarse)').matches || navigator.maxTouchPoints > 0)
+    ? 'mobile'
+    : 'desktop';
+
+  return {
+    sourcePage,
+    referrer,
+    utmSource:   params.get('utm_source')   ?? '',
+    utmMedium:   params.get('utm_medium')   ?? '',
+    utmCampaign: params.get('utm_campaign') ?? '',
+    device,
+  };
+}
+
 export function LeadModal({ ticketType, onClose, onDone }: Props) {
-  const locale     = useLocale();
-  const pathname   = usePathname();
-  const overlayRef = useRef<HTMLDivElement>(null);
+  const locale    = useLocale();
+  const pathname  = usePathname();
 
   const [email,   setEmail]   = useState('');
   const [name,    setName]    = useState('');
   const [loading, setLoading] = useState(false);
+
+  // Capture traffic source once when the modal first opens.
+  const [source] = useState<TrafficSource>(() => collectTrafficSource(locale, pathname));
 
   // ESC to close
   useEffect(() => {
@@ -39,23 +78,40 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
   const openPortal = () =>
     window.open(BOOKING_URL, '_blank', 'noopener,noreferrer');
 
-  const handleSubmit = async () => {
-    setLoading(true);
+  const saveLead = async (email: string, name: string) => {
     try {
       await fetch('/api/leads', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ email, name, ticketType, locale, sourcePage: pathname }),
+        body: JSON.stringify({
+          email:       email.trim()  || null,
+          name:        name.trim()   || null,
+          ticketType,
+          locale,
+          sourcePage:  source.sourcePage,
+          referrer:    source.referrer    || null,
+          utmSource:   source.utmSource   || null,
+          utmMedium:   source.utmMedium   || null,
+          utmCampaign: source.utmCampaign || null,
+          device:      source.device,
+        }),
       });
     } catch {
-      // best-effort — still let the user through
+      // best-effort — never block the user
     }
+  };
+
+  const handleSubmit = async () => {
+    setLoading(true);
+    await saveLead(email, name);
     setLoading(false);
     openPortal();
     onDone();
   };
 
-  const handleSkip = () => {
+  const handleSkip = async () => {
+    // Fire-and-forget — track the click even when user skips email
+    saveLead('', '');
     openPortal();
     onDone();
   };
@@ -64,29 +120,22 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
   // backdrop-filter / transform that would make position:fixed relative
   // to the ancestor instead of the viewport (e.g. Header's backdrop-blur-sm).
   const modal = (
-    <div
-      ref={overlayRef}
-      // overflow-y-auto: the overlay itself scrolls if the panel is taller
-      // than the viewport (common on small phones in landscape).
-      className="fixed inset-0 z-[9999] overflow-y-auto"
-    >
+    <div className="fixed inset-0 z-[9999] overflow-y-auto">
       {/* Dark backdrop — clicking closes the modal */}
       <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
       />
 
-      {/* Centering wrapper — min-h-full keeps the flex container full-height
-          so items-center works even when the overlay is scrolled */}
+      {/* Centering wrapper */}
       <div className="relative min-h-full flex items-center justify-center p-4">
 
-        {/* Panel — stopPropagation so clicks here don't reach the backdrop */}
+        {/* Panel */}
         <div
           className="relative bg-[#FAF3E7] rounded-2xl shadow-2xl w-full border border-[#E8D5B7]"
           style={{ maxWidth: '400px' }}
           onClick={(e) => e.stopPropagation()}
         >
-
           {/* Header */}
           <div className="bg-[#3D2817] rounded-t-2xl px-6 pt-5 pb-4">
             <div className="flex items-start justify-between gap-4">
@@ -101,7 +150,6 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
                   Get tips &amp; a future discount
                 </h2>
               </div>
-              {/* Close button — 44×44 tap target */}
               <button
                 onClick={onClose}
                 aria-label="Close"
@@ -120,7 +168,6 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
             </p>
 
             <div className="space-y-3">
-              {/* font-size 16px on inputs prevents iOS auto-zoom */}
               <input
                 type="text"
                 placeholder="First name (optional)"

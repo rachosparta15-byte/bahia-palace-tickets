@@ -4,27 +4,36 @@ import prisma from '@/lib/db';
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json() as {
-      email?: string;
-      name?: string;
-      ticketType?: string;
-      locale?: string;
-      sourcePage?: string;
+      email?:       string | null;
+      name?:        string | null;
+      ticketType?:  string;
+      locale?:      string;
+      sourcePage?:  string;
+      referrer?:    string | null;
+      utmSource?:   string | null;
+      utmMedium?:   string | null;
+      utmCampaign?: string | null;
+      device?:      string | null;
     };
 
     await prisma.lead.create({
       data: {
-        email:      body.email?.trim()      || null,
-        name:       body.name?.trim()       || null,
-        ticketType: body.ticketType         || 'general',
-        locale:     body.locale             || 'en',
-        sourcePage: body.sourcePage         || '/',
+        email:       body.email       || null,
+        name:        body.name        || null,
+        ticketType:  body.ticketType  || 'general',
+        locale:      body.locale      || 'en',
+        sourcePage:  body.sourcePage  || '/',
+        referrer:    body.referrer    || null,
+        utmSource:   body.utmSource   || null,
+        utmMedium:   body.utmMedium   || null,
+        utmCampaign: body.utmCampaign || null,
+        device:      body.device      || null,
       },
     });
 
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error('[leads] save error:', err);
-    // best-effort — never block the user
     return NextResponse.json({ ok: false }, { status: 200 });
   }
 }

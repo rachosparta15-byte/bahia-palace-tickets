@@ -177,13 +177,18 @@ model Review {
 }
 
 model Lead {
-  id         String   @id @default(cuid())
-  email      String?
-  name       String?
-  ticketType String
-  locale     String
-  sourcePage String
-  createdAt  DateTime @default(now())
+  id          String   @id @default(cuid())
+  email       String?
+  name        String?
+  ticketType  String
+  locale      String
+  sourcePage  String
+  referrer    String?
+  utmSource   String?
+  utmMedium   String?
+  utmCampaign String?
+  device      String?
+  createdAt   DateTime @default(now())
 
   @@index([createdAt])
   @@index([email])
