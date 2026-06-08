@@ -1,7 +1,7 @@
 import { LeadButton } from '@/components/layout/LeadButton';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
-import { buildAlternates, buildOG, BASE } from '@/lib/seo';
+import { buildAlternates, buildOG, BASE, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
 import { CheckCircle2, Info, ArrowRight, Tag } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -33,10 +33,10 @@ const priceSchema = {
   name: 'Bahia Palace',
   url: `${BASE}/en/entrance-fee`,
   offers: [
-    { '@type': 'Offer', name: 'Standard Entry (gate)',     price: '10', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
-    { '@type': 'Offer', name: 'Skip-the-Line (online)',   price: '14', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
-    { '@type': 'Offer', name: 'Guided Tour (online)',      price: '28', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
-    { '@type': 'Offer', name: 'Private Tour (online)',     price: '49', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
+    { '@type': 'Offer', name: 'Standard Entry (gate)',     price: '10', priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
+    { '@type': 'Offer', name: 'Skip-the-Line (online)',   price: '14', priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
+    { '@type': 'Offer', name: 'Guided Tour (online)',      price: '28', priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
+    { '@type': 'Offer', name: 'Private Tour (online)',     price: '49', priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
   ],
 };
 

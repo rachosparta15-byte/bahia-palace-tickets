@@ -14,6 +14,28 @@ export function buildAlternates(locale: string, path: string) {
   return { canonical: `${BASE}/${locale}${path}`, languages: langs };
 }
 
+export const DIGITAL_TICKET_OFFER_EXTRAS = {
+  shippingDetails: {
+    '@type': 'OfferShippingDetails',
+    shippingRate: { '@type': 'MonetaryAmount', value: '0', currency: 'USD' },
+    shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'MA' },
+    deliveryTime: {
+      '@type': 'ShippingDeliveryTime',
+      handlingTime: { '@type': 'QuantitativeValue', minValue: 0, maxValue: 0, unitCode: 'DAY' },
+      transitTime:  { '@type': 'QuantitativeValue', minValue: 0, maxValue: 0, unitCode: 'DAY' },
+    },
+  },
+  hasMerchantReturnPolicy: {
+    '@type': 'MerchantReturnPolicy',
+    applicableCountry: 'MA',
+    returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+    merchantReturnDays: 1,
+    returnMethod: 'https://schema.org/ReturnByMail',
+    returnFees: 'https://schema.org/FreeReturn',
+    merchantReturnLink: `${BASE}/en/refund-policy`,
+  },
+};
+
 export function buildOG(title: string, description: string, locale: string, path: string) {
   return {
     title,

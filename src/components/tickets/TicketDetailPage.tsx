@@ -5,7 +5,7 @@ import { Link } from '@/i18n/navigation';
 import { Breadcrumb } from './Breadcrumb';
 import { BookingWidget } from './BookingWidget';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { BASE } from '@/lib/seo';
+import { BASE, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
 
 export type TicketKey = 'skipTheLine' | 'guidedTour' | 'privateTour' | 'combo';
 
@@ -116,6 +116,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
       priceValidUntil: '2026-12-31',
       availability: 'https://schema.org/InStock',
       seller: { '@type': 'Organization', name: 'Bahia Palace Tickets' },
+      ...DIGITAL_TICKET_OFFER_EXTRAS,
     },
   };
 

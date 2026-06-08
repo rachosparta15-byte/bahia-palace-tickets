@@ -12,7 +12,7 @@ import { FinalCTA } from '@/components/homepage/FinalCTA';
 import { BlogPreview } from '@/components/homepage/BlogPreview';
 import { ArticleTicker } from '@/components/homepage/ArticleTicker';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { BASE, buildAlternates, buildOG } from '@/lib/seo';
+import { BASE, buildAlternates, buildOG, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
@@ -104,7 +104,7 @@ export default async function HomePage({ params }: Props) {
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '09:00', closes: '17:00' },
     ],
     offers: [
-      { '@type': 'Offer', name: 'Skip-the-Line Entry', price: '10', priceCurrency: 'USD', url: `${BASE}/${locale}/tickets/skip-the-line`, availability: 'https://schema.org/InStock' },
+      { '@type': 'Offer', name: 'Skip-the-Line Entry', price: '10', priceCurrency: 'USD', url: `${BASE}/${locale}/tickets/skip-the-line`, availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
     ],
     touristType: ['History enthusiasts', 'Architecture lovers', 'Cultural tourists'],
   };
