@@ -16,6 +16,11 @@ export async function POST(req: NextRequest) {
       device?:      string | null;
     };
 
+    const ip =
+      req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
+      req.headers.get('x-real-ip') ??
+      null;
+
     await prisma.lead.create({
       data: {
         email:       body.email       || null,
@@ -28,6 +33,7 @@ export async function POST(req: NextRequest) {
         utmMedium:   body.utmMedium   || null,
         utmCampaign: body.utmCampaign || null,
         device:      body.device      || null,
+        ipAddress:   ip,
       },
     });
 

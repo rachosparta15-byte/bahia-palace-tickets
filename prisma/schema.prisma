@@ -188,6 +188,7 @@ model Lead {
   utmMedium   String?
   utmCampaign String?
   device      String?
+  ipAddress   String?
   createdAt   DateTime @default(now())
 
   @@index([createdAt])

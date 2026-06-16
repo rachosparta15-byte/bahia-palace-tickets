@@ -1,5 +1,5 @@
 import prisma from '@/lib/db';
-import { Search, Mail, User, Globe, Tag, Calendar, MapPin, Smartphone, Link2 } from 'lucide-react';
+import { Search, Mail, User, Globe, Tag, Calendar, MapPin, Smartphone, Link2, Wifi } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
@@ -157,6 +157,7 @@ export default async function LeadsPage({ searchParams }: Props) {
                   { icon: MapPin,   label: 'Source page' },
                   { icon: Smartphone, label: 'Device' },
                   { icon: Globe,    label: 'Locale' },
+                  { icon: Wifi,     label: 'IP Address' },
                   { icon: Calendar, label: 'Date' },
                 ].map(({ icon: Icon, label }) => (
                   <th
@@ -246,6 +247,12 @@ export default async function LeadsPage({ searchParams }: Props) {
                     {/* Locale */}
                     <td className="px-4 py-3 text-[#5C3D20] text-xs uppercase font-mono">
                       {lead.locale}
+                    </td>
+
+                    {/* IP Address */}
+                    <td className="px-4 py-3 text-xs font-mono text-[#3D2817]">
+                      {(lead as typeof lead & { ipAddress?: string | null }).ipAddress
+                        ?? <span className="text-[#C4A882] italic">—</span>}
                     </td>
 
                     {/* Date */}
