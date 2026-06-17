@@ -20,6 +20,18 @@ export async function register() {
       await prisma.$executeRawUnsafe(
         `CREATE INDEX IF NOT EXISTS "Lead_email_idx" ON "Lead"("email")`
       );
+      // Add columns that may not exist in older deployments
+      const alterCols = [
+        `ALTER TABLE "Lead" ADD COLUMN "referrer"    TEXT`,
+        `ALTER TABLE "Lead" ADD COLUMN "utmSource"   TEXT`,
+        `ALTER TABLE "Lead" ADD COLUMN "utmMedium"   TEXT`,
+        `ALTER TABLE "Lead" ADD COLUMN "utmCampaign" TEXT`,
+        `ALTER TABLE "Lead" ADD COLUMN "device"      TEXT`,
+        `ALTER TABLE "Lead" ADD COLUMN "ipAddress"   TEXT`,
+      ];
+      for (const sql of alterCols) {
+        await prisma.$executeRawUnsafe(sql).catch(() => {});
+      }
     } catch (e) {
       console.error('[instrumentation] Lead table setup failed:', e);
     }
