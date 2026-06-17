@@ -46,6 +46,7 @@ excerpt: Cómo llegar a Bahia Palace desde Jemaa el-Fna: ruta a pie, consejos ta
   <li><strong>Configura tu ruta en modo peatonal</strong> — las rutas en coche en la medina suelen ser inútiles ya que la mayoría de los callejones están reservados para peatones.</li>
   <li><strong>Haz zoom cuando estés a menos de 200 metros</strong> del destino — algunos callejones no están perfectamente etiquetados y una ligera imprecisión puede enviarte al callejón equivocado.</li>
   <li>Si la app dice que has llegado pero no ves la entrada, busca las grandes puertas de madera a tu izquierda — puede que estés muy cerca.</li>
+  <li>What3words es una opción de respaldo útil: cada zona de 3 m² tiene una dirección única y funciona sin conexión.</li>
 </ul>
 
 <h2>Aparcamiento cercano (si vienes en coche)</h2>
@@ -54,11 +55,12 @@ excerpt: Cómo llegar a Bahia Palace desde Jemaa el-Fna: ruta a pie, consejos ta
   <li><strong>Parking El Badi:</strong> Un gran aparcamiento de superficie cerca del Palacio El Badi en la Place des Ferblantiers, a unos 600 metros al oeste de Bahia Palace. Gratuito o muy barato.</li>
   <li><strong>Parking Mellah:</strong> Un aparcamiento más pequeño justo al sur del barrio del Mellah, muy cerca de la entrada del palacio.</li>
 </ul>
-<p>Desde cualquiera de los dos aparcamientos, caminar hasta la entrada del palacio lleva entre 5 y 10 minutos. Los aparcamientos en la zona de la medina de Marrakech son generalmente informales — un vigilante cobrará una pequeña tarifa (5-10 MAD) cuando te vayas. Es normal y esperado.</p>
+<p>Desde cualquiera de los dos aparcamientos, caminar hasta la entrada del palacio lleva entre 5 y 10 minutos. Los aparcamientos en la zona de la medina de Marrakech son generalmente informales — un vigilante cobrará una pequeña tarifa (5-10 MAD) cuando te vayas. Es normal y esperado — no es una estafa.</p>
 
 <h2>¿Qué hay cerca de Bahia Palace?</h2>
 <p><strong>Tumbas Saadíes (~10 minutos al sur):</strong> El mausoleo real de la dinastía saadí, amurallado durante siglos y redescubierto en 1917. Pequeño, extraordinariamente detallado y que vale 45 minutos. Sigue los carteles al sur de Bahia Palace a través del Mellah.</p>
 <p><strong>El Badi Palace (~15 minutos al oeste):</strong> Las dramáticas ruinas de un complejo palacial del siglo XVI — vastas salas sin techo y torres con nidos de cigüeñas. Dirígete hacia el oeste en dirección a la Place des Ferblantiers.</p>
+<p><strong>Place des Ferblantiers (~3 minutos al oeste):</strong> La plaza de los fabricantes de linternas, que conviene visitar al anochecer, cuando todo se ilumina.</p>
 <p><strong>Mellah (Barrio Judío):</strong> Inmediatamente adyacente a Bahia Palace. Los callejones cubiertos del mercado aquí son menos turísticos que los souks principales y vale la pena explorarlos — edificios más altos, balcones de hierro forjado y carácter distintivo.</p>
 
 <h2>¿Sabes cómo llegar? Evita también la cola.</h2>

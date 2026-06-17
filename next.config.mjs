@@ -62,6 +62,19 @@ const nextConfig = {
         permanent:   false,
       }))
     );
+    const BLOG_MERGE_REDIRECTS = [
+      { from: 'how-to-get-to-bahia-palace',     to: 'how-to-get-to-bahia-palace-marrakech' },
+      { from: 'history-of-bahia-palace',         to: 'bahia-palace-history' },
+      { from: 'marrakech-tourist-scams-guide',   to: 'marrakech-safety-guide' },
+      { from: 'best-time-to-visit-bahia-palace', to: 'bahia-palace-opening-hours-2026' },
+    ];
+    const blogMergeRedirects = BLOG_MERGE_REDIRECTS.flatMap(({ from, to }) =>
+      LOCALES.map(locale => ({
+        source:      `/${locale}/blog/${from}`,
+        destination: `/${locale}/blog/${to}`,
+        permanent:   true,
+      }))
+    );
     return [
       {
         source:      '/en/blog/bahia-palace-vs-saadian-tombs-comparison',
@@ -70,6 +83,7 @@ const nextConfig = {
       },
       ...testRedirects,
       ...comingSoonRedirects,
+      ...blogMergeRedirects,
     ];
   },
   async headers() {

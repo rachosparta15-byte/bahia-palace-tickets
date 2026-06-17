@@ -80,6 +80,14 @@ export default async function BlogIndexPage({ params }: Props) {
         excerpt:   p.excerpt,
       }));
 
+  const REDIRECTED_SLUGS = new Set([
+    'how-to-get-to-bahia-palace',
+    'history-of-bahia-palace',
+    'marrakech-tourist-scams-guide',
+    'best-time-to-visit-bahia-palace',
+  ]);
+  const filteredPosts = posts.filter(p => !REDIRECTED_SLUGS.has(p.slug));
+
   return (
     <div className="bg-[#FAF3E7] min-h-screen">
       <div className="bg-[#3D2817] text-white px-6 py-14 md:px-10">
@@ -99,11 +107,11 @@ export default async function BlogIndexPage({ params }: Props) {
       </div>
 
       <div className="max-w-5xl mx-auto px-6 py-12">
-        {posts.length === 0 ? (
+        {filteredPosts.length === 0 ? (
           <p className="text-[#5C3D20] text-center py-16">Articles coming soon.</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {posts.map((post) => {
+            {filteredPosts.map((post) => {
               const catLabel = t(`categories.${post.category}` as any) as string;
               const imgSrc   = post.coverImage ?? CATEGORY_IMAGES[post.category] ?? CATEGORY_IMAGES['visit-tips'];
               const mins     = readTime(post);

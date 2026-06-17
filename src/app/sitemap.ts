@@ -6,6 +6,13 @@ import { getAllSlugs, getBlogPost } from '@/lib/blog';
 export const dynamic = 'force-dynamic';
 const LOCALES = ['en', 'fr', 'it', 'de', 'es'] as const;
 
+const REDIRECTED_BLOG_SLUGS = new Set([
+  'how-to-get-to-bahia-palace',
+  'history-of-bahia-palace',
+  'marrakech-tourist-scams-guide',
+  'best-time-to-visit-bahia-palace',
+]);
+
 const STATIC: { path: string; priority: number; freq: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
   { path: '',                priority: 1.0,  freq: 'weekly'  },
   { path: '/tickets',        priority: 0.95, freq: 'weekly'  },
@@ -75,7 +82,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (dbPosts.length > 0) {
     // DB path — preserve hreflang across only the locales that exist in the DB
     const bySlug = new Map<string, typeof dbPosts>();
-    for (const post of dbPosts) {
+    for (const post of dbPosts.filter(p => !REDIRECTED_BLOG_SLUGS.has(p.slug))) {
       const group = bySlug.get(post.slug) ?? [];
       group.push(post);
       bySlug.set(post.slug, group);
@@ -97,6 +104,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   } else {
     // Static fallback — all slugs defined in blog.ts, all 5 locales
     for (const slug of getAllSlugs()) {
+      if (REDIRECTED_BLOG_SLUGS.has(slug)) continue;
       const languages: Record<string, string> = {};
       for (const locale of LOCALES) {
         if (getBlogPost(locale, slug)) languages[locale] = `${BASE}/${locale}/blog/${slug}`;

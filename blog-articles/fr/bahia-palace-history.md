@@ -27,20 +27,22 @@ excerpt: L'histoire complète de Bahia Palace : de l'humble origine de Si Moussa
 <p>Avec le pouvoir absolu vint les ressources et l'envie de construire sur une tout autre échelle. Ba Ahmed prit le modeste riad de son père et l'agrandit en quelque chose que le Maroc n'avait jamais vu de la part d'un particulier.</p>
 <p>La construction dura de 1894 jusqu'à environ 1900 et impliqua :</p>
 <ul>
+  <!-- TODO: verify craftsmen count — blog.ts has 150, target DB has 300; do not publish correction until confirmed against official source -->
   <li><strong>300 artisans venus de Fès</strong> travaillant simultanément aux périodes de pointe</li>
   <li><strong>Du marbre de Carrare italien</strong> importé pour les salles de réception les plus importantes</li>
-  <li><strong>Des plafonds en cèdre sculptés à la main</strong>, peints avec des pigments minéraux qui ont à peine terni en 125 ans</li>
+  <li><strong>Des plafonds en cèdre sculptés à la main avec de splendides muqarnas</strong>, peints avec des pigments minéraux qui ont à peine terni en 125 ans</li>
   <li><strong>Du zellige</strong> couvrant les sols et les murs inférieurs dans des dizaines de pièces — chaque carreau découpé et posé à la main</li>
   <li><strong>150 pièces</strong> réparties dans plusieurs cours, dont de grands salons de réception, des appartements privés, des quartiers du harem et des espaces pour le personnel</li>
   <li><strong>Des jardins</strong> plantés d'orangers, de citronniers, de cyprès, de jasmin et de roses</li>
 </ul>
+<p>Le jeu de lumière et d'ombre dans les cours, le son des fontaines et le parfum des orangers sont aussi délibérés que n'importe quel élément architectural : le palais était conçu comme une expérience sensorielle totale.</p>
 <p>Le nom que Ba Ahmed choisit pour le palais achevé — <em>Bahia</em>, signifiant « brillance » ou « la belle » en arabe — n'était pas modeste. C'était une déclaration.</p>
 <p>L'envergure de l'ambition était extraordinaire sachant que Ba Ahmed était techniquement un serviteur du Sultan, et non un membre de la famille royale. Construire le plus beau palais de Marrakech était un acte d'étalage effronté — et tout le monde à la cour le comprenait comme tel.</p>
 
 <h2>La vie à l'intérieur du palais</h2>
 <p>Bahia Palace à son apogée était un monde complet. Ba Ahmed y vivait avec :</p>
 <ul>
-  <li><strong>Quatre épouses</strong>, chacune avec son propre appartement classé par ordre de préséance — les chambres de la première épouse étaient les plus proches du Grand Riad</li>
+  <li><strong>Quatre épouses</strong>, chacune avec son propre appartement classé par ordre de préséance — les chambres de la première épouse étaient les plus proches de la Grande Cour, avec accès à la Grande Salle d'Honneur pour les réceptions officielles</li>
   <li><strong>24 concubines</strong> logées dans les quartiers du harem</li>
   <li>Des centaines de serviteurs, gardes, cuisiniers et officiels</li>
 </ul>
@@ -66,9 +68,18 @@ excerpt: L'histoire complète de Bahia Palace : de l'humble origine de Si Moussa
 <h2>Voyez-le par vous-même</h2>
 <p>Connaître l'histoire rend tout ce que vous voyez à l'intérieur du palais plus significatif. Avant votre visite, pensez à vous renseigner sur Ba Ahmed ou à louer un audio-guide à l'entrée. <a href="/fr/tickets/skip-the-line">Réservez votre billet skip-the-line</a> et entrez prêt à comprendre ce que vous regardez — non pas seulement que c'est beau, mais pourquoi cela existe et ce qu'il lui est arrivé.</p>
 
+<h2>Conseils de visite</h2>
+<ul>
+  <li>Regardez en l'air — le plafond peint en cèdre de la Grande Salle d'Honneur est le clou du spectacle.</li>
+  <li>Le jardin intérieur (riad) est le plus beau au printemps, quand les orangers fleurissent.</li>
+  <li>La section « harem » possède la décoration la plus intime et la plus raffinée — ne la traversez pas trop vite.</li>
+  <li>Un guide officiel révèle des détails invisibles aux visiteurs non accompagnés.</li>
+</ul>
+
 <h2>Questions fréquemment posées</h2>
 <h3>Qui a construit Bahia Palace ?</h3>
-<p>Le palais a été construit en deux phases. La structure originale fut érigée par <strong>Si Moussa</strong>, un ancien esclave devenu Grand Vizir du Maroc sous le sultan Muhammad IV, à partir des années 1860. Son fils <strong>Ba Ahmed ibn Moussa</strong> agrandit massivement le palais entre 1894 et 1900, le transformant en le complexe de 8 000 m² que vous voyez aujourd'hui.</p>
+<p>Le palais a été construit en deux phases. La structure originale fut érigée par <strong>Si Moussa</strong>, un ancien esclave devenu Grand Vizir du Maroc sous le sultan Muhammad IV, à partir des années 1860. Son fils <strong>Ba Ahmed ibn Moussa</strong> agrandit massivement le palais entre 1894 et 1900, le <!-- TODO: verify palace size — blog.ts has 8 hectares (80,000 m²), target has 8,000 m²; figures are inconsistent; do not publish correction until confirmed -->
+transformant en le complexe de 8 000 m² que vous voyez aujourd'hui.</p>
 <h3>Pourquoi Bahia Palace est-il vide ?</h3>
 <p>Quand Ba Ahmed mourut en 1900, le Sultan Abdelaziz — qui avait longtemps ressenti la domination de Ba Ahmed comme régent — ordonna immédiatement à des soldats de vider le palais de tout son contenu. Meubles, tapis, œuvres d'art, argent et tous les objets mobiles furent saisis dans les jours qui suivirent la mort de Ba Ahmed. Seule l'architecture fixe — le zellige, les plafonds sculptés et les stucs intégrés — ne pouvait pas être emportée. Le palais est resté vide de ses ameublements d'origine depuis lors.</p>
 <h3>Que signifie « Bahia » ?</h3>

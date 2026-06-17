@@ -32,9 +32,9 @@ excerpt: Horaires de Bahia Palace 2026 : programme quotidien, fermetures excepti
 <h3>Tôt le matin : le meilleur choix</h3>
 <p>Les portes ouvrent à 9h00, et les 90 premières minutes sont les plus calmes de la journée. Les groupes organisés n'arrivent généralement pas avant 10h30–11h00, et la lumière dans les cours ouvertes du palais est plus douce et plus photogénique le matin. Si vous voulez profiter des zellige et des plafonds en cèdre sculpté sans la foule — ou au moins sans 40 autres appareils photo dans le cadre — arrivez tôt.</p>
 <h3>Milieu de journée : la période la plus chargée</h3>
-<p>Entre 11h00 et 14h00, Bahia Palace est à son plus fréquenté, surtout en haute saison (mars–mai, septembre–novembre). Les cars de tourisme arrivent, les groupes en audioguide encombrent les entrées, et les temps d'attente au guichet peuvent atteindre 30 à 45 minutes.</p>
+<p>Entre 11h00 et 14h00, Bahia Palace est à son plus fréquenté, surtout en haute saison (mars–mai, septembre–novembre). Les cars de tourisme arrivent entre 10h00 et 11h00, les groupes en audioguide encombrent les entrées, et les temps d'attente au guichet peuvent atteindre 30 à 45 minutes.</p>
 <h3>Après-midi : une bonne alternative</h3>
-<p>Après 14h30, la foule commence à se disperser — beaucoup de visiteurs partent déjeuner. La lumière change, certaines pièces deviennent plus ombragées, mais l'expérience globale est plus détendue. Si le matin n'est pas possible, le début d'après-midi est votre deuxième meilleure option.</p>
+<p>Après 14h30, la foule commence à se disperser — beaucoup de visiteurs partent déjeuner. La lumière change, certaines pièces deviennent plus ombragées, mais l'expérience globale est plus détendue. Si le matin n'est pas possible, le début d'après-midi est votre deuxième meilleure option. La lumière de fin d'après-midi dans le Grand Riad est particulièrement belle pour la photographie, avec des tons plus chauds et des ombres moins dures qu'en milieu de journée.</p>
 <p><strong>Verdict :</strong> Arrivez à l'ouverture (9h00) ou après 15h00. Évitez si possible la tranche 11h00–14h00.</p>
 
 <h2>Combien de temps dure une visite ?</h2>
@@ -56,6 +56,31 @@ excerpt: Horaires de Bahia Palace 2026 : programme quotidien, fermetures excepti
   </tbody>
 </table>
 <p>Les fêtes islamiques suivent le calendrier lunaire, les dates exactes varient donc chaque année. Si vous planifiez autour de l'une de ces dates, consultez les informations officielles du ministère marocain de la Culture à l'approche de votre voyage — ou demandez confirmation à votre hébergement.</p>
+
+<h2>Répartition mensuelle et saisonnière</h2>
+<p><strong>Mars–mai (printemps) :</strong> Idéal pour la visite. Les températures sont agréables (18–30°C), les orangers sont en fleurs et les heures de lumière sont longues. L'affluence est élevée mais gérable si vous arrivez tôt.</p>
+<p><strong>Septembre–novembre (automne) :</strong> Excellent. Les températures descendent dans la plage 22–32°C après l'été, la foule se réduit et la lumière est magnifique. Septembre et octobre sont généralement considérés comme les meilleurs mois.</p>
+<p><strong>Février et décembre :</strong> Basse saison, peu de monde. Les températures sont douces (15–22°C) et vous aurez souvent des salles entières pour vous seul le matin. Les jardins sont moins luxuriants mais le palais est inchangé.</p>
+<p><strong>Juillet–août (été) :</strong> Prudence recommandée. Les températures dépassent régulièrement 38–43°C en milieu de journée. Si vous devez visiter, arrivez à 9h00 précises et prévoyez de terminer avant 10h30. Le palais n'est pas climatisé.</p>
+
+<table>
+  <thead><tr><th>Saison</th><th>Températures</th><th>Conditions de visite</th></tr></thead>
+  <tbody>
+    <tr><td>Printemps (mars–mai)</td><td>18–30°C</td><td>Parfaite</td></tr>
+    <tr><td>Été (juin–août)</td><td>35–43°C+</td><td>Tôt le matin uniquement</td></tr>
+    <tr><td>Automne (sept–nov)</td><td>22–32°C</td><td>Excellente</td></tr>
+    <tr><td>Hiver (déc–fév)</td><td>15–22°C</td><td>Idéale pour peu de monde</td></tr>
+  </tbody>
+</table>
+
+<h3>Exemple d'itinéraire demi-journée avec peu de monde</h3>
+<ol>
+  <li><strong>8h45</strong> — Arrivée à l'entrée de Bahia Palace (5 minutes avant l'ouverture)</li>
+  <li><strong>9h00–10h15</strong> — Visite du palais à votre rythme pendant qu'il est calme</li>
+  <li><strong>10h30</strong> — Marche de 10 minutes vers le sud jusqu'aux Tombeaux Saadiens (ouverts à partir de 9h00)</li>
+  <li><strong>Après-midi</strong> — Continuez vers l'ouest jusqu'aux ruines d'El Badi Palace, puis explorez le Mellah à votre guise</li>
+</ol>
+<p>Combiner Bahia Palace avec les Tombeaux Saadiens et El Badi Palace offre une matinée complète dans la medina sud — les trois sites sont à moins de 15 minutes à pied les uns des autres.</p>
 
 <h2>Conseils pour éviter les longues files d'attente</h2>
 <p>Le guichet unique de Bahia Palace est un point de congestion. Même quand le palais lui-même n'est pas très bondé, la file pour acheter un billet à la porte peut rendre votre attente pénible — surtout sous la chaleur estivale.</p>

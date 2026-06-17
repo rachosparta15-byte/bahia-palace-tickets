@@ -46,6 +46,11 @@ function extractFaqSchema(html: string) {
 
 export const revalidate = 3600;
 
+const STATIC_PAGE_CANONICALS: Record<string, string> = {
+  'bahia-palace-opening-hours-2026': '/opening-hours',
+  'bahia-palace-entrance-fee-2026':  '/entrance-fee',
+};
+
 type NormalizedPost = {
   id: string;
   title: string;
@@ -114,10 +119,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const ogImg       = post.ogImage  ?? post.coverImage ?? CATEGORY_IMAGES[post.category];
   const canonical   = `${BASE}/${locale}/blog/${slug}`;
 
+  const staticPath = STATIC_PAGE_CANONICALS[slug];
   return {
     title:       `${title} — Bahia Palace Tickets`,
     description,
-    alternates:  buildAlternates(locale, `/blog/${slug}`),
+    alternates:  staticPath
+      ? { canonical: `${BASE}/${locale}${staticPath}`, languages: buildAlternates(locale, `/blog/${slug}`).languages }
+      : buildAlternates(locale, `/blog/${slug}`),
     openGraph: {
       title,
       description,
