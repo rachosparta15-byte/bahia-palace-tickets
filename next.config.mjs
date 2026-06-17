@@ -41,10 +41,8 @@ if (!_wa) {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    outputFileTracingIncludes: {
-      '/**': ['./prisma/dev.db'],
-    },
+  outputFileTracingIncludes: {
+    '/*': ['./prisma/dev.db'],
   },
   async redirects() {
     const TEST_SLUGS = ['z', 'xdxxxxxxxx', 'test'];
