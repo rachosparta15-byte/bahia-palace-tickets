@@ -23,7 +23,9 @@ const translations = [
   <thead><tr><th>Catégorie</th><th>Prix</th></tr></thead>
   <tbody>
     <tr><td>Adultes (visiteurs étrangers)</td><td>100 MAD (~10 $ / 9 €)</td></tr>
-    <tr><td>Ressortissants marocains</td><td>10 MAD</td></tr>
+    <tr><td>Enfants étrangers (7–13 ans)</td><td>50 MAD</td></tr>
+    <tr><td>Adultes marocains</td><td>30 MAD</td></tr>
+    <tr><td>Enfants marocains (7–13 ans)</td><td>10 MAD</td></tr>
     <tr><td>Enfants de moins de 7 ans</td><td>Gratuit</td></tr>
   </tbody>
 </table>
@@ -31,9 +33,9 @@ const translations = [
 
 <h2>Y a-t-il des réductions ?</h2>
 <h3>Enfants</h3>
-<p>Les enfants de moins de 7 ans entrent gratuitement. Les enfants entre 7 et 12 ans paient le tarif adulte complet de 100 MAD. À ce prix, une famille de quatre adultes et deux jeunes enfants s'en tire pour environ 400 MAD — ce qui reste très abordable.</p>
+<p>Les enfants de moins de 7 ans entrent gratuitement. Les enfants étrangers de 7 à 13 ans paient 50 MAD (la moitié du tarif adulte). Les enfants marocains paient 10 MAD. Une famille de deux adultes étrangers et deux enfants de 7–13 ans dépense 300 MAD au total.</p>
 <h3>Nationaux et visiteurs étrangers</h3>
-<p>Le Maroc applique un double tarif dans de nombreux sites culturels gérés par l'État. Bahia Palace ne fait pas exception : les ressortissants marocains paient 10 MAD contre 100 MAD pour les visiteurs étrangers.</p>
+<p>Le Maroc applique un double tarif dans de nombreux sites culturels gérés par l'État. Bahia Palace ne fait pas exception : les adultes marocains paient 30 MAD (enfants : 10 MAD) contre 100 MAD pour les adultes étrangers.</p>
 <h3>Réductions de groupe</h3>
 <p>Il n'existe pas de réduction de groupe officielle au guichet standard pour les visiteurs étrangers. Si vous voyagez de manière indépendante, attendez-vous à payer 100 MAD par adulte quelle que soit la taille du groupe.</p>
 
@@ -46,7 +48,7 @@ const translations = [
 
 <h2>Questions fréquemment posées</h2>
 <h3>Combien coûte l'entrée à Bahia Palace ?</h3>
-<p>Le tarif d'entrée standard est de 100 MAD pour les visiteurs étrangers (environ 10 $ / 9 € en 2026). Les ressortissants marocains paient 10 MAD. Les enfants de moins de 7 ans entrent gratuitement. Le paiement à la caisse est en espèces uniquement.</p>
+<p>Le tarif d'entrée standard est de 100 MAD pour les adultes étrangers (environ 10 $ / 9 € en 2026). Les enfants étrangers de 7 à 13 ans paient 50 MAD. Les adultes marocains paient 30 MAD ; les enfants marocains paient 10 MAD. Les enfants de moins de 7 ans entrent gratuitement. Le paiement à la caisse est en espèces uniquement.</p>
 <h3>Est-il moins cher d'acheter les billets à la caisse ou en ligne ?</h3>
 <p>Le prix de base du billet est le même. Les <a href="/fr/tickets/skip-the-line">billets skip-the-line</a> en ligne peuvent inclure de petits frais de réservation, mais ils vous font économiser 30 à 45 minutes de file d'attente — cela vaut largement le coup en haute saison.</p>`,
   },
@@ -64,7 +66,9 @@ const translations = [
   <thead><tr><th>Categoria</th><th>Prezzo</th></tr></thead>
   <tbody>
     <tr><td>Adulti (visitatori stranieri)</td><td>100 MAD (~10 $ / 9 €)</td></tr>
-    <tr><td>Cittadini marocchini</td><td>10 MAD</td></tr>
+    <tr><td>Bambini stranieri (7–13 anni)</td><td>50 MAD</td></tr>
+    <tr><td>Adulti marocchini</td><td>30 MAD</td></tr>
+    <tr><td>Bambini marocchini (7–13 anni)</td><td>10 MAD</td></tr>
     <tr><td>Bambini sotto i 7 anni</td><td>Gratuito</td></tr>
   </tbody>
 </table>
@@ -72,9 +76,9 @@ const translations = [
 
 <h2>Esistono sconti?</h2>
 <h3>Bambini</h3>
-<p>I bambini sotto i 7 anni entrano gratuitamente. I bambini tra i 7 e i 12 anni pagano la tariffa adulta intera di 100 MAD. A quel prezzo, una famiglia di quattro adulti e due bambini piccoli spende circa 400 MAD — comunque poco.</p>
+<p>I bambini sotto i 7 anni entrano gratuitamente. I bambini stranieri tra i 7 e i 13 anni pagano 50 MAD (la metà della tariffa adulta). I bambini marocchini pagano 10 MAD. Una famiglia di due adulti stranieri e due bambini di 7–13 anni spende 300 MAD in totale.</p>
 <h3>Locali e visitatori stranieri</h3>
-<p>Il Marocco applica un doppio sistema di tariffe in molti siti culturali statali. Bahia Palace non fa eccezione: i cittadini marocchini pagano 10 MAD contro i 100 MAD dei visitatori stranieri.</p>
+<p>Il Marocco applica un doppio sistema di tariffe in molti siti culturali statali. Bahia Palace non fa eccezione: gli adulti marocchini pagano 30 MAD (bambini: 10 MAD) contro i 100 MAD degli adulti stranieri.</p>
 <h3>Sconti di gruppo</h3>
 <p>Non esiste uno sconto di gruppo formale allo sportello standard per i visitatori stranieri. Se viaggiate in modo indipendente, aspettatevi di pagare 100 MAD per adulto indipendentemente dalla dimensione del gruppo.</p>
 
@@ -87,7 +91,7 @@ const translations = [
 
 <h2>Domande frequenti</h2>
 <h3>Quanto costa entrare a Bahia Palace?</h3>
-<p>La tariffa d'ingresso standard è di 100 MAD per i visitatori stranieri (circa 10 $ / 9 € nel 2026). I cittadini marocchini pagano 10 MAD. I bambini sotto i 7 anni entrano gratuitamente. Il pagamento alla biglietteria è solo in contanti.</p>
+<p>La tariffa d'ingresso standard è di 100 MAD per gli adulti stranieri (circa 10 $ / 9 € nel 2026). I bambini stranieri di 7–13 anni pagano 50 MAD. Gli adulti marocchini pagano 30 MAD; i bambini marocchini pagano 10 MAD. I bambini sotto i 7 anni entrano gratuitamente. Il pagamento alla biglietteria è solo in contanti.</p>
 <h3>È più conveniente comprare i biglietti alla porta o online?</h3>
 <p>Il prezzo base del biglietto è lo stesso. I <a href="/it/tickets/skip-the-line">biglietti skip-the-line</a> online possono includere un piccolo costo di prenotazione, ma vi fanno risparmiare 30-45 minuti di coda.</p>`,
   },
@@ -105,7 +109,9 @@ const translations = [
   <thead><tr><th>Kategorie</th><th>Preis</th></tr></thead>
   <tbody>
     <tr><td>Erwachsene (ausländische Besucher)</td><td>100 MAD (~10 $ / 9 €)</td></tr>
-    <tr><td>Marokkanische Staatsangehörige</td><td>10 MAD</td></tr>
+    <tr><td>Ausländische Kinder (7–13 J.)</td><td>50 MAD</td></tr>
+    <tr><td>Marokkanische Erwachsene</td><td>30 MAD</td></tr>
+    <tr><td>Marokkanische Kinder (7–13 J.)</td><td>10 MAD</td></tr>
     <tr><td>Kinder unter 7 Jahren</td><td>Kostenlos</td></tr>
   </tbody>
 </table>
@@ -113,9 +119,9 @@ const translations = [
 
 <h2>Gibt es Rabatte?</h2>
 <h3>Kinder</h3>
-<p>Kinder unter 7 Jahren haben freien Eintritt. Kinder zwischen 7 und 12 Jahren zahlen den vollen Erwachsenenpreis von 100 MAD. Zu diesem Preis gibt eine Familie aus vier Erwachsenen und zwei Kleinkindern etwa 400 MAD aus — immer noch sehr günstig.</p>
+<p>Kinder unter 7 Jahren haben freien Eintritt. Ausländische Kinder von 7–13 Jahren zahlen 50 MAD (die Hälfte des Erwachsenenpreises). Marokkanische Kinder zahlen 10 MAD. Eine Familie mit zwei ausländischen Erwachsenen und zwei Kindern von 7–13 Jahren zahlt insgesamt 300 MAD.</p>
 <h3>Einheimische vs. ausländische Besucher</h3>
-<p>Marokko wendet an vielen staatlich betriebenen Kulturstätten ein duales Preissystem an. Bahia Palace ist keine Ausnahme: Marokkanische Staatsangehörige zahlen 10 MAD gegenüber 100 MAD für ausländische Besucher.</p>
+<p>Marokko wendet an vielen staatlich betriebenen Kulturstätten ein duales Preissystem an. Bahia Palace ist keine Ausnahme: Marokkanische Erwachsene zahlen 30 MAD (Kinder: 10 MAD) gegenüber 100 MAD für ausländische Erwachsene.</p>
 <h3>Gruppenrabatte</h3>
 <p>Am Standard-Ticketschalter gibt es keinen formellen Gruppenrabatt für ausländische Besucher. Wenn Sie individuell reisen, erwarten Sie 100 MAD pro Erwachsenem unabhängig von der Gruppengröße.</p>
 
@@ -128,7 +134,7 @@ const translations = [
 
 <h2>Häufig gestellte Fragen</h2>
 <h3>Wie viel kostet der Eintritt in Bahia Palace?</h3>
-<p>Der Standardeintrittspreis beträgt 100 MAD für ausländische Besucher (ca. 10 $ / 9 € für 2026). Marokkanische Staatsangehörige zahlen 10 MAD. Kinder unter 7 Jahren haben freien Eintritt. Zahlung an der Kasse nur in bar.</p>
+<p>Der Standardeintrittspreis beträgt 100 MAD für ausländische Erwachsene (ca. 10 $ / 9 € für 2026). Ausländische Kinder von 7–13 Jahren zahlen 50 MAD. Marokkanische Erwachsene zahlen 30 MAD; marokkanische Kinder zahlen 10 MAD. Kinder unter 7 Jahren haben freien Eintritt. Zahlung an der Kasse nur in bar.</p>
 <h3>Ist es günstiger, Tickets an der Kasse oder online zu kaufen?</h3>
 <p>Der Grundpreis des Tickets ist gleich. <a href="/de/tickets/skip-the-line">Skip-the-line-Tickets</a> online können eine kleine Buchungsgebühr enthalten, sparen Ihnen aber 30–45 Minuten Wartezeit.</p>`,
   },
@@ -146,7 +152,9 @@ const translations = [
   <thead><tr><th>Categoría</th><th>Precio</th></tr></thead>
   <tbody>
     <tr><td>Adultos (visitantes extranjeros)</td><td>100 MAD (~10 $ / 9 €)</td></tr>
-    <tr><td>Ciudadanos marroquíes</td><td>10 MAD</td></tr>
+    <tr><td>Niños extranjeros (7–13 años)</td><td>50 MAD</td></tr>
+    <tr><td>Adultos marroquíes</td><td>30 MAD</td></tr>
+    <tr><td>Niños marroquíes (7–13 años)</td><td>10 MAD</td></tr>
     <tr><td>Niños menores de 7 años</td><td>Gratuito</td></tr>
   </tbody>
 </table>
@@ -154,9 +162,9 @@ const translations = [
 
 <h2>¿Hay descuentos?</h2>
 <h3>Niños</h3>
-<p>Los niños menores de 7 años entran gratis. Los niños de entre 7 y 12 años pagan la tarifa adulta completa de 100 MAD. A ese precio, una familia de cuatro adultos y dos niños pequeños gasta unos 400 MAD en total — aun así muy asequible.</p>
+<p>Los niños menores de 7 años entran gratis. Los niños extranjeros de 7 a 13 años pagan 50 MAD (la mitad de la tarifa adulta). Los niños marroquíes pagan 10 MAD. Una familia de dos adultos extranjeros y dos niños de 7–13 años gasta 300 MAD en total.</p>
 <h3>Locales frente a visitantes extranjeros</h3>
-<p>Marruecos aplica un sistema de doble precio en muchos lugares culturales gestionados por el Estado. Bahia Palace no es una excepción: los ciudadanos marroquíes pagan 10 MAD frente a los 100 MAD de los visitantes extranjeros.</p>
+<p>Marruecos aplica un sistema de doble precio en muchos lugares culturales gestionados por el Estado. Bahia Palace no es una excepción: los adultos marroquíes pagan 30 MAD (niños: 10 MAD) frente a los 100 MAD de los adultos extranjeros.</p>
 <h3>Descuentos de grupo</h3>
 <p>No existe un descuento de grupo formal en la taquilla estándar para visitantes extranjeros. Si viajas de forma independiente, espera pagar 100 MAD por adulto independientemente del tamaño del grupo.</p>
 
@@ -169,7 +177,7 @@ const translations = [
 
 <h2>Preguntas frecuentes</h2>
 <h3>¿Cuánto cuesta entrar en Bahia Palace?</h3>
-<p>La tarifa de entrada estándar es de 100 MAD para visitantes extranjeros (aproximadamente 10 $ / 9 € en 2026). Los ciudadanos marroquíes pagan 10 MAD. Los niños menores de 7 años entran gratis. El pago en taquilla es solo en efectivo.</p>
+<p>La tarifa de entrada estándar es de 100 MAD para adultos extranjeros (aproximadamente 10 $ / 9 € en 2026). Los niños extranjeros de 7 a 13 años pagan 50 MAD. Los adultos marroquíes pagan 30 MAD; los niños marroquíes pagan 10 MAD. Los niños menores de 7 años entran gratis. El pago en taquilla es solo en efectivo.</p>
 <h3>¿Es más barato comprar las entradas en la puerta o por internet?</h3>
 <p>El precio base de la entrada es el mismo. Las <a href="/es/tickets/skip-the-line">entradas skip-the-line</a> online pueden incluir una pequeña tarifa de reserva, pero te ahorran 30-45 minutos de cola.</p>`,
   },

@@ -43,7 +43,7 @@ const ARTICLES = [
 <p>There's nothing worse than rushing through a place this beautiful. If your schedule allows, give it at least an hour.</p>
 
 <h2>One Last Thing</h2>
-<p>The entrance ticket price is <strong>70 MAD</strong> (around €6.50 / $7) for the standard queue. If you book skip-the-line access through this site, you skip the ticket queue entirely and walk straight in. On busy mornings that queue can run 20–30 minutes — so pre-booking pays for itself in time alone.</p>`,
+<p>The entrance ticket price is <strong>100 MAD</strong> (around €9 / $10) for the standard queue. If you book skip-the-line access through this site, you skip the ticket queue entirely and walk straight in. On busy mornings that queue can run 20–30 minutes — so pre-booking pays for itself in time alone.</p>`,
   },
   {
     slug: 'bahia-palace-entrance-fee-2026-tickets-prices',
@@ -55,8 +55,8 @@ const ARTICLES = [
     published: true,
     publishedAt: new Date(),
     content: `<h2>The Standard Ticket Price</h2>
-<p>The official entrance fee for Bahia Palace is <strong>70 MAD per adult</strong> — that's roughly €6.50, $7, or £5.50 at current exchange rates. Children under 6 enter free. There is no separate "student rate" or "resident discount" at the gate for international visitors.</p>
-<p>The 70 MAD gets you access to the palace grounds, including the Grand Riad courtyard, the Small Riad, the Apartment of Ba Ahmed, the Reception Hall, and the gardens. That's essentially the full palace — there are no paid "premium zones" inside once you're in.</p>
+<p>The official entrance fee for Bahia Palace is <strong>100 MAD per adult</strong> (foreign visitors) — that's roughly €9, $10, or £8 at current exchange rates. Foreign children 7–13 pay 50 MAD. Children under 7 enter free. There is no separate "student rate" or "resident discount" at the gate for international visitors.</p>
+<p>The 100 MAD gets you access to the palace grounds, including the Grand Riad courtyard, the Small Riad, the Apartment of Ba Ahmed, the Reception Hall, and the gardens. That's essentially the full palace — there are no paid "premium zones" inside once you're in.</p>
 
 <h2>What's NOT Included</h2>
 <p>This is where people sometimes feel surprised. The entrance fee does not include:</p>
@@ -67,14 +67,14 @@ const ARTICLES = [
 </ul>
 
 <h2>Skip-the-Line vs Standard Ticket</h2>
-<p>The 70 MAD ticket bought at the gate puts you in the standard queue. On a typical morning between 10:00 AM and 12:00 PM, that queue runs 15–30 minutes. In peak season (April–June, September–October) it can push to 45 minutes on bad days.</p>
+<p>The 100 MAD ticket bought at the gate puts you in the standard queue. On a typical morning between 10:00 AM and 12:00 PM, that queue runs 15–30 minutes. In peak season (April–June, September–October) it can push to 45 minutes on bad days.</p>
 <p>A skip-the-line ticket booked in advance costs a bit more but gives you a dedicated fast-entry lane — you present your booking confirmation at the door and walk straight in. For most visitors traveling on a schedule, this is simply the smarter option.</p>
 
 <h2>The Combo Option</h2>
 <p>If you're planning to visit both Bahia Palace and the Saadian Tombs (a 10-minute walk away), a <a href="/tickets/combo-saadian-tombs">combo ticket</a> bundles both sites at a reduced combined rate. The Saadian Tombs charge their own entrance fee (50 MAD), so buying separately costs more. The combo makes sense if both sites are on your list — which they probably should be.</p>
 
 <h2>Is It Worth It?</h2>
-<p>Blunt answer: yes, easily. The palace is one of the finest examples of late 19th-century Moroccan architecture in existence. The carved cedar ceilings, the hand-painted stucco walls, the zellige tile floors — there's nothing mass-produced about any of it. At 70 MAD, it's genuinely one of the best-value cultural sites in North Africa.</p>
+<p>Blunt answer: yes, easily. The palace is one of the finest examples of late 19th-century Moroccan architecture in existence. The carved cedar ceilings, the hand-painted stucco walls, the zellige tile floors — there's nothing mass-produced about any of it. At 100 MAD, it's genuinely one of the best-value cultural sites in North Africa.</p>
 <p>The only scenario where it might disappoint is if you go at peak midday and spend the whole visit fighting through tour groups. Go early, have a <a href="/tickets/skip-the-line">pre-booked ticket</a>, and you'll understand exactly why this palace has captured travelers for over a century.</p>`,
   },
   {
@@ -141,7 +141,7 @@ const ARTICLES = [
 <p>Bahia gets significantly more visitors and is better known internationally. Tour groups pass through on a fixed circuit. Badi is quieter — not empty, but rarely packed. If solitude matters to you, Badi wins.</p>
 
 <h2>Entrance Fees</h2>
-<p>Bahia Palace: 70 MAD. Badi Palace: 70 MAD. You can visit both for 140 MAD total, which is around €13 — genuinely excellent value for a half-day of world-class history.</p>
+<p>Bahia Palace: 100 MAD. Badi Palace: 70 MAD. You can visit both for 170 MAD total, which is around €15 — genuinely excellent value for a half-day of world-class history.</p>
 <p>There's also a <a href="/tickets/combo-saadian-tombs">Bahia + Saadian Tombs combo</a> available through this site — the Saadian Tombs are actually closer to Bahia than Badi is, so that's another option if you're prioritizing burial monuments.</p>
 
 <h2>Which One First?</h2>
@@ -189,7 +189,7 @@ const ARTICLES = [
     <tr><td>Style</td><td>Residential palace</td><td>Royal mausoleum</td></tr>
     <tr><td>Crowds</td><td>Moderate–heavy</td><td>Moderate</td></tr>
     <tr><td>Photography</td><td>Excellent</td><td>Good (small space)</td></tr>
-    <tr><td>Entrance fee</td><td>70 MAD</td><td>50 MAD</td></tr>
+    <tr><td>Entrance fee</td><td>100 MAD</td><td>50 MAD</td></tr>
   </tbody>
 </table>
 <p>Both sites together cost less than €12 and deliver some of the finest historic architecture on the African continent. There's no wrong choice — but there is a smarter order: Bahia first, Tombs second, lunch in the Mellah after.</p>`,
@@ -210,7 +210,7 @@ const ARTICLES = [
 <p><strong>Best for: everyone, especially first-time visitors</strong></p>
 <p>Bahia Palace is the benchmark. Built in the late 1800s by Grand Vizier Ba Ahmed, it covers 8,000 square meters of crafted interior space — carved cedar ceilings, zellige tile floors, painted stucco walls, garden courtyards. It's the most intact large-scale example of Moroccan residential architecture in the city and arguably in the country.</p>
 <p>It gets the most visitors for good reason. The quality of the craftsmanship is consistently stunning room after room. Pre-book a <a href="/tickets/skip-the-line">skip-the-line ticket</a> and arrive early to get it at its best.</p>
-<p>Entrance: 70 MAD | Time: 60–90 min</p>
+<p>Entrance: 100 MAD | Time: 60–90 min</p>
 
 <h2>#2 — Dar Si Said Museum</h2>
 <p><strong>Best for: those interested in Moroccan decorative arts</strong></p>

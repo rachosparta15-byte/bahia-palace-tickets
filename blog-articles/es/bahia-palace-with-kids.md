@@ -34,10 +34,10 @@ excerpt: ¿Es Bahia Palace bueno para niños? Precios de entradas, qué les gust
 <h2>Precios de entradas para niños</h2>
 <ul>
   <li><strong>Niños menores de 7 años:</strong> Gratis</li>
-  <li><strong>Niños de 7 años en adelante:</strong> 70 MAD (igual que adultos)</li>
-  <li><strong>Niños marroquíes:</strong> 10 MAD</li>
+  <li><strong>Niños extranjeros (7–13 años):</strong> 50 MAD</li>
+  <li><strong>Niños marroquíes (cualquier edad):</strong> 10 MAD</li>
 </ul>
-<p>Una familia de dos adultos y dos niños menores de 7 años paga 140 MAD en total — unos 14 €. Eso es un valor genuinamente bueno para 90 minutos de inmersión cultural. Consulta el <a href="/es/blog/bahia-palace-entrance-fee-2026">desglose completo de precios de entrada</a> para más detalles.</p>
+<p>Una familia de dos adultos extranjeros y dos niños de 7–13 años paga 300 MAD en total — unos 27 €. Eso es un valor genuinamente bueno para 90 minutos de inmersión cultural. Consulta el <a href="/es/blog/bahia-palace-entrance-fee-2026">desglose completo de precios de entrada</a> para más detalles.</p>
 
 <h2>Qué les encanta más a los niños dentro</h2>
 <p>Basándonos en lo que los padres informan consistentemente, los momentos destacados para los niños son:</p>
@@ -79,7 +79,7 @@ excerpt: ¿Es Bahia Palace bueno para niños? Precios de entradas, qué les gust
 
 <h2>Preguntas frecuentes</h2>
 <h3>¿Es Bahia Palace gratuito para niños?</h3>
-<p>Los niños menores de 7 años entran gratis a Bahia Palace. Los niños de 7 años en adelante pagan la tarifa de entrada estándar de 70 MAD (igual que los adultos). Los niños marroquíes pagan 10 MAD independientemente de su edad.</p>
+<p>Los niños menores de 7 años entran gratis a Bahia Palace. Los niños extranjeros de 7 a 13 años pagan 50 MAD. Los niños marroquíes pagan 10 MAD independientemente de su edad.</p>
 <h3>¿Hay una guía para niños o tour de audio para niños en Bahia Palace?</h3>
 <p>No hay audioguía oficial para niños ni programa para niños en Bahia Palace. El lugar es un monumento patrimonial con una audioguía estándar para adultos disponible para alquilar en la entrada. Para los niños más pequeños, el enfoque más efectivo es contar la historia de Ba Ahmed (un hombre nacido en esclavitud que se convirtió en la persona más poderosa de Marruecos y construyó este palacio) en términos sencillos antes de la visita — hace que todo lo de dentro sea más interesante.</p>
 <h3>¿Se puede llevar un cochecito a Bahia Palace?</h3>

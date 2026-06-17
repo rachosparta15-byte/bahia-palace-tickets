@@ -91,7 +91,7 @@ const posts = [
 <h3>Is Bahia Palace open on Fridays?</h3>
 <p>Yes, Bahia Palace is open on Fridays with the standard schedule (09:00–17:00). The surrounding medina can be busier than usual around midday due to Friday prayers, but there is no special closure for Friday at the palace itself.</p>
 <h3>Can I visit Bahia Palace without a ticket booked in advance?</h3>
-<p>Yes, you can buy a ticket at the door for 70 MAD. However, during peak season the queue can take 30–45 minutes. Booking a <a href="/en/tickets/skip-the-line">skip-the-line ticket</a> online eliminates this wait entirely and is strongly recommended from March through November.</p>`,
+<p>Yes, you can buy a ticket at the door for 100 MAD (foreign adult price). However, during peak season the queue can take 30–45 minutes. Booking a <a href="/en/tickets/skip-the-line">skip-the-line ticket</a> online eliminates this wait entirely and is strongly recommended from March through November.</p>`,
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -114,8 +114,12 @@ const posts = [
   <thead><tr><th>Category</th><th>Price</th></tr></thead>
   <tbody>
     <tr><td>Adults (foreign visitors)</td><td>100 MAD (~$10 / £7.50 / €9)</td></tr>
-    <tr><td>Moroccan nationals</td><td>10 MAD</td></tr>
+    <tr><td>Foreign children (7–13)</td><td>50 MAD (~$5 / €4.50)</td></tr>
+    <tr><td>Moroccan adults</td><td>30 MAD</td></tr>
+    <tr><td>Moroccan children (7–13)</td><td>10 MAD</td></tr>
     <tr><td>Children under 7</td><td>Free</td></tr>
+    <tr><td>Reduced mobility visitors</td><td>Free</td></tr>
+    <tr><td>Moroccan nationals — every Friday &amp; first day of national/religious holidays</td><td>Free</td></tr>
   </tbody>
 </table>
 <p>Payment at the door is <strong>cash only</strong>. There are no card machines at the ticket window. The nearest ATMs are a short walk away near Rue Riad Zitoun el Kedim. Come prepared with dirhams.</p>
@@ -124,9 +128,9 @@ const posts = [
 <h3>Students</h3>
 <p>There is no universally applied student discount for foreign visitors. Moroccan students with a valid national student card may access a reduced rate, but international student cards (ISIC and similar) are not reliably honored at the door. Don't count on a discount if you're visiting from abroad.</p>
 <h3>Children</h3>
-<p>Children under 7 enter free. Children between 7 and 12 are charged the full adult rate of 100 MAD. At that price, a family of four adults plus two young children is looking at roughly 400 MAD — still inexpensive by any measure.</p>
+<p>Children under 7 enter free. Foreign children aged 7–13 pay 50 MAD (half the adult rate). Moroccan children pay 10 MAD. A family of two foreign adults and two children aged 7–13 pays 300 MAD total — still excellent value.</p>
 <h3>Locals vs. Foreign Visitors</h3>
-<p>Morocco operates a dual pricing system at many state-run cultural sites. Bahia Palace is no exception: Moroccan nationals pay 10 MAD versus 100 MAD for foreign visitors. This is standard practice across the country.</p>
+<p>Morocco operates a dual pricing system at many state-run cultural sites. Bahia Palace is no exception: Moroccan adults pay 30 MAD, Moroccan children 10 MAD — versus 100 MAD for foreign adults. This is standard practice across the country.</p>
 <h3>Group Discounts</h3>
 <p>There is no formal group discount at the standard ticket window for foreign visitors. Organized tour groups negotiate rates separately through licensed tour operators. If you're traveling independently, expect to pay 100 MAD per adult regardless of group size.</p>
 
@@ -156,7 +160,7 @@ const posts = [
 
 <h2>Frequently Asked Questions</h2>
 <h3>How much does it cost to enter Bahia Palace?</h3>
-<p>The standard entrance fee is 100 MAD for foreign visitors (approximately $10 USD / £7.50 / €9 as of 2026). Moroccan nationals pay 10 MAD. Children under 7 enter free. Payment at the door is cash only.</p>
+<p>The standard entrance fee is 100 MAD for foreign adults (approximately $10 USD / £7.50 / €9 as of 2026). Foreign children 7–13 pay 50 MAD. Moroccan adults pay 30 MAD; Moroccan children pay 10 MAD. Children under 7 enter free. Payment at the door is cash only.</p>
 <h3>Can I get a discount at Bahia Palace with a student card?</h3>
 <p>International student cards such as the ISIC are not reliably accepted at Bahia Palace's ticket window. Moroccan nationals with a valid national student card may receive a reduced rate, but foreign visitors should expect to pay the full adult price of 100 MAD.</p>
 <h3>Is it cheaper to buy tickets at the door or online?</h3>
@@ -256,7 +260,7 @@ const posts = [
 
 <h2>4. Bring Water (and Cash)</h2>
 <p><strong>Water:</strong> Even in spring and autumn, temperatures climb to 25–30°C by midday. There's no café or water station once you're in. Bring a bottle.</p>
-<p><strong>Cash:</strong> The ticket window is cash only — no card readers. The official price is 70 MAD per adult. Even if you've pre-booked online, you'll want cash for the medina shops, street food, and tips. The nearest ATMs are on or near Rue Riad Zitoun el Kedim.</p>
+<p><strong>Cash:</strong> The ticket window is cash only — no card readers. The official price is 100 MAD per adult (foreign visitors). Even if you've pre-booked online, you'll want cash for the medina shops, street food, and tips. The nearest ATMs are on or near Rue Riad Zitoun el Kedim.</p>
 
 <h2>5. Read Up (or Get a Guide) Before You Go</h2>
 <p>Bahia Palace is stunning to look at. But if you don't know what you're looking at, you'll leave thinking "nice tiles" without understanding the story behind the rooms. The palace was built by Si Moussa, grand vizier of Sultan Hassan I, and later expanded by his son Ba Ahmed. Ba Ahmed built the palace as a monument to his own power — the name "Bahia" means "brilliant" in Arabic. The harem quarters alone housed 24 wives and hundreds of concubines. An audio guide is available for hire at the entrance. Reading a good summary online the night before your visit takes 10 minutes and transforms what you see inside.</p>

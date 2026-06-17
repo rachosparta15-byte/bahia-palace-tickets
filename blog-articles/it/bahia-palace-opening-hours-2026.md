@@ -76,4 +76,4 @@ excerpt: Orari Bahia Palace 2026: programma giornaliero, chiusure per festività
 <h3>Bahia Palace è aperto il venerdì?</h3>
 <p>Sì, Bahia Palace è aperto il venerdì con l'orario standard (09:00–17:00). La medina circostante può essere più frequentata del solito a mezzogiorno a causa delle preghiere del venerdì, ma non vi è alcuna chiusura speciale per il palazzo in questo giorno.</p>
 <h3>Posso visitare Bahia Palace senza biglietto prenotato in anticipo?</h3>
-<p>Sì, potete acquistare il biglietto alla porta per 70 MAD. Tuttavia, in alta stagione la coda può durare 30–45 minuti. Prenotare un <a href="/it/tickets/skip-the-line">biglietto skip-the-line</a> online elimina completamente questa attesa ed è fortemente consigliato da marzo a novembre.</p>
+<p>Sì, potete acquistare il biglietto alla porta per 100 MAD (tariffa adulti stranieri). Tuttavia, in alta stagione la coda può durare 30–45 minuti. Prenotare un <a href="/it/tickets/skip-the-line">biglietto skip-the-line</a> online elimina completamente questa attesa ed è fortemente consigliato da marzo a novembre.</p>

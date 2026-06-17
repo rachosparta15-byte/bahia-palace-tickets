@@ -76,4 +76,4 @@ excerpt: Bahia Palace Öffnungszeiten 2026: Tagesplan, Feiertagsschließungen, b
 <h3>Ist Bahia Palace freitags geöffnet?</h3>
 <p>Ja, Bahia Palace ist freitags zu den üblichen Zeiten geöffnet (09:00–17:00 Uhr). Die umliegende medina kann um die Mittagszeit aufgrund des Freitagsgebets lebhafter sein als sonst, aber für den Palast selbst gibt es keine besondere Freitagsschließung.</p>
 <h3>Kann ich Bahia Palace ohne vorab gebuchtes Ticket besuchen?</h3>
-<p>Ja, Sie können ein Ticket an der Kasse für 70 MAD kaufen. In der Hochsaison kann die Warteschlange jedoch 30–45 Minuten dauern. Die Buchung eines <a href="/de/tickets/skip-the-line">skip-the-line-Tickets</a> online eliminiert diese Wartezeit vollständig und wird von März bis November dringend empfohlen.</p>
+<p>Ja, Sie können ein Ticket an der Kasse für 100 MAD (Eintrittspreis für ausländische Erwachsene) kaufen. In der Hochsaison kann die Warteschlange jedoch 30–45 Minuten dauern. Die Buchung eines <a href="/de/tickets/skip-the-line">skip-the-line-Tickets</a> online eliminiert diese Wartezeit vollständig und wird von März bis November dringend empfohlen.</p>

@@ -80,8 +80,9 @@ async function main() {
 <ul>
   <li><strong>Indirizzo:</strong> Rue Riad Zitoun el-Jedid, Medina di Marrakech</li>
   <li><strong>Orari:</strong> Tutti i giorni 9:00–17:00</li>
-  <li><strong>Prezzo adulti stranieri:</strong> 70 MAD (≈ 6,50 €)</li>
-  <li><strong>Bambini (sotto i 12 anni):</strong> Gratuito</li>
+  <li><strong>Prezzo adulti stranieri:</strong> 100 MAD (≈ 9 €)</li>
+  <li><strong>Bambini stranieri (7–13 anni):</strong> 50 MAD</li>
+  <li><strong>Bambini sotto i 7 anni:</strong> Gratuito</li>
   <li><strong>Durata consigliata:</strong> 1–1,5 ore (2 ore con guida)</li>
   <li><strong>Momento migliore:</strong> Presto al mattino (9h) o dopo le 15h</li>
 </ul>
@@ -115,7 +116,7 @@ async function main() {
 
 <h2>Prezzi Biglietti Palazzo Bahia 2026</h2>
 
-<p>Il prezzo di ingresso standard è <strong>70 MAD</strong> (circa 6,50 € / 7 $). I bambini sotto i 6 anni entrano gratis. Per i visitatori che desiderano un'esperienza più ricca, sono disponibili tour guidati e opzioni salta fila a partire da <strong>10 €</strong>.</p>
+<p>Il prezzo di ingresso standard è <strong>100 MAD</strong> per gli adulti stranieri (circa 9 € / 10 $). Bambini stranieri di 7–13 anni: 50 MAD. I bambini sotto i 7 anni entrano gratis. Per i visitatori che desiderano un'esperienza più ricca, sono disponibili tour guidati e opzioni salta fila a partire da <strong>10 €</strong>.</p>
 
 <h2>Perché acquistare biglietti salta fila?</h2>
 

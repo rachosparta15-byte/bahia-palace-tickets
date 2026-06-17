@@ -306,7 +306,7 @@ const posts = [
   <li><strong>Type:</strong> 19th-century royal palace and gardens</li>
   <li><strong>Built:</strong> 1866–1900 by Grand Vizier Ba Ahmed ibn Moussa</li>
   <li><strong>Size:</strong> 8,000 m²</li>
-  <li><strong>Ticket price:</strong> 70 MAD standard / skip-the-line available online</li>
+  <li><strong>Ticket price:</strong> 100 MAD (foreign adults) / skip-the-line available online</li>
   <li><strong>Visit duration:</strong> 60–90 minutes</li>
   <li><strong>Location:</strong> Southern medina — walking distance from Jemaa el-Fna</li>
   <li><strong>Best for:</strong> Architecture, history, Moroccan craftsmanship, culture</li>
@@ -513,14 +513,14 @@ If you have <strong>a full day</strong> → Visit both. They're different enough
 <h2>Entrance Fees: The Key Monuments</h2>
 <table>
   <tr><th>Monument</th><th>Price</th></tr>
-  <tr><td>Bahia Palace (standard)</td><td>70 MAD</td></tr>
+  <tr><td>Bahia Palace (standard)</td><td>100 MAD</td></tr>
   <tr><td>Bahia Palace (skip-the-line, online)</td><td>From 80 MAD</td></tr>
   <tr><td>Saadian Tombs</td><td>70 MAD</td></tr>
   <tr><td>El Badi Palace</td><td>70 MAD</td></tr>
   <tr><td>Jardin Majorelle</td><td>150 MAD</td></tr>
   <tr><td>Ben Youssef Madrasa</td><td>70 MAD</td></tr>
 </table>
-<p><strong>Total for all major monuments:</strong> approximately 500 MAD (€50) per person — excellent value for the quality of what you're seeing.</p>
+<p><strong>Total for all major monuments:</strong> approximately 530 MAD (€53) per person — excellent value for the quality of what you're seeing.</p>
 
 <h2>Food: 40–400 MAD per meal</h2>
 <h3>Budget Eating (40–80 MAD per person)</h3>
@@ -548,7 +548,7 @@ If you have <strong>a full day</strong> → Visit both. They're different enough
 <p>Luxury riad + restaurant dinners + private guide + all monuments + transfers</p>
 
 <h2>How to See Bahia Palace Without Overspending</h2>
-<p>The standard ticket (70 MAD) is genuinely affordable. A skip-the-line ticket costs slightly more but saves 30–45 minutes of queuing — time worth far more than the small price difference. A guided tour adds context that makes the visit significantly richer. Even on a tight budget, Bahia Palace is one of Morocco's best-value experiences.</p>`,
+<p>The standard ticket (100 MAD) is genuinely affordable. A skip-the-line ticket costs slightly more but saves 30–45 minutes of queuing — time worth far more than the small price difference. A guided tour adds context that makes the visit significantly richer. Even on a tight budget, Bahia Palace is one of Morocco's best-value experiences.</p>`,
   },
 ];
 

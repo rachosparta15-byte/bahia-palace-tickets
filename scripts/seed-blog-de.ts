@@ -80,8 +80,9 @@ async function main() {
 <ul>
   <li><strong>Adresse:</strong> Rue Riad Zitoun el-Jedid, Medina von Marrakesch</li>
   <li><strong>Öffnungszeiten:</strong> Täglich 9:00–17:00 Uhr</li>
-  <li><strong>Eintrittspreis Erwachsene:</strong> 70 MAD (≈ 6,50 €)</li>
-  <li><strong>Kinder (unter 12 J.):</strong> Kostenlos</li>
+  <li><strong>Eintrittspreis Erwachsene (ausländisch):</strong> 100 MAD (≈ 9 €)</li>
+  <li><strong>Kinder (ausländisch, 7–13 J.):</strong> 50 MAD</li>
+  <li><strong>Kinder unter 7 Jahren:</strong> Kostenlos</li>
   <li><strong>Empfohlene Besuchsdauer:</strong> 1–1,5 Stunden (2 Stunden mit Führung)</li>
   <li><strong>Beste Zeit:</strong> Früh morgens (9 Uhr) oder nach 15 Uhr</li>
 </ul>
@@ -115,7 +116,7 @@ async function main() {
 
 <h2>Eintrittspreis Palast Bahia 2026</h2>
 
-<p>Der reguläre Eintrittspreis beträgt <strong>70 MAD</strong> (ca. 6,50 € / 7 $). Kinder unter 6 Jahren sind kostenlos. Für Besucher, die ein reichhaltigeres Erlebnis wünschen, sind Führungen und Skip-the-Line-Optionen ab <strong>10 €</strong> erhältlich.</p>
+<p>Der reguläre Eintrittspreis beträgt <strong>100 MAD</strong> für ausländische Erwachsene (ca. 9 € / 10 $), <strong>50 MAD</strong> für ausländische Kinder (7–13 J.). Kinder unter 7 Jahren sind kostenlos. Für Besucher, die ein reichhaltigeres Erlebnis wünschen, sind Führungen und Skip-the-Line-Optionen ab <strong>10 €</strong> erhältlich.</p>
 
 <h2>Warum Skip-the-Line-Tickets kaufen?</h2>
 

@@ -68,7 +68,7 @@ excerpt: 2 jours à Marrakech : un itinéraire complet heure par heure couvrant 
 <h2>Conseils pratiques</h2>
 <ul>
   <li><strong>Transports :</strong> La majeure partie de cet itinéraire se fait à pied dans la medina. Utilisez les petits taxis pour le trajet de 3 km entre la medina et Guéliz/Jardin Majorelle — convenez du tarif avant de monter (20–35 MAD est correct)</li>
-  <li><strong>Budget par personne (hors hébergement) :</strong> Bahia Palace 70 MAD + Tombeaux Saadiens 70 MAD + Majorelle 150 MAD + Ben Youssef 70 MAD + nourriture 400–600 MAD par jour = environ 800–1 000 MAD (~80–100€) par personne pour 2 jours d'activités et repas</li>
+  <li><strong>Budget par personne (hors hébergement) :</strong> Bahia Palace 100 MAD + Tombeaux Saadiens 70 MAD + Majorelle 150 MAD + Ben Youssef 70 MAD + nourriture 400–600 MAD par jour = environ 830–1 030 MAD (~75–93€) par personne pour 2 jours d'activités et repas</li>
   <li><strong>Espèces :</strong> Tous les guichets des monuments sont en espèces uniquement. Ayez des dirhams disponibles à tout moment — les distributeurs à l'intérieur de la medina sont limités</li>
   <li><strong>Sécurité :</strong> Marrakech est sûre pour les touristes. Le principal désagrément est les « guides » non sollicités près des monuments — un ferme « non merci » répété une fois suffit. Ne suivez personne qui vous aborde spontanément</li>
   <li><strong>Chaleur :</strong> En été (juin–septembre), programmez les activités en extérieur avant 11h00 et après 17h00. Les ruelles couvertes de la medina offrent de l'ombre mais la chaleur est réelle</li>

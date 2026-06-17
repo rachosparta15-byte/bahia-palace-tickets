@@ -22,7 +22,7 @@ excerpt: Sì, entrambi in mezza giornata. Ecco gli orari esatti, il miglior ordi
 
 <h2>Panoramica rapida di ciascun sito</h2>
 <h3>Bahia Palace</h3>
-<p>Un palazzo reale del XIX secolo di 8.000 metri quadrati — grandi cortili, quartieri dell'harem, soffitti in cedro dipinti, zellige e giardini. Costruito dal Gran Visir Ba Ahmed tra il 1894 e il 1900. Ingresso: <strong>70 MAD</strong>. Tempo necessario: <strong>60–90 minuti</strong>.</p>
+<p>Un palazzo reale del XIX secolo di 8.000 metri quadrati — grandi cortili, quartieri dell'harem, soffitti in cedro dipinti, zellige e giardini. Costruito dal Gran Visir Ba Ahmed tra il 1894 e il 1900. Ingresso: <strong>100 MAD</strong> (adulti stranieri). Tempo necessario: <strong>60–90 minuti</strong>.</p>
 <h3>Tombe Saadiane</h3>
 <p>Un mausoleo reale del XVI secolo costruito per la dinastia saadiana sotto il sultano Ahmad al-Mansur. Tre camere di straordinari stucchi e zellige scolpiti circondano le tombe di 66 membri della famiglia reale. Chiuse dal sultano Moulay Ismail nel XVII secolo e riscoperte solo nel 1917. Ingresso: <strong>70 MAD</strong>. Tempo necessario: <strong>30–45 minuti</strong>.</p>
 
@@ -49,9 +49,9 @@ excerpt: Sì, entrambi in mezza giornata. Ecco gli orari esatti, il miglior ordi
 <table>
   <thead><tr><th>Sito</th><th>Adulto (straniero)</th><th>Cittadino marocchino</th><th>Bambini sotto i 7 anni</th></tr></thead>
   <tbody>
-    <tr><td>Bahia Palace</td><td>70 MAD (~7€)</td><td>10 MAD</td><td>Gratuito</td></tr>
+    <tr><td>Bahia Palace</td><td>100 MAD (~9€)</td><td>30 MAD</td><td>Gratuito</td></tr>
     <tr><td>Tombe Saadiane</td><td>70 MAD (~7€)</td><td>10 MAD</td><td>Gratuito</td></tr>
-    <tr><td><strong>Totale</strong></td><td><strong>140 MAD (~14€)</strong></td><td>20 MAD</td><td>Gratuito</td></tr>
+    <tr><td><strong>Totale</strong></td><td><strong>170 MAD (~15€)</strong></td><td>40 MAD</td><td>Gratuito</td></tr>
   </tbody>
 </table>
 <p>Entrambi i siti accettano solo contanti alla cassa. Portate dirham. Se avete prenotato un <a href="/it/tickets/skip-the-line">biglietto skip-the-line per Bahia Palace</a> online, potete pagare con carta per quello — ma abbiate contanti pronti per le Tombe Saadiane.</p>

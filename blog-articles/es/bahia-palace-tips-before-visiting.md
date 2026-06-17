@@ -24,7 +24,7 @@ excerpt: 10 imprescindibles antes de visitar Bahia Palace en Marrakech: horarios
 
 <h2>4. Lleva agua (y efectivo)</h2>
 <p><strong>Agua:</strong> Incluso en primavera y otoño, las temperaturas suben a 25-30 °C a mediodía. No hay cafetería ni fuente de agua una vez dentro. Lleva una botella.</p>
-<p><strong>Efectivo:</strong> La taquilla es solo en efectivo — sin lector de tarjetas. El precio oficial es de 70 MAD por adulto. Aunque hayas reservado online, necesitarás efectivo para las tiendas de la medina, comida callejera y propinas. Los cajeros automáticos más cercanos están en o cerca de la Rue Riad Zitoun el Kedim.</p>
+<p><strong>Efectivo:</strong> La taquilla es solo en efectivo — sin lector de tarjetas. El precio oficial es de 100 MAD por adulto extranjero. Aunque hayas reservado online, necesitarás efectivo para las tiendas de la medina, comida callejera y propinas. Los cajeros automáticos más cercanos están en o cerca de la Rue Riad Zitoun el Kedim.</p>
 
 <h2>5. Infórmate (o contrata una guía) antes de ir</h2>
 <p>Bahia Palace es impresionante visualmente. Pero si no sabes lo que estás mirando, te irás pensando "bonitos azulejos" sin entender la historia detrás de las habitaciones. El palacio fue construido por Si Moussa, gran visir del sultán Hassan I, y posteriormente ampliado por su hijo Ba Ahmed. Ba Ahmed construyó el palacio como monumento a su propio poder — el nombre "Bahia" significa "brillante" en árabe. Los aposentos del harén albergaban 24 esposas y cientos de concubinas. Se puede alquilar una audioguía en la entrada. Leer un buen resumen online la noche anterior a la visita lleva 10 minutos y transforma lo que verás dentro.</p>

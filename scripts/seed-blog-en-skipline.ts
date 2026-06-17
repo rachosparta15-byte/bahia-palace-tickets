@@ -12,7 +12,7 @@ const content = `
 
 <h2>Bahia Palace Ticket Prices 2026</h2>
 
-<p>The standard entrance fee to Bahia Palace is <strong>70 MAD</strong> (approximately €6.50 / $7). Children under 6 enter free. For visitors who want a richer experience, guided tours and skip-the-line options are available starting from <strong>€12</strong>.</p>
+<p>The standard entrance fee to Bahia Palace is <strong>100 MAD</strong> (approximately €9 / $10) for foreign adults. Children under 7 enter free. For visitors who want a richer experience, guided tours and skip-the-line options are available starting from <strong>€12</strong>.</p>
 
 <h2>Why Buy Skip-the-Line Tickets?</h2>
 

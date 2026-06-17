@@ -19,7 +19,7 @@ excerpt: Bahia Palace vs Giardino Majorelle — prezzo, tempo, folla, fotografia
     <tr><th></th><th>Bahia Palace</th><th>Giardino Majorelle</th></tr>
   </thead>
   <tbody>
-    <tr><td><strong>Biglietto d'ingresso</strong></td><td>70 MAD (~7€)</td><td>150 MAD (~15€) + 50 MAD museo</td></tr>
+    <tr><td><strong>Biglietto d'ingresso</strong></td><td>100 MAD (~9€)</td><td>150 MAD (~15€) + 50 MAD museo</td></tr>
     <tr><td><strong>Tempo necessario</strong></td><td>60–90 min</td><td>45–75 min</td></tr>
     <tr><td><strong>Picco di affollamento</strong></td><td>10:00–14:00</td><td>10:30–15:00</td></tr>
     <tr><td><strong>Fotografia</strong></td><td>Eccellente — interni &amp; cortili</td><td>Eccellente — botanica, colori vivaci</td></tr>
@@ -63,7 +63,7 @@ excerpt: Bahia Palace vs Giardino Majorelle — prezzo, tempo, folla, fotografia
 
 <h2>Domande frequenti</h2>
 <h3>Il Giardino Majorelle è più costoso di Bahia Palace?</h3>
-<p>Sì, decisamente. Bahia Palace costa 70 MAD (~7€). Il Giardino Majorelle costa 150 MAD (~15€) solo per l'ingresso al giardino, o 200 MAD se aggiungete il Museo Berbero all'interno. Per la maggior parte dei visitatori, Bahia Palace offre più contenuto per dirham.</p>
+<p>Sì, decisamente. Bahia Palace costa 100 MAD (~9€). Il Giardino Majorelle costa 150 MAD (~15€) solo per l'ingresso al giardino, o 200 MAD se aggiungete il Museo Berbero all'interno. Per la maggior parte dei visitatori, Bahia Palace offre più contenuto culturale per dirham.</p>
 <h3>Quale è meglio per la fotografia — Bahia Palace o il Giardino Majorelle?</h3>
 <p>Offrono soggetti fotografici completamente diversi. Il Majorelle è migliore per la fotografia di colori e botanica — il blu cobalto sul verde è molto distintivo. Bahia Palace è migliore per la fotografia architettonica — pavimenti in zellige, arcate scolpite, soffitti dipinti e geometria dei cortili. Se fotografate entrambi gli stili, fateli entrambi.</p>
 <h3>Si può camminare tra Bahia Palace e il Giardino Majorelle?</h3>

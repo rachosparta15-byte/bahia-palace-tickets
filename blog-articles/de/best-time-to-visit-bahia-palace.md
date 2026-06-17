@@ -20,7 +20,7 @@ excerpt: Erfahren Sie, wann Sie Bahia Palace in Marrakech ohne Menschenmassen be
 <ul>
 <li><strong>Öffnungszeiten</strong>: 9:00 – 17:00 Uhr täglich (letzter Einlass ca. 16:30 Uhr)</li>
 <li><strong>Während Ramadan</strong>: Üblicherweise 10:00 – 16:00 Uhr (näher am Termin bestätigen)</li>
-<li><strong>Eintrittspreis</strong>: 70 MAD (~7€)</li>
+<li><strong>Eintrittspreis</strong>: 100 MAD (~9€) für ausländische Erwachsene</li>
 <li><strong>Empfohlene Besuchsdauer</strong>: 45–90 Minuten</li>
 </ul>
 

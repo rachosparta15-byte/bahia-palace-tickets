@@ -20,7 +20,7 @@ excerpt: Descubre el mejor momento para visitar Bahia Palace en Marrakech sin mu
 <ul>
 <li><strong>Horario</strong>: 9:00 – 17:00 todos los días (última entrada hacia las 16:30)</li>
 <li><strong>Durante el Ramadán</strong>: Normalmente 10:00 – 16:00 (confirmar cerca de la fecha)</li>
-<li><strong>Precio de entrada</strong>: 70 MAD (~7€)</li>
+<li><strong>Precio de entrada</strong>: 100 MAD (~9€) para adultos extranjeros</li>
 <li><strong>Duración recomendada</strong>: 45–90 minutos</li>
 </ul>
 

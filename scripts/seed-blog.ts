@@ -31,7 +31,7 @@ const posts = [
 <p>The palace closes briefly on Friday from 11:30 to 15:00 for midday prayers. If your visit falls on a Friday, plan to arrive before 11:00 or after 15:00.</p>
 
 <h2>Bahia Palace Entrance Fee & Ticket Options</h2>
-<p>The standard entrance fee for Bahia Palace is <strong>70 MAD</strong> (approximately €7 / $7.50). Children under 12 enter free. However, buying your ticket at the door means queuing — sometimes for 30 to 45 minutes during peak season.</p>
+<p>The standard entrance fee for Bahia Palace is <strong>100 MAD</strong> (approximately €9 / $10) for foreign adults. Children under 7 enter free. Moroccan adults pay 30 MAD. However, buying your ticket at the door means queuing — sometimes for 30 to 45 minutes during peak season.</p>
 <p>The smarter option is to book a skip-the-line ticket online before you arrive. This guarantees your entry at a fixed time and lets you walk straight past the queue. You can also combine your visit with a guided tour or a combo ticket for the Saadian Tombs.</p>
 
 <h2>How to Get to Bahia Palace</h2>
@@ -276,7 +276,7 @@ const posts = [
   <li><strong>Type:</strong> 19th-century royal palace</li>
   <li><strong>Built:</strong> 1866–1900 by Grand Vizier Ba Ahmed</li>
   <li><strong>Size:</strong> 8,000 m² across courtyards, rooms, and gardens</li>
-  <li><strong>Ticket price:</strong> 70 MAD standard / skip-the-line available online</li>
+  <li><strong>Ticket price:</strong> 100 MAD (foreign adults) / skip-the-line available online</li>
   <li><strong>Visit duration:</strong> 60–90 minutes</li>
   <li><strong>Best for:</strong> Architecture, photography, gardens, general interest</li>
 </ul>

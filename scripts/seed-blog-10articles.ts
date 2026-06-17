@@ -116,7 +116,7 @@ const posts = [
     <tr><th></th><th>Bahia Palace</th><th>Majorelle Garden</th></tr>
   </thead>
   <tbody>
-    <tr><td><strong>Entrance fee</strong></td><td>70 MAD (~€7)</td><td>150 MAD (~€15) + 50 MAD museum</td></tr>
+    <tr><td><strong>Entrance fee</strong></td><td>100 MAD (~€9)</td><td>150 MAD (~€15) + 50 MAD museum</td></tr>
     <tr><td><strong>Time needed</strong></td><td>60–90 min</td><td>45–75 min</td></tr>
     <tr><td><strong>Crowd peak</strong></td><td>10:00–14:00</td><td>10:30–15:00</td></tr>
     <tr><td><strong>Photography</strong></td><td>Excellent — interiors &amp; courtyards</td><td>Excellent — botanical, vibrant colour</td></tr>
@@ -160,7 +160,7 @@ const posts = [
 
 <h2>Frequently Asked Questions</h2>
 <h3>Is Majorelle Garden more expensive than Bahia Palace?</h3>
-<p>Yes, significantly. Bahia Palace costs 70 MAD (~€7). Majorelle Garden costs 150 MAD (~€15) for garden entry alone, or 200 MAD if you add the Berber Museum inside. For most visitors, Bahia Palace offers more content per dirham.</p>
+<p>Yes, significantly. Bahia Palace costs 100 MAD (~€9). Majorelle Garden costs 150 MAD (~€15) for garden entry alone, or 200 MAD if you add the Berber Museum inside. For most visitors, Bahia Palace offers more content per dirham.</p>
 <h3>Which is better for photography — Bahia Palace or Majorelle Garden?</h3>
 <p>They offer completely different photographic subjects. Majorelle is better for colour and botanical photography — the cobalt blue against green is very distinctive. Bahia Palace is better for architectural photography — zellige floors, carved archways, painted ceilings, and courtyard geometry. If you shoot both styles, do both.</p>
 <h3>Can you walk between Bahia Palace and Majorelle Garden?</h3>
@@ -345,10 +345,10 @@ const posts = [
 <h2>Ticket Prices for Children</h2>
 <ul>
   <li><strong>Children under 7:</strong> Free</li>
-  <li><strong>Children 7 and over:</strong> 70 MAD (same as adults)</li>
+  <li><strong>Foreign children (7–13):</strong> 50 MAD</li>
   <li><strong>Moroccan national children:</strong> 10 MAD</li>
 </ul>
-<p>A family of two adults and two children under 7 pays 140 MAD total — around €14. That's genuinely good value for 90 minutes of cultural immersion. Check the <a href="/en/blog/bahia-palace-entrance-fee-2026">full entrance fee breakdown</a> for more details.</p>
+<p>A family of two foreign adults and two children aged 7–13 pays 300 MAD total — around €27. That's genuinely good value for 90 minutes of cultural immersion. Check the <a href="/en/blog/bahia-palace-entrance-fee-2026">full entrance fee breakdown</a> for more details.</p>
 
 <h2>What Kids Love Most Inside</h2>
 <p>Based on what parents consistently report, the highlights for children are:</p>
@@ -390,7 +390,7 @@ const posts = [
 
 <h2>Frequently Asked Questions</h2>
 <h3>Is Bahia Palace free for children?</h3>
-<p>Children under 7 enter Bahia Palace for free. Children aged 7 and over pay the standard entrance fee of 70 MAD (the same as adults). Moroccan national children pay 10 MAD regardless of age.</p>
+<p>Children under 7 enter Bahia Palace for free. Foreign children aged 7–13 pay 50 MAD. Moroccan national children pay 10 MAD regardless of age.</p>
 <h3>Is there a kids' guide or audio tour for children at Bahia Palace?</h3>
 <p>There is no official children's audio guide or kids' programme at Bahia Palace. The site is a heritage monument with a standard adult audio guide available for hire at the entrance. For younger children, the most effective approach is to tell the story of Ba Ahmed (a man born into slavery who became the most powerful person in Morocco and built this palace) in simple terms before the visit — it makes everything inside more engaging.</p>
 <h3>Can you take a pushchair/stroller into Bahia Palace?</h3>
@@ -510,7 +510,7 @@ const posts = [
 
 <h2>Quick Overview of Each Site</h2>
 <h3>Bahia Palace</h3>
-<p>A 19th-century royal palace covering 8,000 square meters — grand courtyards, harem quarters, painted cedar ceilings, zellige tilework, and gardens. Built by Grand Vizier Ba Ahmed between 1894 and 1900. Entry: <strong>70 MAD</strong>. Time needed: <strong>60–90 minutes</strong>.</p>
+<p>A 19th-century royal palace covering 8,000 square meters — grand courtyards, harem quarters, painted cedar ceilings, zellige tilework, and gardens. Built by Grand Vizier Ba Ahmed between 1894 and 1900. Entry: <strong>100 MAD</strong> (foreign adults). Time needed: <strong>60–90 minutes</strong>.</p>
 <h3>Saadian Tombs</h3>
 <p>A 16th-century royal mausoleum built for the Saadian dynasty under Sultan Ahmad al-Mansur. Three chambers of extraordinary carved plasterwork and zellige surround the tombs of 66 members of the royal family. Sealed by Sultan Moulay Ismail in the 17th century and only rediscovered in 1917. Entry: <strong>70 MAD</strong>. Time needed: <strong>30–45 minutes</strong>.</p>
 
@@ -537,9 +537,9 @@ const posts = [
 <table>
   <thead><tr><th>Site</th><th>Adult (foreign)</th><th>Moroccan national</th><th>Children under 7</th></tr></thead>
   <tbody>
-    <tr><td>Bahia Palace</td><td>70 MAD (~€7)</td><td>10 MAD</td><td>Free</td></tr>
+    <tr><td>Bahia Palace</td><td>100 MAD (~€9)</td><td>30 MAD</td><td>Free</td></tr>
     <tr><td>Saadian Tombs</td><td>70 MAD (~€7)</td><td>10 MAD</td><td>Free</td></tr>
-    <tr><td><strong>Total</strong></td><td><strong>140 MAD (~€14)</strong></td><td>20 MAD</td><td>Free</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>170 MAD (~€15)</strong></td><td>40 MAD</td><td>Free</td></tr>
   </tbody>
 </table>
 <p>Both sites are cash only at the door. Bring dirhams. If you've booked a <a href="/en/tickets/skip-the-line">skip-the-line ticket for Bahia Palace</a> online, you can pay by card for that — but have cash ready for the Saadian Tombs.</p>
@@ -604,14 +604,14 @@ const posts = [
 <table>
   <thead><tr><th>Site</th><th>What it offers</th><th>Time needed</th><th>Entry fee</th></tr></thead>
   <tbody>
-    <tr><td>Bahia Palace</td><td>Architecture, scale, history, gardens</td><td>75–90 min</td><td>70 MAD</td></tr>
+    <tr><td>Bahia Palace</td><td>Architecture, scale, history, gardens</td><td>75–90 min</td><td>100 MAD</td></tr>
     <tr><td>Saadian Tombs</td><td>Concentrated ornate detail, history</td><td>30–40 min</td><td>70 MAD</td></tr>
     <tr><td>El Badi Palace</td><td>Atmospheric ruins, scale, storks</td><td>45 min</td><td>70 MAD</td></tr>
     <tr><td>Majorelle Garden</td><td>Botanical, colour, design heritage</td><td>45–60 min</td><td>150 MAD</td></tr>
     <tr><td>Ben Youssef Madrasa</td><td>Islamic architecture, zellige, courtyard</td><td>45 min</td><td>70 MAD</td></tr>
   </tbody>
 </table>
-<p>At 70 MAD, Bahia Palace is the same price as the Saadian Tombs and El Badi Palace but offers significantly more content. Compared to Majorelle Garden (150 MAD), it offers more substance per dirham for visitors primarily interested in cultural heritage.</p>
+<p>At 100 MAD, Bahia Palace costs more than the Saadian Tombs and El Badi Palace (both 70 MAD) but offers significantly more content. Compared to Majorelle Garden (150 MAD), it offers more substance per dirham for visitors primarily interested in cultural heritage.</p>
 
 <h2>Who It's Perfect For</h2>
 <ul>
@@ -630,14 +630,14 @@ const posts = [
 </ul>
 
 <h2>The Verdict</h2>
-<p>At 70 MAD and 90 minutes, Bahia Palace represents excellent value for what it delivers. The architecture is genuinely world-class. The story behind it is genuinely compelling. The main variable is how you engage with it — knowing the history and what to look for transforms a pleasant walk-through into a memorable experience.</p>
+<p>At 100 MAD and 90 minutes, Bahia Palace represents excellent value for what it delivers. The architecture is genuinely world-class. The story behind it is genuinely compelling. The main variable is how you engage with it — knowing the history and what to look for transforms a pleasant walk-through into a memorable experience.</p>
 <p>Arrive early, read up beforehand (or use the audio guide), and skip the queue. Those three things — timing, context, and a <a href="/en/tickets/skip-the-line">pre-booked ticket</a> — are the difference between "nice palace" and "one of the highlights of Morocco."</p>
 
 <h2>Frequently Asked Questions</h2>
 <h3>Is Bahia Palace worth it for non-history lovers?</h3>
 <p>Yes. You don't need to be a history enthusiast to be impressed by Bahia Palace. The architectural quality and the scale of the Grand Riad are visually striking even without context. That said, knowing the story of Ba Ahmed — a slave who became the most powerful man in Morocco — makes the visit significantly richer. Five minutes of reading before you go is well worth the investment.</p>
-<h3>Is 70 MAD good value for Bahia Palace?</h3>
-<p>Yes. 70 MAD is approximately €7 or $7.50. For that price you get 8,000 square meters of exceptional Moroccan architecture, 90 minutes of exploration, and access to one of the country's most significant cultural heritage sites. It's the same price as the Saadian Tombs and cheaper than Majorelle Garden, while offering more content than either.</p>
+<h3>Is 100 MAD good value for Bahia Palace?</h3>
+<p>Yes. 100 MAD is approximately €9 or $10. For that price you get 8,000 square meters of exceptional Moroccan architecture, 90 minutes of exploration, and access to one of the country's most significant cultural heritage sites. It's more expensive than the Saadian Tombs (70 MAD) but still cheaper than Majorelle Garden (150 MAD), and offers more cultural heritage content.</p>
 <h3>What's the best way to prepare for a visit to Bahia Palace?</h3>
 <p>Read a brief account of Ba Ahmed ibn Moussa's story before you visit — this blog's <a href="/en/blog/bahia-palace-history">history article</a> covers it in full. Know that the rooms are intentionally empty (the reason is part of the story). Arrive at 9:00 AM for the best light and fewest crowds. Book your <a href="/en/tickets/skip-the-line">skip-the-line ticket</a> in advance so you're inside within minutes of arriving.</p>`,
   },
@@ -712,7 +712,7 @@ const posts = [
 <h2>Practical Tips</h2>
 <ul>
   <li><strong>Transport:</strong> Most of this itinerary is walkable within the medina. Use petit taxis for the 3 km trip between the medina and Gueliz/Majorelle — agree on the fare before getting in (20–35 MAD is fair)</li>
-  <li><strong>Budget per person (excluding accommodation):</strong> Bahia Palace 70 MAD + Saadian Tombs 70 MAD + Majorelle 150 MAD + Ben Youssef 70 MAD + food 400–600 MAD per day = approximately 800–1,000 MAD (~€80–100) per person for 2 days of activities and meals</li>
+  <li><strong>Budget per person (excluding accommodation):</strong> Bahia Palace 100 MAD + Saadian Tombs 70 MAD + Majorelle 150 MAD + Ben Youssef 70 MAD + food 400–600 MAD per day = approximately 830–1,030 MAD (~€83–103) per person for 2 days of activities and meals</li>
   <li><strong>Cash:</strong> All monument ticket windows are cash only. Have dirhams available at all times — ATMs inside the medina are limited</li>
   <li><strong>Safety:</strong> Marrakech is safe for tourists. The main irritant is unsolicited "guides" near the monuments — a firm "no thank you" repeated once is enough. Don't follow anyone who approaches you unsolicited</li>
   <li><strong>Heat:</strong> In summer (June–September), schedule outdoor activities before 11:00 AM and after 17:00. The medina's covered lanes provide shade but the heat is real</li>
@@ -767,7 +767,7 @@ const posts = [
 
 <h2>Cost of the Audio Guide</h2>
 <p>The audio guide typically costs <strong>50–70 MAD</strong> at the entrance — though the price can vary and is not always clearly posted. Pay in cash (as with the entrance ticket). A deposit may be required for the device.</p>
-<p>Combined with the entrance fee of 70 MAD, you're looking at approximately <strong>120–140 MAD total</strong> for entry + audio guide.</p>
+<p>Combined with the entrance fee of 100 MAD, you're looking at approximately <strong>150–170 MAD total</strong> for entry + audio guide.</p>
 
 <h2>Guided Tour vs Audio Guide vs Self-Guided: Comparison</h2>
 <table>

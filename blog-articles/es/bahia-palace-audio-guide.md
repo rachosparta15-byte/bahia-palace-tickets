@@ -35,7 +35,7 @@ excerpt: ¿Hay audioguía oficial en Bahia Palace? ¿Cuánto cuesta, qué cubre 
 
 <h2>Coste de la audioguía</h2>
 <p>La audioguía suele costar <strong>50–70 MAD</strong> en la entrada — el precio puede variar y no siempre está claramente indicado. Paga en efectivo (igual que la entrada). Puede requerirse un depósito para el dispositivo.</p>
-<p>Combinado con el precio de entrada de 70 MAD, el total es de aproximadamente <strong>120–140 MAD</strong> para entrada + audioguía.</p>
+<p>Combinado con el precio de entrada de 100 MAD, el total es de aproximadamente <strong>150–170 MAD</strong> para entrada + audioguía.</p>
 
 <h2>Visita guiada vs audioguía vs visita autoguiada: comparación</h2>
 <table>

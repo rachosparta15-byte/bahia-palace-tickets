@@ -18,9 +18,13 @@ excerpt: Entrada Bahia Palace 2026: precio oficial 100 MAD, descuentos, opción 
 <table>
   <thead><tr><th>Categoría</th><th>Precio</th></tr></thead>
   <tbody>
-    <tr><td>Adultos (visitantes extranjeros)</td><td>100 MAD (~10 $ / 9 €)</td></tr>
-    <tr><td>Ciudadanos marroquíes</td><td>10 MAD</td></tr>
+    <tr><td>Adultos extranjeros</td><td>100 MAD (~10 $ / 9 €)</td></tr>
+    <tr><td>Niños extranjeros (7–13 años)</td><td>50 MAD (~5 $ / 4,50 €)</td></tr>
+    <tr><td>Adultos marroquíes</td><td>30 MAD</td></tr>
+    <tr><td>Niños marroquíes (7–13 años)</td><td>10 MAD</td></tr>
     <tr><td>Niños menores de 7 años</td><td>Gratuito</td></tr>
+    <tr><td>Personas con movilidad reducida</td><td>Gratuito</td></tr>
+    <tr><td>Ciudadanos marroquíes — todos los viernes y primer día de festivos nacionales/religiosos</td><td>Gratuito</td></tr>
   </tbody>
 </table>
 <p>El pago en la taquilla es <strong>solo en efectivo</strong>. No hay terminales de tarjeta en la ventanilla. Los cajeros automáticos más cercanos están a un corto paseo, cerca de la Rue Riad Zitoun el Kedim. Ven con dírhams.</p>
@@ -29,9 +33,9 @@ excerpt: Entrada Bahia Palace 2026: precio oficial 100 MAD, descuentos, opción 
 <h3>Estudiantes</h3>
 <p>No existe un descuento estudiantil aplicado universalmente para los visitantes extranjeros. Los estudiantes marroquíes con tarjeta nacional válida pueden acceder a una tarifa reducida, pero las tarjetas de estudiante internacionales (ISIC y similares) no se aceptan de forma fiable en la taquilla. No cuentes con un descuento si visitas desde el extranjero.</p>
 <h3>Niños</h3>
-<p>Los niños menores de 7 años entran gratis. Los niños de entre 7 y 12 años pagan la tarifa adulta completa de 100 MAD. A ese precio, una familia de cuatro adultos y dos niños pequeños gasta unos 400 MAD en total — aun así muy asequible.</p>
+<p>Los niños menores de 7 años entran gratis. Los niños extranjeros de 7 a 13 años pagan 50 MAD (la mitad de la tarifa adulta). Los niños marroquíes pagan 10 MAD. Una familia de dos adultos extranjeros y dos niños de 7–13 años gasta 300 MAD en total — una tarifa muy razonable.</p>
 <h3>Locales frente a visitantes extranjeros</h3>
-<p>Marruecos aplica un sistema de doble precio en muchos lugares culturales gestionados por el Estado. Bahia Palace no es una excepción: los ciudadanos marroquíes pagan 10 MAD frente a los 100 MAD de los visitantes extranjeros. Esta es una práctica estándar en todo el país.</p>
+<p>Marruecos aplica un sistema de doble precio en muchos lugares culturales gestionados por el Estado. Bahia Palace no es una excepción: los ciudadanos marroquíes adultos pagan 30 MAD, los niños 10 MAD — frente a los 100 MAD de los adultos extranjeros. Esta es una práctica estándar en todo el país.</p>
 <h3>Descuentos de grupo</h3>
 <p>No existe un descuento de grupo formal en la taquilla estándar para visitantes extranjeros. Los grupos organizados negocian tarifas por separado con operadores turísticos autorizados. Si viajas de forma independiente, espera pagar 100 MAD por adulto independientemente del tamaño del grupo.</p>
 
@@ -61,7 +65,7 @@ excerpt: Entrada Bahia Palace 2026: precio oficial 100 MAD, descuentos, opción 
 
 <h2>Preguntas frecuentes</h2>
 <h3>¿Cuánto cuesta entrar en Bahia Palace?</h3>
-<p>La tarifa de entrada estándar es de 100 MAD para visitantes extranjeros (aproximadamente 10 $ / 9 € en 2026). Los ciudadanos marroquíes pagan 10 MAD. Los niños menores de 7 años entran gratis. El pago en taquilla es solo en efectivo.</p>
+<p>La tarifa de entrada estándar es de 100 MAD para adultos extranjeros (aproximadamente 10 $ / 9 € en 2026). Los niños extranjeros de 7–13 años pagan 50 MAD. Los adultos marroquíes pagan 30 MAD; los niños marroquíes pagan 10 MAD. Los niños menores de 7 años entran gratis. El pago en taquilla es solo en efectivo.</p>
 <h3>¿Puedo obtener descuento en Bahia Palace con una tarjeta de estudiante?</h3>
 <p>Las tarjetas de estudiante internacionales como la ISIC no se aceptan de forma fiable en la taquilla de Bahia Palace. Los estudiantes marroquíes con tarjeta nacional válida pueden obtener tarifa reducida, pero los visitantes extranjeros deben esperar pagar el precio adulto completo de 100 MAD.</p>
 <h3>¿Es más barato comprar las entradas en la puerta o por internet?</h3>

@@ -34,10 +34,10 @@ excerpt: Ist Bahia Palace gut für Kinder? Ticketpreise, was Kinder am meisten m
 <h2>Ticketpreise für Kinder</h2>
 <ul>
   <li><strong>Kinder unter 7 Jahren:</strong> Kostenlos</li>
-  <li><strong>Kinder ab 7 Jahren:</strong> 70 MAD (gleich wie Erwachsene)</li>
-  <li><strong>Marokkanische Kinder:</strong> 10 MAD</li>
+  <li><strong>Ausländische Kinder (7–13 Jahre):</strong> 50 MAD</li>
+  <li><strong>Marokkanische Kinder (jedes Alter):</strong> 10 MAD</li>
 </ul>
-<p>Eine Familie mit zwei Erwachsenen und zwei Kindern unter 7 Jahren zahlt insgesamt 140 MAD — etwa 14 €. Das ist ein ausgezeichnetes Preis-Leistungs-Verhältnis für 90 Minuten kulturelles Eintauchen. Sehen Sie die <a href="/de/blog/bahia-palace-entrance-fee-2026">vollständige Eintrittspreis-Übersicht</a> für weitere Details.</p>
+<p>Eine Familie mit zwei ausländischen Erwachsenen und zwei Kindern von 7–13 Jahren zahlt insgesamt 300 MAD — etwa 27 €. Das ist ein ausgezeichnetes Preis-Leistungs-Verhältnis für 90 Minuten kulturelles Eintauchen. Sehen Sie die <a href="/de/blog/bahia-palace-entrance-fee-2026">vollständige Eintrittspreis-Übersicht</a> für weitere Details.</p>
 
 <h2>Was Kinder im Inneren am meisten lieben</h2>
 <p>Basierend auf dem, was Eltern konsistent berichten, sind die Highlights für Kinder:</p>
@@ -79,7 +79,7 @@ excerpt: Ist Bahia Palace gut für Kinder? Ticketpreise, was Kinder am meisten m
 
 <h2>Häufig gestellte Fragen</h2>
 <h3>Ist Bahia Palace für Kinder kostenlos?</h3>
-<p>Kinder unter 7 Jahren treten Bahia Palace kostenlos ein. Kinder ab 7 Jahren zahlen den Standardeintrittspreis von 70 MAD (gleich wie Erwachsene). Marokkanische Kinder zahlen unabhängig vom Alter 10 MAD.</p>
+<p>Kinder unter 7 Jahren treten Bahia Palace kostenlos ein. Ausländische Kinder von 7–13 Jahren zahlen 50 MAD. Marokkanische Kinder zahlen 10 MAD unabhängig vom Alter.</p>
 <h3>Gibt es einen Kinderguide oder eine Audioführung für Kinder in Bahia Palace?</h3>
 <p>Es gibt keinen offiziellen Kinder-Audioguide oder Kinderprogramme in Bahia Palace. Das Gelände ist ein Kulturmonument mit einem Standard-Erwachsenen-Audioguide, der am Eingang zum Verleih erhältlich ist. Für jüngere Kinder ist der effektivste Ansatz, die Geschichte von Ba Ahmed (ein Mann, der als Sklave geboren wurde, die mächtigste Person in Marokko wurde und diesen Palast baute) vor dem Besuch in einfachen Worten zu erzählen — das macht alles drinnen interessanter.</p>
 <h3>Kann man einen Kinderwagen in Bahia Palace mitnehmen?</h3>

@@ -20,7 +20,7 @@ excerpt: Découvrez le meilleur moment pour visiter Bahia Palace à Marrakech sa
 <ul>
 <li><strong>Horaires</strong> : 9h00 – 17h00 tous les jours (dernière entrée vers 16h30)</li>
 <li><strong>Pendant le Ramadan</strong> : Généralement 10h00 – 16h00 (à confirmer plus près de la date)</li>
-<li><strong>Droit d'entrée</strong> : 70 MAD (~7€)</li>
+<li><strong>Droit d'entrée</strong> : 100 MAD (~9€) pour les adultes étrangers</li>
 <li><strong>Durée de visite recommandée</strong> : 45–90 minutes</li>
 </ul>
 

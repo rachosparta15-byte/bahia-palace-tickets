@@ -35,14 +35,14 @@ excerpt: Un avis honnête sur Bahia Palace en 2026 : ce qui impressionne vraimen
 <table>
   <thead><tr><th>Site</th><th>Ce qu'il offre</th><th>Temps nécessaire</th><th>Entrée</th></tr></thead>
   <tbody>
-    <tr><td>Bahia Palace</td><td>Architecture, échelle, histoire, jardins</td><td>75–90 min</td><td>70 MAD</td></tr>
+    <tr><td>Bahia Palace</td><td>Architecture, échelle, histoire, jardins</td><td>75–90 min</td><td>100 MAD</td></tr>
     <tr><td>Tombeaux Saadiens</td><td>Détail ornemental concentré, histoire</td><td>30–40 min</td><td>70 MAD</td></tr>
     <tr><td>El Badi Palace</td><td>Ruines atmosphériques, échelle, cigognes</td><td>45 min</td><td>70 MAD</td></tr>
     <tr><td>Jardin Majorelle</td><td>Botanique, couleur, patrimoine design</td><td>45–60 min</td><td>150 MAD</td></tr>
     <tr><td>Medersa Ben Youssef</td><td>Architecture islamique, zellige, cour</td><td>45 min</td><td>70 MAD</td></tr>
   </tbody>
 </table>
-<p>À 70 MAD, Bahia Palace est au même prix que les Tombeaux Saadiens et El Badi Palace mais offre nettement plus de contenu. Comparé au Jardin Majorelle (150 MAD), il offre plus de substance par dirham pour les visiteurs principalement intéressés par le patrimoine culturel.</p>
+<p>À 100 MAD, Bahia Palace est plus cher que les Tombeaux Saadiens et El Badi Palace (tous les deux 70 MAD) mais offre nettement plus de contenu. Comparé au Jardin Majorelle (150 MAD), il offre plus de substance par dirham pour les visiteurs principalement intéressés par le patrimoine culturel.</p>
 
 <h2>Pour qui c'est parfait</h2>
 <ul>
@@ -61,13 +61,13 @@ excerpt: Un avis honnête sur Bahia Palace en 2026 : ce qui impressionne vraimen
 </ul>
 
 <h2>Le verdict</h2>
-<p>À 70 MAD et 90 minutes, Bahia Palace représente une excellente valeur pour ce qu'il offre. L'architecture est véritablement de classe mondiale. L'histoire qui le sous-tend est véritablement captivante. La principale variable est la façon dont vous l'abordez — connaître l'histoire et savoir quoi chercher transforme une agréable promenade en une expérience mémorable.</p>
+<p>À 100 MAD et 90 minutes, Bahia Palace représente une excellente valeur pour ce qu'il offre. L'architecture est véritablement de classe mondiale. L'histoire qui le sous-tend est véritablement captivante. La principale variable est la façon dont vous l'abordez — connaître l'histoire et savoir quoi chercher transforme une agréable promenade en une expérience mémorable.</p>
 <p>Arrivez tôt, renseignez-vous au préalable (ou utilisez l'audioguide), et évitez la queue. Ces trois éléments — le timing, le contexte et un <a href="/fr/tickets/skip-the-line">billet pré-réservé</a> — font la différence entre « joli palais » et « l'un des temps forts du Maroc ».</p>
 
 <h2>Questions fréquemment posées</h2>
 <h3>Bahia Palace vaut-il le détour pour les non-passionnés d'histoire ?</h3>
 <p>Oui. Il n'est pas nécessaire d'être un passionné d'histoire pour être impressionné par Bahia Palace. La qualité architecturale et l'échelle du Grand Riad sont visuellement frappantes même sans contexte. Cela dit, connaître l'histoire de Ba Ahmed — un esclave devenu l'homme le plus puissant du Maroc — enrichit considérablement la visite. Cinq minutes de lecture avant de partir valent largement l'investissement.</p>
-<h3>70 MAD, est-ce un bon rapport qualité-prix pour Bahia Palace ?</h3>
-<p>Oui. 70 MAD représente environ 7€ ou 7,50$. Pour ce prix, vous obtenez 8 000 mètres carrés d'architecture marocaine exceptionnelle, 90 minutes d'exploration et l'accès à l'un des sites du patrimoine culturel les plus importants du pays. C'est le même prix que les Tombeaux Saadiens et moins cher que le Jardin Majorelle, tout en offrant plus de contenu que l'un ou l'autre.</p>
+<h3>100 MAD, est-ce un bon rapport qualité-prix pour Bahia Palace ?</h3>
+<p>Oui. 100 MAD représente environ 9€ ou 10$. Pour ce prix, vous obtenez 8 000 mètres carrés d'architecture marocaine exceptionnelle, 90 minutes d'exploration et l'accès à l'un des sites du patrimoine culturel les plus importants du pays. C'est moins cher que le Jardin Majorelle (150 MAD) tout en offrant plus de contenu culturel.</p>
 <h3>Quelle est la meilleure façon de se préparer à une visite de Bahia Palace ?</h3>
 <p>Lisez un bref récit de l'histoire de Ba Ahmed ibn Moussa avant de visiter — l'<a href="/fr/blog/bahia-palace-history">article d'histoire</a> de ce blog la couvre en intégralité. Sachez que les pièces sont intentionnellement vides (la raison fait partie de l'histoire). Arrivez à 9h00 pour la meilleure lumière et le moins de monde. Réservez votre <a href="/fr/tickets/skip-the-line">billet skip-the-line</a> à l'avance pour entrer dans les minutes suivant votre arrivée.</p>

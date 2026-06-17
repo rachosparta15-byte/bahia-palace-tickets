@@ -34,10 +34,10 @@ excerpt: Bahia Palace convient-il aux enfants ? Prix des billets, ce que les enf
 <h2>Prix des billets pour les enfants</h2>
 <ul>
   <li><strong>Enfants de moins de 7 ans :</strong> Gratuit</li>
-  <li><strong>Enfants de 7 ans et plus :</strong> 70 MAD (identique aux adultes)</li>
-  <li><strong>Enfants marocains :</strong> 10 MAD</li>
+  <li><strong>Enfants étrangers (7–13 ans) :</strong> 50 MAD</li>
+  <li><strong>Enfants marocains :</strong> 10 MAD (quel que soit l'âge)</li>
 </ul>
-<p>Une famille de deux adultes et deux enfants de moins de 7 ans paie 140 MAD au total — environ 14 €. C'est un excellent rapport qualité-prix pour 90 minutes d'immersion culturelle. Consultez le <a href="/fr/blog/bahia-palace-entrance-fee-2026">détail complet des tarifs</a> pour plus d'informations.</p>
+<p>Une famille de deux adultes étrangers et deux enfants de 7 à 13 ans paie 300 MAD au total — environ 27 €. Toujours très abordable pour 90 minutes d'immersion culturelle. Consultez le <a href="/fr/blog/bahia-palace-entrance-fee-2026">détail complet des tarifs</a> pour plus d'informations.</p>
 
 <h2>Ce que les enfants préfèrent à l'intérieur</h2>
 <p>D'après ce que les parents rapportent constamment, les points forts pour les enfants sont :</p>
@@ -79,7 +79,7 @@ excerpt: Bahia Palace convient-il aux enfants ? Prix des billets, ce que les enf
 
 <h2>Questions fréquemment posées</h2>
 <h3>Bahia Palace est-il gratuit pour les enfants ?</h3>
-<p>Les enfants de moins de 7 ans entrent gratuitement à Bahia Palace. Les enfants de 7 ans et plus paient le tarif d'entrée standard de 70 MAD (identique aux adultes). Les enfants marocains paient 10 MAD quel que soit leur âge.</p>
+<p>Les enfants de moins de 7 ans entrent gratuitement à Bahia Palace. Les enfants étrangers de 7 à 13 ans paient 50 MAD. Les enfants marocains paient 10 MAD quel que soit leur âge.</p>
 <h3>Y a-t-il un guide enfant ou une visite audio pour les enfants à Bahia Palace ?</h3>
 <p>Il n'y a pas de guide audio officiel pour enfants ni de programme pour enfants à Bahia Palace. Le site est un monument du patrimoine avec un guide audio adulte standard disponible à la location à l'entrée. Pour les jeunes enfants, l'approche la plus efficace est de raconter l'histoire de Ba Ahmed (un homme né en esclavage devenu la personne la plus puissante du Maroc et qui a construit ce palais) en termes simples avant la visite — cela rend tout à l'intérieur plus engageant.</p>
 <h3>Peut-on amener une poussette à Bahia Palace ?</h3>

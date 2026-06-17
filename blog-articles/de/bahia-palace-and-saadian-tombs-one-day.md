@@ -22,7 +22,7 @@ excerpt: Ja, beide an einem halben Tag. Genauer Zeitplan, beste Reihenfolge, was
 
 <h2>Kurzer Überblick über jeden Standort</h2>
 <h3>Bahia Palace</h3>
-<p>Ein königlicher Palast aus dem 19. Jahrhundert mit 8.000 Quadratmetern — große Innenhöfe, Haremgemächer, bemalte Zedernholzdecken, zellige-Fliesenwerk und Gärten. Gebaut von Großwesir Ba Ahmed zwischen 1894 und 1900. Eintritt: <strong>70 MAD</strong>. Benötigte Zeit: <strong>60–90 Minuten</strong>.</p>
+<p>Ein königlicher Palast aus dem 19. Jahrhundert mit 8.000 Quadratmetern — große Innenhöfe, Haremgemächer, bemalte Zedernholzdecken, zellige-Fliesenwerk und Gärten. Gebaut von Großwesir Ba Ahmed zwischen 1894 und 1900. Eintritt: <strong>100 MAD</strong> (ausländische Erwachsene). Benötigte Zeit: <strong>60–90 Minuten</strong>.</p>
 <h3>Saadische Gräber</h3>
 <p>Ein königliches Mausoleum aus dem 16. Jahrhundert, erbaut für die Saadische Dynastie unter Sultan Ahmad al-Mansur. Drei Kammern mit außergewöhnlichen geschnitzten Stuckarbeiten und zellige umgeben die Gräber von 66 Mitgliedern der Königsfamilie. Im 17. Jahrhundert von Sultan Moulay Ismail versiegelt und erst 1917 wiederentdeckt. Eintritt: <strong>70 MAD</strong>. Benötigte Zeit: <strong>30–45 Minuten</strong>.</p>
 
@@ -49,9 +49,9 @@ excerpt: Ja, beide an einem halben Tag. Genauer Zeitplan, beste Reihenfolge, was
 <table>
   <thead><tr><th>Standort</th><th>Erwachsener (Ausländer)</th><th>Marokkaner</th><th>Kinder unter 7 Jahren</th></tr></thead>
   <tbody>
-    <tr><td>Bahia Palace</td><td>70 MAD (~7€)</td><td>10 MAD</td><td>Kostenlos</td></tr>
+    <tr><td>Bahia Palace</td><td>100 MAD (~9€)</td><td>30 MAD</td><td>Kostenlos</td></tr>
     <tr><td>Saadische Gräber</td><td>70 MAD (~7€)</td><td>10 MAD</td><td>Kostenlos</td></tr>
-    <tr><td><strong>Gesamt</strong></td><td><strong>140 MAD (~14€)</strong></td><td>20 MAD</td><td>Kostenlos</td></tr>
+    <tr><td><strong>Gesamt</strong></td><td><strong>170 MAD (~15€)</strong></td><td>40 MAD</td><td>Kostenlos</td></tr>
   </tbody>
 </table>
 <p>Beide Standorte sind an der Tür nur Bargeld. Dirham mitbringen. Wenn Sie ein <a href="/de/tickets/skip-the-line">skip-the-line-Ticket für Bahia Palace</a> online gebucht haben, können Sie das mit Karte bezahlen — aber haben Sie Bargeld für die Saadischen Gräber bereit.</p>

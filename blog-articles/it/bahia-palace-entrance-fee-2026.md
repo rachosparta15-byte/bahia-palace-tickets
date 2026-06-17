@@ -18,9 +18,13 @@ excerpt: Biglietto d'ingresso Bahia Palace 2026: prezzo ufficiale 100 MAD, scont
 <table>
   <thead><tr><th>Categoria</th><th>Prezzo</th></tr></thead>
   <tbody>
-    <tr><td>Adulti (visitatori stranieri)</td><td>100 MAD (~10 $ / 9 €)</td></tr>
-    <tr><td>Cittadini marocchini</td><td>10 MAD</td></tr>
+    <tr><td>Adulti stranieri</td><td>100 MAD (~10 $ / 9 €)</td></tr>
+    <tr><td>Bambini stranieri (7–13 anni)</td><td>50 MAD (~5 $ / 4,50 €)</td></tr>
+    <tr><td>Adulti marocchini</td><td>30 MAD</td></tr>
+    <tr><td>Bambini marocchini (7–13 anni)</td><td>10 MAD</td></tr>
     <tr><td>Bambini sotto i 7 anni</td><td>Gratuito</td></tr>
+    <tr><td>Persone a mobilità ridotta</td><td>Gratuito</td></tr>
+    <tr><td>Cittadini marocchini — ogni venerdì &amp; primo giorno di feste nazionali/religiose</td><td>Gratuito</td></tr>
   </tbody>
 </table>
 <p>Il pagamento alla biglietteria è <strong>solo in contanti</strong>. Non ci sono terminali POS allo sportello. I bancomat più vicini si trovano a breve distanza a piedi, vicino a Rue Riad Zitoun el Kedim. Venite con i dirham.</p>
@@ -29,7 +33,7 @@ excerpt: Biglietto d'ingresso Bahia Palace 2026: prezzo ufficiale 100 MAD, scont
 <h3>Studenti</h3>
 <p>Non esiste uno sconto studenti applicato universalmente per i visitatori stranieri. Gli studenti marocchini con una tessera nazionale valida possono accedere a una tariffa ridotta, ma le carte studenti internazionali (ISIC e simili) non sono accettate in modo affidabile allo sportello. Non contate su uno sconto se visitate dall'estero.</p>
 <h3>Bambini</h3>
-<p>I bambini sotto i 7 anni entrano gratuitamente. I bambini tra i 7 e i 12 anni pagano la tariffa adulta intera di 100 MAD. A quel prezzo, una famiglia di quattro adulti e due bambini piccoli spende circa 400 MAD — comunque poco.</p>
+<p>I bambini sotto i 7 anni entrano gratuitamente. I bambini stranieri di 7–13 anni pagano 50 MAD (metà della tariffa adulta). I bambini marocchini pagano 10 MAD indipendentemente dall'età. Una famiglia di due adulti stranieri e due bambini di 7–13 anni spende 300 MAD in totale — molto conveniente.</p>
 <h3>Locali e visitatori stranieri</h3>
 <p>Il Marocco applica un doppio sistema di tariffe in molti siti culturali statali. Bahia Palace non fa eccezione: i cittadini marocchini pagano 10 MAD contro i 100 MAD dei visitatori stranieri. Questa è una pratica standard in tutto il paese.</p>
 <h3>Sconti di gruppo</h3>
