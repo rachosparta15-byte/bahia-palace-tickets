@@ -5,6 +5,7 @@ import { LeadButton } from '@/components/layout/LeadButton';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { Clock, ArrowRight } from 'lucide-react';
 import prisma from '@/lib/db';
+import { getBlogPosts } from '@/lib/blog';
 import type { Metadata } from 'next';
 import { buildAlternates, buildOG } from '@/lib/seo';
 
@@ -39,9 +40,21 @@ const CATEGORY_IMAGES: Record<string, string> = {
   'itineraries':  '/images/gallery/bahia-palace-aerial-view-marrakech-medina-drone.jpg',
 };
 
-function readTime(content: string | null): number {
-  if (!content) return 1;
-  return Math.max(1, Math.round(content.split(/\s+/).length / 200));
+type PostRow = {
+  id: string;
+  slug: string;
+  category: string;
+  coverImage: string | null;
+  content: string | null;
+  readTime?: number;
+  title: string;
+  excerpt: string | null;
+};
+
+function readTime(post: PostRow): number {
+  if (post.readTime != null) return post.readTime;
+  if (!post.content) return 1;
+  return Math.max(1, Math.round(post.content.split(/\s+/).length / 200));
 }
 
 export default async function BlogIndexPage({ params }: Props) {
@@ -49,10 +62,23 @@ export default async function BlogIndexPage({ params }: Props) {
   const t  = await getTranslations('blog');
   const tb = await getTranslations('breadcrumb');
 
-  const posts = await prisma.blogPost.findMany({
+  const dbPosts = await prisma.blogPost.findMany({
     where:   { locale, published: true },
     orderBy: { publishedAt: 'desc' },
   });
+
+  const posts: PostRow[] = dbPosts.length > 0
+    ? dbPosts
+    : getBlogPosts(locale).map(p => ({
+        id:        p.slug,
+        slug:      p.slug,
+        category:  p.category,
+        coverImage: null,
+        content:   null,
+        readTime:  p.readTime,
+        title:     p.title,
+        excerpt:   p.excerpt,
+      }));
 
   return (
     <div className="bg-[#FAF3E7] min-h-screen">
@@ -80,10 +106,10 @@ export default async function BlogIndexPage({ params }: Props) {
             {posts.map((post) => {
               const catLabel = t(`categories.${post.category}` as any) as string;
               const imgSrc   = post.coverImage ?? CATEGORY_IMAGES[post.category] ?? CATEGORY_IMAGES['visit-tips'];
-              const mins     = readTime(post.content);
+              const mins     = readTime(post);
               return (
                 <Link
-                  key={post.id}
+                  key={post.slug}
                   href={`/blog/${post.slug}` as any}
                   className="group moroccan-card overflow-hidden flex flex-col"
                 >

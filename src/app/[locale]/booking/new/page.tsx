@@ -11,7 +11,10 @@ interface Props {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  return { title: 'Complete Your Booking — Bahia Palace Tickets' };
+  return {
+    title: 'Complete Your Booking — Bahia Palace Tickets',
+    robots: { index: false, follow: true },
+  };
 }
 
 export default async function BookingNewPage({ params, searchParams }: Props) {

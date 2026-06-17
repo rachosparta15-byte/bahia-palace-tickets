@@ -86,6 +86,8 @@ export function Footer() {
               {[
                 { href: '/opening-hours', label: t('openingHours') },
                 { href: '/entrance-fee',  label: t('entranceFee') },
+                { href: '/history',       label: t('history') },
+                { href: '/location',      label: t('location') },
                 { href: '/blog',          label: t('blog') },
                 { href: '/safety',        label: t('safetyGuide') },
                 { href: '/faq',           label: t('faq') },

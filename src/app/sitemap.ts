@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import prisma from '@/lib/db';
 import { BASE } from '@/lib/seo';
+import { getAllSlugs, getBlogPost } from '@/lib/blog';
 
 export const dynamic = 'force-dynamic';
 const LOCALES = ['en', 'fr', 'it', 'de', 'es'] as const;
@@ -59,15 +60,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
-  // Published blog posts — grouped by slug for hreflang
+  // Published blog posts — grouped by slug for hreflang.
+  // Primary: DB (when Phase B is live and posts are seeded).
+  // Fallback: blog.ts static array — used whenever DB is empty or unavailable,
+  //   which is always the case in Phase A (ephemeral SQLite, never seeded).
+  let dbPosts: { slug: string; locale: string; updatedAt: Date }[] = [];
   try {
-    const posts = await prisma.blogPost.findMany({
+    dbPosts = await prisma.blogPost.findMany({
       where: { published: true },
       select: { slug: true, locale: true, updatedAt: true },
     });
-    // Group by slug so each locale entry carries alternates for all other locales
-    const bySlug = new Map<string, typeof posts>();
-    for (const post of posts) {
+  } catch { /* DB unavailable at sitemap generation time */ }
+
+  if (dbPosts.length > 0) {
+    // DB path — preserve hreflang across only the locales that exist in the DB
+    const bySlug = new Map<string, typeof dbPosts>();
+    for (const post of dbPosts) {
       const group = bySlug.get(post.slug) ?? [];
       group.push(post);
       bySlug.set(post.slug, group);
@@ -86,7 +94,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         });
       }
     }
-  } catch { /* DB unavailable at build time — skip */ }
+  } else {
+    // Static fallback — all slugs defined in blog.ts, all 5 locales
+    for (const slug of getAllSlugs()) {
+      const languages: Record<string, string> = {};
+      for (const locale of LOCALES) {
+        if (getBlogPost(locale, slug)) languages[locale] = `${BASE}/${locale}/blog/${slug}`;
+      }
+      for (const locale of LOCALES) {
+        if (!getBlogPost(locale, slug)) continue;
+        entries.push({
+          url: `${BASE}/${locale}/blog/${slug}`,
+          lastModified: now,
+          changeFrequency: 'monthly',
+          priority: 0.65,
+          alternates: { languages },
+        });
+      }
+    }
+  }
 
   return entries;
 }

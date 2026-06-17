@@ -1,5 +1,11 @@
 import { LegalPage } from '@/components/legal/LegalPage';
 import { getTranslations } from 'next-intl/server';
+import type { Metadata } from 'next';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return locale === 'en' ? {} : { robots: 'noindex' };
+}
 
 export default async function TermsPage() {
   const t = await getTranslations('breadcrumb');

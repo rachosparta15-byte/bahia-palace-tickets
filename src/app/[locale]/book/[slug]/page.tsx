@@ -6,6 +6,7 @@ import { Link } from '@/i18n/navigation';
 import { ArrowLeft, Clock, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import prisma from '@/lib/db';
+import type { Metadata } from 'next';
 
 const IMAGES: Record<string, string> = {
   'skip-the-line':       '/images/gallery/bahia-palace-main-gate-lanterns-full-view.jpg',
@@ -16,6 +17,10 @@ const IMAGES: Record<string, string> = {
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  return { robots: { index: false, follow: true } };
 }
 
 export default async function QuickBookPage({ params }: Props) {
