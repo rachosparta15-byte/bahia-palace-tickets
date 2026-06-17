@@ -89,10 +89,10 @@ export function Header() {
           </div>
         </Link>
 
-        {/* ── Safety Guide pill — always visible, jnb l-logo ── */}
+        {/* ── Safety Guide pill — hidden on mobile, visible sm+ ── */}
         <Link
           href="/safety"
-          className="flex items-center gap-1.5 bg-[#E8A33D] rounded-full px-3 py-1.5 shrink-0 hover:bg-amber-400 transition-colors group shadow-[0_0_14px_rgba(232,163,61,0.45)]"
+          className="hidden sm:flex items-center gap-1.5 bg-[#E8A33D] rounded-full px-3 py-1.5 shrink-0 hover:bg-amber-400 transition-colors group shadow-[0_0_14px_rgba(232,163,61,0.45)]"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#C4452D] animate-pulse shrink-0" />
           <AlertTriangle size={11} className="text-[#3D2817] shrink-0" />
@@ -147,19 +147,19 @@ export function Header() {
             )}
           </div>
 
-          {/* CTA button */}
+          {/* CTA button — always visible, compact on mobile */}
           <LeadButton
             ticketType="skip-the-line"
-            className="hidden sm:inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#A33824] text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors border border-[#C4452D]/0 hover:border-[#E8A33D]/20"
+            className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#A33824] text-white font-semibold px-3 py-2.5 rounded-lg transition-colors text-xs sm:text-sm sm:px-4 sm:py-2 border border-[#C4452D]/0 hover:border-[#E8A33D]/20"
           >
             {t('bookNow')}
           </LeadButton>
 
           {/* Mobile hamburger */}
           <button
-            className="lg:hidden p-2 text-white/80 hover:text-white"
+            className="lg:hidden min-h-[44px] min-w-[44px] flex items-center justify-center text-white/80 hover:text-white"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -169,6 +169,14 @@ export function Header() {
       {/* ── Mobile menu ── */}
       {menuOpen && (
         <div className="lg:hidden bg-[#2A1A0E] border-t border-[#E8A33D]/15 px-4 py-4 space-y-0.5">
+          {/* Safety Guide — plain nav link in mobile menu */}
+          <Link
+            href="/safety"
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center py-3 font-medium border-b border-white/5 transition-colors text-white/80 hover:text-[#E8A33D]"
+          >
+            {t('safetyGuide')}
+          </Link>
           {navLinks.map(({ href, label }) => (
             <Link
               key={href}
@@ -197,12 +205,6 @@ export function Header() {
                 </button>
               ))}
             </div>
-            <LeadButton
-              ticketType="skip-the-line"
-              className="flex items-center justify-center w-full bg-[#C4452D] text-white font-semibold py-3 rounded-xl mt-2 hover:bg-[#A33824] transition-colors"
-            >
-              {t('bookNow')}
-            </LeadButton>
           </div>
         </div>
       )}
