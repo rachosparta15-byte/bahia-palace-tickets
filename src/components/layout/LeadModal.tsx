@@ -6,6 +6,7 @@ import { X, ArrowRight } from 'lucide-react';
 import { useLocale } from 'next-intl';
 import { usePathname } from '@/i18n/navigation';
 import { BOOKING_URL } from '@/lib/booking';
+import { trackEvent } from '@/lib/analytics';
 
 interface Props {
   ticketType: string;
@@ -61,6 +62,12 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
   // Capture traffic source once when the modal first opens.
   const [source] = useState<TrafficSource>(() => collectTrafficSource(locale, pathname));
 
+  // Track modal open
+  useEffect(() => {
+    trackEvent('modal_open', { ticketType, device: source.device, locale });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // ESC to close
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
@@ -104,13 +111,14 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
   const handleSubmit = async () => {
     setLoading(true);
     await saveLead(email, name);
+    trackEvent('lead_submit', { hasEmail: !!email.trim(), ticketType, locale });
     setLoading(false);
     openPortal();
     onDone();
   };
 
   const handleSkip = async () => {
-    // Fire-and-forget — track the click even when user skips email
+    trackEvent('lead_skip', { ticketType, locale });
     saveLead('', '');
     openPortal();
     onDone();
