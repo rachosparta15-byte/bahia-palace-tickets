@@ -44,6 +44,9 @@ function labelReferrer(raw: string | null): { label: string; title: string } {
 export default async function LeadsPage({ searchParams }: Props) {
   const { q } = await searchParams;
 
+  // Ensure ipAddress column exists before querying (idempotent)
+  await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "ipAddress" TEXT`).catch(() => {});
+
   const leads = await prisma.lead.findMany({
     where: q
       ? {
