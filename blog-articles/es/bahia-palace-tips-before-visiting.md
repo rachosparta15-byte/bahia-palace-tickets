@@ -20,7 +20,7 @@ excerpt: 10 imprescindibles antes de visitar Bahia Palace en Marrakech: horarios
 <p>Bahia Palace abre a las 9:00. Si puedes estar allí a la apertura, hazlo. Los primeros 90 minutos son los más tranquilos del día — sin grupos turísticos, mejor luz para fotografiar, temperaturas más frescas y espacio para moverte a tu propio ritmo. Ir temprano no es solo un consejo para fotógrafos. Poder recorrer un palacio histórico sin ser empujado por una multitud es una experiencia fundamentalmente diferente.</p>
 
 <h2>3. Lleva calzado cómodo y adecuado</h2>
-<p>Bahia Palace ocupa aproximadamente 8.000 metros cuadrados. Caminarás sobre suelos de zellige pulido (preciosos; también resbaladizos), pasillos de piedra irregular entre secciones y umbrales elevados entre habitaciones. Los tacones son mala idea. Las chanclas sin agarre son un peligro. Lleva zapatos planos de punta cerrada o sandalias con suela adecuada. No hace falta descalzarse — Bahia Palace no es una mezquita.</p>
+<p>La zona visitable de Bahia Palace ocupa aproximadamente 8.000 metros cuadrados. Caminarás sobre suelos de zellige pulido (preciosos; también resbaladizos), pasillos de piedra irregular entre secciones y umbrales elevados entre habitaciones. Los tacones son mala idea. Las chanclas sin agarre son un peligro. Lleva zapatos planos de punta cerrada o sandalias con suela adecuada. No hace falta descalzarse — Bahia Palace no es una mezquita.</p>
 
 <h2>4. Lleva agua (y efectivo)</h2>
 <p><strong>Agua:</strong> Incluso en primavera y otoño, las temperaturas suben a 25-30 °C a mediodía. No hay cafetería ni fuente de agua una vez dentro. Lleva una botella.</p>
@@ -62,7 +62,7 @@ excerpt: 10 imprescindibles antes de visitar Bahia Palace en Marrakech: horarios
 
 <h2>Preguntas frecuentes</h2>
 <h3>¿Vale la pena visitar Bahia Palace?</h3>
-<p>Sí, sin dudarlo. Es uno de los mejores ejemplos de arquitectura hispano-marroquí del país, con 8.000 metros cuadrados de techos pintados, patios de mosaico y estucos tallados. Para los apasionados de la arquitectura y la historia es uno de los puntos culminantes de cualquier viaje a Marruecos. Incluso para los visitantes casuales, una hora y media dentro es tiempo muy bien empleado.</p>
+<p>Sí, sin dudarlo. Es uno de los mejores ejemplos de arquitectura hispano-marroquí del país, con aproximadamente 8.000 metros cuadrados de techos pintados, patios de mosaico y estucos tallados abiertos al público. Para los apasionados de la arquitectura y la historia es uno de los puntos culminantes de cualquier viaje a Marruecos. Incluso para los visitantes casuales, una hora y media dentro es tiempo muy bien empleado.</p>
 <h3>¿Es Bahia Palace adecuado para niños?</h3>
 <p>Sí. Hay mucho que mirar, espacio para caminar y los jardines al aire libre son atractivos para los visitantes más jóvenes. Los niños menores de 7 años entran gratis. La principal consideración práctica es la distancia a pie por la medina — lleva un carrito si es necesario, y ten en cuenta que algunos vanos de puerta tienen umbrales elevados.</p>
 <h3>¿Puedo sacar fotos dentro de Bahia Palace?</h3>

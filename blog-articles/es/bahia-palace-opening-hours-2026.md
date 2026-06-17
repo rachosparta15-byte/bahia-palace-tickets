@@ -38,7 +38,7 @@ excerpt: Horarios Bahia Palace 2026: programa diario, cierres festivos, mejor ho
 <p><strong>Veredicto:</strong> Llega a la apertura (9:00) o después de las 15:00. Evita la franja de 11:00 a 14:00 si puedes.</p>
 
 <h2>¿Cuánto dura una visita?</h2>
-<p>La mayoría de los visitantes pasan entre <strong>1 hora y 1,5 horas</strong> dentro de Bahia Palace. El palacio cubre aproximadamente 8.000 metros cuadrados repartidos en varios patios, jardines, salones de recepción y los antiguos aposentos del harén — suficiente para mantenerte enganchado sin agotarte.</p>
+<p>La mayoría de los visitantes pasan entre <strong>1 hora y 1,5 horas</strong> dentro de Bahia Palace. La zona abierta al público cubre aproximadamente 8.000 metros cuadrados repartidos en varios patios, jardines, salones de recepción y los antiguos aposentos del harén — suficiente para mantenerte enganchado sin agotarte.</p>
 <p>Si eres fotógrafo o apasionado de la historia y quieres detenerte en cada sala, calcula <strong>2 horas</strong>. Si viajas con niños o lo combinas con otros sitios el mismo día (las Tumbas Saadíes están a 10 minutos a pie), <strong>60–75 minutos</strong> es realista.</p>
 <p>Qué alarga la visita: esperar en la cola de la taquilla (puede añadir 20–45 minutos), las audioguías o las visitas guiadas, fotografiar los detalles en los patios alicatados. Qué la acorta: tener una <a href="/es/tickets/skip-the-line">entrada skip-the-line</a> reservada, visitar en horario de menor afluencia.</p>
 

@@ -30,7 +30,7 @@ excerpt: Bahia Palace vs Majorelle Garten — Preis, Zeit, Besucherzahlen, Fotog
 </table>
 
 <h2>Bahia Palace: Was Sie erhalten</h2>
-<p>Bahia Palace ist ein Königspalast aus dem 19. Jahrhundert, der 8.000 Quadratmeter über mehrere Innenhöfe, Empfangssäle, Haremgemächer und Gärten umfasst. Die Architektur ist der eigentliche Kern — handbemalte Zedernholzdecken, zellige-Fliesenböden, geschnitzte Stuckarkaden und Orangenbaum-Gärten, die sich seit 125 Jahren kaum verändert haben.</p>
+<p>Bahia Palace ist ein Königspalast aus dem 19. Jahrhundert mit einem Gesamtkomplex von rund 8 Hektar — der für Besucher zugängliche Bereich umfasst etwa 8.000 Quadratmeter über mehrere Innenhöfe, Empfangssäle, Haremgemächer und Gärten. Die Architektur ist der eigentliche Kern — handbemalte Zedernholzdecken, zellige-Fliesenböden, geschnitzte Stuckarkaden und Orangenbaum-Gärten, die sich seit 125 Jahren kaum verändert haben.</p>
 <p><strong>Was es bietet:</strong> Ein echtes Gefühl, in eine andere Ära einzutreten. Allein der Grand Riad-Innenhof lässt die meisten Besucher verweilen. Die Geschichte ist real und dramatisch — Großwesir Ba Ahmed baute den größten Privatpalast Marokkos, starb 1900, und der Palast wurde noch in der gleichen Nacht vom Sultan geplündert.</p>
 <p><strong>Für wen:</strong> Geschichtsbegeisterte, Architekturliebhaber, Fotografen, die Innenaufnahmen mögen, und alle, die am marokkanischen Kulturerbe interessiert sind.</p>
 <p><strong>Ehrlicher Nachteil:</strong> Die Räume sind leer — keine originalen Möbel oder Dekorationsgegenstände sind erhalten. Manche Besucher finden das ohne Kontext enttäuschend. Ein Audioguide oder vorige Lektüre macht einen erheblichen Unterschied.</p>

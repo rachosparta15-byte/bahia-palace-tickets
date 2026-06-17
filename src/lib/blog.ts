@@ -133,9 +133,9 @@ const posts: BlogPost[] = [
 
 <h2>What's Genuinely Impressive</h2>
 <h3>The Scale</h3>
-<p>Most visitors underestimate it. They expect a riad-sized palace and find 8,000 square meters of interconnected courtyards, reception halls, harem quarters, and gardens. The Grand Riad alone — 1,500 square meters of zellige tilework under open sky — stops people mid-stride. This doesn't happen often in a medina where you've been walking through shoulder-width alleys for an hour.</p>
+<p>Most visitors underestimate it. They expect a riad-sized palace and find roughly 8,000 square meters of interconnected courtyards, reception halls, harem quarters, and gardens open to visitors. The Grand Riad alone — 1,500 square meters of zellige tilework under open sky — stops people mid-stride. This doesn't happen often in a medina where you've been walking through shoulder-width alleys for an hour.</p>
 <h3>The Craftwork</h3>
-<p>The hand-painted cedar ceilings are legitimately extraordinary. 300 craftsmen from Fez worked on this building between 1894 and 1900, and their work shows. No two ceiling panels are identical. The mineral pigments — blues, golds, reds, terracottas — have barely faded in 125 years. The zellige tilework, the carved stucco arabesque panels, the Carrara marble columns: every material is high quality and in good condition. You're looking at the best version of what Moroccan craft could produce at its peak.</p>
+<p>The hand-painted cedar ceilings are legitimately extraordinary. Thousands of skilled craftsmen from Fez worked on this building over multiple years, and their work shows. No two ceiling panels are identical. The mineral pigments — blues, golds, reds, terracottas — have barely faded in 125 years. The zellige tilework, the carved stucco arabesque panels, the Carrara marble columns: every material is high quality and in good condition. You're looking at the best version of what Moroccan craft could produce at its peak.</p>
 <h3>The Gardens</h3>
 <p>The gardens behind the formal rooms are planted with jasmine, roses, orange trees, banana trees, and cypress. In spring, the scent is remarkable. In summer, they're a genuine retreat from the heat. Most visitors spend five minutes in the garden on the way out; the people who sit here for twenty minutes consistently describe it as their favourite part of the visit.</p>
 <h3>The Story</h3>
@@ -167,7 +167,7 @@ const posts: BlogPost[] = [
 <h3>Is Bahia Palace worth it for non-history lovers?</h3>
 <p>Yes. You don't need to be a history enthusiast to be impressed by Bahia Palace. The architectural quality and the scale of the Grand Riad are visually striking even without context. That said, knowing the story of Ba Ahmed — a slave who became the most powerful man in Morocco — makes the visit significantly richer. Five minutes of reading before you go is well worth the investment.</p>
 <h3>Is 100 MAD good value for Bahia Palace?</h3>
-<p>Yes. 100 MAD is approximately €9 or $10. For that price you get 8,000 square meters of exceptional Moroccan architecture, 90 minutes of exploration, and access to one of the country's most significant cultural heritage sites. It's cheaper than Majorelle Garden (150 MAD) while offering more cultural content.</p>
+<p>Yes. 100 MAD is approximately €9 or $10. For that price you get roughly 8,000 square meters of exceptional Moroccan architecture open to visitors, 90 minutes of exploration, and access to one of the country's most significant cultural heritage sites. It's cheaper than Majorelle Garden (150 MAD) while offering more cultural content.</p>
 <h3>What's the best way to prepare for a visit to Bahia Palace?</h3>
 <p>Read a brief account of Ba Ahmed ibn Moussa's story before you visit — this blog's <a href="/en/blog/bahia-palace-history">history article</a> covers it in full. Know that the rooms are intentionally empty (the reason is part of the story). Arrive at 9:00 AM for the best light and fewest crowds. Book your <a href="/en/tickets/skip-the-line">skip-the-line ticket</a> in advance so you're inside within minutes of arriving.</p>`,
     ],
@@ -185,9 +185,9 @@ const posts: BlogPost[] = [
 
 <h2>Ce qui est vraiment impressionnant</h2>
 <h3>L'échelle</h3>
-<p>La plupart des visiteurs la sous-estiment. Ils s'attendent à un palais de la taille d'un riad et trouvent 8 000 mètres carrés de cours interconnectées, salles de réception, appartements du harem et jardins. Le Grand Riad seul — 1 500 mètres carrés de zellige sous ciel ouvert — arrête les gens en pleine marche. Ça n'arrive pas souvent dans une medina où l'on se faufile depuis une heure dans des ruelles larges d'une épaule.</p>
+<p>La plupart des visiteurs la sous-estiment. Ils s'attendent à un palais de la taille d'un riad et trouvent environ 8 000 mètres carrés de cours interconnectées, salles de réception, appartements du harem et jardins ouverts aux visiteurs. Le Grand Riad seul — 1 500 mètres carrés de zellige sous ciel ouvert — arrête les gens en pleine marche. Ça n'arrive pas souvent dans une medina où l'on se faufile depuis une heure dans des ruelles larges d'une épaule.</p>
 <h3>L'artisanat</h3>
-<p>Les plafonds en cèdre peints à la main sont légitimement extraordinaires. 300 artisans de Fès ont travaillé sur ce bâtiment entre 1894 et 1900, et leur travail se voit. Aucun panneau de plafond n'est identique. Les pigments minéraux — bleus, ors, rouges, terres cuites — ont à peine pâli en 125 ans. Le zellige, les panneaux d'arabesques en stuc sculpté, les colonnes en marbre de Carrare : chaque matériau est de haute qualité et en bon état.</p>
+<p>Les plafonds en cèdre peints à la main sont légitimement extraordinaires. Des milliers d'artisans qualifiés de Fès ont travaillé sur ce bâtiment pendant de nombreuses années, et leur travail se voit. Aucun panneau de plafond n'est identique. Les pigments minéraux — bleus, ors, rouges, terres cuites — ont à peine pâli en 125 ans. Le zellige, les panneaux d'arabesques en stuc sculpté, les colonnes en marbre de Carrare : chaque matériau est de haute qualité et en bon état.</p>
 <h3>Les jardins</h3>
 <p>Les jardins derrière les salles formelles sont plantés de jasmin, roses, orangers, bananiers et cyprès. Au printemps, le parfum est remarquable. En été, c'est un vrai refuge contre la chaleur. La plupart des visiteurs passent cinq minutes dans le jardin en sortant ; ceux qui y restent vingt minutes le décrivent systématiquement comme leur partie préférée de la visite.</p>
 <h3>L'histoire</h3>
@@ -219,7 +219,7 @@ const posts: BlogPost[] = [
 <h3>Bahia Palace vaut-il le détour pour les non-passionnés d'histoire ?</h3>
 <p>Oui. Il n'est pas nécessaire d'être un passionné d'histoire pour être impressionné par Bahia Palace. La qualité architecturale et l'échelle du Grand Riad sont visuellement frappantes même sans contexte. Cinq minutes de lecture avant de partir valent largement l'investissement.</p>
 <h3>100 MAD, est-ce un bon rapport qualité-prix pour Bahia Palace ?</h3>
-<p>Oui. 100 MAD représente environ 9€ ou 10$. Pour ce prix, vous obtenez 8 000 mètres carrés d'architecture marocaine exceptionnelle, 90 minutes d'exploration et l'accès à l'un des sites du patrimoine culturel les plus importants du pays. C'est moins cher que le Jardin Majorelle (150 MAD) tout en offrant plus de contenu culturel.</p>
+<p>Oui. 100 MAD représente environ 9€ ou 10$. Pour ce prix, vous obtenez environ 8 000 mètres carrés d'architecture marocaine exceptionnelle ouverts aux visiteurs, 90 minutes d'exploration et l'accès à l'un des sites du patrimoine culturel les plus importants du pays. C'est moins cher que le Jardin Majorelle (150 MAD) tout en offrant plus de contenu culturel.</p>
 <h3>Quelle est la meilleure façon de se préparer à une visite de Bahia Palace ?</h3>
 <p>Lisez un bref récit de l'histoire de Ba Ahmed ibn Moussa avant de visiter — l'<a href="/fr/blog/bahia-palace-history">article d'histoire</a> de ce blog la couvre en intégralité. Arrivez à 9h00 et réservez votre <a href="/fr/tickets/skip-the-line">billet skip-the-line</a> à l'avance.</p>`,
     ],
@@ -237,9 +237,9 @@ const posts: BlogPost[] = [
 
 <h2>Cosa è davvero impressionante</h2>
 <h3>La scala</h3>
-<p>La maggior parte dei visitatori la sottovaluta. Si aspettano un palazzo delle dimensioni di un riad e trovano 8.000 metri quadrati di cortili interconnessi, sale di ricevimento, appartamenti dell'harem e giardini. Il Grand Riad da solo — 1.500 metri quadrati di zellige a cielo aperto — ferma le persone a metà passo.</p>
+<p>La maggior parte dei visitatori la sottovaluta. Si aspettano un palazzo delle dimensioni di un riad e trovano circa 8.000 metri quadrati di cortili interconnessi, sale di ricevimento, appartamenti dell'harem e giardini aperti ai visitatori. Il Grand Riad da solo — 1.500 metri quadrati di zellige a cielo aperto — ferma le persone a metà passo.</p>
 <h3>L'artigianato</h3>
-<p>I soffitti in cedro dipinti a mano sono straordinari. 300 artigiani di Fès hanno lavorato su questo edificio tra il 1894 e il 1900, e il loro lavoro si vede. Nessun pannello del soffitto è identico a un altro. I pigmenti minerali — blu, oro, rossi, terracotte — si sono appena sbiaditi in 125 anni.</p>
+<p>I soffitti in cedro dipinti a mano sono straordinari. Migliaia di artigiani qualificati di Fès hanno lavorato su questo edificio per molti anni, e il loro lavoro si vede. Nessun pannello del soffitto è identico a un altro. I pigmenti minerali — blu, oro, rossi, terracotte — si sono appena sbiaditi in 125 anni.</p>
 <h3>I giardini</h3>
 <p>I giardini dietro le sale formali sono piantati con gelsomino, rose, aranci, banani e cipressi. In primavera, il profumo è straordinario. In estate, sono un vero rifugio dal calore.</p>
 <h3>La storia</h3>
@@ -271,7 +271,7 @@ const posts: BlogPost[] = [
 <h3>Bahia Palace vale la pena per chi non è appassionato di storia?</h3>
 <p>Sì. Non è necessario essere appassionati di storia per essere impressionati da Bahia Palace. La qualità architettonica e la scala del Grand Riad sono visivamente colpenti anche senza contesto. Cinque minuti di lettura prima di andare valgono ampiamente l'investimento.</p>
 <h3>100 MAD è un buon rapporto qualità-prezzo per Bahia Palace?</h3>
-<p>Sì. 100 MAD corrispondono a circa 9€ o 10$. Per quel prezzo si ottengono 8.000 metri quadrati di architettura marocchina eccezionale, 90 minuti di esplorazione e l'accesso a uno dei siti del patrimonio culturale più importanti del paese. È più economico del Giardino Majorelle (150 MAD) offrendo più contenuto culturale.</p>
+<p>Sì. 100 MAD corrispondono a circa 9€ o 10$. Per quel prezzo si ottengono circa 8.000 metri quadrati di architettura marocchina eccezionale aperti ai visitatori, 90 minuti di esplorazione e l'accesso a uno dei siti del patrimonio culturale più importanti del paese. È più economico del Giardino Majorelle (150 MAD) offrendo più contenuto culturale.</p>
 <h3>Qual è il modo migliore per prepararsi a una visita di Bahia Palace?</h3>
 <p>Leggete una breve storia di Ba Ahmed ibn Moussa prima di visitare — l'<a href="/it/blog/bahia-palace-history">articolo di storia</a> di questo sito la tratta per intero. Arrivate alle 9:00 e prenotate il vostro <a href="/it/tickets/skip-the-line">biglietto skip-the-line</a> in anticipo.</p>`,
     ],
@@ -289,9 +289,9 @@ const posts: BlogPost[] = [
 
 <h2>Was wirklich beeindruckend ist</h2>
 <h3>Die Dimension</h3>
-<p>Die meisten Besucher unterschätzen sie. Sie erwarten einen Palast in riad-Größe und finden 8.000 Quadratmeter miteinander verbundener Innenhöfe, Empfangssäle, Haremgemächer und Gärten. Der Grand Riad allein — 1.500 Quadratmeter zellige unter freiem Himmel — lässt Menschen mitten im Schritt innehalten.</p>
+<p>Die meisten Besucher unterschätzen sie. Sie erwarten einen Palast in riad-Größe und finden rund 8.000 Quadratmeter miteinander verbundener Innenhöfe, Empfangssäle, Haremgemächer und Gärten, die für Besucher zugänglich sind. Der Grand Riad allein — 1.500 Quadratmeter zellige unter freiem Himmel — lässt Menschen mitten im Schritt innehalten.</p>
 <h3>Das Handwerk</h3>
-<p>Die handbemalten Zedernholzdecken sind schlicht außergewöhnlich. 300 Handwerker aus Fès arbeiteten zwischen 1894 und 1900 an diesem Gebäude, und ihre Arbeit ist sichtbar. Keine zwei Deckenplatten sind identisch. Die mineralischen Pigmente — Blau, Gold, Rot, Terrakotta — sind in 125 Jahren kaum verblasst.</p>
+<p>Die handbemalten Zedernholzdecken sind schlicht außergewöhnlich. Tausende qualifizierter Handwerker aus Fès arbeiteten über viele Jahre an diesem Gebäude, und ihre Arbeit ist sichtbar. Keine zwei Deckenplatten sind identisch. Die mineralischen Pigmente — Blau, Gold, Rot, Terrakotta — sind in 125 Jahren kaum verblasst.</p>
 <h3>Die Gärten</h3>
 <p>Die Gärten hinter den Repräsentationsräumen sind mit Jasmin, Rosen, Orangenbäumen, Bananenbäumen und Zypressen bepflanzt. Im Frühling ist der Duft bemerkenswert. Im Sommer sind sie ein echter Rückzugsort vor der Hitze.</p>
 <h3>Die Geschichte</h3>
@@ -323,7 +323,7 @@ const posts: BlogPost[] = [
 <h3>Lohnt sich Bahia Palace für Nicht-Geschichtsbegeisterte?</h3>
 <p>Ja. Man muss kein Geschichtsenthusiast sein, um von Bahia Palace beeindruckt zu sein. Die architektonische Qualität und die Dimension des Grand Riad sind visuell beeindruckend, auch ohne Kontext. Fünf Minuten Lektüre vor dem Besuch sind die Investition absolut wert.</p>
 <h3>Ist Bahia Palace für 100 MAD ein gutes Preis-Leistungs-Verhältnis?</h3>
-<p>Ja. 100 MAD sind ungefähr 9€ oder 10$. Dafür erhalten Sie 8.000 Quadratmeter außergewöhnlicher marokkanischer Architektur, 90 Minuten Erkundung und Zugang zu einer der bedeutendsten Kulturerbestätten des Landes. Es ist günstiger als der Majorelle-Garten (150 MAD) und bietet mehr kulturellen Inhalt.</p>
+<p>Ja. 100 MAD sind ungefähr 9€ oder 10$. Dafür erhalten Sie rund 8.000 Quadratmeter außergewöhnlicher marokkanischer Architektur, die für Besucher zugänglich sind, 90 Minuten Erkundung und Zugang zu einer der bedeutendsten Kulturerbestätten des Landes. Es ist günstiger als der Majorelle-Garten (150 MAD) und bietet mehr kulturellen Inhalt.</p>
 <h3>Was ist die beste Art, sich auf einen Besuch in Bahia Palace vorzubereiten?</h3>
 <p>Lesen Sie vor dem Besuch einen kurzen Bericht über die Geschichte von Ba Ahmed ibn Moussa — der <a href="/de/blog/bahia-palace-history">Geschichtsartikel</a> auf dieser Website deckt alles ab. Kommen Sie um 9:00 Uhr und buchen Sie Ihr <a href="/de/tickets/skip-the-line">skip-the-line-Ticket</a> im Voraus.</p>`,
     ],
@@ -341,9 +341,9 @@ const posts: BlogPost[] = [
 
 <h2>Lo que es genuinamente impresionante</h2>
 <h3>La escala</h3>
-<p>La mayoría de los visitantes la subestima. Esperan un palacio del tamaño de un riad y encuentran 8.000 metros cuadrados de patios interconectados, salas de recepción, aposentos del harén y jardines. El Grand Riad solo — 1.500 metros cuadrados de zellige bajo cielo abierto — detiene a la gente en seco.</p>
+<p>La mayoría de los visitantes la subestima. Esperan un palacio del tamaño de un riad y encuentran aproximadamente 8.000 metros cuadrados de patios interconectados, salas de recepción, aposentos del harén y jardines abiertos al público. El Grand Riad solo — 1.500 metros cuadrados de zellige bajo cielo abierto — detiene a la gente en seco.</p>
 <h3>La artesanía</h3>
-<p>Los techos de cedro pintados a mano son legítimamente extraordinarios. 300 artesanos de Fez trabajaron en este edificio entre 1894 y 1900, y su trabajo se nota. No hay dos paneles de techo idénticos. Los pigmentos minerales — azules, dorados, rojos, terracotas — apenas se han desvanecido en 125 años.</p>
+<p>Los techos de cedro pintados a mano son legítimamente extraordinarios. Miles de artesanos cualificados de Fez trabajaron en este edificio durante muchos años, y su trabajo se nota. No hay dos paneles de techo idénticos. Los pigmentos minerales — azules, dorados, rojos, terracotas — apenas se han desvanecido en 125 años.</p>
 <h3>Los jardines</h3>
 <p>Los jardines detrás de las salas formales están plantados con jazmín, rosas, naranjos, bananeros y cipreses. En primavera, el aroma es extraordinario. En verano, son un auténtico refugio del calor.</p>
 <h3>La historia</h3>
@@ -375,7 +375,7 @@ const posts: BlogPost[] = [
 <h3>¿Vale la pena Bahia Palace para quienes no son amantes de la historia?</h3>
 <p>Sí. No es necesario ser un entusiasta de la historia para quedarse impresionado por Bahia Palace. La calidad arquitectónica y la escala del Grand Riad son visualmente llamativas incluso sin contexto. Cinco minutos de lectura antes de ir bien valen la inversión.</p>
 <h3>¿Son 100 MAD un buen valor para Bahia Palace?</h3>
-<p>Sí. 100 MAD son aproximadamente 9€ o 10$. Por ese precio obtienes 8.000 metros cuadrados de excepcional arquitectura marroquí, 90 minutos de exploración y acceso a uno de los sitios del patrimonio cultural más importantes del país. Es más barato que el Jardín Majorelle (150 MAD) con más contenido cultural.</p>
+<p>Sí. 100 MAD son aproximadamente 9€ o 10$. Por ese precio obtienes aproximadamente 8.000 metros cuadrados de excepcional arquitectura marroquí abiertos al público, 90 minutos de exploración y acceso a uno de los sitios del patrimonio cultural más importantes del país. Es más barato que el Jardín Majorelle (150 MAD) con más contenido cultural.</p>
 <h3>¿Cuál es la mejor manera de prepararse para una visita a Bahia Palace?</h3>
 <p>Lee un breve relato de la historia de Ba Ahmed ibn Moussa antes de visitar — el <a href="/es/blog/bahia-palace-history">artículo de historia</a> de este blog lo cubre íntegramente. Llega a las 9:00 y reserva tu <a href="/es/tickets/skip-the-line">entrada skip-the-line</a> con antelación.</p>`,
     ],

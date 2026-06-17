@@ -11,7 +11,7 @@ tags: what to see in bahia palace,bahia palace rooms,bahia palace interior,bahia
 excerpt: Guida completa stanza per stanza di Bahia Palace: cosa osservare in ogni sezione, i migliori spot fotografici e ciò che la maggior parte dei visitatori supera senza notare.
 ---
 
-<p>Bahia Palace copre 8.000 metri quadrati e la maggior parte dei visitatori lo percorre in un giro vago, incerti su cosa stiano guardando o se abbiano visto tutto. Questa guida risolve il problema. Ecco esattamente cosa incontrerete, sezione per sezione, e cosa vale la pena rallentare per osservare in ognuna.</p>
+<p>La zona aperta ai visitatori di Bahia Palace copre circa 8.000 metri quadrati, e la maggior parte dei visitatori la percorre in un giro vago, incerti su cosa stiano guardando o se abbiano visto tutto. Questa guida risolve il problema. Ecco esattamente cosa incontrerete, sezione per sezione, e cosa vale la pena rallentare per osservare in ognuna.</p>
 
 <h2>L'ingresso principale</h2>
 <p>Si entra attraverso pesanti porte in legno sulla Rue Riad Zitoun el Jedid. Il corridoio d'ingresso è deliberatamente sobrio — stretto, fresco e scarsamente illuminato dopo la strada luminosa. È intenzionale: rende il primo cortile in cui si entra drammaticamente più spazioso di quanto sarebbe altrimenti.</p>

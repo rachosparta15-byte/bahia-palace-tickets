@@ -22,7 +22,7 @@ excerpt: Ja, beide an einem halben Tag. Genauer Zeitplan, beste Reihenfolge, was
 
 <h2>Kurzer Überblick über jeden Standort</h2>
 <h3>Bahia Palace</h3>
-<p>Ein königlicher Palast aus dem 19. Jahrhundert mit 8.000 Quadratmetern — große Innenhöfe, Haremgemächer, bemalte Zedernholzdecken, zellige-Fliesenwerk und Gärten. Gebaut von Großwesir Ba Ahmed zwischen 1894 und 1900. Eintritt: <strong>100 MAD</strong> (ausländische Erwachsene). Benötigte Zeit: <strong>60–90 Minuten</strong>.</p>
+<p>Ein königlicher Palast aus dem 19. Jahrhundert mit einem Gesamtkomplex von rund 8 Hektar (etwa 8.000 m² davon für Besucher zugänglich) — große Innenhöfe, Haremgemächer, bemalte Zedernholzdecken, zellige-Fliesenwerk und Gärten. Gebaut von Großwesir Ba Ahmed zwischen 1894 und 1900. Eintritt: <strong>100 MAD</strong> (ausländische Erwachsene). Benötigte Zeit: <strong>60–90 Minuten</strong>.</p>
 <h3>Saadische Gräber</h3>
 <p>Ein königliches Mausoleum aus dem 16. Jahrhundert, erbaut für die Saadische Dynastie unter Sultan Ahmad al-Mansur. Drei Kammern mit außergewöhnlichen geschnitzten Stuckarbeiten und zellige umgeben die Gräber von 66 Mitgliedern der Königsfamilie. Im 17. Jahrhundert von Sultan Moulay Ismail versiegelt und erst 1917 wiederentdeckt. Eintritt: <strong>70 MAD</strong>. Benötigte Zeit: <strong>30–45 Minuten</strong>.</p>
 

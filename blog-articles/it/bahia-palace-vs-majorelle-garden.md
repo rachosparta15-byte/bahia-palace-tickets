@@ -30,7 +30,7 @@ excerpt: Bahia Palace vs Giardino Majorelle — prezzo, tempo, folla, fotografia
 </table>
 
 <h2>Bahia Palace: cosa offre</h2>
-<p>Bahia Palace è un palazzo reale del XIX secolo che si estende su 8.000 metri quadrati tra più cortili, sale di ricevimento, appartamenti dell'harem e giardini. L'architettura è il punto centrale — soffitti in cedro dipinti a mano, pavimenti in zellige, arcate in stucco scolpito e giardini di aranci che sono rimasti quasi invariati da 125 anni.</p>
+<p>Bahia Palace è un palazzo reale del XIX secolo con un complesso totale di circa 8 ettari — la zona aperta ai visitatori si estende su circa 8.000 metri quadrati tra più cortili, sale di ricevimento, appartamenti dell'harem e giardini. L'architettura è il punto centrale — soffitti in cedro dipinti a mano, pavimenti in zellige, arcate in stucco scolpito e giardini di aranci che sono rimasti quasi invariati da 125 anni.</p>
 <p><strong>Cosa offre:</strong> Una vera sensazione di immergersi in un'altra epoca. Il cortile del Grand Riad da solo fa fermare la maggior parte dei visitatori. La storia è reale e drammatica — il Gran Visir Ba Ahmed ha costruito il più grande palazzo privato del Marocco, è morto nel 1900 e il palazzo è stato svuotato durante la notte dal Sultano.</p>
 <p><strong>Per chi:</strong> Appassionati di storia, amanti dell'architettura, fotografi che amano gli interni, e chiunque sia interessato al patrimonio culturale marocchino.</p>
 <p><strong>Punto debole onesto:</strong> Le stanze sono vuote — non rimane alcun mobile né oggetto decorativo originale. Alcuni visitatori trovano questo deludente senza contesto. Un'audioguida o letture preparatorie fanno una differenza significativa.</p>

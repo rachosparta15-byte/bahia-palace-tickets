@@ -22,7 +22,7 @@ excerpt: Sì, entrambi in mezza giornata. Ecco gli orari esatti, il miglior ordi
 
 <h2>Panoramica rapida di ciascun sito</h2>
 <h3>Bahia Palace</h3>
-<p>Un palazzo reale del XIX secolo di 8.000 metri quadrati — grandi cortili, quartieri dell'harem, soffitti in cedro dipinti, zellige e giardini. Costruito dal Gran Visir Ba Ahmed tra il 1894 e il 1900. Ingresso: <strong>100 MAD</strong> (adulti stranieri). Tempo necessario: <strong>60–90 minuti</strong>.</p>
+<p>Un palazzo reale del XIX secolo con un complesso totale di circa 8 ettari (con circa 8.000 m² aperti ai visitatori) — grandi cortili, quartieri dell'harem, soffitti in cedro dipinti, zellige e giardini. Costruito dal Gran Visir Ba Ahmed tra il 1894 e il 1900. Ingresso: <strong>100 MAD</strong> (adulti stranieri). Tempo necessario: <strong>60–90 minuti</strong>.</p>
 <h3>Tombe Saadiane</h3>
 <p>Un mausoleo reale del XVI secolo costruito per la dinastia saadiana sotto il sultano Ahmad al-Mansur. Tre camere di straordinari stucchi e zellige scolpiti circondano le tombe di 66 membri della famiglia reale. Chiuse dal sultano Moulay Ismail nel XVII secolo e riscoperte solo nel 1917. Ingresso: <strong>70 MAD</strong>. Tempo necessario: <strong>30–45 minuti</strong>.</p>
 

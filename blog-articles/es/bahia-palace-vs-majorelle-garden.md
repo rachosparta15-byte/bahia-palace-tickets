@@ -30,7 +30,7 @@ excerpt: Bahia Palace vs Jardín Majorelle — precio, tiempo, aglomeraciones, f
 </table>
 
 <h2>Bahia Palace: qué obtienes</h2>
-<p>Bahia Palace es un palacio real del siglo XIX que ocupa 8.000 metros cuadrados repartidos en varios patios, salas de recepción, aposentos del harén y jardines. La arquitectura es el punto central — techos de cedro pintados a mano, suelos de zellige, arcadas de estuco tallado y jardines de naranjos que apenas han cambiado en 125 años.</p>
+<p>Bahia Palace es un palacio real del siglo XIX con un complejo total de aproximadamente 8 hectáreas — la zona abierta al público abarca unos 8.000 metros cuadrados repartidos en varios patios, salas de recepción, aposentos del harén y jardines. La arquitectura es el punto central — techos de cedro pintados a mano, suelos de zellige, arcadas de estuco tallado y jardines de naranjos que apenas han cambiado en 125 años.</p>
 <p><strong>Qué ofrece:</strong> Una genuina sensación de adentrarse en otra época. El patio del Grand Riad por sí solo detiene a la mayoría de los visitantes. La historia es real y dramática — el Gran Visir Ba Ahmed construyó el mayor palacio privado de Marruecos, murió en 1900 y fue vaciado en una noche por el Sultán.</p>
 <p><strong>Para quién:</strong> Entusiastas de la historia, amantes de la arquitectura, fotógrafos que trabajan bien con interiores, y cualquier persona interesada en el patrimonio cultural marroquí.</p>
 <p><strong>Inconveniente honesto:</strong> Las habitaciones están vacías — no quedan muebles ni objetos decorativos originales. Algunos visitantes lo encuentran decepcionante sin contexto. Una audioguía o lectura previa marca una diferencia significativa.</p>

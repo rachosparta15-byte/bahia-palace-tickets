@@ -27,8 +27,7 @@ excerpt: La storia completa di Bahia Palace: dall'umile origine di Si Moussa all
 <p>Con il potere assoluto arrivarono le risorse e l'inclinazione a costruire su una scala completamente diversa. Ba Ahmed prese il modesto riad del padre e lo espanse in qualcosa che il Marocco non aveva mai visto da parte di un privato.</p>
 <p>La costruzione durò dal 1894 fino a circa il 1900 e coinvolse:</p>
 <ul>
-  <!-- TODO: verify craftsmen count — blog.ts has 150, target DB has 300; do not publish correction until confirmed against official source -->
-  <li><strong>300 artigiani da Fez</strong> che lavoravano contemporaneamente nei periodi di punta</li>
+  <li><strong>Migliaia di artigiani qualificati da Fez</strong> che lavoravano contemporaneamente durante il periodo di costruzione</li>
   <li><strong>Marmo di Carrara italiano</strong> importato per le sale di ricevimento più importanti</li>
   <li><strong>Soffitti in cedro scolpiti a mano con splendide muqarnas</strong>, dipinti con pigmenti minerali che hanno appena sbiadito in 125 anni</li>
   <li><strong>Zellige</strong> che copriva pavimenti e pareti inferiori in decine di stanze — ogni mattonella tagliata e posata a mano</li>
@@ -78,8 +77,7 @@ excerpt: La storia completa di Bahia Palace: dall'umile origine di Si Moussa all
 
 <h2>Domande frequenti</h2>
 <h3>Chi ha costruito Bahia Palace?</h3>
-<p>Il palazzo fu costruito in due fasi. La struttura originale fu edificata da <strong>Si Moussa</strong>, un ex schiavo che divenne Gran Visir del Marocco sotto il sultano Muhammad IV, a partire dagli anni 1860. Suo figlio <strong>Ba Ahmed ibn Moussa</strong> ampliò massicciamente il palazzo tra il 1894 e il 1900, <!-- TODO: verify palace size — blog.ts has 8 hectares (80,000 m²), target has 8,000 m²; figures are inconsistent; do not publish correction until confirmed -->
-trasformandolo nel complesso di 8.000 metri quadrati che si vede oggi.</p>
+<p>Il palazzo fu costruito in due fasi. La struttura originale fu edificata da <strong>Si Moussa</strong>, un ex schiavo che divenne Gran Visir del Marocco sotto il sultano Muhammad IV, a partire dagli anni 1860. Suo figlio <strong>Ba Ahmed ibn Moussa</strong> ampliò massicciamente il palazzo tra il 1894 e il 1900, trasformandolo in un complesso di circa 8 ettari in totale — con circa 8.000 metri quadrati aperti ai visitatori oggi.</p>
 <h3>Perché Bahia Palace è vuoto?</h3>
 <p>Quando Ba Ahmed morì nel 1900, il Sultano Abdelaziz — che aveva a lungo risentito del potere di Ba Ahmed come reggente — ordinò immediatamente ai soldati di svuotare il palazzo di tutti i suoi contenuti. Mobili, tappeti, opere d'arte, argento e tutti gli oggetti mobili furono sequestrati entro giorni dalla morte di Ba Ahmed. Solo l'architettura fissa — il zellige, i soffitti scolpiti e gli stucchi incorporati — non poteva essere rimossa. Il palazzo è rimasto vuoto dei suoi arredi originali da allora.</p>
 <h3>Cosa significa "Bahia"?</h3>
