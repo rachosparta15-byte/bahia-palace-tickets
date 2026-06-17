@@ -30,7 +30,6 @@ export const DIGITAL_TICKET_OFFER_EXTRAS = {
     applicableCountry: 'MA',
     returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
     merchantReturnDays: 1,
-    returnMethod: 'https://schema.org/ReturnByMail',
     returnFees: 'https://schema.org/FreeReturn',
     merchantReturnLink: `${BASE}/en/refund-policy`,
   },
