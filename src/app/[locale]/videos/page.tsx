@@ -3,6 +3,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { LiteVideo } from '@/components/video/LiteVideo';
 import { buildAlternates, buildOG } from '@/lib/seo';
+import { VIDEO_TITLES } from '@/lib/videoTitles';
 import type { Metadata } from 'next';
 
 export const revalidate = 43200; // 12 h
@@ -103,7 +104,10 @@ export default async function VideosPage({ params }: Props) {
   const { locale } = await params;
   const meta = META[locale] ?? META.en;
   const tb = await getTranslations('breadcrumb');
-  const videos = await fetchVideos();
+  const videos = (await fetchVideos()).map((v) => ({
+    ...v,
+    title: VIDEO_TITLES[v.videoId] ?? v.title,
+  }));
 
   const videoSchemas = videos.map((v) => ({
     '@context': 'https://schema.org',

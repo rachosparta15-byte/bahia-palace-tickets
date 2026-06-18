@@ -1,0 +1,17 @@
+export const VIDEO_TITLES: Record<string, string> = {
+  'pLcovi-t89w': 'Bahia Palace Marrakech — A Walk Through the Grand Courtyard',
+  'aXuWn_NEcX4': 'Inside Bahia Palace: The Riad Garden & Orange Trees',
+  'wpcV7zjEjQY': 'Bahia Palace Ceilings — Hand-Painted Cedar Up Close',
+  'WdfiDU6NXzo': 'The Zellige Tilework of Bahia Palace, Marrakech',
+  'i6YoW46MoWA': 'Bahia Palace Marrakech — The Marble Courtyard',
+  'Z9dFbg2Hdo0': 'Exploring the Harem Quarters of Bahia Palace',
+  'V_ZP3ZMXsm4': 'Bahia Palace — Carved Stucco & Arabesque Details',
+  'FS1K7H4DlPs': 'A Quiet Morning Inside Bahia Palace, Marrakech',
+  '2IbmSOLfJAk': 'Bahia Palace Fountains & Reflecting Pools',
+  'OrLHOZWtAE4': 'The Horseshoe Arches of Bahia Palace',
+  'Y1ngOCqCJoA': 'Bahia Palace Marrakech — Stained Glass & Light',
+  'oydawKZ1_XI': 'Wandering the Inner Courtyards of Bahia Palace',
+  'BqsQDfZNz5k': 'Bahia Palace — The Grand Reception Hall',
+  'CDnSDu72vR8': 'Colours & Patterns of Bahia Palace, Marrakech',
+  'IFQNhMOSzEk': 'Bahia Palace Marrakech — A 60-Second Visual Tour',
+};
