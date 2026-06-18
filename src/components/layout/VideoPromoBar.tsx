@@ -46,6 +46,28 @@ export async function VideoPromoBar({ variant = 'A' }: Props) {
         </div>
         <span className="vpb-label">{t('promoBar')}</span>
       </Link>
+
+      {/* Moroccan arch — position:fixed escapes overflow:hidden; pointer-events:none keeps bar tappable */}
+      <span aria-hidden="true" className="vpb-arch" />
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        className="vpb-arch-svg"
+        width="220"
+        height="14"
+        viewBox="0 0 220 14"
+        style={{ overflow: 'visible' }}
+      >
+        <path
+          d="M 0 0 C 44 0 56 14 110 14 C 164 14 176 0 220 0"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+          strokeLinecap="round"
+        />
+        <circle cx="0"   cy="0" r="1.8" fill="currentColor" />
+        <circle cx="220" cy="0" r="1.8" fill="currentColor" />
+      </svg>
     </div>
   );
 }

@@ -64,7 +64,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <div className="flex flex-col min-h-screen" lang={locale}>
         <Header />
         <VideoPromoBar variant="C" />
-        <main className="flex-1 pt-[7.5rem]">{children}</main>
+        <main className="flex-1 pt-[134px]">{children}</main>
         <Footer />
         <WhatsAppButton />
         <StickyMobileCTA />

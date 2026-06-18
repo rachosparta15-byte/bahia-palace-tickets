@@ -79,7 +79,7 @@
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
-    scroll-padding-top: 7.5rem; /* header 80px + promo bar 40px */
+    scroll-padding-top: 134px; /* header 80px + promo bar 40px + arch 14px */
   }
 
   body {
@@ -365,11 +365,13 @@
 
 /* ── Label typography ───────────────────────────── */
 .vpb-label {
-  font-family: var(--font-heading); /* Cormorant Garamond — already loaded, no extra request */
-  font-size: 1.0625rem;             /* 17px — one step up from the 13px base, fits 40px bar */
+  font-family: var(--font-heading);
+  font-size: 1.25rem;               /* 20px */
   font-weight: 600;
   letter-spacing: 0.1em;
-  text-shadow: 0 0 10px rgba(245,210,122,0.45); /* warm champagne glow, static — not animated */
+  text-shadow:
+    0 1px 4px rgba(70,35,0,0.50),       /* warm directional shadow */
+    0 0 12px rgba(245,210,122,0.45);    /* champagne glow */
 }
 
 /* ── Shared animations ──────────────────────────── */
@@ -403,6 +405,47 @@
   .vpb-play            { animation: none; }
   .vpb-bar::after      { animation: none; display: none; }
   .vpb-b.vpb-bar::after { animation: none; display: none; }
+}
+
+/* ── Moroccan arch bottom edge ─────────────────────
+   Both elements are position:fixed so they escape the
+   bar's overflow:hidden (shimmer stays contained).
+   top:120px = header(80px) + bar(40px).             */
+.vpb-arch {
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 49;
+  pointer-events: none;
+  width: 220px;
+  height: 14px;
+  clip-path: path('M 0 0 C 44 0 56 14 110 14 C 164 14 176 0 220 0 Z');
+}
+.vpb-a .vpb-arch,
+.vpb-c .vpb-arch {
+  background: linear-gradient(90deg, #EFBA48 0%, #F7D87A 50%, #EFBA48 100%);
+  filter: drop-shadow(0 2px 4px rgba(100, 55, 0, 0.22));
+}
+.vpb-b .vpb-arch {
+  background: linear-gradient(90deg, #1C0D05 0%, #221106 50%, #1C0D05 100%);
+}
+
+.vpb-arch-svg {
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  pointer-events: none;
+  overflow: visible;
+}
+.vpb-a .vpb-arch-svg,
+.vpb-c .vpb-arch-svg {
+  color: rgba(152, 100, 20, 0.72);
+}
+.vpb-b .vpb-arch-svg {
+  color: rgba(232, 163, 61, 0.45);
 }
 
 /* ────────────────────────────────────────────────
