@@ -1,0 +1,12 @@
+{
+  "name": "Bahia Palace Tickets",
+  "short_name": "Bahia Palace",
+  "description": "Book Bahia Palace tickets online — skip the line, instant confirmation.",
+  "icons": [
+    { "src": "/bahia-palace-icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "theme_color": "#3D2817",
+  "background_color": "#FAF3E7",
+  "display": "standalone",
+  "start_url": "/"
+}

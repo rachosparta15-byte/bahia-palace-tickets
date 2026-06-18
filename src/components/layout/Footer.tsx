@@ -1,7 +1,7 @@
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { Mail } from 'lucide-react';
-import { LogoMark } from '@/components/ui/LogoMark';
 
 export function Footer() {
   const t = useTranslations('footer');
@@ -16,14 +16,14 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10 mb-12">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <LogoMark className="w-16 h-16 shrink-0" />
-              <span
-                className="text-white font-bold text-xl"
-                style={{ fontFamily: 'Cormorant Garamond, serif' }}
-              >
-                Bahia<span className="text-[#E8A33D]"> Palace</span>
-              </span>
+            <div className="mb-4">
+              <Image
+                src="/bahia-palace-logo-full.svg"
+                alt="Bahia Palace Marrakech"
+                width={360}
+                height={220}
+                className="w-[280px] h-auto"
+              />
             </div>
             <p className="text-[#C4A882] text-sm leading-relaxed mb-5">{t('tagline')}</p>
             <div className="space-y-2 text-sm text-[#C4A882]">

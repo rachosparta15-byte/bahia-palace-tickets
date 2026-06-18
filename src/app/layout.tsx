@@ -44,6 +44,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@bahiapalace',
   },
+  manifest: '/site.webmanifest',
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFY ?? '',
   },
