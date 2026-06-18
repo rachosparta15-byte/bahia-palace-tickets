@@ -147,17 +147,41 @@ export default async function HistoryPage({ params }: Props) {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
-              { label: 'Zellige Tiles', desc: 'Geometric mosaic tilework covering floors and lower walls' },
-              { label: 'Cedar Ceilings', desc: 'Hand-painted carved wood ceilings in every major room' },
-              { label: 'Stucco Plaster', desc: 'Intricate arabesque patterns on all interior walls' },
-              { label: 'Marble Floors', desc: 'Imported Italian marble in the grand courtyard' },
-            ].map(({ label, desc }) => (
-              <div key={label} className="bg-white rounded-xl border border-[#E8D5B7] p-4 text-center">
-                <p className="font-bold text-[#3D2817] text-sm mb-1">{label}</p>
-                <p className="text-xs text-[#8B6344] leading-snug">{desc}</p>
+              { label: 'Zellige Tiles',  desc: 'Geometric mosaic tilework covering floors and lower walls', img: '/images/gallery/bahia-palace-blue-door-courtyard.webp',       alt: 'Blue-painted door and zellige-tiled courtyard at Bahia Palace, Marrakech' },
+              { label: 'Cedar Ceilings', desc: 'Hand-painted carved wood ceilings in every major room',     img: '/images/gallery/bahia-palace-brass-chandelier-ceiling.webp',  alt: 'Brass chandelier beneath a painted wooden ceiling, Bahia Palace Marrakech' },
+              { label: 'Stucco Plaster', desc: 'Intricate arabesque patterns on all interior walls',        img: '/images/gallery/bahia-palace-carved-stucco-archway.webp',     alt: 'Finely carved stucco archway and zellige walls inside Bahia Palace, Marrakech' },
+              { label: 'Marble Floors',  desc: 'Imported Italian marble in the grand courtyard',            img: null,                                                           alt: null },
+            ].map(({ label, desc, img, alt }) => (
+              <div key={label} className="bg-white rounded-xl border border-[#E8D5B7] overflow-hidden text-center">
+                <div className="h-24 bg-[#F5EDE0] overflow-hidden">
+                  {img && (
+                    <Image src={img} alt={alt!} width={600} height={400}
+                      className="w-full h-full object-cover" loading="lazy"
+                      sizes="(max-width:640px) 50vw, 25vw" />
+                  )}
+                </div>
+                <div className="p-4">
+                  <p className="font-bold text-[#3D2817] text-sm mb-1">{label}</p>
+                  <p className="text-xs text-[#8B6344] leading-snug">{desc}</p>
+                </div>
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Photo strip */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {[
+            { src: '/images/gallery/bahia-palace-painted-dome-ceiling.webp',  alt: 'Ornate painted octagonal ceiling with floral motifs, Bahia Palace Marrakech' },
+            { src: '/images/gallery/bahia-palace-tiled-passage-lantern.webp', alt: 'Arched passage with herringbone zellige floor and Moroccan lantern, Bahia Palace' },
+            { src: '/images/gallery/bahia-palace-grand-doorway-zellige.webp', alt: 'Grand decorated doorway with blue zellige tilework, Bahia Palace Marrakech' },
+          ].map(({ src, alt }) => (
+            <div key={src} className="rounded-2xl overflow-hidden">
+              <Image src={src} alt={alt} width={800} height={533}
+                className="w-full h-48 object-cover" loading="lazy"
+                sizes="(max-width:640px) 100vw, 33vw" />
+            </div>
+          ))}
         </div>
 
         {/* External link */}

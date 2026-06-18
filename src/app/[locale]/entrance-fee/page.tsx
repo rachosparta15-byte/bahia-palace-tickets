@@ -3,6 +3,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { buildAlternates, buildOG, BASE, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
 import { CheckCircle2, Info, ArrowRight, Tag } from 'lucide-react';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 
 const META: Record<string, { title: string; description: string }> = {
@@ -49,18 +50,30 @@ export default async function EntranceFeePage({ params }: Props) {
 
       {/* Header */}
       <div className="bg-[#3D2817] text-white px-6 py-12 md:px-10">
-        <div className="max-w-4xl mx-auto">
-          <Breadcrumb variant="light" items={[
-            { label: 'Home', href: '/' },
-            { label: 'Tickets', href: '/tickets' },
-            { label: 'Entrance Fee' },
-          ]} />
-          <h1 className="mt-6 font-bold text-white" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 4vw, 2.75rem)' }}>
-            Bahia Palace Entrance Fee 2026
-          </h1>
-          <p className="mt-3 text-white/75 text-lg max-w-2xl">
-            Current ticket prices for Bahia Palace Marrakech — updated for 2026. Compare standard entry, skip-the-line, and guided tour costs in MAD and USD.
-          </p>
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row md:items-center gap-8">
+          <div className="flex-1">
+            <Breadcrumb variant="light" items={[
+              { label: 'Home', href: '/' },
+              { label: 'Tickets', href: '/tickets' },
+              { label: 'Entrance Fee' },
+            ]} />
+            <h1 className="mt-6 font-bold text-white" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 4vw, 2.75rem)' }}>
+              Bahia Palace Entrance Fee 2026
+            </h1>
+            <p className="mt-3 text-white/75 text-lg max-w-2xl">
+              Current ticket prices for Bahia Palace Marrakech — updated for 2026. Compare standard entry, skip-the-line, and guided tour costs in MAD and USD.
+            </p>
+          </div>
+          <div className="md:w-72 rounded-2xl overflow-hidden shrink-0">
+            <Image
+              src="/images/gallery/bahia-palace-grand-doorway-zellige.webp"
+              alt="Grand decorated doorway with blue zellige tilework, Bahia Palace Marrakech"
+              width={600} height={400}
+              className="w-full h-48 md:h-64 object-cover"
+              loading="lazy"
+              sizes="(max-width:768px) 100vw, 18rem"
+            />
+          </div>
         </div>
       </div>
 
@@ -150,6 +163,18 @@ export default async function EntranceFeePage({ params }: Props) {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Entrance sign photo */}
+        <div className="rounded-2xl overflow-hidden">
+          <Image
+            src="/images/gallery/bahia-palace-entrance-sign-marrakech.webp"
+            alt="Official Bahia Palace entrance sign (Palais Bahia), Marrakech"
+            width={1200} height={600}
+            className="w-full h-56 object-cover"
+            loading="lazy"
+            sizes="(max-width:768px) 100vw, 896px"
+          />
         </div>
 
         {/* CTA */}

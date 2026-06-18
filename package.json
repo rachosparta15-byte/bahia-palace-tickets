@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "seed:blog": "npx tsx scripts/seed-blog.ts"
+    "seed:blog": "npx tsx scripts/seed-blog.ts",
+    "seed:gallery": "npx tsx prisma/seed-gallery.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
