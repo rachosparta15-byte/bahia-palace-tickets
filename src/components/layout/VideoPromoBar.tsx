@@ -4,12 +4,12 @@ import { Link } from '@/i18n/navigation';
 export async function VideoPromoBar() {
   const t = await getTranslations('videos');
   return (
-    <div className="fixed top-20 left-0 right-0 z-[49] h-10 bg-[#E8A33D] flex items-center">
+    <div className="vpb-bar fixed top-20 left-0 right-0 z-[49] h-10 bg-[#E8A33D] flex items-center overflow-hidden">
       <Link
         href="/videos"
         className="flex items-center justify-center gap-2.5 w-full h-full text-[#3D2817] font-semibold text-sm hover:bg-[#d4922a] transition-colors"
       >
-        <div className="flex items-center justify-center w-5 h-5 rounded-full bg-[#3D2817] shrink-0">
+        <div className="vpb-play flex items-center justify-center w-5 h-5 rounded-full bg-[#3D2817] shrink-0">
           <svg
             viewBox="0 0 24 24"
             fill="white"
