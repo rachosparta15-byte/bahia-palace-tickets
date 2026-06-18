@@ -294,8 +294,75 @@
 }
 
 /* ────────────────────────────────────────────────
-   VIDEO PROMO BAR ANIMATIONS
+   VIDEO PROMO BAR — VARIANTS + ANIMATIONS
+   Toggle in layout.tsx: <VideoPromoBar variant="A|B|C" />
    ──────────────────────────────────────────────── */
+
+/* ── Variant A: metallic gold gradient ─────────
+   Deep amber → rich gold → champagne highlight → back.
+   Reads like polished brushed metal.                  */
+.vpb-a {
+  background: linear-gradient(90deg,
+    #8B5410  0%,
+    #C8821C 18%,
+    #E8A33D 36%,
+    #F7D87A 52%,
+    #EFBA48 68%,
+    #C8821C 82%,
+    #8B5410 100%
+  );
+  /* dark line at bottom for depth; faint highlight at top for metallic edge */
+  box-shadow: 0 1px 0 rgba(80,35,5,0.55), inset 0 1px 0 rgba(255,248,200,0.22);
+}
+
+/* ── Variant B: dark luxe — near-black + gold ──
+   "Royal palace after dark": very dark espresso brown,
+   gold text, solid gold coin for the play icon.       */
+.vpb-b {
+  background: linear-gradient(90deg,
+    #0C0602  0%,
+    #1C0D05 35%,
+    #221106 55%,
+    #1C0D05 70%,
+    #0C0602 100%
+  );
+  border-top: 1px solid rgba(232,163,61,0.28);
+  box-shadow: 0 1px 0 rgba(232,163,61,0.18);
+}
+
+/* B: override white shimmer → warm gold shimmer */
+.vpb-b.vpb-bar::after {
+  background: linear-gradient(90deg, transparent 0%, rgba(240,185,55,0.22) 50%, transparent 100%);
+}
+
+/* ── Variant C: gold gradient + zellige watermark ─
+   Same metallic gradient as A, but a very faint
+   Moroccan diamond-star pattern repeats behind text. */
+.vpb-c {
+  background: linear-gradient(90deg,
+    #8B5410  0%,
+    #C8821C 18%,
+    #E8A33D 36%,
+    #F7D87A 52%,
+    #EFBA48 68%,
+    #C8821C 82%,
+    #8B5410 100%
+  );
+  box-shadow: 0 1px 0 rgba(80,35,5,0.55), inset 0 1px 0 rgba(255,248,200,0.22);
+}
+
+/* Zellige watermark: concentric diamond motif at 9% opacity */
+.vpb-c::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cg fill='none' stroke='%233D2817' stroke-width='0.6'%3E%3Cpolygon points='10,2 18,10 10,18 2,10'/%3E%3Cpolygon points='10,6 14,10 10,14 6,10'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 20px 20px;
+  opacity: 0.09;
+  pointer-events: none;
+}
+
+/* ── Shared animations ──────────────────────────── */
 @keyframes vpb-pulse {
   0%, 100% { transform: scale(1);    opacity: 1;    }
   50%       { transform: scale(1.08); opacity: 0.82; }
@@ -311,6 +378,7 @@
   animation: vpb-pulse 2s ease-in-out 0.3s infinite;
 }
 
+/* White shimmer for A and C (B overrides above) */
 .vpb-bar::after {
   content: '';
   position: absolute;
@@ -322,13 +390,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .vpb-play {
-    animation: none;
-  }
-  .vpb-bar::after {
-    animation: none;
-    display: none;
-  }
+  .vpb-play            { animation: none; }
+  .vpb-bar::after      { animation: none; display: none; }
+  .vpb-b.vpb-bar::after { animation: none; display: none; }
 }
 
 /* ────────────────────────────────────────────────
