@@ -44,7 +44,7 @@ export async function VideoPromoBar({ variant = 'A' }: Props) {
             <path d="M8 5v14l11-7z" />
           </svg>
         </div>
-        <span style={{ letterSpacing: '0.1em' }}>{t('promoBar')}</span>
+        <span className="vpb-label">{t('promoBar')}</span>
       </Link>
     </div>
   );

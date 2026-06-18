@@ -362,6 +362,15 @@
   pointer-events: none;
 }
 
+/* ── Label typography ───────────────────────────── */
+.vpb-label {
+  font-family: var(--font-heading); /* Cormorant Garamond — already loaded, no extra request */
+  font-size: 1.0625rem;             /* 17px — one step up from the 13px base, fits 40px bar */
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 10px rgba(245,210,122,0.45); /* warm champagne glow, static — not animated */
+}
+
 /* ── Shared animations ──────────────────────────── */
 @keyframes vpb-pulse {
   0%, 100% { transform: scale(1);    opacity: 1;    }
