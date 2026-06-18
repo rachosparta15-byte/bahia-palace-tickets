@@ -3,6 +3,7 @@ import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Header } from '@/components/layout/Header';
+import { VideoPromoBar } from '@/components/layout/VideoPromoBar';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppButton } from '@/components/layout/WhatsAppButton';
 import { StickyMobileCTA } from '@/components/layout/StickyMobileCTA';
@@ -62,6 +63,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <HreflangLinks />
       <div className="flex flex-col min-h-screen" lang={locale}>
         <Header />
+        <VideoPromoBar />
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />

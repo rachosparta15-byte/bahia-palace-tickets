@@ -567,5 +567,8 @@
     "subtitle": "Consejos, historia e información práctica para tu visita al Palacio Bahia",
     "minRead": "min de lectura",
     "viewAll": "Leer todos los artículos"
+  },
+  "videos": {
+    "promoBar": "La Bahía en Vídeo"
   }
 }

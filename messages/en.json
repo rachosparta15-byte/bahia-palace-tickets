@@ -567,5 +567,8 @@
     "subtitle": "Tips, history and practical advice for your visit to Bahia Palace",
     "minRead": "min read",
     "viewAll": "Read all articles"
+  },
+  "videos": {
+    "promoBar": "Bahia in Video"
   }
 }
