@@ -79,6 +79,7 @@
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    scroll-padding-top: 7.5rem; /* header 80px + promo bar 40px */
   }
 
   body {

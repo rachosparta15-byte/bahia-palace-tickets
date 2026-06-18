@@ -121,7 +121,7 @@ export default async function VideosPage({ params }: Props) {
       {videoSchemas.map((s, i) => <JsonLd key={i} data={s} />)}
 
       {/* Hero */}
-      <div className="bg-[#3D2817] text-white px-6 pt-36 pb-12 md:px-10">
+      <div className="bg-[#3D2817] text-white px-6 py-12 md:px-10">
         <div className="max-w-4xl mx-auto">
           <Breadcrumb
             variant="light"

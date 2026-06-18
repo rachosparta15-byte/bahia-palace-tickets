@@ -71,7 +71,7 @@ export default async function SafetyPage({ params }: { params: Promise<{ locale:
   return (
     <div className="min-h-screen bg-[#FAF3E7]">
       <JsonLd data={faqSchema} />
-      <div className="bg-amber-600 text-white pt-24 pb-10 px-6 text-center">
+      <div className="bg-amber-600 text-white pt-6 pb-10 px-6 text-center">
         <div className="flex justify-center mb-6">
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-white/30 animate-ping" />
