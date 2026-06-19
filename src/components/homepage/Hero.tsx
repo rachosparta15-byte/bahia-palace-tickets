@@ -17,7 +17,7 @@ async function getTemp(): Promise<number | null> {
 export async function Hero() {
   const temp = await getTemp();
   return (
-    <section className="relative flex flex-col overflow-hidden min-h-[260px] sm:min-h-0">
+    <section className="relative flex flex-col overflow-hidden min-h-[260px] sm:min-h-0 bg-[#3D2817]">
       {/* Background image — overflow-hidden here clips the Ken Burns scale */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Ken Burns wrapper: animating a plain div is more reliable than animating the img directly */}
@@ -107,8 +107,8 @@ export async function Hero() {
       </div>
 
       {/* Arch wave */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 overflow-hidden leading-none">
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-[40px] sm:h-[60px]">
+      <div className="absolute bottom-0 left-0 right-0 z-10 h-[40px] sm:h-[60px]">
+        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="block w-full h-full">
           <path d="M0 60 L0 30 Q360 -20 720 30 Q1080 80 1440 30 L1440 60 Z" fill="#FAF3E7" />
         </svg>
       </div>
