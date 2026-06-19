@@ -1,6 +1,16 @@
 'use client';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
+import { PinterestSaveButton } from './PinterestSaveButton';
+
+const SITE = 'https://www.visitbahiapalace.com';
+function absoluteUrl(url: string) {
+  return url.startsWith('http') ? url : `${SITE}${url}`;
+}
+function pinterestDesc(img: GalleryImage) {
+  const base = (img.altText?.trim() || img.title?.trim() || 'Bahia Palace interior');
+  return `${base} — Bahia Palace Marrakech. Book skip-the-line tickets.`;
+}
 
 interface GalleryImage {
   id: string;
@@ -10,7 +20,7 @@ interface GalleryImage {
   caption: string | null;
 }
 
-export function GalleryClient({ images }: { images: GalleryImage[] }) {
+export function GalleryClient({ images, pageUrl }: { images: GalleryImage[]; pageUrl: string }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const touchStartX = useRef<number>(0);
 
@@ -55,32 +65,45 @@ export function GalleryClient({ images }: { images: GalleryImage[] }) {
       {/* ── Even grid ──────────────────────────────────────────── */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3">
         {images.map((img, i) => (
-          <button
+          <div
             key={img.id}
-            onClick={() => open(i)}
-            className="relative aspect-square overflow-hidden rounded-xl group bg-[#E8D5B7] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8A33D] focus-visible:ring-offset-1"
-            aria-label={`View photo: ${img.title}`}
+            className="relative aspect-square overflow-hidden rounded-xl group bg-[#E8D5B7]"
           >
-            <Image
-              src={img.url}
-              alt={img.altText}
-              fill
-              className="object-cover transition-transform duration-500 ease-out will-change-transform group-hover:scale-[1.07]"
-              sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 25vw"
-              loading={i < 8 ? 'eager' : 'lazy'}
+            {/* Lightbox trigger */}
+            <button
+              onClick={() => open(i)}
+              className="absolute inset-0 w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8A33D] focus-visible:ring-offset-1"
+              aria-label={`View photo: ${img.title}`}
+            >
+              <Image
+                src={img.url}
+                alt={img.altText}
+                fill
+                className="object-cover transition-transform duration-500 ease-out will-change-transform group-hover:scale-[1.07]"
+                sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 25vw"
+                loading={i < 8 ? 'eager' : 'lazy'}
+              />
+
+              {/* Dark gradient + title fade-in on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3D2817]/80 via-[#3D2817]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 right-0 p-2.5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
+                <p className="text-white text-xs sm:text-sm font-semibold leading-snug drop-shadow-sm line-clamp-2">
+                  {img.title}
+                </p>
+              </div>
+
+              {/* Gold top-right corner accent */}
+              <div className="absolute top-0 right-0 border-t-[26px] border-r-[26px] border-t-transparent border-r-[#E8A33D]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            </button>
+
+            {/* Pinterest save button — sibling of lightbox button so it's valid HTML */}
+            <PinterestSaveButton
+              pageUrl={pageUrl}
+              imageUrl={absoluteUrl(img.url)}
+              description={pinterestDesc(img)}
+              className="absolute top-2 left-2 z-10"
             />
-
-            {/* Dark gradient + title fade-in on hover */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#3D2817]/80 via-[#3D2817]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 right-0 p-2.5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
-              <p className="text-white text-xs sm:text-sm font-semibold leading-snug drop-shadow-sm line-clamp-2">
-                {img.title}
-              </p>
-            </div>
-
-            {/* Gold top-right corner accent */}
-            <div className="absolute top-0 right-0 border-t-[26px] border-r-[26px] border-t-transparent border-r-[#E8A33D]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-          </button>
+          </div>
         ))}
       </div>
 

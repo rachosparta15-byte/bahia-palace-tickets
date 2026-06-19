@@ -156,7 +156,7 @@ export default async function GalleryPage({ params }: Props) {
             </div>
 
             {/* Even grid + lightbox (all <img> tags are SSR-rendered) */}
-            <GalleryClient images={images} />
+            <GalleryClient images={images} pageUrl={`${BASE}/${locale}/gallery`} />
 
             {/* CTA */}
             <div className="mt-14 bg-[#3D2817] rounded-2xl p-8 text-center">
