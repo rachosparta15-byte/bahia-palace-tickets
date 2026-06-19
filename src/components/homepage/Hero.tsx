@@ -109,7 +109,7 @@ export async function Hero() {
       {/* Arch wave */}
       <div className="absolute bottom-0 left-0 right-0 z-10 h-[40px] sm:h-[60px]">
         <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="block w-full h-full">
-          <path d="M0 60 L0 30 Q360 -20 720 30 Q1080 80 1440 30 L1440 60 Z" fill="#FAF3E7" />
+          <path d="M0 60 L0 30 Q360 -20 720 30 Q1080 80 1440 30 L1440 60 Z" fill="#3D2817" />
         </svg>
       </div>
     </section>
