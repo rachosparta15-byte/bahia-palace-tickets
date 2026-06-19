@@ -18,16 +18,19 @@ export async function Hero() {
   const temp = await getTemp();
   return (
     <section className="relative flex flex-col overflow-hidden min-h-[260px] sm:min-h-0">
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/hero-bg.webp"
-          alt="Bahia Palace interior courtyard with zellige tiles and arched columns"
-          className="absolute inset-0 w-full h-full object-cover"
-          fetchPriority="high"
-          decoding="sync"
-        />
+      {/* Background image — overflow-hidden here clips the Ken Burns scale */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Ken Burns wrapper: animating a plain div is more reliable than animating the img directly */}
+        <div className="absolute inset-0 hero-ken-burns">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/hero-bg.webp"
+            alt="Bahia Palace interior courtyard with zellige tiles and arched columns"
+            className="w-full h-full object-cover"
+            fetchPriority="high"
+            decoding="sync"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#3D2817]/90 via-[#3D2817]/65 to-[#3D2817]/35" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#3D2817]/40 via-transparent to-[#3D2817]/60" />
       </div>

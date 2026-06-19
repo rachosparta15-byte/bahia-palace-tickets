@@ -449,6 +449,32 @@
 }
 
 /* ────────────────────────────────────────────────
+   HERO KEN BURNS
+   @keyframes is unlayered (accessible to all layers).
+   The class lives in @layer utilities so Tailwind v4's
+   PostCSS plugin preserves it rather than dropping it.
+   The animated element is a plain div (not the <img>)
+   whose direct parent has overflow:hidden for clean clip.
+   ──────────────────────────────────────────────── */
+@keyframes hero-ken-burns {
+  0%   { transform: scale(1.0)  translate(0%,    0%);   }
+  50%  { transform: scale(1.08) translate(-1.5%, -0.8%); }
+  100% { transform: scale(1.0)  translate(0%,    0%);   }
+}
+
+@layer utilities {
+  .hero-ken-burns {
+    animation: hero-ken-burns 25s ease-in-out infinite;
+    transform-origin: center center;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-ken-burns { animation: none; }
+  }
+}
+
+/* ────────────────────────────────────────────────
    FOCUS VISIBLE
    ──────────────────────────────────────────────── */
 :focus-visible {
