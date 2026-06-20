@@ -20,7 +20,7 @@ export function BlogPreview() {
   if (posts.length === 0) return null;
 
   return (
-    <section className="py-20 bg-[#FAF3E7] zellige-bg">
+    <section className="py-20 bg-[#FAF3E7] zellige">
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="text-center mb-12">

@@ -84,8 +84,8 @@
 
   body {
     background-color: var(--color-cream);
-    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='70' height='70' viewBox='0 0 70 70' opacity='0.35'><polygon points='35,9 39.21,24.84 53.38,16.62 45.16,30.79 61,35 45.16,39.21 53.38,53.38 39.21,45.16 35,61 30.79,45.16 16.62,53.38 24.84,39.21 9,35 24.84,30.79 16.62,16.62 30.79,24.84' fill='none' stroke='%23B0883F' stroke-width='1'/><polygon points='0,-8 8,0 0,8 -8,0' fill='none' stroke='%23B0883F' stroke-width='1'/><polygon points='70,62 78,70 70,78 62,70' fill='none' stroke='%23B0883F' stroke-width='1'/></svg>");
-    background-size: 70px 70px;
+    background-image: var(--zellige-tile);
+    background-size: var(--zellige-size);
     background-repeat: repeat;
     color: var(--color-foreground);
     font-family: var(--font-body);
@@ -116,13 +116,6 @@
 .tiptap blockquote { border-left: 3px solid #C4452D; padding-left: 1em; color: #5C3D20; font-style: italic; }
 .tiptap mark { background-color: #FEF08A; border-radius: 2px; padding: 0 2px; }
 
-/* ────────────────────────────────────────────────
-   ZELLIGE PATTERN (SVG background utility)
-   ──────────────────────────────────────────────── */
-.zellige-bg {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23E8D5B7' stroke-width='0.5'%3E%3Cpolygon points='40,5 55,20 55,60 40,75 25,60 25,20'/%3E%3Cpolygon points='40,15 50,25 50,55 40,65 30,55 30,25'/%3E%3Cline x1='40' y1='5' x2='40' y2='0'/%3E%3Cline x1='55' y1='20' x2='80' y2='10'/%3E%3Cline x1='55' y1='60' x2='80' y2='70'/%3E%3Cline x1='40' y1='75' x2='40' y2='80'/%3E%3Cline x1='25' y1='60' x2='0' y2='70'/%3E%3Cline x1='25' y1='20' x2='0' y2='10'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 80px 80px;
-}
 
 /* ────────────────────────────────────────────────
    ARCH FRAME
@@ -355,16 +348,6 @@
   box-shadow: 0 1px 0 rgba(80,35,5,0.55), inset 0 1px 0 rgba(255,248,200,0.22);
 }
 
-/* Zellige watermark: concentric diamond motif at 9% opacity */
-.vpb-c::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cg fill='none' stroke='%233D2817' stroke-width='0.6'%3E%3Cpolygon points='10,2 18,10 10,18 2,10'/%3E%3Cpolygon points='10,6 14,10 10,14 6,10'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 20px 20px;
-  opacity: 0.09;
-  pointer-events: none;
-}
 
 /* ── Label typography ───────────────────────────── */
 .vpb-label {
@@ -477,24 +460,23 @@
   }
 }
 
-/* ────────────────────────────────────────────────
-   KHATIM (eight-pointed star) ZELLIGE PATTERN
-   body gets it for free; any section with its own
-   bg-color must also add .khatim-bg so background-
-   image applies on top of the section's background-color.
-   ──────────────────────────────────────────────── */
-.khatim-bg {
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='70' height='70' viewBox='0 0 70 70' opacity='0.35'><polygon points='35,9 39.21,24.84 53.38,16.62 45.16,30.79 61,35 45.16,39.21 53.38,53.38 39.21,45.16 35,61 30.79,45.16 16.62,53.38 24.84,39.21 9,35 24.84,30.79 16.62,16.62 30.79,24.84' fill='none' stroke='%23B0883F' stroke-width='1'/><polygon points='0,-8 8,0 0,8 -8,0' fill='none' stroke='%23B0883F' stroke-width='1'/><polygon points='70,62 78,70 70,78 62,70' fill='none' stroke='%23B0883F' stroke-width='1'/></svg>");
-  background-size: 70px 70px;
+/* ──────────────────────────────────────────────────
+   ZELLIGE — octagon + square tile (single source of truth).
+   Edit --zellige-tile once to change the pattern everywhere.
+   ────────────────────────────────────────────────── */
+:root {
+  --zellige-tile: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50' opacity='0.35'><g transform='translate(0,1)' fill='none' stroke='%238A6A2E' stroke-width='1' stroke-opacity='0.3'><polygon points='43.48,32.65 32.65,43.48 17.35,43.48 6.52,32.65 6.52,17.35 17.35,6.52 32.65,6.52 43.48,17.35'/><polygon points='0,-6 6,0 0,6 -6,0'/><polygon points='50,44 56,50 50,56 44,50'/></g><g fill='none' stroke='%23B0883F' stroke-width='1'><polygon points='43.48,32.65 32.65,43.48 17.35,43.48 6.52,32.65 6.52,17.35 17.35,6.52 32.65,6.52 43.48,17.35'/><polygon points='0,-6 6,0 0,6 -6,0'/><polygon points='50,44 56,50 50,56 44,50'/></g></svg>");
+  --zellige-size: 50px;
+}
+
+.zellige {
+  background-image: var(--zellige-tile);
+  background-size: var(--zellige-size);
   background-repeat: repeat;
 }
 
-/* Scale tile up on mobile so the pattern reads as texture, not noise */
 @media (max-width: 639px) {
-  body,
-  .khatim-bg {
-    background-size: 90px 90px;
-  }
+  :root { --zellige-size: 65px; }
 }
 
 /* ────────────────────────────────────────────────

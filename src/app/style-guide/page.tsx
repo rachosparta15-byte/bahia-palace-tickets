@@ -187,7 +187,7 @@ export default function StyleGuidePage() {
             <ZelligePattern className="w-16 h-16 text-[#E8A33D]" />
             <ZelligePattern className="w-16 h-16 text-[#2E4A7B]" />
             <ZelligePattern className="w-16 h-16 text-[#6B7B3A]" />
-            <div className="w-40 h-40 zellige-bg rounded-xl border border-[#E8D5B7]" />
+            <div className="w-40 h-40 zellige rounded-xl border border-[#E8D5B7]" />
           </div>
         </section>
       </div>
