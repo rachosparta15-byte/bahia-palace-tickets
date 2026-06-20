@@ -7,7 +7,7 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 
 const META: Record<string, { title: string; description: string }> = {
-  en: { title: 'Bahia Palace Entrance Fee 2026 | Current Ticket Prices in MAD & USD', description: 'Bahia Palace entrance fee is 100 MAD (≈$10 USD) for foreign adults in 2026. Children under 7 free. Compare ticket prices, skip-the-line options and guided tours.' },
+  en: { title: 'Bahia Palace Entrance Fee 2026 | Prices in MAD & USD', description: 'Bahia Palace entrance fee is 100 MAD (≈$10 USD) for foreign adults in 2026. Children under 7 enter free. See all ticket options and skip-the-line pricing.' },
   fr: { title: 'Prix Entrée Palais Bahia 2026 | Tarifs en MAD & EUR', description: 'Le prix d\'entrée du Palais Bahia est 100 MAD (≈10€) pour les étrangers en 2026. Enfants de moins de 7 ans gratuit. Guide complet des tarifs mis à jour.' },
   es: { title: 'Precio Entrada Palacio Bahia 2026 | Tarifas en MAD y EUR', description: 'La entrada al Palacio Bahia cuesta 100 MAD (≈10€) para adultos extranjeros en 2026. Niños menores de 7 años gratis. Guía de precios actualizada.' },
   de: { title: 'Bahia Palast Eintrittspreis 2026 | Aktuelle Ticketpreise', description: 'Der Eintrittspreis für den Bahia Palast beträgt 100 MAD (≈10€) für ausländische Erwachsene im Jahr 2026. Kinder unter 7 Jahren frei.' },

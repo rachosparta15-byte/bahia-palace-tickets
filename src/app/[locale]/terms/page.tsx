@@ -4,7 +4,11 @@ import type { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return locale === 'en' ? {} : { robots: 'noindex' };
+  if (locale !== 'en') return { robots: 'noindex' };
+  return {
+    title: 'Terms of Service — Visitbahiapalace.com Ticket Platform',
+    description: 'Read the terms of service for Visitbahiapalace.com, the independent Bahia Palace ticket guide. Booking conditions, cancellation rules, and legal info.',
+  };
 }
 
 export default async function TermsPage() {

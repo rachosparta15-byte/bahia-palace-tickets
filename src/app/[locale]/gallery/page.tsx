@@ -12,8 +12,8 @@ export const revalidate = 3600;
 
 const META: Record<string, { title: string; description: string; heading: string; sub: string; bookCta: string; bookBtn: string; collection: string }> = {
   en: {
-    title: 'Bahia Palace Photo Gallery 2026 | Inside Marrakech\'s Most Beautiful Palace',
-    description: 'Explore stunning photos of Bahia Palace: zellige tiles, carved cedar ceilings, grand courtyards, ornate stucco, and Arabic calligraphy. See inside before you visit.',
+    title: 'Bahia Palace Photo Gallery 2026 | Zellige & Courtyards',
+    description: 'Browse Bahia Palace photos: zellige mosaics, carved cedar ceilings, ornate stucco and grand courtyards. See every detail before visiting Marrakech.',
     heading: 'Bahia Palace Photo Gallery',
     sub: 'Zellige mosaics, carved cedar ceilings, grand courtyards — see every corner before you arrive.',
     bookCta: 'Ready to see it in person?',
@@ -21,7 +21,7 @@ const META: Record<string, { title: string; description: string; heading: string
     collection: 'Browse the Collection',
   },
   fr: {
-    title: 'Galerie Photos Palais Bahia 2026 | À l\'intérieur du plus beau palais de Marrakech',
+    title: 'Galerie Photos Palais Bahia 2026 | Zellige & Cours',
     description: 'Découvrez les plus belles photos du Palais Bahia : zellige, plafonds en cèdre sculpté, grandes cours, stuc ornemental et calligraphie arabe. Visitez avant de partir.',
     heading: 'Galerie Photos du Palais Bahia',
     sub: 'Mosaïques de zellige, plafonds en cèdre sculpté, grandes cours — explorez chaque détail avant votre visite.',
@@ -30,7 +30,7 @@ const META: Record<string, { title: string; description: string; heading: string
     collection: 'Parcourir la collection',
   },
   es: {
-    title: 'Galería de Fotos Palacio Bahia 2026 | Por dentro del palacio más hermoso de Marrakech',
+    title: 'Galería de Fotos Palacio Bahia 2026 | Zellige y Patios',
     description: 'Explora impresionantes fotos del Palacio Bahia: azulejos zellige, techos de cedro tallado, patios principales, yeserías ornamentales y caligrafía árabe.',
     heading: 'Galería de Fotos del Palacio Bahia',
     sub: 'Mosaicos zellige, techos de cedro tallado, grandes patios — descubre cada rincón antes de llegar.',
@@ -39,7 +39,7 @@ const META: Record<string, { title: string; description: string; heading: string
     collection: 'Explorar la colección',
   },
   de: {
-    title: 'Bahia Palast Fotogalerie 2026 | Innen im schönsten Palast Marrakesch',
+    title: 'Bahia Palast Fotogalerie 2026 | Zellige, Decken & Höfe',
     description: 'Entdecken Sie atemberaubende Fotos des Bahia Palastes: Zellige-Fliesen, geschnitzte Zederndecken, Innenhöfe, ornamentaler Stuck und arabische Kalligraphie.',
     heading: 'Bahia Palast Fotogalerie',
     sub: 'Zellige-Mosaike, geschnitzte Zederndecken, große Innenhöfe — entdecken Sie jeden Winkel vor Ihrer Ankunft.',
@@ -48,7 +48,7 @@ const META: Record<string, { title: string; description: string; heading: string
     collection: 'Sammlung durchstöbern',
   },
   it: {
-    title: 'Galleria Fotografica Palazzo Bahia 2026 | Dentro il più bel palazzo di Marrakech',
+    title: 'Galleria Fotografica Palazzo Bahia 2026 | Zellige e Cortili',
     description: 'Esplora le splendide foto del Palazzo Bahia: piastrelle zellige, soffitti in cedro intagliato, cortili principali, stucchi ornamentali e calligrafia araba.',
     heading: 'Galleria Fotografica del Palazzo Bahia',
     sub: 'Mosaici zellige, soffitti in cedro intagliato, grandi cortili — scopri ogni angolo prima di arrivare.',

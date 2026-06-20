@@ -4,7 +4,11 @@ import type { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return locale === 'en' ? {} : { robots: 'noindex' };
+  if (locale !== 'en') return { robots: 'noindex' };
+  return {
+    title: 'Cookie Policy — How Visitbahiapalace.com Uses Cookies',
+    description: 'Visitbahiapalace.com uses cookies to improve your experience and process bookings. Read our cookie policy to understand what data we collect and why.',
+  };
 }
 
 export default async function CookiePolicyPage() {

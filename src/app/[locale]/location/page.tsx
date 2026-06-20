@@ -6,11 +6,11 @@ import { MapPin, Navigation, Clock, ArrowRight, Car, Footprints } from 'lucide-r
 import type { Metadata } from 'next';
 
 const META: Record<string, { title: string; description: string }> = {
-  en: { title: 'How to Get to Bahia Palace Marrakech | Address, Map & Directions 2026', description: 'Bahia Palace is in Marrakech Medina, 10 minutes walking from Jemaa el-Fnaa. Get directions, taxi prices, parking info, and an interactive map.' },
-  fr: { title: 'Comment Aller au Palais Bahia Marrakech | Adresse & Plan 2026', description: 'Le Palais Bahia se trouve dans la Médina de Marrakech, à 10 minutes à pied de Jemaa el-Fna. Itinéraires, prix des taxis et carte interactive.' },
-  es: { title: 'Cómo Llegar al Palacio Bahia Marrakech | Dirección & Mapa 2026', description: 'El Palacio Bahia está en la Medina de Marrakech, a 10 minutos caminando desde Jemaa el-Fna. Rutas, precios de taxi y mapa interactivo.' },
+  en: { title: 'Bahia Palace Location & Directions | Marrakech Map', description: 'Bahia Palace is in Marrakech Medina, 10 minutes walking from Jemaa el-Fnaa. Get directions, taxi prices, parking info, and an interactive map.' },
+  fr: { title: 'Palais Bahia Marrakech | Adresse, Plan & Itinéraires', description: 'Le Palais Bahia se trouve dans la Médina de Marrakech, à 10 minutes à pied de Jemaa el-Fna. Itinéraires, prix des taxis et carte interactive.' },
+  es: { title: 'Palacio Bahia Marrakech | Dirección, Mapa e Itinerarios', description: 'El Palacio Bahia está en la Medina de Marrakech, a 10 minutos caminando desde Jemaa el-Fna. Rutas, precios de taxi y mapa interactivo.' },
   de: { title: 'Anfahrt zum Bahia Palast Marrakesch | Adresse & Karte 2026', description: 'Der Bahia Palast liegt in der Medina von Marrakesch, 10 Minuten zu Fuß vom Jemaa el-Fna. Wegbeschreibung, Taxipreise und interaktive Karte.' },
-  it: { title: 'Come Arrivare al Palazzo Bahia Marrakech | Indirizzo & Mappa 2026', description: 'Il Palazzo Bahia si trova nella Medina di Marrakech, a 10 minuti a piedi dalla Jemaa el-Fna. Indicazioni, prezzi taxi e mappa interattiva.' },
+  it: { title: 'Palazzo Bahia Marrakech | Indirizzo, Mappa e Indicazioni', description: 'Il Palazzo Bahia si trova nella Medina di Marrakech, a 10 minuti a piedi dalla Jemaa el-Fna. Indicazioni, prezzi taxi e mappa interattiva.' },
 };
 
 interface Props { params: Promise<{ locale: string }> }

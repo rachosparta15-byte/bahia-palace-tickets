@@ -10,16 +10,22 @@ interface Props {
   params: Promise<{ locale: string }>;
 }
 
+const CONTACT_META: Record<string, { title: string; description: string }> = {
+  en: { title: 'Contact Visitbahiapalace.com | Ticket Help & Support', description: 'Have questions about Bahia Palace tickets or your booking? Contact our team via email or WhatsApp — we respond within 24 hours.' },
+  fr: { title: 'Contacter Visitbahiapalace.com | Aide & Support Billets', description: 'Des questions sur vos billets pour le Palais Bahia ? Contactez notre équipe par e-mail ou WhatsApp — nous répondons sous 24 heures.' },
+  es: { title: 'Contactar Visitbahiapalace.com | Ayuda & Soporte Entradas', description: '¿Preguntas sobre tus entradas al Palacio Bahia? Contáctanos por correo o WhatsApp — respondemos en menos de 24 horas.' },
+  de: { title: 'Visitbahiapalace.com Kontakt | Ticket-Hilfe & Support', description: 'Fragen zu Ihren Bahia Palast Tickets oder Ihrer Buchung? Kontaktieren Sie uns per E-Mail oder WhatsApp — wir antworten innerhalb von 24 Stunden.' },
+  it: { title: 'Contatta Visitbahiapalace.com | Supporto Biglietti Bahia', description: 'Hai domande sui biglietti per il Palazzo Bahia o sulla tua prenotazione? Scrivici via email o WhatsApp — rispondiamo entro 24 ore.' },
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'contactPage' });
-  const title = `${t('title')} — Bahia Palace Tickets`;
-  const description = t('subtitle') as string;
+  const meta = CONTACT_META[locale] ?? CONTACT_META.en;
   return {
-    title,
-    description,
+    title: meta.title,
+    description: meta.description,
     alternates: buildAlternates(locale, '/contact'),
-    openGraph: buildOG(title, description, locale, '/contact'),
+    openGraph: buildOG(meta.title, meta.description, locale, '/contact'),
   };
 }
 

@@ -8,23 +8,23 @@ interface Props {
 
 const META: Record<string, { title: string; description: string }> = {
   en: {
-    title: 'Skip-the-Line Bahia Palace Tickets 2026 | Instant Entry Marrakech',
+    title: 'Bahia Palace Skip-the-Line Tickets 2026 | No Queue',
     description: 'Book skip-the-line tickets for Bahia Palace and walk straight in — no queuing. Instant QR ticket by email. From $10 per person. Free cancellation 24h before.',
   },
   fr: {
-    title: 'Billet Coupe-File Palais Bahia 2026 | Entrée Instantanée Marrakech',
+    title: 'Billet Coupe-File Palais Bahia 2026 | Sans Attente',
     description: 'Réservez votre billet coupe-file pour le Palais Bahia et entrez directement. Billet QR instantané. Dès 10$ par personne. Annulation gratuite 24h avant.',
   },
   de: {
-    title: 'Bahia Palast Ticket ohne Wartezeit 2026 | Soforteintritt Marrakesch',
+    title: 'Bahia Palast Skip-the-Line Ticket 2026 | Keine Wartezeit',
     description: 'Kaufen Sie Ihr Skip-the-Line-Ticket für den Bahia Palast und gehen Sie direkt hinein. Sofortiges QR-Ticket per E-Mail. Ab 10$ pro Person.',
   },
   it: {
-    title: 'Biglietto Salta-Fila Palazzo Bahia 2026 | Ingresso Immediato Marrakech',
+    title: 'Biglietto Salta-Fila Palazzo Bahia 2026 | Senza Coda',
     description: 'Prenota il biglietto salta-fila per il Palazzo Bahia ed entra subito. Biglietto QR istantaneo via email. Da $10 a persona. Cancellazione gratuita.',
   },
   es: {
-    title: 'Entrada Sin Cola Palacio Bahia 2026 | Acceso Inmediato Marrakech',
+    title: 'Entrada Sin Cola Palacio Bahia 2026 | Acceso Rápido',
     description: 'Reserva tu entrada sin cola para el Palacio Bahia y entra directamente. Ticket QR instantáneo por email. Desde $10 por persona. Cancelación gratuita.',
   },
 };

@@ -4,7 +4,11 @@ import type { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return locale === 'en' ? {} : { robots: 'noindex' };
+  if (locale !== 'en') return { robots: 'noindex' };
+  return {
+    title: 'Refund Policy — Free Cancellation on Bahia Palace Tickets',
+    description: 'Visitbahiapalace.com offers free cancellation on Bahia Palace tickets up to 24 hours before your visit. Read our full refund and cancellation conditions.',
+  };
 }
 
 export default async function RefundPolicyPage() {

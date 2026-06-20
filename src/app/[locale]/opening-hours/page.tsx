@@ -6,11 +6,11 @@ import { Clock, Sun, Moon, AlertTriangle, CheckCircle2, ArrowRight } from 'lucid
 import type { Metadata } from 'next';
 
 const META: Record<string, { title: string; description: string }> = {
-  en: { title: 'Bahia Palace Opening Hours 2026 | Daily Times & Best Visit Time', description: 'Bahia Palace is open daily 9:00 AM – 5:00 PM. Check 2026 schedule, Ramadan hours, holiday closures, and the best time to visit to avoid crowds.' },
-  fr: { title: 'Horaires Palais Bahia 2026 | Heures d\'Ouverture & Meilleur Moment', description: 'Le Palais Bahia est ouvert tous les jours de 9h à 17h. Horaires 2026, Ramadan, fermetures et meilleur moment pour éviter la foule.' },
-  es: { title: 'Horario Palacio Bahia 2026 | Horas de Apertura & Mejor Momento', description: 'El Palacio Bahia abre todos los días de 9:00 a 17:00. Horario 2026, Ramadán, cierres y mejor momento para evitar aglomeraciones.' },
-  de: { title: 'Bahia Palast Öffnungszeiten 2026 | Tageszeiten & Beste Besuchszeit', description: 'Der Bahia Palast ist täglich von 9:00 bis 17:00 Uhr geöffnet. Öffnungszeiten 2026, Ramadan-Zeiten und beste Besuchszeit.' },
-  it: { title: 'Orari Palazzo Bahia 2026 | Apertura Giornaliera & Miglior Momento', description: 'Il Palazzo Bahia è aperto tutti i giorni dalle 9:00 alle 17:00. Orari 2026, Ramadan, chiusure e miglior momento per evitare le folle.' },
+  en: { title: 'Bahia Palace Opening Hours 2026 | Times, Ramadan & Tips', description: 'Bahia Palace is open daily 9:00 AM – 5:00 PM. Check 2026 schedule, Ramadan hours, holiday closures, and the best time to visit to avoid crowds.' },
+  fr: { title: 'Horaires Palais Bahia 2026 | Ramadan & Meilleur Moment', description: 'Le Palais Bahia est ouvert tous les jours de 9h à 17h. Horaires 2026, Ramadan, fermetures et meilleur moment pour éviter la foule.' },
+  es: { title: 'Horario Palacio Bahia 2026 | Ramadán & Mejor Momento', description: 'El Palacio Bahia abre todos los días de 9:00 a 17:00. Horario 2026, Ramadán, cierres y mejor momento para evitar aglomeraciones.' },
+  de: { title: 'Bahia Palast Öffnungszeiten 2026 | Ramadan & Beste Zeit', description: 'Der Bahia Palast ist täglich von 9:00 bis 17:00 Uhr geöffnet. Öffnungszeiten 2026, Ramadan-Zeiten und beste Besuchszeit.' },
+  it: { title: 'Orari Palazzo Bahia 2026 | Ramadan & Miglior Momento', description: 'Il Palazzo Bahia è aperto tutti i giorni dalle 9:00 alle 17:00. Orari 2026, Ramadan, chiusure e miglior momento per evitare le folle.' },
 };
 
 interface Props { params: Promise<{ locale: string }> }

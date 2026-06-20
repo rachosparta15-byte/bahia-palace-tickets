@@ -51,7 +51,7 @@ async function fetchVideos(): Promise<Video[]> {
 
 const META: Record<string, { title: string; description: string; heading: string; intro: string; noVideos: string }> = {
   en: {
-    title: 'Bahia Palace in Video | Watch Before You Visit',
+    title: 'Bahia Palace Videos 2026 | Watch Before Visiting Marrakech',
     description: "Watch videos filmed inside Bahia Palace Marrakech — zellige courtyards, carved cedar ceilings and the atmosphere of one of Morocco's most beautiful monuments.",
     heading: 'Bahia Palace in Video',
     intro: 'Experience Bahia Palace before you arrive. Our videos are filmed inside the palace and capture the zellige courtyards, hand-carved cedar ceilings, and the quiet details that photographs miss. See what you\'ll be walking through.',
@@ -72,14 +72,14 @@ const META: Record<string, { title: string; description: string; heading: string
     noVideos: 'Video in arrivo.',
   },
   de: {
-    title: 'Der Bahia Palast in Bewegung | Schau dir an, was dich erwartet',
+    title: 'Der Bahia Palast in Video | Schau vor deinem Besuch',
     description: 'Videos aus dem Inneren des Bahia Palasts Marrakesch — Zellige-Höfe, geschnitzte Zederndecken und die Atmosphäre eines der schönsten Monumente Marokkos.',
     heading: 'Der Palast in Bewegung',
     intro: 'Erlebe den Bahia Palast vor deinem Besuch. Unsere Videos wurden im Inneren des Palastes gedreht und zeigen die Zellige-Höfe, handgeschnitzten Zedernholzdecken und die stillen Details, die Fotos nicht einfangen.',
     noVideos: 'Videos demnächst verfügbar.',
   },
   es: {
-    title: 'La Bahía en Vídeo | Descúbrela antes de tu visita',
+    title: 'La Bahía en Vídeo | Descúbrelo antes de visitar Marrakech',
     description: 'Vídeos grabados dentro del Palacio Bahia Marrakech — patios de zellige, techos de cedro tallado y la atmósfera de uno de los monumentos más bellos de Marruecos.',
     heading: 'La Bahía en Vídeo',
     intro: 'Descubre el Palacio Bahia antes de tu visita. Nuestros vídeos están grabados en el interior del palacio y captan los patios de zellige, los techos de cedro tallado a mano y los detalles sutiles que las fotos no transmiten.',

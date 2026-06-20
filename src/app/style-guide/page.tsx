@@ -1,4 +1,4 @@
-﻿import { Badge } from '@/components/ui/Badge';
+import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { ZelligePattern, OrnamentDivider } from '@/components/ui/ZelligePattern';
 
@@ -15,7 +15,7 @@ const COLORS = [
 
 export default function StyleGuidePage() {
   return (
-    <div className="min-h-screen bg-[#FAF3E7] py-16 px-6">
+    <div className="min-h-screen py-16 px-6">
       <div className="max-w-5xl mx-auto">
         {/* Title */}
         <div className="mb-16 text-center">

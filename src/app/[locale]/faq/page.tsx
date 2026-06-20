@@ -8,11 +8,11 @@ import type { Metadata } from 'next';
 import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
 
 const META: Record<string, { title: string; description: string }> = {
-  en: { title: 'Bahia Palace FAQ 2026 | Top Questions About Tickets & Visiting', description: 'Answers to the most common questions about Bahia Palace: ticket prices, opening hours, skip-the-line access, guided tours, how to get there, and what to expect.' },
-  fr: { title: 'FAQ Palais Bahia 2026 | Questions Fréquentes sur les Billets & Visites', description: 'Réponses aux questions les plus fréquentes sur le Palais Bahia : prix des billets, horaires, coupe-file, visites guidées et conseils pratiques.' },
-  es: { title: 'FAQ Palacio Bahia 2026 | Preguntas Frecuentes sobre Entradas & Visitas', description: 'Respuestas a las preguntas más frecuentes sobre el Palacio Bahia: precios, horarios, acceso sin cola, visitas guiadas y consejos prácticos.' },
+  en: { title: 'Bahia Palace FAQ 2026 | Tickets, Hours & Visit Answers', description: 'Find answers about Bahia Palace: ticket prices, opening hours, skip-the-line access, guided tours, how to get there, and what to expect on your visit.' },
+  fr: { title: 'FAQ Palais Bahia 2026 | Billets, Horaires & Conseils', description: 'Réponses aux questions les plus fréquentes sur le Palais Bahia : prix des billets, horaires, coupe-file, visites guidées et conseils pratiques.' },
+  es: { title: 'FAQ Palacio Bahia 2026 | Entradas, Horarios & Consejos', description: 'Respuestas a las preguntas más frecuentes sobre el Palacio Bahia: precios, horarios, acceso sin cola, visitas guiadas y consejos prácticos.' },
   de: { title: 'Bahia Palast FAQ 2026 | Häufige Fragen zu Tickets & Besuch', description: 'Antworten auf die häufigsten Fragen zum Bahia Palast: Ticketpreise, Öffnungszeiten, Warteschlangen-Umgehung, Führungen und praktische Tipps.' },
-  it: { title: 'FAQ Palazzo Bahia 2026 | Domande Frequenti su Biglietti & Visita', description: 'Risposte alle domande più frequenti sul Palazzo Bahia: prezzi biglietti, orari, accesso prioritario, visite guidate e consigli pratici.' },
+  it: { title: 'FAQ Palazzo Bahia 2026 | Biglietti, Orari e Consigli', description: 'Risposte alle domande più frequenti sul Palazzo Bahia: prezzi biglietti, orari, accesso prioritario, visite guidate e consigli pratici.' },
 };
 
 interface Props { params: Promise<{ locale: string }> }

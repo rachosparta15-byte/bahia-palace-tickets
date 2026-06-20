@@ -7,11 +7,11 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 
 const META: Record<string, { title: string; description: string }> = {
-  en: { title: 'Bahia Palace History | Ba Ahmed & The Story Behind The Palace', description: 'Discover the fascinating history of Bahia Palace, built between 1866–1900 by Grand Vizier Ba Ahmed. Learn about its architects, the harem, and royal Moroccan past.' },
-  fr: { title: 'Histoire du Palais Bahia | Ba Ahmed & L\'Histoire du Palais', description: 'Découvrez l\'histoire fascinante du Palais Bahia, construit entre 1866 et 1900 par le Grand Vizir Ba Ahmed. Architecture, harem et passé royal marocain.' },
-  es: { title: 'Historia del Palacio Bahia | Ba Ahmed y La Historia del Palacio', description: 'Descubre la fascinante historia del Palacio Bahia, construido entre 1866 y 1900 por el Gran Visir Ba Ahmed. Arquitectura, harén e historia real marroquí.' },
-  de: { title: 'Geschichte des Bahia Palastes | Ba Ahmed & Die Geschichte des Palastes', description: 'Entdecken Sie die faszinierende Geschichte des Bahia Palastes, erbaut zwischen 1866 und 1900 vom Großwesir Ba Ahmed. Architektur, Harem und königliche Geschichte.' },
-  it: { title: 'Storia del Palazzo Bahia | Ba Ahmed e La Storia del Palazzo', description: 'Scopri la storia affascinante del Palazzo Bahia, costruito tra il 1866 e il 1900 dal Gran Visir Ba Ahmed. Architettura, harem e storia reale marocchina.' },
+  en: { title: 'Bahia Palace History | Ba Ahmed & Morocco\'s Royal Past', description: 'Explore the history of Bahia Palace, built 1866–1900 by Grand Vizier Ba Ahmed. Discover its architects, the legendary harem, and Morocco\'s royal heritage.' },
+  fr: { title: 'Histoire du Palais Bahia | Ba Ahmed & l\'Héritage Royal', description: 'Explorez l\'histoire du Palais Bahia, construit de 1866 à 1900 par le Grand Vizir Ba Ahmed. Architectes, harem légendaire et héritage royal du Maroc.' },
+  es: { title: 'Historia del Palacio Bahia | Ba Ahmed y el Pasado Real', description: 'Explora la historia del Palacio Bahia, construido de 1866 a 1900 por el Gran Visir Ba Ahmed. Arquitectos, harén legendario y patrimonio real marroquí.' },
+  de: { title: 'Geschichte des Bahia Palastes | Ba Ahmed & Marokkos Erbe', description: 'Erkunden Sie die Geschichte des Bahia Palastes, erbaut 1866–1900 vom Großwesir Ba Ahmed. Architekten, legendärer Harem und königliches Erbe Marokkos.' },
+  it: { title: 'Storia del Palazzo Bahia | Ba Ahmed e l\'Eredità Reale', description: 'Scopri la storia affascinante del Palazzo Bahia, costruito tra il 1866 e il 1900 dal Gran Visir Ba Ahmed. Architettura, harem e storia reale marocchina.' },
 };
 
 interface Props { params: Promise<{ locale: string }> }
