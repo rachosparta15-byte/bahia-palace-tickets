@@ -45,7 +45,7 @@ export default async function EntranceFeePage({ params }: Props) {
   const { locale } = await params;
 
   return (
-    <div className="bg-[#FAF3E7] min-h-screen">
+    <div className="min-h-screen">
       <JsonLd data={priceSchema} />
 
       {/* Header */}

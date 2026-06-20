@@ -100,7 +100,7 @@ export default async function GalleryPage({ params }: Props) {
   } : null;
 
   return (
-    <div className="bg-[#FAF3E7] min-h-screen">
+    <div className="min-h-screen">
       {imageObjectSchema && <JsonLd data={imageObjectSchema} />}
 
       {/* ── Dark hero: header text + carousel ─────────────────── */}

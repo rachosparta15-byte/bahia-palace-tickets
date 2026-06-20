@@ -89,7 +89,7 @@ export default async function BlogIndexPage({ params }: Props) {
   const filteredPosts = posts.filter(p => !REDIRECTED_SLUGS.has(p.slug));
 
   return (
-    <div className="bg-[#FAF3E7] min-h-screen">
+    <div className="min-h-screen">
       <div className="bg-[#3D2817] text-white px-6 py-14 md:px-10">
         <div className="max-w-5xl mx-auto">
           <Breadcrumb variant="light" items={[

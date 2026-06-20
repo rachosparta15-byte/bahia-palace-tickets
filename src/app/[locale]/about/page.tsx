@@ -30,7 +30,7 @@ export default async function AboutPage() {
   const provideItems = t('whyBody').split(' · ').filter(Boolean);
 
   return (
-    <div className="bg-[#FAF3E7] min-h-screen">
+    <div className="min-h-screen">
       {/* Hero */}
       <div className="relative h-72 md:h-96">
         <Image

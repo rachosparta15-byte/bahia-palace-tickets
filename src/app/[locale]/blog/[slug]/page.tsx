@@ -208,7 +208,7 @@ export default async function BlogPostPage({ params }: Props) {
   const faqSchema = extractFaqSchema(safeContent);
 
   return (
-    <div className="bg-[#FAF3E7] min-h-screen">
+    <div className="min-h-screen">
       <JsonLd data={articleSchema} />
       {faqSchema && <JsonLd data={faqSchema} />}
       {/* Hero */}

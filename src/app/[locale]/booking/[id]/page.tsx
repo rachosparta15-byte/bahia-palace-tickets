@@ -48,7 +48,7 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
   const isConfirmed = booking.status === 'confirmed';
 
   return (
-    <div className="bg-[#FAF3E7] min-h-screen py-16 px-6">
+    <div className="min-h-screen py-16 px-6">
       <div className="max-w-2xl mx-auto">
 
         {/* Status banner */}

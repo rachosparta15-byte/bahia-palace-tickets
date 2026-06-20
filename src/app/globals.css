@@ -497,17 +497,18 @@
 
 /* ────────────────────────────────────────────────
    SECTION HEADING SCRIM
-   Soft radial beige fade over the zellige pattern,
-   directly behind heading + subtitle blocks.
-   Apply .section-head to the wrapper div that
-   contains the h2/h3 and subtitle paragraph.
+   Radial beige fade that softens the continuous
+   body zellige behind heading + subtitle text.
+   Fades to transparent — the body beige+pattern
+   shows at the edges, so there is no hard boundary.
+   Apply .section-head to the heading wrapper div.
    ──────────────────────────────────────────────── */
 .section-head {
   padding-block: 0.5rem;
   background: radial-gradient(
     ellipse 72% 90% at 50% 50%,
-    rgba(245, 237, 224, 0.97) 0%,
-    rgba(245, 237, 224, 0.85) 38%,
+    rgba(245, 237, 224, 0.95) 0%,
+    rgba(245, 237, 224, 0.80) 40%,
     rgba(245, 237, 224, 0)    78%
   );
 }

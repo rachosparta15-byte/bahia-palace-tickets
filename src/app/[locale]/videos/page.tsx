@@ -121,7 +121,7 @@ export default async function VideosPage({ params }: Props) {
   }));
 
   return (
-    <div className="bg-[#FAF3E7] min-h-screen">
+    <div className="min-h-screen">
       {videoSchemas.map((s, i) => <JsonLd key={i} data={s} />)}
 
       {/* Hero */}

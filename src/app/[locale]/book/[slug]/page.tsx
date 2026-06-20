@@ -43,7 +43,7 @@ export default async function QuickBookPage({ params }: Props) {
   const imgSrc = IMAGES[slug] ?? IMAGES['skip-the-line'];
 
   return (
-    <div className="min-h-screen bg-[#FAF3E7] flex flex-col">
+    <div className="min-h-screen flex flex-col">
 
       {/* Thin header bar */}
       <div className="bg-[#3D2817] px-6 py-4 flex items-center justify-between">

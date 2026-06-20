@@ -33,7 +33,7 @@ export default async function TicketsPage({ params }: Props) {
   const tb = await getTranslations({ locale, namespace: 'breadcrumb' });
 
   return (
-    <div className="bg-[#FAF3E7] min-h-screen">
+    <div className="min-h-screen">
       <div className="bg-[#3D2817] px-6 py-4">
         <div className="max-w-6xl mx-auto">
           <Breadcrumb
