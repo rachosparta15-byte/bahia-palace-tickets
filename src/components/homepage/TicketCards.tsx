@@ -63,7 +63,7 @@ export function TicketCards({ overrides = {} }: Props) {
       <div className="max-w-6xl mx-auto px-6">
 
         {/* ── Heading ── */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-10 section-head">
           <h2
             className="text-[#3D2817] mb-2"
             style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}

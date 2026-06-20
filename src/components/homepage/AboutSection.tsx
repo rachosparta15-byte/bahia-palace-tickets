@@ -12,7 +12,7 @@ export function AboutSection() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Text */}
-          <div>
+          <div className="section-head">
             <OrnamentDivider />
             <h2
               className="text-[#3D2817] mt-6 mb-5"

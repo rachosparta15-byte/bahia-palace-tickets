@@ -496,6 +496,23 @@
 }
 
 /* ────────────────────────────────────────────────
+   SECTION HEADING SCRIM
+   Soft radial beige fade over the zellige pattern,
+   directly behind heading + subtitle blocks.
+   Apply .section-head to the wrapper div that
+   contains the h2/h3 and subtitle paragraph.
+   ──────────────────────────────────────────────── */
+.section-head {
+  padding-block: 0.5rem;
+  background: radial-gradient(
+    ellipse 72% 90% at 50% 50%,
+    rgba(245, 237, 224, 0.97) 0%,
+    rgba(245, 237, 224, 0.85) 38%,
+    rgba(245, 237, 224, 0)    78%
+  );
+}
+
+/* ────────────────────────────────────────────────
    FOCUS VISIBLE
    ──────────────────────────────────────────────── */
 :focus-visible {

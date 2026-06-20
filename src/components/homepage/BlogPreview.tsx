@@ -23,7 +23,7 @@ export function BlogPreview() {
     <section className="py-20 bg-[#FAF3E7] zellige">
       <div className="max-w-6xl mx-auto px-6">
 
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 section-head">
           <OrnamentDivider />
           <h2
             className="text-[#3D2817] mt-6 mb-4"
