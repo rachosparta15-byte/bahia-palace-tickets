@@ -59,7 +59,7 @@ export function TicketCards({ overrides = {} }: Props) {
   const isSingle = liveKeys.length === 1;
 
   return (
-    <section className="pt-10 pb-16 bg-[#FAF3E7]">
+    <section className="pt-10 pb-16 bg-[#FAF3E7] khatim-bg">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* ── Heading ── */}

@@ -84,6 +84,9 @@
 
   body {
     background-color: var(--color-cream);
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='70' height='70' viewBox='0 0 70 70' opacity='0.35'><polygon points='35,9 39.21,24.84 53.38,16.62 45.16,30.79 61,35 45.16,39.21 53.38,53.38 39.21,45.16 35,61 30.79,45.16 16.62,53.38 24.84,39.21 9,35 24.84,30.79 16.62,16.62 30.79,24.84' fill='none' stroke='%23B0883F' stroke-width='1'/><polygon points='0,-8 8,0 0,8 -8,0' fill='none' stroke='%23B0883F' stroke-width='1'/><polygon points='70,62 78,70 70,78 62,70' fill='none' stroke='%23B0883F' stroke-width='1'/></svg>");
+    background-size: 70px 70px;
+    background-repeat: repeat;
     color: var(--color-foreground);
     font-family: var(--font-body);
     line-height: 1.75;
@@ -471,6 +474,26 @@
 
   @media (prefers-reduced-motion: reduce) {
     .hero-ken-burns { animation: none; }
+  }
+}
+
+/* ────────────────────────────────────────────────
+   KHATIM (eight-pointed star) ZELLIGE PATTERN
+   body gets it for free; any section with its own
+   bg-color must also add .khatim-bg so background-
+   image applies on top of the section's background-color.
+   ──────────────────────────────────────────────── */
+.khatim-bg {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='70' height='70' viewBox='0 0 70 70' opacity='0.35'><polygon points='35,9 39.21,24.84 53.38,16.62 45.16,30.79 61,35 45.16,39.21 53.38,53.38 39.21,45.16 35,61 30.79,45.16 16.62,53.38 24.84,39.21 9,35 24.84,30.79 16.62,16.62 30.79,24.84' fill='none' stroke='%23B0883F' stroke-width='1'/><polygon points='0,-8 8,0 0,8 -8,0' fill='none' stroke='%23B0883F' stroke-width='1'/><polygon points='70,62 78,70 70,78 62,70' fill='none' stroke='%23B0883F' stroke-width='1'/></svg>");
+  background-size: 70px 70px;
+  background-repeat: repeat;
+}
+
+/* Scale tile up on mobile so the pattern reads as texture, not noise */
+@media (max-width: 639px) {
+  body,
+  .khatim-bg {
+    background-size: 90px 90px;
   }
 }
 
