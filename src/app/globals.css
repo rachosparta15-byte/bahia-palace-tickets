@@ -466,7 +466,7 @@
    Edit --zellige-tile once to change the pattern everywhere.
    ────────────────────────────────────────────────── */
 :root {
-  --zellige-tile: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50' opacity='0.35'><g transform='translate(0,1)' fill='none' stroke='%238A6A2E' stroke-width='1' stroke-opacity='0.3'><polygon points='43.48,32.65 32.65,43.48 17.35,43.48 6.52,32.65 6.52,17.35 17.35,6.52 32.65,6.52 43.48,17.35'/><polygon points='0,-6 6,0 0,6 -6,0'/><polygon points='50,44 56,50 50,56 44,50'/></g><g fill='none' stroke='%23B0883F' stroke-width='1'><polygon points='43.48,32.65 32.65,43.48 17.35,43.48 6.52,32.65 6.52,17.35 17.35,6.52 32.65,6.52 43.48,17.35'/><polygon points='0,-6 6,0 0,6 -6,0'/><polygon points='50,44 56,50 50,56 44,50'/></g></svg>");
+  --zellige-tile: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50' opacity='0.15'><g transform='translate(0,1)' fill='none' stroke='%238A6A2E' stroke-width='1' stroke-opacity='0.3'><polygon points='43.48,32.65 32.65,43.48 17.35,43.48 6.52,32.65 6.52,17.35 17.35,6.52 32.65,6.52 43.48,17.35'/><polygon points='0,-6 6,0 0,6 -6,0'/><polygon points='50,44 56,50 50,56 44,50'/></g><g fill='none' stroke='%23B0883F' stroke-width='1'><polygon points='43.48,32.65 32.65,43.48 17.35,43.48 6.52,32.65 6.52,17.35 17.35,6.52 32.65,6.52 43.48,17.35'/><polygon points='0,-6 6,0 0,6 -6,0'/><polygon points='50,44 56,50 50,56 44,50'/></g></svg>");
   --zellige-size: 50px;
 }
 
