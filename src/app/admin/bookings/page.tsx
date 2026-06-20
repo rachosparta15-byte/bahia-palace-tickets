@@ -48,7 +48,7 @@ export default async function BookingsPage({ searchParams }: Props) {
     <div className="p-8">
       <h1
         className="text-2xl font-bold text-[#3D2817] mb-8"
-        style={{ fontFamily: 'Cormorant Garamond, serif' }}
+        style={{ fontFamily: 'var(--font-heading)' }}
       >
         Bookings
       </h1>

@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { ReviewForm } from '@/components/admin/ReviewForm';
 
@@ -9,7 +9,7 @@ export default function NewReviewPage() {
         <ArrowLeft size={14} />
         Back to reviews
       </Link>
-      <h1 className="text-2xl font-bold text-[#3D2817] mb-8" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+      <h1 className="text-2xl font-bold text-[#3D2817] mb-8" style={{ fontFamily: 'var(--font-heading)' }}>
         Add Review
       </h1>
       <ReviewForm mode="new" />

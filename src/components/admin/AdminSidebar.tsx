@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
@@ -51,7 +51,7 @@ export function AdminSidebar() {
       <div className="px-5 py-5 border-b border-white/10 flex items-center gap-3">
         <LogoMark className="w-9 h-9 shrink-0" />
         <div className="leading-none">
-          <div className="text-white font-bold text-base leading-tight" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+          <div className="text-white font-bold text-base leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
             Bahia Palace
           </div>
           <div className="text-white/40 text-[10px] mt-0.5 tracking-widest uppercase">Admin</div>

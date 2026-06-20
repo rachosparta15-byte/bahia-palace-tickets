@@ -1,4 +1,4 @@
-import prisma from '@/lib/db';
+﻿import prisma from '@/lib/db';
 import Link from 'next/link';
 import { PlusCircle } from 'lucide-react';
 
@@ -20,7 +20,7 @@ export default async function AdminBlogPage() {
       <div className="flex items-center justify-between mb-8">
         <h1
           className="text-2xl font-bold text-[#3D2817]"
-          style={{ fontFamily: 'Cormorant Garamond, serif' }}
+          style={{ fontFamily: 'var(--font-heading)' }}
         >
           Blog Articles
         </h1>

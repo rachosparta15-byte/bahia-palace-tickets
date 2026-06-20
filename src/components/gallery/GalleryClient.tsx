@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import { PinterestSaveButton } from './PinterestSaveButton';
@@ -136,7 +136,7 @@ export function GalleryClient({ images, pageUrl }: { images: GalleryImage[]; pag
               <div className="min-w-0">
                 <p
                   className="text-white font-semibold text-sm sm:text-base leading-snug truncate"
-                  style={{ fontFamily: 'Cormorant Garamond, serif' }}
+                  style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {current.title}
                 </p>

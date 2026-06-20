@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
@@ -72,7 +72,7 @@ export function Header() {
           <div className="leading-none hidden min-[360px]:block">
             <div
               className="text-white font-semibold tracking-wide group-hover:text-[#F5E8CC] transition-colors"
-              style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1rem, 3.5vw, 1.25rem)', letterSpacing: '0.04em' }}
+              style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1rem, 3.5vw, 1.25rem)', letterSpacing: '0.04em' }}
             >
               Bahia Palace
             </div>

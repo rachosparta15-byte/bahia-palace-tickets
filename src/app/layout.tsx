@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import { BASE } from '@/lib/seo';
 import { Analytics } from '@vercel/analytics/next';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
-import { Cormorant_Garamond, Inter, Amiri } from 'next/font/google';
+import { Playfair_Display, Inter, Amiri } from 'next/font/google';
 import './globals.css';
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-cormorant',
+  weight: ['600', '700'],
+  variable: '--font-playfair',
   display: 'swap',
 });
 
@@ -63,7 +63,7 @@ const orgSchema = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html suppressHydrationWarning>
-      <body className={`${cormorant.variable} ${inter.variable} ${amiri.variable}`}>
+      <body className={`${playfair.variable} ${inter.variable} ${amiri.variable}`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema).replace(/</g,'\\u003c').replace(/>/g,'\\u003e').replace(/&/g,'\\u0026') }}

@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+﻿import { getTranslations } from 'next-intl/server';
 import { Star, ExternalLink } from 'lucide-react';
 import { OrnamentDivider } from '@/components/ui/ZelligePattern';
 import prisma from '@/lib/db';
@@ -26,7 +26,7 @@ export async function ReviewsCarousel() {
           <OrnamentDivider label="" />
           <h2
             className="text-white mt-6 mb-4"
-            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
+            style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
           >
             {t('title')}
           </h2>
@@ -65,7 +65,7 @@ export async function ReviewsCarousel() {
           <OrnamentDivider label="" />
           <h2
             className="text-white mt-6 mb-3"
-            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
+            style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
           >
             {t('title')}
           </h2>

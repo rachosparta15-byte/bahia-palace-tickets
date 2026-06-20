@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
@@ -76,7 +76,7 @@ export function GalleryCarousel() {
           <div className="absolute bottom-12 left-5 sm:left-7 right-20">
             <p
               className="text-white font-semibold drop-shadow-md leading-snug"
-              style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)' }}
+              style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)' }}
             >
               {slide.title}
             </p>

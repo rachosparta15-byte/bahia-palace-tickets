@@ -22,7 +22,7 @@ export default function StyleGuidePage() {
           <ZelligePattern className="w-16 h-16 text-[#E8A33D] mx-auto mb-4" />
           <h1
             className="text-[#3D2817] mb-3"
-            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '3rem', fontWeight: 700 }}
+            style={{ fontFamily: 'var(--font-heading)', fontSize: '3rem', fontWeight: 700 }}
           >
             Bahia Palace — Design System
           </h1>
@@ -33,7 +33,7 @@ export default function StyleGuidePage() {
         <section className="mb-16">
           <h2
             className="text-[#3D2817] mb-6"
-            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2rem' }}
+            style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem' }}
           >
             Colour Palette
           </h2>
@@ -54,26 +54,26 @@ export default function StyleGuidePage() {
         <section className="mb-16">
           <h2
             className="text-[#3D2817] mb-6"
-            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2rem' }}
+            style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem' }}
           >
             Typography
           </h2>
           <div className="moroccan-card p-8 space-y-8">
             <div>
               <p className="text-xs text-[#5C3D20] uppercase tracking-widest mb-2">Hero — Cormorant Garamond 700</p>
-              <p className="text-[#3D2817] leading-tight" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '3.5rem', fontWeight: 700 }}>
+              <p className="text-[#3D2817] leading-tight" style={{ fontFamily: 'var(--font-heading)', fontSize: '3.5rem', fontWeight: 700 }}>
                 Bahia Palace Tickets
               </p>
             </div>
             <div>
               <p className="text-xs text-[#5C3D20] uppercase tracking-widest mb-2">H1 — Cormorant Garamond 600</p>
-              <p className="text-[#3D2817]" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2.5rem', fontWeight: 600 }}>
+              <p className="text-[#3D2817]" style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 600 }}>
                 Skip the Line in Marrakech
               </p>
             </div>
             <div>
               <p className="text-xs text-[#5C3D20] uppercase tracking-widest mb-2">H2 — Cormorant Garamond 600</p>
-              <h2 className="text-[#3D2817]" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2rem' }}>
+              <h2 className="text-[#3D2817]" style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem' }}>
                 Choose Your Experience
               </h2>
             </div>
@@ -96,7 +96,7 @@ export default function StyleGuidePage() {
         <section className="mb-16">
           <h2
             className="text-[#3D2817] mb-6"
-            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2rem' }}
+            style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem' }}
           >
             Buttons
           </h2>
@@ -123,7 +123,7 @@ export default function StyleGuidePage() {
         <section className="mb-16">
           <h2
             className="text-[#3D2817] mb-6"
-            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2rem' }}
+            style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem' }}
           >
             Badges
           </h2>
@@ -140,7 +140,7 @@ export default function StyleGuidePage() {
         <section className="mb-16">
           <h2
             className="text-[#3D2817] mb-6"
-            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2rem' }}
+            style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem' }}
           >
             Ornamental Divider
           </h2>
@@ -154,7 +154,7 @@ export default function StyleGuidePage() {
         <section className="mb-16">
           <h2
             className="text-[#3D2817] mb-6"
-            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2rem' }}
+            style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem' }}
           >
             Card Component
           </h2>
@@ -164,7 +164,7 @@ export default function StyleGuidePage() {
                 <div className="h-8 w-8 rounded-full bg-[#FAF3E7] mb-3" />
                 <h3
                   className="text-[#3D2817] mb-1"
-                  style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.2rem' }}
+                  style={{ fontFamily: 'var(--font-heading)', fontSize: '1.2rem' }}
                 >
                   {t}
                 </h3>
@@ -178,7 +178,7 @@ export default function StyleGuidePage() {
         <section className="mb-16">
           <h2
             className="text-[#3D2817] mb-6"
-            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2rem' }}
+            style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem' }}
           >
             Zellige Patterns
           </h2>

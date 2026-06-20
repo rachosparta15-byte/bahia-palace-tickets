@@ -1,4 +1,4 @@
-import prisma from '@/lib/db';
+﻿import prisma from '@/lib/db';
 import Link from 'next/link';
 import { TicketQuickToggle } from '@/components/admin/TicketQuickToggle';
 import { Pencil, ImageIcon } from 'lucide-react';
@@ -27,7 +27,7 @@ export default async function AdminTicketsPage() {
         <div>
           <h1
             className="text-2xl font-bold text-[#3D2817]"
-            style={{ fontFamily: 'Cormorant Garamond, serif' }}
+            style={{ fontFamily: 'var(--font-heading)' }}
           >
             Ticket Management
           </h1>
@@ -57,7 +57,7 @@ export default async function AdminTicketsPage() {
                 <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
                   <h2
                     className="text-white font-bold text-base leading-tight"
-                    style={{ fontFamily: 'Cormorant Garamond, serif' }}
+                    style={{ fontFamily: 'var(--font-heading)' }}
                   >
                     {ticket.nameEn}
                   </h2>
@@ -71,7 +71,7 @@ export default async function AdminTicketsPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-xs text-[#8B6344] uppercase tracking-wide mb-1">Adult price</p>
-                    <p className="text-2xl font-bold text-[#C4452D]" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+                    <p className="text-2xl font-bold text-[#C4452D]" style={{ fontFamily: 'var(--font-heading)' }}>
                       ${ticket.priceAdult}
                     </p>
                   </div>

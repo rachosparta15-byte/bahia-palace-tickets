@@ -1,4 +1,4 @@
-import prisma from '@/lib/db';
+﻿import prisma from '@/lib/db';
 import Link from 'next/link';
 import { PlusCircle, Star } from 'lucide-react';
 
@@ -11,7 +11,7 @@ export default async function AdminReviewsPage() {
     <div className="p-8">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-[#3D2817]" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+          <h1 className="text-2xl font-bold text-[#3D2817]" style={{ fontFamily: 'var(--font-heading)' }}>
             Reviews
           </h1>
           <p className="text-sm text-[#8B6344] mt-1">Manage visitor testimonials shown on the site.</p>

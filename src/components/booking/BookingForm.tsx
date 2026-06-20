@@ -137,7 +137,7 @@ export function BookingForm({ ticket, ticketName, date, adults, children, locale
       {/* Order summary */}
       <div className="lg:col-span-2">
         <div className="bg-[#3D2817] text-white rounded-2xl p-6 lg:sticky top-24">
-          <h2 className="font-bold mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem' }}>
+          <h2 className="font-bold mb-4" style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem' }}>
             Order Summary
           </h2>
           <div className="space-y-3 mb-5 pb-5 border-b border-white/15">
@@ -177,7 +177,7 @@ export function BookingForm({ ticket, ticketName, date, adults, children, locale
           )}
           <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/15">
             <span className="font-semibold">Total</span>
-            <span className="font-bold text-2xl" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+            <span className="font-bold text-2xl" style={{ fontFamily: 'var(--font-heading)' }}>
               ${total}
             </span>
           </div>

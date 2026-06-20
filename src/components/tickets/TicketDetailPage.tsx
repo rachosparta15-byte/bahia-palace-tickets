@@ -1,4 +1,4 @@
-import { getTranslations, getLocale } from 'next-intl/server';
+﻿import { getTranslations, getLocale } from 'next-intl/server';
 import Image from 'next/image';
 import { Check, X, MapPin, Clock, ChevronDown } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
@@ -150,7 +150,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
             </span>
             <h1
               className="text-white font-bold mb-2 leading-tight"
-              style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 5vw, 3.25rem)' }}
+              style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 5vw, 3.25rem)' }}
             >
               {name}
             </h1>
@@ -169,7 +169,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
             {/* Description */}
             <p
               className="text-[#3D2817] leading-relaxed"
-              style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.2rem' }}
+              style={{ fontFamily: 'var(--font-heading)', fontSize: '1.2rem' }}
             >
               {longDesc}
             </p>
@@ -178,7 +178,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
             <div>
               <h2
                 className="text-xl font-bold text-[#3D2817] mb-4"
-                style={{ fontFamily: 'Cormorant Garamond, serif' }}
+                style={{ fontFamily: 'var(--font-heading)' }}
               >
                 {td('gallery')}
               </h2>
@@ -200,7 +200,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
               <div>
                 <h2
                   className="text-lg font-bold text-[#3D2817] mb-4"
-                  style={{ fontFamily: 'Cormorant Garamond, serif' }}
+                  style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {td('includes')}
                 </h2>
@@ -216,7 +216,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
               <div>
                 <h2
                   className="text-lg font-bold text-[#3D2817] mb-4"
-                  style={{ fontFamily: 'Cormorant Garamond, serif' }}
+                  style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {td('excludes')}
                 </h2>
@@ -253,7 +253,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
             <div>
               <h2
                 className="text-2xl font-bold text-[#3D2817] mb-6"
-                style={{ fontFamily: 'Cormorant Garamond, serif' }}
+                style={{ fontFamily: 'var(--font-heading)' }}
               >
                 {td('faqTitle')}
               </h2>
@@ -292,7 +292,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
         <div className="mt-16 pt-10 border-t border-[#E8D5B7]">
           <h2
             className="text-2xl font-bold text-[#3D2817] mb-8 text-center"
-            style={{ fontFamily: 'Cormorant Garamond, serif' }}
+            style={{ fontFamily: 'var(--font-heading)' }}
           >
             {td('alsoConsider')}
           </h2>
@@ -320,12 +320,12 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
                   <div className="p-5 flex-1">
                     <h3
                       className="font-bold text-[#3D2817] mb-1"
-                      style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.1rem' }}
+                      style={{ fontFamily: 'var(--font-heading)', fontSize: '1.1rem' }}
                     >
                       {relName}
                     </h3>
                     <p className="text-sm text-[#5C3D20] mb-3 leading-snug">{relTagline}</p>
-                    <p className="text-[#C4452D] font-bold" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+                    <p className="text-[#C4452D] font-bold" style={{ fontFamily: 'var(--font-heading)' }}>
                       {t('from')} ${rel.price}
                       <span className="text-xs font-normal text-[#5C3D20] ml-1">{t('perPerson')}</span>
                     </p>

@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+﻿import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { Accordion } from '@/components/ui/Accordion';
 import { OrnamentDivider } from '@/components/ui/ZelligePattern';
@@ -15,7 +15,7 @@ export function FaqSection() {
           <OrnamentDivider />
           <h2
             className="text-[#3D2817] mt-6"
-            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
+            style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
           >
             {t('title')}
           </h2>

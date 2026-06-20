@@ -1,4 +1,4 @@
-import prisma from '@/lib/db';
+﻿import prisma from '@/lib/db';
 import { Search, Mail, User, Globe, Tag, Calendar, MapPin, Smartphone, Link2, Wifi } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -79,7 +79,7 @@ export default async function LeadsPage({ searchParams }: Props) {
       <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
         <h1
           className="text-2xl font-bold text-[#3D2817]"
-          style={{ fontFamily: 'Cormorant Garamond, serif' }}
+          style={{ fontFamily: 'var(--font-heading)' }}
         >
           Leads — Traffic Sources
         </h1>

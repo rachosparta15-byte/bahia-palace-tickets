@@ -1,4 +1,4 @@
-import { Breadcrumb } from '@/components/tickets/Breadcrumb';
+﻿import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { Link } from '@/i18n/navigation';
 
 interface LegalSection {
@@ -25,7 +25,7 @@ export function LegalPage({ title, subtitle, lastUpdated, sections, homeLabel }:
           />
           <h1
             className="mt-6 font-bold text-white"
-            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
+            style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
           >
             {title}
           </h1>
@@ -40,7 +40,7 @@ export function LegalPage({ title, subtitle, lastUpdated, sections, homeLabel }:
             <section key={i}>
               <h2
                 className="text-xl font-bold text-[#3D2817] mb-3"
-                style={{ fontFamily: 'Cormorant Garamond, serif' }}
+                style={{ fontFamily: 'var(--font-heading)' }}
               >
                 {section.heading}
               </h2>

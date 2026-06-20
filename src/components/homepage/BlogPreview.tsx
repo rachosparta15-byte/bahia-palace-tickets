@@ -1,4 +1,4 @@
-import { useTranslations, useLocale } from 'next-intl';
+﻿import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { ArrowRight, Clock } from 'lucide-react';
 import { OrnamentDivider } from '@/components/ui/ZelligePattern';
@@ -27,7 +27,7 @@ export function BlogPreview() {
           <OrnamentDivider />
           <h2
             className="text-[#3D2817] mt-6 mb-4"
-            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
+            style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
           >
             {t('title')}
           </h2>
@@ -47,7 +47,7 @@ export function BlogPreview() {
                 </span>
                 <h3
                   className="text-[#3D2817] font-semibold mb-3 leading-snug group-hover:text-[#C4452D] transition-colors flex-1"
-                  style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.2rem' }}
+                  style={{ fontFamily: 'var(--font-heading)', fontSize: '1.2rem' }}
                 >
                   {post.title}
                 </h3>

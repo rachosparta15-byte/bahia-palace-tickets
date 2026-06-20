@@ -1,4 +1,4 @@
-import prisma from '@/lib/db';
+﻿import prisma from '@/lib/db';
 import { SettingsForm } from '@/components/admin/SettingsForm';
 
 export const dynamic = 'force-dynamic';
@@ -54,7 +54,7 @@ export default async function SettingsPage() {
   return (
     <div className="p-8 max-w-3xl">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-[#3D2817]" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+        <h1 className="text-2xl font-bold text-[#3D2817]" style={{ fontFamily: 'var(--font-heading)' }}>
           Site Settings
         </h1>
         <p className="text-sm text-[#8B6344] mt-1">Global configuration — contact info, prices, social links.</p>

@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+﻿import { useTranslations } from 'next-intl';
 import { ArrowRight } from 'lucide-react';
 import { ZelligePattern } from '@/components/ui/ZelligePattern';
 import { LeadButton } from '@/components/layout/LeadButton';
@@ -16,7 +16,7 @@ export function FinalCTA() {
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
         <h2
           className="text-white mb-4"
-          style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 4vw, 3rem)' }}
+          style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 4vw, 3rem)' }}
         >
           {t('title')}
         </h2>

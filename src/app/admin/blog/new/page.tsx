@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { BlogPostForm } from '@/components/admin/BlogPostForm';
 
@@ -11,7 +11,7 @@ export default function NewBlogPostPage() {
       </Link>
       <h1
         className="text-2xl font-bold text-[#3D2817] mb-8"
-        style={{ fontFamily: 'Cormorant Garamond, serif' }}
+        style={{ fontFamily: 'var(--font-heading)' }}
       >
         New Article
       </h1>

@@ -1,4 +1,4 @@
-import prisma from '@/lib/db';
+﻿import prisma from '@/lib/db';
 import { BarChart2, Users, Eye, MousePointer, Mail, TrendingUp, Globe, Smartphone, Monitor, ArrowRight } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -100,7 +100,7 @@ export default async function AnalyticsPage() {
 
   return (
     <div className="p-8 space-y-8">
-      <h1 className="text-2xl font-bold text-[#3D2817]" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+      <h1 className="text-2xl font-bold text-[#3D2817]" style={{ fontFamily: 'var(--font-heading)' }}>
         Analytics
       </h1>
 

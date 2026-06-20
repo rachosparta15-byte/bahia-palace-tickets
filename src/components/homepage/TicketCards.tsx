@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useTranslations } from 'next-intl';
 import { LeadButton } from '@/components/layout/LeadButton';
@@ -66,7 +66,7 @@ export function TicketCards({ overrides = {} }: Props) {
         <div className="text-center mb-10">
           <h2
             className="text-[#3D2817] mb-2"
-            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
+            style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
           >
             {t('title')}
           </h2>
@@ -127,7 +127,7 @@ export function TicketCards({ overrides = {} }: Props) {
                   {/* Title + tagline */}
                   <h3
                     className="text-[#3D2817] leading-snug mb-1"
-                    style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: isSingle ? '1.55rem' : '1.15rem', fontWeight: 700 }}
+                    style={{ fontFamily: 'var(--font-heading)', fontSize: isSingle ? '1.55rem' : '1.15rem', fontWeight: 700 }}
                   >
                     {name}
                   </h3>

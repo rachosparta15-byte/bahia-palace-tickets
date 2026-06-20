@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useRef, useState } from 'react';
 import { Upload, Trash2, Pencil, Loader2, Plus, X, Check, GripVertical, Eye, EyeOff } from 'lucide-react';
@@ -132,7 +132,7 @@ export default function AdminGalleryPage() {
   return (
     <div className="p-8">
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-2xl font-bold text-[#3D2817]" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+        <h1 className="text-2xl font-bold text-[#3D2817]" style={{ fontFamily: 'var(--font-heading)' }}>
           Gallery
         </h1>
         <div className="flex items-center gap-3">

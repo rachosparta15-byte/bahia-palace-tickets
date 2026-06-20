@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
@@ -153,7 +153,7 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
                 </p>
                 <h2
                   className="text-white font-bold leading-snug"
-                  style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem' }}
+                  style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem' }}
                 >
                   Get tips &amp; a future discount
                 </h2>

@@ -1,4 +1,4 @@
-import { ArrowRight, Sun, Landmark } from 'lucide-react';
+﻿import { ArrowRight, Sun, Landmark } from 'lucide-react';
 
 async function getTemp(): Promise<number | null> {
   try {
@@ -79,7 +79,7 @@ export async function Hero() {
               <span
                 className="block text-white"
                 style={{
-                  fontFamily: 'Cormorant Garamond, serif',
+                  fontFamily: 'var(--font-heading)',
                   fontSize: 'clamp(2.4rem, 8vw, 5.5rem)',
                   fontWeight: 700,
                   lineHeight: 0.95,
@@ -92,7 +92,7 @@ export async function Hero() {
               <span
                 className="block text-white/55 mt-2"
                 style={{
-                  fontFamily: 'Cormorant Garamond, serif',
+                  fontFamily: 'var(--font-heading)',
                   fontSize: 'clamp(1.1rem, 3.5vw, 2.2rem)',
                   fontStyle: 'italic',
                   fontWeight: 400,
