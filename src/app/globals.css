@@ -475,6 +475,21 @@
 }
 
 /* ────────────────────────────────────────────────
+   PINTEREST BADGE
+   Always visible on touch/mobile (no hover state).
+   Hidden by default and revealed on group-hover only
+   on real pointer devices (mouse/trackpad).
+   ──────────────────────────────────────────────── */
+.pinterest-badge {
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .pinterest-badge        { opacity: 0; }
+  .group:hover .pinterest-badge { opacity: 1; }
+}
+
+/* ────────────────────────────────────────────────
    FOCUS VISIBLE
    ──────────────────────────────────────────────── */
 :focus-visible {
