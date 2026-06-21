@@ -6,7 +6,7 @@ import { Clock, Sun, Moon, AlertTriangle, CheckCircle2, ArrowRight } from 'lucid
 import type { Metadata } from 'next';
 
 const META: Record<string, { title: string; description: string }> = {
-  en: { title: 'Bahia Palace Opening Hours 2026 | Times, Ramadan & Tips', description: 'Bahia Palace is open daily 9:00 AM – 5:00 PM. Check 2026 schedule, Ramadan hours, holiday closures, and the best time to visit to avoid crowds.' },
+  en: { title: 'Bahia Palace Opening Hours 2026 | Times, Ramadan & Tips', description: 'Open daily 9:00 AM – 5:00 PM. Ramadan schedule, public holiday closures, and the exact arrival time to beat the midday crowds — all confirmed for 2026.' },
   fr: { title: 'Horaires Palais Bahia 2026 | Ramadan & Meilleur Moment', description: 'Le Palais Bahia est ouvert tous les jours de 9h à 17h. Horaires 2026, Ramadan, fermetures et meilleur moment pour éviter la foule.' },
   es: { title: 'Horario Palacio Bahia 2026 | Ramadán & Mejor Momento', description: 'El Palacio Bahia abre todos los días de 9:00 a 17:00. Horario 2026, Ramadán, cierres y mejor momento para evitar aglomeraciones.' },
   de: { title: 'Bahia Palast Öffnungszeiten 2026 | Ramadan & Beste Zeit', description: 'Der Bahia Palast ist täglich von 9:00 bis 17:00 Uhr geöffnet. Öffnungszeiten 2026, Ramadan-Zeiten und beste Besuchszeit.' },
