@@ -58,10 +58,10 @@ excerpt: Cómo llegar a Bahia Palace desde Jemaa el-Fna: ruta a pie, consejos ta
 <p>Desde cualquiera de los dos aparcamientos, caminar hasta la entrada del palacio lleva entre 5 y 10 minutos. Los aparcamientos en la zona de la medina de Marrakech son generalmente informales — un vigilante cobrará una pequeña tarifa (5-10 MAD) cuando te vayas. Es normal y esperado — no es una estafa.</p>
 
 <h2>¿Qué hay cerca de Bahia Palace?</h2>
-<p><strong>Tumbas Saadíes (~10 minutos al sur):</strong> El mausoleo real de la dinastía saadí, amurallado durante siglos y redescubierto en 1917. Pequeño, extraordinariamente detallado y que vale 45 minutos. Sigue los carteles al sur de Bahia Palace a través del Mellah.</p>
-<p><strong>El Badi Palace (~15 minutos al oeste):</strong> Las dramáticas ruinas de un complejo palacial del siglo XVI — vastas salas sin techo y torres con nidos de cigüeñas. Dirígete hacia el oeste en dirección a la Place des Ferblantiers.</p>
+<p><strong>Tumbas Saadíes (~10 minutos al sur):</strong> El mausoleo real de la dinastía saadí, amurallado durante siglos y redescubierto en 1917. Pequeño, extraordinariamente detallado y que vale 45 minutos. Entrada: 70 MAD. Sigue los carteles al sur de Bahia Palace a través del Mellah.</p>
+<p><strong>El Badi Palace (~15 minutos al oeste):</strong> Las dramáticas ruinas de un complejo palacial del siglo XVI — vastas salas sin techo y torres con nidos de cigüeñas. Entrada: 70 MAD. Dirígete hacia el oeste en dirección a la Place des Ferblantiers.</p>
 <p><strong>Place des Ferblantiers (~3 minutos al oeste):</strong> La plaza de los fabricantes de linternas, que conviene visitar al anochecer, cuando todo se ilumina.</p>
-<p><strong>Mellah (Barrio Judío):</strong> Inmediatamente adyacente a Bahia Palace. Los callejones cubiertos del mercado aquí son menos turísticos que los souks principales y vale la pena explorarlos — edificios más altos, balcones de hierro forjado y carácter distintivo.</p>
+<p><strong>Mellah (Barrio Judío):</strong> Inmediatamente adyacente a Bahia Palace. Los callejones cubiertos del mercado aquí son menos turísticos que los souks principales y vale la pena explorarlos — edificios más altos, balcones de hierro forjado, la sinagoga Lazama y un carácter marcadamente diferente al resto de la medina.</p>
 
 <h2>¿Sabes cómo llegar? Evita también la cola.</h2>
 <p>Saber cómo llegar es una cosa. Hacer 40 minutos de cola una vez allí es otra. <a href="/es/tickets/skip-the-line">Reserva tu entrada skip-the-line con antelación</a> y pasarás de la calle directamente al palacio — sin buscar cambio, sin hacer cola, sin esperar al sol.</p>
@@ -73,3 +73,7 @@ excerpt: Cómo llegar a Bahia Palace desde Jemaa el-Fna: ruta a pie, consejos ta
 <p>Sí, y caminar es la forma recomendada de llegar. La ruta por la Rue Riad Zitoun el Kedim y la Rue Riad Zitoun el Jedid es directa y te lleva a través de barrios auténticos de la medina. Descarga Google Maps offline antes de tu viaje para navegar con confianza.</p>
 <h3>¿Hay autobús para Bahia Palace?</h3>
 <p>Los autobuses municipales de Marrakech no circulan por el corazón de la medina. Desde Jemaa el-Fna, caminar o tomar un petit taxi es más rápido y práctico que usar un autobús. Las apps de VTC (Careem, inDrive) son una buena alternativa si prefieres precios transparentes.</p>
+<h3>¿Es fácil encontrar Bahia Palace por cuenta propia?</h3>
+<p>Sí — la ruta por la Rue Riad Zitoun el Kedim → Rue Riad Zitoun el Jedid es uno de los caminos más directos de la medina. El error más común es pasar de largo la entrada: las puertas de madera son grandes pero se mimetizan con la calle. Busca el cartel en árabe y francés sobre el portal y comprueba tu lado izquierdo en los últimos 200 metros.</p>
+<h3>¿Puedo ir en coche hasta Bahia Palace?</h3>
+<p>No es posible conducir por el interior de la medina. Si llegas en coche, utiliza el <strong>Parking El Badi</strong> (Place des Ferblantiers, ~600 m al oeste del palacio — gratuito o muy barato) o el <strong>Parking Mellah</strong> (justo al sur del mercado del Mellah, a 5 minutos a pie del portal). El vigilante del aparcamiento cobrará 5–10 MAD al salir — es práctica habitual, no una estafa.</p>

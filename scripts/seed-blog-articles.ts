@@ -88,6 +88,7 @@ async function main() {
       let coverImage: string | null;
       let category:   string;
       let tags:       string | null;
+      let author:     string | null;
       let body:       string;
 
       if (locale === 'en') {
@@ -100,6 +101,7 @@ async function main() {
         coverImage = p.fm.coverImage ?? null;
         category   = p.fm.category  || 'practical';
         tags       = p.fm.tags      ?? null;
+        author     = p.fm.author    ?? null;
         body       = p.body;
       } else {
         const p = parseMd(raw);
@@ -111,6 +113,7 @@ async function main() {
         coverImage = p.fm.coverImage       ?? null;
         category   = p.fm.category        || 'practical';
         tags       = p.fm.tags            ?? null;
+        author     = p.fm.author          ?? null;
         body       = p.body;
       }
 
@@ -119,10 +122,11 @@ async function main() {
         update: {
           title, excerpt, content: body, coverImage, category, tags,
           seoTitle, seoDesc, published: true, publishedAt: PUBLISHED_AT,
+          ...(author !== null ? { author } : {}),
         },
         create: {
           title, slug, locale, excerpt, content: body, coverImage, category, tags,
-          seoTitle, seoDesc, author: 'Bahia Palace Team',
+          seoTitle, seoDesc, author: author ?? 'Bahia Palace Team',
           published: true, publishedAt: PUBLISHED_AT,
         },
       });

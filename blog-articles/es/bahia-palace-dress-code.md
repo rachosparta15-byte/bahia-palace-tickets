@@ -6,7 +6,7 @@ meta_title: Código vestimenta Bahia Palace 2026: qué ponerse
 meta_description: Código de vestimenta Bahia Palace 2026: qué llevar, qué evitar y qué hacer si llegas sin ropa adecuada. Planifica tu atuendo antes de salir.
 target_keyword: código vestimenta Bahia Palace 2026
 coverImage: /images/gallery/bahia-palace-tourists-visiting-grand-courtyard.jpg
-category: tips
+category: visit-tips
 tags: bahia palace dress code,what to wear bahia palace,bahia palace rules,visiting bahia palace tips
 excerpt: Código de vestimenta Bahia Palace 2026: qué llevar, qué evitar y qué hacer si llegas sin ropa adecuada. Planifica tu atuendo antes de salir.
 ---

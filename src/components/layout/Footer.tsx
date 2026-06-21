@@ -112,6 +112,7 @@ export function Footer() {
                 { href: '/privacy', label: t('privacy') },
                 { href: '/refund-policy', label: t('refund') },
                 { href: '/cookies', label: t('cookies') },
+                { href: '/about/editorial', label: t('editorial') },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link href={href} className="text-sm text-[#C4A882] hover:text-[#E8A33D] transition-colors">

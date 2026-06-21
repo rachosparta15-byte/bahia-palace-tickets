@@ -58,10 +58,10 @@ excerpt: Come raggiungere Bahia Palace da Jemaa el-Fna: percorso a piedi, consig
 <p>Da entrambi i parcheggi, camminare fino all'ingresso del palazzo richiede 5-10 minuti. I parcheggi nella zona della medina di Marrakech sono generalmente informali — un custode riscuoterà una piccola tariffa (5-10 MAD) quando partirete. È normale e atteso — non una truffa.</p>
 
 <h2>Cosa c'è vicino a Bahia Palace?</h2>
-<p><strong>Tombe Saadiane (~10 minuti a sud):</strong> Il mausoleo reale della dinastia saadiana, murato per secoli e riscoperto nel 1917. Piccolo, straordinariamente dettagliato e che vale 45 minuti. Seguite i cartelli a sud di Bahia Palace attraverso il Mellah.</p>
-<p><strong>El Badi Palace (~15 minuti a ovest):</strong> Le drammatiche rovine di un complesso palatiale del XVI secolo — vaste sale senza tetto e torri con nidi di cicogne. Dirigetevi verso ovest in direzione della Place des Ferblantiers.</p>
+<p><strong>Tombe Saadiane (~10 minuti a sud):</strong> Il mausoleo reale della dinastia saadiana, murato per secoli e riscoperto nel 1917. Piccolo, straordinariamente dettagliato e che vale 45 minuti. Ingresso: 70 MAD. Seguite i cartelli a sud di Bahia Palace attraverso il Mellah.</p>
+<p><strong>El Badi Palace (~15 minuti a ovest):</strong> Le drammatiche rovine di un complesso palatiale del XVI secolo — vaste sale senza tetto e torri con nidi di cicogne. Ingresso: 70 MAD. Dirigetevi verso ovest in direzione della Place des Ferblantiers.</p>
 <p><strong>Place des Ferblantiers (~3 minuti a ovest):</strong> La piazza dei fabbricanti di lanterne, da visitare preferibilmente nel tardo pomeriggio quando tutto si illumina.</p>
-<p><strong>Mellah (Quartiere Ebraico):</strong> Immediatamente adiacente a Bahia Palace. I vicoli coperti del mercato qui sono meno turistici dei souk principali e vale la pena esplorarli — edifici più alti, balconi in ferro battuto e carattere distintivo.</p>
+<p><strong>Mellah (Quartiere Ebraico):</strong> Immediatamente adiacente a Bahia Palace. I vicoli coperti del mercato qui sono meno turistici dei souk principali e vale la pena esplorarli — edifici più alti, balconi in ferro battuto, la Sinagoga Lazama e un carattere nettamente diverso dal resto della medina.</p>
 
 <h2>Sapete come arrivarci? Evitate anche la coda.</h2>
 <p>Sapere come arrivarci è una cosa. Fare 40 minuti di coda una volta arrivati è un'altra. <a href="/it/tickets/skip-the-line">Prenotate il vostro biglietto skip-the-line in anticipo</a> e passerete dalla strada direttamente nel palazzo — senza cercare moneta, senza fare la coda, senza aspettare al sole.</p>
@@ -73,3 +73,7 @@ excerpt: Come raggiungere Bahia Palace da Jemaa el-Fna: percorso a piedi, consig
 <p>Sì, e camminare è il modo consigliato per arrivarci. Il percorso lungo la Rue Riad Zitoun el Kedim e la Rue Riad Zitoun el Jedid è diretto e vi porta attraverso i veri quartieri della medina. Scaricate Google Maps offline prima del viaggio per navigare con sicurezza.</p>
 <h3>C'è un autobus per Bahia Palace?</h3>
 <p>Gli autobus municipali di Marrakech non circolano nel cuore della medina. Da Jemaa el-Fna, camminare o prendere un petit taxi è più rapido e pratico che usare un autobus. Le app di ride-hailing (Careem, inDrive) sono una buona alternativa se preferite una tariffazione trasparente.</p>
+<h3>È facile trovare Bahia Palace da soli?</h3>
+<p>Sì — il percorso lungo la Rue Riad Zitoun el Kedim → Rue Riad Zitoun el Jedid è uno dei più diretti nella medina. L'errore più comune è superare l'ingresso: le porte in legno sono grandi ma si mimetizzano con la strada. Cercate il cartello in arabo e francese sopra il cancello e controllate il lato sinistro negli ultimi 200 metri.</p>
+<h3>Posso andare in auto a Bahia Palace?</h3>
+<p>Non è possibile guidare all'interno della medina. Se arrivate in auto, utilizzate il <strong>Parking El Badi</strong> (Place des Ferblantiers, ~600 m a ovest del palazzo — gratuito o molto economico) o il <strong>Parking Mellah</strong> (appena a sud del mercato del Mellah, a 5 minuti a piedi dall'ingresso). Il custode del parcheggio riscuoterà 5–10 MAD alla partenza — è la prassi normale, non una truffa.</p>

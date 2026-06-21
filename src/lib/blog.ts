@@ -1,4 +1,4 @@
-export type BlogCategory = 'visit-tips' | 'history' | 'practical' | 'comparisons' | 'safety' | 'reviews';
+export type BlogCategory = 'visit-tips' | 'history' | 'practical' | 'comparisons' | 'safety' | 'reviews' | 'guides' | 'itineraries';
 
 export interface BlogPost {
   slug: string;
@@ -378,6 +378,104 @@ const posts: BlogPost[] = [
 <p>Sí. 100 MAD son aproximadamente 9€ o 10$. Por ese precio obtienes aproximadamente 8.000 metros cuadrados de excepcional arquitectura marroquí abiertos al público, 90 minutos de exploración y acceso a uno de los sitios del patrimonio cultural más importantes del país. Es más barato que el Jardín Majorelle (150 MAD) con más contenido cultural.</p>
 <h3>¿Cuál es la mejor manera de prepararse para una visita a Bahia Palace?</h3>
 <p>Lee un breve relato de la historia de Ba Ahmed ibn Moussa antes de visitar — el <a href="/es/blog/bahia-palace-history">artículo de historia</a> de este blog lo cubre íntegramente. Llega a las 9:00 y reserva tu <a href="/es/tickets/skip-the-line">entrada skip-the-line</a> con antelación.</p>`,
+    ],
+  },
+  // ─── BAHIA PALACE ENTRANCE FEE 2026 (EN) ──────────────────────────────────
+  {
+    slug: 'bahia-palace-entrance-fee-2026',
+    locale: 'en',
+    category: 'practical',
+    title: 'Bahia Palace Entrance Fee 2026: Adult, Child & Group Prices',
+    excerpt: 'Bahia Palace entrance fee: 100 MAD (~€9) per adult, 2026. Children under 7 enter free. What\'s included, who gets discounts, and how to skip the 45-min door queue.',
+    readTime: 9,
+    publishedAt: '2026-06-21',
+    body: [
+      `<p><strong>TL;DR:</strong> The standard Bahia Palace entrance fee is 100 MAD — approximately €9 or $10 USD — for adult visitors in 2026. Children under 7 enter free. Children 7 and over pay the adult rate. No student or senior discount applies to foreign visitors. Pre-booking online skips the door queue, which runs 30–45 minutes in peak season.</p>
+
+<h2>What Is the Standard Bahia Palace Entrance Fee in 2026?</h2>
+<p>The adult entrance fee for Bahia Palace is 100 MAD in 2026 — set by Morocco's Ministry of Culture and applied uniformly to all foreign visitors regardless of nationality. At current exchange rates that is approximately €9, $10 USD, or £8 GBP. Morocco welcomed a record 17.4 million international tourists in 2024 (<a href="https://www.visitmorocco.com" rel="noopener noreferrer">Office National Marocain du Tourisme</a>), and Bahia Palace consistently ranks among the country's most visited cultural monuments. At 100 MAD, it remains one of the better-value heritage sites in Marrakech relative to what you get inside.</p>
+
+<table><thead><tr><th>Visitor Type</th><th>Price (MAD)</th><th>Approx. EUR</th><th>Approx. USD</th><th>Approx. GBP</th></tr></thead><tbody><tr><td>Adult (foreign visitor)</td><td>100 MAD</td><td>~€9</td><td>~$10</td><td>~£8</td></tr><tr><td>Child under 7</td><td>Free</td><td>Free</td><td>Free</td><td>Free</td></tr><tr><td>Child 7 and over</td><td>100 MAD</td><td>~€9</td><td>~$10</td><td>~£8</td></tr></tbody></table>
+
+<p>Currency conversions are approximate as of mid-2026. The Moroccan dirham (MAD) is a closed currency — you cannot purchase dirhams before arriving in Morocco. Exchange at your hotel, an ATM on arrival, or a bureau de change in Marrakech's city centre.</p>
+
+<h2>What Does the Bahia Palace Entrance Fee Include?</h2>
+<p>Your 100 MAD ticket provides full access to all areas of the palace complex open to visitors — approximately 8,000 square metres of interconnected rooms, courtyards, and gardens. There are no premium zones or reserved sections requiring a higher-tier ticket; the standard entrance fee covers everything.</p>
+
+<p>Included with the standard 100 MAD ticket:</p>
+<ul><li>The Grand Riad — 1,500 square metres of hand-laid zellige tilework under open sky, the palace's centrepiece courtyard</li><li>The private apartments and harem quarters, with original carved cedar ceilings and marble columns</li><li>The Petite Cour and the Small Riad connecting the main sections</li><li>The palace gardens: jasmine, roses, orange trees, cypress, and banana palms</li><li>Personal photography throughout — no extra photography fee for standard visitors</li></ul>
+
+<p>Not included in the 100 MAD standard ticket:</p>
+<ul><li><strong>Audio guide:</strong> Available separately at the entrance for approximately 20–30 MAD when in stock. Not always available — download a mobile guide as backup before you go.</li><li><strong>Guided tour commentary:</strong> Organised guided tours (available through third-party operators) include a guide, but these are separate products not purchased at the palace entrance.</li><li><strong>Commercial photography permit:</strong> Professional shoots, video production, or drone footage require a separate permit from the Ministry of Culture, arranged in advance.</li></ul>
+
+<p>Typical visit duration: 75 to 90 minutes for a thorough self-guided tour of the main rooms and gardens. Visitors who move quickly can cover the principal areas in 45–50 minutes, but the carved ceilings, garden details, and smaller inner courtyards reward slower exploration. See our full <a href="/en/blog/is-bahia-palace-worth-visiting">honest review of what the visit delivers</a> to know what to expect before you go.</p>
+
+<h2>How Does Bahia Palace Compare in Price to Other Marrakech Attractions?</h2>
+<p>At 100 MAD, Bahia Palace sits in the middle of the Marrakech paid-attraction range — more expensive than most historic medina sites, but significantly cheaper than Majorelle Garden. The comparison below covers the main paid cultural sites for 2026.</p>
+
+<table><thead><tr><th>Attraction</th><th>Adult Ticket</th><th>Typical Visit</th><th>What It Offers</th></tr></thead><tbody><tr><td><strong>Bahia Palace</strong></td><td><strong>100 MAD (~€9)</strong></td><td>75–90 min</td><td>19th-century royal palace: architecture, gardens, history</td></tr><tr><td>Majorelle Garden</td><td>150 MAD (~€14)</td><td>45–60 min</td><td>Botanical garden and Yves Saint Laurent museum</td></tr><tr><td>Ben Youssef Madrasa</td><td>70 MAD (~€6)</td><td>30–45 min</td><td>14th-century Islamic college: zellige and carved plasterwork</td></tr><tr><td>Saadian Tombs</td><td>70 MAD (~€6)</td><td>25–35 min</td><td>16th-century royal necropolis: ornate mausoleums</td></tr><tr><td>El Badi Palace</td><td>70 MAD (~€6)</td><td>40–50 min</td><td>Ruined 16th-century palace: scale, storks, rooftop views</td></tr><tr><td>Museum of Marrakech</td><td>50 MAD (~€5)</td><td>30–45 min</td><td>Moroccan art and history in a 19th-century riad</td></tr><tr><td>Menara Gardens</td><td>Free</td><td>Open-ended</td><td>Olive groves, pavilion, Atlas Mountain views</td></tr></tbody></table>
+
+<p>On a per-dirham basis, Bahia Palace offers the most comprehensive cultural experience among the paid historic sites in the medina. The combination of architectural scale (8,000 square metres open to visitors), craftwork quality, and the dramatic history of Grand Vizier Ba Ahmed makes it difficult to match elsewhere in the city. Compared to Majorelle Garden — Marrakech's most visited paid attraction at 150 MAD — Bahia Palace delivers a longer visit, more cultural depth, and costs 33% less.</p>
+
+<h2>Is There a Skip-the-Line Ticket Option and What Does It Cost?</h2>
+<p>Pre-booking your Bahia Palace ticket online is the most practical improvement you can make to your visit, particularly in peak season (March–May, September–October), when the standard entrance queue runs 30–45 minutes before you even reach the cashier. An online ticket provides a QR code for the priority entrance, letting you scan and walk in within minutes of arriving.</p>
+
+<p>Visitbahiapalace.com is an independent ticket booking platform — not the official palace management or a Moroccan government service. We offer pre-booked Bahia Palace entry tickets with priority access, instant confirmation by email or SMS, and free cancellation up to 24 hours before your visit date.</p>
+
+<table><thead><tr><th>Ticket Option</th><th>Where to Buy</th><th>Typical Queue</th><th>Confirmation</th><th>Cancellation</th></tr></thead><tbody><tr><td>Standard entry (at the door)</td><td>Palace cashier, Rue Riad Zitoun el Jedid</td><td>20–45 min (peak season)</td><td>Paper ticket</td><td>N/A</td></tr><tr><td>Pre-booked entry (online)</td><td>This site — visitbahiapalace.com</td><td>Under 5 min</td><td>Mobile QR code</td><td>Free up to 24h before</td></tr></tbody></table>
+
+<p>Beyond eliminating the queue, pre-booking also locks in your arrival time — which matters during Ramadan (shorter operating hours), on peak-season weekends when the entrance occasionally reaches capacity, and when you are combining the palace with other Marrakech sightseeing and need precise scheduling. Book your <a href="/en/tickets/skip-the-line">Bahia Palace skip-the-line ticket</a> before you travel and start your visit, not in the queue.</p>
+
+<h2>Are There Discounts at Bahia Palace? Students, Seniors, Groups</h2>
+<p>Bahia Palace operates a simple pricing structure with limited concession categories. Here is what is and is not available for foreign visitors in 2026.</p>
+
+<p><strong>Children under 7:</strong> Free admission with no ticket required. This applies regardless of nationality or when you visit.</p>
+
+<p><strong>Children 7 and over:</strong> Pay the standard adult rate of 100 MAD. No reduced child or teenager ticket exists for foreign visitors.</p>
+
+<p><strong>Students:</strong> No student discount applies to international visitors at Bahia Palace. Moroccan students with a valid national student card may be eligible for a concessionary rate at the official cashier — present your card on arrival and ask.</p>
+
+<p><strong>Seniors:</strong> No senior discount for foreign visitors at this time.</p>
+
+<p><strong>Groups:</strong> No formal group discount is available through standard ticket channels for independent visitors. Licensed Moroccan tour operators who pre-arrange large group visits may negotiate rates separately with palace management. For families and independent groups, the 100 MAD adult rate applies to each visitor.</p>
+
+<p><strong>Free-entry days:</strong> Bahia Palace does not operate free-admission days for foreign visitors. The 100 MAD fee applies year-round, including during Ramadan (when operating hours are shortened).</p>
+
+<p><strong>Moroccan nationals and residents:</strong> Citizens and residents holding a valid Moroccan national ID card may be eligible for a reduced admission rate at the official cashier — this is set separately by the Ministry of Culture. Confirm the current rate at the entrance on arrival.</p>
+
+<h2>Where and How Do I Buy Bahia Palace Tickets?</h2>
+<p>There are three ways to secure your Bahia Palace entry. Here is what each involves and who each suits best.</p>
+
+<p><strong>1. At the palace entrance (walk-in):</strong> The main cashier is at the entrance gate on Rue Riad Zitoun el Jedid, in the southern medina. Payment is in Moroccan dirhams — card payment is not always available, so carry cash. In high season, queue time at the cashier is 20–45 minutes. No advance booking required.</p>
+
+<p><strong>2. Online in advance (recommended for peak season):</strong> Book through visitbahiapalace.com — an independent ticket platform — and receive a mobile QR code immediately. Present this at the priority entrance on arrival for access in under five minutes. Benefits: no queue, no cash needed at the door, free cancellation up to 24 hours before, instant confirmation. Particularly valuable if you are visiting during Ramadan, on a weekend in March–May, or combining the palace with other morning sightseeing. <a href="/en/tickets/skip-the-line">Book your ticket here</a>.</p>
+
+<p><strong>3. As part of a guided tour:</strong> Many Marrakech half-day medina tours include Bahia Palace with a guide. The ticket is typically included in the tour price. Trade-off: you are on the operator's schedule rather than your own, and tour groups tend to arrive at 10:00–11:00 AM when the palace is busiest.</p>
+
+<h2>When Should I Visit Bahia Palace to Get the Most from My Ticket?</h2>
+<p>Getting the most from your 100 MAD entry comes down to timing. The palace opens at 9:00 AM; arriving in the first 30 minutes — before organised tour groups arrive from 10:00 onwards — gives you the Grand Riad and the main corridors largely to yourself. Morning light on the hand-painted cedar ceilings and zellige floors is also significantly better for photography than the harsh midday light that flattens the colour and detail.</p>
+
+<p>Check the <a href="/en/opening-hours">full Bahia Palace opening hours</a> before you visit — the schedule varies on Fridays, during Ramadan, and on Moroccan public holidays. The palace closes for approximately two hours at midday on Fridays for prayer, and Ramadan hours are shortened to typically 9:00 AM–3:00 PM (exact times vary by year). Arriving without checking the current schedule is the most common cause of a wasted trip.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>How much is Bahia Palace entrance fee in 2026?</h3>
+<p>The standard adult entrance fee for Bahia Palace is 100 MAD in 2026 — approximately €9, $10 USD, or £8 GBP at current exchange rates. This price is set by Morocco's Ministry of Culture and applies uniformly to all foreign adult visitors. Children under 7 enter free. Children aged 7 and over pay the standard adult rate of 100 MAD.</p>
+
+<h3>Can I book Bahia Palace tickets online in advance?</h3>
+<p>Yes. Visitbahiapalace.com — an independent ticket booking platform, not the official palace management — offers pre-booked Bahia Palace entry tickets with priority access. You receive a mobile QR code by email immediately after booking; present it at the priority entrance to skip the queue entirely. Free cancellation is available up to 24 hours before your visit. Online pre-booking is strongly recommended during peak season (March–May, September–October) when the door queue runs 30–45 minutes.</p>
+
+<h3>Is Bahia Palace cheaper than Majorelle Garden?</h3>
+<p>Yes. Bahia Palace is 100 MAD (approximately €9), while Majorelle Garden is 150 MAD (approximately €14) — 50% more expensive. Bahia Palace also offers a longer visit (75–90 minutes of content) compared to Majorelle Garden (typically 45–60 minutes). For visitors primarily interested in Moroccan cultural heritage and architecture, Bahia Palace delivers more content per dirham.</p>
+
+<h3>Are children free at Bahia Palace?</h3>
+<p>Children under 7 years of age enter Bahia Palace completely free of charge. No ticket is required for this age group. Children aged 7 and over pay the standard adult rate of 100 MAD. There is no reduced-price child ticket for older children or teenagers.</p>
+
+<h3>Is there a photography fee at Bahia Palace?</h3>
+<p>No. Personal photography — including smartphones, compact cameras, and mirrorless cameras — is permitted throughout the palace at no extra charge as part of the standard 100 MAD entrance fee. Tripods are generally discouraged inside the enclosed rooms but tolerated in the open courtyards. Commercial photography, professional video production, and drone flights require a separate permit from Morocco's Ministry of Culture, arranged in advance.</p>
+
+<h3>What happens if I arrive and Bahia Palace is closed?</h3>
+<p>The palace closes for approximately two hours on Friday midday for prayer (the exact window varies by season). It also operates on a shortened schedule during Ramadan and is closed on certain Moroccan public holidays. Always check the <a href="/en/opening-hours">current opening hours</a> before travelling to the palace. If you have a pre-booked ticket and the palace is unexpectedly closed, contact the booking platform for a rescheduled visit or refund. Pre-booked tickets from visitbahiapalace.com include free cancellation up to 24 hours before your visit.</p>`,
     ],
   },
 ];

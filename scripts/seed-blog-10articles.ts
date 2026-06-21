@@ -16,17 +16,17 @@ const NOW = new Date();
 const posts = [
 
   // ─────────────────────────────────────────────────────────────
-  // 1. How to Get to Bahia Palace
+  // 1. How to Get to Bahia Palace (merged from how-to-get-to-bahia-palace)
   // ─────────────────────────────────────────────────────────────
   {
-    title: 'How to Get to Bahia Palace from Jemaa el-Fna (Walk, Taxi & Map)',
-    slug: 'how-to-get-to-bahia-palace',
+    title: 'How to Get to Bahia Palace from Jemaa el-Fna (Walking, Taxi & More)',
+    slug: 'how-to-get-to-bahia-palace-marrakech',
     locale: 'en',
     category: 'practical',
-    tags: 'how to get to bahia palace,bahia palace location,bahia palace from jemaa el fna,bahia palace directions',
-    excerpt: 'Step-by-step directions to Bahia Palace from Jemaa el-Fna: walking route, taxi prices, caleche option, and Google Maps tips for the medina.',
-    seoTitle: 'How to Get to Bahia Palace from Jemaa el-Fna',
-    seoDesc: 'Step-by-step directions to Bahia Palace from Jemaa el-Fna: walking route (15 min), taxi prices, caleche, and Google Maps tips for the medina.',
+    tags: 'how to get to bahia palace,bahia palace location,bahia palace directions,bahia palace marrakech medina',
+    excerpt: 'How to get to Bahia Palace from Jemaa el-Fna: walking route, taxi tips, Google Maps advice, and nearby attractions. Full directions for first-timers.',
+    seoTitle: 'How to Get to Bahia Palace from Jemaa el-Fna (Walking, Taxi & More)',
+    seoDesc: 'How to get to Bahia Palace from Jemaa el-Fna: walking route, taxi tips, Google Maps advice for the medina, and what\'s nearby. Directions for first-timers.',
     coverImage: '/images/gallery/bahia-palace-aerial-view-marrakech-medina-drone.jpg',
     content: `<p>Bahia Palace sits in the southern medina — about 1.2 km southeast of Jemaa el-Fna. It sounds close, and it is, but the medina's tangle of unmarked alleys trips up first-timers constantly. Here's everything you need to get there without getting lost.</p>
 

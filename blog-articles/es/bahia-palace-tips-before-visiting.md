@@ -6,7 +6,7 @@ meta_title: 10 cosas que saber antes de visitar Bahia Palace (2026)
 meta_description: 10 imprescindibles antes de visitar Bahia Palace en Marrakech: horarios, entradas, qué ver, timos a evitar y sitios que combinar. Guía práctica 2026.
 target_keyword: consejos visitar Bahia Palace Marrakech
 coverImage: /images/gallery/bahia-palace-grand-courtyard-balcony-view-fountain.jpg
-category: tips
+category: visit-tips
 tags: visiting bahia palace,bahia palace tips,bahia palace visitor guide,what to expect bahia palace
 excerpt: 10 imprescindibles antes de visitar Bahia Palace en Marrakech: horarios, entradas, qué ver, timos a evitar y sitios que combinar. Guía práctica 2026.
 ---

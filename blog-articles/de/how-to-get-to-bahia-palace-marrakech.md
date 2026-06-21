@@ -58,10 +58,10 @@ excerpt: Bahia Palace von Jemaa el-Fna erreichen: Fußweg, Taxi-Tipps, Google Ma
 <p>Von beiden Parkplätzen aus dauert der Fußweg zum Palasteingang 5–10 Minuten. Parkplätze im Medina-Bereich von Marrakech sind in der Regel informell — ein Wächter kassiert eine kleine Gebühr (5–10 MAD), wenn Sie abfahren. Das ist normal und wird erwartet — kein Betrug.</p>
 
 <h2>Was ist in der Nähe von Bahia Palace?</h2>
-<p><strong>Saadische Gräber (~10 Minuten südlich):</strong> Das königliche Mausoleum der Saadischen Dynastie, jahrhundertelang eingemauert und 1917 wiederentdeckt. Klein, bemerkenswert detailliert und 45 Minuten wert. Folgen Sie den Schildern südlich des Bahia Palace durch das Mellah.</p>
-<p><strong>El Badi Palace (~15 Minuten westlich):</strong> Die dramatischen Ruinen eines Palastkomplexes aus dem 16. Jahrhundert — weite Hallen ohne Dach und von Störchen bewohnte Türme. Gehen Sie in Richtung Westen zur Place des Ferblantiers.</p>
+<p><strong>Saadische Gräber (~10 Minuten südlich):</strong> Das königliche Mausoleum der Saadischen Dynastie, jahrhundertelang eingemauert und 1917 wiederentdeckt. Klein, bemerkenswert detailliert und 45 Minuten wert. Eintritt: 70 MAD. Folgen Sie den Schildern südlich des Bahia Palace durch das Mellah.</p>
+<p><strong>El Badi Palace (~15 Minuten westlich):</strong> Die dramatischen Ruinen eines Palastkomplexes aus dem 16. Jahrhundert — weite Hallen ohne Dach und von Störchen bewohnte Türme. Eintritt: 70 MAD. Gehen Sie in Richtung Westen zur Place des Ferblantiers.</p>
 <p><strong>Place des Ferblantiers (~3 Minuten westlich):</strong> Der Platz der Laternenhandwerker, am besten am frühen Abend zu besuchen, wenn alles leuchtet.</p>
-<p><strong>Mellah (Jüdisches Viertel):</strong> Unmittelbar angrenzend an Bahia Palace. Die überdachten Marktgassen hier sind weniger touristisch als die Hauptsouks und lohnen sich zum Erkunden — höhere Gebäude, Eisengeländer-Balkone und unverwechselbarer Charakter.</p>
+<p><strong>Mellah (Jüdisches Viertel):</strong> Unmittelbar angrenzend an Bahia Palace. Die überdachten Marktgassen hier sind weniger touristisch als die Hauptsouks und lohnen sich zum Erkunden — höhere Gebäude, Eisengeländer-Balkone, die Lazama-Synagoge und ein ganz anderer Charakter als der Rest der Medina.</p>
 
 <h2>Sie wissen, wie man hinkommt? Vermeiden Sie auch die Warteschlange.</h2>
 <p>Den Weg zu kennen ist eine Sache. 40 Minuten Schlange stehen, sobald man angekommen ist, ist eine andere. <a href="/de/tickets/skip-the-line">Buchen Sie Ihr skip-the-line-Ticket im Voraus</a> und gehen Sie von der Straße direkt in den Palast — ohne nach Kleingeld zu suchen, ohne Schlange zu stehen, ohne in der Sonne zu warten.</p>
@@ -73,3 +73,7 @@ excerpt: Bahia Palace von Jemaa el-Fna erreichen: Fußweg, Taxi-Tipps, Google Ma
 <p>Ja, und zu Fuß gehen ist der empfohlene Weg dorthin. Die Route entlang der Rue Riad Zitoun el Kedim und der Rue Riad Zitoun el Jedid ist direkt und führt durch echte Medina-Viertel. Laden Sie Google Maps offline vor Ihrer Reise herunter, um sicher zu navigieren.</p>
 <h3>Gibt es einen Bus zum Bahia Palace?</h3>
 <p>Die städtischen Busse von Marrakech fahren nicht ins Herz der Medina. Von Jemaa el-Fna aus ist zu Fuß gehen oder ein Petit Taxi nehmen schneller und praktischer als ein Bus. Fahrdienst-Apps (Careem, inDrive) sind eine gute Alternative, wenn Sie transparente Preise bevorzugen.</p>
+<h3>Ist der Bahia Palace leicht alleine zu finden?</h3>
+<p>Ja — der Weg entlang der Rue Riad Zitoun el Kedim → Rue Riad Zitoun el Jedid ist einer der direkteren Wege in der Medina. Der häufigste Fehler ist, am Eingang vorbeizugehen: Die Holztüren sind groß, fügen sich aber ins Straßenbild ein. Achten Sie auf das Schild in Arabisch und Französisch über dem Tor und prüfen Sie Ihre linke Seite in den letzten 200 Metern.</p>
+<h3>Kann ich mit dem Auto zum Bahia Palace fahren?</h3>
+<p>In die Medina kann man nicht hineinfahren. Wenn Sie mit dem Auto ankommen, nutzen Sie den <strong>Parking El Badi</strong> (Place des Ferblantiers, ~600 m westlich des Palastes — kostenlos oder sehr günstig) oder den <strong>Parking Mellah</strong> (direkt südlich des Mellah-Marktes, 5 Gehminuten zum Tor). Der Parkwächter kassiert beim Abfahren 5–10 MAD — das ist übliche Praxis, kein Betrug.</p>

@@ -193,7 +193,7 @@ export default async function BlogPostPage({ params }: Props) {
     headline: post.title,
     description: post.excerpt ?? undefined,
     image: imgSrc,
-    author: { '@type': 'Organization', name: post.author },
+    author: { '@type': post.author === 'Bahia Palace Team' ? 'Organization' : 'Person', name: post.author },
     publisher: {
       '@type': 'Organization',
       name: 'Bahia Palace Tickets',
