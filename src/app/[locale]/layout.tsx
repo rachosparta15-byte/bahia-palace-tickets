@@ -7,6 +7,7 @@ import { VideoPromoBar } from '@/components/layout/VideoPromoBar';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppButton } from '@/components/layout/WhatsAppButton';
 import { StickyMobileCTA } from '@/components/layout/StickyMobileCTA';
+import { MobileBottomNav } from '@/components/layout/MobileBottomNav';
 import { CookieBanner } from '@/components/layout/CookieBanner';
 import { Analytics } from '@/components/analytics/Analytics';
 import { HreflangLinks } from '@/components/seo/HreflangLinks';
@@ -66,8 +67,15 @@ export default async function LocaleLayout({ children, params }: Props) {
         <VideoPromoBar variant="C" />
         <main className="flex-1 pt-[134px]">{children}</main>
         <Footer />
+        {/* Prevents fixed bottom nav from obscuring the footer on mobile */}
+        <div
+          className="md:hidden"
+          style={{ height: 'calc(56px + env(safe-area-inset-bottom, 0px))' }}
+          aria-hidden="true"
+        />
         <WhatsAppButton />
         <StickyMobileCTA />
+        <MobileBottomNav />
         <CookieBanner />
         <Analytics />
       </div>
