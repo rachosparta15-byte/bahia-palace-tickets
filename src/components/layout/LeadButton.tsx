@@ -28,9 +28,13 @@ export function LeadButton({ ticketType = 'general', ctaLocation = 'unknown', cl
   };
 
   const handleClick = () => {
-    trackEvent('ticket_cta_click', { cta_location: ctaLocation, ticket_type: ticketType });
-    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-      window.gtag('event', 'ticket_cta_click', { cta_location: ctaLocation, ticket_type: ticketType });
+    try {
+      trackEvent('ticket_cta_click', { cta_location: ctaLocation, ticket_type: ticketType });
+      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+        window.gtag('event', 'ticket_cta_click', { cta_location: ctaLocation, ticket_type: ticketType });
+      }
+    } catch {
+      // analytics must never block the portal redirect
     }
     setModalOpen(true);
   };
