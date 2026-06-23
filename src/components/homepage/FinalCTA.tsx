@@ -23,6 +23,7 @@ export function FinalCTA() {
         <p className="text-white/80 text-lg mb-8">{t('subtitle')}</p>
         <LeadButton
           ticketType="skip-the-line"
+          ctaLocation="final_cta"
           className="inline-flex items-center gap-2 bg-white text-[#C4452D] font-semibold text-base px-8 py-4 rounded-lg hover:bg-[#FAF3E7] transition-colors shadow-lg"
         >
           {t('button')}

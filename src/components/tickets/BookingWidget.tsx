@@ -47,6 +47,7 @@ export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
         {/* Booking CTA */}
         <LeadButton
           ticketType={slug}
+          ctaLocation="booking_widget"
           className="flex items-center justify-center gap-2 w-full bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold py-3.5 rounded-xl transition-colors mb-3 text-sm"
         >
           {t('proceedToCheckout')}

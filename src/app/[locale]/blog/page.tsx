@@ -160,6 +160,7 @@ export default async function BlogIndexPage({ params }: Props) {
         <div className="mt-16 bg-[#C4452D] rounded-2xl p-8 text-center text-white">
           <LeadButton
             ticketType="skip-the-line"
+            ctaLocation="blog_index"
             className="inline-flex items-center gap-2 bg-white text-[#C4452D] font-semibold px-8 py-3.5 rounded-xl hover:bg-[#FAF3E7] transition-colors"
           >
             {t('bookCta')}

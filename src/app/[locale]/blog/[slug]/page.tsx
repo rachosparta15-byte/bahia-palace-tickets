@@ -264,6 +264,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="bg-[#C4452D] text-white rounded-xl p-6 text-center">
               <LeadButton
                 ticketType="skip-the-line"
+                ctaLocation="blog_post"
                 className="inline-flex items-center gap-2 bg-white text-[#C4452D] font-semibold px-6 py-3 rounded-lg hover:bg-[#FAF3E7] transition-colors"
               >
                 {t('bookCta')} <ArrowRight size={14} />

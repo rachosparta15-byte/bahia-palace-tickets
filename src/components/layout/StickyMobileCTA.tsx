@@ -31,6 +31,7 @@ export function StickyMobileCTA() {
     >
       <LeadButton
         ticketType="skip-the-line"
+        ctaLocation="sticky_mobile"
         className="btn-primary w-full justify-center gap-2 min-h-[48px]"
       >
         <Ticket size={18} />
