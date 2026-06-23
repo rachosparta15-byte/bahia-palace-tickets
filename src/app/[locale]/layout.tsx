@@ -5,8 +5,6 @@ import { routing } from '@/i18n/routing';
 import { Header } from '@/components/layout/Header';
 import { VideoPromoBar } from '@/components/layout/VideoPromoBar';
 import { Footer } from '@/components/layout/Footer';
-import { WhatsAppButton } from '@/components/layout/WhatsAppButton';
-import { StickyMobileCTA } from '@/components/layout/StickyMobileCTA';
 import { MobileBottomNav } from '@/components/layout/MobileBottomNav';
 import { CookieBanner } from '@/components/layout/CookieBanner';
 import { Analytics } from '@/components/analytics/Analytics';
@@ -73,8 +71,6 @@ export default async function LocaleLayout({ children, params }: Props) {
           style={{ height: 'calc(56px + env(safe-area-inset-bottom, 0px))' }}
           aria-hidden="true"
         />
-        <WhatsAppButton />
-        <StickyMobileCTA />
         <MobileBottomNav />
         <CookieBanner />
         <Analytics />
