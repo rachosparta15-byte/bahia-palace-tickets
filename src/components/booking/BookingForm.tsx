@@ -124,7 +124,7 @@ export function BookingForm({ ticket, ticketName, date, adults, children, locale
             {isSubmitting ? 'Processing…' : `Pay $${total} — Confirm Booking`}
           </Button>
           <div className="mt-4 space-y-1.5">
-            {(['Instant confirmation by email', 'Free cancellation up to 24h', 'Secure mock payment (Phase A)'] as const).map((item) => (
+            {(['Instant confirmation by email', 'Free cancellation up to 24h', 'Official Ministry of Culture portal'] as const).map((item) => (
               <div key={item} className="flex items-center gap-2 text-xs text-[#5C3D20]">
                 <Check size={12} className="text-[#6B7B3A] shrink-0" />
                 {item}

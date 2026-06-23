@@ -22,7 +22,7 @@
     "instant": "Sofortige Bestätigung",
     "freeCancellation": "Kostenlose Stornierung",
     "mobile": "Mobile Tickets",
-    "secure": "Sichere Zahlung"
+    "secure": "Offizielles Portal"
   },
   "tickets": {
     "title": "Wählen Sie Ihr Bahia Palast Erlebnis",
@@ -126,8 +126,8 @@
         "desc": "Unabhängige Besucherinfos aus offiziellen und geprüften Quellen — keine Spekulation."
       },
       {
-        "title": "Sicher & Privat",
-        "desc": "Ihre Zahlung und Daten sind mit bankähnlicher Verschlüsselung geschützt."
+        "title": "Ihre Daten sind sicher",
+        "desc": "Ihre Daten werden über das offizielle Portal des marokkanischen Kulturministeriums verarbeitet."
       }
     ]
   },
@@ -206,7 +206,7 @@
     "editorial": "Redaktion",
     "contact": "Kontakt",
     "copyright": "© {year} Bahia Palace Tickets. Alle Rechte vorbehalten.",
-    "paymentNote": "Sichere Zahlungen über Stripe",
+    "paymentNote": "Offizielle Tickets über das Kulturministerium-Portal",
     "disclaimer": "visitbahiapalace.com ist eine unabhängige Besucherinformationswebsite. Wir sind nicht mit dem offiziellen Bahia-Palast oder dem marokkanischen Kulturministerium verbunden. Offizielle Tickets finden Sie unter: e-services.minculture.gov.ma"
   },
   "whatsapp": {
@@ -223,7 +223,7 @@
     "childrenLabel": "Kinder (unter 12 Jahren)",
     "childFree": "Kostenlos",
     "total": "Gesamt",
-    "proceedToCheckout": "Zur Kasse",
+    "proceedToCheckout": "Weiter zu offiziellen Tickets →",
     "instantConfirm": "Sofortige Bestätigung",
     "freeCancelNote": "Kostenlose Stornierung bis 24 Std. vorher",
     "mobileTicket": "Mobile Ticket akzeptiert",
@@ -346,7 +346,7 @@
       },
       {
         "question": "Wie buche ich Skip-the-Line-Tickets?",
-        "answer": "Wählen Sie Ihr Besuchsdatum und die Personenanzahl auf dieser Website, wählen Sie die Skip-the-Line-Option und schließen Sie die sichere Zahlung ab. Sie erhalten Ihr Ticket innerhalb von Sekunden per E-Mail — ein QR-Code zum Vorzeigen auf dem Handy."
+        "answer": "Klicken Sie auf 'Tickets kaufen', um zum offiziellen Kulturministerium-Portal (e-services.minculture.gov.ma) weitergeleitet zu werden, wo Sie Datum und Personenanzahl wählen und Ihr Ticket direkt kaufen können. Ihr QR-Code-Ticket wird Ihnen vom offiziellen Portal per E-Mail zugesandt."
       },
       {
         "question": "Kann ich mein Ticket stornieren oder ändern?",

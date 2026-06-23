@@ -22,7 +22,7 @@
     "instant": "Confirmación Instantánea",
     "freeCancellation": "Cancelación Gratuita",
     "mobile": "Entradas Móviles",
-    "secure": "Pago Seguro"
+    "secure": "Portal oficial"
   },
   "tickets": {
     "title": "Elige tu Experiencia en el Palacio Bahia",
@@ -120,7 +120,7 @@
     "childrenLabel": "Niños (menores de 7 años)",
     "childFree": "Gratis",
     "total": "Total",
-    "proceedToCheckout": "Proceder al pago",
+    "proceedToCheckout": "Continuar a las entradas oficiales →",
     "instantConfirm": "Confirmación instantánea",
     "freeCancelNote": "Cancelación gratuita hasta 24h antes",
     "mobileTicket": "Entrada móvil aceptada",
@@ -155,8 +155,8 @@
         "desc": "Información independiente para visitantes, basada en fuentes oficiales y verificadas."
       },
       {
-        "title": "Seguro y Privado",
-        "desc": "Tu pago y datos están protegidos con cifrado de nivel bancario."
+        "title": "Tus datos están seguros",
+        "desc": "Tu información es gestionada a través del portal oficial del Ministerio de Cultura de Marruecos."
       }
     ]
   },
@@ -269,7 +269,7 @@
       },
       {
         "question": "¿Cómo reservar entradas sin colas online?",
-        "answer": "Selecciona tu fecha de visita y número de visitantes en este sitio, elige la opción Sin Colas y completa el pago seguro. Recibirás tu entrada por email en segundos — un código QR para mostrar en tu móvil o imprimir."
+        "answer": "Haz clic en 'Ver entradas' para ser redirigido al portal oficial del Ministerio de Cultura (e-services.minculture.gov.ma), donde podrás elegir tu fecha, el número de visitantes y completar la compra directamente. Tu código QR te lo enviará el portal oficial por email."
       },
       {
         "question": "¿Puedo cancelar o cambiar mi entrada?",
@@ -502,7 +502,7 @@
     "editorial": "Editorial",
     "contact": "Contacto",
     "copyright": "© {year} Bahia Palace Tickets. Todos los derechos reservados.",
-    "paymentNote": "Pagos seguros con Stripe",
+    "paymentNote": "Venta oficial de entradas vía el portal del Ministerio de Cultura",
     "disclaimer": "visitbahiapalace.com es un sitio web de información turística independiente. No estamos afiliados al Palacio Bahia oficial ni al Ministerio de Cultura de Marruecos. Para entradas oficiales, visita: e-services.minculture.gov.ma"
   },
   "whatsapp": {

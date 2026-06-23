@@ -6,7 +6,7 @@ export function TrustStrip() {
     { icon: CheckCircle, label: 'Instant confirm', color: '#6B7B3A' },
     { icon: Ban,         label: 'Free cancel',     color: '#2E4A7B' },
     { icon: Smartphone,  label: 'Mobile ticket',   color: '#C4452D' },
-    { icon: ShieldCheck, label: 'Secure pay',      color: '#6B7B3A' },
+    { icon: ShieldCheck, label: 'Official portal',  color: '#6B7B3A' },
   ];
 
   return (

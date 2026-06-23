@@ -22,7 +22,7 @@
     "instant": "Instant Confirmation",
     "freeCancellation": "Free Cancellation",
     "mobile": "Mobile Tickets",
-    "secure": "Secure Payment"
+    "secure": "Official Portal"
   },
   "tickets": {
     "title": "Choose Your Bahia Palace Experience",
@@ -120,7 +120,7 @@
     "childrenLabel": "Children (under 12)",
     "childFree": "Free",
     "total": "Total",
-    "proceedToCheckout": "Proceed to Checkout",
+    "proceedToCheckout": "Continue to official tickets →",
     "instantConfirm": "Instant confirmation",
     "freeCancelNote": "Free cancellation up to 24h before",
     "mobileTicket": "Mobile ticket accepted",
@@ -155,8 +155,8 @@
         "desc": "Independent visitor info sourced from official and verified sources — no guesswork."
       },
       {
-        "title": "Secure & Private",
-        "desc": "Your payment and data are protected with bank-level encryption."
+        "title": "Your Data Is Safe",
+        "desc": "Your information is handled via the official Moroccan Ministry of Culture ticketing portal."
       }
     ]
   },
@@ -269,7 +269,7 @@
       },
       {
         "question": "How do I book skip-the-line tickets for Bahia Palace online?",
-        "answer": "Select your visit date and number of guests on this website, choose the Skip-the-Line option, and complete your secure payment. You'll receive your ticket by email within seconds — a QR code to show on your phone or print at the palace entrance."
+        "answer": "Click 'Get Tickets' on this page to be redirected to the official Ministry of Culture ticketing portal (e-services.minculture.gov.ma), where you can select your date, number of guests, and complete your purchase directly. Your QR code ticket will be emailed by the official portal."
       },
       {
         "question": "Can I cancel or change my Bahia Palace ticket?",
@@ -502,7 +502,7 @@
     "editorial": "Editorial",
     "contact": "Contact",
     "copyright": "© {year} Bahia Palace Tickets. All rights reserved.",
-    "paymentNote": "Secure payments powered by Stripe",
+    "paymentNote": "Official ticketing via the Ministry of Culture portal",
     "disclaimer": "visitbahiapalace.com is an independent visitor information website. We are not affiliated with the official Bahia Palace or the Moroccan Ministry of Culture. For official tickets, visit: e-services.minculture.gov.ma"
   },
   "whatsapp": {

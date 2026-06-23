@@ -22,7 +22,7 @@
     "instant": "Confirmation Instantanée",
     "freeCancellation": "Annulation Gratuite",
     "mobile": "Billets Mobiles",
-    "secure": "Paiement Sécurisé"
+    "secure": "Portail officiel"
   },
   "tickets": {
     "title": "Choisissez votre Expérience au Palais Bahia",
@@ -126,8 +126,8 @@
         "desc": "Informations visiteurs indépendantes, tirées de sources officielles et vérifiées."
       },
       {
-        "title": "Sécurisé & Privé",
-        "desc": "Vos données et votre paiement sont protégés par un chiffrement de niveau bancaire."
+        "title": "Vos Données en Sécurité",
+        "desc": "Vos informations sont traitées via le portail officiel du Ministère de la Culture marocain."
       }
     ]
   },
@@ -206,7 +206,7 @@
     "editorial": "Éditorial",
     "contact": "Contact",
     "copyright": "© {year} Bahia Palace Tickets. Tous droits réservés.",
-    "paymentNote": "Paiements sécurisés par Stripe",
+    "paymentNote": "Billetterie officielle via le portail du Ministère de la Culture",
     "disclaimer": "visitbahiapalace.com est un site d'information touristique indépendant. Nous ne sommes pas affiliés au Palais Bahia officiel ni au Ministère de la Culture du Maroc. Pour les billets officiels, consultez : e-services.minculture.gov.ma"
   },
   "whatsapp": {
@@ -223,7 +223,7 @@
     "childrenLabel": "Enfants (moins de 7 ans)",
     "childFree": "Gratuit",
     "total": "Total",
-    "proceedToCheckout": "Procéder au paiement",
+    "proceedToCheckout": "Continuer vers les billets officiels →",
     "instantConfirm": "Confirmation instantanée",
     "freeCancelNote": "Annulation gratuite jusqu'à 24h avant",
     "mobileTicket": "Billet mobile accepté",
@@ -346,7 +346,7 @@
       },
       {
         "question": "Comment réserver des billets coupe-file ?",
-        "answer": "Sélectionnez votre date et le nombre de personnes sur ce site, choisissez l'option Coupe-File, et finalisez votre paiement sécurisé. Vous recevrez votre billet par e-mail en quelques secondes — un QR code à présenter sur votre téléphone."
+        "answer": "Cliquez sur 'Voir les billets' pour être redirigé vers le portail officiel du Ministère de la Culture (e-services.minculture.gov.ma), où vous pourrez choisir votre date, le nombre de personnes et finaliser votre achat. Votre QR code vous sera envoyé par e-mail directement par le portail officiel."
       },
       {
         "question": "Puis-je annuler ou modifier mon billet ?",

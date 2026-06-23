@@ -53,7 +53,7 @@ export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
         </LeadButton>
 
         <p className="text-center text-xs text-[#5C3D20] mb-5">
-          🔒 Secure checkout — instant confirmation
+          🔒 Official portal — instant confirmation
         </p>
 
         {/* Trust badges */}
