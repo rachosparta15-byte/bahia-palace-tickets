@@ -1,6 +1,7 @@
 ﻿'use client';
 
 import { useTranslations } from 'next-intl';
+import { useRouter } from '@/i18n/navigation';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { Check, ArrowRight, Clock, Star, Zap, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
@@ -47,6 +48,7 @@ interface Props {
 
 export function TicketCards({ overrides = {} }: Props) {
   const t = useTranslations('tickets');
+  const router = useRouter();
 
   const allKeys: TicketKey[] = ['skipTheLine', 'guidedTour', 'privateTour', 'combo'];
 
@@ -95,7 +97,8 @@ export function TicketCards({ overrides = {} }: Props) {
             return (
               <div
                 key={slug}
-                className={`relative flex overflow-hidden rounded-2xl border border-[#C4452D] bg-white shadow-[0_16px_56px_rgba(196,69,45,0.22)] transition-all
+                onClick={() => router.push(`/tickets/${slug}` as any)}
+                className={`relative flex overflow-hidden rounded-2xl border border-[#C4452D] bg-white shadow-[0_16px_56px_rgba(196,69,45,0.22)] transition-all cursor-pointer hover:shadow-[0_20px_64px_rgba(196,69,45,0.30)] active:scale-[0.99]
                   ${isSingle
                     ? 'w-full max-w-2xl flex-col sm:flex-row'
                     : 'flex-col'
@@ -103,7 +106,7 @@ export function TicketCards({ overrides = {} }: Props) {
               >
                 {/* ── Image side (left on single, top on grid) ── */}
                 <div className={`relative overflow-hidden shrink-0
-                  ${isSingle ? 'h-56 w-full sm:w-72 sm:h-auto sm:min-h-full' : 'h-44 w-full'}`}
+                  ${isSingle ? 'h-64 w-full sm:w-72 sm:h-auto sm:min-h-full' : 'h-44 w-full'}`}
                 >
                   <Image
                     src={imgSrc}
@@ -168,14 +171,16 @@ export function TicketCards({ overrides = {} }: Props) {
                           <span className="text-xs font-normal text-[#8B6344] ml-1">{t('perPerson')}</span>
                         </p>
                       </div>
-                      <LeadButton
-                        ticketType={slug}
-                        ctaLocation="ticket_cards"
-                        className="flex items-center gap-2 bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold px-5 py-3 rounded-xl transition-all text-sm whitespace-nowrap shadow-md hover:shadow-lg"
-                      >
-                        {t('bookNow')}
-                        <ArrowRight size={14} />
-                      </LeadButton>
+                      <div onClick={(e) => e.stopPropagation()}>
+                        <LeadButton
+                          ticketType={slug}
+                          ctaLocation="ticket_cards"
+                          className="flex items-center gap-2 bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold px-5 py-3 rounded-xl transition-all text-sm whitespace-nowrap shadow-md hover:shadow-lg"
+                        >
+                          {t('bookNow')}
+                          <ArrowRight size={14} />
+                        </LeadButton>
+                      </div>
                     </div>
 
                     {/* Trust line */}

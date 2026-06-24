@@ -1,9 +1,10 @@
 ﻿import { getTranslations, getLocale } from 'next-intl/server';
 import Image from 'next/image';
-import { Check, X, MapPin, Clock, ChevronDown } from 'lucide-react';
+import { Check, X, MapPin, Clock, ChevronDown, ArrowRight, Zap, ShieldCheck } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { Breadcrumb } from './Breadcrumb';
 import { BookingWidget } from './BookingWidget';
+import { LeadButton } from '@/components/layout/LeadButton';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { BASE, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
 
@@ -91,6 +92,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
   const longDesc     = t(`${ticketKey}.longDesc`      as any) as string;
   const meetingPoint = t(`${ticketKey}.meetingPoint`  as any) as string;
   const includes     = t.raw(`${ticketKey}.includes`  as any) as string[];
+  const whyOnline    = t(`${ticketKey}.whyOnline`     as any) as string;
   const excludes     = t.raw(`${ticketKey}.excludes`  as any) as string[];
   const faqItems     = tf.raw('items') as Array<{ question: string; answer: string }>;
   const isLive       = ALL_TICKETS.find((tk) => tk.key === ticketKey)?.live ?? true;
@@ -124,7 +126,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
     <div className="bg-[#FAF3E7] min-h-screen">
       <JsonLd data={productSchema} />
       {/* ── Hero ── */}
-      <div className="relative h-56 sm:h-72 md:h-[500px]">
+      <div className="relative h-64 sm:h-80 md:h-[500px]">
         <Image
           src={heroImg}
           alt={`${name} - Bahia Palace`}
@@ -158,6 +160,49 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
           </div>
         </div>
       </div>
+
+      {/* ── Mobile-only booking strip — desktop uses sticky right-column widget ── */}
+      {isLive && (
+        <div className="lg:hidden bg-white border-b border-[#E8D5B7]">
+          <div className="max-w-6xl mx-auto px-5 py-5 space-y-4">
+            <div className="flex items-start gap-2.5 bg-[#6B7B3A]/10 rounded-xl px-4 py-3">
+              <Zap size={13} className="text-[#6B7B3A] mt-0.5 shrink-0" />
+              <p className="text-xs text-[#3D5016] leading-snug font-semibold">{whyOnline}</p>
+            </div>
+
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5">
+              {includes.slice(0, 4).map((item, i) => (
+                <li key={i} className="flex items-start gap-1.5 text-xs text-[#5C3D20]">
+                  <Check size={12} className="text-[#6B7B3A] mt-0.5 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex items-center justify-between gap-3 pt-3 border-t border-[#F0E5D0]">
+              <div>
+                <p className="text-[10px] text-[#8B6344] uppercase tracking-wide">{t('from')}</p>
+                <p className="text-2xl font-bold text-[#C4452D] leading-none">
+                  ${price}
+                  <span className="text-sm font-normal text-[#5C3D20] ml-1">{t('perPerson')}</span>
+                </p>
+              </div>
+              <LeadButton
+                ticketType={slug}
+                ctaLocation="ticket_detail_mobile"
+                className="flex items-center gap-1.5 bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold px-5 py-3.5 rounded-xl transition-colors text-sm whitespace-nowrap"
+              >
+                {t('bookNow')} <ArrowRight size={14} />
+              </LeadButton>
+            </div>
+
+            <p className="flex items-center justify-center gap-1.5 text-xs text-[#8B6344]">
+              <ShieldCheck size={12} className="text-[#6B7B3A]" />
+              Official portal — instant confirmation
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* ── Body ── */}
       <div className="max-w-6xl mx-auto px-6 py-12">
