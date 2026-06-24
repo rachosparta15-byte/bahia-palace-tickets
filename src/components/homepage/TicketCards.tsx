@@ -106,7 +106,7 @@ export function TicketCards({ overrides = {} }: Props) {
               >
                 {/* ── Image side (left on single, top on grid) ── */}
                 <div className={`relative overflow-hidden shrink-0
-                  ${isSingle ? 'h-64 w-full sm:w-72 sm:h-auto sm:min-h-full' : 'h-44 w-full'}`}
+                  ${isSingle ? 'aspect-video w-full sm:aspect-auto sm:w-72 sm:min-h-full' : 'h-44 w-full'}`}
                 >
                   <Image
                     src={imgSrc}
@@ -125,12 +125,12 @@ export function TicketCards({ overrides = {} }: Props) {
                 </div>
 
                 {/* ── Content side ── */}
-                <div className="p-6 flex flex-col flex-1">
+                <div className={`flex flex-col flex-1 ${isSingle ? 'p-5 sm:p-6' : 'p-6'}`}>
 
                   {/* Title + tagline */}
                   <h3
                     className="text-[#3D2817] leading-snug mb-1"
-                    style={{ fontFamily: 'var(--font-heading)', fontSize: isSingle ? '1.55rem' : '1.15rem', fontWeight: 700 }}
+                    style={{ fontFamily: 'var(--font-heading)', fontSize: isSingle ? '1.3rem' : '1.15rem', fontWeight: 700 }}
                   >
                     {name}
                   </h3>
@@ -142,21 +142,32 @@ export function TicketCards({ overrides = {} }: Props) {
                     <span>{duration}</span>
                   </div>
 
-                  {/* Why online */}
-                  <div className="flex items-start gap-2 bg-[#6B7B3A]/10 rounded-lg px-3 py-2.5 mb-4">
+                  {/* Why online — desktop only in single-card mode */}
+                  <div className={`flex items-start gap-2 bg-[#6B7B3A]/10 rounded-lg px-3 py-2.5 mb-4 ${isSingle ? 'hidden sm:flex' : ''}`}>
                     <Zap size={12} className="text-[#6B7B3A] mt-0.5 shrink-0" />
                     <p className="text-xs text-[#3D5016] leading-snug font-semibold">{whyOnline}</p>
                   </div>
 
-                  {/* Includes */}
-                  <ul className={`space-y-2 mb-5 flex-1 ${isSingle ? 'grid grid-cols-2 gap-x-4 gap-y-2 space-y-0' : ''}`}>
-                    {includes.map((item: string, j: number) => (
-                      <li key={j} className="flex items-start gap-1.5 text-xs text-[#5C3D20]">
-                        <Check size={12} className="text-[#6B7B3A] mt-0.5 shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Includes — desktop only in single-card mode */}
+                  {isSingle ? (
+                    <ul className="hidden sm:grid grid-cols-2 gap-x-4 gap-y-2 mb-5 flex-1">
+                      {includes.map((item: string, j: number) => (
+                        <li key={j} className="flex items-start gap-1.5 text-xs text-[#5C3D20]">
+                          <Check size={12} className="text-[#6B7B3A] mt-0.5 shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <ul className="space-y-2 mb-5 flex-1">
+                      {includes.map((item: string, j: number) => (
+                        <li key={j} className="flex items-start gap-1.5 text-xs text-[#5C3D20]">
+                          <Check size={12} className="text-[#6B7B3A] mt-0.5 shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
 
                   {/* Price + CTA */}
                   <div className="mt-auto pt-4 border-t border-[#F0C8BF]">
@@ -165,7 +176,7 @@ export function TicketCards({ overrides = {} }: Props) {
                         <p className="text-[10px] text-[#8B6344] uppercase tracking-wide mb-0.5">{t('from')}</p>
                         <p
                           className="font-bold text-[#C4452D] tabular-nums lining-nums"
-                          style={{ fontSize: isSingle ? '2rem' : '1.5rem', lineHeight: 1, fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif', fontVariantNumeric: 'lining-nums tabular-nums' }}
+                          style={{ fontSize: isSingle ? '1.75rem' : '1.5rem', lineHeight: 1, fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif', fontVariantNumeric: 'lining-nums tabular-nums' }}
                         >
                           ${price}
                           <span className="text-xs font-normal text-[#8B6344] ml-1">{t('perPerson')}</span>
@@ -183,8 +194,8 @@ export function TicketCards({ overrides = {} }: Props) {
                       </div>
                     </div>
 
-                    {/* Trust line */}
-                    <div className="flex items-center gap-1.5 mt-3 text-[11px] text-[#8B6344]">
+                    {/* Trust line — desktop only in single-card mode */}
+                    <div className={`flex items-center gap-1.5 mt-3 text-[11px] text-[#8B6344] ${isSingle ? 'hidden sm:flex' : ''}`}>
                       <ShieldCheck size={12} className="text-[#6B7B3A]" />
                       Official portal — instant confirmation
                     </div>
