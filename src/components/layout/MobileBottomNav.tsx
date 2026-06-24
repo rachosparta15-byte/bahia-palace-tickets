@@ -6,7 +6,7 @@ import { Link } from '@/i18n/navigation';
 import { Ticket, Images, BookOpen, Info } from '@phosphor-icons/react';
 
 const NAV_ITEMS = [
-  { href: '/tickets', Icon: Ticket,   key: 'tickets' },
+  { href: '/tickets/skip-the-line', Icon: Ticket, key: 'tickets' },
   { href: '/gallery', Icon: Images,   key: 'gallery' },
   { href: '/blog',    Icon: BookOpen, key: 'blog'    },
   { href: '/faq',     Icon: Info,     key: 'faq'     },
