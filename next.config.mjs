@@ -68,6 +68,7 @@ const nextConfig = {
       { from: 'history-of-bahia-palace',         to: 'bahia-palace-history' },
       { from: 'marrakech-tourist-scams-guide',   to: 'marrakech-safety-guide' },
       { from: 'best-time-to-visit-bahia-palace', to: 'bahia-palace-opening-hours-2026' },
+      { from: 'bahia-palace-who-built-it',       to: 'bahia-palace-history' },
     ];
     const blogMergeRedirects = BLOG_MERGE_REDIRECTS.flatMap(({ from, to }) =>
       LOCALES.map(locale => ({
