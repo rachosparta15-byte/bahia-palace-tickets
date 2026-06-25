@@ -15,10 +15,18 @@ interface Props {
   params: Promise<{ locale: string }>;
 }
 
+const BLOG_TITLES: Record<string, string> = {
+  en: 'Marrakech & Bahia Palace Blog | Travel Guide 2026',
+  fr: 'Blog Palais Bahia | Guide Voyage Marrakech 2026',
+  it: 'Blog Palazzo Bahia | Guida Viaggio Marrakech 2026',
+  de: 'Bahia Palast Blog | Marrakesch Reiseführer 2026',
+  es: 'Blog Palacio Bahia | Guía Viaje Marrakech 2026',
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'blog' });
-  const title = `${t('title')} — Bahia Palace Tickets`;
+  const title = BLOG_TITLES[locale] ?? BLOG_TITLES.en;
   const description = t('subtitle') as string;
   return {
     title,

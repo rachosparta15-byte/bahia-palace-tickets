@@ -12,7 +12,7 @@ const TICKETS_META: Record<string, { title: string; description: string }> = {
   en: { title: 'Bahia Palace Tickets 2026 | Skip-the-Line & Guided Tours', description: 'Buy Bahia Palace tickets online and skip the queue. Best prices for skip-the-line entry, guided tours & private tours. Instant confirmation.' },
   fr: { title: 'Billets Palais Bahia 2026 | Coupe-File & Visites Guidées', description: 'Achetez vos billets Palais Bahia en ligne et évitez la file. Meilleurs prix coupe-file, visites guidées et privées. Confirmation instantanée.' },
   es: { title: 'Entradas Palacio Bahia 2026 | Sin Cola & Visitas Guiadas', description: 'Compra entradas para el Palacio Bahia online sin colas. Mejores precios, visitas guiadas y privadas. Confirmación instantánea.' },
-  de: { title: 'Bahia Palast Tickets 2026 | Warteschlange umgehen & Führungen', description: 'Kaufen Sie Bahia Palast Tickets online. Beste Preise, Führungen und private Touren. Sofortige Buchungsbestätigung.' },
+  de: { title: 'Bahia Palast Tickets 2026 | Führungen & Kombi', description: 'Kaufen Sie Bahia Palast Tickets online. Beste Preise, Führungen und private Touren. Sofortige Buchungsbestätigung.' },
   it: { title: 'Biglietti Palazzo Bahia 2026 | Salta-Fila & Visite Guidate', description: 'Acquista biglietti per il Palazzo Bahia online senza code. Prezzi migliori, visite guidate e private. Conferma immediata.' },
 };
 
@@ -28,13 +28,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+const H1_LABELS: Record<string, string> = {
+  en: 'Bahia Palace Tickets 2026',
+  fr: 'Billets Palais Bahia 2026',
+  es: 'Entradas Palacio Bahia 2026',
+  de: 'Bahia Palast Tickets 2026',
+  it: 'Biglietti Palazzo Bahia 2026',
+};
+
 export default async function TicketsPage({ params }: Props) {
   const { locale } = await params;
   const tb = await getTranslations({ locale, namespace: 'breadcrumb' });
+  const h1 = H1_LABELS[locale] ?? H1_LABELS.en;
 
   return (
     <div className="min-h-screen">
-      <div className="bg-[#3D2817] px-6 py-4">
+      <div className="bg-[#3D2817] px-6 py-8">
         <div className="max-w-6xl mx-auto">
           <Breadcrumb
             variant="light"
@@ -43,6 +52,12 @@ export default async function TicketsPage({ params }: Props) {
               { label: tb('tickets') },
             ]}
           />
+          <h1
+            className="mt-4 font-bold text-white leading-tight"
+            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
+          >
+            {h1}
+          </h1>
         </div>
       </div>
       <TicketSection />

@@ -27,10 +27,7 @@ const amiri = Amiri({
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
-  title: {
-    default: 'Bahia Palace Tickets — Skip the Line | Marrakech',
-    template: '%s | Bahia Palace Tickets',
-  },
+  title: 'Bahia Palace Tickets — Skip the Line | Marrakech',
   description:
     'Book Bahia Palace tickets online. Skip the line, instant confirmation, free cancellation. Guided tours & private tours available.',
   keywords: ['Bahia Palace tickets', 'Marrakech palace', 'skip the line Marrakech', 'Bahia Palace guided tour', 'Morocco travel'],

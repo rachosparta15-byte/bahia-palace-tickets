@@ -114,20 +114,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPost(locale, slug);
   if (!post) return {};
 
-  const title       = post.seoTitle ?? post.title;
-  const description = post.seoDesc  ?? post.excerpt ?? undefined;
+  const rawTitle    = post.seoTitle ?? post.title;
+  const SUFFIX      = ' | Bahia Palace';
+  const MAX_RAW     = 60 - SUFFIX.length; // 44 chars for the title part
+  const title       = rawTitle.length > MAX_RAW
+    ? rawTitle.slice(0, MAX_RAW - 1) + '…' + SUFFIX
+    : rawTitle + SUFFIX;
+  const descFallback = `${rawTitle} — expert guide to visiting Bahia Palace Marrakech. Tips, hours & skip-the-line tickets for 2026.`.slice(0, 160);
+  const description = post.seoDesc ?? post.excerpt ?? descFallback;
   const ogImg       = post.ogImage  ?? post.coverImage ?? CATEGORY_IMAGES[post.category];
   const canonical   = `${BASE}/${locale}/blog/${slug}`;
 
   const staticPath = STATIC_PAGE_CANONICALS[slug];
   return {
-    title:       `${title} — Bahia Palace Tickets`,
+    title,
     description,
     alternates:  staticPath
       ? { canonical: `${BASE}/${locale}${staticPath}`, languages: buildAlternates(locale, `/blog/${slug}`).languages }
       : buildAlternates(locale, `/blog/${slug}`),
     openGraph: {
-      title,
+      title:  rawTitle,
       description,
       type:   'article',
       url:    canonical,
@@ -139,7 +145,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card:        'summary_large_image',
-      title,
+      title:       rawTitle,
       description,
       images:      ogImg ? [ogImg] : undefined,
     },

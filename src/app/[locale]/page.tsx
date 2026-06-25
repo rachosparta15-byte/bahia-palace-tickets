@@ -34,7 +34,7 @@ const HOME_META: Record<string, { title: string; description: string }> = {
     description: 'Visita el Palacio Bahia de Marrakech en 2026. Compra entradas sin cola, consulta horarios, precios y descubre este impresionante palacio marroquí del siglo XIX.',
   },
   de: {
-    title: 'Bahia Palast Marrakesch 2026 | Tickets, Öffnungszeiten & Reiseführer',
+    title: 'Bahia Palast Marrakesch 2026 | Tickets & Reiseführer',
     description: 'Besuchen Sie den Bahia Palast in Marrakesch 2026. Tickets ohne Warteschlange, Öffnungszeiten, Eintrittspreise und Infos zum prachtvollen Palast aus dem 19. Jahrhundert.',
   },
   it: {

@@ -79,7 +79,7 @@ const nextConfig = {
     return [
       {
         source:      '/en/blog/bahia-palace-vs-saadian-tombs-comparison',
-        destination: '/en/blog/bahia-palace-vs-saadian-tombs-which-to-visit',
+        destination: '/en/blog/bahia-palace-and-saadian-tombs-one-day',
         permanent:   true,
       },
       ...testRedirects,
