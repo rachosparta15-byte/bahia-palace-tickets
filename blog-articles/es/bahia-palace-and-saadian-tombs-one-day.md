@@ -1,4 +1,4 @@
----
+﻿---
 lang: es
 slug: bahia-palace-and-saadian-tombs-one-day
 original: /en/blog/bahia-palace-and-saadian-tombs-one-day
@@ -24,7 +24,7 @@ excerpt: Sí, los dos en medio día. Aquí tienes los horarios exactos, el mejor
 <h3>Bahia Palace</h3>
 <p>Un palacio real del siglo XIX con un complejo total de aproximadamente 8 hectáreas (unos 8.000 m² abiertos al público) — grandes patios, aposentos del harén, techos de cedro pintados, zellige y jardines. Construido por el Gran Visir Ba Ahmed entre 1894 y 1900. Entrada: <strong>100 MAD</strong> (adultos extranjeros). Tiempo necesario: <strong>60–90 minutos</strong>.</p>
 <h3>Tumbas Saadíes</h3>
-<p>Un mausoleo real del siglo XVI construido para la dinastía saadí bajo el sultán Ahmad al-Mansur. Tres cámaras de extraordinarios estucos tallados y zellige rodean las tumbas de 66 miembros de la familia real. Selladas por el sultán Moulay Ismail en el siglo XVII y redescubiertas solo en 1917. Entrada: <strong>70 MAD</strong>. Tiempo necesario: <strong>30–45 minutos</strong>.</p>
+<p>Un mausoleo real del siglo XVI construido para la dinastía saadí bajo el sultán Ahmad al-Mansur. Tres cámaras de extraordinarios estucos tallados y zellige rodean las tumbas de 66 miembros de la familia real. Selladas por el sultán Moulay Ismail en el siglo XVII y redescubiertas solo en 1917. Entrada: <strong>100 MAD</strong>. Tiempo necesario: <strong>30–45 minutos</strong>.</p>
 
 <h2>¿Cuál visitar primero?</h2>
 <p><strong>Empieza con Bahia Palace.</strong></p>
@@ -39,7 +39,7 @@ excerpt: Sí, los dos en medio día. Aquí tienes los horarios exactos, el mejor
     <tr><td><strong>09:00</strong></td><td>Entra. Empieza con el Grand Riad, recorre las salas de recepción, los aposentos del harén y los jardines.</td></tr>
     <tr><td><strong>10:30</strong></td><td>Sal de Bahia Palace. Camina 7 minutos hacia el sur hasta las Tumbas Saadíes.</td></tr>
     <tr><td><strong>10:40</strong></td><td>Entra en las Tumbas Saadíes. Ve la Sala de las Doce Columnas, la cámara central y el jardín.</td></tr>
-    <tr><td><strong>11:20</strong></td><td>Sal de las Tumbas Saadíes. Opción: camina 10 minutos al oeste hasta las ruinas del Palacio El Badi (70 MAD) para un tercer sitio.</td></tr>
+    <tr><td><strong>11:20</strong></td><td>Sal de las Tumbas Saadíes. Opción: camina 10 minutos al oeste hasta las ruinas del Palacio El Badi (100 MAD) para un tercer sitio.</td></tr>
     <tr><td><strong>12:00</strong></td><td>Almuerzo. Regresa por la medina o hacia Jemaa el-Fna.</td></tr>
   </tbody>
 </table>
@@ -50,8 +50,8 @@ excerpt: Sí, los dos en medio día. Aquí tienes los horarios exactos, el mejor
   <thead><tr><th>Sitio</th><th>Adulto (extranjero)</th><th>Marroquí</th><th>Niños menores de 7 años</th></tr></thead>
   <tbody>
     <tr><td>Bahia Palace</td><td>100 MAD (~9€)</td><td>30 MAD</td><td>Gratis</td></tr>
-    <tr><td>Tumbas Saadíes</td><td>70 MAD (~7€)</td><td>10 MAD</td><td>Gratis</td></tr>
-    <tr><td><strong>Total</strong></td><td><strong>170 MAD (~15€)</strong></td><td>40 MAD</td><td>Gratis</td></tr>
+    <tr><td>Tumbas Saadíes</td><td>100 MAD (~7€)</td><td>10 MAD</td><td>Gratis</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>200 MAD (~15€)</strong></td><td>40 MAD</td><td>Gratis</td></tr>
   </tbody>
 </table>
 <p>Ambos sitios solo aceptan efectivo en taquilla. Lleva dírhams. Si has reservado una <a href="/es/tickets/skip-the-line">entrada skip-the-line para Bahia Palace</a> online, puedes pagar con tarjeta para eso — pero ten efectivo listo para las Tumbas Saadíes.</p>
@@ -65,7 +65,7 @@ excerpt: Sí, los dos en medio día. Aquí tienes los horarios exactos, el mejor
 </ul>
 
 <h2>Añade el Palacio El Badi para una mañana completa</h2>
-<p>Si tienes hasta las 13:00, el Palacio El Badi está a 10 minutos al oeste de las Tumbas Saadíes. La entrada es de 70 MAD. Las ruinas son atmosféricas — vastas salas sin techo, cigüeñas que anidan y una escala muy diferente a las íntimas tumbas. Añade unos 45 minutos y completa los tres principales monumentos de la medina sur en una sola mañana.</p>
+<p>Si tienes hasta las 13:00, el Palacio El Badi está a 10 minutos al oeste de las Tumbas Saadíes. La entrada es de 100 MAD. Las ruinas son atmosféricas — vastas salas sin techo, cigüeñas que anidan y una escala muy diferente a las íntimas tumbas. Añade unos 45 minutos y completa los tres principales monumentos de la medina sur en una sola mañana.</p>
 
 <h2>Reserva tu entrada para Bahia Palace</h2>
 <p>La cola en la puerta de Bahia Palace es la principal amenaza para este itinerario. Una cola de 40 minutos significa que llegas a las Tumbas Saadíes a las 11:30, justo cuando las multitudes alcanzan su punto álgido. <a href="/es/tickets/skip-the-line">Reserva una entrada skip-the-line para Bahia Palace</a> con antelación. Las Tumbas Saadíes actualmente no ofrecen reserva online — llega temprano y la cola avanza rápidamente.</p>
@@ -76,4 +76,4 @@ excerpt: Sí, los dos en medio día. Aquí tienes los horarios exactos, el mejor
 <h3>¿Cuál es mejor — las Tumbas Saadíes o Bahia Palace?</h3>
 <p>Realmente no son comparables — ofrecen cosas diferentes. Las Tumbas Saadíes son más pequeñas, más concentradas e intensamente detalladas en un espacio reducido. Bahia Palace es vasto, variado y de alcance arquitectónico. Si solo tienes tiempo para uno, Bahia Palace ofrece más variedad y una experiencia más larga y rica. Si tienes 2–3 horas, haz los dos — se complementan perfectamente.</p>
 <h3>¿Tengo que reservar entradas para las Tumbas Saadíes con antelación?</h3>
-<p>No hay ningún sistema oficial de reserva anticipada para las Tumbas Saadíes — las entradas se compran en la puerta (70 MAD en efectivo). La cola suele ser más corta que la de Bahia Palace y avanza más rápido, ya que el sitio es más pequeño. Llegar antes de las 10:00 minimiza la espera. Para Bahia Palace, se recomienda encarecidamente una <a href="/es/tickets/skip-the-line">entrada skip-the-line</a> anticipada en temporada alta.</p>
+<p>No hay ningún sistema oficial de reserva anticipada para las Tumbas Saadíes — las entradas se compran en la puerta (100 MAD en efectivo). La cola suele ser más corta que la de Bahia Palace y avanza más rápido, ya que el sitio es más pequeño. Llegar antes de las 10:00 minimiza la espera. Para Bahia Palace, se recomienda encarecidamente una <a href="/es/tickets/skip-the-line">entrada skip-the-line</a> anticipada en temporada alta.</p>

@@ -1,4 +1,4 @@
----
+﻿---
 lang: it
 slug: how-to-get-to-bahia-palace
 original: /en/blog/how-to-get-to-bahia-palace
@@ -60,8 +60,8 @@ excerpt: Istruzioni passo passo verso Bahia Palace da Jemaa el-Fna: percorso a p
 <h2>Cosa c'è nelle vicinanze</h2>
 <p>Bahia Palace è ben posizionato per un giro della medina di mezza giornata o un'intera giornata:</p>
 <ul>
-  <li><strong>Tombe Saadiane</strong> — 8 minuti a piedi verso sud. Il mausoleo reale della dinastia saadiana, sigillato per secoli. Uno dei più bei esempi di architettura islamica in Marocco. Ingresso 70 MAD.</li>
-  <li><strong>El Badi Palace</strong> — 12 minuti a piedi verso ovest. Rovine atmosferiche del XVI secolo su scala imponente. Le cicogne nidificano sulle mura. Ingresso 70 MAD.</li>
+  <li><strong>Tombe Saadiane</strong> — 8 minuti a piedi verso sud. Il mausoleo reale della dinastia saadiana, sigillato per secoli. Uno dei più bei esempi di architettura islamica in Marocco. Ingresso 100 MAD.</li>
+  <li><strong>El Badi Palace</strong> — 12 minuti a piedi verso ovest. Rovine atmosferiche del XVI secolo su scala imponente. Le cicogne nidificano sulle mura. Ingresso 100 MAD.</li>
   <li><strong>Il Mellah</strong> — direttamente adiacente. L'antico quartiere ebraico di Marrakech, con un mercato alimentare coperto, la Sinagoga Lazama e un'atmosfera molto diversa dai souk principali.</li>
   <li><strong>Place des Ferblantiers</strong> — 3 minuti a ovest. La piazza dei fabbricanti di lanterne, al meglio nel tardo pomeriggio quando tutto si illumina.</li>
 </ul>

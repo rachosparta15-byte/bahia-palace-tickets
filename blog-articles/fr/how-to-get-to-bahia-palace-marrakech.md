@@ -1,4 +1,4 @@
----
+﻿---
 lang: fr
 slug: how-to-get-to-bahia-palace-marrakech
 original: /en/blog/how-to-get-to-bahia-palace-marrakech
@@ -58,8 +58,8 @@ excerpt: Comment se rendre à Bahia Palace depuis Jemaa el-Fna : itinéraire à 
 <p>Depuis l'un ou l'autre parking, marcher jusqu'à l'entrée du palais prend 5 à 10 minutes. Les parkings de la zone de la medina de Marrakech sont généralement informels — un gardien percevra un petit droit (5 à 10 MAD) lorsque vous partirez. C'est normal et attendu — pas une arnaque.</p>
 
 <h2>Qu'y a-t-il à proximité de Bahia Palace ?</h2>
-<p><strong>Tombeaux Saadiens (~10 minutes au sud) :</strong> Le mausolée royal de la dynastie saadienne, muré pendant des siècles et redécouvert en 1917. Petit, remarquablement détaillé et qui vaut 45 minutes. Entrée : 70 MAD. Suivez les panneaux au sud de Bahia Palace à travers le Mellah.</p>
-<p><strong>El Badi Palace (~15 minutes à l'ouest) :</strong> Les ruines dramatiques d'un complexe palatial du XVIe siècle — de vastes salles sans toit et des tours avec des nids de cigognes. Entrée : 70 MAD. Dirigez-vous vers l'ouest en direction de la Place des Ferblantiers.</p>
+<p><strong>Tombeaux Saadiens (~10 minutes au sud) :</strong> Le mausolée royal de la dynastie saadienne, muré pendant des siècles et redécouvert en 1917. Petit, remarquablement détaillé et qui vaut 45 minutes. Entrée : 100 MAD. Suivez les panneaux au sud de Bahia Palace à travers le Mellah.</p>
+<p><strong>El Badi Palace (~15 minutes à l'ouest) :</strong> Les ruines dramatiques d'un complexe palatial du XVIe siècle — de vastes salles sans toit et des tours avec des nids de cigognes. Entrée : 100 MAD. Dirigez-vous vers l'ouest en direction de la Place des Ferblantiers.</p>
 <p><strong>Place des Ferblantiers (~3 minutes à l'ouest) :</strong> La place des fabricants de lanternes, à visiter de préférence en début de soirée quand tout s'illumine.</p>
 <p><strong>Mellah (Quartier juif) :</strong> Immédiatement adjacent à Bahia Palace. Les ruelles couvertes du marché ici sont moins touristiques que les souks principaux et valent la peine d'être explorées — bâtiments plus hauts, balcons en fer forgé, la synagogue Lazama, et un caractère nettement différent du reste de la medina.</p>
 

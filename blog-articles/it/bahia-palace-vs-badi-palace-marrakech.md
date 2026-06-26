@@ -1,4 +1,4 @@
----
+﻿---
 lang: it
 slug: bahia-palace-vs-badi-palace-marrakech
 original: /en/blog/bahia-palace-vs-badi-palace-marrakech
@@ -68,8 +68,8 @@ excerpt: Bahia Palace e El Badi Palace sono entrambi iconici monumenti di Marrak
 
 <h2>Confronto dei prezzi dei biglietti</h2>
 <p><strong>Bahia Palace:</strong> 100 MAD (~10€) per i visitatori stranieri adulti. Bambini sotto i 7 anni gratuiti. I cittadini marocchini pagano 30 MAD. I biglietti skip-the-line online evitano completamente la coda.</p>
-<p><strong>El Badi Palace:</strong> 70 MAD (~7€) per i visitatori stranieri adulti. I cittadini marocchini pagano 10 MAD.</p>
-<p>Se prevedete di visitare entrambi lo stesso giorno, calcolate circa 170 MAD (~17€) a persona per l'ingresso ai due siti — un ottimo rapporto qualità-prezzo per l'esperienza storica combinata.</p>
+<p><strong>El Badi Palace:</strong> 100 MAD (~7€) per i visitatori stranieri adulti. I cittadini marocchini pagano 10 MAD.</p>
+<p>Se prevedete di visitare entrambi lo stesso giorno, calcolate circa 200 MAD (~17€) a persona per l'ingresso ai due siti — un ottimo rapporto qualità-prezzo per l'esperienza storica combinata.</p>
 
 <h2>Quale palazzo dovreste visitare?</h2>
 <p>Non c'è una risposta sbagliata — i due palazzi si completano magnificamente:</p>

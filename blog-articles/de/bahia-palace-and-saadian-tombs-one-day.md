@@ -1,4 +1,4 @@
----
+﻿---
 lang: de
 slug: bahia-palace-and-saadian-tombs-one-day
 original: /en/blog/bahia-palace-and-saadian-tombs-one-day
@@ -24,7 +24,7 @@ excerpt: Ja, beide an einem halben Tag. Genauer Zeitplan, beste Reihenfolge, was
 <h3>Bahia Palace</h3>
 <p>Ein königlicher Palast aus dem 19. Jahrhundert mit einem Gesamtkomplex von rund 8 Hektar (etwa 8.000 m² davon für Besucher zugänglich) — große Innenhöfe, Haremgemächer, bemalte Zedernholzdecken, zellige-Fliesenwerk und Gärten. Gebaut von Großwesir Ba Ahmed zwischen 1894 und 1900. Eintritt: <strong>100 MAD</strong> (ausländische Erwachsene). Benötigte Zeit: <strong>60–90 Minuten</strong>.</p>
 <h3>Saadische Gräber</h3>
-<p>Ein königliches Mausoleum aus dem 16. Jahrhundert, erbaut für die Saadische Dynastie unter Sultan Ahmad al-Mansur. Drei Kammern mit außergewöhnlichen geschnitzten Stuckarbeiten und zellige umgeben die Gräber von 66 Mitgliedern der Königsfamilie. Im 17. Jahrhundert von Sultan Moulay Ismail versiegelt und erst 1917 wiederentdeckt. Eintritt: <strong>70 MAD</strong>. Benötigte Zeit: <strong>30–45 Minuten</strong>.</p>
+<p>Ein königliches Mausoleum aus dem 16. Jahrhundert, erbaut für die Saadische Dynastie unter Sultan Ahmad al-Mansur. Drei Kammern mit außergewöhnlichen geschnitzten Stuckarbeiten und zellige umgeben die Gräber von 66 Mitgliedern der Königsfamilie. Im 17. Jahrhundert von Sultan Moulay Ismail versiegelt und erst 1917 wiederentdeckt. Eintritt: <strong>100 MAD</strong>. Benötigte Zeit: <strong>30–45 Minuten</strong>.</p>
 
 <h2>Welches zuerst besuchen?</h2>
 <p><strong>Starten Sie mit Bahia Palace.</strong></p>
@@ -39,7 +39,7 @@ excerpt: Ja, beide an einem halben Tag. Genauer Zeitplan, beste Reihenfolge, was
     <tr><td><strong>09:00 Uhr</strong></td><td>Eintreten. Mit dem Grand Riad beginnen, durch die Empfangsräume, Haremgemächer und Gärten arbeiten.</td></tr>
     <tr><td><strong>10:30 Uhr</strong></td><td>Bahia Palace verlassen. 7 Minuten nach Süden zu den Saadischen Gräbern laufen.</td></tr>
     <tr><td><strong>10:40 Uhr</strong></td><td>Saadische Gräber betreten. Saal der Zwölf Säulen, die mittlere Kammer und den Garten besichtigen.</td></tr>
-    <tr><td><strong>11:20 Uhr</strong></td><td>Saadische Gräber verlassen. Option: 10 Minuten nach Westen zu den El Badi Palace Ruinen (70 MAD) für einen dritten Standort laufen.</td></tr>
+    <tr><td><strong>11:20 Uhr</strong></td><td>Saadische Gräber verlassen. Option: 10 Minuten nach Westen zu den El Badi Palace Ruinen (100 MAD) für einen dritten Standort laufen.</td></tr>
     <tr><td><strong>12:00 Uhr</strong></td><td>Mittagessen. Zurück durch die Medina oder Richtung Jemaa el-Fna.</td></tr>
   </tbody>
 </table>
@@ -50,8 +50,8 @@ excerpt: Ja, beide an einem halben Tag. Genauer Zeitplan, beste Reihenfolge, was
   <thead><tr><th>Standort</th><th>Erwachsener (Ausländer)</th><th>Marokkaner</th><th>Kinder unter 7 Jahren</th></tr></thead>
   <tbody>
     <tr><td>Bahia Palace</td><td>100 MAD (~9€)</td><td>30 MAD</td><td>Kostenlos</td></tr>
-    <tr><td>Saadische Gräber</td><td>70 MAD (~7€)</td><td>10 MAD</td><td>Kostenlos</td></tr>
-    <tr><td><strong>Gesamt</strong></td><td><strong>170 MAD (~15€)</strong></td><td>40 MAD</td><td>Kostenlos</td></tr>
+    <tr><td>Saadische Gräber</td><td>100 MAD (~7€)</td><td>10 MAD</td><td>Kostenlos</td></tr>
+    <tr><td><strong>Gesamt</strong></td><td><strong>200 MAD (~15€)</strong></td><td>40 MAD</td><td>Kostenlos</td></tr>
   </tbody>
 </table>
 <p>Beide Standorte sind an der Tür nur Bargeld. Dirham mitbringen. Wenn Sie ein <a href="/de/tickets/skip-the-line">skip-the-line-Ticket für Bahia Palace</a> online gebucht haben, können Sie das mit Karte bezahlen — aber haben Sie Bargeld für die Saadischen Gräber bereit.</p>
@@ -65,7 +65,7 @@ excerpt: Ja, beide an einem halben Tag. Genauer Zeitplan, beste Reihenfolge, was
 </ul>
 
 <h2>El Badi Palace für einen vollständigen Vormittag hinzufügen</h2>
-<p>Wenn Sie bis 13:00 Uhr Zeit haben, liegt El Badi Palace 10 Minuten westlich der Saadischen Gräber. Eintritt 70 MAD. Die Ruinen sind atmosphärisch — weite dachlose Hallen, nistende Störche und eine sehr andere Größenordnung als die intimen Gräber. Es fügt etwa 45 Minuten hinzu und rundet die drei wichtigsten Denkmäler der südlichen Medina in einem einzigen Vormittag ab.</p>
+<p>Wenn Sie bis 13:00 Uhr Zeit haben, liegt El Badi Palace 10 Minuten westlich der Saadischen Gräber. Eintritt 100 MAD. Die Ruinen sind atmosphärisch — weite dachlose Hallen, nistende Störche und eine sehr andere Größenordnung als die intimen Gräber. Es fügt etwa 45 Minuten hinzu und rundet die drei wichtigsten Denkmäler der südlichen Medina in einem einzigen Vormittag ab.</p>
 
 <h2>Buchen Sie Ihr Bahia Palace Ticket</h2>
 <p>Die Schlange an der Bahia Palace Tür ist die größte Bedrohung für diesen Reiseplan. Eine 40-minütige Schlange bedeutet, dass Sie um 11:30 Uhr an den Saadischen Gräbern ankommen, genau wenn die Menschenmassen ihren Höhepunkt erreichen. <a href="/de/tickets/skip-the-line">Buchen Sie ein skip-the-line-Ticket für Bahia Palace</a> im Voraus. Die Saadischen Gräber bieten derzeit keine Online-Buchung — kommen Sie früh an und die Schlange bewegt sich schnell.</p>
@@ -76,4 +76,4 @@ excerpt: Ja, beide an einem halben Tag. Genauer Zeitplan, beste Reihenfolge, was
 <h3>Was ist besser — die Saadischen Gräber oder Bahia Palace?</h3>
 <p>Sie sind nicht wirklich vergleichbar — sie bieten unterschiedliche Dinge. Die Saadischen Gräber sind kleiner, konzentrierter und in einem kleinen Raum intensiv detailliert. Bahia Palace ist weitläufig, abwechslungsreich und architektonisch umfangreich. Wenn Sie nur Zeit für eines haben, bietet Bahia Palace mehr Abwechslung und ein längeres, reicheres Erlebnis. Wenn Sie 2–3 Stunden haben, machen Sie beide — sie ergänzen sich perfekt.</p>
 <h3>Muss ich Tickets für die Saadischen Gräber im Voraus buchen?</h3>
-<p>Es gibt kein offizielles Vorausbuchungssystem für die Saadischen Gräber — Tickets werden am Eingang gekauft (70 MAD in bar). Die Schlange ist normalerweise kürzer als die von Bahia Palace und bewegt sich schneller, da der Standort kleiner ist. Vor 10:00 Uhr ankommen hält die Wartezeit minimal. Für Bahia Palace wird ein <a href="/de/tickets/skip-the-line">skip-the-line-Ticket</a> im Voraus in der Hochsaison dringend empfohlen.</p>
+<p>Es gibt kein offizielles Vorausbuchungssystem für die Saadischen Gräber — Tickets werden am Eingang gekauft (100 MAD in bar). Die Schlange ist normalerweise kürzer als die von Bahia Palace und bewegt sich schneller, da der Standort kleiner ist. Vor 10:00 Uhr ankommen hält die Wartezeit minimal. Für Bahia Palace wird ein <a href="/de/tickets/skip-the-line">skip-the-line-Ticket</a> im Voraus in der Hochsaison dringend empfohlen.</p>

@@ -1,4 +1,4 @@
----
+﻿---
 lang: de
 slug: how-to-get-to-bahia-palace-marrakech
 original: /en/blog/how-to-get-to-bahia-palace-marrakech
@@ -58,8 +58,8 @@ excerpt: Bahia Palace von Jemaa el-Fna erreichen: Fußweg, Taxi-Tipps, Google Ma
 <p>Von beiden Parkplätzen aus dauert der Fußweg zum Palasteingang 5–10 Minuten. Parkplätze im Medina-Bereich von Marrakech sind in der Regel informell — ein Wächter kassiert eine kleine Gebühr (5–10 MAD), wenn Sie abfahren. Das ist normal und wird erwartet — kein Betrug.</p>
 
 <h2>Was ist in der Nähe von Bahia Palace?</h2>
-<p><strong>Saadische Gräber (~10 Minuten südlich):</strong> Das königliche Mausoleum der Saadischen Dynastie, jahrhundertelang eingemauert und 1917 wiederentdeckt. Klein, bemerkenswert detailliert und 45 Minuten wert. Eintritt: 70 MAD. Folgen Sie den Schildern südlich des Bahia Palace durch das Mellah.</p>
-<p><strong>El Badi Palace (~15 Minuten westlich):</strong> Die dramatischen Ruinen eines Palastkomplexes aus dem 16. Jahrhundert — weite Hallen ohne Dach und von Störchen bewohnte Türme. Eintritt: 70 MAD. Gehen Sie in Richtung Westen zur Place des Ferblantiers.</p>
+<p><strong>Saadische Gräber (~10 Minuten südlich):</strong> Das königliche Mausoleum der Saadischen Dynastie, jahrhundertelang eingemauert und 1917 wiederentdeckt. Klein, bemerkenswert detailliert und 45 Minuten wert. Eintritt: 100 MAD. Folgen Sie den Schildern südlich des Bahia Palace durch das Mellah.</p>
+<p><strong>El Badi Palace (~15 Minuten westlich):</strong> Die dramatischen Ruinen eines Palastkomplexes aus dem 16. Jahrhundert — weite Hallen ohne Dach und von Störchen bewohnte Türme. Eintritt: 100 MAD. Gehen Sie in Richtung Westen zur Place des Ferblantiers.</p>
 <p><strong>Place des Ferblantiers (~3 Minuten westlich):</strong> Der Platz der Laternenhandwerker, am besten am frühen Abend zu besuchen, wenn alles leuchtet.</p>
 <p><strong>Mellah (Jüdisches Viertel):</strong> Unmittelbar angrenzend an Bahia Palace. Die überdachten Marktgassen hier sind weniger touristisch als die Hauptsouks und lohnen sich zum Erkunden — höhere Gebäude, Eisengeländer-Balkone, die Lazama-Synagoge und ein ganz anderer Charakter als der Rest der Medina.</p>
 

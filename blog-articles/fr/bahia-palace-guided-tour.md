@@ -1,4 +1,4 @@
----
+﻿---
 lang: fr
 slug: bahia-palace-guided-tour
 original: /en/blog/bahia-palace-guided-tour
@@ -85,7 +85,7 @@ author: Abdellah
 
 <h2>Peut-on combiner la visite guidée du Palais Bahia avec les Tombeaux Saadiens ?</h2>
 <p>Oui, et c'est l'un des itinéraires de demi-journée les plus populaires à Marrakech. Les Tombeaux Saadiens se trouvent à 10 minutes à pied au sud du Palais Bahia, construits par la dynastie dont la richesse et le pouvoir politique ont été servis par des personnages comme Ba Ahmed. Visiter les deux avec un seul guide est logique : vous payez des honoraires uniques et passez d'un monument à l'autre sans négociation séparée.</p>
-<p>La plupart des opérateurs de Marrakech proposent une visite "Médina sud" combinant Palais Bahia et Tombeaux Saadiens, pour une durée totale de 2h30 à 3h30. L'entrée des Tombeaux Saadiens est de 70 MAD pour les visiteurs étrangers, généralement incluse dans le prix d'une visite pré-réservée, ou à payer séparément au guichet si vous avez engagé un guide sur place. Depuis le Palais Bahia, suivez les panneaux vers le sud à travers le Mellah.</p>
+<p>La plupart des opérateurs de Marrakech proposent une visite "Médina sud" combinant Palais Bahia et Tombeaux Saadiens, pour une durée totale de 2h30 à 3h30. L'entrée des Tombeaux Saadiens est de 100 MAD pour les visiteurs étrangers, généralement incluse dans le prix d'une visite pré-réservée, ou à payer séparément au guichet si vous avez engagé un guide sur place. Depuis le Palais Bahia, suivez les panneaux vers le sud à travers le Mellah.</p>
 <p>Si vous construisez l'itinéraire seul, commencez par le Palais Bahia : la lumière matinale est belle dans la cour principale et le palais est plus calme avant 10h. Poursuivez avec les Tombeaux Saadiens, puis la Place des Ferblantiers pour une pause. La boucle complète depuis Jemaa el-Fna prend environ 3 heures temps de marche inclus.</p>
 
 <h2>Comment réserver une visite guidée du Palais Bahia ?</h2>

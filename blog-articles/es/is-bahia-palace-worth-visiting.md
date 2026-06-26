@@ -1,4 +1,4 @@
----
+﻿---
 lang: es
 slug: is-bahia-palace-worth-visiting
 original: /en/blog/is-bahia-palace-worth-visiting
@@ -36,13 +36,13 @@ excerpt: Una reseña honesta de Bahia Palace en 2026: qué impresiona de verdad,
   <thead><tr><th>Sitio</th><th>Qué ofrece</th><th>Tiempo necesario</th><th>Entrada</th></tr></thead>
   <tbody>
     <tr><td>Bahia Palace</td><td>Arquitectura, escala, historia, jardines</td><td>75–90 min</td><td>100 MAD</td></tr>
-    <tr><td>Tumbas Saadíes</td><td>Detalle ornamental concentrado, historia</td><td>30–40 min</td><td>70 MAD</td></tr>
-    <tr><td>El Badi Palace</td><td>Ruinas atmosféricas, escala, cigüeñas</td><td>45 min</td><td>70 MAD</td></tr>
+    <tr><td>Tumbas Saadíes</td><td>Detalle ornamental concentrado, historia</td><td>30–40 min</td><td>100 MAD</td></tr>
+    <tr><td>El Badi Palace</td><td>Ruinas atmosféricas, escala, cigüeñas</td><td>45 min</td><td>100 MAD</td></tr>
     <tr><td>Jardín Majorelle</td><td>Botánica, color, patrimonio del diseño</td><td>45–60 min</td><td>150 MAD</td></tr>
-    <tr><td>Madrasa Ben Youssef</td><td>Arquitectura islámica, zellige, patio</td><td>45 min</td><td>70 MAD</td></tr>
+    <tr><td>Madrasa Ben Youssef</td><td>Arquitectura islámica, zellige, patio</td><td>45 min</td><td>50 MAD</td></tr>
   </tbody>
 </table>
-<p>A 100 MAD, Bahia Palace tiene un precio superior a las Tumbas Saadíes y El Badi Palace (ambas a 70 MAD), pero ofrece significativamente más contenido. Comparado con el Jardín Majorelle (150 MAD), ofrece más sustancia por dírham para los visitantes principalmente interesados en el patrimonio cultural.</p>
+<p>A 100 MAD, Bahia Palace tiene un precio superior a las Tumbas Saadíes y El Badi Palace (ambas a 100 MAD), pero ofrece significativamente más contenido. Comparado con el Jardín Majorelle (150 MAD), ofrece más sustancia por dírham para los visitantes principalmente interesados en el patrimonio cultural.</p>
 
 <h2>Para quién es perfecto</h2>
 <ul>

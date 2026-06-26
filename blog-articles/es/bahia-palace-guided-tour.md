@@ -1,4 +1,4 @@
----
+﻿---
 lang: es
 slug: bahia-palace-guided-tour
 original: /en/blog/bahia-palace-guided-tour
@@ -85,7 +85,7 @@ author: Abdellah
 
 <h2>¿Se puede combinar la visita guiada al Palacio Bahia con las Tumbas Saadíes?</h2>
 <p>Sí, y es uno de los itinerarios de medio día más populares en Marrakech. Las Tumbas Saadíes están a 10 minutos andando al sur del Palacio Bahia, construidas por la dinastía cuya riqueza y poder político sirvieron personajes como Ba Ahmed. Visitar ambos con un único guía tiene sentido práctico: se pagan unos honorarios únicos y se pasa entre dos de los monumentos históricamente más relacionados de Marrakech.</p>
-<p>La mayoría de los operadores en Marrakech ofrecen un tour de medio día por la "Medina Sur" combinando el Palacio Bahia y las Tumbas Saadíes, con una duración total de 2,5 a 3,5 horas. La entrada a las Tumbas Saadíes es de 70 MAD para visitantes extranjeros, generalmente incluida en el precio de un tour con reserva previa, o a pagar por separado en la taquilla si contrató un guía en la entrada.</p>
+<p>La mayoría de los operadores en Marrakech ofrecen un tour de medio día por la "Medina Sur" combinando el Palacio Bahia y las Tumbas Saadíes, con una duración total de 2,5 a 3,5 horas. La entrada a las Tumbas Saadíes es de 100 MAD para visitantes extranjeros, generalmente incluida en el precio de un tour con reserva previa, o a pagar por separado en la taquilla si contrató un guía en la entrada.</p>
 <p>Si planea la ruta por su cuenta, visite primero el Palacio Bahia: la luz matinal realza el patio principal y el palacio está más tranquilo antes de las 10 h. Continúe con las Tumbas Saadíes, luego la Place des Ferblantiers para un descanso. El recorrido completo desde Jemaa el-Fna dura unas 3 horas incluyendo el tiempo de desplazamiento a pie.</p>
 
 <h2>¿Cómo se reserva una visita guiada al Palacio Bahia?</h2>

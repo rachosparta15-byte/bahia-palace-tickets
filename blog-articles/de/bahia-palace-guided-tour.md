@@ -1,4 +1,4 @@
----
+﻿---
 lang: de
 slug: bahia-palace-guided-tour
 original: /en/blog/bahia-palace-guided-tour
@@ -85,7 +85,7 @@ author: Abdellah
 
 <h2>Kann man eine Bahia Palace-Tour mit den Saadischen Gräbern kombinieren?</h2>
 <p>Ja, und das ist einer der beliebtesten Halbtagesausflüge in Marrakesch. Die Saadischen Gräber liegen 10 Gehminuten südlich des Bahia Palace und wurden von der Dynastie errichtet, deren Reichtum und politische Macht Persönlichkeiten wie Ba Ahmed letztlich dienten. Es macht praktisch Sinn, beide mit einem einzigen Guide zu besuchen: Sie zahlen eine Guidegebühr und bewegen sich zwischen zwei der historisch am engsten miteinander verbundenen Monumente von Marrakesch.</p>
-<p>Die meisten Veranstalter in Marrakesch bieten eine "Südliche Medina"-Halbtagesführung mit Bahia Palace und den Saadischen Gräbern an, die insgesamt 2,5 bis 3,5 Stunden dauert. Der Eintritt in die Saadischen Gräber beträgt 70 MAD für ausländische Besucher, in einer vorgebuchten Tour meist inklusive, oder separat am Eingang zu bezahlen, wenn Sie vor Ort einen Guide engagiert haben.</p>
+<p>Die meisten Veranstalter in Marrakesch bieten eine "Südliche Medina"-Halbtagesführung mit Bahia Palace und den Saadischen Gräbern an, die insgesamt 2,5 bis 3,5 Stunden dauert. Der Eintritt in die Saadischen Gräber beträgt 100 MAD für ausländische Besucher, in einer vorgebuchten Tour meist inklusive, oder separat am Eingang zu bezahlen, wenn Sie vor Ort einen Guide engagiert haben.</p>
 <p>Wenn Sie die Route eigenständig planen, besuchen Sie zuerst den Bahia Palace: Das Morgenlicht trifft den Haupthof gut und der Palast ist vor 10 Uhr ruhiger. Danach die Saadischen Gräber, dann die Place des Ferblantiers zur Pause. Die gesamte Runde ab Jemaa el-Fna dauert inklusive Fußweg etwa 3 Stunden.</p>
 
 <h2>Wie bucht man eine geführte Tour im Bahia Palace?</h2>

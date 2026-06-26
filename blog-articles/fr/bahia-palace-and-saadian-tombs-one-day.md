@@ -1,4 +1,4 @@
----
+﻿---
 lang: fr
 slug: bahia-palace-and-saadian-tombs-one-day
 original: /en/blog/bahia-palace-and-saadian-tombs-one-day
@@ -24,7 +24,7 @@ excerpt: Oui, les deux en une demi-journée. Horaires précis, meilleur ordre, q
 <h3>Bahia Palace</h3>
 <p>Un palais royal du XIXe siècle couvrant environ 8 hectares au total (dont environ 8 000 m² ouverts aux visiteurs) — grandes cours, appartements du harem, plafonds en cèdre peints, zellige et jardins. Construit par le Grand Vizir Ba Ahmed entre 1894 et 1900. Entrée : <strong>100 MAD</strong> (adultes étrangers). Temps nécessaire : <strong>60–90 minutes</strong>.</p>
 <h3>Tombeaux Saadiens</h3>
-<p>Un mausolée royal du XVIe siècle construit pour la dynastie saadienne sous le sultan Ahmad al-Mansur. Trois chambres aux stucs et zellige sculptés extraordinaires entourent les tombes de 66 membres de la famille royale. Fermés par le sultan Moulay Ismail au XVIIe siècle et seulement redécouverts en 1917. Entrée : <strong>70 MAD</strong>. Temps nécessaire : <strong>30–45 minutes</strong>.</p>
+<p>Un mausolée royal du XVIe siècle construit pour la dynastie saadienne sous le sultan Ahmad al-Mansur. Trois chambres aux stucs et zellige sculptés extraordinaires entourent les tombes de 66 membres de la famille royale. Fermés par le sultan Moulay Ismail au XVIIe siècle et seulement redécouverts en 1917. Entrée : <strong>100 MAD</strong>. Temps nécessaire : <strong>30–45 minutes</strong>.</p>
 
 <h2>Quel site visiter en premier ?</h2>
 <p><strong>Commencez par Bahia Palace.</strong></p>
@@ -39,7 +39,7 @@ excerpt: Oui, les deux en une demi-journée. Horaires précis, meilleur ordre, q
     <tr><td><strong>09h00</strong></td><td>Entrez. Commencez par le Grand Riad, traversez les salles de réception, les appartements du harem et les jardins.</td></tr>
     <tr><td><strong>10h30</strong></td><td>Sortez de Bahia Palace. Marchez 7 minutes vers le sud jusqu'aux Tombeaux Saadiens.</td></tr>
     <tr><td><strong>10h40</strong></td><td>Entrez aux Tombeaux Saadiens. Voyez la Salle des Douze Colonnes, la chambre du milieu et le jardin.</td></tr>
-    <tr><td><strong>11h20</strong></td><td>Sortez des Tombeaux Saadiens. Option : marchez 10 minutes à l'ouest vers les ruines d'El Badi Palace (70 MAD) pour un troisième site.</td></tr>
+    <tr><td><strong>11h20</strong></td><td>Sortez des Tombeaux Saadiens. Option : marchez 10 minutes à l'ouest vers les ruines d'El Badi Palace (100 MAD) pour un troisième site.</td></tr>
     <tr><td><strong>12h00</strong></td><td>Déjeuner. Repassez par la medina ou en direction de Jemaa el-Fna.</td></tr>
   </tbody>
 </table>
@@ -50,8 +50,8 @@ excerpt: Oui, les deux en une demi-journée. Horaires précis, meilleur ordre, q
   <thead><tr><th>Site</th><th>Adulte (étranger)</th><th>Marocain</th><th>Enfants moins de 7 ans</th></tr></thead>
   <tbody>
     <tr><td>Bahia Palace</td><td>100 MAD (~9€)</td><td>30 MAD</td><td>Gratuit</td></tr>
-    <tr><td>Tombeaux Saadiens</td><td>70 MAD (~7€)</td><td>10 MAD</td><td>Gratuit</td></tr>
-    <tr><td><strong>Total</strong></td><td><strong>170 MAD (~15€)</strong></td><td>40 MAD</td><td>Gratuit</td></tr>
+    <tr><td>Tombeaux Saadiens</td><td>100 MAD (~7€)</td><td>10 MAD</td><td>Gratuit</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>200 MAD (~15€)</strong></td><td>40 MAD</td><td>Gratuit</td></tr>
   </tbody>
 </table>
 <p>Les deux sites sont en espèces uniquement à l'entrée. Ayez des dirhams. Si vous avez réservé un <a href="/fr/tickets/skip-the-line">billet skip-the-line pour Bahia Palace</a> en ligne, vous pouvez payer par carte pour celui-là — mais ayez des espèces prêtes pour les Tombeaux Saadiens.</p>
@@ -65,7 +65,7 @@ excerpt: Oui, les deux en une demi-journée. Horaires précis, meilleur ordre, q
 </ul>
 
 <h2>Ajoutez El Badi Palace pour une matinée complète</h2>
-<p>Si vous avez jusqu'à 13h00, El Badi Palace est à 10 minutes à l'ouest des Tombeaux Saadiens. L'entrée est de 70 MAD. Les ruines sont atmosphériques — de vastes salles sans toit, des cigognes nichant et une échelle très différente des tombeaux intimes. Cela ajoute environ 45 minutes et complète les trois principaux monuments de la medina sud en une seule matinée.</p>
+<p>Si vous avez jusqu'à 13h00, El Badi Palace est à 10 minutes à l'ouest des Tombeaux Saadiens. L'entrée est de 100 MAD. Les ruines sont atmosphériques — de vastes salles sans toit, des cigognes nichant et une échelle très différente des tombeaux intimes. Cela ajoute environ 45 minutes et complète les trois principaux monuments de la medina sud en une seule matinée.</p>
 
 <h2>Réservez votre billet Bahia Palace</h2>
 <p>La queue à la porte de Bahia Palace est la principale menace pour cet itinéraire. Une queue de 40 minutes signifie que vous arrivez aux Tombeaux Saadiens à 11h30, juste quand la foule atteint son pic. <a href="/fr/tickets/skip-the-line">Réservez un billet skip-the-line pour Bahia Palace</a> à l'avance. Les Tombeaux Saadiens ne proposent pas actuellement de réservation en ligne — arrivez tôt et la queue avance vite.</p>
@@ -76,4 +76,4 @@ excerpt: Oui, les deux en une demi-journée. Horaires précis, meilleur ordre, q
 <h3>Lequel est le mieux — les Tombeaux Saadiens ou Bahia Palace ?</h3>
 <p>Ils ne sont pas vraiment comparables — ils offrent des expériences différentes. Les Tombeaux Saadiens sont plus petits, plus concentrés et intensément détaillés dans un espace réduit. Bahia Palace est vaste, varié et de portée architecturale. Si vous n'avez le temps que pour l'un, Bahia Palace offre plus de variété et une expérience plus longue et plus riche. Si vous avez 2 à 3 heures, faites les deux — ils se complètent parfaitement.</p>
 <h3>Dois-je réserver des billets pour les Tombeaux Saadiens à l'avance ?</h3>
-<p>Il n'y a pas de système de réservation officielle à l'avance pour les Tombeaux Saadiens — les billets s'achètent à l'entrée (70 MAD en espèces). La file d'attente est généralement plus courte que celle de Bahia Palace et avance plus vite, car le site est plus petit. Arriver avant 10h00 minimise l'attente. Pour Bahia Palace, un <a href="/fr/tickets/skip-the-line">billet skip-the-line</a> à l'avance est fortement recommandé en haute saison.</p>
+<p>Il n'y a pas de système de réservation officielle à l'avance pour les Tombeaux Saadiens — les billets s'achètent à l'entrée (100 MAD en espèces). La file d'attente est généralement plus courte que celle de Bahia Palace et avance plus vite, car le site est plus petit. Arriver avant 10h00 minimise l'attente. Pour Bahia Palace, un <a href="/fr/tickets/skip-the-line">billet skip-the-line</a> à l'avance est fortement recommandé en haute saison.</p>

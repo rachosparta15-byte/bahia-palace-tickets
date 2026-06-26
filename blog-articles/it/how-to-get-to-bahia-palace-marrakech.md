@@ -1,4 +1,4 @@
----
+﻿---
 lang: it
 slug: how-to-get-to-bahia-palace-marrakech
 original: /en/blog/how-to-get-to-bahia-palace-marrakech
@@ -58,8 +58,8 @@ excerpt: Come raggiungere Bahia Palace da Jemaa el-Fna: percorso a piedi, consig
 <p>Da entrambi i parcheggi, camminare fino all'ingresso del palazzo richiede 5-10 minuti. I parcheggi nella zona della medina di Marrakech sono generalmente informali — un custode riscuoterà una piccola tariffa (5-10 MAD) quando partirete. È normale e atteso — non una truffa.</p>
 
 <h2>Cosa c'è vicino a Bahia Palace?</h2>
-<p><strong>Tombe Saadiane (~10 minuti a sud):</strong> Il mausoleo reale della dinastia saadiana, murato per secoli e riscoperto nel 1917. Piccolo, straordinariamente dettagliato e che vale 45 minuti. Ingresso: 70 MAD. Seguite i cartelli a sud di Bahia Palace attraverso il Mellah.</p>
-<p><strong>El Badi Palace (~15 minuti a ovest):</strong> Le drammatiche rovine di un complesso palatiale del XVI secolo — vaste sale senza tetto e torri con nidi di cicogne. Ingresso: 70 MAD. Dirigetevi verso ovest in direzione della Place des Ferblantiers.</p>
+<p><strong>Tombe Saadiane (~10 minuti a sud):</strong> Il mausoleo reale della dinastia saadiana, murato per secoli e riscoperto nel 1917. Piccolo, straordinariamente dettagliato e che vale 45 minuti. Ingresso: 100 MAD. Seguite i cartelli a sud di Bahia Palace attraverso il Mellah.</p>
+<p><strong>El Badi Palace (~15 minuti a ovest):</strong> Le drammatiche rovine di un complesso palatiale del XVI secolo — vaste sale senza tetto e torri con nidi di cicogne. Ingresso: 100 MAD. Dirigetevi verso ovest in direzione della Place des Ferblantiers.</p>
 <p><strong>Place des Ferblantiers (~3 minuti a ovest):</strong> La piazza dei fabbricanti di lanterne, da visitare preferibilmente nel tardo pomeriggio quando tutto si illumina.</p>
 <p><strong>Mellah (Quartiere Ebraico):</strong> Immediatamente adiacente a Bahia Palace. I vicoli coperti del mercato qui sono meno turistici dei souk principali e vale la pena esplorarli — edifici più alti, balconi in ferro battuto, la Sinagoga Lazama e un carattere nettamente diverso dal resto della medina.</p>
 

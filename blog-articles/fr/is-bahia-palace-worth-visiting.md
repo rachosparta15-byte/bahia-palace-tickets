@@ -1,4 +1,4 @@
----
+﻿---
 lang: fr
 slug: is-bahia-palace-worth-visiting
 original: /en/blog/is-bahia-palace-worth-visiting
@@ -36,13 +36,13 @@ excerpt: Un avis honnête sur Bahia Palace en 2026 : ce qui impressionne vraimen
   <thead><tr><th>Site</th><th>Ce qu'il offre</th><th>Temps nécessaire</th><th>Entrée</th></tr></thead>
   <tbody>
     <tr><td>Bahia Palace</td><td>Architecture, échelle, histoire, jardins</td><td>75–90 min</td><td>100 MAD</td></tr>
-    <tr><td>Tombeaux Saadiens</td><td>Détail ornemental concentré, histoire</td><td>30–40 min</td><td>70 MAD</td></tr>
-    <tr><td>El Badi Palace</td><td>Ruines atmosphériques, échelle, cigognes</td><td>45 min</td><td>70 MAD</td></tr>
+    <tr><td>Tombeaux Saadiens</td><td>Détail ornemental concentré, histoire</td><td>30–40 min</td><td>100 MAD</td></tr>
+    <tr><td>El Badi Palace</td><td>Ruines atmosphériques, échelle, cigognes</td><td>45 min</td><td>100 MAD</td></tr>
     <tr><td>Jardin Majorelle</td><td>Botanique, couleur, patrimoine design</td><td>45–60 min</td><td>150 MAD</td></tr>
-    <tr><td>Medersa Ben Youssef</td><td>Architecture islamique, zellige, cour</td><td>45 min</td><td>70 MAD</td></tr>
+    <tr><td>Medersa Ben Youssef</td><td>Architecture islamique, zellige, cour</td><td>45 min</td><td>50 MAD</td></tr>
   </tbody>
 </table>
-<p>À 100 MAD, Bahia Palace est plus cher que les Tombeaux Saadiens et El Badi Palace (tous les deux 70 MAD) mais offre nettement plus de contenu. Comparé au Jardin Majorelle (150 MAD), il offre plus de substance par dirham pour les visiteurs principalement intéressés par le patrimoine culturel.</p>
+<p>À 100 MAD, Bahia Palace est plus cher que les Tombeaux Saadiens et El Badi Palace (tous les deux 100 MAD) mais offre nettement plus de contenu. Comparé au Jardin Majorelle (150 MAD), il offre plus de substance par dirham pour les visiteurs principalement intéressés par le patrimoine culturel.</p>
 
 <h2>Pour qui c'est parfait</h2>
 <ul>

@@ -1,4 +1,4 @@
----
+﻿---
 lang: it
 slug: bahia-palace-guided-tour
 original: /en/blog/bahia-palace-guided-tour
@@ -85,7 +85,7 @@ author: Abdellah
 
 <h2>Si può combinare il tour del Palazzo Bahia con le Tombe Saadiane?</h2>
 <p>Sì, ed è uno degli itinerari di mezza giornata più popolari a Marrakech. Le Tombe Saadiane si trovano a 10 minuti a piedi a sud del Palazzo Bahia, costruite dalla dinastia la cui ricchezza e potere politico personaggi come Ba Ahmed servivano. Visitare entrambi con un'unica guida ha senso pratico: si paga un solo onorario e ci si sposta tra due dei monumenti storicamente più connessi di Marrakech.</p>
-<p>La maggior parte degli operatori di Marrakech offre un tour di mezza giornata nella "Medina Sud" che combina Palazzo Bahia e Tombe Saadiane, con una durata totale di 2,5-3,5 ore. L'ingresso alle Tombe Saadiane è di 70 MAD per i visitatori stranieri, di solito incluso nel prezzo di un tour prenotato, o da pagare separatamente alla cassa se avete assunto una guida all'ingresso.</p>
+<p>La maggior parte degli operatori di Marrakech offre un tour di mezza giornata nella "Medina Sud" che combina Palazzo Bahia e Tombe Saadiane, con una durata totale di 2,5-3,5 ore. L'ingresso alle Tombe Saadiane è di 100 MAD per i visitatori stranieri, di solito incluso nel prezzo di un tour prenotato, o da pagare separatamente alla cassa se avete assunto una guida all'ingresso.</p>
 <p>Se costruite l'itinerario in modo autonomo, visitate prima il Palazzo Bahia: la luce mattutina valorizza il cortile principale e il palazzo è più tranquillo prima delle 10. Proseguite con le Tombe Saadiane, poi Place des Ferblantiers per una pausa. Il giro completo da Jemaa el-Fna dura circa 3 ore incluso il tempo di cammino.</p>
 
 <h2>Come si prenota un tour guidato al Palazzo Bahia?</h2>

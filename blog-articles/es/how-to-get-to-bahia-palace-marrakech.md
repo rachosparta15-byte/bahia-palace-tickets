@@ -1,4 +1,4 @@
----
+﻿---
 lang: es
 slug: how-to-get-to-bahia-palace-marrakech
 original: /en/blog/how-to-get-to-bahia-palace-marrakech
@@ -58,8 +58,8 @@ excerpt: Cómo llegar a Bahia Palace desde Jemaa el-Fna: ruta a pie, consejos ta
 <p>Desde cualquiera de los dos aparcamientos, caminar hasta la entrada del palacio lleva entre 5 y 10 minutos. Los aparcamientos en la zona de la medina de Marrakech son generalmente informales — un vigilante cobrará una pequeña tarifa (5-10 MAD) cuando te vayas. Es normal y esperado — no es una estafa.</p>
 
 <h2>¿Qué hay cerca de Bahia Palace?</h2>
-<p><strong>Tumbas Saadíes (~10 minutos al sur):</strong> El mausoleo real de la dinastía saadí, amurallado durante siglos y redescubierto en 1917. Pequeño, extraordinariamente detallado y que vale 45 minutos. Entrada: 70 MAD. Sigue los carteles al sur de Bahia Palace a través del Mellah.</p>
-<p><strong>El Badi Palace (~15 minutos al oeste):</strong> Las dramáticas ruinas de un complejo palacial del siglo XVI — vastas salas sin techo y torres con nidos de cigüeñas. Entrada: 70 MAD. Dirígete hacia el oeste en dirección a la Place des Ferblantiers.</p>
+<p><strong>Tumbas Saadíes (~10 minutos al sur):</strong> El mausoleo real de la dinastía saadí, amurallado durante siglos y redescubierto en 1917. Pequeño, extraordinariamente detallado y que vale 45 minutos. Entrada: 100 MAD. Sigue los carteles al sur de Bahia Palace a través del Mellah.</p>
+<p><strong>El Badi Palace (~15 minutos al oeste):</strong> Las dramáticas ruinas de un complejo palacial del siglo XVI — vastas salas sin techo y torres con nidos de cigüeñas. Entrada: 100 MAD. Dirígete hacia el oeste en dirección a la Place des Ferblantiers.</p>
 <p><strong>Place des Ferblantiers (~3 minutos al oeste):</strong> La plaza de los fabricantes de linternas, que conviene visitar al anochecer, cuando todo se ilumina.</p>
 <p><strong>Mellah (Barrio Judío):</strong> Inmediatamente adyacente a Bahia Palace. Los callejones cubiertos del mercado aquí son menos turísticos que los souks principales y vale la pena explorarlos — edificios más altos, balcones de hierro forjado, la sinagoga Lazama y un carácter marcadamente diferente al resto de la medina.</p>
 

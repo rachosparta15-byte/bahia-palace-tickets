@@ -1,4 +1,4 @@
----
+﻿---
 lang: it
 slug: marrakech-2-day-itinerary
 original: /en/blog/marrakech-2-day-itinerary
@@ -21,10 +21,10 @@ excerpt: 2 giorni a Marrakech: un itinerario completo ora per ora che copre Bahi
 
 <h3>10:30 — Camminate alle Tombe Saadiane (7 minuti)</h3>
 <p>Dirigetevi a sud da Bahia Palace attraverso il Mellah. Seguite i cartelli — sono in francese e arabo e ben posizionati. L'ingresso delle Tombe Saadiane si trova in un piccolo vicolo appena oltre la moschea Moulay El Yazid.</p>
-<p><strong>All'interno delle tombe:</strong> Tre camere circondano i sepolcri di 66 membri della famiglia reale saadiana. La Sala delle Dodici Colonne è il punto culminante — colonne di marmo italiano, stucco intagliato nella sua forma più raffinata e un'atmosfera genuinamente diversa dalla grandiosità di Bahia Palace. Il sito fu sigillato nel XVII secolo e riscoperto solo nel 1917. Calcolate 35–45 minuti. Ingresso: 70 MAD in contanti.</p>
+<p><strong>All'interno delle tombe:</strong> Tre camere circondano i sepolcri di 66 membri della famiglia reale saadiana. La Sala delle Dodici Colonne è il punto culminante — colonne di marmo italiano, stucco intagliato nella sua forma più raffinata e un'atmosfera genuinamente diversa dalla grandiosità di Bahia Palace. Il sito fu sigillato nel XVII secolo e riscoperto solo nel 1917. Calcolate 35–45 minuti. Ingresso: 100 MAD in contanti.</p>
 
 <h3>11:30 — Opzione: El Badi Palace (10 minuti a piedi)</h3>
-<p>Se avete energia e tempo, El Badi Palace vale 45 minuti. Dirigetevi a ovest dalle Tombe Saadiane verso la Place des Ferblantiers. Le rovine di questo magnifico palazzo del XVI secolo sono oggi spazi aperti con cicogne che nidificano e un'atmosfera unica nella medina. Ingresso: 70 MAD.</p>
+<p>Se avete energia e tempo, El Badi Palace vale 45 minuti. Dirigetevi a ovest dalle Tombe Saadiane verso la Place des Ferblantiers. Le rovine di questo magnifico palazzo del XVI secolo sono oggi spazi aperti con cicogne che nidificano e un'atmosfera unica nella medina. Ingresso: 100 MAD.</p>
 
 <h2>Giorno 1 Pomeriggio: I souk della medina</h2>
 <h3>12:30 — Pranzo</h3>
@@ -56,7 +56,7 @@ excerpt: 2 giorni a Marrakech: un itinerario completo ora per ora che copre Bahi
 <h3>12:00 — Pranzo a Gueliz</h3>
 <p>Le opzioni di ristoranti a Gueliz offrono un migliore rapporto qualità-prezzo e sono meno turistiche di Jemaa el-Fna. Un buon ristorante di tajine locale in questa zona costa 80–130 MAD per un piatto. Chiedete al vostro alloggio una raccomandazione specifica — i migliori sono conosciuti localmente.</p>
 <h3>14:00 — Madrasa Ben Youssef</h3>
-<p>Una scuola coranica del XIV secolo nella medina nord e uno dei più bei esempi di architettura islamica in Marocco. Tre piani di stucco intagliato e zellige circondano un cortile centrale — più intimo di Bahia Palace, più accessibile delle Tombe Saadiane. Ingresso 70 MAD. Calcolate 45 minuti.</p>
+<p>Una scuola coranica del XIV secolo nella medina nord e uno dei più bei esempi di architettura islamica in Marocco. Tre piani di stucco intagliato e zellige circondano un cortile centrale — più intimo di Bahia Palace, più accessibile delle Tombe Saadiane. Ingresso 100 MAD. Calcolate 45 minuti.</p>
 <h3>15:00 — Ultimo giro nei souk o riposo</h3>
 <p>L'area intorno alla Madrasa Ben Youssef ha alcuni dei migliori negozi di artigianato di Marrakech — meno turistici rispetto al percorso principale del souk. Ceramica, pelletteria e laboratori tessili in questa zona vendono a prezzi più realistici con meno pressione.</p>
 
@@ -68,7 +68,7 @@ excerpt: 2 giorni a Marrakech: un itinerario completo ora per ora che copre Bahi
 <h2>Consigli pratici</h2>
 <ul>
   <li><strong>Trasporti:</strong> La maggior parte di questo itinerario è percorribile a piedi nella medina. Usate i petit taxi per il tragitto di 3 km tra la medina e Gueliz/Giardino Majorelle — concordate la tariffa prima di salire (20–35 MAD è equo)</li>
-  <li><strong>Budget a persona (escluso alloggio):</strong> Bahia Palace 100 MAD + Tombe Saadiane 70 MAD + Majorelle 150 MAD + Ben Youssef 70 MAD + cibo 400–600 MAD al giorno = circa 830–1.030 MAD (~75–93€) a persona per 2 giorni di attività e pasti</li>
+  <li><strong>Budget a persona (escluso alloggio):</strong> Bahia Palace 100 MAD + Tombe Saadiane 100 MAD + Majorelle 150 MAD + Ben Youssef 50 MAD + cibo 400–600 MAD al giorno = circa 780–980 MAD (~75–93€) a persona per 2 giorni di attività e pasti</li>
   <li><strong>Contanti:</strong> Tutti i punti biglietteria dei monumenti accettano solo contanti. Abbiate dirham disponibili in ogni momento — i bancomat all'interno della medina sono limitati</li>
   <li><strong>Sicurezza:</strong> Marrakech è sicura per i turisti. Il principale fastidio sono le "guide" non richieste vicino ai monumenti — un fermo «no grazie» ripetuto una volta è sufficiente. Non seguite nessuno che vi si avvicini spontaneamente</li>
   <li><strong>Caldo:</strong> In estate (giugno–settembre), programmate le attività all'aperto prima delle 11:00 e dopo le 17:00. I vicoli coperti della medina offrono ombra ma il calore è reale</li>
