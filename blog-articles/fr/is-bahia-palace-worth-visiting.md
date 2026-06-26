@@ -1,4 +1,4 @@
-﻿---
+---
 lang: fr
 slug: is-bahia-palace-worth-visiting
 original: /en/blog/is-bahia-palace-worth-visiting

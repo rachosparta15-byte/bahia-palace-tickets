@@ -1,4 +1,4 @@
-﻿---
+---
 lang: fr
 slug: how-to-get-to-bahia-palace-marrakech
 original: /en/blog/how-to-get-to-bahia-palace-marrakech

@@ -1,4 +1,4 @@
-﻿---
+---
 lang: it
 slug: bahia-palace-guided-tour
 original: /en/blog/bahia-palace-guided-tour

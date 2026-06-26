@@ -1,4 +1,4 @@
-﻿---
+---
 lang: es
 slug: marrakech-2-day-itinerary
 original: /en/blog/marrakech-2-day-itinerary

@@ -1,4 +1,4 @@
-﻿---
+---
 lang: fr
 slug: bahia-palace-vs-badi-palace-marrakech
 original: /en/blog/bahia-palace-vs-badi-palace-marrakech

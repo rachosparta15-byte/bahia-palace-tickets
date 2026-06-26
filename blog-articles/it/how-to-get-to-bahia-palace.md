@@ -1,4 +1,4 @@
-﻿---
+---
 lang: it
 slug: how-to-get-to-bahia-palace
 original: /en/blog/how-to-get-to-bahia-palace
