@@ -3,18 +3,14 @@
 import { useTranslations } from 'next-intl';
 import { usePathname } from '@/i18n/navigation';
 import { Link } from '@/i18n/navigation';
-import { Ticket, Images, BookOpen, Info } from '@phosphor-icons/react';
+import { TicketIcon, ImagesIcon, BookOpenIcon, QuestionIcon } from '@phosphor-icons/react';
 
 const NAV_ITEMS = [
-  { href: '/tickets/skip-the-line', Icon: Ticket, key: 'tickets' },
-  { href: '/gallery', Icon: Images,   key: 'gallery' },
-  { href: '/blog',    Icon: BookOpen, key: 'blog'    },
-  { href: '/faq',     Icon: Info,     key: 'faq'     },
+  { href: '/tickets/skip-the-line', Icon: TicketIcon,   key: 'tickets' },
+  { href: '/gallery',               Icon: ImagesIcon,   key: 'gallery' },
+  { href: '/blog',                  Icon: BookOpenIcon, key: 'blog'    },
+  { href: '/faq',                   Icon: QuestionIcon, key: 'faq'     },
 ] as const;
-
-const CREAM  = '#F7E7D8';
-const WHITE  = '#FFFFFF';
-const DOT    = '#FFD9A0';
 
 export function MobileBottomNav() {
   const t = useTranslations('nav');
@@ -25,59 +21,80 @@ export function MobileBottomNav() {
       aria-label="Mobile navigation"
       className="fixed bottom-0 left-0 right-0 z-[46] md:hidden"
       style={{
-        background: 'linear-gradient(90deg, #7A3A12, #B5471F 50%, #7A3A12)',
-        boxShadow: '0 -4px 16px rgba(122,58,18,0.30)',
+        background: 'linear-gradient(90deg, #6B2F0E, #B5471F 50%, #6B2F0E)',
+        boxShadow: '0 -4px 20px rgba(100,30,8,0.45)',
         borderRadius: '16px 16px 0 0',
         paddingBottom: 'env(safe-area-inset-bottom, 0px)',
       }}
     >
-      <div className="flex h-14">
+      <div className="flex h-[60px]">
         {NAV_ITEMS.map(({ href, Icon, key }) => {
           const active = pathname === href || pathname.startsWith(href + '/');
           return (
             <Link
               key={href}
               href={href}
-              className="flex-1 flex flex-col items-center justify-center gap-[3px] select-none"
-              style={{
-                minHeight: 44,
-                transition: 'opacity 0.15s ease',
-              }}
+              className="relative flex-1 flex flex-col items-center justify-center gap-[3px] select-none"
+              style={{ minHeight: 44 }}
             >
+              {/* Active pill glow */}
+              {active && (
+                <span
+                  aria-hidden="true"
+                  style={{
+                    position: 'absolute',
+                    inset: '6px 8px',
+                    borderRadius: 12,
+                    background: 'rgba(255,217,160,0.18)',
+                    boxShadow: '0 0 12px 2px rgba(255,200,100,0.20)',
+                  }}
+                />
+              )}
+
               <Icon
-                size={22}
+                size={24}
                 weight="fill"
-                color={active ? WHITE : CREAM}
                 aria-hidden="true"
-                style={{ transition: 'color 0.15s ease' }}
+                style={{
+                  position: 'relative',
+                  zIndex: 1,
+                  color: active ? '#FFFFFF' : 'rgba(247,231,216,0.65)',
+                  filter: active
+                    ? 'drop-shadow(0 0 6px rgba(255,217,160,0.85))'
+                    : 'none',
+                  transform: active ? 'scale(1.14)' : 'scale(1)',
+                  transition: 'transform 0.18s ease, filter 0.18s ease, color 0.18s ease',
+                }}
               />
 
               <span
-                className="text-[9px] font-semibold uppercase leading-none"
+                className="text-[9px] font-bold uppercase leading-none"
                 style={{
-                  letterSpacing: '0.04em',
-                  color: active ? WHITE : CREAM,
-                  transition: 'color 0.15s ease',
+                  position: 'relative',
+                  zIndex: 1,
+                  letterSpacing: '0.05em',
+                  color: active ? '#FFD9A0' : 'rgba(247,231,216,0.55)',
+                  transition: 'color 0.18s ease',
                 }}
               >
                 {t(key)}
               </span>
 
-              {/* Reserved dot space — prevents layout shift on route change */}
+              {/* Active dot */}
               <span
                 className="flex items-center justify-center"
-                style={{ height: 6, width: 16 }}
+                style={{ height: 5, width: 16, position: 'relative', zIndex: 1 }}
                 aria-hidden="true"
               >
                 {active && (
                   <span
                     style={{
                       display: 'inline-block',
-                      width: 4,
-                      height: 4,
+                      width: 3,
+                      height: 3,
                       borderRadius: '50%',
-                      backgroundColor: DOT,
-                      boxShadow: '0 0 6px 3px rgba(255,217,160,0.60)',
+                      backgroundColor: '#FFD9A0',
+                      boxShadow: '0 0 6px 3px rgba(255,217,160,0.65)',
                     }}
                   />
                 )}
