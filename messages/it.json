@@ -179,9 +179,9 @@
     "link": "Leggi la nostra Guida Sicurezza →"
   },
   "cta": {
-    "title": "Pronto a Visitare il Palazzo Bahia?",
-    "subtitle": "Pianifica la tua visita e salta la coda. Conferma immediata garantita.",
-    "button": "Pianifica la visita",
+    "title": "Avete letto tutto. Ora entrate.",
+    "subtitle": "Prenota il tuo biglietto salta-fila ed entra senza code.",
+    "button": "Prenota biglietti Palazzo Bahia",
     "stickyMobile": "Salta la fila da $10"
   },
   "footer": {
@@ -571,5 +571,37 @@
   },
   "videos": {
     "promoBar": "Bahia in Video"
+  },
+  "story": {
+    "body": "Nel 1866, l'uomo più potente del Marocco iniziò a costruire un palazzo per la donna che amava. Era il Gran Visir Ba Ahmed — e lo chiamò Bahia: in arabo, «la brillante». Convocò i migliori artigiani di Fez, che trascorsero decenni a scolpire soffitti in cedro, tagliare mosaici di zellige a mano e riempire 150 stanze con interni il cui splendore il Marocco non aveva mai visto. Ba Ahmed morì nel 1900. Il palazzo è rimasto silenzioso da allora — e toglie ancora il fiato."
+  },
+  "palaceStats": {
+    "stat1val": "1866",
+    "stat1label": "Costruito nel",
+    "stat2val": "150+",
+    "stat2label": "Stanze",
+    "stat3val": "8.000 m²",
+    "stat3label": "Superficie",
+    "stat4val": "100 MAD",
+    "stat4label": "Ingresso da"
+  },
+  "highlights": {
+    "title": "Cosa vedrete",
+    "item1label": "Il Grande Cortile",
+    "item1caption": "Gli aranci ombreggiano un cortile dove un tempo lavoravano gli artigiani. La maggior parte dei visitatori trascorre i primi dieci minuti qui, a guardare semplicemente verso l'alto.",
+    "item2label": "I Soffitti Intagliati",
+    "item2caption": "Gli artigiani trascorsero anni su un solo soffitto in cedro. Ogni trave è diversa. Nessuna è stata toccata da una macchina.",
+    "item3label": "I Mosaici di Zellige",
+    "item3caption": "Ogni mattonella di zellige tagliata e posata a mano con precisione assoluta. La geometria non ha errori.",
+    "item4label": "La Grande Sala di Ricevimento",
+    "item4caption": "La sala più grande del palazzo — dove Ba Ahmed riceveva i dignitari stranieri. Il solo soffitto dipinto richiese agli artigiani diversi anni di lavoro."
+  },
+  "practicalBar": {
+    "hoursLabel": "Aperto tutti i giorni",
+    "hoursVal": "9:00 – 17:00",
+    "priceLabel": "Ingresso",
+    "priceVal": "100 MAD (~10 €)",
+    "locationLabel": "Indirizzo",
+    "locationVal": "Rue Riad Zitoun el Jedid, Medina di Marrakech"
   }
 }

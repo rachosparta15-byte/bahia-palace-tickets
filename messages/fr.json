@@ -179,9 +179,9 @@
     "link": "Lire notre Guide Sécurité →"
   },
   "cta": {
-    "title": "Prêt à Visiter le Palais Bahia ?",
-    "subtitle": "Planifiez votre visite et évitez la file d'attente. Confirmation instantanée garantie.",
-    "button": "Préparer ma visite",
+    "title": "Vous avez tout lu. Il est temps d'entrer.",
+    "subtitle": "Réservez votre billet coupe-file et entrez sans attendre.",
+    "button": "Réserver mes billets Palais Bahia",
     "stickyMobile": "Coupe-file dès $10"
   },
   "footer": {
@@ -571,5 +571,37 @@
   },
   "videos": {
     "promoBar": "La Bahia en Vidéo"
+  },
+  "story": {
+    "body": "En 1866, l'homme le plus puissant du Maroc commença à construire un palais pour la femme qu'il aimait. Il était le Grand Vizir Ba Ahmed — et il le nomma Bahia : en arabe, « la brillante ». Il fit venir les meilleurs artisans de Fès, qui passèrent des décennies à sculpter des plafonds en cèdre, tailler des mosaïques de zellige et remplir 150 chambres d'intérieurs comme le Maroc n'en avait jamais vu. Ba Ahmed mourut en 1900. Le palais est resté silencieux depuis lors — et vous coupe encore le souffle."
+  },
+  "palaceStats": {
+    "stat1val": "1866",
+    "stat1label": "Construit en",
+    "stat2val": "150+",
+    "stat2label": "Chambres",
+    "stat3val": "8 000 m²",
+    "stat3label": "Superficie",
+    "stat4val": "100 MAD",
+    "stat4label": "Entrée à partir de"
+  },
+  "highlights": {
+    "title": "Ce que vous verrez",
+    "item1label": "Le Grand Patio",
+    "item1caption": "Des orangers ombragent une cour où travaillaient autrefois des artisans. La plupart des visiteurs passent leurs dix premières minutes ici, à simplement regarder vers le haut.",
+    "item2label": "Les Plafonds Sculptés",
+    "item2caption": "Les artisans ont consacré des années à un seul plafond en cèdre. Chaque poutre est différente. Aucune n'a été touchée par une machine.",
+    "item3label": "Les Mosaïques de Zellige",
+    "item3caption": "Chaque carreau taillé et posé à la main avec une précision absolue. La géométrie ne comporte aucune erreur.",
+    "item4label": "La Grande Salle de Réception",
+    "item4caption": "La plus grande salle du palais — où Ba Ahmed recevait les dignitaires étrangers. Le plafond peint seul a demandé plusieurs années aux artisans."
+  },
+  "practicalBar": {
+    "hoursLabel": "Ouvert tous les jours",
+    "hoursVal": "9h00 – 17h00",
+    "priceLabel": "Entrée",
+    "priceVal": "100 MAD (~10 €)",
+    "locationLabel": "Adresse",
+    "locationVal": "Rue Riad Zitoun el Jedid, Médina de Marrakech"
   }
 }

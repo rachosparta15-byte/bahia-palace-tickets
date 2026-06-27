@@ -179,9 +179,9 @@
     "link": "Unseren Sicherheitsratgeber lesen →"
   },
   "cta": {
-    "title": "Bereit für den Bahia Palast?",
-    "subtitle": "Planen Sie Ihren Besuch und überspringen Sie die Warteschlange. Sofortige Bestätigung garantiert.",
-    "button": "Besuch planen",
+    "title": "Sie haben gelesen. Jetzt eintreten.",
+    "subtitle": "Buchen Sie Ihr Ticket ohne Warteschlange und treten Sie direkt ein.",
+    "button": "Bahia Palast Tickets buchen",
     "stickyMobile": "Warteschlange überspringen ab $10"
   },
   "footer": {
@@ -571,5 +571,37 @@
   },
   "videos": {
     "promoBar": "Der Palast in Bewegung"
+  },
+  "story": {
+    "body": "Im Jahr 1866 begann der mächtigste Mann Marokkos, einen Palast für die Frau zu bauen, die er liebte. Es war Großwesir Ba Ahmed — und er nannte ihn Bahia: Arabisch für 'die Glänzende'. Er holte die besten Handwerker aus Fès, die jahrzehntelang Zedernholzdecken schnittzten, Zellige-Mosaike von Hand legten und 150 Räume mit Interieurs füllten, die Marokko noch nie gesehen hatte. Ba Ahmed starb im Jahr 1900. Der Palast ist seitdem still geblieben — und nimmt einem noch immer den Atem."
+  },
+  "palaceStats": {
+    "stat1val": "1866",
+    "stat1label": "Erbaut",
+    "stat2val": "150+",
+    "stat2label": "Räume",
+    "stat3val": "8.000 m²",
+    "stat3label": "Fläche",
+    "stat4val": "100 MAD",
+    "stat4label": "Eintritt ab"
+  },
+  "highlights": {
+    "title": "Was Sie sehen werden",
+    "item1label": "Der Große Innenhof",
+    "item1caption": "Orangenbäume beschatten einen Hof, in dem einst Handwerker arbeiteten. Die meisten Besucher verbringen ihre ersten zehn Minuten damit, einfach nach oben zu schauen.",
+    "item2label": "Die Geschnitzten Decken",
+    "item2caption": "Handwerker verbrachten Jahre an einer einzigen Zedernholzdecke. Jeder Balken ist anders. Keiner wurde von einer Maschine berührt.",
+    "item3label": "Die Zellige-Mosaike",
+    "item3caption": "Jede Kachel von Hand geschnitten und mit absoluter Präzision verlegt. Die Geometrie hat keine Fehler.",
+    "item4label": "Der Große Empfangssaal",
+    "item4caption": "Der größte Saal des Palastes — wo Ba Ahmed ausländische Würdenträger empfing. Die bemalte Decke allein nahm Handwerkern mehrere Jahre in Anspruch."
+  },
+  "practicalBar": {
+    "hoursLabel": "Täglich geöffnet",
+    "hoursVal": "9:00 – 17:00 Uhr",
+    "priceLabel": "Eintritt",
+    "priceVal": "100 MAD (~10 €)",
+    "locationLabel": "Adresse",
+    "locationVal": "Rue Riad Zitoun el Jedid, Medina von Marrakesch"
   }
 }

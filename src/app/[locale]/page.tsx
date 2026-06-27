@@ -1,10 +1,13 @@
 export const revalidate = 60;
 
 import { Hero } from '@/components/homepage/Hero';
+import { StorySection } from '@/components/homepage/StorySection';
+import { PalaceStatStrip } from '@/components/homepage/PalaceStatStrip';
+import { HighlightsSection } from '@/components/homepage/HighlightsSection';
+import { PracticalBar } from '@/components/homepage/PracticalBar';
 import { TrustStrip } from '@/components/homepage/TrustStrip';
 import { TicketSection } from '@/components/homepage/TicketSection';
 import { WhyBookUs } from '@/components/homepage/WhyBookUs';
-import { AboutSection } from '@/components/homepage/AboutSection';
 import { ReviewsCarousel } from '@/components/homepage/ReviewsCarousel';
 import { FaqSection } from '@/components/homepage/FaqSection';
 import { ScamBanner } from '@/components/homepage/ScamBanner';
@@ -123,13 +126,16 @@ export default async function HomePage({ params }: Props) {
       <JsonLd data={faqSchema} />
       <JsonLd data={breadcrumb} />
       <Hero />
-      <ArticleTicker locale={locale} />
+      <StorySection />
+      <PalaceStatStrip />
+      <HighlightsSection />
+      <PracticalBar />
       <TrustStrip />
       <TicketSection />
       <WhyBookUs />
-      <BlogPreview />
-      <AboutSection />
       <ReviewsCarousel />
+      <ArticleTicker locale={locale} />
+      <BlogPreview />
       <FaqSection />
       <ScamBanner />
       <FinalCTA />

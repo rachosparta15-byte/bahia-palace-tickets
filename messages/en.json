@@ -475,9 +475,9 @@
     "link": "Read our Safety Guide →"
   },
   "cta": {
-    "title": "Ready to Visit Bahia Palace?",
-    "subtitle": "Plan your visit and skip the queue. Instant confirmation guaranteed.",
-    "button": "Plan Your Visit",
+    "title": "You've read about it. Now walk through it.",
+    "subtitle": "Book your skip-the-line ticket and step inside without the queue.",
+    "button": "Book Bahia Palace Tickets",
     "stickyMobile": "Skip the Line from $10"
   },
   "footer": {
@@ -571,5 +571,37 @@
   },
   "videos": {
     "promoBar": "Bahia in Video"
+  },
+  "story": {
+    "body": "In 1866, the most powerful man in Morocco began building a palace for the woman he loved. He was Grand Vizier Ba Ahmed — and he named it Bahia: Arabic for \"the brilliant one.\" He summoned the finest craftsmen from Fez, who spent decades carving cedar ceilings, hand-cutting zellige mosaics, and filling 150 rooms with interiors the likes of which Morocco had never seen. Ba Ahmed died in 1900. The palace has stood silent ever since — and still takes your breath away."
+  },
+  "palaceStats": {
+    "stat1val": "1866",
+    "stat1label": "First built",
+    "stat2val": "150+",
+    "stat2label": "Rooms",
+    "stat3val": "8,000 m²",
+    "stat3label": "Palace area",
+    "stat4val": "100 MAD",
+    "stat4label": "Entry price"
+  },
+  "highlights": {
+    "title": "What you'll see",
+    "item1label": "The Grand Courtyard",
+    "item1caption": "Orange trees shade a courtyard where artisans once worked. Most visitors spend their first ten minutes here, just looking up.",
+    "item2label": "The Carved Ceilings",
+    "item2caption": "Artisans spent years on a single cedar ceiling. Every beam is different. None of it was touched by a machine.",
+    "item3label": "The Zellige Mosaics",
+    "item3caption": "Each tile hand-cut and placed with precision. The geometry has no mistakes.",
+    "item4label": "The Grand Reception Hall",
+    "item4caption": "The largest room in the palace — where Ba Ahmed received foreign dignitaries. The painted ceiling alone took artisans several years."
+  },
+  "practicalBar": {
+    "hoursLabel": "Open daily",
+    "hoursVal": "9:00 – 17:00",
+    "priceLabel": "Entry",
+    "priceVal": "100 MAD (~$10)",
+    "locationLabel": "Location",
+    "locationVal": "Rue Riad Zitoun el Jedid, Marrakech Medina"
   }
 }

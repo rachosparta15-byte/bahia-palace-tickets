@@ -80,35 +80,34 @@ export async function Hero() {
             <h1 className="hero-title mb-4 sm:mb-6 leading-none">
               <span className="block text-[#E8A33D] text-xs sm:text-sm font-bold tracking-[0.3em] uppercase mb-2 sm:mb-3"
                 style={{ fontFamily: 'var(--font-body)' }}>
-                Bahia Palace Tickets
+                Bahia Palace · Marrakech
               </span>
               <span className="sr-only"> — </span>
-              {/* Cormorant Garamond for the main display heading */}
               <span
                 className="block text-white"
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(2.6rem, 8.5vw, 6rem)',
+                  fontSize: 'clamp(2.2rem, 7vw, 5.2rem)',
                   fontWeight: 600,
-                  lineHeight: 0.92,
+                  lineHeight: 0.95,
                   letterSpacing: '-0.02em',
                 }}
               >
-                Skip the Line
+                Step inside Morocco&apos;s most beautiful palace
               </span>
               <span className="sr-only"> </span>
               <span
-                className="block mt-2"
+                className="block mt-3"
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(1.2rem, 3.5vw, 2.4rem)',
+                  fontSize: 'clamp(1.1rem, 3vw, 2rem)',
                   fontStyle: 'italic',
                   fontWeight: 300,
                   letterSpacing: '0.02em',
-                  color: 'rgba(245, 232, 204, 0.60)',
+                  color: 'rgba(245, 232, 204, 0.65)',
                 }}
               >
-                in Marrakech
+                Named <em>Bahia</em> — Arabic for &quot;the brilliant one&quot;
               </span>
             </h1>
           </div>
