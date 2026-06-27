@@ -13,7 +13,7 @@ function TicketsIcon({ color, active }: IconProps) {
     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
       {/* ticket body */}
       <rect x="2" y="7.5" width="22" height="11" rx="2.5"
-        fill={color} fillOpacity={active ? 0.22 : 0.12}
+        fill={color} fillOpacity={active ? 0.25 : 0.22}
         stroke={color} strokeWidth="1.5"/>
       {/* perforation divider */}
       <line x1="9" y1="7.5" x2="9" y2="18.5"
@@ -23,7 +23,7 @@ function TicketsIcon({ color, active }: IconProps) {
         fill={color}/>
       {/* arch in main area */}
       <path d="M13 18.5 L13 14 Q13 10.5 18 10.5 Q23 10.5 23 14 L23 18.5"
-        fill={color} fillOpacity={active ? 0.3 : 0.15}
+        fill={color} fillOpacity={active ? 0.35 : 0.28}
         stroke={color} strokeWidth="1.2" strokeLinecap="round"/>
     </svg>
   );
@@ -34,7 +34,7 @@ function GalleryIcon({ color, active }: IconProps) {
     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
       {/* outer frame */}
       <rect x="2" y="3" width="22" height="20" rx="3"
-        fill={color} fillOpacity={active ? 0.18 : 0.1}
+        fill={color} fillOpacity={active ? 0.22 : 0.18}
         stroke={color} strokeWidth="1.5"/>
       {/* film strip holes top */}
       <circle cx="6" cy="6" r="1.1" fill={color}/>
@@ -44,7 +44,7 @@ function GalleryIcon({ color, active }: IconProps) {
       <circle cx="20" cy="20" r="1.1" fill={color}/>
       {/* Moroccan arch inside */}
       <path d="M9 22 L9 15 Q9 10 13 10 Q17 10 17 15 L17 22"
-        fill={color} fillOpacity={active ? 0.35 : 0.2}
+        fill={color} fillOpacity={active ? 0.40 : 0.30}
         stroke={color} strokeWidth="1.3" strokeLinecap="round"/>
       {/* sun above arch */}
       <circle cx="13" cy="7.5" r="1.8" fill={color}/>
@@ -81,10 +81,10 @@ function FAQIcon({ color, active }: IconProps) {
       <path d="M13 2 L13 5" stroke={color} strokeWidth="1.6" strokeLinecap="round"/>
       {/* lantern top cap */}
       <path d="M9 5 Q9 4 13 4 Q17 4 17 5 L17 7 L9 7 Z"
-        fill={color} fillOpacity={active ? 0.5 : 0.3}/>
+        fill={color} fillOpacity={active ? 0.55 : 0.45}/>
       {/* lantern body */}
       <path d="M9 7 L7 10 L7 19 L9 22 L17 22 L19 19 L19 10 L17 7 Z"
-        fill={color} fillOpacity={active ? 0.2 : 0.1}
+        fill={color} fillOpacity={active ? 0.25 : 0.20}
         stroke={color} strokeWidth="1.4" strokeLinejoin="round"/>
       {/* lantern bottom cap */}
       <path d="M9 22 Q9 23 13 23 Q17 23 17 22"
@@ -127,7 +127,7 @@ export function MobileBottomNav() {
       <div className="flex h-[62px]">
         {NAV_ITEMS.map(({ href, Icon, key }) => {
           const active = pathname === href || pathname.startsWith(href + '/');
-          const iconColor = active ? '#FFFFFF' : 'rgba(247,231,216,0.60)';
+          const iconColor = active ? '#FFFFFF' : '#F7E7D8';
 
           return (
             <Link
@@ -171,7 +171,7 @@ export function MobileBottomNav() {
                   position: 'relative',
                   zIndex: 1,
                   letterSpacing: '0.05em',
-                  color: active ? '#FFD9A0' : 'rgba(247,231,216,0.50)',
+                  color: active ? '#FFD9A0' : '#F7E7D8',
                   transition: 'color 0.18s ease',
                 }}
               >
