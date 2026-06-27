@@ -27,7 +27,7 @@ const HOME_META: Record<string, { title: string; description: string }> = {
   },
   fr: {
     title: 'Palais Bahia Marrakech 2026 | Billets, Horaires & Guide',
-    description: 'Visitez le Palais Bahia Marrakech en 2026. Réservez vos billets coupe-file, horaires, tarifs et découvrez ce palais marocain du 19ème siècle.',
+    description: 'Visitez le Palais Bahia de Marrakech. Réservez vos billets coupe-file pour 2026, consultez les horaires, tarifs et découvrez ce joyau de l\'architecture marocaine.',
   },
   es: {
     title: 'Palacio Bahia Marrakech 2026 | Entradas, Horarios & Guía',

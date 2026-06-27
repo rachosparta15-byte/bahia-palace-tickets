@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (locale !== 'en') return { robots: 'noindex' };
   return {
     title: 'Privacy Policy — How Visitbahiapalace.com Handles Your Data',
-    description: 'Read how Visitbahiapalace.com collects and uses your personal data when you book Bahia Palace tickets or browse our independent visitor guide.',
+    description: 'Read how visitbahiapalace.com collects and uses your personal data when you book Bahia Palace Marrakech tickets or browse our independent visitor travel guide.',
   };
 }
 

@@ -76,7 +76,7 @@ const META: Record<string, { title: string; description: string; heading: string
   },
   de: {
     title: 'Der Bahia Palast in Video | Schau vor deinem Besuch',
-    description: 'Videos aus dem Inneren des Bahia Palasts Marrakesch — Zellige-Höfe, geschnitzte Zederndecken und die Atmosphäre eines der schönsten Monumente Marokkos.',
+    description: 'Videos aus dem Inneren des Bahia Palasts in Marrakesch: Zellige-Höfe, geschnitzte Zederndecken und die besondere Atmosphäre eines der schönsten Monumente Marokkos.',
     heading: 'Der Palast in Bewegung',
     intro: 'Erlebe den Bahia Palast vor deinem Besuch. Unsere Videos wurden im Inneren des Palastes gedreht und zeigen die Zellige-Höfe, handgeschnitzten Zedernholzdecken und die stillen Details, die Fotos nicht einfangen.',
     noVideos: 'Videos demnächst verfügbar.',

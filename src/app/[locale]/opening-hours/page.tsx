@@ -9,10 +9,10 @@ export const revalidate = 86400;
 
 const META: Record<string, { title: string; description: string }> = {
   en: { title: 'Bahia Palace Opening Hours 2026 | Times, Ramadan & Tips', description: 'Open daily 9:00 AM – 5:00 PM. Ramadan schedule, public holiday closures, and the exact arrival time to beat the midday crowds — all confirmed for 2026.' },
-  fr: { title: 'Horaires Palais Bahia 2026 | Ramadan & Meilleur Moment', description: 'Le Palais Bahia est ouvert tous les jours de 9h à 17h. Horaires 2026, Ramadan, fermetures et meilleur moment pour éviter la foule.' },
-  es: { title: 'Horario Palacio Bahia 2026 | Ramadán & Mejor Momento', description: 'El Palacio Bahia abre todos los días de 9:00 a 17:00. Horario 2026, Ramadán, cierres y mejor momento para evitar aglomeraciones.' },
-  de: { title: 'Bahia Palast Öffnungszeiten 2026 | Ramadan & Beste Zeit', description: 'Der Bahia Palast ist täglich von 9:00 bis 17:00 Uhr geöffnet. Öffnungszeiten 2026, Ramadan-Zeiten und beste Besuchszeit.' },
-  it: { title: 'Orari Palazzo Bahia 2026 | Ramadan & Miglior Momento', description: 'Il Palazzo Bahia è aperto tutti i giorni dalle 9:00 alle 17:00. Orari 2026, Ramadan, chiusure e miglior momento per evitare le folle.' },
+  fr: { title: 'Horaires Palais Bahia 2026 | Ramadan & Meilleur Moment', description: 'Le Palais Bahia de Marrakech est ouvert tous les jours de 9h à 17h. Horaires 2026, calendrier Ramadan, jours fériés et meilleur moment pour éviter la foule.' },
+  es: { title: 'Horario Palacio Bahia 2026 | Ramadán & Mejor Momento', description: 'El Palacio Bahia de Marrakech abre todos los días de 9:00 a 17:00. Horario 2026, Ramadán, festivos y el mejor momento para evitar aglomeraciones en la entrada.' },
+  de: { title: 'Bahia Palast Öffnungszeiten 2026 | Ramadan & Beste Zeit', description: 'Öffnungszeiten Bahia Palast Marrakesch 2026: täglich 9:00 bis 17:00 Uhr. Ramadan-Zeiten, Feiertage und der beste Zeitpunkt für Ihren Besuch ohne Gedränge.' },
+  it: { title: 'Orari Palazzo Bahia 2026 | Ramadan & Miglior Momento', description: 'Il Palazzo Bahia di Marrakech è aperto tutti i giorni dalle 9:00 alle 17:00. Orari 2026, calendario Ramadan, chiusure e il momento migliore per evitare la folla.' },
 };
 
 interface Props { params: Promise<{ locale: string }> }

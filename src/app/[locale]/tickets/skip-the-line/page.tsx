@@ -19,15 +19,15 @@ const META: Record<string, { title: string; description: string }> = {
   },
   de: {
     title: 'Bahia Palast Skip-the-Line Ticket 2026 | Keine Wartezeit',
-    description: 'Kaufen Sie Ihr Skip-the-Line-Ticket für den Bahia Palast und gehen Sie direkt hinein. Sofortiges QR-Ticket per E-Mail. Ab 10$ pro Person.',
+    description: 'Skip-the-Line-Ticket für den Bahia Palast Marrakesch: direkt hinein ohne Warteschlange. Sofortiges QR-Ticket per E-Mail. Ab 10$ pro Person. Kostenlose Stornierung.',
   },
   it: {
     title: 'Biglietto Salta-Fila Palazzo Bahia 2026 | Senza Coda',
-    description: 'Prenota il biglietto salta-fila per il Palazzo Bahia ed entra subito. Biglietto QR istantaneo via email. Da $10 a persona. Cancellazione gratuita.',
+    description: 'Prenota il salta-fila per il Palazzo Bahia di Marrakech ed entra subito senza aspettare. QR code istantaneo via email. Da $10 a persona. Cancellazione gratuita.',
   },
   es: {
     title: 'Entrada Sin Cola Palacio Bahia 2026 | Acceso Rápido',
-    description: 'Reserva tu entrada sin cola para el Palacio Bahia y entra directamente. Ticket QR instantáneo por email. Desde $10 por persona. Cancelación gratuita.',
+    description: 'Reserva tu entrada sin cola para el Palacio Bahia de Marrakech y entra directamente. Ticket QR instantáneo por email. Desde $10 por persona. Cancelación gratuita.',
   },
 };
 

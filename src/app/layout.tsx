@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE),
   title: 'Bahia Palace Tickets — Skip the Line | Marrakech',
   description:
-    'Book Bahia Palace tickets online. Skip the line, instant confirmation, free cancellation. Guided tours & private tours available.',
+    'Book Bahia Palace Marrakech tickets online. Skip-the-line entry, guided tours and private tours with instant QR confirmation and free cancellation up to 24 hours.',
   keywords: ['Bahia Palace tickets', 'Marrakech palace', 'skip the line Marrakech', 'Bahia Palace guided tour', 'Morocco travel'],
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   openGraph: {

@@ -9,11 +9,11 @@ import type { Metadata } from 'next';
 export const revalidate = 86400;
 
 const META: Record<string, { title: string; description: string }> = {
-  en: { title: 'Bahia Palace Ticket Price 2026 | 100 MAD — Official Fee', description: 'Bahia Palace ticket price: 100 MAD (≈$10) for foreign adults — no booking required. Children under 7 free. Includes Ramadan rate and skip-the-line option.' },
-  fr: { title: 'Prix Entrée Palais Bahia 2026 | Tarifs en MAD & EUR', description: 'Le prix d\'entrée du Palais Bahia est 100 MAD (≈10€) pour les étrangers en 2026. Enfants de moins de 7 ans gratuit. Guide complet des tarifs mis à jour.' },
-  es: { title: 'Precio Entrada Palacio Bahia 2026 | Tarifas en MAD y EUR', description: 'La entrada al Palacio Bahia cuesta 100 MAD (≈10€) para adultos extranjeros en 2026. Niños menores de 7 años gratis. Guía de precios actualizada.' },
-  de: { title: 'Bahia Palast Eintrittspreis 2026 | Aktuelle Ticketpreise', description: 'Der Eintrittspreis für den Bahia Palast beträgt 100 MAD (≈10€) für ausländische Erwachsene im Jahr 2026. Kinder unter 7 Jahren frei.' },
-  it: { title: 'Prezzo Biglietto Palazzo Bahia 2026 | Tariffe Aggiornate', description: 'Il biglietto d\'ingresso al Palazzo Bahia costa 100 MAD (≈10€) per adulti stranieri nel 2026. Bambini sotto i 7 anni gratis. Guida prezzi aggiornata.' },
+  en: { title: 'Bahia Palace Ticket Price 2026 | 100 MAD — Official Fee', description: 'Bahia Palace ticket price 2026: 100 MAD per adult, children under 7 free. Discover the latest Ramadan rate, group discounts and the skip-the-line option.' },
+  fr: { title: 'Prix Entrée Palais Bahia 2026 | Tarifs en MAD & EUR', description: 'Prix d\'entrée Palais Bahia Marrakech 2026 : 100 MAD par adulte étranger. Enfants de moins de 7 ans gratuits. Tarif Ramadan et option coupe-file disponibles.' },
+  es: { title: 'Precio Entrada Palacio Bahia 2026 | Tarifas en MAD y EUR', description: 'Precio de entrada al Palacio Bahia de Marrakech 2026: 100 MAD para adultos extranjeros. Niños menores de 7 años gratis. Tarifa Ramadán y opción sin cola.' },
+  de: { title: 'Bahia Palast Eintrittspreis 2026 | Aktuelle Ticketpreise', description: 'Eintrittspreis Bahia Palast Marrakesch 2026: 100 MAD für ausländische Erwachsene. Kinder unter 7 Jahren frei. Ramadan-Tarif und Skip-the-Line-Option verfügbar.' },
+  it: { title: 'Prezzo Biglietto Palazzo Bahia 2026 | Tariffe Aggiornate', description: 'Biglietto d\'ingresso Palazzo Bahia Marrakech 2026: 100 MAD per adulti stranieri. Bambini sotto i 7 anni gratuiti. Tariffa Ramadan e opzione salta-fila disponibili.' },
 };
 
 interface Props { params: Promise<{ locale: string }> }

@@ -10,7 +10,7 @@ export const revalidate = 86400;
 
 const META: Record<string, { title: string; description: string }> = {
   en: { title: 'Bahia Palace History | Ba Ahmed & Morocco\'s Royal Past', description: 'Explore the history of Bahia Palace, built 1866–1900 by Grand Vizier Ba Ahmed. Discover its architects, the legendary harem, and Morocco\'s royal heritage.' },
-  fr: { title: 'Histoire du Palais Bahia | Ba Ahmed & l\'Héritage Royal', description: 'Explorez l\'histoire du Palais Bahia, construit de 1866 à 1900 par le Grand Vizir Ba Ahmed. Architectes, harem légendaire et héritage royal du Maroc.' },
+  fr: { title: 'Histoire du Palais Bahia | Ba Ahmed & l\'Héritage Royal', description: 'Explorez l\'histoire du Palais Bahia de Marrakech, construit de 1866 à 1900 par le Grand Vizir Ba Ahmed. Architectes, harem légendaire et héritage royal du Maroc.' },
   es: { title: 'Historia del Palacio Bahia | Ba Ahmed y el Pasado Real', description: 'Explora la historia del Palacio Bahia, construido de 1866 a 1900 por el Gran Visir Ba Ahmed. Arquitectos, harén legendario y patrimonio real marroquí.' },
   de: { title: 'Geschichte des Bahia Palastes | Ba Ahmed & Marokkos Erbe', description: 'Erkunden Sie die Geschichte des Bahia Palastes, erbaut 1866–1900 vom Großwesir Ba Ahmed. Architekten, legendärer Harem und königliches Erbe Marokkos.' },
   it: { title: 'Storia del Palazzo Bahia | Ba Ahmed e l\'Eredità Reale', description: 'Scopri la storia affascinante del Palazzo Bahia, costruito tra il 1866 e il 1900 dal Gran Visir Ba Ahmed. Architettura, harem e storia reale marocchina.' },

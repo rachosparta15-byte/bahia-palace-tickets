@@ -13,7 +13,7 @@ export const revalidate = 3600;
 const META: Record<string, { title: string; description: string; heading: string; sub: string; bookCta: string; bookBtn: string; collection: string }> = {
   en: {
     title: 'Bahia Palace Photos 2026 | Every Room, Every Detail',
-    description: '47 photos of Bahia Palace — zellige floors, cedar ceilings, the grand courtyard, and rooms most guided tours rush past. See it all before you go.',
+    description: '47 photos inside Bahia Palace Marrakech: zellige floors, hand-carved cedar ceilings, the grand courtyard and intimate rooms most guided tours rush straight past.',
     heading: 'Bahia Palace Photo Gallery',
     sub: 'Zellige mosaics, carved cedar ceilings, grand courtyards — see every corner before you arrive.',
     bookCta: 'Ready to see it in person?',

@@ -11,11 +11,11 @@ interface Props {
 }
 
 const TICKETS_META: Record<string, { title: string; description: string }> = {
-  en: { title: 'Bahia Palace Tickets 2026 | Skip-the-Line & Guided Tours', description: 'Buy Bahia Palace tickets online and skip the queue. Best prices for skip-the-line entry, guided tours & private tours. Instant confirmation.' },
-  fr: { title: 'Billets Palais Bahia 2026 | Coupe-File & Visites Guidées', description: 'Achetez vos billets Palais Bahia en ligne et évitez la file. Meilleurs prix coupe-file, visites guidées et privées. Confirmation instantanée.' },
-  es: { title: 'Entradas Palacio Bahia 2026 | Sin Cola & Visitas Guiadas', description: 'Compra entradas para el Palacio Bahia online sin colas. Mejores precios, visitas guiadas y privadas. Confirmación instantánea.' },
-  de: { title: 'Bahia Palast Tickets 2026 | Führungen & Kombi', description: 'Kaufen Sie Bahia Palast Tickets online. Beste Preise, Führungen und private Touren. Sofortige Buchungsbestätigung.' },
-  it: { title: 'Biglietti Palazzo Bahia 2026 | Salta-Fila & Visite Guidate', description: 'Acquista biglietti per il Palazzo Bahia online senza code. Prezzi migliori, visite guidate e private. Conferma immediata.' },
+  en: { title: 'Bahia Palace Tickets 2026 | Skip-the-Line & Guided Tours', description: 'Buy Bahia Palace Marrakech tickets online and skip the queue. Best prices for skip-the-line entry, guided tours and private tours with instant QR confirmation.' },
+  fr: { title: 'Billets Palais Bahia 2026 | Coupe-File & Visites Guidées', description: 'Achetez vos billets pour le Palais Bahia de Marrakech en ligne. Coupe-file, visites guidées et privées au meilleur prix avec confirmation instantanée par e-mail.' },
+  es: { title: 'Entradas Palacio Bahia 2026 | Sin Cola & Visitas Guiadas', description: 'Compra entradas para el Palacio Bahia de Marrakech online sin colas. Entrada sin cola, visitas guiadas y privadas al mejor precio. Confirmación instantánea.' },
+  de: { title: 'Bahia Palast Tickets 2026 | Führungen & Kombi', description: 'Bahia Palast Marrakesch Tickets online kaufen: Skip-the-Line, Führungen und Privattouren zum besten Preis. Sofortige Buchungsbestätigung per E-Mail erhalten.' },
+  it: { title: 'Biglietti Palazzo Bahia 2026 | Salta-Fila & Visite Guidate', description: 'Acquista i biglietti per il Palazzo Bahia di Marrakech online. Salta-fila, visite guidate e private al miglior prezzo con conferma immediata via email.' },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

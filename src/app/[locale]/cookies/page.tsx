@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (locale !== 'en') return { robots: 'noindex' };
   return {
     title: 'Cookie Policy — How Visitbahiapalace.com Uses Cookies',
-    description: 'Visitbahiapalace.com uses cookies to improve your experience and process bookings. Read our cookie policy to understand what data we collect and why.',
+    description: 'Visitbahiapalace.com uses cookies to improve your experience and process ticket bookings securely. Read our cookie policy to understand what data we collect and why.',
   };
 }
 
