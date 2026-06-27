@@ -28,10 +28,13 @@ function decode(str: string): string {
 
 async function fetchVideos(): Promise<Video[]> {
   try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
     const res = await fetch(
       'https://www.youtube.com/feeds/videos.xml?channel_id=UCvj0E4Z8ELNk5VBNBcIFveQ',
-      { next: { revalidate: 43200 } },
+      { next: { revalidate: 43200 }, signal: controller.signal },
     );
+    clearTimeout(timeout);
     if (!res.ok) return [];
     const xml = await res.text();
     return [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map((m) => {
@@ -121,11 +124,11 @@ export default async function VideosPage({ params }: Props) {
   }));
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#1C1108]">
       {videoSchemas.map((s, i) => <JsonLd key={i} data={s} />)}
 
       {/* Hero */}
-      <div className="bg-[#3D2817] text-white px-6 py-12 md:px-10">
+      <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] text-white px-6 py-12 md:px-10">
         <div className="max-w-4xl mx-auto">
           <Breadcrumb
             variant="light"
@@ -149,7 +152,7 @@ export default async function VideosPage({ params }: Props) {
       {/* Grid */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
         {videos.length === 0 ? (
-          <p className="text-center text-[#8B6344] py-20 text-lg">{meta.noVideos}</p>
+          <p className="text-center text-[#C4A882] py-20 text-lg">{meta.noVideos}</p>
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
             {videos.map((v) => (

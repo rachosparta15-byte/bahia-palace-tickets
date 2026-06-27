@@ -21,7 +21,7 @@ export async function ReviewsCarousel() {
   // ── No verified reviews yet — show TripAdvisor CTA ──────────────
   if (reviews.length === 0) {
     return (
-      <section className="py-20 bg-[#3D2817]">
+      <section className="py-20 bg-[#1C1108]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <OrnamentDivider label="" />
           <h2
@@ -50,7 +50,7 @@ export async function ReviewsCarousel() {
               {t('tripAdvisorCta')}
               <ExternalLink size={14} />
             </a>
-            <p className="text-[#5C3D20] text-xs">{t('tripAdvisorNote')}</p>
+            <p className="text-[#C4A882] text-xs">{t('tripAdvisorNote')}</p>
           </div>
         </div>
       </section>
@@ -59,7 +59,7 @@ export async function ReviewsCarousel() {
 
   // ── Verified reviews from DB ─────────────────────────────────────
   return (
-    <section className="py-20 bg-[#3D2817] overflow-hidden">
+    <section className="py-20 bg-[#1C1108] overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
           <OrnamentDivider label="" />
@@ -78,14 +78,14 @@ export async function ReviewsCarousel() {
             return (
               <div
                 key={review.id}
-                className="bg-[#5C3D20]/30 rounded-2xl p-4 sm:p-6 border border-[#5C3D20] relative"
+                className="bg-[#251A0F] rounded-2xl p-4 sm:p-6 border border-[rgba(232,163,61,0.13)] relative"
               >
                 <div className="flex items-center gap-1 mb-3">
                   {Array.from({ length: review.rating }).map((_, j) => (
                     <Star key={j} size={14} className="text-[#E8A33D] fill-[#E8A33D]" />
                   ))}
                 </div>
-                <p className="text-[#E8D5B7] text-sm leading-relaxed mb-5 italic">&ldquo;{review.body}&rdquo;</p>
+                <p className="text-[#C4A882] text-sm leading-relaxed mb-5 italic">&ldquo;{review.body}&rdquo;</p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[#C4452D]/20 flex items-center justify-center text-sm font-semibold text-[#E8A33D]">
                     {initials}
@@ -105,7 +105,7 @@ export async function ReviewsCarousel() {
             href={TRIPADVISOR_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#C4A882] hover:text-white text-sm font-medium transition-colors border border-[#5C3D20] hover:border-[#C4A882] px-5 py-2.5 rounded-full"
+            className="inline-flex items-center gap-2 text-[#C4A882] hover:text-white text-sm font-medium transition-colors border border-[rgba(232,163,61,0.20)] hover:border-[#C4A882] px-5 py-2.5 rounded-full"
           >
             <span className="text-[#34E0A1] font-bold text-xs">●</span>
             {t('seeAllOnTripAdvisor')}

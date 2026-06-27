@@ -69,14 +69,14 @@ export default async function SafetyPage({ params }: { params: Promise<{ locale:
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#1C1108]">
       <JsonLd data={faqSchema} />
-      <div className="bg-amber-600 text-white pt-6 pb-10 px-6 text-center">
+      <div className="bg-[#C4452D] text-white pt-6 pb-10 px-6 text-center">
         <div className="flex justify-center mb-6">
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-white/30 animate-ping" />
             <div className="relative w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-4 border-white/40">
-              <AlertTriangle size={38} className="text-amber-600" strokeWidth={2.5} />
+              <AlertTriangle size={38} className="text-[#C4452D]" strokeWidth={2.5} />
             </div>
           </div>
         </div>
@@ -96,32 +96,32 @@ export default async function SafetyPage({ params }: { params: Promise<{ locale:
           {tips.map((tip, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl border-l-4 border-amber-400 shadow-sm p-6 hover:shadow-md transition-shadow"
+              className="bg-[#251A0F] rounded-2xl border-l-4 border-amber-500 p-6 hover:border-[#E8A33D] transition-colors"
             >
               <div className="flex items-start gap-3">
                 <span className="text-2xl shrink-0 mt-0.5">{ICON_MAP[tip.icon] ?? '⚠️'}</span>
                 <div>
                   <h2
-                    className="text-[#3D2817] font-bold mb-2 leading-snug"
+                    className="text-[#F5E8CC] font-bold mb-2 leading-snug"
                     style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.15rem' }}
                   >
                     {tip.title}
                   </h2>
-                  <p className="text-[#5C3D20] text-sm leading-relaxed whitespace-pre-line">{tip.body}</p>
+                  <p className="text-[#C4A882] text-sm leading-relaxed whitespace-pre-line">{tip.body}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 bg-amber-50 border border-amber-200 rounded-2xl p-6 text-center">
-          <p className="text-amber-800 text-sm font-medium">{meta.bottomNote}</p>
+        <div className="mt-12 bg-[#E8A33D]/08 border border-[#E8A33D]/20 rounded-2xl p-6 text-center">
+          <p className="text-[#C4A882] text-sm font-medium">{meta.bottomNote}</p>
         </div>
 
         {articles.length > 0 && (
           <section className="mt-16">
             <h2
-              className="text-2xl font-bold text-[#3D2817] mb-6"
+              className="text-2xl font-bold text-[#F5E8CC] mb-6"
               style={{ fontFamily: 'Cormorant Garamond, serif' }}
             >
               {meta.inDepth}
@@ -131,7 +131,7 @@ export default async function SafetyPage({ params }: { params: Promise<{ locale:
                 <Link
                   key={article.slug}
                   href={`/blog/${article.slug}` as any}
-                  className="group bg-white rounded-2xl border border-[#E8D5B7] overflow-hidden hover:shadow-md transition-shadow flex flex-col"
+                  className="group bg-[#251A0F] rounded-2xl border border-[rgba(232,163,61,0.13)] overflow-hidden hover:border-[rgba(232,163,61,0.30)] transition-colors flex flex-col"
                 >
                   <div className="relative h-40 overflow-hidden">
                     <Image
@@ -141,17 +141,17 @@ export default async function SafetyPage({ params }: { params: Promise<{ locale:
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#3D2817]/50 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   </div>
                   <div className="p-5 flex flex-col flex-1">
                     <h3
-                      className="font-bold text-[#3D2817] mb-2 leading-snug flex-1"
+                      className="font-bold text-[#F5E8CC] mb-2 leading-snug flex-1"
                       style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.05rem' }}
                     >
                       {article.title}
                     </h3>
                     {article.excerpt && (
-                      <p className="text-xs text-[#5C3D20] leading-relaxed mb-3 line-clamp-2">
+                      <p className="text-xs text-[#C4A882] leading-relaxed mb-3 line-clamp-2">
                         {article.excerpt}
                       </p>
                     )}

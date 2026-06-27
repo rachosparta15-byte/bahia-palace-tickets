@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useTranslations } from 'next-intl';
 import { useRouter } from '@/i18n/navigation';
@@ -52,7 +52,6 @@ export function TicketCards({ overrides = {} }: Props) {
 
   const allKeys: TicketKey[] = ['skipTheLine', 'guidedTour', 'privateTour', 'combo'];
 
-  // Only show live tickets
   const liveKeys = allKeys.filter((key) => {
     const slug = TICKET_SLUGS[key];
     return overrides[slug]?.live ?? TICKET_LIVE[slug as keyof typeof TICKET_LIVE];
@@ -64,18 +63,18 @@ export function TicketCards({ overrides = {} }: Props) {
     <section className="pt-10 pb-16">
       <div className="max-w-6xl mx-auto px-6">
 
-        {/* ── Heading ── */}
+        {/* Heading */}
         <div className="text-center mb-10 section-head">
           <h2
-            className="text-[#3D2817] mb-2"
+            className="text-[#F5E8CC] mb-2"
             style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
           >
             {t('title')}
           </h2>
-          <p className="text-[#5C3D20] max-w-2xl mx-auto leading-relaxed text-sm">{t('subtitle')}</p>
+          <p className="text-[#C4A882] max-w-2xl mx-auto leading-relaxed text-sm">{t('subtitle')}</p>
         </div>
 
-        {/* ── Cards ── */}
+        {/* Cards */}
         <div className={
           isSingle
             ? 'flex justify-center'
@@ -98,13 +97,13 @@ export function TicketCards({ overrides = {} }: Props) {
               <div
                 key={slug}
                 onClick={() => router.push(`/tickets/${slug}` as any)}
-                className={`relative flex overflow-hidden rounded-2xl border border-[#C4452D] bg-white shadow-[0_16px_56px_rgba(196,69,45,0.22)] transition-all cursor-pointer hover:shadow-[0_20px_64px_rgba(196,69,45,0.30)] active:scale-[0.99]
+                className={`relative flex overflow-hidden rounded-2xl border border-[rgba(232,163,61,0.22)] bg-[#251A0F] shadow-[0_0_28px_rgba(232,163,61,0.10),0_0_64px_rgba(232,163,61,0.07),0_16px_56px_rgba(0,0,0,0.50)] transition-all cursor-pointer hover:shadow-[0_0_36px_rgba(232,163,61,0.20),0_0_80px_rgba(232,163,61,0.12),0_20px_64px_rgba(0,0,0,0.55)] hover:border-[rgba(232,163,61,0.42)] motion-reduce:transition-none active:scale-[0.99]
                   ${isSingle
                     ? 'w-full max-w-2xl flex-col sm:flex-row'
                     : 'flex-col'
                   }`}
               >
-                {/* ── Image side (left on single, top on grid) ── */}
+                {/* Image side */}
                 <div className={`relative overflow-hidden shrink-0
                   ${isSingle ? 'aspect-video w-full sm:aspect-auto sm:w-72 sm:min-h-full' : 'h-44 w-full'}`}
                 >
@@ -116,7 +115,7 @@ export function TicketCards({ overrides = {} }: Props) {
                     sizes="(max-width:640px) 100vw, 288px"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#1a0e06]/30" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#160D06]/40" />
 
                   {/* Available Now ribbon */}
                   <div className="absolute top-4 left-0 bg-[#C4452D] text-white text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-r-full flex items-center gap-1.5 shadow-lg">
@@ -124,36 +123,32 @@ export function TicketCards({ overrides = {} }: Props) {
                   </div>
                 </div>
 
-                {/* ── Content side ── */}
+                {/* Content side */}
                 <div className={`flex flex-col flex-1 ${isSingle ? 'p-5 sm:p-6' : 'p-6'}`}>
 
-                  {/* Title + tagline */}
                   <h3
-                    className="text-[#3D2817] leading-snug mb-1"
+                    className="text-[#F5E8CC] leading-snug mb-1"
                     style={{ fontFamily: 'var(--font-heading)', fontSize: isSingle ? '1.3rem' : '1.15rem', fontWeight: 700 }}
                   >
                     {name}
                   </h3>
-                  <p className="text-[#5C3D20] text-sm mb-3 leading-snug">{tagline}</p>
+                  <p className="text-[#C4A882] text-sm mb-3 leading-snug">{tagline}</p>
 
-                  {/* Duration */}
-                  <div className="flex items-center gap-1.5 text-xs text-[#6B7B3A] mb-4">
+                  <div className="flex items-center gap-1.5 text-xs text-[#8FA63C] mb-4">
                     <Clock size={12} />
                     <span>{duration}</span>
                   </div>
 
-                  {/* Why online — desktop only in single-card mode */}
-                  <div className={`flex items-start gap-2 bg-[#6B7B3A]/10 rounded-lg px-3 py-2.5 mb-4 ${isSingle ? 'hidden sm:flex' : ''}`}>
-                    <Zap size={12} className="text-[#6B7B3A] mt-0.5 shrink-0" />
-                    <p className="text-xs text-[#3D5016] leading-snug font-semibold">{whyOnline}</p>
+                  <div className={`flex items-start gap-2 bg-[#E8A33D]/08 border border-[#E8A33D]/18 rounded-lg px-3 py-2.5 mb-4 ${isSingle ? 'hidden sm:flex' : ''}`}>
+                    <Zap size={12} className="text-[#E8A33D] mt-0.5 shrink-0" />
+                    <p className="text-xs text-[#E8A33D] leading-snug font-semibold">{whyOnline}</p>
                   </div>
 
-                  {/* Includes — desktop only in single-card mode */}
                   {isSingle ? (
                     <ul className="hidden sm:grid grid-cols-2 gap-x-4 gap-y-2 mb-5 flex-1">
                       {includes.map((item: string, j: number) => (
-                        <li key={j} className="flex items-start gap-1.5 text-xs text-[#5C3D20]">
-                          <Check size={12} className="text-[#6B7B3A] mt-0.5 shrink-0" />
+                        <li key={j} className="flex items-start gap-1.5 text-xs text-[#C4A882]">
+                          <Check size={12} className="text-[#8FA63C] mt-0.5 shrink-0" />
                           {item}
                         </li>
                       ))}
@@ -161,8 +156,8 @@ export function TicketCards({ overrides = {} }: Props) {
                   ) : (
                     <ul className="space-y-2 mb-5 flex-1">
                       {includes.map((item: string, j: number) => (
-                        <li key={j} className="flex items-start gap-1.5 text-xs text-[#5C3D20]">
-                          <Check size={12} className="text-[#6B7B3A] mt-0.5 shrink-0" />
+                        <li key={j} className="flex items-start gap-1.5 text-xs text-[#C4A882]">
+                          <Check size={12} className="text-[#8FA63C] mt-0.5 shrink-0" />
                           {item}
                         </li>
                       ))}
@@ -170,16 +165,16 @@ export function TicketCards({ overrides = {} }: Props) {
                   )}
 
                   {/* Price + CTA */}
-                  <div className="mt-auto pt-4 border-t border-[#F0C8BF]">
+                  <div className="mt-auto pt-4 border-t border-[rgba(232,163,61,0.15)]">
                     <div className="flex items-center justify-between gap-4">
                       <div>
-                        <p className="text-[10px] text-[#8B6344] uppercase tracking-wide mb-0.5">{t('from')}</p>
+                        <p className="text-[10px] text-[#C4A882] uppercase tracking-wide mb-0.5">{t('from')}</p>
                         <p
                           className="font-bold text-[#C4452D] tabular-nums lining-nums"
-                          style={{ fontSize: isSingle ? '1.75rem' : '1.5rem', lineHeight: 1, fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif', fontVariantNumeric: 'lining-nums tabular-nums' }}
+                          style={{ fontSize: isSingle ? '1.75rem' : '1.5rem', lineHeight: 1, fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif', fontVariantNumeric: 'lining-nums tabular-nums' }}
                         >
                           ${price}
-                          <span className="text-xs font-normal text-[#8B6344] ml-1">{t('perPerson')}</span>
+                          <span className="text-xs font-normal text-[#C4A882] ml-1">{t('perPerson')}</span>
                         </p>
                       </div>
                       <div onClick={(e) => e.stopPropagation()}>
@@ -194,10 +189,9 @@ export function TicketCards({ overrides = {} }: Props) {
                       </div>
                     </div>
 
-                    {/* Trust line — desktop only in single-card mode */}
-                    <div className={`flex items-center gap-1.5 mt-3 text-[11px] text-[#8B6344] ${isSingle ? 'hidden sm:flex' : ''}`}>
-                      <ShieldCheck size={12} className="text-[#6B7B3A]" />
-                      Official portal — instant confirmation
+                    <div className={`flex items-center gap-1.5 mt-3 text-[11px] text-[#C4A882] ${isSingle ? 'hidden sm:flex' : ''}`}>
+                      <ShieldCheck size={12} className="text-[#8FA63C]" />
+                      Secure booking — instant confirmation
                     </div>
                   </div>
                 </div>

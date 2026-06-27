@@ -214,13 +214,13 @@ export default async function BlogPostPage({ params }: Props) {
   const faqSchema = extractFaqSchema(safeContent);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#1C1108]">
       <JsonLd data={articleSchema} />
       {faqSchema && <JsonLd data={faqSchema} />}
       {/* Hero */}
       <div className="relative h-64 md:h-80">
         <Image src={imgSrc} alt={post.title} fill priority className="object-cover" sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/20 to-[#3D2817]/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/20 to-[#1C1108]/95" />
         {/* extra dark strip at the very top for breadcrumb readability */}
         <div className="absolute inset-x-0 top-0 h-14 bg-black/50" />
         <div className="absolute inset-0 flex flex-col justify-between px-6 py-8 md:px-10 max-w-4xl mx-auto w-full left-0 right-0">
@@ -246,7 +246,7 @@ export default async function BlogPostPage({ params }: Props) {
       <div className="max-w-4xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <article className="lg:col-span-8">
-            <div className="flex items-center gap-4 text-sm text-[#5C3D20] mb-8 pb-6 border-b border-[#E8D5B7] flex-wrap">
+            <div className="flex items-center gap-4 text-sm text-[#C4A882] mb-8 pb-6 border-b border-[rgba(232,163,61,0.15)] flex-wrap">
               <span className="flex items-center gap-1.5">
                 <Clock size={13} /> {t('readTime', { min: mins })}
               </span>
@@ -261,7 +261,7 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
 
             <div
-              className="prose prose-sm max-w-none mb-10 text-[#3D2817] leading-relaxed"
+              className="prose prose-sm max-w-none mb-10 leading-relaxed"
               style={{ fontSize: '1.05rem' }}
               dangerouslySetInnerHTML={{ __html: safeContent }}
             />
@@ -271,7 +271,7 @@ export default async function BlogPostPage({ params }: Props) {
               <LeadButton
                 ticketType="skip-the-line"
                 ctaLocation="blog_post"
-                className="inline-flex items-center gap-2 bg-white text-[#C4452D] font-semibold px-6 py-3 rounded-lg hover:bg-[#FAF3E7] transition-colors"
+                className="inline-flex items-center gap-2 bg-white text-[#C4452D] font-semibold px-6 py-3 rounded-lg hover:bg-white/90 transition-colors"
               >
                 {t('bookCta')} <ArrowRight size={14} />
               </LeadButton>
@@ -283,7 +283,7 @@ export default async function BlogPostPage({ params }: Props) {
             {related.length > 0 && (
               <div>
                 <h3
-                  className="text-lg font-bold text-[#3D2817] mb-4"
+                  className="text-lg font-bold text-[#F5E8CC] mb-4"
                   style={{ fontFamily: 'Cormorant Garamond, serif' }}
                 >
                   {t('relatedPosts')}
@@ -295,19 +295,19 @@ export default async function BlogPostPage({ params }: Props) {
                       <Link
                         key={rel.id}
                         href={`/blog/${rel.slug}` as any}
-                        className="group flex gap-3 bg-white rounded-xl border border-[#E8D5B7] p-3 hover:border-[#C4452D]/30 transition-colors"
+                        className="group flex gap-3 bg-[#251A0F] rounded-xl border border-[rgba(232,163,61,0.13)] p-3 hover:border-[#E8A33D]/30 transition-colors"
                       >
                         <div className="relative w-16 h-16 rounded-lg overflow-hidden shrink-0">
                           <Image src={relImg} alt={rel.title} fill className="object-cover" sizes="64px" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <p
-                            className="text-sm font-semibold text-[#3D2817] leading-snug group-hover:text-[#C4452D] transition-colors line-clamp-2"
+                            className="text-sm font-semibold text-[#F5E8CC] leading-snug group-hover:text-[#E8A33D] transition-colors line-clamp-2"
                             style={{ fontFamily: 'Cormorant Garamond, serif' }}
                           >
                             {rel.title}
                           </p>
-                          <p className="text-xs text-[#5C3D20] mt-1 flex items-center gap-1">
+                          <p className="text-xs text-[#C4A882] mt-1 flex items-center gap-1">
                             <Clock size={10} /> {t('readTime', { min: readTime(rel.content) })}
                           </p>
                         </div>

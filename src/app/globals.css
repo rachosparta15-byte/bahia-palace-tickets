@@ -5,7 +5,7 @@
    MOROCCAN DESIGN TOKENS
    ──────────────────────────────────────────────── */
 @theme {
-  /* Moroccan colour palette */
+  /* ── Original Moroccan palette ── */
   --color-terracotta:       #C4452D;
   --color-terracotta-light: #D96048;
   --color-terracotta-dark:  #A33824;
@@ -14,9 +14,9 @@
   --color-saffron-light:    #F0B84E;
   --color-saffron-dark:     #C8882A;
 
-  --color-majorelle:        #2E4A7B;
-  --color-majorelle-light:  #3D5E99;
-  --color-majorelle-dark:   #1E3260;
+  --color-majorelle:        #3B65C8;
+  --color-majorelle-light:  #4A78DC;
+  --color-majorelle-dark:   #2A4EA8;
 
   --color-deep-brown:       #3D2817;
   --color-brown-mid:        #5C3D20;
@@ -29,24 +29,45 @@
   --color-olive:            #6B7B3A;
   --color-olive-light:      #8A9E4A;
 
-  /* Semantic aliases */
+  /* ── Dark surfaces ── */
+  --color-night:            #160D06;
+  --color-surface-0:        #1C1108;
+  --color-surface-1:        #251A0F;
+  --color-surface-2:        #2E1F12;
+
+  /* ── Emerald accent ── */
+  --color-emerald:          #1E7A5E;
+  --color-emerald-light:    #27906E;
+
+  /* ── Ivory text on dark ── */
+  --color-ivory:            #F5E8CC;
+  --color-ivory-muted:      #C4A882;
+
+  /* ── Brass ornament ── */
+  --color-brass:            #E8A33D;
+  --color-brass-light:      #F5C96A;
+  --color-brass-border:     rgba(232, 163, 61, 0.18);
+  --color-brass-dim:        rgba(232, 163, 61, 0.07);
+
+  /* ── Semantic aliases (dark theme) ── */
   --color-primary:          var(--color-terracotta);
   --color-primary-hover:    var(--color-terracotta-dark);
   --color-secondary:        var(--color-saffron);
   --color-accent:           var(--color-majorelle);
-  --color-background:       var(--color-cream);
-  --color-foreground:       var(--color-deep-brown);
-  --color-muted:            var(--color-sand);
-  --color-muted-foreground: var(--color-brown-mid);
-  --color-border:           var(--color-sand-dark);
-  --color-card:             #FFFFFF;
+  --color-background:       var(--color-surface-0);
+  --color-foreground:       var(--color-ivory);
+  --color-muted:            var(--color-surface-1);
+  --color-muted-foreground: var(--color-ivory-muted);
+  --color-border:           rgba(232, 163, 61, 0.15);
+  --color-card:             var(--color-surface-1);
 
-  /* Typography */
+  /* ── Typography ── */
+  --font-display:  var(--font-cormorant), Georgia, serif;
   --font-heading:  var(--font-playfair), Georgia, serif;
-  --font-body:     "Inter", "DM Sans", system-ui, sans-serif;
-  --font-accent:   "Amiri", Georgia, serif;
+  --font-body:     var(--font-dm-sans), system-ui, sans-serif;
+  --font-accent:   var(--font-amiri), Georgia, serif;
 
-  /* Font sizes */
+  /* ── Font sizes ── */
   --text-hero:     clamp(2.5rem, 6vw, 4.5rem);
   --text-h1:       clamp(2rem, 4.5vw, 3.5rem);
   --text-h2:       clamp(1.75rem, 3.5vw, 3rem);
@@ -54,22 +75,22 @@
   --text-body:     1rem;
   --text-sm:       0.875rem;
 
-  /* Spacing */
+  /* ── Spacing ── */
   --spacing-section: 5rem;
 
-  /* Radius */
+  /* ── Radius ── */
   --radius-card:    1rem;
   --radius-arch:    50% 50% 0 0;
 
-  /* Shadows */
-  --shadow-card:    0 4px 24px rgba(61, 40, 23, 0.1);
-  --shadow-hover:   0 8px 40px rgba(61, 40, 23, 0.18);
-  --shadow-cta:     0 4px 20px rgba(196, 69, 45, 0.35);
+  /* ── Shadows ── */
+  --shadow-card:    0 4px 24px rgba(0, 0, 0, 0.35);
+  --shadow-hover:   0 8px 40px rgba(0, 0, 0, 0.50);
+  --shadow-cta:     0 4px 20px rgba(196, 69, 45, 0.40);
+  --shadow-brass:   0 4px 24px rgba(232, 163, 61, 0.18);
 }
 
 /* ────────────────────────────────────────────────
-   BASE STYLES  (inside @layer base so Tailwind
-   utility classes like text-white can override)
+   BASE STYLES
    ──────────────────────────────────────────────── */
 @layer base {
   *, *::before, *::after {
@@ -79,15 +100,15 @@
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
-    scroll-padding-top: 134px; /* header 80px + promo bar 40px + arch 14px */
+    scroll-padding-top: 134px;
   }
 
   body {
-    background-color: var(--color-cream);
+    background-color: var(--color-surface-0);
     background-image: var(--zellige-tile);
     background-size: var(--zellige-size);
     background-repeat: repeat;
-    color: var(--color-foreground);
+    color: var(--color-ivory);
     font-family: var(--font-body);
     line-height: 1.75;
     font-size: var(--text-body);
@@ -98,7 +119,6 @@
     font-weight: 600;
     letter-spacing: 0.5px;
     line-height: 1.25;
-    text-shadow: 0 1px 2px rgba(74, 53, 32, 0.20);
   }
 }
 
@@ -106,23 +126,33 @@
    TIPTAP EDITOR CONTENT STYLES
    ──────────────────────────────────────────────── */
 .tiptap p { margin-bottom: 0.75em; }
-.tiptap h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5em; color: #3D2817; }
-.tiptap h2 { font-size: 1.4rem;  font-weight: 700; margin-bottom: 0.4em; color: #3D2817; }
-.tiptap h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.4em; color: #3D2817; }
+.tiptap h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5em; color: #F5E8CC; }
+.tiptap h2 { font-size: 1.4rem;  font-weight: 700; margin-bottom: 0.4em; color: #F5E8CC; }
+.tiptap h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.4em; color: #F5E8CC; }
 .tiptap ul  { list-style: disc;    padding-left: 1.5em; margin-bottom: 0.75em; }
 .tiptap ol  { list-style: decimal; padding-left: 1.5em; margin-bottom: 0.75em; }
 .tiptap li  { margin-bottom: 0.25em; }
-.tiptap a   { color: #2E4A7B; text-decoration: underline; }
-.tiptap hr  { border-color: #E8D5B7; margin: 1.5em 0; }
-.tiptap blockquote { border-left: 3px solid #C4452D; padding-left: 1em; color: #5C3D20; font-style: italic; }
-.tiptap mark { background-color: #FEF08A; border-radius: 2px; padding: 0 2px; }
-
+.tiptap a   { color: #E8A33D; text-decoration: underline; }
+.tiptap hr  { border-color: rgba(232,163,61,0.20); margin: 1.5em 0; }
+.tiptap blockquote { border-left: 3px solid #C4452D; padding-left: 1em; color: #C4A882; font-style: italic; }
+.tiptap mark { background-color: rgba(232,163,61,0.30); border-radius: 2px; padding: 0 2px; }
 
 /* ────────────────────────────────────────────────
-   ARCH FRAME
+   ARCH FRAME (Moorish horseshoe)
    ──────────────────────────────────────────────── */
 .arch-frame {
   border-radius: 50% 50% 4px 4px / 40% 40% 4px 4px;
+}
+
+/* Keyhole arch — used for image framing */
+.arch-keyhole {
+  clip-path: polygon(
+    0% 100%, 0% 38%,
+    2% 24%, 7% 13%, 15% 5%,
+    25% 1%, 50% 0%, 75% 1%,
+    85% 5%, 93% 13%, 98% 24%,
+    100% 38%, 100% 100%
+  );
 }
 
 /* ────────────────────────────────────────────────
@@ -139,7 +169,7 @@
   content: '';
   flex: 1;
   height: 1px;
-  background: linear-gradient(to right, transparent, var(--color-sand-dark), transparent);
+  background: linear-gradient(to right, transparent, rgba(232, 163, 61, 0.45), transparent);
 }
 
 /* ────────────────────────────────────────────────
@@ -165,7 +195,7 @@
 }
 .btn-primary:hover {
   background-color: var(--color-terracotta-dark);
-  box-shadow: 0 6px 28px rgba(196, 69, 45, 0.45);
+  box-shadow: 0 6px 28px rgba(196, 69, 45, 0.50);
   transform: translateY(-1px);
 }
 .btn-primary:active {
@@ -190,22 +220,51 @@
   text-decoration: none;
 }
 .btn-secondary:hover {
-  background-color: rgba(196, 69, 45, 0.08);
+  background-color: rgba(196, 69, 45, 0.10);
 }
 
 /* ────────────────────────────────────────────────
    CARD
    ──────────────────────────────────────────────── */
 .moroccan-card {
-  background: #fff;
+  background: var(--color-surface-1);
+  border: 1px solid var(--color-brass-border);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
   overflow: hidden;
 }
 .moroccan-card:hover {
   box-shadow: var(--shadow-hover);
   transform: translateY(-4px);
+  border-color: rgba(232, 163, 61, 0.35);
+}
+
+/* ────────────────────────────────────────────────
+   DARK CARD (utility)
+   ──────────────────────────────────────────────── */
+.dark-card {
+  background: var(--color-surface-1);
+  border: 1px solid rgba(232, 163, 61, 0.14);
+  border-radius: var(--radius-card);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+.dark-card:hover {
+  border-color: rgba(232, 163, 61, 0.30);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  transform: translateY(-3px);
+}
+
+/* ────────────────────────────────────────────────
+   TADELAKT BACKGROUND
+   Warm plaster texture: layered radial gradients
+   ──────────────────────────────────────────────── */
+.tadelakt-bg {
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 30%, rgba(90, 55, 20, 0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 70%, rgba(50, 30, 10, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, rgba(40, 25, 8, 0.08) 0%, transparent 70%),
+    var(--color-surface-1);
 }
 
 /* ────────────────────────────────────────────────
@@ -219,9 +278,6 @@
 
 /* ────────────────────────────────────────────────
    LOGO ANIMATIONS
-   ──────────────────────────────────────────────── */
-/* ────────────────────────────────────────────────
-   CONTACT NAV — fire/flicker effect
    ──────────────────────────────────────────────── */
 @keyframes fire-flicker {
   0%,100% { color: #C4452D; text-shadow: 0 0 6px rgba(196,69,45,0.7), 0 0 12px rgba(232,163,61,0.3); }
@@ -254,7 +310,7 @@
 }
 
 /* ────────────────────────────────────────────────
-   HERO CSS ANIMATIONS (replaces framer-motion)
+   HERO ANIMATIONS
    ──────────────────────────────────────────────── */
 @keyframes fadeSlideDown {
   from { opacity: 0; transform: translateY(-12px); }
@@ -292,13 +348,24 @@
 }
 
 /* ────────────────────────────────────────────────
-   VIDEO PROMO BAR — VARIANTS + ANIMATIONS
-   Toggle in layout.tsx: <VideoPromoBar variant="A|B|C" />
+   SCROLL REVEAL
    ──────────────────────────────────────────────── */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
-/* ── Variant A: metallic gold gradient ─────────
-   Deep amber → rich gold → champagne highlight → back.
-   Reads like polished brushed metal.                  */
+.reveal-up {
+  animation: reveal-up 0.55s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up { animation: none; opacity: 1; transform: none; }
+}
+
+/* ────────────────────────────────────────────────
+   VIDEO PROMO BAR
+   ──────────────────────────────────────────────── */
 .vpb-a {
   background: linear-gradient(90deg,
     #8B5410  0%,
@@ -309,13 +376,9 @@
     #C8821C 82%,
     #8B5410 100%
   );
-  /* dark line at bottom for depth; faint highlight at top for metallic edge */
   box-shadow: 0 1px 0 rgba(80,35,5,0.55), inset 0 1px 0 rgba(255,248,200,0.22);
 }
 
-/* ── Variant B: dark luxe — near-black + gold ──
-   "Royal palace after dark": very dark espresso brown,
-   gold text, solid gold coin for the play icon.       */
 .vpb-b {
   background: linear-gradient(90deg,
     #0C0602  0%,
@@ -328,14 +391,10 @@
   box-shadow: 0 1px 0 rgba(232,163,61,0.18);
 }
 
-/* B: override white shimmer → warm gold shimmer */
 .vpb-b.vpb-bar::after {
   background: linear-gradient(90deg, transparent 0%, rgba(240,185,55,0.22) 50%, transparent 100%);
 }
 
-/* ── Variant C: gold gradient + zellige watermark ─
-   Same metallic gradient as A, but a very faint
-   Moroccan diamond-star pattern repeats behind text. */
 .vpb-c {
   background: linear-gradient(90deg,
     #8B5410  0%,
@@ -349,19 +408,16 @@
   box-shadow: 0 1px 0 rgba(80,35,5,0.55), inset 0 1px 0 rgba(255,248,200,0.22);
 }
 
-
-/* ── Label typography ───────────────────────────── */
 .vpb-label {
   font-family: var(--font-heading);
-  font-size: 1.25rem;               /* 20px */
+  font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-shadow:
-    0 1px 4px rgba(70,35,0,0.50),       /* warm directional shadow */
-    0 0 12px rgba(245,210,122,0.45);    /* champagne glow */
+    0 1px 4px rgba(70,35,0,0.50),
+    0 0 12px rgba(245,210,122,0.45);
 }
 
-/* ── Shared animations ──────────────────────────── */
 @keyframes vpb-pulse {
   0%, 100% { transform: scale(1);    opacity: 1;    }
   50%       { transform: scale(1.08); opacity: 0.82; }
@@ -377,7 +433,6 @@
   animation: vpb-pulse 2s ease-in-out 0.3s infinite;
 }
 
-/* White shimmer for A and C (B overrides above) */
 .vpb-bar::after {
   content: '';
   position: absolute;
@@ -394,10 +449,6 @@
   .vpb-b.vpb-bar::after { animation: none; display: none; }
 }
 
-/* ── Moroccan arch bottom edge ─────────────────────
-   Both elements are position:fixed so they escape the
-   bar's overflow:hidden (shimmer stays contained).
-   top:120px = header(80px) + bar(40px).             */
 .vpb-arch {
   position: fixed;
   top: 120px;
@@ -436,12 +487,39 @@
 }
 
 /* ────────────────────────────────────────────────
+   NAV PROGRESS BAR  (shown by app/[locale]/loading.tsx)
+   Fills from 0 → 96% in 4 s then holds — unmounts when page arrives.
+   ──────────────────────────────────────────────── */
+@keyframes navProgress {
+  0%   { transform: scaleX(0);    }
+  20%  { transform: scaleX(0.45); }
+  50%  { transform: scaleX(0.72); }
+  75%  { transform: scaleX(0.85); }
+  90%  { transform: scaleX(0.92); }
+  100% { transform: scaleX(0.96); }
+}
+
+.nav-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 9999;
+  transform-origin: left center;
+  background: linear-gradient(90deg, #C4452D 0%, #E8A33D 40%, #F0C060 60%, #E8A33D 100%);
+  animation: navProgress 4s cubic-bezier(0.1, 0.4, 0.2, 1) 1 forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-progress-bar {
+    animation: none;
+    transform: scaleX(0.6);
+  }
+}
+
+/* ────────────────────────────────────────────────
    HERO KEN BURNS
-   @keyframes is unlayered (accessible to all layers).
-   The class lives in @layer utilities so Tailwind v4's
-   PostCSS plugin preserves it rather than dropping it.
-   The animated element is a plain div (not the <img>)
-   whose direct parent has overflow:hidden for clean clip.
    ──────────────────────────────────────────────── */
 @keyframes hero-ken-burns {
   0%   { transform: scale(1.0)  translate(0%,    0%);   }
@@ -462,12 +540,31 @@
 }
 
 /* ──────────────────────────────────────────────────
-   ZELLIGE — octagon + square tile (single source of truth).
-   Edit --zellige-tile once to change the pattern everywhere.
+   ZELLIGE — Proper khatem (8-fold star) interlocking tessellation.
+
+   Construction: 60×60 tile with stars at the 4 CORNERS (each tile
+   shows a quarter-star; 4 tiles together form one full 8-point star).
+   Between corner stars: 4 elongated cross/pentagon shapes at edge
+   midpoints. At the tile centre: one small axis-aligned square.
+   Every shape touches its neighbours edge-to-edge — NO GAPS.
+
+   The 20 line segments below encode this exactly:
+     A group: quarter-star lines from top-left corner (0,0)
+     B group: quarter-star lines from top-right corner (60,0)
+     C group: quarter-star lines from bottom-left corner (0,60)
+     D group: quarter-star lines from bottom-right corner (60,60)
+     E group: the centre square (21.2,21.2 → 38.8,38.8)
+
+   Math: r_outer = 30, r_inner = r_outer × tan(22.5°) = 12.43
+   Outer diagonal points: 30 × cos(45°) = 21.2 from each corner
+   Inner star concave points: 12.43 × cos(22.5°) = 11.5 (near edge)
+                              12.43 × sin(22.5°) =  4.8 (near edge)
    ────────────────────────────────────────────────── */
 :root {
-  --zellige-tile: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50' opacity='0.15'><g transform='translate(0,1)' fill='none' stroke='%238A6A2E' stroke-width='1' stroke-opacity='0.3'><polygon points='43.48,32.65 32.65,43.48 17.35,43.48 6.52,32.65 6.52,17.35 17.35,6.52 32.65,6.52 43.48,17.35'/><polygon points='0,-6 6,0 0,6 -6,0'/><polygon points='50,44 56,50 50,56 44,50'/></g><g fill='none' stroke='%23B0883F' stroke-width='1'><polygon points='43.48,32.65 32.65,43.48 17.35,43.48 6.52,32.65 6.52,17.35 17.35,6.52 32.65,6.52 43.48,17.35'/><polygon points='0,-6 6,0 0,6 -6,0'/><polygon points='50,44 56,50 50,56 44,50'/></g></svg>");
-  --zellige-size: 50px;
+  --zellige-tile: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'><path fill='none' stroke='%23E8A33D' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' opacity='0.07' d='M30,0L11.5,4.8L21.2,21.2L4.8,11.5L0,30 M30,0L48.5,4.8L38.8,21.2L55.2,11.5L60,30 M0,30L4.8,48.5L21.2,38.8L11.5,55.2L30,60 M60,30L55.2,48.5L38.8,38.8L48.5,55.2L30,60 M21.2,21.2L38.8,21.2L38.8,38.8L21.2,38.8Z'/></svg>");
+  --zellige-size: 60px;
+
+  --zellige-tile-accent: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'><path fill='none' stroke='%23E8A33D' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' opacity='0.22' d='M30,0L11.5,4.8L21.2,21.2L4.8,11.5L0,30 M30,0L48.5,4.8L38.8,21.2L55.2,11.5L60,30 M0,30L4.8,48.5L21.2,38.8L11.5,55.2L30,60 M60,30L55.2,48.5L38.8,38.8L48.5,55.2L30,60 M21.2,21.2L38.8,21.2L38.8,38.8L21.2,38.8Z'/></svg>");
 }
 
 .zellige {
@@ -476,15 +573,18 @@
   background-repeat: repeat;
 }
 
+.zellige-accent {
+  background-image: var(--zellige-tile-accent);
+  background-size: var(--zellige-size);
+  background-repeat: repeat;
+}
+
 @media (max-width: 639px) {
-  :root { --zellige-size: 65px; }
+  :root { --zellige-size: 72px; }
 }
 
 /* ────────────────────────────────────────────────
    PINTEREST BADGE
-   Always visible on touch/mobile (no hover state).
-   Hidden by default and revealed on group-hover only
-   on real pointer devices (mouse/trackpad).
    ──────────────────────────────────────────────── */
 .pinterest-badge {
   opacity: 1;
@@ -497,19 +597,16 @@
 
 /* ────────────────────────────────────────────────
    SECTION HEADING SCRIM
-   Radial beige fade that softens the continuous
-   body zellige behind heading + subtitle text.
-   Fades to transparent — the body beige+pattern
-   shows at the edges, so there is no hard boundary.
-   Apply .section-head to the heading wrapper div.
+   Dark radial fade behind heading text against
+   the zellige body pattern.
    ──────────────────────────────────────────────── */
 .section-head {
   padding-block: 0.5rem;
   background: radial-gradient(
     ellipse 72% 90% at 50% 50%,
-    rgba(245, 237, 224, 0.95) 0%,
-    rgba(245, 237, 224, 0.80) 40%,
-    rgba(245, 237, 224, 0)    78%
+    rgba(28, 17, 8, 0.96) 0%,
+    rgba(28, 17, 8, 0.75) 45%,
+    rgba(28, 17, 8, 0)    78%
   );
 }
 
@@ -521,3 +618,39 @@
   outline-offset: 3px;
   border-radius: 4px;
 }
+
+/* ────────────────────────────────────────────────
+   PROSE DARK THEME
+   Tailwind Typography overrides — ivory on dark bg
+   ──────────────────────────────────────────────── */
+.prose {
+  --tw-prose-body:          #C4A882;
+  --tw-prose-headings:      #F5E8CC;
+  --tw-prose-lead:          #C4A882;
+  --tw-prose-links:         #E8A33D;
+  --tw-prose-bold:          #F5E8CC;
+  --tw-prose-counters:      #C4A882;
+  --tw-prose-bullets:       #E8A33D;
+  --tw-prose-hr:            rgba(232, 163, 61, 0.20);
+  --tw-prose-quotes:        #F5E8CC;
+  --tw-prose-quote-borders: #C4452D;
+  --tw-prose-captions:      #C4A882;
+  --tw-prose-code:          #E8A33D;
+  --tw-prose-pre-code:      #F5E8CC;
+  --tw-prose-pre-bg:        #251A0F;
+  --tw-prose-th-borders:    rgba(232, 163, 61, 0.20);
+  --tw-prose-td-borders:    rgba(232, 163, 61, 0.12);
+  color: #C4A882;
+}
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  color: #F5E8CC;
+  font-family: var(--font-display);
+}
+.prose a          { color: #E8A33D; text-decoration-color: rgba(232, 163, 61, 0.40); }
+.prose a:hover    { color: #F0B84E; }
+.prose strong     { color: #F5E8CC; }
+.prose blockquote { border-left-color: #C4452D; color: #C4A882; }
+.prose hr         { border-color: rgba(232, 163, 61, 0.20); }
+.prose code       { color: #E8A33D; background: rgba(232,163,61,0.08); border-radius: 3px; padding: 0 4px; }
+.prose pre        { background: #251A0F; border: 1px solid rgba(232,163,61,0.15); }
+.prose ul > li::marker, .prose ol > li::marker { color: #E8A33D; }

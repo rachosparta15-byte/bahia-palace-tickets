@@ -20,9 +20,9 @@ const variantClasses: Record<Variant, string> = {
   secondary:
     'bg-transparent text-[#C4452D] border-2 border-[#C4452D] hover:bg-[rgba(196,69,45,0.08)]',
   ghost:
-    'bg-transparent text-[#3D2817] hover:bg-[rgba(61,40,23,0.08)]',
+    'bg-transparent text-[#C4A882] hover:text-[#F5E8CC] hover:bg-white/05',
   outline:
-    'bg-transparent text-[#3D2817] border border-[#D4BC96] hover:border-[#C4452D] hover:text-[#C4452D]',
+    'bg-transparent text-[#F5E8CC] border border-[rgba(232,163,61,0.25)] hover:border-[#C4452D] hover:text-[#C4452D]',
 };
 
 const sizeClasses: Record<Size, string> = {

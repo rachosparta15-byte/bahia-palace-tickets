@@ -43,33 +43,33 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
     });
   }
 
-  const qrDataUrl = await QRCode.toDataURL(booking.reference, { width: 220, margin: 2, color: { dark: '#3D2817', light: '#FAF3E7' } });
+  const qrDataUrl = await QRCode.toDataURL(booking.reference, { width: 220, margin: 2, color: { dark: '#F5E8CC', light: '#1C1108' } });
   const visitDate = booking.visitDate.toISOString().split('T')[0];
   const isConfirmed = booking.status === 'confirmed';
 
   return (
-    <div className="min-h-screen py-16 px-6">
+    <div className="min-h-screen py-16 px-6 bg-[#1C1108]">
       <div className="max-w-2xl mx-auto">
 
         {/* Status banner */}
         {isConfirmed ? (
-          <div className="flex items-center gap-3 bg-[#6B7B3A]/10 border border-[#6B7B3A]/25 rounded-xl px-5 py-4 mb-8">
-            <CheckCircle2 size={22} className="text-[#6B7B3A] shrink-0" />
+          <div className="flex items-center gap-3 bg-[#8FA63C]/08 border border-[#8FA63C]/25 rounded-xl px-5 py-4 mb-8">
+            <CheckCircle2 size={22} className="text-[#8FA63C] shrink-0" />
             <div>
-              <p className="font-semibold text-[#3D2817] text-sm">Booking confirmed!</p>
-              <p className="text-xs text-[#5C3D20]">Your ticket has been sent to {booking.customerEmail}</p>
+              <p className="font-semibold text-[#F5E8CC] text-sm">Booking confirmed!</p>
+              <p className="text-xs text-[#C4A882]">Your ticket has been sent to {booking.customerEmail}</p>
             </div>
           </div>
         ) : (
-          <div className="bg-[#E8A33D]/10 border border-[#E8A33D]/30 rounded-xl px-5 py-4 mb-8">
-            <p className="font-semibold text-[#3D2817] text-sm">Booking pending — awaiting payment confirmation.</p>
+          <div className="bg-[#E8A33D]/08 border border-[#E8A33D]/30 rounded-xl px-5 py-4 mb-8">
+            <p className="font-semibold text-[#F5E8CC] text-sm">Booking pending — awaiting payment confirmation.</p>
           </div>
         )}
 
         {/* Main card */}
-        <div className="bg-white rounded-2xl border border-[#E8D5B7] overflow-hidden shadow-[0_4px_24px_rgba(61,40,23,0.08)]">
+        <div className="bg-[#251A0F] rounded-2xl border border-[rgba(232,163,61,0.13)] overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
           {/* Header */}
-          <div className="bg-[#3D2817] px-8 py-6 text-white text-center">
+          <div className="bg-[#2E1F12] px-8 py-6 text-white text-center">
             <p className="text-white/60 text-xs uppercase tracking-widest mb-1">Booking Reference</p>
             <p
               className="text-4xl font-bold tracking-wider"
@@ -91,49 +91,49 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
                   height={180}
                   className="rounded-xl"
                 />
-                <p className="text-xs text-[#5C3D20] mt-2 text-center">Scan at entrance</p>
+                <p className="text-xs text-[#C4A882] mt-2 text-center">Scan at entrance</p>
               </div>
 
               {/* Booking details */}
               <div className="space-y-4">
                 <div>
-                  <p className="text-xs text-[#5C3D20] uppercase tracking-wide mb-1">Ticket</p>
-                  <p className="font-semibold text-[#3D2817] text-sm capitalize">
+                  <p className="text-xs text-[#C4A882] uppercase tracking-wide mb-1">Ticket</p>
+                  <p className="font-semibold text-[#F5E8CC] text-sm capitalize">
                     {booking.ticketType.replace(/-/g, ' ')}
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs text-[#5C3D20] uppercase tracking-wide mb-1 flex items-center gap-1">
+                  <p className="text-xs text-[#C4A882] uppercase tracking-wide mb-1 flex items-center gap-1">
                     <Calendar size={10} /> Visit Date
                   </p>
-                  <p className="font-semibold text-[#3D2817] text-sm">{visitDate}</p>
+                  <p className="font-semibold text-[#F5E8CC] text-sm">{visitDate}</p>
                 </div>
                 <div>
-                  <p className="text-xs text-[#5C3D20] uppercase tracking-wide mb-1 flex items-center gap-1">
+                  <p className="text-xs text-[#C4A882] uppercase tracking-wide mb-1 flex items-center gap-1">
                     <Users size={10} /> Visitors
                   </p>
-                  <p className="font-semibold text-[#3D2817] text-sm">
+                  <p className="font-semibold text-[#F5E8CC] text-sm">
                     {booking.adults} adult{booking.adults !== 1 ? 's' : ''}
                     {booking.children > 0 && `, ${booking.children} child${booking.children !== 1 ? 'ren' : ''} (free)`}
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs text-[#5C3D20] uppercase tracking-wide mb-1">Total Paid</p>
+                  <p className="text-xs text-[#C4A882] uppercase tracking-wide mb-1">Total Paid</p>
                   <p className="font-bold text-[#C4452D] text-xl" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
                     ${booking.totalAmount.toFixed(0)}
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs text-[#5C3D20] uppercase tracking-wide mb-1 flex items-center gap-1">
+                  <p className="text-xs text-[#C4A882] uppercase tracking-wide mb-1 flex items-center gap-1">
                     <Mail size={10} /> Sent to
                   </p>
-                  <p className="font-semibold text-[#3D2817] text-sm break-all">{booking.customerEmail}</p>
+                  <p className="font-semibold text-[#F5E8CC] text-sm break-all">{booking.customerEmail}</p>
                 </div>
               </div>
             </div>
 
             {/* Info box */}
-            <div className="bg-[#FAF3E7] rounded-xl p-4 text-sm text-[#5C3D20] space-y-1.5 mb-6">
+            <div className="bg-[#2E1F12] rounded-xl p-4 text-sm text-[#C4A882] space-y-1.5 mb-6">
               <p>📍 <strong>Meeting point:</strong> Main entrance, Rue Riad Zitoun el Jedid, Marrakech Medina</p>
               <p>🕘 <strong>Opening hours:</strong> Daily 9:00 AM – 5:00 PM (last entry 4:30 PM)</p>
               <p>📱 Show this page or the email QR code at the entrance — no printing required.</p>
@@ -144,7 +144,7 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
               <a
                 href={qrDataUrl}
                 download={`bahia-palace-${booking.reference}.png`}
-                className="flex-1 flex items-center justify-center gap-2 border border-[#D4BC96] text-[#3D2817] font-semibold text-sm px-5 py-3 rounded-xl hover:border-[#C4452D] hover:text-[#C4452D] transition-colors"
+                className="flex-1 flex items-center justify-center gap-2 border border-[rgba(232,163,61,0.25)] text-[#F5E8CC] font-semibold text-sm px-5 py-3 rounded-xl hover:border-[#C4452D] hover:text-[#C4452D] transition-colors"
               >
                 <Download size={15} /> Save QR Code
               </a>
@@ -159,7 +159,7 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
         </div>
 
         {/* Cancel link */}
-        <p className="text-center mt-6 text-sm text-[#5C3D20]">
+        <p className="text-center mt-6 text-sm text-[#C4A882]">
           Need to cancel?{' '}
           <Link href="/contact" className="text-[#C4452D] hover:underline">
             Contact us

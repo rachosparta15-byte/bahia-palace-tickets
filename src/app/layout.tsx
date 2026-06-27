@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { BASE } from '@/lib/seo';
 import { Analytics } from '@vercel/analytics/next';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
-import { Playfair_Display, Inter, Amiri } from 'next/font/google';
+import { Playfair_Display, Cormorant_Garamond, DM_Sans, Amiri } from 'next/font/google';
 import './globals.css';
 
 const playfair = Playfair_Display({
@@ -12,9 +12,17 @@ const playfair = Playfair_Display({
   display: 'swap',
 });
 
-const inter = Inter({
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  variable: '--font-inter',
+  weight: ['300', '400', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
+  display: 'swap',
+});
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-dm-sans',
   display: 'swap',
 });
 
@@ -60,7 +68,7 @@ const orgSchema = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html suppressHydrationWarning>
-      <body className={`${playfair.variable} ${inter.variable} ${amiri.variable}`}>
+      <body className={`${playfair.variable} ${cormorant.variable} ${dmSans.variable} ${amiri.variable}`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema).replace(/</g,'\\u003c').replace(/>/g,'\\u003e').replace(/&/g,'\\u0026') }}

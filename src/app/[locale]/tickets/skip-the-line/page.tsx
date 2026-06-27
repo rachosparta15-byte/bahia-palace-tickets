@@ -2,6 +2,8 @@ import { TicketDetailPage } from '@/components/tickets/TicketDetailPage';
 import type { Metadata } from 'next';
 import { buildAlternates, buildOG } from '@/lib/seo';
 
+export const revalidate = 86400;
+
 interface Props {
   params: Promise<{ locale: string }>;
 }

@@ -35,13 +35,13 @@ export function ContactForm() {
   if (status === 'success') {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-center gap-4">
-        <div className="w-14 h-14 bg-[#6B7B3A]/10 rounded-full flex items-center justify-center">
-          <CheckCircle2 size={28} className="text-[#6B7B3A]" />
+        <div className="w-14 h-14 bg-[#8FA63C]/10 rounded-full flex items-center justify-center">
+          <CheckCircle2 size={28} className="text-[#8FA63C]" />
         </div>
-        <p className="font-semibold text-[#3D2817]">{t('success')}</p>
+        <p className="font-semibold text-[#F5E8CC]">{t('success')}</p>
         <button
           onClick={() => setStatus('idle')}
-          className="text-sm text-[#5C3D20] hover:text-[#C4452D] transition-colors underline"
+          className="text-sm text-[#C4A882] hover:text-[#C4452D] transition-colors underline"
         >
           Send another message
         </button>
@@ -49,13 +49,13 @@ export function ContactForm() {
     );
   }
 
-  const inputCls = 'w-full border border-[#D4BC96] rounded-lg px-4 py-2.5 text-sm text-[#3D2817] placeholder:text-[#5C3D20]/50 focus:outline-none focus:ring-2 focus:ring-[#C4452D]/30 focus:border-[#C4452D] transition-colors bg-white';
+  const inputCls = 'w-full border border-[rgba(232,163,61,0.20)] rounded-lg px-4 py-2.5 text-sm text-[#F5E8CC] placeholder:text-[#C4A882]/50 focus:outline-none focus:ring-2 focus:ring-[#C4452D]/30 focus:border-[#C4452D] transition-colors bg-[#2E1F12]';
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-semibold text-[#3D2817] mb-1.5">{t('nameLabel')}</label>
+          <label className="block text-sm font-semibold text-[#F5E8CC] mb-1.5">{t('nameLabel')}</label>
           <input
             type="text"
             required
@@ -66,7 +66,7 @@ export function ContactForm() {
           />
         </div>
         <div>
-          <label className="block text-sm font-semibold text-[#3D2817] mb-1.5">{t('emailLabel')}</label>
+          <label className="block text-sm font-semibold text-[#F5E8CC] mb-1.5">{t('emailLabel')}</label>
           <input
             type="email"
             required
@@ -78,7 +78,7 @@ export function ContactForm() {
         </div>
       </div>
       <div>
-        <label className="block text-sm font-semibold text-[#3D2817] mb-1.5">{t('subjectLabel')}</label>
+        <label className="block text-sm font-semibold text-[#F5E8CC] mb-1.5">{t('subjectLabel')}</label>
         <input
           type="text"
           required
@@ -89,7 +89,7 @@ export function ContactForm() {
         />
       </div>
       <div>
-        <label className="block text-sm font-semibold text-[#3D2817] mb-1.5">{t('messageLabel')}</label>
+        <label className="block text-sm font-semibold text-[#F5E8CC] mb-1.5">{t('messageLabel')}</label>
         <textarea
           required
           rows={5}

@@ -67,7 +67,7 @@ export function GalleryClient({ images, pageUrl }: { images: GalleryImage[]; pag
         {images.map((img, i) => (
           <div
             key={img.id}
-            className="relative aspect-square overflow-hidden rounded-xl group bg-[#E8D5B7]"
+            className="relative aspect-square overflow-hidden rounded-xl group bg-[#2E1F12]"
           >
             {/* Lightbox trigger */}
             <button
@@ -85,7 +85,7 @@ export function GalleryClient({ images, pageUrl }: { images: GalleryImage[]; pag
               />
 
               {/* Dark gradient + title fade-in on hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#3D2817]/80 via-[#3D2817]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               <div className="absolute bottom-0 left-0 right-0 p-2.5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
                 <p className="text-white text-xs sm:text-sm font-semibold leading-snug drop-shadow-sm line-clamp-2">
                   {img.title}

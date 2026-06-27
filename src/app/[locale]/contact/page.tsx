@@ -6,6 +6,8 @@ import type { Metadata } from 'next';
 import { buildAlternates, buildOG } from '@/lib/seo';
 import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
 
+export const revalidate = 86400;
+
 interface Props {
   params: Promise<{ locale: string }>;
 }
@@ -38,9 +40,9 @@ export default async function ContactPage() {
     : null;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#1C1108]">
       {/* Page header */}
-      <div className="bg-[#3D2817] text-white px-6 py-12 md:px-10">
+      <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] text-white px-6 py-12 md:px-10">
         <div className="max-w-5xl mx-auto">
           <Breadcrumb variant="light" items={[
             { label: tb('home'), href: '/' },
@@ -61,14 +63,14 @@ export default async function ContactPage() {
 
           {/* Form */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-2xl border border-[#E8D5B7] shadow-[0_4px_24px_rgba(61,40,23,0.08)] p-8">
+            <div className="bg-[#251A0F] rounded-2xl border border-[rgba(232,163,61,0.13)] shadow-[0_4px_24px_rgba(0,0,0,0.3)] p-8">
               <ContactForm />
             </div>
 
             {/* WhatsApp — hidden until a real number is configured */}
             {whatsappUrl && (
-              <div className="mt-6 bg-[#25D366]/8 border border-[#25D366]/20 rounded-2xl p-6 text-center">
-                <p className="text-sm font-semibold text-[#3D2817] mb-1">{t('orWhatsapp')}</p>
+              <div className="mt-6 bg-[#25D366]/08 border border-[#25D366]/20 rounded-2xl p-6 text-center">
+                <p className="text-sm font-semibold text-[#F5E8CC] mb-1">{t('orWhatsapp')}</p>
                 <a
                   href={whatsappUrl}
                   target="_blank"
@@ -84,25 +86,25 @@ export default async function ContactPage() {
 
           {/* Info sidebar */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="bg-white rounded-2xl border border-[#E8D5B7] p-6">
+            <div className="bg-[#251A0F] rounded-2xl border border-[rgba(232,163,61,0.13)] p-6">
               <div className="flex gap-3 mb-5">
                 <Info size={18} className="text-[#C4452D] mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-sm font-semibold text-[#3D2817] mb-1">{t('addressTitle')}</p>
-                  <p className="text-sm text-[#5C3D20] leading-relaxed">{t('addressVal')}</p>
+                  <p className="text-sm font-semibold text-[#F5E8CC] mb-1">{t('addressTitle')}</p>
+                  <p className="text-sm text-[#C4A882] leading-relaxed">{t('addressVal')}</p>
                 </div>
               </div>
-              <div className="border-t border-[#F0E5D0] pt-5 flex gap-3 mb-5">
+              <div className="border-t border-[rgba(232,163,61,0.12)] pt-5 flex gap-3 mb-5">
                 <Clock size={18} className="text-[#C4452D] mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-sm font-semibold text-[#3D2817] mb-1">{t('hoursTitle')}</p>
-                  <p className="text-sm text-[#5C3D20]">{t('hoursVal')}</p>
+                  <p className="text-sm font-semibold text-[#F5E8CC] mb-1">{t('hoursTitle')}</p>
+                  <p className="text-sm text-[#C4A882]">{t('hoursVal')}</p>
                 </div>
               </div>
-              <div className="border-t border-[#F0E5D0] pt-5 flex gap-3">
+              <div className="border-t border-[rgba(232,163,61,0.12)] pt-5 flex gap-3">
                 <Mail size={18} className="text-[#C4452D] mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-sm font-semibold text-[#3D2817] mb-1">{t('emailTitle')}</p>
+                  <p className="text-sm font-semibold text-[#F5E8CC] mb-1">{t('emailTitle')}</p>
                   <a
                     href={`mailto:${t('emailVal')}`}
                     className="text-sm text-[#C4452D] hover:underline"
@@ -114,9 +116,9 @@ export default async function ContactPage() {
             </div>
 
             {/* Response time badge */}
-            <div className="bg-[#6B7B3A]/8 border border-[#6B7B3A]/20 rounded-xl p-4 text-center">
-              <p className="text-sm font-semibold text-[#6B7B3A]">⚡ We reply within 24 hours</p>
-              <p className="text-xs text-[#5C3D20] mt-1">WhatsApp responses are faster — usually within minutes.</p>
+            <div className="bg-[#8FA63C]/08 border border-[#8FA63C]/20 rounded-xl p-4 text-center">
+              <p className="text-sm font-semibold text-[#8FA63C]">⚡ We reply within 24 hours</p>
+              <p className="text-xs text-[#C4A882] mt-1">WhatsApp responses are faster — usually within minutes.</p>
             </div>
           </div>
         </div>

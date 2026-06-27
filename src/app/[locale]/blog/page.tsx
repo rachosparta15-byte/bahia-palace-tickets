@@ -97,8 +97,8 @@ export default async function BlogIndexPage({ params }: Props) {
   const filteredPosts = posts.filter(p => !REDIRECTED_SLUGS.has(p.slug));
 
   return (
-    <div className="min-h-screen">
-      <div className="bg-[#3D2817] text-white px-6 py-14 md:px-10">
+    <div className="min-h-screen bg-[#1C1108]">
+      <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] text-white px-6 py-14 md:px-10">
         <div className="max-w-5xl mx-auto">
           <Breadcrumb variant="light" items={[
             { label: tb('home'), href: '/' },
@@ -116,7 +116,7 @@ export default async function BlogIndexPage({ params }: Props) {
 
       <div className="max-w-5xl mx-auto px-6 py-12">
         {filteredPosts.length === 0 ? (
-          <p className="text-[#5C3D20] text-center py-16">Articles coming soon.</p>
+          <p className="text-[#C4A882] text-center py-16">Articles coming soon.</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {filteredPosts.map((post) => {
@@ -144,17 +144,17 @@ export default async function BlogIndexPage({ params }: Props) {
                     </div>
                   </div>
                   <div className="p-5 flex flex-col flex-1">
-                    <div className="flex items-center gap-1.5 text-xs text-[#5C3D20] mb-3">
+                    <div className="flex items-center gap-1.5 text-xs text-[#C4A882] mb-3">
                       <Clock size={12} />
                       {t('readTime', { min: mins })}
                     </div>
                     <h2
-                      className="font-bold text-[#3D2817] mb-2 leading-snug group-hover:text-[#C4452D] transition-colors"
+                      className="font-bold text-[#F5E8CC] mb-2 leading-snug group-hover:text-[#E8A33D] transition-colors"
                       style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.15rem' }}
                     >
                       {post.title}
                     </h2>
-                    <p className="text-sm text-[#5C3D20] leading-relaxed flex-1">{post.excerpt}</p>
+                    <p className="text-sm text-[#C4A882] leading-relaxed flex-1">{post.excerpt}</p>
                     <div className="flex items-center gap-1.5 text-sm text-[#C4452D] font-semibold mt-4">
                       {t('readMore')} <ArrowRight size={13} />
                     </div>
@@ -169,7 +169,7 @@ export default async function BlogIndexPage({ params }: Props) {
           <LeadButton
             ticketType="skip-the-line"
             ctaLocation="blog_index"
-            className="inline-flex items-center gap-2 bg-white text-[#C4452D] font-semibold px-8 py-3.5 rounded-xl hover:bg-[#FAF3E7] transition-colors"
+            className="inline-flex items-center gap-2 bg-white text-[#C4452D] font-semibold px-8 py-3.5 rounded-xl hover:bg-white/90 transition-colors"
           >
             {t('bookCta')}
           </LeadButton>

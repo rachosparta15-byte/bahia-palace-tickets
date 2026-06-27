@@ -54,7 +54,7 @@ export function Header() {
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         scrolled
           ? 'bg-[#2A1A0E] shadow-[0_4px_24px_rgba(0,0,0,0.4)]'
-          : 'bg-[#3D2817]/95 backdrop-blur-sm'
+          : 'bg-[#251A0F]/95 backdrop-blur-sm'
       )}
     >
       {/* Zellige bottom accent line */}

@@ -7,6 +7,8 @@ import { MessageCircle, ChevronDown, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
 
+export const revalidate = 86400;
+
 const META: Record<string, { title: string; description: string }> = {
   en: { title: 'Bahia Palace FAQ 2026 | Tickets, Hours & Visit Answers', description: 'Find answers about Bahia Palace: ticket prices, opening hours, skip-the-line access, guided tours, how to get there, and what to expect on your visit.' },
   fr: { title: 'FAQ Palais Bahia 2026 | Billets, Horaires & Conseils', description: 'Réponses aux questions les plus fréquentes sur le Palais Bahia : prix des billets, horaires, coupe-file, visites guidées et conseils pratiques.' },
@@ -52,10 +54,10 @@ export default async function FaqPage({ params }: Props) {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#1C1108]">
       <JsonLd data={faqSchema} />
 
-      <div className="bg-[#3D2817] text-white px-6 py-12 md:px-10">
+      <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] text-white px-6 py-12 md:px-10">
         <div className="max-w-3xl mx-auto">
           <Breadcrumb variant="light" items={[{ label: tb('home'), href: '/' }, { label: tb('faq') }]} />
           <h1 className="mt-6 font-bold text-white" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 4vw, 2.75rem)' }}>
@@ -72,20 +74,20 @@ export default async function FaqPage({ params }: Props) {
           {faqs.map((item, i) => (
             <details
               key={i}
-              className="group bg-white rounded-xl border border-[#E8D5B7] overflow-hidden"
+              className="group bg-[#251A0F] rounded-xl border border-[rgba(232,163,61,0.13)] overflow-hidden"
             >
-              <summary className="flex items-center justify-between gap-3 px-6 py-5 cursor-pointer list-none font-semibold text-[#3D2817] hover:text-[#C4452D] transition-colors">
+              <summary className="flex items-center justify-between gap-3 px-6 py-5 cursor-pointer list-none font-semibold text-[#F5E8CC] hover:text-[#E8A33D] transition-colors">
                 <span className="text-sm leading-snug">{item.question}</span>
                 <ChevronDown size={15} className="shrink-0 transition-transform duration-200 group-open:rotate-180" />
               </summary>
-              <div className="px-6 pb-5 pt-4 text-sm text-[#5C3D20] leading-relaxed border-t border-[#F0E5D0]">
+              <div className="px-6 pb-5 pt-4 text-sm text-[#C4A882] leading-relaxed border-t border-[rgba(232,163,61,0.12)]">
                 {item.answer}
               </div>
             </details>
           ))}
         </div>
 
-        <div className="mt-10 bg-[#3D2817] rounded-2xl p-8 text-center">
+        <div className="mt-10 bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-8 text-center">
           <p className="text-[#E8A33D] text-xs font-bold uppercase tracking-widest mb-2">{t('ctaSkip')}</p>
           <h2 className="text-white font-bold text-2xl mb-3" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
             {t('ctaTitle')}
@@ -96,11 +98,11 @@ export default async function FaqPage({ params }: Props) {
           </LeadButton>
         </div>
 
-        <div className="mt-6 bg-white rounded-2xl border border-[#E8D5B7] p-8 text-center">
-          <h2 className="text-xl font-bold text-[#3D2817] mb-2" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+        <div className="mt-6 bg-[#251A0F] rounded-2xl border border-[rgba(232,163,61,0.13)] p-8 text-center">
+          <h2 className="text-xl font-bold text-[#F5E8CC] mb-2" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
             {t('stillNeedHelp')}
           </h2>
-          <p className="text-sm text-[#5C3D20] mb-4">{t('teamAvail')}</p>
+          <p className="text-sm text-[#C4A882] mb-4">{t('teamAvail')}</p>
           {whatsappUrl && (
             <a
               href={whatsappUrl}

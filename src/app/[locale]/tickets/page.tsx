@@ -4,6 +4,8 @@ import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import type { Metadata } from 'next';
 import { buildAlternates, buildOG } from '@/lib/seo';
 
+export const revalidate = 86400;
+
 interface Props {
   params: Promise<{ locale: string }>;
 }
@@ -42,8 +44,8 @@ export default async function TicketsPage({ params }: Props) {
   const h1 = H1_LABELS[locale] ?? H1_LABELS.en;
 
   return (
-    <div className="min-h-screen">
-      <div className="bg-[#3D2817] px-6 py-8">
+    <div className="min-h-screen bg-[#1C1108]">
+      <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] px-6 py-8">
         <div className="max-w-6xl mx-auto">
           <Breadcrumb
             variant="light"

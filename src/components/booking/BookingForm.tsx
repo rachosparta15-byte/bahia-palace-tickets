@@ -57,7 +57,7 @@ export function BookingForm({ ticket, ticketName, date, adults, children, locale
     }
   }
 
-  const inputCls = 'w-full border border-[#D4BC96] rounded-lg px-4 py-2.5 text-sm text-[#3D2817] placeholder:text-[#5C3D20]/40 focus:outline-none focus:ring-2 focus:ring-[#C4452D]/30 focus:border-[#C4452D] transition-colors bg-white';
+  const inputCls = 'w-full border border-[rgba(232,163,61,0.20)] rounded-lg px-4 py-2.5 text-sm text-[#F5E8CC] placeholder:text-[#C4A882]/40 focus:outline-none focus:ring-2 focus:ring-[#C4452D]/30 focus:border-[#C4452D] transition-colors bg-[#2E1F12]';
   const errCls   = 'text-xs text-[#C4452D] mt-1';
 
   return (
@@ -65,7 +65,7 @@ export function BookingForm({ ticket, ticketName, date, adults, children, locale
       {/* Customer details form */}
       <form onSubmit={handleSubmit(onSubmit)} className="lg:col-span-3 space-y-5">
         <div>
-          <label className="block text-sm font-semibold text-[#3D2817] mb-1.5">
+          <label className="block text-sm font-semibold text-[#F5E8CC] mb-1.5">
             Full name <span className="text-[#C4452D]">*</span>
           </label>
           <input
@@ -79,7 +79,7 @@ export function BookingForm({ ticket, ticketName, date, adults, children, locale
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-[#3D2817] mb-1.5">
+          <label className="block text-sm font-semibold text-[#F5E8CC] mb-1.5">
             Email address <span className="text-[#C4452D]">*</span>
           </label>
           <input
@@ -90,12 +90,12 @@ export function BookingForm({ ticket, ticketName, date, adults, children, locale
             className={inputCls}
           />
           {errors.customerEmail && <p className={errCls}>{errors.customerEmail.message}</p>}
-          <p className="text-xs text-[#5C3D20] mt-1">Your ticket will be sent here.</p>
+          <p className="text-xs text-[#C4A882] mt-1">Your ticket will be sent here.</p>
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-[#3D2817] mb-1.5">
-            Phone number <span className="text-[#5C3D20] font-normal">(optional)</span>
+          <label className="block text-sm font-semibold text-[#F5E8CC] mb-1.5">
+            Phone number <span className="text-[#C4A882] font-normal">(optional)</span>
           </label>
           <input
             {...register('customerPhone')}
@@ -107,8 +107,8 @@ export function BookingForm({ ticket, ticketName, date, adults, children, locale
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-[#3D2817] mb-1.5">
-            Special requests <span className="text-[#5C3D20] font-normal">(optional)</span>
+          <label className="block text-sm font-semibold text-[#F5E8CC] mb-1.5">
+            Special requests <span className="text-[#C4A882] font-normal">(optional)</span>
           </label>
           <textarea
             {...register('specialRequests')}
@@ -125,8 +125,8 @@ export function BookingForm({ ticket, ticketName, date, adults, children, locale
           </Button>
           <div className="mt-4 space-y-1.5">
             {(['Instant confirmation by email', 'Free cancellation up to 24h', 'Official Ministry of Culture portal'] as const).map((item) => (
-              <div key={item} className="flex items-center gap-2 text-xs text-[#5C3D20]">
-                <Check size={12} className="text-[#6B7B3A] shrink-0" />
+              <div key={item} className="flex items-center gap-2 text-xs text-[#C4A882]">
+                <Check size={12} className="text-[#8FA63C] shrink-0" />
                 {item}
               </div>
             ))}
@@ -136,7 +136,7 @@ export function BookingForm({ ticket, ticketName, date, adults, children, locale
 
       {/* Order summary */}
       <div className="lg:col-span-2">
-        <div className="bg-[#3D2817] text-white rounded-2xl p-6 lg:sticky top-24">
+        <div className="bg-[#251A0F] border border-[rgba(232,163,61,0.13)] text-white rounded-2xl p-6 lg:sticky top-24">
           <h2 className="font-bold mb-4" style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem' }}>
             Order Summary
           </h2>
@@ -172,7 +172,7 @@ export function BookingForm({ ticket, ticketName, date, adults, children, locale
           {children > 0 && (
             <div className="flex items-center justify-between mb-1">
               <span className="text-white/70 text-sm">{children} child{children !== 1 ? 'ren' : ''}</span>
-              <span className="text-[#6B7B3A] text-sm font-semibold">{t('childFree')}</span>
+              <span className="text-[#8FA63C] text-sm font-semibold">{t('childFree')}</span>
             </div>
           )}
           <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/15">

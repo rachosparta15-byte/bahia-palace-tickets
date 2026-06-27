@@ -43,10 +43,10 @@ export default async function QuickBookPage({ params }: Props) {
   const imgSrc = IMAGES[slug] ?? IMAGES['skip-the-line'];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[#1C1108]">
 
       {/* Thin header bar */}
-      <div className="bg-[#3D2817] px-6 py-4 flex items-center justify-between">
+      <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] px-6 py-4 flex items-center justify-between">
         <Link
           href={`/tickets/${slug}` as any}
           className="flex items-center gap-2 text-white/70 hover:text-white text-sm transition-colors"
@@ -73,7 +73,7 @@ export default async function QuickBookPage({ params }: Props) {
           <div>
             <div className="relative h-56 rounded-2xl overflow-hidden mb-5 shadow-md">
               <Image src={imgSrc} alt={name} fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#3D2817]/70 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               <div className="absolute bottom-4 left-4">
                 <span className="bg-[#C4452D] text-white text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
                   Available Now
@@ -82,13 +82,13 @@ export default async function QuickBookPage({ params }: Props) {
             </div>
 
             <h1
-              className="text-[#3D2817] font-bold mb-2 leading-snug"
+              className="text-[#F5E8CC] font-bold mb-2 leading-snug"
               style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)' }}
             >
               {name}
             </h1>
 
-            <div className="flex items-center gap-1.5 text-sm text-[#6B7B3A] mb-5">
+            <div className="flex items-center gap-1.5 text-sm text-[#8FA63C] mb-5">
               <Clock size={14} />
               <span>{duration}</span>
             </div>
@@ -100,8 +100,8 @@ export default async function QuickBookPage({ params }: Props) {
                 { icon: ShieldCheck, text: 'Mobile ticket accepted at entrance' },
                 { icon: ShieldCheck, text: 'Skip the queue — walk straight in' },
               ].map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-center gap-2.5 text-sm text-[#5C3D20]">
-                  <Icon size={15} className="text-[#6B7B3A] shrink-0" />
+                <div key={text} className="flex items-center gap-2.5 text-sm text-[#C4A882]">
+                  <Icon size={15} className="text-[#8FA63C] shrink-0" />
                   {text}
                 </div>
               ))}

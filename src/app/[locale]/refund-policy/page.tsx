@@ -2,6 +2,8 @@ import { LegalPage } from '@/components/legal/LegalPage';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
+export const revalidate = 86400;
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   if (locale !== 'en') return { robots: 'noindex' };

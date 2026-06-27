@@ -3,7 +3,7 @@ import { getBlogPosts } from '@/lib/blog';
 
 const CATEGORY_COLORS: Record<string, string> = {
   'visit-tips':  '#E8A33D',
-  'history':     '#6B7B3A',
+  'history':     '#8FA63C',
   'safety':      '#C4452D',
   'practical':   '#2E4A7B',
   'comparisons': '#8B6B4A',
@@ -21,7 +21,7 @@ export function ArticleTicker({ locale }: Props) {
   const items = [...posts, ...posts];
 
   return (
-    <div className="bg-[#3D2817] border-y border-[#5C3D20] py-2.5 overflow-hidden">
+    <div className="bg-[#160D06] border-y border-[rgba(232,163,61,0.12)] py-2.5 overflow-hidden">
       <div className="marquee-track flex items-center gap-0 w-max">
         {items.map((post, i) => (
           <Link

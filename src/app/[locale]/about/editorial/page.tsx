@@ -7,6 +7,8 @@ import { Mail, Camera, MapPin, PenLine } from 'lucide-react';
 import type { Metadata } from 'next';
 import { buildAlternates, buildOG, BASE } from '@/lib/seo';
 
+export const revalidate = 86400;
+
 interface Props {
   params: Promise<{ locale: string }>;
 }
@@ -46,7 +48,7 @@ export default async function EditorialPage({ params }: Props) {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#1C1108]">
       <JsonLd data={personSchema} />
 
       {/* Hero */}
@@ -59,7 +61,7 @@ export default async function EditorialPage({ params }: Props) {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#3D2817]/70 via-[#3D2817]/30 to-[#3D2817]/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-[#1C1108]/90" />
         <div className="absolute inset-0 flex flex-col justify-between px-6 py-8 md:px-10 max-w-5xl mx-auto w-full left-0 right-0">
           <Breadcrumb variant="light" items={[
             { label: tb('home'), href: '/' },
@@ -84,17 +86,17 @@ export default async function EditorialPage({ params }: Props) {
       <div className="max-w-4xl mx-auto px-6 py-16 space-y-14">
 
         {/* Author card */}
-        <section className="bg-white rounded-2xl border border-[#E8D5B7] p-8 md:p-10">
+        <section className="bg-[#251A0F] rounded-2xl border border-[rgba(232,163,61,0.13)] p-8 md:p-10">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* Avatar placeholder — replace with Abdellah's photo once available */}
-            <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-[#E8D5B7] flex items-center justify-center shrink-0 text-[#3D2817]"
+            <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-[#2E1F12] border border-[rgba(232,163,61,0.15)] flex items-center justify-center shrink-0 text-[#F5E8CC]"
                  style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2.5rem', fontWeight: 700 }}>
               A
             </div>
             <div className="flex-1">
               <h2
                 style={{ fontFamily: 'Cormorant Garamond, serif' }}
-                className="text-3xl font-bold text-[#3D2817] mb-1"
+                className="text-3xl font-bold text-[#F5E8CC] mb-1"
               >
                 Abdellah
               </h2>
@@ -102,7 +104,7 @@ export default async function EditorialPage({ params }: Props) {
                 Travel Writer · visitbahiapalace.com
               </p>
 
-              <div className="flex flex-wrap gap-4 text-sm text-[#5C3D20] mb-6">
+              <div className="flex flex-wrap gap-4 text-sm text-[#C4A882] mb-6">
                 <span className="flex items-center gap-1.5">
                   <MapPin size={14} className="text-[#E8A33D]" />
                   Marrakech, Morocco
@@ -117,7 +119,7 @@ export default async function EditorialPage({ params }: Props) {
                 </span>
               </div>
 
-              <p className="text-[#5C3D20] leading-relaxed text-lg">
+              <p className="text-[#C4A882] leading-relaxed text-lg">
                 Abdellah is a Marrakech-based travel writer who has personally visited Bahia Palace
                 and photographed it himself. He writes the articles on visitbahiapalace.com based on
                 first-hand local experience living in Marrakech, and all photographs credited to
@@ -131,11 +133,11 @@ export default async function EditorialPage({ params }: Props) {
         <section>
           <h2
             style={{ fontFamily: 'Cormorant Garamond, serif' }}
-            className="text-2xl font-bold text-[#3D2817] mb-6"
+            className="text-2xl font-bold text-[#F5E8CC] mb-6"
           >
             Editorial approach
           </h2>
-          <div className="space-y-4 text-[#5C3D20] leading-relaxed">
+          <div className="space-y-4 text-[#C4A882] leading-relaxed">
             <p>
               Every article on visitbahiapalace.com is written from direct knowledge of the palace and
               the surrounding medina. Prices, opening hours, and practical advice are verified against
@@ -157,14 +159,14 @@ export default async function EditorialPage({ params }: Props) {
         </section>
 
         {/* Independence notice */}
-        <section className="bg-amber-50 border-2 border-amber-200 rounded-2xl p-8">
+        <section className="bg-[#E8A33D]/08 border border-[#E8A33D]/30 rounded-2xl p-8">
           <h2
             style={{ fontFamily: 'Cormorant Garamond, serif' }}
-            className="text-xl font-bold text-amber-900 mb-3"
+            className="text-xl font-bold text-[#F5E8CC] mb-3"
           >
             Independence notice
           </h2>
-          <p className="text-amber-800 leading-relaxed">
+          <p className="text-[#C4A882] leading-relaxed">
             visitbahiapalace.com is an independent visitor information and ticket platform. It is not
             affiliated with the Bahia Palace monument, the Moroccan Ministry of Culture, or any
             official government body. The articles, prices, and opinions on this site represent
@@ -173,7 +175,7 @@ export default async function EditorialPage({ params }: Props) {
         </section>
 
         {/* Contact */}
-        <section className="bg-[#3D2817] text-white rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
+        <section className="bg-[#251A0F] border border-[rgba(232,163,61,0.15)] text-white rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1">
             <h2
               style={{ fontFamily: 'Cormorant Garamond, serif' }}

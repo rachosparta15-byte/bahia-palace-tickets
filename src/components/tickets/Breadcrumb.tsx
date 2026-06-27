@@ -12,9 +12,9 @@ interface BreadcrumbProps {
 }
 
 export function Breadcrumb({ items, variant = 'dark' }: BreadcrumbProps) {
-  const textCls = variant === 'light' ? 'text-white/75' : 'text-[#5C3D20]';
-  const linkCls = variant === 'light' ? 'hover:text-white' : 'hover:text-[#C4452D]';
-  const curCls  = variant === 'light' ? 'text-white font-medium' : 'text-[#3D2817] font-medium';
+  const textCls = variant === 'light' ? 'text-white/75' : 'text-[#C4A882]';
+  const linkCls = variant === 'light' ? 'hover:text-white' : 'hover:text-[#E8A33D]';
+  const curCls  = variant === 'light' ? 'text-white font-medium' : 'text-[#F5E8CC] font-medium';
 
   const shadow = variant === 'light' ? { textShadow: '0 1px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.6)' } : {};
 

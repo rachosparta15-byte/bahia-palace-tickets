@@ -31,8 +31,8 @@ export default async function BookingNewPage({ params, searchParams }: Props) {
   const childrenNum = Math.max(0, parseInt(children, 10) || 0);
 
   return (
-    <div className="min-h-screen">
-      <div className="bg-[#3D2817] px-6 py-10 md:px-10">
+    <div className="min-h-screen bg-[#1C1108]">
+      <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] px-6 py-10 md:px-10">
         <div className="max-w-5xl mx-auto">
           <Breadcrumb variant="light" items={[
             { label: tb('home'),    href: '/' },

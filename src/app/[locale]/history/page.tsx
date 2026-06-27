@@ -6,6 +6,8 @@ import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 
+export const revalidate = 86400;
+
 const META: Record<string, { title: string; description: string }> = {
   en: { title: 'Bahia Palace History | Ba Ahmed & Morocco\'s Royal Past', description: 'Explore the history of Bahia Palace, built 1866–1900 by Grand Vizier Ba Ahmed. Discover its architects, the legendary harem, and Morocco\'s royal heritage.' },
   fr: { title: 'Histoire du Palais Bahia | Ba Ahmed & l\'Héritage Royal', description: 'Explorez l\'histoire du Palais Bahia, construit de 1866 à 1900 par le Grand Vizir Ba Ahmed. Architectes, harem légendaire et héritage royal du Maroc.' },
@@ -52,17 +54,15 @@ const timeline = [
   { year: '1956–present', title: 'Moroccan Heritage Site', text: 'After Moroccan independence, Bahia Palace becomes a protected heritage site managed by the Ministry of Culture. It opens to tourists and becomes one of Marrakech\'s most visited attractions, receiving over 500,000 visitors annually.' },
 ];
 
-export default async function HistoryPage({ params }: Props) {
-  const { locale } = await params;
-
+export default async function HistoryPage(_props: Props) {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#1C1108]">
       <JsonLd data={historySchema} />
 
       {/* Hero */}
       <div className="relative h-72 md:h-96">
         <Image src="/images/gallery/bahia-palace-octagonal-cedar-ceiling-carved-wood.jpg" alt="Bahia Palace Marrakech ornate painted cedar wood ceiling — 19th century Moroccan architecture" fill className="object-cover" sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#3D2817]/50 to-[#3D2817]/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-[#1C1108]/90" />
         <div className="absolute inset-0 flex flex-col justify-between px-6 py-8 md:px-10 max-w-4xl mx-auto w-full left-0 right-0">
           <Breadcrumb variant="light" items={[{ label: 'Home', href: '/' }, { label: 'History' }]} />
           <div>
@@ -78,26 +78,26 @@ export default async function HistoryPage({ params }: Props) {
 
         {/* Introduction */}
         <div className="prose prose-lg max-w-none">
-          <p className="text-[#3D2817] leading-relaxed text-lg">
-            <strong>Bahia Palace</strong> — whose name means <em>"the brilliant one"</em> in Arabic — stands as one of the finest examples of <strong>19th-century Moroccan architecture</strong> in Marrakech. Built between 1859 and 1900, this stunning palace in the heart of the medina tells the story of power, ambition, and the extraordinary craftsmanship of Islamic Moroccan design.
+          <p className="text-[#C4A882] leading-relaxed text-lg">
+            <strong className="text-[#F5E8CC]">Bahia Palace</strong> — whose name means <em>&ldquo;the brilliant one&rdquo;</em> in Arabic — stands as one of the finest examples of <strong className="text-[#F5E8CC]">19th-century Moroccan architecture</strong> in Marrakech. Built between 1859 and 1900, this stunning palace in the heart of the medina tells the story of power, ambition, and the extraordinary craftsmanship of Islamic Moroccan design.
           </p>
         </div>
 
         {/* Who Built It */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-2xl border border-[#E8D5B7] p-6">
-            <h2 className="font-bold text-[#3D2817] mb-3" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem' }}>
+          <div className="bg-[#251A0F] rounded-2xl border border-[rgba(232,163,61,0.13)] p-6">
+            <h2 className="font-bold text-[#F5E8CC] mb-3" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem' }}>
               Who Built Bahia Palace?
             </h2>
-            <p className="text-sm text-[#5C3D20] leading-relaxed mb-3">
-              Bahia Palace was built in two phases. The first phase was initiated by <strong>Si Moussa</strong>, Grand Vizier under Sultan Mohammed IV, who began construction around 1859. The second and most expansive phase was completed by his son, <strong>Ba Ahmed (Ahmed ibn Moussa)</strong>, between 1894 and 1900.
+            <p className="text-sm text-[#C4A882] leading-relaxed mb-3">
+              Bahia Palace was built in two phases. The first phase was initiated by <strong className="text-[#F5E8CC]">Si Moussa</strong>, Grand Vizier under Sultan Mohammed IV, who began construction around 1859. The second and most expansive phase was completed by his son, <strong className="text-[#F5E8CC]">Ba Ahmed (Ahmed ibn Moussa)</strong>, between 1894 and 1900.
             </p>
-            <p className="text-sm text-[#5C3D20] leading-relaxed">
-              Ba Ahmed was the most powerful man in Morocco during the reign of Sultan Moulay Abd al-Aziz. He employed the finest craftsmen from Fez, employing over 2,000 artisans to create the elaborate <strong>zellige tile work</strong>, carved <strong>cedar wood ceilings</strong>, and stucco plasterwork that define the palace today.
+            <p className="text-sm text-[#C4A882] leading-relaxed">
+              Ba Ahmed was the most powerful man in Morocco during the reign of Sultan Moulay Abd al-Aziz. He employed the finest craftsmen from Fez, employing over 2,000 artisans to create the elaborate <strong className="text-[#F5E8CC]">zellige tile work</strong>, carved <strong className="text-[#F5E8CC]">cedar wood ceilings</strong>, and stucco plasterwork that define the palace today.
             </p>
           </div>
-          <div className="bg-[#3D2817] rounded-2xl p-6 text-white">
-            <h3 className="font-bold mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem' }}>Fast Facts</h3>
+          <div className="bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-6 text-white">
+            <h3 className="font-bold text-[#F5E8CC] mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem' }}>Fast Facts</h3>
             <div className="space-y-2.5">
               {[
                 ['Construction', '1859–1900'],
@@ -108,9 +108,9 @@ export default async function HistoryPage({ params }: Props) {
                 ['Name meaning', '"The Brilliant One" (Arabic)'],
                 ['Location', 'Rue Riad Zitoun el Jedid, Marrakech'],
               ].map(([key, val]) => (
-                <div key={key} className="flex justify-between text-sm border-b border-white/10 pb-2">
-                  <span className="text-white/60">{key}</span>
-                  <span className="font-semibold">{val}</span>
+                <div key={key} className="flex justify-between text-sm border-b border-[rgba(232,163,61,0.12)] pb-2">
+                  <span className="text-[#C4A882]">{key}</span>
+                  <span className="font-semibold text-[#F5E8CC]">{val}</span>
                 </div>
               ))}
             </div>
@@ -119,18 +119,18 @@ export default async function HistoryPage({ params }: Props) {
 
         {/* Timeline */}
         <div>
-          <h2 className="text-2xl font-bold text-[#3D2817] mb-6" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+          <h2 className="text-2xl font-bold text-[#F5E8CC] mb-6" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
             Bahia Palace Timeline: From Construction to Heritage Site
           </h2>
           <div className="relative">
-            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-[#C8A882]" />
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-[rgba(232,163,61,0.25)]" />
             <div className="space-y-6">
               {timeline.map(({ year, title, text }) => (
                 <div key={year} className="pl-14 relative">
-                  <div className="absolute left-3.5 top-1.5 w-5 h-5 rounded-full bg-[#C4452D] border-2 border-white shadow" />
+                  <div className="absolute left-3.5 top-1.5 w-5 h-5 rounded-full bg-[#C4452D] border-2 border-[#1C1108] shadow" />
                   <span className="text-xs font-bold text-[#C4452D] uppercase tracking-widest">{year}</span>
-                  <h3 className="font-bold text-[#3D2817] mt-0.5 mb-2" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.15rem' }}>{title}</h3>
-                  <p className="text-sm text-[#5C3D20] leading-relaxed">{text}</p>
+                  <h3 className="font-bold text-[#F5E8CC] mt-0.5 mb-2" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.15rem' }}>{title}</h3>
+                  <p className="text-sm text-[#C4A882] leading-relaxed">{text}</p>
                 </div>
               ))}
             </div>
@@ -139,11 +139,11 @@ export default async function HistoryPage({ params }: Props) {
 
         {/* Architecture */}
         <div>
-          <h2 className="text-2xl font-bold text-[#3D2817] mb-4" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+          <h2 className="text-2xl font-bold text-[#F5E8CC] mb-4" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
             Bahia Palace Architecture: Moorish & Moroccan Craftsmanship
           </h2>
-          <p className="text-[#5C3D20] leading-relaxed mb-4">
-            The palace is a masterpiece of <strong>Moroccan architecture</strong>, combining Moorish, Islamic, and Andalusian influences. Every surface is decorated with extraordinary detail — from the hand-cut <strong>zellige tile mosaics</strong> to the intricately carved stucco (tadelakt) and painted cedar wood ceilings.
+          <p className="text-[#C4A882] leading-relaxed mb-4">
+            The palace is a masterpiece of <strong className="text-[#F5E8CC]">Moroccan architecture</strong>, combining Moorish, Islamic, and Andalusian influences. Every surface is decorated with extraordinary detail — from the hand-cut <strong className="text-[#F5E8CC]">zellige tile mosaics</strong> to the intricately carved stucco (tadelakt) and painted cedar wood ceilings.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
@@ -152,8 +152,8 @@ export default async function HistoryPage({ params }: Props) {
               { label: 'Stucco Plaster', desc: 'Intricate arabesque patterns on all interior walls',        img: '/images/gallery/bahia-palace-carved-stucco-archway.webp',     alt: 'Finely carved stucco archway and zellige walls inside Bahia Palace, Marrakech' },
               { label: 'Marble Floors',  desc: 'Imported Italian marble in the grand courtyard',            img: null,                                                           alt: null },
             ].map(({ label, desc, img, alt }) => (
-              <div key={label} className="bg-white rounded-xl border border-[#E8D5B7] overflow-hidden text-center">
-                <div className="h-24 bg-[#F5EDE0] overflow-hidden">
+              <div key={label} className="bg-[#251A0F] rounded-xl border border-[rgba(232,163,61,0.13)] overflow-hidden text-center">
+                <div className="h-24 bg-[#2E1F12] overflow-hidden">
                   {img && (
                     <Image src={img} alt={alt!} width={600} height={400}
                       className="w-full h-full object-cover" loading="lazy"
@@ -161,8 +161,8 @@ export default async function HistoryPage({ params }: Props) {
                   )}
                 </div>
                 <div className="p-4">
-                  <p className="font-bold text-[#3D2817] text-sm mb-1">{label}</p>
-                  <p className="text-xs text-[#8B6344] leading-snug">{desc}</p>
+                  <p className="font-bold text-[#F5E8CC] text-sm mb-1">{label}</p>
+                  <p className="text-xs text-[#C4A882] leading-snug">{desc}</p>
                 </div>
               </div>
             ))}
@@ -185,20 +185,20 @@ export default async function HistoryPage({ params }: Props) {
         </div>
 
         {/* External link */}
-        <p className="text-xs text-[#8B6344]">
+        <p className="text-xs text-[#C4A882]">
           Source:{' '}
-          <a href="https://en.wikipedia.org/wiki/Bahia_Palace" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#3D2817]">
+          <a href="https://en.wikipedia.org/wiki/Bahia_Palace" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#F5E8CC]">
             Bahia Palace — Wikipedia
           </a>
         </p>
 
         {/* CTA */}
-        <div className="bg-[#3D2817] rounded-2xl p-8 text-center">
+        <div className="bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-8 text-center">
           <p className="text-[#E8A33D] text-xs font-bold uppercase tracking-widest mb-2">Experience it in person</p>
-          <h2 className="text-white font-bold text-2xl mb-3" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+          <h2 className="text-[#F5E8CC] font-bold text-2xl mb-3" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
             Visit Bahia Palace — Book Skip-the-Line Tickets
           </h2>
-          <p className="text-white/70 text-sm mb-5 max-w-md mx-auto">
+          <p className="text-[#C4A882] text-sm mb-5 max-w-md mx-auto">
             Walk through history without waiting in line. Instant confirmation, free cancellation.
           </p>
           <LeadButton ticketType="skip-the-line" className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold px-8 py-3 rounded-xl transition-colors">

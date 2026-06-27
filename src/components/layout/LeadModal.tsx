@@ -140,12 +140,12 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
 
         {/* Panel */}
         <div
-          className="relative bg-[#FAF3E7] rounded-2xl shadow-2xl w-full border border-[#E8D5B7]"
+          className="relative bg-[#251A0F] rounded-2xl shadow-2xl w-full border border-[rgba(232,163,61,0.15)]"
           style={{ maxWidth: '400px' }}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="bg-[#3D2817] rounded-t-2xl px-6 pt-5 pb-4">
+          <div className="bg-[#2E1F12] rounded-t-2xl px-6 pt-5 pb-4">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-[#E8A33D] text-[10px] font-bold uppercase tracking-[0.22em] mb-1">
@@ -171,7 +171,7 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
 
           {/* Body */}
           <div className="px-6 py-5 space-y-4">
-            <p className="text-sm text-[#5C3D20] leading-relaxed">
+            <p className="text-sm text-[#C4A882] leading-relaxed">
               Leave your email and we&apos;ll send you the best time to visit, insider tips, and a discount code when guided tours launch. Completely optional.
             </p>
 
@@ -181,7 +181,7 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
                 placeholder="First name (optional)"
                 value={name}
                 onChange={e => setName(e.target.value)}
-                className="w-full px-4 rounded-xl border border-[#E8D5B7] bg-white text-[#3D2817] placeholder:text-[#C4A882] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors"
+                className="w-full px-4 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12] text-[#F5E8CC] placeholder:text-[#C4A882] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors"
                 style={{ fontSize: '16px', minHeight: '48px' }}
               />
               <input
@@ -190,7 +190,7 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 onKeyDown={e => { if (e.key === 'Enter') handleSubmit(); }}
-                className="w-full px-4 rounded-xl border border-[#E8D5B7] bg-white text-[#3D2817] placeholder:text-[#C4A882] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors"
+                className="w-full px-4 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12] text-[#F5E8CC] placeholder:text-[#C4A882] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors"
                 style={{ fontSize: '16px', minHeight: '48px' }}
               />
             </div>
@@ -208,7 +208,7 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
             <button
               type="button"
               onClick={handleSkip}
-              className="flex items-center justify-center w-full text-center text-sm text-[#8B6344] hover:text-[#3D2817] transition-colors"
+              className="flex items-center justify-center w-full text-center text-sm text-[#C4A882] hover:text-[#F5E8CC] transition-colors"
               style={{ minHeight: '44px' }}
             >
               Skip &amp; continue to tickets →
@@ -221,7 +221,7 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
               We never share your email. Unsubscribe anytime.{' '}
               <a
                 href={`/${locale}/privacy`}
-                className="underline hover:text-[#8B6344] transition-colors"
+                className="underline hover:text-[#F5E8CC] transition-colors"
               >
                 Privacy policy
               </a>

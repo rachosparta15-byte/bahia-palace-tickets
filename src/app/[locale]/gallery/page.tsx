@@ -100,11 +100,11 @@ export default async function GalleryPage({ params }: Props) {
   } : null;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#1C1108]">
       {imageObjectSchema && <JsonLd data={imageObjectSchema} />}
 
       {/* ── Dark hero: header text + carousel ─────────────────── */}
-      <div className="bg-[#3D2817]">
+      <div className="bg-[#1C1108]">
         {/* Compact heading */}
         <div className="max-w-5xl mx-auto px-6 pt-8 pb-5 md:px-10">
           <Breadcrumb variant="light" items={[
@@ -112,17 +112,17 @@ export default async function GalleryPage({ params }: Props) {
             { label: 'Gallery' },
           ]} />
           <div className="mt-4 flex items-center gap-3">
-            <div className="hidden sm:flex w-10 h-10 bg-white/10 rounded-lg items-center justify-center shrink-0">
+            <div className="hidden sm:flex w-10 h-10 bg-[rgba(232,163,61,0.10)] rounded-lg items-center justify-center shrink-0">
               <Camera size={20} className="text-[#E8A33D]" />
             </div>
             <h1
-              className="font-bold text-white"
+              className="font-bold text-[#F5E8CC]"
               style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 3.5vw, 2.5rem)' }}
             >
               {meta.heading}
             </h1>
           </div>
-          <p className="mt-2 text-white/65 text-sm sm:text-base max-w-2xl leading-relaxed">
+          <p className="mt-2 text-[#C4A882] text-sm sm:text-base max-w-2xl leading-relaxed">
             {meta.sub}
           </p>
         </div>
@@ -139,32 +139,32 @@ export default async function GalleryPage({ params }: Props) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
         {images.length === 0 ? (
           <div className="text-center py-20">
-            <Camera size={48} className="mx-auto text-[#C8A882] mb-4" />
-            <p className="text-[#5C3D20] font-medium">Photos coming soon</p>
+            <Camera size={48} className="mx-auto text-[#C4A882] mb-4" />
+            <p className="text-[#C4A882] font-medium">Photos coming soon</p>
           </div>
         ) : (
           <>
             {/* Section label */}
             <div className="flex items-center justify-between mb-5">
               <h2
-                className="font-bold text-[#3D2817]"
+                className="font-bold text-[#F5E8CC]"
                 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem' }}
               >
                 {meta.collection}
               </h2>
-              <span className="text-sm text-[#8B6344] tabular-nums">{images.length} photos</span>
+              <span className="text-sm text-[#C4A882] tabular-nums">{images.length} photos</span>
             </div>
 
             {/* Even grid + lightbox (all <img> tags are SSR-rendered) */}
             <GalleryClient images={images} pageUrl={`${BASE}/${locale}/gallery`} />
 
             {/* CTA */}
-            <div className="mt-14 bg-[#3D2817] rounded-2xl p-8 text-center">
+            <div className="mt-14 bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-8 text-center">
               <p className="text-[#E8A33D] text-xs font-bold uppercase tracking-widest mb-2">
                 {meta.bookCta}
               </p>
               <h2
-                className="text-white font-bold text-2xl mb-4"
+                className="text-[#F5E8CC] font-bold text-2xl mb-4"
                 style={{ fontFamily: 'Cormorant Garamond, serif' }}
               >
                 Bahia Palace, Marrakech

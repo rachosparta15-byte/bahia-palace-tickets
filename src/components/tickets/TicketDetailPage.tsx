@@ -1,4 +1,4 @@
-﻿import { getTranslations, getLocale } from 'next-intl/server';
+import { getTranslations, getLocale } from 'next-intl/server';
 import Image from 'next/image';
 import { Check, X, MapPin, Clock, ChevronDown, ArrowRight, Zap, ShieldCheck } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
@@ -49,8 +49,8 @@ const ALL_TICKETS: { key: TicketKey; slug: string; price: number; live: boolean 
 
 function ComingSoonWidget({ ticketName }: { ticketName: string }) {
   return (
-    <div className="bg-white rounded-2xl border border-[#E8D5B7] shadow-[0_4px_24px_rgba(61,40,23,0.1)] overflow-hidden">
-      <div className="bg-[#3D2817] px-5 py-3.5 text-center">
+    <div className="bg-[#251A0F] rounded-2xl border border-[rgba(232,163,61,0.15)] shadow-[0_4px_24px_rgba(0,0,0,0.4)] overflow-hidden">
+      <div className="bg-[#2E1F12] px-5 py-3.5 text-center">
         <p className="text-[#E8A33D] text-[11px] font-bold uppercase tracking-[0.2em] mb-0.5">
           Coming Soon
         </p>
@@ -59,7 +59,7 @@ function ComingSoonWidget({ ticketName }: { ticketName: string }) {
         </p>
       </div>
       <div className="p-6 space-y-4 text-center">
-        <p className="text-sm text-[#5C3D20] leading-relaxed">
+        <p className="text-sm text-[#C4A882] leading-relaxed">
           We&apos;re putting the final touches on this experience. Only our skip-the-line ticket is available right now.
         </p>
         <a
@@ -70,7 +70,7 @@ function ComingSoonWidget({ ticketName }: { ticketName: string }) {
         </a>
         <a
           href="/contact"
-          className="block text-sm text-[#8B6344] hover:text-[#3D2817] underline transition-colors"
+          className="block text-sm text-[#C4A882] hover:text-[#F5E8CC] underline transition-colors"
         >
           Contact us to be notified when this launches
         </a>
@@ -123,7 +123,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
   };
 
   return (
-    <div className="bg-[#FAF3E7] min-h-screen">
+    <div className="bg-[#1C1108] min-h-screen">
       <JsonLd data={productSchema} />
       {/* ── Hero ── */}
       <div className="relative h-64 sm:h-80 md:h-[500px]">
@@ -135,7 +135,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#3D2817]/55 via-[#3D2817]/25 to-[#3D2817]/65" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-[#1C1108]/80" />
         <div className="absolute inset-0 flex flex-col justify-between px-6 py-8 md:px-10 md:py-10 max-w-6xl mx-auto w-full left-0 right-0">
           <Breadcrumb
             variant="light"
@@ -163,28 +163,28 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
 
       {/* ── Mobile-only booking strip — desktop uses sticky right-column widget ── */}
       {isLive && (
-        <div className="lg:hidden bg-white border-b border-[#E8D5B7]">
+        <div className="lg:hidden bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)]">
           <div className="max-w-6xl mx-auto px-5 py-5 space-y-4">
-            <div className="flex items-start gap-2.5 bg-[#6B7B3A]/10 rounded-xl px-4 py-3">
-              <Zap size={13} className="text-[#6B7B3A] mt-0.5 shrink-0" />
-              <p className="text-xs text-[#3D5016] leading-snug font-semibold">{whyOnline}</p>
+            <div className="flex items-start gap-2.5 bg-[#E8A33D]/08 rounded-xl px-4 py-3">
+              <Zap size={13} className="text-[#E8A33D] mt-0.5 shrink-0" />
+              <p className="text-xs text-[#E8A33D] leading-snug font-semibold">{whyOnline}</p>
             </div>
 
             <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5">
               {includes.slice(0, 4).map((item, i) => (
-                <li key={i} className="flex items-start gap-1.5 text-xs text-[#5C3D20]">
-                  <Check size={12} className="text-[#6B7B3A] mt-0.5 shrink-0" />
+                <li key={i} className="flex items-start gap-1.5 text-xs text-[#C4A882]">
+                  <Check size={12} className="text-[#8FA63C] mt-0.5 shrink-0" />
                   {item}
                 </li>
               ))}
             </ul>
 
-            <div className="flex items-center justify-between gap-3 pt-3 border-t border-[#F0E5D0]">
+            <div className="flex items-center justify-between gap-3 pt-3 border-t border-[rgba(232,163,61,0.15)]">
               <div>
-                <p className="text-[10px] text-[#8B6344] uppercase tracking-wide">{t('from')}</p>
+                <p className="text-[10px] text-[#C4A882] uppercase tracking-wide">{t('from')}</p>
                 <p className="text-2xl font-bold text-[#C4452D] leading-none">
                   ${price}
-                  <span className="text-sm font-normal text-[#5C3D20] ml-1">{t('perPerson')}</span>
+                  <span className="text-sm font-normal text-[#C4A882] ml-1">{t('perPerson')}</span>
                 </p>
               </div>
               <LeadButton
@@ -196,9 +196,9 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
               </LeadButton>
             </div>
 
-            <p className="flex items-center justify-center gap-1.5 text-xs text-[#8B6344]">
-              <ShieldCheck size={12} className="text-[#6B7B3A]" />
-              Official portal — instant confirmation
+            <p className="flex items-center justify-center gap-1.5 text-xs text-[#C4A882]">
+              <ShieldCheck size={12} className="text-[#8FA63C]" />
+              Secure booking — instant confirmation
             </p>
           </div>
         </div>
@@ -213,7 +213,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
 
             {/* Description */}
             <p
-              className="text-[#3D2817] leading-relaxed"
+              className="text-[#C4A882] leading-relaxed"
               style={{ fontFamily: 'var(--font-heading)', fontSize: '1.2rem' }}
             >
               {longDesc}
@@ -222,7 +222,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
             {/* Gallery */}
             <div>
               <h2
-                className="text-xl font-bold text-[#3D2817] mb-4"
+                className="text-xl font-bold text-[#F5E8CC] mb-4"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
                 {td('gallery')}
@@ -244,15 +244,15 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div>
                 <h2
-                  className="text-lg font-bold text-[#3D2817] mb-4"
+                  className="text-lg font-bold text-[#F5E8CC] mb-4"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {td('includes')}
                 </h2>
                 <ul className="space-y-2.5">
                   {includes.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-sm text-[#3D2817]">
-                      <Check size={15} className="text-[#6B7B3A] mt-0.5 shrink-0" />
+                    <li key={i} className="flex items-start gap-2.5 text-sm text-[#C4A882]">
+                      <Check size={15} className="text-[#8FA63C] mt-0.5 shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -260,14 +260,14 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
               </div>
               <div>
                 <h2
-                  className="text-lg font-bold text-[#3D2817] mb-4"
+                  className="text-lg font-bold text-[#F5E8CC] mb-4"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {td('excludes')}
                 </h2>
                 <ul className="space-y-2.5">
                   {excludes.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-sm text-[#5C3D20]">
+                    <li key={i} className="flex items-start gap-2.5 text-sm text-[#C4A882]">
                       <X size={15} className="text-[#C4452D]/50 mt-0.5 shrink-0" />
                       {item}
                     </li>
@@ -277,19 +277,19 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
             </div>
 
             {/* Meeting point + hours */}
-            <div className="bg-white rounded-xl border border-[#E8D5B7] p-5 space-y-4">
+            <div className="bg-[#251A0F] rounded-xl border border-[rgba(232,163,61,0.13)] p-5 space-y-4">
               <div className="flex gap-3">
                 <MapPin size={18} className="text-[#C4452D] mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-sm font-semibold text-[#3D2817] mb-1">{td('meetingPoint')}</p>
-                  <p className="text-sm text-[#5C3D20] leading-relaxed">{meetingPoint}</p>
+                  <p className="text-sm font-semibold text-[#F5E8CC] mb-1">{td('meetingPoint')}</p>
+                  <p className="text-sm text-[#C4A882] leading-relaxed">{meetingPoint}</p>
                 </div>
               </div>
-              <div className="border-t border-[#F0E5D0] pt-4 flex gap-3">
+              <div className="border-t border-[rgba(232,163,61,0.12)] pt-4 flex gap-3">
                 <Clock size={18} className="text-[#C4452D] mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-sm font-semibold text-[#3D2817] mb-1">{td('openingHours')}</p>
-                  <p className="text-sm text-[#5C3D20]">{td('openingHoursVal')}</p>
+                  <p className="text-sm font-semibold text-[#F5E8CC] mb-1">{td('openingHours')}</p>
+                  <p className="text-sm text-[#C4A882]">{td('openingHoursVal')}</p>
                 </div>
               </div>
             </div>
@@ -297,7 +297,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
             {/* FAQs */}
             <div>
               <h2
-                className="text-2xl font-bold text-[#3D2817] mb-6"
+                className="text-2xl font-bold text-[#F5E8CC] mb-6"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
                 {td('faqTitle')}
@@ -306,13 +306,13 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
                 {faqItems.slice(0, 4).map((item, i) => (
                   <details
                     key={i}
-                    className="group bg-white rounded-xl border border-[#E8D5B7] overflow-hidden"
+                    className="group bg-[#251A0F] rounded-xl border border-[rgba(232,163,61,0.13)] overflow-hidden"
                   >
-                    <summary className="flex items-center justify-between gap-3 p-5 cursor-pointer list-none font-semibold text-sm text-[#3D2817] hover:text-[#C4452D] transition-colors">
+                    <summary className="flex items-center justify-between gap-3 p-5 cursor-pointer list-none font-semibold text-sm text-[#F5E8CC] hover:text-[#E8A33D] transition-colors">
                       {item.question}
                       <ChevronDown size={15} className="shrink-0 transition-transform duration-200 group-open:rotate-180" />
                     </summary>
-                    <div className="px-5 pb-5 pt-3 text-sm text-[#5C3D20] leading-relaxed border-t border-[#F0E5D0]">
+                    <div className="px-5 pb-5 pt-3 text-sm text-[#C4A882] leading-relaxed border-t border-[rgba(232,163,61,0.12)]">
                       {item.answer}
                     </div>
                   </details>
@@ -334,9 +334,9 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
 
         {/* ── Related tickets ── */}
         {related.length > 0 && (
-        <div className="mt-16 pt-10 border-t border-[#E8D5B7]">
+        <div className="mt-16 pt-10 border-t border-[rgba(232,163,61,0.15)]">
           <h2
-            className="text-2xl font-bold text-[#3D2817] mb-8 text-center"
+            className="text-2xl font-bold text-[#F5E8CC] mb-8 text-center"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             {td('alsoConsider')}
@@ -360,19 +360,19 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width:640px) 100vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#3D2817]/50 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1C1108]/60 to-transparent" />
                   </div>
                   <div className="p-5 flex-1">
                     <h3
-                      className="font-bold text-[#3D2817] mb-1"
+                      className="font-bold text-[#F5E8CC] mb-1"
                       style={{ fontFamily: 'var(--font-heading)', fontSize: '1.1rem' }}
                     >
                       {relName}
                     </h3>
-                    <p className="text-sm text-[#5C3D20] mb-3 leading-snug">{relTagline}</p>
+                    <p className="text-sm text-[#C4A882] mb-3 leading-snug">{relTagline}</p>
                     <p className="text-[#C4452D] font-bold" style={{ fontFamily: 'var(--font-heading)' }}>
                       {t('from')} ${rel.price}
-                      <span className="text-xs font-normal text-[#5C3D20] ml-1">{t('perPerson')}</span>
+                      <span className="text-xs font-normal text-[#C4A882] ml-1">{t('perPerson')}</span>
                     </p>
                   </div>
                 </Link>
