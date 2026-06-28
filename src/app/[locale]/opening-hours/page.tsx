@@ -29,22 +29,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const hoursSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'TouristAttraction',
-  name: 'Bahia Palace',
-  url: `${BASE}/en/opening-hours`,
-  openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Saturday','Sunday'], opens: '09:00', closes: '17:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Friday'], opens: '09:00', closes: '12:00' },
-  ],
-  address: { '@type': 'PostalAddress', streetAddress: 'Rue Riad Zitoun el Jedid', addressLocality: 'Marrakech', addressCountry: 'MA' },
-};
+function getHoursSchema(locale: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'TouristAttraction',
+    name: 'Bahia Palace',
+    url: `${BASE}/${locale}/opening-hours`,
+    openingHoursSpecification: [
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Saturday','Sunday'], opens: '09:00', closes: '17:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Friday'], opens: '09:00', closes: '12:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Friday'], opens: '14:00', closes: '17:00' },
+    ],
+    address: { '@type': 'PostalAddress', streetAddress: 'Rue Riad Zitoun el Jedid', addressLocality: 'Marrakech', addressCountry: 'MA' },
+  };
+}
 
-export default async function OpeningHoursPage(_props: Props) {
+export default async function OpeningHoursPage({ params }: Props) {
+  const { locale } = await params;
   return (
     <div className="min-h-screen bg-[#1C1108]">
-      <JsonLd data={hoursSchema} />
+      <JsonLd data={getHoursSchema(locale)} />
 
       <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] text-white px-6 py-12 md:px-10">
         <div className="max-w-4xl mx-auto">

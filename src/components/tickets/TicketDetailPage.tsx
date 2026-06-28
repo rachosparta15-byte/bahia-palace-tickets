@@ -62,18 +62,18 @@ function ComingSoonWidget({ ticketName }: { ticketName: string }) {
         <p className="text-sm text-[#C4A882] leading-relaxed">
           We&apos;re putting the final touches on this experience. Only our skip-the-line ticket is available right now.
         </p>
-        <a
+        <Link
           href="/tickets/skip-the-line"
           className="flex items-center justify-center gap-2 w-full bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold py-3.5 rounded-xl transition-colors text-sm"
         >
           Book Skip-the-Line Instead
-        </a>
-        <a
+        </Link>
+        <Link
           href="/contact"
           className="block text-sm text-[#C4A882] hover:text-[#F5E8CC] underline transition-colors"
         >
           Contact us to be notified when this launches
-        </a>
+        </Link>
       </div>
     </div>
   );

@@ -29,28 +29,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const locationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'TouristAttraction',
-  name: 'Bahia Palace',
-  url: `${BASE}/en/location`,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Rue Riad Zitoun el Jedid',
-    addressLocality: 'Marrakech',
-    addressRegion: 'Marrakech-Safi',
-    postalCode: '40000',
-    addressCountry: 'MA',
-  },
-  geo: { '@type': 'GeoCoordinates', latitude: 31.6226, longitude: -7.9842 },
-  hasMap: 'https://maps.google.com/?q=Bahia+Palace+Marrakech',
-  telephone: '+212-524-38-91-05',
-};
+function getLocationSchema(locale: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'TouristAttraction',
+    name: 'Bahia Palace',
+    url: `${BASE}/${locale}/location`,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Rue Riad Zitoun el Jedid',
+      addressLocality: 'Marrakech',
+      addressRegion: 'Marrakech-Safi',
+      postalCode: '40000',
+      addressCountry: 'MA',
+    },
+    geo: { '@type': 'GeoCoordinates', latitude: 31.6226, longitude: -7.9842 },
+    hasMap: 'https://maps.google.com/?q=Bahia+Palace+Marrakech',
+    telephone: '+212-524-38-91-05',
+  };
+}
 
-export default async function LocationPage(_props: Props) {
+export default async function LocationPage({ params }: Props) {
+  const { locale } = await params;
   return (
     <div className="min-h-screen bg-[#1C1108]">
-      <JsonLd data={locationSchema} />
+      <JsonLd data={getLocationSchema(locale)} />
 
       <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] text-white px-6 py-12 md:px-10">
         <div className="max-w-4xl mx-auto">
