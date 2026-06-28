@@ -30,24 +30,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const priceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'TouristAttraction',
-  name: 'Bahia Palace',
-  url: `${BASE}/en/entrance-fee`,
-  offers: [
-    { '@type': 'Offer', name: 'Standard Entry (gate)',     price: '10', priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
-    { '@type': 'Offer', name: 'Skip-the-Line (online)',   price: '14', priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
-    { '@type': 'Offer', name: 'Guided Tour (online)',      price: '28', priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
-    { '@type': 'Offer', name: 'Private Tour (online)',     price: '49', priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
-  ],
-};
+function getPriceSchema(locale: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'TouristAttraction',
+    name: 'Bahia Palace',
+    url: `${BASE}/${locale}/entrance-fee`,
+    offers: [
+      { '@type': 'Offer', name: 'Standard Entry (gate)',     price: '10', priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
+      { '@type': 'Offer', name: 'Skip-the-Line (online)',   price: '14', priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
+      { '@type': 'Offer', name: 'Guided Tour (online)',      price: '28', priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
+      { '@type': 'Offer', name: 'Private Tour (online)',     price: '49', priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
+    ],
+  };
+}
 
-export default async function EntranceFeePage(_props: Props) {
-
+export default async function EntranceFeePage({ params }: Props) {
+  const { locale } = await params;
   return (
     <div className="min-h-screen bg-[#1C1108]">
-      <JsonLd data={priceSchema} />
+      <JsonLd data={getPriceSchema(locale)} />
 
       {/* Header */}
       <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] text-white px-6 py-12 md:px-10">

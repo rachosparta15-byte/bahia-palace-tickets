@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { BASE } from '@/lib/seo';
 import { Analytics } from '@vercel/analytics/next';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
@@ -33,6 +33,12 @@ const amiri = Amiri({
   display: 'swap',
 });
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
   title: 'Bahia Palace Tickets — Skip the Line | Marrakech',
@@ -43,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'Bahia Palace Tickets',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Bahia Palace Tickets — Marrakech' }],
   },
   twitter: {
     card: 'summary_large_image',

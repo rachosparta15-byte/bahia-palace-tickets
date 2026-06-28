@@ -130,7 +130,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates:  staticPath
-      ? { canonical: `${BASE}/${locale}${staticPath}`, languages: buildAlternates(locale, `/blog/${slug}`).languages }
+      ? { canonical: `${BASE}/${locale}${staticPath}`, languages: buildAlternates(locale, staticPath).languages }
       : buildAlternates(locale, `/blog/${slug}`),
     openGraph: {
       title:  rawTitle,

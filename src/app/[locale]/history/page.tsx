@@ -30,21 +30,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const historySchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'Bahia Palace History — Ba Ahmed and the Story Behind the Palace',
-  description: 'The complete history of Bahia Palace Marrakech, built between 1866 and 1900.',
-  url: `${BASE}/en/history`,
-  author: { '@type': 'Organization', name: 'Visit Bahia Palace' },
-  publisher: { '@type': 'Organization', name: 'Visit Bahia Palace', logo: { '@type': 'ImageObject', url: `${BASE}/og-image.jpg` } },
-  about: {
-    '@type': 'TouristAttraction',
-    name: 'Bahia Palace',
-    foundingDate: '1866',
-    address: { '@type': 'PostalAddress', addressLocality: 'Marrakech', addressCountry: 'MA' },
-  },
-};
+function getHistorySchema(locale: string) {
+  const meta = META[locale] ?? META.en;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: meta.title,
+    description: meta.description,
+    url: `${BASE}/${locale}/history`,
+    author: { '@type': 'Organization', name: 'Visit Bahia Palace' },
+    publisher: { '@type': 'Organization', name: 'Visit Bahia Palace', logo: { '@type': 'ImageObject', url: `${BASE}/og-image.jpg` } },
+    about: {
+      '@type': 'TouristAttraction',
+      name: 'Bahia Palace',
+      foundingDate: '1866',
+      address: { '@type': 'PostalAddress', addressLocality: 'Marrakech', addressCountry: 'MA' },
+    },
+  };
+}
 
 const timeline = [
   { year: '1859–1873', title: 'Si Moussa Begins the Palace', text: 'Grand Vizier Si Moussa, the first builder, begins construction of the core structure. He names it "Dar Si Moussa" — later it would become the eastern wing of Bahia Palace. The name "Bahia" (meaning "brilliant" in Arabic) reflects his ambition for a palace of extraordinary beauty.' },
@@ -54,10 +57,11 @@ const timeline = [
   { year: '1956–present', title: 'Moroccan Heritage Site', text: 'After Moroccan independence, Bahia Palace becomes a protected heritage site managed by the Ministry of Culture. It opens to tourists and becomes one of Marrakech\'s most visited attractions, receiving over 500,000 visitors annually.' },
 ];
 
-export default async function HistoryPage(_props: Props) {
+export default async function HistoryPage({ params }: Props) {
+  const { locale } = await params;
   return (
     <div className="min-h-screen bg-[#1C1108]">
-      <JsonLd data={historySchema} />
+      <JsonLd data={getHistorySchema(locale)} />
 
       {/* Hero */}
       <div className="relative h-72 md:h-96">
