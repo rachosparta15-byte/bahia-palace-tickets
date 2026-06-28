@@ -29,6 +29,11 @@ const REDIRECTED_BLOG_SLUGS = new Set([
   'how-to-avoid-tourist-scams-marrakech-safety-guide-2026',
   'how-to-avoid-scams-in-the-souks-of-marrakech-complete-guide-for-travelers',
   '2-days-in-marrakech-perfect-weekend-itinerary-2026',
+  // Deleted / merged posts (301 redirects added)
+  'bahia-palace-skip-the-line-guide',
+  'marrakech-the-red-city-where-history-comes-alive',
+  'marrakech-la-ciudad-roja-donde-la-historia-cobra-vida',
+  'best-colors-to-wear-for-a-photoshoot-at-bahia-palace-marrakech',
 ]);
 
 const STATIC: { path: string; priority: number; freq: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [

@@ -92,7 +92,6 @@ export default async function BlogIndexPage({ params }: Props) {
     'how-to-get-to-bahia-palace',
     'history-of-bahia-palace',
     'marrakech-tourist-scams-guide',
-    'best-time-to-visit-bahia-palace',
   ]);
   const filteredPosts = posts.filter(p => !REDIRECTED_SLUGS.has(p.slug));
 

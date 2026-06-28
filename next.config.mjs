@@ -77,6 +77,22 @@ const nextConfig = {
         permanent:   true,
       }))
     );
+    // Deleted posts — thin content (301 to nearest relevant page)
+    const BLOG_DELETED = [
+      // All-locale skip-the-line static guide → tickets page
+      ...LOCALES.map(locale => ({
+        source:      `/${locale}/blog/bahia-palace-skip-the-line-guide`,
+        destination: `/${locale}/tickets/skip-the-line`,
+        permanent:   true,
+      })),
+      // EN thin "red city" article → homepage
+      { source: '/en/blog/marrakech-the-red-city-where-history-comes-alive', destination: '/en', permanent: true },
+      // ES thin "ciudad roja" article → homepage
+      { source: '/es/blog/marrakech-la-ciudad-roja-donde-la-historia-cobra-vida', destination: '/es', permanent: true },
+      // EN thin photoshoot colors → photography guide (merge)
+      { source: '/en/blog/best-colors-to-wear-for-a-photoshoot-at-bahia-palace-marrakech', destination: '/en/blog/bahia-palace-photography-guide', permanent: true },
+    ];
+
     // EN-only duplicate slug redirects (slugs that only exist in EN)
     const BLOG_MERGE_EN_ONLY = [
       { from: 'bahia-palace-history-marrakech',                    to: 'bahia-palace-history' },
@@ -118,6 +134,7 @@ const nextConfig = {
       ...blogMergeAllLocales,
       ...blogMergeEnOnly,
       ...crossLocaleHistory,
+      ...BLOG_DELETED,
     ];
   },
   async headers() {
