@@ -73,7 +73,7 @@ export default async function EditorialPage({ params }: Props) {
               className="text-white font-bold leading-tight"
               style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 5vw, 3rem)' }}
             >
-              About the Author
+              Abdellah — Marrakech Travel Writer & Photographer
             </h1>
             <p className="text-white/80 mt-2 text-lg max-w-2xl">
               Who writes the articles on visitbahiapalace.com — and how.

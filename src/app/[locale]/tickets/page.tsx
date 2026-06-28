@@ -1,8 +1,9 @@
 import { getTranslations } from 'next-intl/server';
 import { TicketSection } from '@/components/homepage/TicketSection';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
+import { JsonLd } from '@/components/seo/JsonLd';
 import type { Metadata } from 'next';
-import { buildAlternates, buildOG } from '@/lib/seo';
+import { buildAlternates, buildOG, BASE } from '@/lib/seo';
 
 export const revalidate = 86400;
 
@@ -43,8 +44,35 @@ export default async function TicketsPage({ params }: Props) {
   const tb = await getTranslations({ locale, namespace: 'breadcrumb' });
   const h1 = H1_LABELS[locale] ?? H1_LABELS.en;
 
+  const ticketsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: TICKETS_META[locale]?.title ?? TICKETS_META.en.title,
+    url: `${BASE}/${locale}/tickets`,
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        item: {
+          '@type': 'Product',
+          name: 'Bahia Palace Skip-the-Line Ticket',
+          url: `${BASE}/${locale}/tickets/skip-the-line`,
+          image: `${BASE}/og-image.jpg`,
+          offers: {
+            '@type': 'Offer',
+            price: '10.00',
+            priceCurrency: 'USD',
+            availability: 'https://schema.org/InStock',
+            url: `${BASE}/${locale}/tickets/skip-the-line`,
+          },
+        },
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-[#1C1108]">
+      <JsonLd data={ticketsSchema} />
       <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] px-6 py-8">
         <div className="max-w-6xl mx-auto">
           <Breadcrumb

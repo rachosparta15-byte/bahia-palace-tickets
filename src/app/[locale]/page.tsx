@@ -104,12 +104,39 @@ export default async function HomePage({ params }: Props) {
       longitude: -7.9842,
     },
     openingHoursSpecification: [
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '09:00', closes: '17:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Saturday','Sunday'], opens: '09:00', closes: '17:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Friday'], opens: '09:00', closes: '12:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Friday'], opens: '14:00', closes: '17:00' },
     ],
     offers: [
       { '@type': 'Offer', name: 'Skip-the-Line Entry', price: '10', priceCurrency: 'USD', url: `${BASE}/${locale}/tickets/skip-the-line`, availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
     ],
     touristType: ['History enthusiasts', 'Architecture lovers', 'Cultural tourists'],
+  };
+
+  const localBusiness = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Visit Bahia Palace — Tickets & Visitor Guide',
+    description: HOME_META[locale]?.description ?? HOME_META.en.description,
+    url: `${BASE}/${locale}`,
+    image: `${BASE}/og-image.jpg`,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Rue Riad Zitoun el Jedid',
+      addressLocality: 'Marrakech',
+      addressRegion: 'Marrakech-Safi',
+      postalCode: '40000',
+      addressCountry: 'MA',
+    },
+    geo: { '@type': 'GeoCoordinates', latitude: 31.6226, longitude: -7.9842 },
+    telephone: '+212-524-38-91-05',
+    priceRange: '$$',
+    openingHoursSpecification: [
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Saturday','Sunday'], opens: '09:00', closes: '17:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Friday'], opens: '09:00', closes: '12:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Friday'], opens: '14:00', closes: '17:00' },
+    ],
   };
 
   const breadcrumb = {
@@ -123,6 +150,7 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       <JsonLd data={touristAttraction} />
+      <JsonLd data={localBusiness} />
       <JsonLd data={faqSchema} />
       <JsonLd data={breadcrumb} />
       <Hero />
