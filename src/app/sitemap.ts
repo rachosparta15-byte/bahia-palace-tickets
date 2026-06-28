@@ -7,10 +7,28 @@ export const dynamic = 'force-dynamic';
 const LOCALES = ['en', 'fr', 'it', 'de', 'es'] as const;
 
 const REDIRECTED_BLOG_SLUGS = new Set([
+  // All-locale redirects
   'how-to-get-to-bahia-palace',
   'history-of-bahia-palace',
   'marrakech-tourist-scams-guide',
-  'best-time-to-visit-bahia-palace',
+  'bahia-palace-who-built-it',
+  // EN-only duplicate slugs
+  'bahia-palace-history-marrakech',
+  'who-built-bahia-palace-history-ba-ahmed',
+  'bahia-palace-entrance-fee-2026-tickets-prices',
+  'how-to-get-to-bahia-palace-from-jemaa-el-fna',
+  'is-bahia-palace-worth-visiting-honest-review-2026',
+  'what-to-wear-bahia-palace-marrakech-dress-code',
+  'bahia-palace-photography-guide-best-spots-tips',
+  'what-to-see-inside-bahia-palace-room-by-room',
+  'bahia-palace-opening-hours-best-time-to-visit',
+  'best-time-to-visit-bahia-palace-marrakech-2026',
+  'bahia-palace-vs-badi-palace-which-to-visit',
+  'bahia-palace-vs-saadian-tombs-comparison',
+  'jardin-majorelle-vs-bahia-palace-marrakech',
+  'how-to-avoid-tourist-scams-marrakech-safety-guide-2026',
+  'how-to-avoid-scams-in-the-souks-of-marrakech-complete-guide-for-travelers',
+  '2-days-in-marrakech-perfect-weekend-itinerary-2026',
 ]);
 
 const STATIC: { path: string; priority: number; freq: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
@@ -81,6 +99,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   } catch { /* DB unavailable at sitemap generation time */ }
 
+  // History posts use different slugs per locale — hardcode their cross-slug hreflang
+  const HISTORY_HREFLANG: Record<string, string> = {
+    en: 'bahia-palace-history',
+    fr: 'palais-de-la-bahia-marrakech-histoire',
+    de: 'palast-bahia-marrakesch-geschichte',
+    it: 'palazzo-bahia-marrakech-storia',
+    es: 'palacio-bahia-marrakech-historia',
+  };
+  const HISTORY_SLUGS = new Set(Object.values(HISTORY_HREFLANG));
+  const historyLanguages = Object.fromEntries(
+    Object.entries(HISTORY_HREFLANG).map(([l, s]) => [l, `${BASE}/${l}/blog/${s}`])
+  );
+
   if (dbPosts.length > 0) {
     // DB path — preserve hreflang across only the locales that exist in the DB
     const bySlug = new Map<string, typeof dbPosts>();
@@ -90,9 +121,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       bySlug.set(post.slug, group);
     }
     for (const group of bySlug.values()) {
-      const languages = Object.fromEntries(
-        group.map(p => [p.locale, `${BASE}/${p.locale}/blog/${p.slug}`])
-      );
+      const isHistory = HISTORY_SLUGS.has(group[0].slug);
+      const languages = isHistory
+        ? historyLanguages
+        : Object.fromEntries(group.map(p => [p.locale, `${BASE}/${p.locale}/blog/${p.slug}`]));
       for (const post of group) {
         entries.push({
           url: `${BASE}/${post.locale}/blog/${post.slug}`,

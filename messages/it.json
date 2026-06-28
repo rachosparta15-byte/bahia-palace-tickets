@@ -11,9 +11,9 @@
     "gallery": "Galleria"
   },
   "hero": {
-    "badge": "Guida Visitatori · Salta la fila",
-    "headline": "Palazzo Bahia Marrakech — Guida Visitatori & Biglietti Salta-Fila",
-    "subheadline": "Conferma immediata • Biglietti mobili • Cancellazione gratuita fino a 24h",
+    "badge": "Guida Visitatori Â· Salta la fila",
+    "headline": "Palazzo Bahia Marrakech â€” Guida Visitatori & Biglietti Salta-Fila",
+    "subheadline": "Conferma immediata â€¢ Biglietti mobili â€¢ Cancellazione gratuita fino a 24h",
     "ctaBook": "Pianifica la visita",
     "ctaTours": "Vedi le Tour",
     "trustNote": "Oltre 50.000 visitatori soddisfatti"
@@ -26,15 +26,15 @@
   },
   "tickets": {
     "title": "Scegli la tua Esperienza al Palazzo Bahia",
-    "subtitle": "Salta le code e goditi una visita senza stress in uno dei palazzi più spettacolari di Marrakech",
+    "subtitle": "Salta le code e goditi una visita senza stress in uno dei palazzi piÃ¹ spettacolari di Marrakech",
     "from": "Da",
     "perPerson": "per persona",
     "bookNow": "Vedi i biglietti",
-    "learnMore": "Scopri di più",
+    "learnMore": "Scopri di piÃ¹",
     "skipTheLine": {
       "name": "Ingresso Salta Fila",
       "tagline": "Accesso prioritario al Palazzo Bahia",
-      "duration": "Visita libera • ~1–2 ore",
+      "duration": "Visita libera â€¢ ~1â€“2 ore",
       "includes": [
         "Biglietto d'ingresso prioritario",
         "Biglietto mobile o stampato",
@@ -47,17 +47,17 @@
         "Cibo e bevande"
       ],
       "meetingPoint": "Ingresso principale del Palazzo Bahia, Rue Riad Zitoun el Jedid, Medina di Marrakech",
-      "longDesc": "Salta la coda alla biglietteria ed entra direttamente in uno dei palazzi più magnifici di Marrakech. Il tuo biglietto QR pre-validato significa zero tempo perso allo sportello. Esplora al tuo ritmo — la maggior parte dei visitatori trascorre 1-2 ore scoprendo gli intricati mosaici di zellige, i soffitti di cedro intagliato e i lussureggianti giardini interni.",
-      "whyOnline": "Le code possono durare 2 ore — prenota online ed entra direttamente"
+      "longDesc": "Salta la coda alla biglietteria ed entra direttamente in uno dei palazzi piÃ¹ magnifici di Marrakech. Il tuo biglietto QR pre-validato significa zero tempo perso allo sportello. Esplora al tuo ritmo â€” la maggior parte dei visitatori trascorre 1-2 ore scoprendo gli intricati mosaici di zellige, i soffitti di cedro intagliato e i lussureggianti giardini interni.",
+      "whyOnline": "Le code possono durare 2 ore â€” prenota online ed entra direttamente"
     },
     "guidedTour": {
       "name": "Tour Guidato con Esperto",
       "tagline": "Scopri i segreti del palazzo con una guida locale",
-      "duration": "Guidato • ~2 ore",
+      "duration": "Guidato â€¢ ~2 ore",
       "includes": [
         "Accesso salta fila",
         "Guida locale certificata",
-        "Storia e curiosità",
+        "Storia e curiositÃ ",
         "Piccolo gruppo (max 12)",
         "Cancellazione gratuita 24h prima"
       ],
@@ -66,14 +66,14 @@
         "Cibo e bevande",
         "Mance (facoltative)"
       ],
-      "meetingPoint": "Ingresso principale del Palazzo Bahia — cerca la guida con il cartello Bahia Palace Tickets",
-      "longDesc": "Scopri i veri segreti del Palazzo Bahia con una guida certificata appassionata. Impara perché il palazzo fu costruito in segreto, scopri le intrighe politiche dietro la sua architettura e rivela storie che non troverai in nessuna guida turistica. Gruppi piccoli di massimo 12 persone garantiscono un'esperienza personalizzata.",
-      "whyOnline": "Le guide certificate si esauriscono in fretta — prenota il tuo posto online ora"
+      "meetingPoint": "Ingresso principale del Palazzo Bahia â€” cerca la guida con il cartello Bahia Palace Tickets",
+      "longDesc": "Scopri i veri segreti del Palazzo Bahia con una guida certificata appassionata. Impara perchÃ© il palazzo fu costruito in segreto, scopri le intrighe politiche dietro la sua architettura e rivela storie che non troverai in nessuna guida turistica. Gruppi piccoli di massimo 12 persone garantiscono un'esperienza personalizzata.",
+      "whyOnline": "Le guide certificate si esauriscono in fretta â€” prenota il tuo posto online ora"
     },
     "privateTour": {
       "name": "Tour Privato",
       "tagline": "Un'esperienza esclusiva solo per te",
-      "duration": "Privato • ~2,5 ore",
+      "duration": "Privato â€¢ ~2,5 ore",
       "includes": [
         "Guida certificata privata",
         "Accesso salta fila",
@@ -85,14 +85,14 @@
         "Trasporto al palazzo",
         "Cibo e bevande"
       ],
-      "meetingPoint": "Ingresso principale del Palazzo Bahia — la tua guida privata ti aspetterà lì",
+      "meetingPoint": "Ingresso principale del Palazzo Bahia â€” la tua guida privata ti aspetterÃ  lÃ¬",
       "longDesc": "L'esperienza definitiva al Palazzo Bahia. La tua guida certificata privata dedica l'intera visita a te e al tuo gruppo. Vai al tuo ritmo, fai tutte le domande che vuoi ed esplora le aree a piacere. Perfetto per famiglie, coppie e chiunque voglia che la storia del palazzo venga raccontata esclusivamente per loro.",
-      "whyOnline": "Prenotazione anticipata obbligatoria — tour privati non prenotabili in loco"
+      "whyOnline": "Prenotazione anticipata obbligatoria â€” tour privati non prenotabili in loco"
     },
     "combo": {
       "name": "Combo: Bahia + Tombe Saadiane",
       "tagline": "Due monumenti iconici di Marrakech in un giorno",
-      "duration": "Visita libera • ~3–4 ore",
+      "duration": "Visita libera â€¢ ~3â€“4 ore",
       "includes": [
         "Ingresso Palazzo Bahia",
         "Ingresso Tombe Saadiane",
@@ -106,12 +106,12 @@
         "Cibo e bevande"
       ],
       "meetingPoint": "Prima l'ingresso principale del Palazzo Bahia, poi le Tombe Saadiane (10 minuti a piedi)",
-      "longDesc": "Due dei siti storici più mozzafiato di Marrakech, un unico biglietto conveniente. Inizia dai cortili abbaglianti del Palazzo Bahia, poi cammina 10 minuti fino alle Tombe Saadiane — sontuosi mausolei reali sigillati per 200 anni e riscoperti solo nel 1917. Il miglior rapporto qualità-prezzo per gli appassionati di storia.",
-      "whyOnline": "Biglietto combinato disponibile solo online — risparmia tempo in entrambi i siti"
+      "longDesc": "Due dei siti storici piÃ¹ mozzafiato di Marrakech, un unico biglietto conveniente. Inizia dai cortili abbaglianti del Palazzo Bahia, poi cammina 10 minuti fino alle Tombe Saadiane â€” sontuosi mausolei reali sigillati per 200 anni e riscoperti solo nel 1917. Il miglior rapporto qualitÃ -prezzo per gli appassionati di storia.",
+      "whyOnline": "Biglietto combinato disponibile solo online â€” risparmia tempo in entrambi i siti"
     }
   },
   "whyUs": {
-    "title": "Perché Prenotare con Noi?",
+    "title": "PerchÃ© Prenotare con Noi?",
     "items": [
       {
         "title": "Consegna Biglietto Immediata",
@@ -119,7 +119,7 @@
       },
       {
         "title": "Ingresso Garantito",
-        "desc": "Il tuo biglietto è pre-validato. Mostra il telefono e accedi direttamente."
+        "desc": "Il tuo biglietto Ã¨ pre-validato. Mostra il telefono e accedi direttamente."
       },
       {
         "title": "Informazioni Affidabili",
@@ -133,20 +133,20 @@
   },
   "about": {
     "title": "Il Palazzo Bahia",
-    "body": "Costruito alla fine del XIX secolo per Si Moussa, grande visir del sultano, il Palazzo Bahia («Palazzo della Bella») è un capolavoro dell'architettura marocchina. I suoi 8 ettari di intricati zellige, soffitti in cedro intagliato e giardini lussureggianti incantano i visitatori da oltre un secolo.",
-    "readMore": "Leggi la storia completa →"
+    "body": "Costruito alla fine del XIX secolo per Si Moussa, grande visir del sultano, il Palazzo Bahia (Â«Palazzo della BellaÂ») Ã¨ un capolavoro dell'architettura marocchina. I suoi 8 ettari di intricati zellige, soffitti in cedro intagliato e giardini lussureggianti incantano i visitatori da oltre un secolo.",
+    "readMore": "Leggi la storia completa â†’"
   },
   "reviews": {
     "title": "Cosa Dicono i Visitatori",
     "subtitle": "Esperienze reali di visitatori da tutto il mondo",
-    "tripAdvisorPrompt": "Leggi le recensioni autentiche dei visitatori su TripAdvisor — la più grande piattaforma di viaggi al mondo.",
+    "tripAdvisorPrompt": "Leggi le recensioni autentiche dei visitatori su TripAdvisor â€” la piÃ¹ grande piattaforma di viaggi al mondo.",
     "tripAdvisorCta": "Leggi le recensioni su TripAdvisor",
-    "tripAdvisorNote": "Palazzo Bahia · Marrakech · Medina",
+    "tripAdvisorNote": "Palazzo Bahia Â· Marrakech Â· Medina",
     "seeAllOnTripAdvisor": "Vedi tutte le recensioni su TripAdvisor"
   },
   "faq": {
     "title": "Domande Frequenti",
-    "viewAll": "Vedi tutte le FAQ →",
+    "viewAll": "Vedi tutte le FAQ â†’",
     "items": [
       {
         "question": "Come ricevo il mio biglietto?",
@@ -154,29 +154,29 @@
       },
       {
         "question": "Posso cancellare o modificare la prenotazione?",
-        "answer": "Sì! Offriamo la cancellazione gratuita fino a 24 ore prima della tua visita programmata. Scrivici una email o usa il link di conferma della tua prenotazione."
+        "answer": "SÃ¬! Offriamo la cancellazione gratuita fino a 24 ore prima della tua visita programmata. Scrivici una email o usa il link di conferma della tua prenotazione."
       },
       {
         "question": "Quali sono gli orari di apertura del Palazzo Bahia?",
-        "answer": "Il Palazzo Bahia è aperto tutti i giorni dalle 9:00 alle 17:00 (ultimo ingresso 16:30). Gli orari possono variare durante il Ramadan e i giorni festivi."
+        "answer": "Il Palazzo Bahia Ã¨ aperto tutti i giorni dalle 9:00 alle 17:00 (ultimo ingresso 16:30). Gli orari possono variare durante il Ramadan e i giorni festivi."
       },
       {
-        "question": "C'è un codice di abbigliamento?",
-        "answer": "Il Palazzo Bahia non ha un codice di abbigliamento rigoroso, ma un abbigliamento sobrio è apprezzato. Si consiglia di coprire spalle e ginocchia."
+        "question": "C'Ã¨ un codice di abbigliamento?",
+        "answer": "Il Palazzo Bahia non ha un codice di abbigliamento rigoroso, ma un abbigliamento sobrio Ã¨ apprezzato. Si consiglia di coprire spalle e ginocchia."
       },
       {
-        "question": "È permesso fare foto?",
-        "answer": "Sì, la fotografia è consentita in tutto il Palazzo Bahia per uso personale. Treppiedi e attrezzature professionali richiedono autorizzazione speciale."
+        "question": "Ãˆ permesso fare foto?",
+        "answer": "SÃ¬, la fotografia Ã¨ consentita in tutto il Palazzo Bahia per uso personale. Treppiedi e attrezzature professionali richiedono autorizzazione speciale."
       },
       {
         "question": "Come funziona il salto fila?",
-        "answer": "Con il nostro biglietto salta fila, vai direttamente all'ingresso prioritario. I nostri biglietti sono pre-validati, quindi non è necessario fare la coda alla biglietteria."
+        "answer": "Con il nostro biglietto salta fila, vai direttamente all'ingresso prioritario. I nostri biglietti sono pre-validati, quindi non Ã¨ necessario fare la coda alla biglietteria."
       }
     ]
   },
   "scamBanner": {
-    "text": "Evita le truffe comuni a Marrakech — proteggi la tua visita.",
-    "link": "Leggi la nostra Guida Sicurezza →"
+    "text": "Evita le truffe comuni a Marrakech â€” proteggi la tua visita.",
+    "link": "Leggi la nostra Guida Sicurezza â†’"
   },
   "cta": {
     "title": "Avete letto tutto. Ora entrate.",
@@ -185,7 +185,7 @@
     "stickyMobile": "Salta la fila da $10"
   },
   "footer": {
-    "tagline": "Il modo più semplice per visitare il Palazzo Bahia.",
+    "tagline": "Il modo piÃ¹ semplice per visitare il Palazzo Bahia.",
     "tickets": "Biglietti",
     "skipTheLine": "Salta Fila",
     "viewAllTickets": "Vedi tutti i biglietti",
@@ -205,16 +205,16 @@
     "cookies": "Politica Cookie",
     "editorial": "Redazione",
     "contact": "Contatti",
-    "copyright": "© {year} Bahia Palace Tickets. Tutti i diritti riservati.",
-    "paymentNote": "Biglietteria ufficiale tramite il portale del Ministero della Cultura",
-    "disclaimer": "visitbahiapalace.com è un sito di informazioni turistiche indipendente. Non siamo affiliati al Palazzo Bahia ufficiale né al Ministero della Cultura del Marocco. Per i biglietti ufficiali, visita: e-services.minculture.gov.ma"
+    "copyright": "Â© {year} Bahia Palace Tickets. Tutti i diritti riservati.",
+    "paymentNote": "Biglietti salta-fila sicuri — conferma immediata",
+    "disclaimer": "visitbahiapalace.com Ã¨ un sito di informazioni turistiche indipendente. Non siamo affiliati al Palazzo Bahia ufficiale nÃ© al Ministero della Cultura del Marocco. Per i biglietti ufficiali, visita: e-services.minculture.gov.ma"
   },
   "whatsapp": {
     "tooltip": "Chatta con noi",
     "message": "Ciao! Ho una domanda sui biglietti per Palazzo Bahia."
   },
   "ticketDetail": {
-    "includes": "Cosa è incluso",
+    "includes": "Cosa Ã¨ incluso",
     "excludes": "Non incluso",
     "meetingPoint": "Punto di incontro",
     "bookingInfo": "Informazioni sulla prenotazione",
@@ -223,7 +223,7 @@
     "childrenLabel": "Bambini (sotto i 12 anni)",
     "childFree": "Gratis",
     "total": "Totale",
-    "proceedToCheckout": "Continua per i biglietti ufficiali →",
+    "proceedToCheckout": "Continua per i biglietti ufficiali â†’",
     "instantConfirm": "Conferma immediata",
     "freeCancelNote": "Cancellazione gratuita fino a 24h prima",
     "mobileTicket": "Biglietto mobile accettato",
@@ -233,33 +233,33 @@
     "gallery": "Galleria",
     "faqTitle": "Domande su questo tour",
     "alsoConsider": "Potrebbe interessarti anche",
-    "whatsappCta": "Hai una domanda? Scrivici su WhatsApp →",
+    "whatsappCta": "Hai una domanda? Scrivici su WhatsApp â†’",
     "whatsappMsg": "Ciao! Ho una domanda sul biglietto {ticket}.",
     "adult": "adulto",
     "child": "bambino",
     "adults": "adulti",
     "children": "bambini",
     "openingHours": "Orari di apertura",
-    "openingHoursVal": "Tutti i giorni 9:00 – 17:00 (ultimo ingresso 16:30)"
+    "openingHoursVal": "Tutti i giorni 9:00 â€“ 17:00 (ultimo ingresso 16:30)"
   },
   "aboutPage": {
-    "metaTitle": "Visitbahiapalace.com — Guida Indipendente al Palazzo Bahia",
-    "metaDesc": "Visitbahiapalace.com è una guida turistica indipendente per il Palazzo Bahia a Marrakech. Confronta i biglietti, controlla gli orari e pianifica la tua visita.",
-    "hero": "Chi siamo — visitbahiapalace.com",
-    "heroSub": "Un sito di informazioni turistiche indipendente per il Palazzo Bahia, uno dei più bei monumenti marocchini del XIX secolo.",
+    "metaTitle": "Visitbahiapalace.com â€” Guida Indipendente al Palazzo Bahia",
+    "metaDesc": "Visitbahiapalace.com Ã¨ una guida turistica indipendente per il Palazzo Bahia a Marrakech. Confronta i biglietti, controlla gli orari e pianifica la tua visita.",
+    "hero": "Chi siamo â€” visitbahiapalace.com",
+    "heroSub": "Un sito di informazioni turistiche indipendente per il Palazzo Bahia, uno dei piÃ¹ bei monumenti marocchini del XIX secolo.",
     "missionTitle": "La Nostra Missione",
-    "missionBody": "Aiutare i viaggiatori internazionali a pianificare la loro visita al Palazzo Bahia con informazioni accurate e utili — storia, consigli pratici, informazioni di sicurezza e link alla biglietteria ufficiale.",
+    "missionBody": "Aiutare i viaggiatori internazionali a pianificare la loro visita al Palazzo Bahia con informazioni accurate e utili â€” storia, consigli pratici, informazioni di sicurezza e link alla biglietteria ufficiale.",
     "whyTitle": "Cosa Offriamo",
-    "whyBody": "Guide turistiche complete e contesto storico · Consigli pratici su orari e prezzi · Informazioni di sicurezza per i turisti · Risposte alle domande frequenti · Link diretti alla biglietteria ufficiale su e-services.minculture.gov.ma",
+    "whyBody": "Guide turistiche complete e contesto storico Â· Consigli pratici su orari e prezzi Â· Informazioni di sicurezza per i turisti Â· Risposte alle domande frequenti Â· Link diretti alla biglietteria ufficiale su e-services.minculture.gov.ma",
     "teamTitle": "Avviso Importante",
-    "teamBody": "visitbahiapalace.com NON è affiliato all'amministrazione ufficiale del Palazzo Bahia né al Ministero della Cultura del Marocco. Siamo un sito di informazioni indipendente. Per i biglietti ufficiali, visita: e-services.minculture.gov.ma",
+    "teamBody": "visitbahiapalace.com NON Ã¨ affiliato all'amministrazione ufficiale del Palazzo Bahia nÃ© al Ministero della Cultura del Marocco. Siamo un sito di informazioni indipendente. Per i biglietti ufficiali, visita: e-services.minculture.gov.ma",
     "contactCta": "Contattaci",
     "ctaTitle": "Hai Domande sulla Tua Visita?",
     "ctaBody": "Domande sulla visita al Palazzo Bahia? Consulta le nostre FAQ o inviaci un messaggio."
   },
   "contactPage": {
     "title": "Contattaci",
-    "subtitle": "Domande, feedback o richieste speciali — siamo qui per aiutarti.",
+    "subtitle": "Domande, feedback o richieste speciali â€” siamo qui per aiutarti.",
     "nameLabel": "Il tuo nome",
     "emailLabel": "Indirizzo email",
     "subjectLabel": "Oggetto",
@@ -267,11 +267,11 @@
     "send": "Invia Messaggio",
     "sending": "Invio in corso...",
     "success": "Messaggio inviato! Ti risponderemo entro 24 ore.",
-    "error": "Qualcosa è andato storto. Riprova o scrivici su WhatsApp.",
+    "error": "Qualcosa Ã¨ andato storto. Riprova o scrivici su WhatsApp.",
     "orWhatsapp": "O contattaci istantaneamente su WhatsApp",
     "whatsappBtn": "Apri WhatsApp",
     "addressTitle": "Informazioni sul sito",
-    "addressVal": "Sito di informazioni indipendente per visitatori — non affiliato al Palazzo Bahia ufficiale né al Ministero della Cultura marocchino.",
+    "addressVal": "Sito di informazioni indipendente per visitatori â€” non affiliato al Palazzo Bahia ufficiale nÃ© al Ministero della Cultura marocchino.",
     "hoursTitle": "Tempo di risposta",
     "hoursVal": "Rispondiamo a tutti i messaggi entro 24 ore.",
     "emailTitle": "Email",
@@ -289,72 +289,72 @@
     },
     "all": "Tutte le Domande",
     "stillNeedHelp": "Hai ancora una domanda?",
-    "whatsappUs": "Scrivici su WhatsApp per aiuto immediato →",
+    "whatsappUs": "Scrivici su WhatsApp per aiuto immediato â†’",
     "ctaSkip": "Evita la coda di 2 ore",
     "ctaTitle": "Pianifica la tua visita al Palazzo Bahia",
-    "ctaBody": "Conferma immediata · Cancellazione gratuita · Biglietti mobili accettati",
+    "ctaBody": "Conferma immediata Â· Cancellazione gratuita Â· Biglietti mobili accettati",
     "ctaBtn": "Vedi Tutte le Opzioni Biglietti",
     "teamAvail": "Rispondiamo prontamente a tutte le richieste di prenotazione.",
     "items": [
       {
         "question": "Vale la pena visitare il Palazzo Bahia nel 2026?",
-        "answer": "Assolutamente. Il Palazzo Bahia è uno dei migliori esempi conservati di architettura marocchina del XIX secolo. Con 150 stanze, intricati zellige, soffitti in cedro dipinti a mano e lussureggianti giardini interni, offre uno sguardo incomparabile sulla vita reale marocchina. A 100 MAD (≈7$) è un valore eccezionale — e con un biglietto salta fila, l'esperienza diventa completamente senza stress."
+        "answer": "Assolutamente. Il Palazzo Bahia Ã¨ uno dei migliori esempi conservati di architettura marocchina del XIX secolo. Con 150 stanze, intricati zellige, soffitti in cedro dipinti a mano e lussureggianti giardini interni, offre uno sguardo incomparabile sulla vita reale marocchina. A 100 MAD (â‰ˆ7$) Ã¨ un valore eccezionale â€” e con un biglietto salta fila, l'esperienza diventa completamente senza stress."
       },
       {
         "question": "Quanto costa l'ingresso al Palazzo Bahia?",
-        "answer": "Il prezzo ufficiale è 100 MAD (circa 7$ USD o 6,50€). I bambini sotto i 7 anni entrano gratis, e gli studenti con documento valido pagano 50 MAD. I biglietti salta fila prenotati online partono da 10$ — incluso accesso prioritario ed evitando code che possono durare 1-2 ore in alta stagione."
+        "answer": "Il prezzo ufficiale Ã¨ 100 MAD (circa 7$ USD o 6,50â‚¬). I bambini sotto i 7 anni entrano gratis, e gli studenti con documento valido pagano 50 MAD. I biglietti salta fila prenotati online partono da 10$ â€” incluso accesso prioritario ed evitando code che possono durare 1-2 ore in alta stagione."
       },
       {
-        "question": "Quanto tempo è necessario al Palazzo Bahia?",
+        "question": "Quanto tempo Ã¨ necessario al Palazzo Bahia?",
         "answer": "La maggior parte dei visitatori trascorre 1-1,5 ore in visita autonoma. Con una guida, pianifica 1,5-2 ore. I tour privati sono flessibili e possono durare fino a 2,5 ore. Consigliamo di arrivare presto (9-10) per evitare la folla."
       },
       {
-        "question": "Qual è il momento migliore per visitare?",
-        "answer": "Il momento migliore è tra le 9 e le 10:30 — pochi visitatori e bella luce mattutina ideale per le foto. Evita le 10:30-14:00 quando arrivano i gruppi. Primavera (marzo-maggio) e autunno (settembre-novembre) offrono le temperature più piacevoli (20-28°C)."
+        "question": "Qual Ã¨ il momento migliore per visitare?",
+        "answer": "Il momento migliore Ã¨ tra le 9 e le 10:30 â€” pochi visitatori e bella luce mattutina ideale per le foto. Evita le 10:30-14:00 quando arrivano i gruppi. Primavera (marzo-maggio) e autunno (settembre-novembre) offrono le temperature piÃ¹ piacevoli (20-28Â°C)."
       },
       {
-        "question": "L'ingresso è gratuito?",
-        "answer": "No, l'ingresso costa 100 MAD (≈7$ USD) per gli adulti. I bambini sotto i 7 anni entrano gratis, gli studenti con documento valido pagano 50 MAD. La fotografia è inclusa nel prezzo del biglietto."
+        "question": "L'ingresso Ã¨ gratuito?",
+        "answer": "No, l'ingresso costa 100 MAD (â‰ˆ7$ USD) per gli adulti. I bambini sotto i 7 anni entrano gratis, gli studenti con documento valido pagano 50 MAD. La fotografia Ã¨ inclusa nel prezzo del biglietto."
       },
       {
         "question": "Come si arriva al Palazzo Bahia da Jemaa el-Fnaa?",
-        "answer": "Il Palazzo Bahia è a 10-15 minuti a piedi a sud di Jemaa el-Fnaa attraverso la medina. Segui i cartelli 'Palais Bahia' o usa Google Maps. Un petit taxi impiega circa 5 minuti e costa 15-25 MAD. L'indirizzo è Rue Riad Zitoun el Jedid, Medina di Marrakech."
+        "answer": "Il Palazzo Bahia Ã¨ a 10-15 minuti a piedi a sud di Jemaa el-Fnaa attraverso la medina. Segui i cartelli 'Palais Bahia' o usa Google Maps. Un petit taxi impiega circa 5 minuti e costa 15-25 MAD. L'indirizzo Ã¨ Rue Riad Zitoun el Jedid, Medina di Marrakech."
       },
       {
         "question": "Vale la pena il tour guidato?",
-        "answer": "Sì, specialmente per una prima visita. Una guida ti racconta l'ascesa politica di Ba Ahmed, perché il palazzo fu saccheggiato in una notte dopo la sua morte nel 1900, e identifica dettagli architettonici che la maggior parte dei visitatori non nota. I tour guidati arriveranno presto — contattaci per essere avvisato al lancio."
+        "answer": "SÃ¬, specialmente per una prima visita. Una guida ti racconta l'ascesa politica di Ba Ahmed, perchÃ© il palazzo fu saccheggiato in una notte dopo la sua morte nel 1900, e identifica dettagli architettonici che la maggior parte dei visitatori non nota. I tour guidati arriveranno presto â€” contattaci per essere avvisato al lancio."
       },
       {
-        "question": "Per cosa è famoso il Palazzo Bahia?",
-        "answer": "Il Palazzo Bahia è famoso per la sua straordinaria artigianato marocchino — in particolare i mosaici di zellige tagliati a mano, gli elaborati stucchi intagliati e i soffitti in legno di cedro dipinto. È uno dei più grandi palazzi di Marrakech con 8 ettari e 150 stanze."
+        "question": "Per cosa Ã¨ famoso il Palazzo Bahia?",
+        "answer": "Il Palazzo Bahia Ã¨ famoso per la sua straordinaria artigianato marocchino â€” in particolare i mosaici di zellige tagliati a mano, gli elaborati stucchi intagliati e i soffitti in legno di cedro dipinto. Ãˆ uno dei piÃ¹ grandi palazzi di Marrakech con 8 ettari e 150 stanze."
       },
       {
-        "question": "Si può visitare senza guida?",
-        "answer": "Sì, il palazzo può essere visitato autonomamente. I visitatori lo esplorano comodamente in 1-1,5 ore. Non è disponibile una audioguida ufficiale in loco, quindi si consiglia un tour guidato per conoscere la storia completa."
+        "question": "Si puÃ² visitare senza guida?",
+        "answer": "SÃ¬, il palazzo puÃ² essere visitato autonomamente. I visitatori lo esplorano comodamente in 1-1,5 ore. Non Ã¨ disponibile una audioguida ufficiale in loco, quindi si consiglia un tour guidato per conoscere la storia completa."
       },
       {
-        "question": "Il Palazzo Bahia è adatto ai bambini?",
-        "answer": "Sì, molto a misura di famiglia. I bambini sotto i 7 anni entrano gratis. I cortili aperti, le piastrelle colorate e i giardini affascinano i visitatori più giovani. Il terreno è principalmente pianeggiante e accessibile con passeggini."
+        "question": "Il Palazzo Bahia Ã¨ adatto ai bambini?",
+        "answer": "SÃ¬, molto a misura di famiglia. I bambini sotto i 7 anni entrano gratis. I cortili aperti, le piastrelle colorate e i giardini affascinano i visitatori piÃ¹ giovani. Il terreno Ã¨ principalmente pianeggiante e accessibile con passeggini."
       },
       {
         "question": "Cosa indossare al Palazzo Bahia?",
-        "answer": "Nessun codice di abbigliamento rigido, ma un abbigliamento sobrio è rispettoso — coprire spalle e ginocchia. Scarpe comode sono essenziali poiché i pavimenti mischiano marmo levigato, zellige e pietra che possono essere scivolosi."
+        "answer": "Nessun codice di abbigliamento rigido, ma un abbigliamento sobrio Ã¨ rispettoso â€” coprire spalle e ginocchia. Scarpe comode sono essenziali poichÃ© i pavimenti mischiano marmo levigato, zellige e pietra che possono essere scivolosi."
       },
       {
-        "question": "È permesso fotografare?",
-        "answer": "Sì, la fotografia è liberamente consentita per uso personale senza costi aggiuntivi. La luce migliore è al mattino presto (9-10:30). Treppiedi e attrezzature professionali richiedono autorizzazione speciale."
+        "question": "Ãˆ permesso fotografare?",
+        "answer": "SÃ¬, la fotografia Ã¨ liberamente consentita per uso personale senza costi aggiuntivi. La luce migliore Ã¨ al mattino presto (9-10:30). Treppiedi e attrezzature professionali richiedono autorizzazione speciale."
       },
       {
         "question": "Come si prenotano i biglietti salta fila?",
-        "answer": "Clicca su 'Vedi biglietti' per essere reindirizzato al portale ufficiale del Ministero della Cultura (e-services.minculture.gov.ma), dove potrai selezionare la data, il numero di ospiti e acquistare il biglietto direttamente. Il tuo QR code ti sarà inviato via email dal portale ufficiale."
+        "answer": "Clicca su 'Vedi biglietti' per essere reindirizzato al portale ufficiale del Ministero della Cultura (e-services.minculture.gov.ma), dove potrai selezionare la data, il numero di ospiti e acquistare il biglietto direttamente. Il tuo QR code ti sarÃ  inviato via email dal portale ufficiale."
       },
       {
         "question": "Posso cancellare o modificare il biglietto?",
-        "answer": "Sì, tutti i biglietti includono cancellazione gratuita fino a 24 ore prima della visita. Clicca sul link nell'email di conferma o contattaci via WhatsApp. I rimborsi vengono elaborati entro 5-7 giorni lavorativi."
+        "answer": "SÃ¬, tutti i biglietti includono cancellazione gratuita fino a 24 ore prima della visita. Clicca sul link nell'email di conferma o contattaci via WhatsApp. I rimborsi vengono elaborati entro 5-7 giorni lavorativi."
       },
       {
-        "question": "Cosa c'è da vedere vicino al Palazzo Bahia?",
-        "answer": "Le Tombe Saadiane sono a 7 minuti a piedi. Le rovine del Palazzo El Badi sono a 10 minuti. Piazza Jemaa el-Fnaa è a 15 minuti a nord. La maggior parte dei visitatori combina il Palazzo Bahia con le Tombe Saadiane in mezza giornata."
+        "question": "Cosa c'Ã¨ da vedere vicino al Palazzo Bahia?",
+        "answer": "Le Tombe Saadiane sono a 7 minuti a piedi. Le rovine del Palazzo El Badi sono a 10 minuti. Piazza Jemaa el-Fnaa Ã¨ a 15 minuti a nord. La maggior parte dei visitatori combina il Palazzo Bahia con le Tombe Saadiane in mezza giornata."
       },
       {
         "question": "Si possono comprare biglietti alla porta del Palazzo Bahia ?",
@@ -395,29 +395,29 @@
       "itineraries": "Itinerari"
     },
     "all": "Tutti gli articoli",
-    "bookCta": "Pianifica la tua visita →",
+    "bookCta": "Pianifica la tua visita â†’",
     "relatedPosts": "Articoli correlati",
     "share": "Condividi questo articolo"
   },
   "safetyGuide": {
     "badge": "Sicurezza Viaggiatori",
-    "title": "Visita Marrakech in Sicurezza — Evita le Truffe Comuni",
-    "subtitle": "Marrakech è una città meravigliosa. Come ogni grande destinazione turistica, ha alcune truffe che prendono di mira i visitatori. Conoscile prima di partire.",
+    "title": "Visita Marrakech in Sicurezza â€” Evita le Truffe Comuni",
+    "subtitle": "Marrakech Ã¨ una cittÃ  meravigliosa. Come ogni grande destinazione turistica, ha alcune truffe che prendono di mira i visitatori. Conoscile prima di partire.",
     "topScams": "Le 10 Truffe da Conoscere",
     "howToAvoid": "Come evitarla",
     "practicalTips": "10 Consigli Pratici di Sicurezza",
     "emergencyTitle": "Numeri di Emergenza",
     "emergencyNote": "Salvali prima di partire",
     "ctaTitle": "Prenota da una Fonte Affidabile",
-    "ctaBody": "Il modo più sicuro per acquistare i biglietti è online, prima di arrivare. Nessun rivenditore di strada.",
-    "ctaBtn": "Prenota il Tuo Biglietto Autentico →",
+    "ctaBody": "Il modo piÃ¹ sicuro per acquistare i biglietti Ã¨ online, prima di arrivare. Nessun rivenditore di strada.",
+    "ctaBtn": "Prenota il Tuo Biglietto Autentico â†’",
     "contributeTitle": "Hai subito una truffa?",
     "contributeBody": "Aiuta altri viaggiatori condividendo la tua esperienza. Scrivici su WhatsApp.",
     "scams": [
       {
         "title": "Il Trucco del \"Monumento Chiuso\"",
-        "desc": "Uno sconosciuto ti dice che il palazzo è chiuso e ti offre un'alternativa.",
-        "avoid": "Ignorali. Il Palazzo Bahia è aperto tutti i giorni dalle 9 alle 17. Vai direttamente all'ingresso."
+        "desc": "Uno sconosciuto ti dice che il palazzo Ã¨ chiuso e ti offre un'alternativa.",
+        "avoid": "Ignorali. Il Palazzo Bahia Ã¨ aperto tutti i giorni dalle 9 alle 17. Vai direttamente all'ingresso."
       },
       {
         "title": "False Guide all'Ingresso",
@@ -425,13 +425,13 @@
         "avoid": "Prenota la tua guida tramite la nostra piattaforma in anticipo."
       },
       {
-        "title": "L'Agguato dell'Henné",
-        "desc": "Una donna ti prende la mano e applica l'henné senza chiedere, poi chiede 20–50€.",
+        "title": "L'Agguato dell'HennÃ©",
+        "desc": "Una donna ti prende la mano e applica l'hennÃ© senza chiedere, poi chiede 20â€“50â‚¬.",
         "avoid": "Tieni le mani occupate nelle zone affollate. Di' fermamente \"No grazie\"."
       },
       {
         "title": "Taxi Senza Tassametro",
-        "desc": "L'autista accorda un prezzo verbalmente, poi pretende di aver detto molto di più.",
+        "desc": "L'autista accorda un prezzo verbalmente, poi pretende di aver detto molto di piÃ¹.",
         "avoid": "Insisti sempre sul tassametro. Usa Careem o inDrive per prezzi trasparenti."
       },
       {
@@ -446,12 +446,12 @@
       },
       {
         "title": "Falso Belvedere sulle Concerie",
-        "desc": "Ti dicono che la vista è gratis ma devi passare per un negozio di pelletteria.",
-        "avoid": "È normale per le concerie. Guarda, odora la menta e di' che non compri."
+        "desc": "Ti dicono che la vista Ã¨ gratis ma devi passare per un negozio di pelletteria.",
+        "avoid": "Ãˆ normale per le concerie. Guarda, odora la menta e di' che non compri."
       },
       {
         "title": "La Trappola dell'Incantatore di Serpenti",
-        "desc": "Un serpente o scimmia viene messo su di te e ti chiedono 10–30€ per una foto non richiesta.",
+        "desc": "Un serpente o scimmia viene messo su di te e ti chiedono 10â€“30â‚¬ per una foto non richiesta.",
         "avoid": "Non avvicinarti agli incantatori di serpenti a meno che tu non voglia pagare."
       },
       {
@@ -461,20 +461,20 @@
       },
       {
         "title": "Menu Diverso al Ristorante",
-        "desc": "Il menu fuori ha prezzi bassi, ma dentro tutto costa di più.",
+        "desc": "Il menu fuori ha prezzi bassi, ma dentro tutto costa di piÃ¹.",
         "avoid": "Controlla il menu prima di sederti e conferma i prezzi prima di ordinare."
       }
     ],
     "tips": [
       "Scarica mappe offline prima di arrivare.",
       "Vestiti in modo sobrio nella medina.",
-      "Tieni una piccola quantità di contanti in una tasca anteriore.",
+      "Tieni una piccola quantitÃ  di contanti in una tasca anteriore.",
       "Prenota biglietti e tour online prima dell'arrivo.",
       "Se ti senti seguito, entra in un negozio e chiedi aiuto.",
-      "Qualche parola di arabo o darija è molto apprezzata.",
-      "Negozia i prezzi al souk — è atteso e fa parte della cultura.",
-      "Fidati del tuo istinto — se qualcosa sembra strano, allontanati.",
-      "Usa taxi autorizzati (petit taxi, color crema) per corse più sicure.",
+      "Qualche parola di arabo o darija Ã¨ molto apprezzata.",
+      "Negozia i prezzi al souk â€” Ã¨ atteso e fa parte della cultura.",
+      "Fidati del tuo istinto â€” se qualcosa sembra strano, allontanati.",
+      "Usa taxi autorizzati (petit taxi, color crema) per corse piÃ¹ sicure.",
       "Conserva copie del passaporto su un servizio cloud."
     ],
     "emergency": [
@@ -514,7 +514,7 @@
       {
         "icon": "warning",
         "title": "Il Trucco del \"Monumento Chiuso\"",
-        "body": "Uno sconosciuto ti dice che il palazzo è chiuso e ti offre un'alternativa.\n\nCome evitarlo: Ignorali. Il Palazzo Bahia è aperto tutti i giorni dalle 9 alle 17. Vai direttamente all'ingresso."
+        "body": "Uno sconosciuto ti dice che il palazzo Ã¨ chiuso e ti offre un'alternativa.\n\nCome evitarlo: Ignorali. Il Palazzo Bahia Ã¨ aperto tutti i giorni dalle 9 alle 17. Vai direttamente all'ingresso."
       },
       {
         "icon": "guide",
@@ -523,13 +523,13 @@
       },
       {
         "icon": "scam",
-        "title": "L'Agguato dell'Henné",
-        "body": "Una donna ti prende la mano e applica l'henné senza chiedere, poi chiede 20–50€.\n\nCome evitarlo: Tieni le mani occupate nelle zone affollate. Di' fermamente \"No grazie\"."
+        "title": "L'Agguato dell'HennÃ©",
+        "body": "Una donna ti prende la mano e applica l'hennÃ© senza chiedere, poi chiede 20â€“50â‚¬.\n\nCome evitarlo: Tieni le mani occupate nelle zone affollate. Di' fermamente \"No grazie\"."
       },
       {
         "icon": "taxi",
         "title": "Taxi Senza Tassametro",
-        "body": "L'autista accorda un prezzo verbalmente, poi pretende di aver detto molto di più.\n\nCome evitarlo: Insisti sempre sul tassametro. Usa Careem o inDrive per prezzi trasparenti."
+        "body": "L'autista accorda un prezzo verbalmente, poi pretende di aver detto molto di piÃ¹.\n\nCome evitarlo: Insisti sempre sul tassametro. Usa Careem o inDrive per prezzi trasparenti."
       },
       {
         "icon": "warning",
@@ -544,12 +544,12 @@
       {
         "icon": "shop",
         "title": "Falso Belvedere sulle Concerie",
-        "body": "Ti dicono che la vista è gratis ma devi passare per un negozio di pelletteria.\n\nCome evitarlo: È normale per le concerie. Guarda, odora la menta e di' che non compri."
+        "body": "Ti dicono che la vista Ã¨ gratis ma devi passare per un negozio di pelletteria.\n\nCome evitarlo: Ãˆ normale per le concerie. Guarda, odora la menta e di' che non compri."
       },
       {
         "icon": "photo",
         "title": "La Trappola dell'Incantatore di Serpenti",
-        "body": "Un serpente o scimmia viene messo su di te e ti chiedono 10–30€ per una foto non richiesta.\n\nCome evitarlo: Non avvicinarti agli incantatori di serpenti a meno che tu non voglia pagare."
+        "body": "Un serpente o scimmia viene messo su di te e ti chiedono 10â€“30â‚¬ per una foto non richiesta.\n\nCome evitarlo: Non avvicinarti agli incantatori di serpenti a meno che tu non voglia pagare."
       },
       {
         "icon": "money",
@@ -559,7 +559,7 @@
       {
         "icon": "shop",
         "title": "Menu Diverso al Ristorante",
-        "body": "Il menu fuori ha prezzi bassi, ma dentro tutto costa di più.\n\nCome evitarlo: Controlla il menu prima di sederti e conferma i prezzi prima di ordinare."
+        "body": "Il menu fuori ha prezzi bassi, ma dentro tutto costa di piÃ¹.\n\nCome evitarlo: Controlla il menu prima di sederti e conferma i prezzi prima di ordinare."
       }
     ]
   },
@@ -573,14 +573,14 @@
     "promoBar": "Bahia in Video"
   },
   "story": {
-    "body": "Nel 1866, l'uomo più potente del Marocco iniziò a costruire un palazzo per la donna che amava. Era il Gran Visir Ba Ahmed — e lo chiamò Bahia: in arabo, «la brillante». Convocò i migliori artigiani di Fez, che trascorsero decenni a scolpire soffitti in cedro, tagliare mosaici di zellige a mano e riempire 150 stanze con interni il cui splendore il Marocco non aveva mai visto. Ba Ahmed morì nel 1900. Il palazzo è rimasto silenzioso da allora — e toglie ancora il fiato."
+    "body": "Nel 1866, l'uomo piÃ¹ potente del Marocco iniziÃ² a costruire un palazzo per la donna che amava. Era il Gran Visir Ba Ahmed â€” e lo chiamÃ² Bahia: in arabo, Â«la brillanteÂ». ConvocÃ² i migliori artigiani di Fez, che trascorsero decenni a scolpire soffitti in cedro, tagliare mosaici di zellige a mano e riempire 150 stanze con interni il cui splendore il Marocco non aveva mai visto. Ba Ahmed morÃ¬ nel 1900. Il palazzo Ã¨ rimasto silenzioso da allora â€” e toglie ancora il fiato."
   },
   "palaceStats": {
     "stat1val": "1866",
     "stat1label": "Costruito nel",
     "stat2val": "150+",
     "stat2label": "Stanze",
-    "stat3val": "8.000 m²",
+    "stat3val": "8.000 mÂ²",
     "stat3label": "Superficie",
     "stat4val": "100 MAD",
     "stat4label": "Ingresso da"
@@ -590,18 +590,19 @@
     "item1label": "Il Grande Cortile",
     "item1caption": "Gli aranci ombreggiano un cortile dove un tempo lavoravano gli artigiani. La maggior parte dei visitatori trascorre i primi dieci minuti qui, a guardare semplicemente verso l'alto.",
     "item2label": "I Soffitti Intagliati",
-    "item2caption": "Gli artigiani trascorsero anni su un solo soffitto in cedro. Ogni trave è diversa. Nessuna è stata toccata da una macchina.",
+    "item2caption": "Gli artigiani trascorsero anni su un solo soffitto in cedro. Ogni trave Ã¨ diversa. Nessuna Ã¨ stata toccata da una macchina.",
     "item3label": "I Mosaici di Zellige",
     "item3caption": "Ogni mattonella di zellige tagliata e posata a mano con precisione assoluta. La geometria non ha errori.",
     "item4label": "La Grande Sala di Ricevimento",
-    "item4caption": "La sala più grande del palazzo — dove Ba Ahmed riceveva i dignitari stranieri. Il solo soffitto dipinto richiese agli artigiani diversi anni di lavoro."
+    "item4caption": "La sala piÃ¹ grande del palazzo â€” dove Ba Ahmed riceveva i dignitari stranieri. Il solo soffitto dipinto richiese agli artigiani diversi anni di lavoro."
   },
   "practicalBar": {
     "hoursLabel": "Aperto tutti i giorni",
-    "hoursVal": "9:00 – 17:00",
+    "hoursVal": "9:00 â€“ 17:00",
     "priceLabel": "Ingresso",
-    "priceVal": "100 MAD (~10 €)",
+    "priceVal": "100 MAD (~10 â‚¬)",
     "locationLabel": "Indirizzo",
     "locationVal": "Rue Riad Zitoun el Jedid, Medina di Marrakech"
   }
 }
+

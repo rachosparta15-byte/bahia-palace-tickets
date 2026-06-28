@@ -63,29 +63,61 @@ const nextConfig = {
         permanent:   false,
       }))
     );
-    const BLOG_MERGE_REDIRECTS = [
-      { from: 'how-to-get-to-bahia-palace',     to: 'how-to-get-to-bahia-palace-marrakech' },
-      { from: 'history-of-bahia-palace',         to: 'bahia-palace-history' },
-      { from: 'marrakech-tourist-scams-guide',   to: 'marrakech-safety-guide' },
-      { from: 'best-time-to-visit-bahia-palace', to: 'bahia-palace-opening-hours-2026' },
-      { from: 'bahia-palace-who-built-it',       to: 'bahia-palace-history' },
+    // All-locale catch redirects (old URLs + EN-slug variants that exist across all locales)
+    const BLOG_MERGE_ALL_LOCALES = [
+      { from: 'how-to-get-to-bahia-palace',   to: 'how-to-get-to-bahia-palace-marrakech' },
+      { from: 'history-of-bahia-palace',       to: 'bahia-palace-history' },
+      { from: 'marrakech-tourist-scams-guide', to: 'marrakech-safety-guide' },
+      { from: 'bahia-palace-who-built-it',     to: 'bahia-palace-history' },
     ];
-    const blogMergeRedirects = BLOG_MERGE_REDIRECTS.flatMap(({ from, to }) =>
+    const blogMergeAllLocales = BLOG_MERGE_ALL_LOCALES.flatMap(({ from, to }) =>
       LOCALES.map(locale => ({
         source:      `/${locale}/blog/${from}`,
         destination: `/${locale}/blog/${to}`,
         permanent:   true,
       }))
     );
+    // EN-only duplicate slug redirects (slugs that only exist in EN)
+    const BLOG_MERGE_EN_ONLY = [
+      { from: 'bahia-palace-history-marrakech',                    to: 'bahia-palace-history' },
+      { from: 'who-built-bahia-palace-history-ba-ahmed',           to: 'bahia-palace-history' },
+      { from: 'bahia-palace-entrance-fee-2026-tickets-prices',     to: 'bahia-palace-entrance-fee-2026' },
+      { from: 'how-to-get-to-bahia-palace-from-jemaa-el-fna',     to: 'how-to-get-to-bahia-palace-marrakech' },
+      { from: 'is-bahia-palace-worth-visiting-honest-review-2026', to: 'is-bahia-palace-worth-visiting' },
+      { from: 'what-to-wear-bahia-palace-marrakech-dress-code',    to: 'bahia-palace-dress-code' },
+      { from: 'bahia-palace-photography-guide-best-spots-tips',    to: 'bahia-palace-photography-guide' },
+      { from: 'what-to-see-inside-bahia-palace-room-by-room',      to: 'bahia-palace-room-by-room-guide' },
+      { from: 'bahia-palace-opening-hours-best-time-to-visit',     to: 'bahia-palace-opening-hours-2026' },
+      { from: 'best-time-to-visit-bahia-palace-marrakech-2026',    to: 'best-time-to-visit-bahia-palace' },
+      { from: 'bahia-palace-vs-badi-palace-which-to-visit',        to: 'bahia-palace-vs-badi-palace-marrakech' },
+      { from: 'bahia-palace-vs-saadian-tombs-comparison',          to: 'bahia-palace-vs-saadian-tombs-which-to-visit' },
+      { from: 'jardin-majorelle-vs-bahia-palace-marrakech',        to: 'bahia-palace-vs-majorelle-garden' },
+      { from: 'how-to-avoid-tourist-scams-marrakech-safety-guide-2026',                      to: 'marrakech-safety-guide' },
+      { from: 'how-to-avoid-scams-in-the-souks-of-marrakech-complete-guide-for-travelers', to: 'marrakech-safety-guide' },
+      { from: '2-days-in-marrakech-perfect-weekend-itinerary-2026',                        to: 'marrakech-2-day-itinerary' },
+    ];
+    const blogMergeEnOnly = BLOG_MERGE_EN_ONLY.map(({ from, to }) => ({
+      source:      `/en/blog/${from}`,
+      destination: `/en/blog/${to}`,
+      permanent:   true,
+    }));
+    // Cross-locale history: EN-slug → locale-native-slug canonical
+    const crossLocaleHistory = [
+      { locale: 'fr', to: 'palais-de-la-bahia-marrakech-histoire' },
+      { locale: 'de', to: 'palast-bahia-marrakesch-geschichte' },
+      { locale: 'it', to: 'palazzo-bahia-marrakech-storia' },
+      { locale: 'es', to: 'palacio-bahia-marrakech-historia' },
+    ].map(({ locale, to }) => ({
+      source:      `/${locale}/blog/bahia-palace-history`,
+      destination: `/${locale}/blog/${to}`,
+      permanent:   true,
+    }));
     return [
-      {
-        source:      '/en/blog/bahia-palace-vs-saadian-tombs-comparison',
-        destination: '/en/blog/bahia-palace-and-saadian-tombs-one-day',
-        permanent:   true,
-      },
       ...testRedirects,
       ...comingSoonRedirects,
-      ...blogMergeRedirects,
+      ...blogMergeAllLocales,
+      ...blogMergeEnOnly,
+      ...crossLocaleHistory,
     ];
   },
   async headers() {
