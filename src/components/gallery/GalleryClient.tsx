@@ -12,6 +12,18 @@ function pinterestDesc(img: GalleryImage) {
   return `${base} — Bahia Palace Marrakech. Book skip-the-line tickets.`;
 }
 
+const PALACE_SUFFIX: Record<string, string> = {
+  en: ' — Bahia Palace Marrakech',
+  fr: ' — Palais de la Bahia Marrakech',
+  es: ' — Palacio de la Bahía Marrakech',
+  de: ' — Bahia Palast Marrakesch',
+  it: ' — Palazzo della Bahia Marrakech',
+};
+function enrichAlt(altText: string, locale: string): string {
+  if (/bahia/i.test(altText)) return altText;
+  return altText + (PALACE_SUFFIX[locale] ?? PALACE_SUFFIX.en);
+}
+
 interface GalleryImage {
   id: string;
   url: string;
@@ -20,7 +32,7 @@ interface GalleryImage {
   caption: string | null;
 }
 
-export function GalleryClient({ images, pageUrl }: { images: GalleryImage[]; pageUrl: string }) {
+export function GalleryClient({ images, pageUrl, locale }: { images: GalleryImage[]; pageUrl: string; locale: string }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const touchStartX = useRef<number>(0);
 
@@ -77,7 +89,7 @@ export function GalleryClient({ images, pageUrl }: { images: GalleryImage[]; pag
             >
               <Image
                 src={img.url}
-                alt={img.altText}
+                alt={enrichAlt(img.altText, locale)}
                 fill
                 className="object-cover transition-transform duration-500 ease-out will-change-transform group-hover:scale-[1.07]"
                 sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 25vw"
@@ -127,7 +139,7 @@ export function GalleryClient({ images, pageUrl }: { images: GalleryImage[]; pag
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={current.url}
-              alt={current.altText}
+              alt={enrichAlt(current.altText, locale)}
               className="max-h-[74vh] max-w-[88vw] w-auto object-contain rounded-xl shadow-2xl"
             />
 

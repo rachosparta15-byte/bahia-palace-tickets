@@ -12,8 +12,8 @@ export const revalidate = 3600;
 
 const META: Record<string, { title: string; description: string; heading: string; sub: string; bookCta: string; bookBtn: string; collection: string }> = {
   en: {
-    title: 'Bahia Palace Photos 2026 | Every Room, Every Detail',
-    description: '47 photos inside Bahia Palace Marrakech: zellige floors, hand-carved cedar ceilings, the grand courtyard and intimate rooms most guided tours rush straight past.',
+    title: 'Bahia Palace Photos — 50+ HD Images of the Palace & Gardens',
+    description: 'Explore 50+ high-quality photos of Bahia Palace Marrakech: the courtyards, painted ceilings, gardens and mosaics. See the palace in detail before your visit.',
     heading: 'Bahia Palace Photo Gallery',
     sub: 'Zellige mosaics, carved cedar ceilings, grand courtyards — see every corner before you arrive.',
     bookCta: 'Ready to see it in person?',
@@ -21,8 +21,8 @@ const META: Record<string, { title: string; description: string; heading: string
     collection: 'Browse the Collection',
   },
   fr: {
-    title: 'Galerie Photos Palais Bahia 2026 | Zellige & Cours',
-    description: 'Découvrez les plus belles photos du Palais Bahia : zellige, plafonds en cèdre sculpté, grandes cours, stuc ornemental et calligraphie arabe. Visitez avant de partir.',
+    title: 'Photos du Palais de la Bahia — 50+ images HD du palais',
+    description: 'Découvrez plus de 50 photos HD du Palais de la Bahia à Marrakech : cours, plafonds peints, jardins et mosaïques. Voyez le palais en détail avant votre visite.',
     heading: 'Galerie Photos du Palais Bahia',
     sub: 'Mosaïques de zellige, plafonds en cèdre sculpté, grandes cours — explorez chaque détail avant votre visite.',
     bookCta: 'Prêt à le voir en personne ?',
@@ -30,8 +30,8 @@ const META: Record<string, { title: string; description: string; heading: string
     collection: 'Parcourir la collection',
   },
   es: {
-    title: 'Galería de Fotos Palacio Bahia 2026 | Zellige y Patios',
-    description: 'Explora impresionantes fotos del Palacio Bahia: azulejos zellige, techos de cedro tallado, patios principales, yeserías ornamentales y caligrafía árabe.',
+    title: 'Fotos del Palacio de la Bahía — 50+ imágenes HD',
+    description: 'Descubre más de 50 fotos en alta calidad del Palacio de la Bahía en Marrakech: patios, techos pintados, jardines y mosaicos. Ve el palacio antes de tu visita.',
     heading: 'Galería de Fotos del Palacio Bahia',
     sub: 'Mosaicos zellige, techos de cedro tallado, grandes patios — descubre cada rincón antes de llegar.',
     bookCta: '¿Listo para verlo en persona?',
@@ -39,8 +39,8 @@ const META: Record<string, { title: string; description: string; heading: string
     collection: 'Explorar la colección',
   },
   de: {
-    title: 'Bahia Palast Fotogalerie 2026 | Zellige, Decken & Höfe',
-    description: 'Entdecken Sie atemberaubende Fotos des Bahia Palastes: Zellige-Fliesen, geschnitzte Zederndecken, Innenhöfe, ornamentaler Stuck und arabische Kalligraphie.',
+    title: 'Bahia Palast Fotos — 50+ HD-Bilder des Palasts',
+    description: 'Entdecken Sie über 50 HD-Fotos des Bahia Palasts in Marrakesch: Innenhöfe, bemalte Decken, Gärten und Mosaike. Sehen Sie den Palast vor Ihrem Besuch im Detail.',
     heading: 'Bahia Palast Fotogalerie',
     sub: 'Zellige-Mosaike, geschnitzte Zederndecken, große Innenhöfe — entdecken Sie jeden Winkel vor Ihrer Ankunft.',
     bookCta: 'Bereit für einen persönlichen Besuch?',
@@ -48,8 +48,8 @@ const META: Record<string, { title: string; description: string; heading: string
     collection: 'Sammlung durchstöbern',
   },
   it: {
-    title: 'Galleria Fotografica Palazzo Bahia 2026 | Zellige e Cortili',
-    description: 'Esplora le splendide foto del Palazzo Bahia: piastrelle zellige, soffitti in cedro intagliato, cortili principali, stucchi ornamentali e calligrafia araba.',
+    title: 'Foto del Palazzo della Bahia — 50+ immagini HD',
+    description: 'Scopri oltre 50 foto in alta qualità del Palazzo della Bahia a Marrakech: cortili, soffitti dipinti, giardini e mosaici. Vedi il palazzo prima della tua visita.',
     heading: 'Galleria Fotografica del Palazzo Bahia',
     sub: 'Mosaici zellige, soffitti in cedro intagliato, grandi cortili — scopri ogni angolo prima di arrivare.',
     bookCta: 'Pronto a vederlo di persona?',
@@ -130,7 +130,7 @@ export default async function GalleryPage({ params }: Props) {
         {/* Hero carousel */}
         <div className="px-4 sm:px-6 md:px-10 pb-8">
           <div className="max-w-5xl mx-auto">
-            <GalleryCarousel />
+            <GalleryCarousel locale={locale} />
           </div>
         </div>
       </div>
@@ -156,7 +156,7 @@ export default async function GalleryPage({ params }: Props) {
             </div>
 
             {/* Even grid + lightbox (all <img> tags are SSR-rendered) */}
-            <GalleryClient images={images} pageUrl={`${BASE}/${locale}/gallery`} />
+            <GalleryClient images={images} pageUrl={`${BASE}/${locale}/gallery`} locale={locale} />
 
             {/* CTA */}
             <div className="mt-14 bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-8 text-center">

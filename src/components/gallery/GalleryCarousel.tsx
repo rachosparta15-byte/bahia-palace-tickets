@@ -5,32 +5,62 @@ import Image from 'next/image';
 const SLIDES = [
   {
     src: '/images/gallery/bahia-palace-grand-courtyard-balcony-view-fountain.jpg',
-    alt: 'Grand courtyard of Bahia Palace from above, with central fountain and ornate balcony',
     title: 'Grand Courtyard',
+    alts: {
+      en: 'Grand courtyard of Bahia Palace Marrakech viewed from above, with central fountain and ornate balcony',
+      fr: 'Grande cour du Palais de la Bahia à Marrakech vue de haut, avec fontaine centrale et balcon sculpté',
+      es: 'Gran patio del Palacio de la Bahía Marrakech visto desde arriba, con fuente central y balcón ornamentado',
+      de: 'Großer Innenhof des Bahia Palasts Marrakesch von oben mit zentralem Brunnen und ornamentalem Balkon',
+      it: "Grande cortile del Palazzo della Bahia Marrakech dall'alto, con fontana centrale e balcone ornato",
+    },
   },
   {
     src: '/images/gallery/bahia-palace-octagonal-cedar-ceiling-carved-wood.jpg',
-    alt: 'Ornate octagonal carved cedar wood ceiling, Bahia Palace Marrakech',
     title: 'Octagonal Cedar Ceiling',
+    alts: {
+      en: 'Ornate octagonal carved cedar wood ceiling in Bahia Palace Marrakech',
+      fr: 'Plafond en cèdre sculpté octogonal orné du Palais de la Bahia à Marrakech',
+      es: 'Techo octagonal de madera de cedro tallada en el Palacio de la Bahía Marrakech',
+      de: 'Achteckige geschnitzte Zedernholzdecke im Bahia Palast Marrakesch',
+      it: 'Soffitto ottagonale in cedro intagliato nel Palazzo della Bahia a Marrakech',
+    },
   },
   {
     src: '/images/gallery/bahia-palace-zellige-mosaic-arabic-calligraphy-stucco.jpg',
-    alt: 'Zellige mosaic tilework and Arabic calligraphy carved in stucco, Bahia Palace Marrakech',
     title: 'Zellige Mosaic & Calligraphy',
+    alts: {
+      en: 'Zellige mosaic tilework and Arabic calligraphy stucco in Bahia Palace Marrakech',
+      fr: 'Mosaïque de zellige et calligraphie arabe en stuc du Palais de la Bahia Marrakech',
+      es: 'Mosaico de zellige y caligrafía árabe en estuco en el Palacio de la Bahía Marrakech',
+      de: 'Zellige-Mosaikfliesen und arabische Kalligraphie-Stuck im Bahia Palast Marrakesch',
+      it: 'Mosaico zellige e calligrafia araba in stucco nel Palazzo della Bahia Marrakech',
+    },
   },
   {
     src: '/images/gallery/bahia-palace-arch-view-green-dome-fountain-palm.jpg',
-    alt: 'Horseshoe arch framing the garden with a green dome, fountain and palm trees, Bahia Palace',
     title: 'Arch View with Garden',
+    alts: {
+      en: 'Horseshoe arch framing the garden with green dome, fountain and palms at Bahia Palace Marrakech',
+      fr: 'Arc en fer à cheval ouvrant sur le jardin avec dôme vert, fontaine et palmiers, Palais de la Bahia',
+      es: 'Arco de herradura enmarcando el jardín con cúpula verde y palmeras, Palacio de la Bahía Marrakech',
+      de: 'Hufeisenbogen mit Garten, grüner Kuppel, Brunnen und Palmen im Bahia Palast Marrakesch',
+      it: 'Arco a ferro di cavallo con giardino, cupola verde e palme nel Palazzo della Bahia Marrakech',
+    },
   },
   {
     src: '/images/gallery/bahia-palace-inner-courtyard-central-fountain-stucco.jpg',
-    alt: 'Inner courtyard with central fountain surrounded by carved stucco walls, Bahia Palace Marrakech',
     title: 'Inner Courtyard',
+    alts: {
+      en: 'Inner courtyard with central fountain and carved stucco walls in Bahia Palace Marrakech',
+      fr: 'Cour intérieure avec fontaine centrale et murs en stuc sculpté du Palais de la Bahia Marrakech',
+      es: 'Patio interior con fuente central y muros de estuco tallado en el Palacio de la Bahía Marrakech',
+      de: 'Innenhof mit zentralem Brunnen und geschnitzten Stuckwänden im Bahia Palast Marrakesch',
+      it: 'Cortile interno con fontana centrale e pareti in stucco intagliato del Palazzo della Bahia Marrakech',
+    },
   },
 ];
 
-export function GalleryCarousel() {
+export function GalleryCarousel({ locale }: { locale: string }) {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -66,7 +96,7 @@ export function GalleryCarousel() {
         >
           <Image
             src={slide.src}
-            alt={slide.alt}
+            alt={slide.alts[locale] ?? slide.alts.en}
             fill
             className="object-cover"
             sizes="(max-width:1024px) 100vw, 960px"
