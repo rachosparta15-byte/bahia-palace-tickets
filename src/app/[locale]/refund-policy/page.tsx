@@ -4,9 +4,14 @@ import type { Metadata } from 'next';
 
 export const revalidate = 86400;
 
+const REFUND_DESCRIPTIONS: Record<string, string> = {
+  fr: 'Découvrez la politique de remboursement de visitbahiapalace.com pour vos billets du Palais de la Bahia : délais, conditions et comment être remboursé.',
+  es: 'Consulta la política de reembolsos de visitbahiapalace.com para tus entradas al Palacio de la Bahía: plazos, condiciones y cómo pedir tu devolución.',
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  if (locale !== 'en') return { robots: 'noindex' };
+  if (locale !== 'en') return { robots: 'noindex', description: REFUND_DESCRIPTIONS[locale] };
   return {
     title: 'Refund Policy — Free Cancellation on Bahia Palace Tickets',
     description: 'Visitbahiapalace.com offers free cancellation on Bahia Palace tickets up to 24 hours before your visit. Read our full refund and cancellation conditions.',

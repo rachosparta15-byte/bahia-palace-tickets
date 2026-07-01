@@ -13,10 +13,10 @@ interface Props {
 }
 
 const CONTACT_META: Record<string, { title: string; description: string }> = {
-  en: { title: 'Contact Visitbahiapalace.com | Ticket Help & Support', description: 'Questions about your Bahia Palace Marrakech tickets or booking? Reach the visitbahiapalace.com team by email or WhatsApp and we will always reply within 24 hours.' },
+  en: { title: 'Contact Visitbahiapalace.com | Ticket Help & Support', description: 'Questions about your Bahia Palace Marrakech tickets or booking? Email or WhatsApp our support team and get a friendly reply within 24 hours, guaranteed.' },
   fr: { title: 'Contacter Visitbahiapalace.com | Aide & Support Billets', description: 'Des questions sur vos billets pour le Palais Bahia de Marrakech ou votre réservation ? Contactez-nous par e-mail ou WhatsApp : réponse garantie sous 24 heures.' },
-  es: { title: 'Contactar Visitbahiapalace.com | Ayuda & Soporte Entradas', description: '¿Preguntas sobre tus entradas al Palacio Bahia de Marrakech o tu reserva? Contáctanos por correo o WhatsApp y respondemos siempre en menos de 24 horas.' },
-  de: { title: 'Visitbahiapalace.com Kontakt | Ticket-Hilfe & Support', description: 'Haben Sie Fragen zu Ihren Bahia Palast Tickets für Marrakesch oder Ihrer Buchung? Kontaktieren Sie uns per E-Mail oder WhatsApp: Antwort innerhalb von 24 Stunden.' },
+  es: { title: 'Contactar Visitbahiapalace.com | Ayuda & Soporte Entradas', description: '¿Dudas sobre tus entradas o tu reserva para el Palacio de la Bahía en Marrakech? Escríbenos por email o WhatsApp y te responderemos en menos de 24 horas.' },
+  de: { title: 'Visitbahiapalace.com Kontakt | Ticket-Hilfe & Support', description: 'Fragen zu Ihren Bahia Palace Tickets oder Ihrer Buchung? Schreiben Sie uns per E-Mail oder WhatsApp, wir antworten garantiert innerhalb von 24 Stunden.' },
   it: { title: 'Contatta Visitbahiapalace.com | Supporto Biglietti Bahia', description: 'Hai domande sui biglietti per il Palazzo Bahia di Marrakech o sulla prenotazione? Scrivici via email o WhatsApp e il nostro team risponde entro 24 ore.' },
 };
 

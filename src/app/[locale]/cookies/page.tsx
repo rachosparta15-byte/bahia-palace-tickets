@@ -4,9 +4,14 @@ import type { Metadata } from 'next';
 
 export const revalidate = 86400;
 
+const COOKIE_DESCRIPTIONS: Record<string, string> = {
+  fr: "Découvrez quels cookies utilise visitbahiapalace.com pour améliorer votre navigation et faciliter l'achat de vos billets pour le Palais de la Bahia à Marrakech.",
+  es: 'Descubre qué cookies utiliza visitbahiapalace.com para mejorar tu experiencia, analizar el tráfico y facilitar la compra de entradas al Palacio de la Bahía.',
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  if (locale !== 'en') return { robots: 'noindex' };
+  if (locale !== 'en') return { robots: 'noindex', description: COOKIE_DESCRIPTIONS[locale] };
   return {
     title: 'Cookie Policy — How Visitbahiapalace.com Uses Cookies',
     description: 'Visitbahiapalace.com uses cookies to improve your experience and process ticket bookings securely. Read our cookie policy to understand what data we collect and why.',

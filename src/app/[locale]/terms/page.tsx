@@ -4,9 +4,16 @@ import type { Metadata } from 'next';
 
 export const revalidate = 86400;
 
+const TERMS_DESCRIPTIONS: Record<string, string> = {
+  fr: "Consultez les conditions générales d'utilisation de visitbahiapalace.com, site indépendant de vente de billets coupe-file pour le Palais de la Bahia.",
+  es: 'Consulta los términos y condiciones de visitbahiapalace.com, un sitio independiente para comprar entradas sin colas al Palacio de la Bahía en Marrakech.',
+  de: 'Lesen Sie die Nutzungsbedingungen von visitbahiapalace.com, einer unabhängigen Website für den Kauf von Skip-the-Line-Tickets für den Bahia Palast Marrakesch.',
+  it: "Leggi i termini e condizioni di visitbahiapalace.com, sito indipendente per l'acquisto di biglietti salta-fila per il Palazzo della Bahia a Marrakech.",
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  if (locale !== 'en') return { robots: 'noindex' };
+  if (locale !== 'en') return { robots: 'noindex', description: TERMS_DESCRIPTIONS[locale] };
   return {
     title: 'Terms of Service — Visitbahiapalace.com Ticket Platform',
     description: 'Read the terms of service for Visitbahiapalace.com, the independent Bahia Palace ticket guide. Booking conditions, cancellation rules, and legal info.',

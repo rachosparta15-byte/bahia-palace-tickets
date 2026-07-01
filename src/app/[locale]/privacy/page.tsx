@@ -4,12 +4,19 @@ import type { Metadata } from 'next';
 
 export const revalidate = 86400;
 
+const PRIVACY_DESCRIPTIONS: Record<string, string> = {
+  en: 'Read how visitbahiapalace.com collects, uses and protects your personal data when you browse our site or book Bahia Palace Marrakech skip-the-line tickets.',
+  fr: "Découvrez comment visitbahiapalace.com collecte, utilise et protège vos données lors de la navigation ou de l'achat de billets pour le Palais de la Bahia.",
+  es: 'Descubre cómo visitbahiapalace.com recopila, usa y protege tus datos personales al navegar por el sitio o reservar entradas para el Palacio de la Bahía.',
+  de: 'Erfahren Sie, wie visitbahiapalace.com Ihre persönlichen Daten beim Besuch der Website oder bei der Buchung von Bahia-Palace-Tickets erhebt, nutzt und schützt.',
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  if (locale !== 'en') return { robots: 'noindex' };
+  if (locale !== 'en') return { robots: 'noindex', description: PRIVACY_DESCRIPTIONS[locale] };
   return {
     title: 'Privacy Policy — How Visitbahiapalace.com Handles Your Data',
-    description: 'Read how visitbahiapalace.com collects and uses your personal data when you book Bahia Palace Marrakech tickets or browse our independent visitor travel guide.',
+    description: PRIVACY_DESCRIPTIONS.en,
   };
 }
 
