@@ -654,3 +654,38 @@
 .prose code       { color: #E8A33D; background: rgba(232,163,61,0.08); border-radius: 3px; padding: 0 4px; }
 .prose pre        { background: #251A0F; border: 1px solid rgba(232,163,61,0.15); }
 .prose ul > li::marker, .prose ol > li::marker { color: #E8A33D; }
+
+/* ────────────────────────────────────────────────
+   PROSE CALLOUT BOXES
+   Light-background divs (inline style) inside the
+   dark-theme prose container need dark text.
+   ──────────────────────────────────────────────── */
+.prose div[style*="background:#FDF9F3"],
+.prose div[style*="background: #FDF9F3"] {
+  color: #3D2817;
+}
+.prose div[style*="background:#FDF9F3"] p,
+.prose div[style*="background:#FDF9F3"] li,
+.prose div[style*="background:#FDF9F3"] strong,
+.prose div[style*="background: #FDF9F3"] p,
+.prose div[style*="background: #FDF9F3"] li,
+.prose div[style*="background: #FDF9F3"] strong {
+  color: #3D2817;
+}
+.prose div[style*="background:#FDF9F3"] a,
+.prose div[style*="background: #FDF9F3"] a {
+  color: #C4452D;
+}
+
+.prose div[style*="background:#F0F7FF"],
+.prose div[style*="background: #F0F7FF"] {
+  color: #1a3a5c;
+}
+.prose div[style*="background:#F0F7FF"] p,
+.prose div[style*="background:#F0F7FF"] li,
+.prose div[style*="background:#F0F7FF"] strong,
+.prose div[style*="background: #F0F7FF"] p,
+.prose div[style*="background: #F0F7FF"] li,
+.prose div[style*="background: #F0F7FF"] strong {
+  color: #1a3a5c;
+}
