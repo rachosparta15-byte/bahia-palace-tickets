@@ -1,4 +1,4 @@
-{
+﻿{
   "nav": {
     "home": "Home",
     "tickets": "Biglietti",
@@ -11,7 +11,7 @@
     "gallery": "Galleria"
   },
   "hero": {
-    "badge": "Guida Visitatori Â· Salta la fila",
+    "badge": "Guida Visitatori · Salta la fila",
     "headline": "Palazzo Bahia Marrakech — Guida Visitatori & Biglietti Salta-Fila",
     "subheadline": "Conferma immediata • Biglietti mobili • Cancellazione gratuita fino a 24h",
     "ctaBook": "Pianifica la visita",
@@ -141,7 +141,7 @@
     "subtitle": "Esperienze reali di visitatori da tutto il mondo",
     "tripAdvisorPrompt": "Leggi le recensioni autentiche dei visitatori su TripAdvisor — la piÃ¹ grande piattaforma di viaggi al mondo.",
     "tripAdvisorCta": "Leggi le recensioni su TripAdvisor",
-    "tripAdvisorNote": "Palazzo Bahia Â· Marrakech Â· Medina",
+    "tripAdvisorNote": "Palazzo Bahia · Marrakech · Medina",
     "seeAllOnTripAdvisor": "Vedi tutte le recensioni su TripAdvisor"
   },
   "faq": {
@@ -250,7 +250,7 @@
     "missionTitle": "La Nostra Missione",
     "missionBody": "Aiutare i viaggiatori internazionali a pianificare la loro visita al Palazzo Bahia con informazioni accurate e utili — storia, consigli pratici, informazioni di sicurezza e link alla biglietteria ufficiale.",
     "whyTitle": "Cosa Offriamo",
-    "whyBody": "Guide turistiche complete e contesto storico Â· Consigli pratici su orari e prezzi Â· Informazioni di sicurezza per i turisti Â· Risposte alle domande frequenti Â· Link diretti alla biglietteria ufficiale su e-services.minculture.gov.ma",
+    "whyBody": "Guide turistiche complete e contesto storico · Consigli pratici su orari e prezzi · Informazioni di sicurezza per i turisti · Risposte alle domande frequenti · Link diretti alla biglietteria ufficiale su e-services.minculture.gov.ma",
     "teamTitle": "Avviso Importante",
     "teamBody": "visitbahiapalace.com NON Ã¨ affiliato all'amministrazione ufficiale del Palazzo Bahia nÃ© al Ministero della Cultura del Marocco. Siamo un sito di informazioni indipendente. Per i biglietti ufficiali, visita: e-services.minculture.gov.ma",
     "contactCta": "Contattaci",
@@ -292,7 +292,7 @@
     "whatsappUs": "Scrivici su WhatsApp per aiuto immediato â†’",
     "ctaSkip": "Evita la coda di 2 ore",
     "ctaTitle": "Pianifica la tua visita al Palazzo Bahia",
-    "ctaBody": "Conferma immediata Â· Cancellazione gratuita Â· Biglietti mobili accettati",
+    "ctaBody": "Conferma immediata · Cancellazione gratuita · Biglietti mobili accettati",
     "ctaBtn": "Vedi Tutte le Opzioni Biglietti",
     "teamAvail": "Rispondiamo prontamente a tutte le richieste di prenotazione.",
     "items": [

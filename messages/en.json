@@ -1,4 +1,4 @@
-{
+﻿{
   "nav": {
     "home": "Home",
     "tickets": "Tickets",
@@ -11,7 +11,7 @@
     "gallery": "Gallery"
   },
   "hero": {
-    "badge": "Visitor Guide Â· Skip the Line",
+    "badge": "Visitor Guide · Skip the Line",
     "headline": "Bahia Palace Marrakech — Visitor Guide & Skip-the-Line Tickets",
     "subheadline": "Instant confirmation • Mobile tickets • Free cancellation up to 24h",
     "ctaBook": "Plan Your Visit",
@@ -173,7 +173,7 @@
     "missionTitle": "Our Mission",
     "missionBody": "To help international travelers plan their visit to Bahia Palace with accurate, helpful information — including history, practical tips, safety guidance, and direct links to official ticket booking.",
     "whyTitle": "What We Provide",
-    "whyBody": "Comprehensive visitor guides and historical context Â· Practical tips on opening hours and entrance fees Â· Safety information for tourists Â· Answers to frequently asked questions Â· Direct links to official ticket booking at e-services.minculture.gov.ma",
+    "whyBody": "Comprehensive visitor guides and historical context · Practical tips on opening hours and entrance fees · Safety information for tourists · Answers to frequently asked questions · Direct links to official ticket booking at e-services.minculture.gov.ma",
     "teamTitle": "Important Notice",
     "teamBody": "visitbahiapalace.com is NOT affiliated with the official Bahia Palace administration or the Moroccan Ministry of Culture. We are an independent visitor information website. For official tickets, visit: e-services.minculture.gov.ma",
     "contactCta": "Contact Us",
@@ -215,7 +215,7 @@
     "whatsappUs": "WhatsApp us for instant help â†’",
     "ctaSkip": "Skip the 2-hour queue",
     "ctaTitle": "Plan Your Bahia Palace Visit",
-    "ctaBody": "Instant confirmation Â· Free cancellation Â· Mobile tickets accepted",
+    "ctaBody": "Instant confirmation · Free cancellation · Mobile tickets accepted",
     "ctaBtn": "See All Ticket Options",
     "teamAvail": "We respond to all booking enquiries promptly.",
     "items": [
@@ -437,7 +437,7 @@
     "subtitle": "Real experiences from visitors around the world",
     "tripAdvisorPrompt": "Read genuine reviews from visitors on TripAdvisor — the world's largest travel platform.",
     "tripAdvisorCta": "Read reviews on TripAdvisor",
-    "tripAdvisorNote": "Bahia Palace Â· Marrakech Â· Medina",
+    "tripAdvisorNote": "Bahia Palace · Marrakech · Medina",
     "seeAllOnTripAdvisor": "See all reviews on TripAdvisor"
   },
   "faq": {
