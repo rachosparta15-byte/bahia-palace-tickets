@@ -13,13 +13,13 @@ import { getBlogPost } from '@/lib/blog';
 
 const CATEGORY_IMAGES: Record<string, string> = {
   'visit-tips':   '/images/gallery/bahia-palace-tourists-visiting-grand-courtyard.jpg',
-  'history':      '/images/gallery/bahia-palace-zellige-column-entrance-arch.jpg',
+  'history':      '/images/blog-real/bahia-palace-long-gallery-corridor-painted-ceiling-chandeliers.webp',
   'safety':       '/images/gallery/bahia-palace-zellige-floor-stucco-calligraphy-low-angle.jpg',
   'practical':    '/images/gallery/bahia-palace-stucco-column-zellige-floor-fountain.jpg',
-  'comparisons':  '/images/gallery/bahia-palace-arch-view-green-dome-fountain-palm.jpg',
-  'guides':       '/images/gallery/bahia-palace-main-entrance-sign-lantern-marrakech.jpg',
-  'tips':         '/images/gallery/bahia-palace-bahia-inscription-arch-zellige-garden.jpg',
-  'reviews':      '/images/gallery/bahia-palace-arabic-calligraphy-stucco-zellige-courtyard.jpg',
+  'comparisons':  '/images/blog-real/bahia-palace-courtyard-wall-fountain-alcove-zellige.webp',
+  'guides':       '/images/blog-real/bahia-palace-entrance-gate-arabic-inscription-carving.webp',
+  'tips':         '/images/blog-real/bahia-palace-garden-entrance-path-palm-trees.webp',
+  'reviews':      '/images/blog-real/bahia-palace-ornate-ceiling-chandelier-stained-glass-skylight.webp',
   'itineraries':  '/images/gallery/bahia-palace-aerial-view-marrakech-medina-drone.jpg',
 };
 
@@ -59,6 +59,8 @@ type NormalizedPost = {
   excerpt: string | null;
   content: string | null;
   coverImage: string | null;
+  coverImageAlt: string | null;
+  coverImagePosition: string | null;
   category: string;
   seoTitle: string | null;
   seoDesc: string | null;
@@ -72,7 +74,7 @@ type NormalizedPost = {
 async function getPost(locale: string, slug: string): Promise<NormalizedPost | null> {
   try {
     const db = await prisma.blogPost.findUnique({ where: { slug_locale: { slug, locale } } });
-    if (db?.published) return db as NormalizedPost;
+    if (db?.published) return db as unknown as NormalizedPost;
   } catch { /* db unavailable */ }
 
   const s = getBlogPost(locale, slug);
@@ -88,6 +90,8 @@ async function getPost(locale: string, slug: string): Promise<NormalizedPost | n
     excerpt: s.excerpt,
     content: body,
     coverImage: null,
+    coverImageAlt: null,
+    coverImagePosition: null,
     category: s.category,
     seoTitle: null,
     seoDesc: s.excerpt,
@@ -178,7 +182,7 @@ export default async function BlogPostPage({ params }: Props) {
       orderBy: { publishedAt: 'desc' },
       take: 2,
     });
-    related = dbRelated as NormalizedPost[];
+    related = dbRelated as unknown as NormalizedPost[];
   } catch { /* db unavailable */ }
   if (related.length === 0) {
     const { getBlogPosts } = await import('@/lib/blog');
@@ -187,7 +191,7 @@ export default async function BlogPostPage({ params }: Props) {
       .slice(0, 2)
       .map((s) => ({
         id: s.slug, title: s.title, slug: s.slug, locale: s.locale,
-        excerpt: s.excerpt, content: null, coverImage: null, category: s.category,
+        excerpt: s.excerpt, content: null, coverImage: null, coverImageAlt: null, coverImagePosition: null, category: s.category,
         seoTitle: null, seoDesc: null, ogImage: null, author: 'Bahia Palace Team',
         publishedAt: new Date(s.publishedAt), updatedAt: new Date(), createdAt: new Date(),
       }));
@@ -219,7 +223,7 @@ export default async function BlogPostPage({ params }: Props) {
       {faqSchema && <JsonLd data={faqSchema} />}
       {/* Hero */}
       <div className="relative h-64 md:h-80">
-        <Image src={imgSrc} alt={post.title} fill priority className="object-cover" sizes="100vw" />
+        <Image src={imgSrc} alt={post.coverImageAlt ?? post.title} fill priority className="object-cover" sizes="100vw" style={{ objectPosition: post.coverImagePosition ?? 'center' }} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/20 to-[#1C1108]/95" />
         {/* extra dark strip at the very top for breadcrumb readability */}
         <div className="absolute inset-x-0 top-0 h-14 bg-black/50" />

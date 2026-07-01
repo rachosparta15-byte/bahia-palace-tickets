@@ -38,13 +38,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const CATEGORY_IMAGES: Record<string, string> = {
   'visit-tips':   '/images/gallery/bahia-palace-tourists-visiting-grand-courtyard.jpg',
-  'history':      '/images/gallery/bahia-palace-zellige-column-entrance-arch.jpg',
+  'history':      '/images/blog-real/bahia-palace-long-gallery-corridor-painted-ceiling-chandeliers.webp',
   'safety':       '/images/gallery/bahia-palace-zellige-floor-stucco-calligraphy-low-angle.jpg',
   'practical':    '/images/gallery/bahia-palace-stucco-column-zellige-floor-fountain.jpg',
-  'comparisons':  '/images/gallery/bahia-palace-arch-view-green-dome-fountain-palm.jpg',
-  'guides':       '/images/gallery/bahia-palace-main-entrance-sign-lantern-marrakech.jpg',
-  'tips':         '/images/gallery/bahia-palace-bahia-inscription-arch-zellige-garden.jpg',
-  'reviews':      '/images/gallery/bahia-palace-arabic-calligraphy-stucco-zellige-courtyard.jpg',
+  'comparisons':  '/images/blog-real/bahia-palace-courtyard-wall-fountain-alcove-zellige.webp',
+  'guides':       '/images/blog-real/bahia-palace-entrance-gate-arabic-inscription-carving.webp',
+  'tips':         '/images/blog-real/bahia-palace-garden-entrance-path-palm-trees.webp',
+  'reviews':      '/images/blog-real/bahia-palace-ornate-ceiling-chandelier-stained-glass-skylight.webp',
   'itineraries':  '/images/gallery/bahia-palace-aerial-view-marrakech-medina-drone.jpg',
 };
 

@@ -97,8 +97,10 @@ model BlogPost {
   locale      String
   excerpt     String?
   content     String?
-  coverImage  String?
-  category    String
+  coverImage         String?
+  coverImageAlt      String?
+  coverImagePosition String?
+  category           String
   tags        String?
   seoTitle    String?
   seoDesc     String?

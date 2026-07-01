@@ -4,58 +4,58 @@ import Image from 'next/image';
 
 const SLIDES = [
   {
-    src: '/images/gallery/bahia-palace-grand-courtyard-balcony-view-fountain.jpg',
+    src: '/images/blog-real/bahia-palace-courtyard-marble-fountain-zellige-garden.webp',
     title: 'Grand Courtyard',
     alts: {
-      en: 'Grand courtyard of Bahia Palace Marrakech viewed from above, with central fountain and ornate balcony',
-      fr: 'Grande cour du Palais de la Bahia à Marrakech vue de haut, avec fontaine centrale et balcon sculpté',
-      es: 'Gran patio del Palacio de la Bahía Marrakech visto desde arriba, con fuente central y balcón ornamentado',
-      de: 'Großer Innenhof des Bahia Palasts Marrakesch von oben mit zentralem Brunnen und ornamentalem Balkon',
-      it: "Grande cortile del Palazzo della Bahia Marrakech dall'alto, con fontana centrale e balcone ornato",
+      en: 'Grand courtyard of Bahia Palace Marrakech with marble fountain and zellige tilework surrounded by garden',
+      fr: 'Grande cour du Palais de la Bahia à Marrakech avec fontaine en marbre, zellige et jardin',
+      es: 'Gran patio del Palacio de la Bahía Marrakech con fuente de mármol, zellige y jardín',
+      de: 'Großer Innenhof des Bahia Palasts Marrakesch mit Marmorbrunnen, Zellige und Garten',
+      it: 'Grande cortile del Palazzo della Bahia Marrakech con fontana in marmo, zellige e giardino',
     },
   },
   {
-    src: '/images/gallery/bahia-palace-octagonal-cedar-ceiling-carved-wood.jpg',
+    src: '/images/blog-real/bahia-palace-octagonal-cedar-ceiling-chandelier.webp',
     title: 'Octagonal Cedar Ceiling',
     alts: {
-      en: 'Ornate octagonal carved cedar wood ceiling in Bahia Palace Marrakech',
-      fr: 'Plafond en cèdre sculpté octogonal orné du Palais de la Bahia à Marrakech',
-      es: 'Techo octagonal de madera de cedro tallada en el Palacio de la Bahía Marrakech',
-      de: 'Achteckige geschnitzte Zedernholzdecke im Bahia Palast Marrakesch',
-      it: 'Soffitto ottagonale in cedro intagliato nel Palazzo della Bahia a Marrakech',
+      en: 'Ornate octagonal carved cedar ceiling with central chandelier in Bahia Palace Marrakech',
+      fr: 'Plafond en cèdre sculpté octogonal avec lustre central au Palais de la Bahia Marrakech',
+      es: 'Techo octagonal de cedro tallado con araña central en el Palacio de la Bahía Marrakech',
+      de: 'Achteckige geschnitzte Zederndecke mit Kronleuchter im Bahia Palast Marrakesch',
+      it: 'Soffitto ottagonale in cedro intagliato con lampadario centrale nel Palazzo della Bahia Marrakech',
     },
   },
   {
-    src: '/images/gallery/bahia-palace-zellige-mosaic-arabic-calligraphy-stucco.jpg',
-    title: 'Zellige Mosaic & Calligraphy',
+    src: '/images/blog-real/bahia-palace-courtyard-wall-fountain-alcove-zellige.webp',
+    title: 'Zellige & Arabic Calligraphy',
     alts: {
-      en: 'Zellige mosaic tilework and Arabic calligraphy stucco in Bahia Palace Marrakech',
-      fr: 'Mosaïque de zellige et calligraphie arabe en stuc du Palais de la Bahia Marrakech',
-      es: 'Mosaico de zellige y caligrafía árabe en estuco en el Palacio de la Bahía Marrakech',
-      de: 'Zellige-Mosaikfliesen und arabische Kalligraphie-Stuck im Bahia Palast Marrakesch',
-      it: 'Mosaico zellige e calligrafia araba in stucco nel Palazzo della Bahia Marrakech',
+      en: 'Courtyard wall fountain alcove with elaborate zellige tilework in Bahia Palace Marrakech',
+      fr: 'Alcôve de fontaine murale avec zellige élaboré au Palais de la Bahia Marrakech',
+      es: 'Nicho de fuente mural con elaborado zellige en el Palacio de la Bahía Marrakech',
+      de: 'Wandbrunnenalkove mit aufwändigem Zellige im Bahia Palast Marrakesch',
+      it: 'Alcova con fontana a muro e zellige elaborato nel Palazzo della Bahia Marrakech',
     },
   },
   {
-    src: '/images/gallery/bahia-palace-arch-view-green-dome-fountain-palm.jpg',
-    title: 'Arch View with Garden',
+    src: '/images/blog-real/bahia-palace-carved-plaster-arch-visitors-interior.webp',
+    title: 'Carved Plaster Arches',
     alts: {
-      en: 'Horseshoe arch framing the garden with green dome, fountain and palms at Bahia Palace Marrakech',
-      fr: 'Arc en fer à cheval ouvrant sur le jardin avec dôme vert, fontaine et palmiers, Palais de la Bahia',
-      es: 'Arco de herradura enmarcando el jardín con cúpula verde y palmeras, Palacio de la Bahía Marrakech',
-      de: 'Hufeisenbogen mit Garten, grüner Kuppel, Brunnen und Palmen im Bahia Palast Marrakesch',
-      it: 'Arco a ferro di cavallo con giardino, cupola verde e palme nel Palazzo della Bahia Marrakech',
+      en: 'Elaborately carved plaster arch with visitors in the interior of Bahia Palace Marrakech',
+      fr: 'Arc en plâtre sculpté avec visiteurs dans l\'intérieur du Palais de la Bahia Marrakech',
+      es: 'Arco de yeso tallado con visitantes en el interior del Palacio de la Bahía Marrakech',
+      de: 'Aufwändig geschnitzter Stuckbogen mit Besuchern im Inneren des Bahia Palasts Marrakesch',
+      it: 'Arco in gesso intagliato con visitatori nell\'interno del Palazzo della Bahia Marrakech',
     },
   },
   {
-    src: '/images/gallery/bahia-palace-inner-courtyard-central-fountain-stucco.jpg',
+    src: '/images/blog-real/bahia-palace-small-riad-courtyard-fountain-arches.webp',
     title: 'Inner Courtyard',
     alts: {
-      en: 'Inner courtyard with central fountain and carved stucco walls in Bahia Palace Marrakech',
-      fr: 'Cour intérieure avec fontaine centrale et murs en stuc sculpté du Palais de la Bahia Marrakech',
-      es: 'Patio interior con fuente central y muros de estuco tallado en el Palacio de la Bahía Marrakech',
-      de: 'Innenhof mit zentralem Brunnen und geschnitzten Stuckwänden im Bahia Palast Marrakesch',
-      it: 'Cortile interno con fontana centrale e pareti in stucco intagliato del Palazzo della Bahia Marrakech',
+      en: 'Small riad courtyard with central fountain and arched gallery in Bahia Palace Marrakech',
+      fr: 'Petite cour de riad avec fontaine centrale et galerie arquée au Palais de la Bahia Marrakech',
+      es: 'Pequeño patio riad con fuente central y galería de arcos en el Palacio de la Bahía Marrakech',
+      de: 'Kleiner Riad-Innenhof mit Brunnen und Bogengalerie im Bahia Palast Marrakesch',
+      it: 'Piccolo cortile riad con fontana centrale e galleria ad archi nel Palazzo della Bahia Marrakech',
     },
   },
 ];
@@ -96,7 +96,7 @@ export function GalleryCarousel({ locale }: { locale: string }) {
         >
           <Image
             src={slide.src}
-            alt={slide.alts[locale] ?? slide.alts.en}
+            alt={slide.alts[locale as keyof typeof slide.alts] ?? slide.alts.en}
             fill
             className="object-cover"
             sizes="(max-width:1024px) 100vw, 960px"
