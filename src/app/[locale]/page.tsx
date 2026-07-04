@@ -53,9 +53,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: meta.title,
     description: meta.description,
-    keywords: ['bahia palace marrakech', 'bahia palace tickets 2026', 'palais bahia marrakech',
-      'bahia palace morocco', 'visit bahia palace', 'skip the line marrakech',
-      'moroccan architecture', 'marrakech medina attractions', 'bahia palace gardens'],
     alternates: buildAlternates(locale, ''),
     openGraph: buildOG(meta.title, meta.description, locale, ''),
     twitter: {

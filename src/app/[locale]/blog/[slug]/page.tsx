@@ -24,6 +24,7 @@ async function buildBlogAlternates(locale: string, slug: string) {
     const languages = Object.fromEntries(
       Object.entries(HISTORY_HREFLANG).map(([l, s]) => [l, `${BASE}/${l}/blog/${s}`])
     );
+    languages['x-default'] = `${BASE}/en/blog/${HISTORY_HREFLANG.en}`;
     return { canonical: `${BASE}/${locale}/blog/${slug}`, languages };
   }
 

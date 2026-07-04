@@ -66,10 +66,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: meta.title,
     description: meta.description,
-    keywords: [
-      'bahia palace photos', 'bahia palace interior', 'bahia palace zellige', 'bahia palace courtyard',
-      'bahia palace marrakech pictures', 'inside bahia palace', 'bahia palace ceiling', 'palais bahia photos',
-    ],
     alternates: buildAlternates(locale, '/gallery'),
     openGraph: buildOG(meta.title, meta.description, locale, '/gallery'),
   };

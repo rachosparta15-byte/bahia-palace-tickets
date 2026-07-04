@@ -24,7 +24,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: meta.title,
     description: meta.description,
-    keywords: ['bahia palace history', 'who built bahia palace', 'bahia palace ba ahmed', 'bahia palace si moussa', 'bahia palace 19th century', 'grand vizier morocco', 'ba ahmed ben moussa', 'palace construction 1894'],
     alternates: buildAlternates(locale, '/history'),
     openGraph: { ...buildOG(meta.title, meta.description, locale, '/history'), type: 'article' },
   };

@@ -25,7 +25,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: meta.title,
     description: meta.description,
-    keywords: ['bahia palace faq', 'bahia palace tickets questions', 'bahia palace entrance fee', 'is bahia palace worth visiting', 'bahia palace opening hours', 'bahia palace guided tour', 'skip the line bahia palace', 'how to get to bahia palace'],
     alternates: buildAlternates(locale, '/faq'),
     openGraph: buildOG(meta.title, meta.description, locale, '/faq'),
   };

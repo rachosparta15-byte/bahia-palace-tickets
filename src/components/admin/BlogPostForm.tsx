@@ -26,7 +26,7 @@ const LOCALES    = ['en', 'fr', 'it', 'de', 'es'];
 const CATEGORIES = ['visit-tips', 'history', 'safety', 'practical', 'comparisons'];
 
 function slugify(str: string) {
-  return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  return str.toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
 
 const inputCls = 'w-full border border-[#D4BC96] rounded-lg px-4 py-2.5 text-sm text-[#3D2817] focus:outline-none focus:ring-2 focus:ring-[#C4452D]/30 focus:border-[#C4452D] transition-colors bg-white';

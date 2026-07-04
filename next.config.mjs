@@ -119,6 +119,8 @@ const nextConfig = {
       { from: 'how-to-avoid-tourist-scams-marrakech-safety-guide-2026',                      to: 'marrakech-safety-guide' },
       { from: 'how-to-avoid-scams-in-the-souks-of-marrakech-complete-guide-for-travelers', to: 'marrakech-safety-guide' },
       { from: '2-days-in-marrakech-perfect-weekend-itinerary-2026',                        to: 'marrakech-2-day-itinerary' },
+      // Slug generator used to drop words around "&" instead of expanding it to "and"
+      { from: 'the-and-solidary-guide-understanding-mousawama-and-the-soul-of-marrakesh',  to: 'the-human-and-solidary-guide-to-mousawama-haggling-with-soul-in-marrakech' },
     ];
     const blogMergeEnOnly = BLOG_MERGE_EN_ONLY.map(({ from, to }) => ({
       source:      `/en/blog/${from}`,
