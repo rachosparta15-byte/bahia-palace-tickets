@@ -1,6 +1,7 @@
 import { TicketDetailPage } from '@/components/tickets/TicketDetailPage';
 import type { Metadata } from 'next';
 import { buildAlternates, buildOG } from '@/lib/seo';
+import { TICKET_PRICES } from '@/lib/ticket-data';
 
 export const revalidate = 86400;
 
@@ -44,5 +45,5 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function SkipTheLinePage() {
-  return <TicketDetailPage ticketKey="skipTheLine" slug="skip-the-line" price={10} />;
+  return <TicketDetailPage ticketKey="skipTheLine" slug="skip-the-line" price={TICKET_PRICES['skip-the-line']} />;
 }

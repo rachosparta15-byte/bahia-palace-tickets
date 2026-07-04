@@ -7,6 +7,7 @@ import { BookingWidget } from './BookingWidget';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { BASE, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
+import { TICKET_PRICES } from '@/lib/ticket-data';
 
 export type TicketKey = 'skipTheLine' | 'guidedTour' | 'privateTour' | 'combo';
 
@@ -41,10 +42,10 @@ const GALLERY_IMAGES: Record<TicketKey, [string, string, string]> = {
 };
 
 const ALL_TICKETS: { key: TicketKey; slug: string; price: number; live: boolean }[] = [
-  { key: 'skipTheLine',  slug: 'skip-the-line',       price: 10, live: true  },
-  { key: 'guidedTour',   slug: 'guided-tour',          price: 10, live: false },
-  { key: 'privateTour',  slug: 'private-tour',         price: 10, live: false },
-  { key: 'combo',        slug: 'combo-saadian-tombs',  price: 10, live: false },
+  { key: 'skipTheLine',  slug: 'skip-the-line',       price: TICKET_PRICES['skip-the-line'],       live: true  },
+  { key: 'guidedTour',   slug: 'guided-tour',          price: TICKET_PRICES['guided-tour'],         live: false },
+  { key: 'privateTour',  slug: 'private-tour',         price: TICKET_PRICES['private-tour'],        live: false },
+  { key: 'combo',        slug: 'combo-saadian-tombs',  price: TICKET_PRICES['combo-saadian-tombs'],  live: false },
 ];
 
 function ComingSoonWidget({ ticketName }: { ticketName: string }) {

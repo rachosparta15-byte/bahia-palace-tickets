@@ -1,15 +1,8 @@
-export type TicketSlug =
-  | 'skip-the-line'
-  | 'guided-tour'
-  | 'private-tour'
-  | 'combo-saadian-tombs';
+import { TICKET_PRICES_USD, type TicketSlug } from '@/config/pricing';
 
-export const TICKET_PRICES: Record<TicketSlug, number> = {
-  'skip-the-line':        10,
-  'guided-tour':          10,
-  'private-tour':         10,
-  'combo-saadian-tombs':  10,
-};
+export type { TicketSlug };
+
+export const TICKET_PRICES: Record<TicketSlug, number> = TICKET_PRICES_USD;
 
 export const TICKET_NAME_KEYS: Record<TicketSlug, string> = {
   'skip-the-line':        'skipTheLine',

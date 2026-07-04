@@ -5,19 +5,13 @@ import { useRouter } from '@/i18n/navigation';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { Check, ArrowRight, Clock, Star, Zap, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
+import { TICKET_PRICES } from '@/lib/ticket-data';
 
 const TICKET_IMAGES = {
   'skip-the-line':       '/images/ticket-skip-the-line.webp',
   'guided-tour':         '/images/gallery/bahia-palace-octagonal-cedar-ceiling-carved-wood.jpg',
   'private-tour':        '/images/gallery/bahia-palace-grand-courtyard-balcony-view-fountain.jpg',
   'combo-saadian-tombs': '/images/gallery/bahia-palace-inner-courtyard-central-fountain-stucco.jpg',
-};
-
-const TICKET_PRICES = {
-  'skip-the-line':       10,
-  'guided-tour':         10,
-  'private-tour':        10,
-  'combo-saadian-tombs': 10,
 };
 
 const TICKET_LIVE = {

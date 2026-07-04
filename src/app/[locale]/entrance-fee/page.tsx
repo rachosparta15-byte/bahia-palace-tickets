@@ -5,15 +5,26 @@ import { buildAlternates, buildOG, BASE, DIGITAL_TICKET_OFFER_EXTRAS } from '@/l
 import { CheckCircle2, Info, ArrowRight, Tag } from 'lucide-react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import {
+  OFFICIAL_DOOR_PRICE_MAD,
+  OFFICIAL_DOOR_PRICE_USD_APPROX,
+  OFFICIAL_DOOR_PRICE_EUR_APPROX,
+} from '@/config/pricing';
+import { TICKET_PRICES } from '@/lib/ticket-data';
+
+const SKIP_THE_LINE_PRICE_USD = TICKET_PRICES['skip-the-line'];
+const GUIDED_TOUR_PLANNED_PRICE_USD = TICKET_PRICES['guided-tour'];
+const PRIVATE_TOUR_PLANNED_PRICE_USD = TICKET_PRICES['private-tour'];
 
 export const revalidate = 86400;
 
+const MAD = OFFICIAL_DOOR_PRICE_MAD;
 const META: Record<string, { title: string; description: string }> = {
-  en: { title: 'Bahia Palace Ticket Price 2026 | 100 MAD — Official Fee', description: 'Adults pay 100 MAD at the gate — children under 7 enter free. Compare Ramadan rates, Moroccan national discounts, and skip-the-line online prices. Updated for 2026.' },
-  fr: { title: 'Prix Entrée Palais Bahia 2026 | Tarifs en MAD & EUR', description: 'Adultes : 100 MAD à la caisse, enfants de moins de 7 ans gratuits. Comparez le tarif Ramadan, les réductions pour Marocains et le coupe-file en ligne. Mis à jour 2026.' },
-  es: { title: 'Precio Entrada Palacio Bahia 2026 | Tarifas en MAD y EUR', description: 'Adultos pagan 100 MAD en taquilla — menores de 7 años gratis. Compare tarifa Ramadán, precio nacional marroquí y la entrada sin cola online. Actualizado 2026.' },
-  de: { title: 'Bahia Palast Eintrittspreis 2026 | Aktuelle Ticketpreise', description: 'Erwachsene zahlen 100 MAD an der Kasse — Kinder unter 7 Jahren frei. Ramadan-Tarif, Marokkanerpreis und Skip-the-Line-Online-Ticket im Vergleich. Aktuell 2026.' },
-  it: { title: 'Prezzo Biglietto Palazzo Bahia 2026 | Tariffe Aggiornate', description: 'Adulti: 100 MAD in cassa, bambini sotto i 7 anni gratis. Confronta tariffe Ramadan, sconto nazionali marocchini e il salta-fila online. Aggiornato per il 2026.' },
+  en: { title: `Bahia Palace Ticket Price 2026 | ${MAD} MAD — Official Fee`, description: `Adults pay ${MAD} MAD at the gate — children under 7 enter free. Compare Ramadan rates, Moroccan national discounts, and skip-the-line online prices. Updated for 2026.` },
+  fr: { title: 'Prix Entrée Palais Bahia 2026 | Tarifs en MAD & EUR', description: `Adultes : ${MAD} MAD à la caisse, enfants de moins de 7 ans gratuits. Comparez le tarif Ramadan, les réductions pour Marocains et le coupe-file en ligne. Mis à jour 2026.` },
+  es: { title: 'Precio Entrada Palacio Bahia 2026 | Tarifas en MAD y EUR', description: `Adultos pagan ${MAD} MAD en taquilla — menores de 7 años gratis. Compare tarifa Ramadán, precio nacional marroquí y la entrada sin cola online. Actualizado 2026.` },
+  de: { title: 'Bahia Palast Eintrittspreis 2026 | Aktuelle Ticketpreise', description: `Erwachsene zahlen ${MAD} MAD an der Kasse — Kinder unter 7 Jahren frei. Ramadan-Tarif, Marokkanerpreis und Skip-the-Line-Online-Ticket im Vergleich. Aktuell 2026.` },
+  it: { title: 'Prezzo Biglietto Palazzo Bahia 2026 | Tariffe Aggiornate', description: `Adulti: ${MAD} MAD in cassa, bambini sotto i 7 anni gratis. Confronta tariffe Ramadan, sconto nazionali marocchini e il salta-fila online. Aggiornato per il 2026.` },
 };
 
 interface Props { params: Promise<{ locale: string }> }
@@ -37,10 +48,10 @@ function getPriceSchema(locale: string) {
     name: 'Bahia Palace',
     url: `${BASE}/${locale}/entrance-fee`,
     offers: [
-      { '@type': 'Offer', name: 'Standard Entry (gate)',     price: '10', priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
-      { '@type': 'Offer', name: 'Skip-the-Line (online)',   price: '14', priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
-      { '@type': 'Offer', name: 'Guided Tour (online)',      price: '28', priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
-      { '@type': 'Offer', name: 'Private Tour (online)',     price: '49', priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
+      { '@type': 'Offer', name: 'Standard Entry (gate)',     price: String(OFFICIAL_DOOR_PRICE_USD_APPROX), priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
+      { '@type': 'Offer', name: 'Skip-the-Line (online)',   price: String(SKIP_THE_LINE_PRICE_USD), priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
+      { '@type': 'Offer', name: 'Guided Tour (online)',      price: String(GUIDED_TOUR_PLANNED_PRICE_USD), priceCurrency: 'USD', availability: 'https://schema.org/PreOrder', ...DIGITAL_TICKET_OFFER_EXTRAS },
+      { '@type': 'Offer', name: 'Private Tour (online)',     price: String(PRIVATE_TOUR_PLANNED_PRICE_USD), priceCurrency: 'USD', availability: 'https://schema.org/PreOrder', ...DIGITAL_TICKET_OFFER_EXTRAS },
     ],
   };
 }
@@ -85,9 +96,9 @@ export default async function EntranceFeePage({ params }: Props) {
         {/* Price cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {[
-            { label: 'Standard Entry', mad: '100 MAD', usd: '≈ $10 USD', note: 'At the gate — queue included', highlight: false },
-            { label: 'Skip-the-Line', mad: 'From $14', usd: 'Incl. entry + service fee', note: 'Walk straight in, no waiting', highlight: true },
-            { label: 'Guided Tour', mad: 'From $28', usd: 'Incl. entry + expert guide', note: 'Entry + 90-min English tour', highlight: false },
+            { label: 'Standard Entry', mad: `${OFFICIAL_DOOR_PRICE_MAD} MAD`, usd: `≈ $${OFFICIAL_DOOR_PRICE_USD_APPROX} USD`, note: 'At the gate — queue included', highlight: false },
+            { label: 'Skip-the-Line', mad: `From $${SKIP_THE_LINE_PRICE_USD}`, usd: 'Incl. entry + service fee', note: 'Walk straight in, no waiting', highlight: true },
+            { label: 'Guided Tour', mad: `From $${GUIDED_TOUR_PLANNED_PRICE_USD}`, usd: 'Incl. entry + expert guide', note: 'Entry + 90-min English tour', highlight: false },
           ].map(({ label, mad, usd, note, highlight }) => (
             <div key={label} className={`rounded-2xl border p-6 text-center ${highlight ? 'bg-[#C4452D] border-[#C4452D] text-white shadow-[0_8px_32px_rgba(196,69,45,0.3)]' : 'bg-[#251A0F] border-[rgba(232,163,61,0.13)]'}`}>
               <p className={`text-xs font-bold uppercase tracking-widest mb-3 ${highlight ? 'text-white/70' : 'text-[#C4A882]'}`}>{label}</p>
@@ -107,13 +118,13 @@ export default async function EntranceFeePage({ params }: Props) {
           </div>
           <div className="divide-y divide-[rgba(232,163,61,0.10)]">
             {[
-              { category: 'Foreign adults', price: '100 MAD', usd: '~$10', note: 'Gate price — long queues possible' },
+              { category: 'Foreign adults', price: `${OFFICIAL_DOOR_PRICE_MAD} MAD`, usd: `~$${OFFICIAL_DOOR_PRICE_USD_APPROX}`, note: 'Gate price — long queues possible' },
               { category: 'Foreign children (7–13)', price: '50 MAD', usd: '~$5', note: 'Official Ministry of Culture rate' },
               { category: 'Children under 7', price: 'Free', usd: 'Free', note: 'No ticket required' },
               { category: 'Moroccan adults', price: '30 MAD', usd: '~$3', note: 'Valid Moroccan ID required' },
-              { category: 'Skip-the-Line (online)', price: 'From $14', usd: '$14', note: 'Incl. 100 MAD entry + service fee' },
-              { category: 'Guided Tour (online)', price: 'From $28', usd: '$28', note: 'Entry + 90-min expert English guide' },
-              { category: 'Private Tour (online)', price: 'From $49', usd: '$49', note: 'Entry + exclusive private guide' },
+              { category: 'Skip-the-Line (online)', price: `From $${SKIP_THE_LINE_PRICE_USD}`, usd: `$${SKIP_THE_LINE_PRICE_USD}`, note: `Incl. ${OFFICIAL_DOOR_PRICE_MAD} MAD entry + service fee` },
+              { category: 'Guided Tour (online)', price: `From $${GUIDED_TOUR_PLANNED_PRICE_USD}`, usd: `$${GUIDED_TOUR_PLANNED_PRICE_USD}`, note: 'Entry + 90-min expert English guide' },
+              { category: 'Private Tour (online)', price: `From $${PRIVATE_TOUR_PLANNED_PRICE_USD}`, usd: `$${PRIVATE_TOUR_PLANNED_PRICE_USD}`, note: 'Entry + exclusive private guide' },
             ].map(({ category, price, note }) => (
               <div key={category} className="grid grid-cols-3 px-6 py-4 text-sm">
                 <span className="font-semibold text-[#F5E8CC]">{category}</span>
@@ -132,7 +143,7 @@ export default async function EntranceFeePage({ params }: Props) {
               <h3 className="font-bold text-[#F5E8CC] text-sm">Why is the online price higher?</h3>
             </div>
             <p className="text-sm text-[#C4A882] leading-relaxed">
-              The <strong className="text-[#F5E8CC]">100 MAD gate price</strong> covers standard entry with potentially 1–2 hour queues. Our online prices include the <strong className="text-[#F5E8CC]">100 MAD official entrance fee</strong> plus an independent booking service fee for skip-the-line access, instant mobile confirmation, free cancellation, and English-language support. We are an independent ticketing service, not affiliated with the Moroccan government.
+              The <strong className="text-[#F5E8CC]">{OFFICIAL_DOOR_PRICE_MAD} MAD gate price</strong> covers standard entry with potentially 1–2 hour queues. Our online prices include the <strong className="text-[#F5E8CC]">{OFFICIAL_DOOR_PRICE_MAD} MAD official entrance fee</strong> plus an independent booking service fee for skip-the-line access, instant mobile confirmation, free cancellation, and English-language support. We are an independent ticketing service, not affiliated with the Moroccan government.
             </p>
           </div>
           <div className="bg-[#E8A33D]/08 rounded-xl p-5 border border-[#E8A33D]/20">
@@ -141,7 +152,7 @@ export default async function EntranceFeePage({ params }: Props) {
               <h3 className="font-bold text-[#F5E8CC] text-sm">How much is Bahia Palace in MAD?</h3>
             </div>
             <p className="text-sm text-[#C4A882] leading-relaxed">
-              The <strong className="text-[#F5E8CC]">Bahia Palace entrance fee</strong> is <strong className="text-[#F5E8CC]">100 MAD</strong> (approximately $10 USD or €9 EUR at 2026 exchange rates) for foreign adult visitors. Moroccan nationals pay 30 MAD. This is the price set by the Moroccan Ministry of Culture.
+              The <strong className="text-[#F5E8CC]">Bahia Palace entrance fee</strong> is <strong className="text-[#F5E8CC]">{OFFICIAL_DOOR_PRICE_MAD} MAD</strong> (approximately ${OFFICIAL_DOOR_PRICE_USD_APPROX} USD or €{OFFICIAL_DOOR_PRICE_EUR_APPROX} EUR at 2026 exchange rates) for foreign adult visitors. Moroccan nationals pay 30 MAD. This is the price set by the Moroccan Ministry of Culture.
             </p>
           </div>
         </div>
