@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import prisma from '@/lib/db';
 import { BASE } from '@/lib/seo';
 import { getAllSlugs, getBlogPost } from '@/lib/blog';
+import { HISTORY_HREFLANG, HISTORY_SLUGS } from '@/lib/blog-hreflang';
 
 export const dynamic = 'force-dynamic';
 const LOCALES = ['en', 'fr', 'it', 'de', 'es'] as const;
@@ -105,14 +106,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   } catch { /* DB unavailable at sitemap generation time */ }
 
   // History posts use different slugs per locale — hardcode their cross-slug hreflang
-  const HISTORY_HREFLANG: Record<string, string> = {
-    en: 'bahia-palace-history',
-    fr: 'palais-de-la-bahia-marrakech-histoire',
-    de: 'palast-bahia-marrakesch-geschichte',
-    it: 'palazzo-bahia-marrakech-storia',
-    es: 'palacio-bahia-marrakech-historia',
-  };
-  const HISTORY_SLUGS = new Set(Object.values(HISTORY_HREFLANG));
   const historyLanguages = Object.fromEntries(
     Object.entries(HISTORY_HREFLANG).map(([l, s]) => [l, `${BASE}/${l}/blog/${s}`])
   );

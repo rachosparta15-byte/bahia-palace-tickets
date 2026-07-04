@@ -10,6 +10,39 @@ import prisma from '@/lib/db';
 import type { Metadata } from 'next';
 import { BASE, buildAlternates } from '@/lib/seo';
 import { getBlogPost } from '@/lib/blog';
+import { HISTORY_HREFLANG, HISTORY_SLUGS } from '@/lib/blog-hreflang';
+
+const ALL_LOCALES = ['en', 'fr', 'it', 'de', 'es'];
+
+// Builds hreflang alternates for a blog post. Slugs are only shared across
+// locales when the same slug is genuinely published in each — otherwise
+// (e.g. a post that exists only in one locale) buildAlternates()'s "same
+// path for every locale" assumption produces alternate links to 404s, which
+// Google then dutifully crawls and reports as broken.
+async function buildBlogAlternates(locale: string, slug: string) {
+  if (HISTORY_SLUGS.has(slug)) {
+    const languages = Object.fromEntries(
+      Object.entries(HISTORY_HREFLANG).map(([l, s]) => [l, `${BASE}/${l}/blog/${s}`])
+    );
+    return { canonical: `${BASE}/${locale}/blog/${slug}`, languages };
+  }
+
+  let presentLocales: string[] = [];
+  try {
+    const rows = await prisma.blogPost.findMany({ where: { slug, published: true }, select: { locale: true } });
+    presentLocales = rows.map((r) => r.locale);
+  } catch { /* db unavailable */ }
+  if (presentLocales.length === 0) {
+    presentLocales = ALL_LOCALES.filter((l) => getBlogPost(l, slug));
+  }
+  if (!presentLocales.includes(locale)) presentLocales.push(locale);
+
+  const languages: Record<string, string> = {};
+  for (const l of presentLocales) languages[l] = `${BASE}/${l}/blog/${slug}`;
+  if (presentLocales.includes('en')) languages['x-default'] = `${BASE}/en/blog/${slug}`;
+
+  return { canonical: `${BASE}/${locale}/blog/${slug}`, languages };
+}
 
 const CATEGORY_IMAGES: Record<string, string> = {
   'visit-tips':   '/images/gallery/bahia-palace-tourists-visiting-grand-courtyard.jpg',
@@ -130,12 +163,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonical   = `${BASE}/${locale}/blog/${slug}`;
 
   const staticPath = STATIC_PAGE_CANONICALS[slug];
+  const alternates = staticPath
+    ? { canonical: `${BASE}/${locale}${staticPath}`, languages: buildAlternates(locale, staticPath).languages }
+    : await buildBlogAlternates(locale, slug);
   return {
     title,
     description,
-    alternates:  staticPath
-      ? { canonical: `${BASE}/${locale}${staticPath}`, languages: buildAlternates(locale, staticPath).languages }
-      : buildAlternates(locale, `/blog/${slug}`),
+    alternates,
     openGraph: {
       title:  rawTitle,
       description,

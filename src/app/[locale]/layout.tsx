@@ -8,7 +8,6 @@ import { Footer } from '@/components/layout/Footer';
 import { MobileBottomNav } from '@/components/layout/MobileBottomNav';
 import { CookieBanner } from '@/components/layout/CookieBanner';
 import { Analytics } from '@/components/analytics/Analytics';
-import { HreflangLinks } from '@/components/seo/HreflangLinks';
 import type { Metadata } from 'next';
 import { BASE } from '@/lib/seo';
 
@@ -59,7 +58,6 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <HreflangLinks />
       <div className="flex flex-col min-h-screen" lang={locale}>
         <Header />
         <VideoPromoBar variant="C" />

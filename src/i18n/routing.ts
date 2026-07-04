@@ -13,4 +13,15 @@ export const routing = defineRouting({
   // This means: if someone manually switches to French, the next visit
   // keeps them in French even if they open a root URL.
   localeCookie: true,
+  // Disabled: this blindly mirrors the current pathname across all 5
+  // locales in a `Link: rel="alternate"` response header, with no idea
+  // whether a translated version actually exists at that path. For blog
+  // posts (which often have a different or nonexistent slug per locale)
+  // that produced alternate links to pages that were never published,
+  // which Google dutifully crawled and reported as 404s in Search Console.
+  // Every page already emits its own correct, content-aware hreflang tags
+  // via generateMetadata()'s `alternates` (see src/lib/seo.ts buildAlternates
+  // and the blog post's buildBlogAlternates), so this is redundant when
+  // right and actively harmful when wrong.
+  alternateLinks: false,
 });

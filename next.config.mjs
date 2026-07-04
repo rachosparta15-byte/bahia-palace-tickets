@@ -91,6 +91,14 @@ const nextConfig = {
       { source: '/es/blog/marrakech-la-ciudad-roja-donde-la-historia-cobra-vida', destination: '/es', permanent: true },
       // EN thin photoshoot colors → photography guide (merge)
       { source: '/en/blog/best-colors-to-wear-for-a-photoshoot-at-bahia-palace-marrakech', destination: '/en/blog/bahia-palace-photography-guide', permanent: true },
+      // Removed "Complete Visitor Guide" kitchen-sink post — content now split
+      // across the opening-hours/entrance-fee/dress-code pages. Never had a
+      // redirect, so Google kept re-crawling and reporting it as a 404.
+      ...LOCALES.map(locale => ({
+        source:      `/${locale}/blog/bahia-palace-marrakech-complete-visitor-guide-2026`,
+        destination: `/${locale}/opening-hours`,
+        permanent:   true,
+      })),
     ];
 
     // EN-only duplicate slug redirects (slugs that only exist in EN)
