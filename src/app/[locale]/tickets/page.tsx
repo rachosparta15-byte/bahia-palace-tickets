@@ -3,7 +3,7 @@ import { TicketSection } from '@/components/homepage/TicketSection';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { JsonLd } from '@/components/seo/JsonLd';
 import type { Metadata } from 'next';
-import { buildAlternates, buildOG, BASE } from '@/lib/seo';
+import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE } from '@/lib/seo';
 import { SKIP_THE_LINE_PRICE_USD } from '@/config/pricing';
 
 export const revalidate = 86400;
@@ -75,6 +75,7 @@ export default async function TicketsPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-[#1C1108]">
       <JsonLd data={ticketsSchema} />
+      <JsonLd data={buildBreadcrumbSchema(locale, [{ name: tb('home'), path: '' }, { name: tb('tickets') }])} />
       <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] px-6 py-8">
         <div className="max-w-6xl mx-auto">
           <Breadcrumb

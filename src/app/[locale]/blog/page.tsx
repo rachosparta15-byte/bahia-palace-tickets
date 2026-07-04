@@ -3,11 +3,12 @@ import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
+import { JsonLd } from '@/components/seo/JsonLd';
 import { Clock, ArrowRight } from 'lucide-react';
 import prisma from '@/lib/db';
 import { getBlogPosts } from '@/lib/blog';
 import type { Metadata } from 'next';
-import { buildAlternates, buildOG } from '@/lib/seo';
+import { buildAlternates, buildOG, buildBreadcrumbSchema } from '@/lib/seo';
 
 export const revalidate = 3600;
 
@@ -97,6 +98,7 @@ export default async function BlogIndexPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-[#1C1108]">
+      <JsonLd data={buildBreadcrumbSchema(locale, [{ name: tb('home'), path: '' }, { name: tb('blog') }])} />
       <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] text-white px-6 py-14 md:px-10">
         <div className="max-w-5xl mx-auto">
           <Breadcrumb variant="light" items={[

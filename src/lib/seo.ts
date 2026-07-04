@@ -35,6 +35,25 @@ export const DIGITAL_TICKET_OFFER_EXTRAS = {
   },
 };
 
+/** Builds a schema.org BreadcrumbList matching the visual <Breadcrumb> trail on a page.
+ *  `items` should mirror the same {label, href} list passed to <Breadcrumb>, in order,
+ *  ending with the current (unlinked) page. */
+export function buildBreadcrumbSchema(
+  locale: string,
+  items: Array<{ name: string; path?: string }>,
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      ...(item.path !== undefined ? { item: `${BASE}/${locale}${item.path}` } : {}),
+    })),
+  };
+}
+
 export function buildOG(title: string, description: string, locale: string, path: string) {
   return {
     title,

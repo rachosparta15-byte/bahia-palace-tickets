@@ -1,7 +1,7 @@
 import { LeadButton } from '@/components/layout/LeadButton';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
-import { buildAlternates, buildOG, BASE } from '@/lib/seo';
+import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE } from '@/lib/seo';
 import { Clock, Sun, Moon, AlertTriangle, CheckCircle2, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -48,6 +48,7 @@ export default async function OpeningHoursPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-[#1C1108]">
       <JsonLd data={getHoursSchema(locale)} />
+      <JsonLd data={buildBreadcrumbSchema(locale, [{ name: 'Home', path: '' }, { name: 'Opening Hours' }])} />
 
       <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] text-white px-6 py-12 md:px-10">
         <div className="max-w-4xl mx-auto">

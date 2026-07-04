@@ -1,9 +1,10 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, getLocale } from 'next-intl/server';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { ContactForm } from '@/components/contact/ContactForm';
+import { JsonLd } from '@/components/seo/JsonLd';
 import { Info, Clock, Mail, MessageCircle } from 'lucide-react';
 import type { Metadata } from 'next';
-import { buildAlternates, buildOG } from '@/lib/seo';
+import { buildAlternates, buildOG, buildBreadcrumbSchema } from '@/lib/seo';
 import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
 
 export const revalidate = 86400;
@@ -32,8 +33,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ContactPage() {
-  const t  = await getTranslations('contactPage');
-  const tb = await getTranslations('breadcrumb');
+  const t      = await getTranslations('contactPage');
+  const tb     = await getTranslations('breadcrumb');
+  const locale = await getLocale();
   const whatsappNumber = getWhatsAppNumber();
   const whatsappUrl    = whatsappNumber
     ? buildWhatsAppUrl(whatsappNumber, 'Hi! I have a question about Bahia Palace tickets.')
@@ -41,6 +43,7 @@ export default async function ContactPage() {
 
   return (
     <div className="min-h-screen bg-[#1C1108]">
+      <JsonLd data={buildBreadcrumbSchema(locale, [{ name: tb('home'), path: '' }, { name: tb('contact') }])} />
       {/* Page header */}
       <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] text-white px-6 py-12 md:px-10">
         <div className="max-w-5xl mx-auto">

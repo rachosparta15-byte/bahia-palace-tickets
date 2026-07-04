@@ -1,7 +1,7 @@
 import { LeadButton } from '@/components/layout/LeadButton';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
-import { buildAlternates, buildOG, BASE, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
+import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
 import { CheckCircle2, Info, ArrowRight, Tag } from 'lucide-react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
@@ -60,6 +60,11 @@ export default async function EntranceFeePage({ params }: Props) {
   return (
     <div className="min-h-screen bg-[#1C1108]">
       <JsonLd data={getPriceSchema(locale)} />
+      <JsonLd data={buildBreadcrumbSchema(locale, [
+        { name: 'Home', path: '' },
+        { name: 'Tickets', path: '/tickets' },
+        { name: 'Entrance Fee' },
+      ])} />
 
       {/* Header */}
       <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] text-white px-6 py-12 md:px-10">

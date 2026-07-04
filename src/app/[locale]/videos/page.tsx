@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { LiteVideo } from '@/components/video/LiteVideo';
-import { buildAlternates, buildOG } from '@/lib/seo';
+import { buildAlternates, buildOG, buildBreadcrumbSchema } from '@/lib/seo';
 import { VIDEO_TITLES } from '@/lib/videoTitles';
 import type { Metadata } from 'next';
 
@@ -126,6 +126,7 @@ export default async function VideosPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-[#1C1108]">
       {videoSchemas.map((s, i) => <JsonLd key={i} data={s} />)}
+      <JsonLd data={buildBreadcrumbSchema(locale, [{ name: tb('home'), path: '' }, { name: meta.heading }])} />
 
       {/* Hero */}
       <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] text-white px-6 py-12 md:px-10">

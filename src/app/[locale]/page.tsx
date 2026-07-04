@@ -127,7 +127,6 @@ export default async function HomePage({ params }: Props) {
       addressCountry: 'MA',
     },
     geo: { '@type': 'GeoCoordinates', latitude: 31.6226, longitude: -7.9842 },
-    telephone: '+212-524-38-91-05',
     priceRange: '$$',
     openingHoursSpecification: [
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Saturday','Sunday'], opens: '09:00', closes: '17:00' },

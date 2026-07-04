@@ -1,10 +1,11 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, getLocale } from 'next-intl/server';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
+import { JsonLd } from '@/components/seo/JsonLd';
 import { Heart, Globe, AlertTriangle, CheckCircle2 } from 'lucide-react';
 import type { Metadata } from 'next';
-import { buildAlternates, buildOG } from '@/lib/seo';
+import { buildAlternates, buildOG, buildBreadcrumbSchema } from '@/lib/seo';
 
 export const revalidate = 86400;
 
@@ -26,13 +27,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function AboutPage() {
-  const t  = await getTranslations('aboutPage');
-  const tb = await getTranslations('breadcrumb');
+  const t      = await getTranslations('aboutPage');
+  const tb     = await getTranslations('breadcrumb');
+  const locale = await getLocale();
 
   const provideItems = t('whyBody').split(' · ').filter(Boolean);
 
   return (
     <div className="min-h-screen bg-[#1C1108]">
+      <JsonLd data={buildBreadcrumbSchema(locale, [{ name: tb('home'), path: '' }, { name: tb('about') }])} />
       {/* Hero */}
       <div className="relative h-72 md:h-96">
         <Image

@@ -8,7 +8,7 @@ import { Clock, ArrowRight, User } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import prisma from '@/lib/db';
 import type { Metadata } from 'next';
-import { BASE, buildAlternates } from '@/lib/seo';
+import { BASE, buildAlternates, buildBreadcrumbSchema } from '@/lib/seo';
 import { getBlogPost } from '@/lib/blog';
 import { HISTORY_HREFLANG, HISTORY_SLUGS } from '@/lib/blog-hreflang';
 
@@ -256,6 +256,11 @@ export default async function BlogPostPage({ params }: Props) {
     <div className="min-h-screen bg-[#1C1108]">
       <JsonLd data={articleSchema} />
       {faqSchema && <JsonLd data={faqSchema} />}
+      <JsonLd data={buildBreadcrumbSchema(locale, [
+        { name: tb('home'), path: '' },
+        { name: tb('blog'), path: '/blog' },
+        { name: post.title },
+      ])} />
       {/* Hero */}
       <div className="relative h-64 md:h-80">
         <Image src={imgSrc} alt={post.coverImageAlt ?? post.title} fill priority className="object-cover" sizes="100vw" style={{ objectPosition: post.coverImagePosition ?? 'center' }} />

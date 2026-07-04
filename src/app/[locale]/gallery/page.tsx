@@ -1,7 +1,7 @@
 import prisma from '@/lib/db';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
-import { buildAlternates, buildOG, BASE } from '@/lib/seo';
+import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE } from '@/lib/seo';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { GalleryCarousel } from '@/components/gallery/GalleryCarousel';
 import { GalleryClient } from '@/components/gallery/GalleryClient';
@@ -98,6 +98,10 @@ export default async function GalleryPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-[#1C1108]">
       {imageObjectSchema && <JsonLd data={imageObjectSchema} />}
+      <JsonLd data={buildBreadcrumbSchema(locale, [
+        { name: 'Home', path: '' },
+        { name: 'Gallery' },
+      ])} />
 
       {/* ── Dark hero: header text + carousel ─────────────────── */}
       <div className="bg-[#1C1108]">

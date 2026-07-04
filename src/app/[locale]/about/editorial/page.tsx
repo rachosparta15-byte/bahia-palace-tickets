@@ -5,7 +5,7 @@ import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Mail, Camera, MapPin, PenLine } from 'lucide-react';
 import type { Metadata } from 'next';
-import { buildAlternates, buildOG, BASE } from '@/lib/seo';
+import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE } from '@/lib/seo';
 
 export const revalidate = 86400;
 
@@ -50,6 +50,7 @@ export default async function EditorialPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-[#1C1108]">
       <JsonLd data={personSchema} />
+      <JsonLd data={buildBreadcrumbSchema(locale, [{ name: tb('home'), path: '' }, { name: tb('about'), path: '/about' }, { name: 'Editorial' }])} />
 
       {/* Hero */}
       <div className="relative h-64 md:h-80">

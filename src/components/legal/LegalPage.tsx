@@ -1,5 +1,8 @@
-﻿import { Breadcrumb } from '@/components/tickets/Breadcrumb';
+import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { Link } from '@/i18n/navigation';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { getLocale } from 'next-intl/server';
+import { buildBreadcrumbSchema } from '@/lib/seo';
 
 interface LegalSection {
   heading: string;
@@ -14,9 +17,11 @@ interface LegalPageProps {
   homeLabel: string;
 }
 
-export function LegalPage({ title, subtitle, lastUpdated, sections, homeLabel }: LegalPageProps) {
+export async function LegalPage({ title, subtitle, lastUpdated, sections, homeLabel }: LegalPageProps) {
+  const locale = await getLocale();
   return (
     <div className="bg-[#1C1108] min-h-screen">
+      <JsonLd data={buildBreadcrumbSchema(locale, [{ name: homeLabel, path: '' }, { name: title }])} />
       <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] text-white px-6 py-12 md:px-10">
         <div className="max-w-3xl mx-auto">
           <Breadcrumb

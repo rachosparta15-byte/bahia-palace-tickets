@@ -1,7 +1,7 @@
 import { LeadButton } from '@/components/layout/LeadButton';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
-import { buildAlternates, buildOG, BASE } from '@/lib/seo';
+import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE } from '@/lib/seo';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
@@ -61,6 +61,7 @@ export default async function HistoryPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-[#1C1108]">
       <JsonLd data={getHistorySchema(locale)} />
+      <JsonLd data={buildBreadcrumbSchema(locale, [{ name: 'Home', path: '' }, { name: 'History' }])} />
 
       {/* Hero */}
       <div className="relative h-72 md:h-96">

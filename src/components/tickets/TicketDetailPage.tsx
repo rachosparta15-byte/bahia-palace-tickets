@@ -6,7 +6,7 @@ import { Breadcrumb } from './Breadcrumb';
 import { BookingWidget } from './BookingWidget';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { BASE, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
+import { BASE, DIGITAL_TICKET_OFFER_EXTRAS, buildBreadcrumbSchema } from '@/lib/seo';
 import { TICKET_PRICES } from '@/lib/ticket-data';
 
 export type TicketKey = 'skipTheLine' | 'guidedTour' | 'privateTour' | 'combo';
@@ -126,6 +126,11 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
   return (
     <div className="bg-[#1C1108] min-h-screen">
       <JsonLd data={productSchema} />
+      <JsonLd data={buildBreadcrumbSchema(locale, [
+        { name: tb('home'), path: '' },
+        { name: tb('tickets'), path: '/tickets' },
+        { name },
+      ])} />
       {/* ── Hero ── */}
       <div className="relative h-64 sm:h-80 md:h-[500px]">
         <Image
