@@ -120,7 +120,7 @@
     "childrenLabel": "Children (under 12)",
     "childFree": "Free",
     "total": "Total",
-    "proceedToCheckout": "Continue to official tickets â†’",
+    "proceedToCheckout": "Continue to official tickets →",
     "instantConfirm": "Instant confirmation",
     "freeCancelNote": "Free cancellation up to 24h before",
     "mobileTicket": "Mobile ticket accepted",
@@ -130,7 +130,7 @@
     "gallery": "Gallery",
     "faqTitle": "Questions about this tour",
     "alsoConsider": "You might also like",
-    "whatsappCta": "Have a question? WhatsApp us â†’",
+    "whatsappCta": "Have a question? WhatsApp us →",
     "whatsappMsg": "Hi! I have a question about the {ticket} ticket.",
     "adult": "adult",
     "child": "child",
@@ -163,7 +163,7 @@
   "about": {
     "title": "About Bahia Palace",
     "body": "Built in the late 19th century for Si Moussa, grand vizier of the sultan, Bahia Palace (\"Palace of the Beautiful\") is a masterpiece of Moroccan architecture. Its 8 hectares of intricate zellige tilework, carved cedar ceilings, and lush gardens have enchanted visitors for over a century.",
-    "readMore": "Read the full history â†’"
+    "readMore": "Read the full history →"
   },
   "aboutPage": {
     "metaTitle": "Visitbahiapalace.com — Independent Bahia Palace Guide",
@@ -212,7 +212,7 @@
     },
     "all": "All Questions",
     "stillNeedHelp": "Still have a question?",
-    "whatsappUs": "WhatsApp us for instant help â†’",
+    "whatsappUs": "WhatsApp us for instant help →",
     "ctaSkip": "Skip the 2-hour queue",
     "ctaTitle": "Plan Your Bahia Palace Visit",
     "ctaBody": "Instant confirmation · Free cancellation · Mobile tickets accepted",
@@ -221,11 +221,11 @@
     "items": [
       {
         "question": "Is Bahia Palace worth visiting in 2026?",
-        "answer": "Absolutely. Bahia Palace is one of the best-preserved examples of 19th-century Moroccan architecture. With 150 rooms, intricate zellige tilework, hand-painted cedar ceilings, and lush inner gardens, it offers an unmatched glimpse into Moroccan royal life. Most visitors rate it as the highlight of their Marrakech trip. At 100 MAD (â‰ˆ$10), it's exceptional value — and with a skip-the-line ticket, the experience becomes completely seamless."
+        "answer": "Absolutely. Bahia Palace is one of the best-preserved examples of 19th-century Moroccan architecture. With 150 rooms, intricate zellige tilework, hand-painted cedar ceilings, and lush inner gardens, it offers an unmatched glimpse into Moroccan royal life. Most visitors rate it as the highlight of their Marrakech trip. At 100 MAD (≈$10), it's exceptional value — and with a skip-the-line ticket, the experience becomes completely seamless."
       },
       {
         "question": "How much does Bahia Palace cost to enter?",
-        "answer": "The official gate entrance fee is 100 MAD (approximately $10 USD or â‚¬9). Children under 7 enter free, and children aged 7–13 pay 50 MAD. If you book online, skip-the-line tickets start from $10 — this includes priority entry and avoids queues that can reach 1–2 hours during peak season."
+        "answer": "The official gate entrance fee is 100 MAD (approximately $10 USD or €9). Children under 7 enter free, and children aged 7–13 pay 50 MAD. If you book online, skip-the-line tickets start from $10 — this includes priority entry and avoids queues that can reach 1–2 hours during peak season."
       },
       {
         "question": "How long do you need at Bahia Palace?",
@@ -233,11 +233,11 @@
       },
       {
         "question": "When is the best time to visit Bahia Palace?",
-        "answer": "The best time is 9:00–10:30 AM when the palace first opens — fewest visitors and soft morning light ideal for photography. Avoid 10:30 AM–2:00 PM when tour groups arrive in force. Spring (March–May) and autumn (September–November) offer the most pleasant temperatures at 20–28Â°C."
+        "answer": "The best time is 9:00–10:30 AM when the palace first opens — fewest visitors and soft morning light ideal for photography. Avoid 10:30 AM–2:00 PM when tour groups arrive in force. Spring (March–May) and autumn (September–November) offer the most pleasant temperatures at 20–28°C."
       },
       {
         "question": "Is Bahia Palace free to enter?",
-        "answer": "Bahia Palace is not free for adult visitors. The entrance fee is 100 MAD (â‰ˆ$10 USD). Children under 7 enter free, and children aged 7–13 pay 50 MAD (â‰ˆ$5). Photography is included in the ticket price with no extra charges."
+        "answer": "Bahia Palace is not free for adult visitors. The entrance fee is 100 MAD (≈$10 USD). Children under 7 enter free, and children aged 7–13 pay 50 MAD (≈$5). Photography is included in the ticket price with no extra charges."
       },
       {
         "question": "How do I get to Bahia Palace from Jemaa el-Fnaa?",
@@ -297,7 +297,7 @@
       },
       {
         "question": "Bahia Palace or Majorelle Garden — which should I visit?",
-        "answer": "They offer completely different experiences. Bahia Palace is 19th-century Moroccan royal architecture: carved plaster, zellige tile mosaics, painted cedar ceilings, and the fascinating story of Grand Vizier Ba Ahmed. Majorelle Garden is a botanical garden with Art DÃ©co architecture and the Yves Saint Laurent Museum. Most visitors do both in a single day (they are 25 minutes apart by taxi). If you must choose one: pick Bahia Palace for Moroccan history and architecture, or Majorelle if you prefer gardens and fashion/design."
+        "answer": "They offer completely different experiences. Bahia Palace is 19th-century Moroccan royal architecture: carved plaster, zellige tile mosaics, painted cedar ceilings, and the fascinating story of Grand Vizier Ba Ahmed. Majorelle Garden is a botanical garden with Art Déco architecture and the Yves Saint Laurent Museum. Most visitors do both in a single day (they are 25 minutes apart by taxi). If you must choose one: pick Bahia Palace for Moroccan history and architecture, or Majorelle if you prefer gardens and fashion/design."
       }
     ]
   },
@@ -318,7 +318,7 @@
       "itineraries": "Itineraries"
     },
     "all": "All articles",
-    "bookCta": "Plan your visit — skip the line â†’",
+    "bookCta": "Plan your visit — skip the line →",
     "relatedPosts": "Related articles",
     "share": "Share this article"
   },
@@ -333,7 +333,7 @@
     "emergencyNote": "Save these before you travel",
     "ctaTitle": "Book from a Trusted Source",
     "ctaBody": "The safest way to buy Bahia Palace tickets is directly online — before you arrive. No street vendors, no \"official\" touts at the entrance.",
-    "ctaBtn": "Book Your Authentic Ticket â†’",
+    "ctaBtn": "Book Your Authentic Ticket →",
     "contributeTitle": "Have you experienced a scam?",
     "contributeBody": "Help other travellers by sharing your experience. WhatsApp us and we'll add it to this guide (anonymously).",
     "scams": [
@@ -349,7 +349,7 @@
       },
       {
         "title": "The Henna Ambush",
-        "desc": "A woman in Jemaa el-Fna or narrow streets grabs your hand and begins applying henna without asking. When done, she demands â‚¬20–50 for it.",
+        "desc": "A woman in Jemaa el-Fna or narrow streets grabs your hand and begins applying henna without asking. When done, she demands €20–50 for it.",
         "avoid": "Keep your hands to yourself in busy areas. If approached, firmly say \"No thank you\" and keep walking."
       },
       {
@@ -374,7 +374,7 @@
       },
       {
         "title": "Snake Charmer Photo Trap",
-        "desc": "Snake charmers in Jemaa el-Fna place a snake or monkey on you and demand â‚¬10–30 for a photo you didn't ask for.",
+        "desc": "Snake charmers in Jemaa el-Fna place a snake or monkey on you and demand €10–30 for a photo you didn't ask for.",
         "avoid": "Do not stand near snake charmers unless you intend to pay. Keep your camera in your bag in that area."
       },
       {
@@ -442,7 +442,7 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "viewAll": "View all FAQs â†’",
+    "viewAll": "View all FAQs →",
     "items": [
       {
         "question": "How do I receive my ticket?",
@@ -472,7 +472,7 @@
   },
   "scamBanner": {
     "text": "Avoid common Marrakech scams — protect your visit.",
-    "link": "Read our Safety Guide â†’"
+    "link": "Read our Safety Guide →"
   },
   "cta": {
     "title": "You've read about it. Now walk through it.",
@@ -524,7 +524,7 @@
       {
         "icon": "scam",
         "title": "The Henna Ambush",
-        "body": "A woman in Jemaa el-Fna or narrow streets grabs your hand and begins applying henna without asking. When done, she demands â‚¬20–50 for it.\n\nHow to avoid: Keep your hands to yourself in busy areas. If approached, firmly say \"No thank you\" and keep walking."
+        "body": "A woman in Jemaa el-Fna or narrow streets grabs your hand and begins applying henna without asking. When done, she demands €20–50 for it.\n\nHow to avoid: Keep your hands to yourself in busy areas. If approached, firmly say \"No thank you\" and keep walking."
       },
       {
         "icon": "taxi",
@@ -549,7 +549,7 @@
       {
         "icon": "photo",
         "title": "Snake Charmer Photo Trap",
-        "body": "Snake charmers in Jemaa el-Fna place a snake or monkey on you and demand â‚¬10–30 for a photo you didn't ask for.\n\nHow to avoid: Do not stand near snake charmers unless you intend to pay. Keep your camera in your bag in that area."
+        "body": "Snake charmers in Jemaa el-Fna place a snake or monkey on you and demand €10–30 for a photo you didn't ask for.\n\nHow to avoid: Do not stand near snake charmers unless you intend to pay. Keep your camera in your bag in that area."
       },
       {
         "icon": "money",
