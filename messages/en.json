@@ -19,10 +19,10 @@
     "trustNote": "Trusted by 50,000+ visitors"
   },
   "trust": {
-    "instant": "Instant Confirmation",
-    "freeCancellation": "Free Cancellation",
-    "mobile": "Mobile Tickets",
-    "secure": "Official Portal"
+    "instant": "100% Independent",
+    "freeCancellation": "No Booking Fees",
+    "mobile": "Verified Info",
+    "secure": "Official Tickets Only"
   },
   "tickets": {
     "title": "Choose Your Bahia Palace Experience",
@@ -38,8 +38,8 @@
       "includes": [
         "Priority entry ticket",
         "Mobile or printed ticket",
-        "Instant confirmation",
-        "Free cancellation 24h prior"
+        "No booking fee",
+        "Official tickets only"
       ],
       "excludes": [
         "Guided commentary",
@@ -59,7 +59,7 @@
         "Certified local guide",
         "History & stories",
         "Small group (max 12)",
-        "Free cancellation 24h prior"
+        "Official tickets only"
       ],
       "excludes": [
         "Transport to palace",
@@ -79,7 +79,7 @@
         "Skip-the-line access",
         "Personalised experience",
         "Flexible schedule",
-        "Free cancellation 24h prior"
+        "Official tickets only"
       ],
       "excludes": [
         "Transport to palace",
@@ -98,7 +98,7 @@
         "Saadian Tombs entry",
         "Skip-the-line both sites",
         "Flexible timing",
-        "Free cancellation 24h prior"
+        "Official tickets only"
       ],
       "excludes": [
         "Guided commentary",
@@ -121,9 +121,9 @@
     "childFree": "Free",
     "total": "Total",
     "proceedToCheckout": "Continue to official tickets →",
-    "instantConfirm": "Instant confirmation",
-    "freeCancelNote": "Free cancellation up to 24h before",
-    "mobileTicket": "Mobile ticket accepted",
+    "instantConfirm": "Free — no booking fee",
+    "freeCancelNote": "Buy directly on the official portal",
+    "mobileTicket": "No account or app needed",
     "duration": "Duration",
     "groupSize": "Group size",
     "language": "Available in",
@@ -143,20 +143,20 @@
     "title": "Why Book With Us?",
     "items": [
       {
-        "title": "Instant Ticket Delivery",
-        "desc": "Receive your ticket by email within seconds. No waiting, no uncertainty."
+        "title": "Straight to the Real Ticket Office",
+        "desc": "We point you directly to Morocco's official Ministry of Culture ticket portal — no resellers, no markups."
       },
       {
-        "title": "Guaranteed Entry",
-        "desc": "Your ticket is pre-validated. Show your phone and walk straight in."
+        "title": "No Booking Fees",
+        "desc": "This site is free to use. You pay the standard price directly on the official portal — we add nothing on top."
       },
       {
         "title": "Reliable Information",
         "desc": "Independent visitor info sourced from official and verified sources — no guesswork."
       },
       {
-        "title": "Your Data Is Safe",
-        "desc": "Your information is handled via the official Moroccan Ministry of Culture ticketing portal."
+        "title": "Your Data Stays With Us",
+        "desc": "If you share your email, it's only used to send visit tips — never sold. Your ticket purchase happens directly on the official portal, not with us."
       }
     ]
   },
@@ -215,7 +215,7 @@
     "whatsappUs": "WhatsApp us for instant help →",
     "ctaSkip": "Skip the 2-hour queue",
     "ctaTitle": "Plan Your Bahia Palace Visit",
-    "ctaBody": "Instant confirmation · Free cancellation · Mobile tickets accepted",
+    "ctaBody": "Free to use · Official tickets only · No booking fees",
     "ctaBtn": "See All Ticket Options",
     "teamAvail": "We respond to all booking enquiries promptly.",
     "items": [
@@ -273,7 +273,7 @@
       },
       {
         "question": "Can I cancel or change my Bahia Palace ticket?",
-        "answer": "Yes, all tickets booked through our platform include free cancellation up to 24 hours before your scheduled visit date. To cancel, click the link in your booking confirmation email or contact us via WhatsApp. Refunds are processed within 5–7 business days."
+        "answer": "Cancellation policy is set by the official portal where you complete your purchase (e-services.minculture.gov.ma) — check the terms shown there at checkout. We don't process payments, so we can't offer cancellations ourselves."
       },
       {
         "question": "What else is near Bahia Palace?",
@@ -446,11 +446,11 @@
     "items": [
       {
         "question": "How do I receive my ticket?",
-        "answer": "You'll receive your ticket by email immediately after booking. It includes a QR code you can show directly on your phone at the palace entrance."
+        "answer": "You'll complete your purchase directly on Morocco's official Ministry of Culture ticket portal, which emails your QR code ticket."
       },
       {
         "question": "Can I cancel or change my booking?",
-        "answer": "Yes! We offer free cancellation up to 24 hours before your scheduled visit. Just email us or use your booking confirmation link."
+        "answer": "Cancellation policy is set by the official portal where you complete your purchase — check the terms shown there at checkout."
       },
       {
         "question": "What are Bahia Palace's opening hours?",
@@ -466,7 +466,7 @@
       },
       {
         "question": "How do I skip the line?",
-        "answer": "With our skip-the-line ticket, you go directly to the priority entrance. Our tickets are pre-validated, so there's no need to queue at the ticket booth."
+        "answer": "We point you to the official priority-entry ticket on the government portal — it's pre-validated by them, so there's no need to queue at the ticket booth."
       }
     ]
   },
@@ -502,7 +502,7 @@
     "editorial": "Editorial",
     "contact": "Contact",
     "copyright": "© {year} Bahia Palace Tickets. All rights reserved.",
-    "paymentNote": "Secure skip-the-line tickets — instant confirmation",
+    "paymentNote": "Free to use — official tickets only",
     "disclaimer": "visitbahiapalace.com is an independent visitor information website. We are not affiliated with the official Bahia Palace or the Moroccan Ministry of Culture. For official tickets, visit: e-services.minculture.gov.ma"
   },
   "whatsapp": {
@@ -605,4 +605,3 @@
     "locationVal": "Rue Riad Zitoun el Jedid, Marrakech Medina"
   }
 }
-

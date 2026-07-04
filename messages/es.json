@@ -19,10 +19,10 @@
     "trustNote": "Más de 50.000 visitantes satisfechos"
   },
   "trust": {
-    "instant": "Confirmación Instantánea",
-    "freeCancellation": "Cancelación Gratuita",
-    "mobile": "Entradas Móviles",
-    "secure": "Portal oficial"
+    "instant": "100% Independiente",
+    "freeCancellation": "Sin Comisión de Reserva",
+    "mobile": "Información Verificada",
+    "secure": "Solo Entradas Oficiales"
   },
   "tickets": {
     "title": "Elige tu Experiencia en el Palacio Bahia",
@@ -38,8 +38,8 @@
       "includes": [
         "Entrada prioritaria",
         "Entrada móvil o impresa",
-        "Confirmación instantánea",
-        "Cancelación gratuita 24h antes"
+        "Sin comisión de reserva",
+        "Solo entradas oficiales"
       ],
       "excludes": [
         "Comentario guiado",
@@ -59,7 +59,7 @@
         "Guía local certificado",
         "Historia y curiosidades",
         "Grupo reducido (máx. 12)",
-        "Cancelación gratuita 24h antes"
+        "Solo entradas oficiales"
       ],
       "excludes": [
         "Transporte al palacio",
@@ -79,7 +79,7 @@
         "Acceso sin colas",
         "Experiencia personalizada",
         "Horario flexible",
-        "Cancelación gratuita 24h antes"
+        "Solo entradas oficiales"
       ],
       "excludes": [
         "Transporte al palacio",
@@ -98,7 +98,7 @@
         "Entrada Tumbas Saadíes",
         "Sin colas en ambos sitios",
         "Horario flexible",
-        "Cancelación gratuita 24h antes"
+        "Solo entradas oficiales"
       ],
       "excludes": [
         "Comentario guiado",
@@ -121,9 +121,9 @@
     "childFree": "Gratis",
     "total": "Total",
     "proceedToCheckout": "Continuar a las entradas oficiales →",
-    "instantConfirm": "Confirmación instantánea",
-    "freeCancelNote": "Cancelación gratuita hasta 24h antes",
-    "mobileTicket": "Entrada móvil aceptada",
+    "instantConfirm": "Gratis — sin comisión",
+    "freeCancelNote": "Compra directa en el portal oficial",
+    "mobileTicket": "Sin cuenta ni app necesaria",
     "duration": "Duración",
     "groupSize": "Tamaño del grupo",
     "language": "Disponible en",
@@ -143,20 +143,20 @@
     "title": "¿Por Qué Reservar con Nosotros?",
     "items": [
       {
-        "title": "Entrega Instantánea de Entrada",
-        "desc": "Recibe tu entrada por email en segundos. Sin esperas, sin incertidumbre."
+        "title": "Directo a la Taquilla Real",
+        "desc": "Te dirigimos directamente al portal oficial del Ministerio de Cultura de Marruecos — sin revendedores, sin recargos."
       },
       {
-        "title": "Entrada Garantizada",
-        "desc": "Tu entrada está prevalidada. Muestra el teléfono y entra directamente."
+        "title": "Sin Comisión de Reserva",
+        "desc": "Este sitio es gratuito. Pagas el precio oficial directamente en el portal — nosotros no añadimos nada."
       },
       {
         "title": "Información Confiable",
         "desc": "Información independiente para visitantes, basada en fuentes oficiales y verificadas."
       },
       {
-        "title": "Tus datos están seguros",
-        "desc": "Tu información es gestionada a través del portal oficial del Ministerio de Cultura de Marruecos."
+        "title": "Tus Datos Se Quedan con Nosotros",
+        "desc": "Si compartes tu email, solo se usa para enviarte consejos de visita — nunca se vende. La compra de tu entrada se realiza directamente en el portal oficial, no con nosotros."
       }
     ]
   },
@@ -215,7 +215,7 @@
     "whatsappUs": "Escríbenos por WhatsApp para ayuda inmediata →",
     "ctaSkip": "Evita la cola de 2 horas",
     "ctaTitle": "Planifica tu visita al Palacio Bahia",
-    "ctaBody": "Confirmación instantánea · Cancelación gratuita · Entradas móviles aceptadas",
+    "ctaBody": "Gratis · Solo entradas oficiales · Sin comisión de reserva",
     "ctaBtn": "Ver Todas las Opciones de Entradas",
     "teamAvail": "Respondemos con rapidez a todas las consultas de reserva.",
     "items": [
@@ -273,7 +273,7 @@
       },
       {
         "question": "¿Puedo cancelar o cambiar mi entrada?",
-        "answer": "Sí, todas las entradas incluyen cancelación gratuita hasta 24 horas antes de la visita. Haz clic en el enlace de tu email de confirmación o contáctanos por WhatsApp. Los reembolsos se procesan en 5-7 días hábiles."
+        "answer": "La política de cancelación y reembolso la establece el portal oficial donde completas tu compra (e-services.minculture.gov.ma) — consulta las condiciones que se muestran allí al pagar. No procesamos pagos, por lo que no podemos gestionar cancelaciones nosotros mismos."
       },
       {
         "question": "¿Qué más hay cerca del Palacio Bahia?",
@@ -446,11 +446,11 @@
     "items": [
       {
         "question": "¿Cómo recibo mi entrada?",
-        "answer": "Recibirás tu entrada por email inmediatamente después de la reserva. Incluye un código QR que puedes mostrar directamente en tu móvil en la entrada del palacio."
+        "answer": "Completas tu compra directamente en el portal oficial del Ministerio de Cultura de Marruecos, que te envía tu entrada con código QR por email."
       },
       {
         "question": "¿Puedo cancelar o modificar mi reserva?",
-        "answer": "¡Sí! Ofrecemos cancelación gratuita hasta 24 horas antes de tu visita. Solo escríbenos un email o usa el enlace de tu confirmación de reserva."
+        "answer": "La política de cancelación la establece el portal oficial donde completas tu compra — consulta las condiciones que se muestran allí al pagar."
       },
       {
         "question": "¿Cuáles son los horarios del Palacio Bahia?",
@@ -466,7 +466,7 @@
       },
       {
         "question": "¿Cómo funciona la entrada sin colas?",
-        "answer": "Con nuestra entrada sin colas, vas directamente a la entrada prioritaria. Nuestras entradas están prevalidadas, por lo que no necesitas hacer cola en taquilla."
+        "answer": "Te dirigimos a la entrada prioritaria oficial en el portal del gobierno — está prevalidada por ellos, así que no necesitas hacer cola en taquilla."
       }
     ]
   },
@@ -502,7 +502,7 @@
     "editorial": "Editorial",
     "contact": "Contacto",
     "copyright": "© {year} Bahia Palace Tickets. Todos los derechos reservados.",
-    "paymentNote": "Entradas seguras sin colas — confirmación instantánea",
+    "paymentNote": "Gratis — solo entradas oficiales",
     "disclaimer": "visitbahiapalace.com es un sitio web de información turística independiente. No estamos afiliados al Palacio Bahia oficial ni al Ministerio de Cultura de Marruecos. Para entradas oficiales, visita: e-services.minculture.gov.ma"
   },
   "whatsapp": {

@@ -19,10 +19,10 @@
     "trustNote": "Über 50.000 zufriedene Besucher"
   },
   "trust": {
-    "instant": "Sofortige Bestätigung",
-    "freeCancellation": "Kostenlose Stornierung",
-    "mobile": "Mobile Tickets",
-    "secure": "Offizielles Portal"
+    "instant": "100 % Unabhängig",
+    "freeCancellation": "Keine Buchungsgebühr",
+    "mobile": "Geprüfte Informationen",
+    "secure": "Nur Offizielle Tickets"
   },
   "tickets": {
     "title": "Wählen Sie Ihr Bahia Palast Erlebnis",
@@ -38,8 +38,8 @@
       "includes": [
         "Prioritäts-Eintrittskarte",
         "Mobile oder gedruckte Karte",
-        "Sofortige Bestätigung",
-        "Kostenlose Stornierung 24 Std. vorher"
+        "Keine Buchungsgebühr",
+        "Nur offizielle Tickets"
       ],
       "excludes": [
         "Führungskommentar",
@@ -59,7 +59,7 @@
         "Zertifizierter lokaler Führer",
         "Geschichte und Geschichten",
         "Kleine Gruppe (max. 12)",
-        "Kostenlose Stornierung 24 Std. vorher"
+        "Nur offizielle Tickets"
       ],
       "excludes": [
         "Transport zum Palast",
@@ -79,7 +79,7 @@
         "Skip-the-Line-Zugang",
         "Persönliches Erlebnis",
         "Flexibler Zeitplan",
-        "Kostenlose Stornierung 24 Std. vorher"
+        "Nur offizielle Tickets"
       ],
       "excludes": [
         "Transport zum Palast",
@@ -98,7 +98,7 @@
         "Saadier-Gräber Eintritt",
         "Skip-the-Line an beiden Standorten",
         "Flexible Zeiten",
-        "Kostenlose Stornierung 24 Std. vorher"
+        "Nur offizielle Tickets"
       ],
       "excludes": [
         "Führungskommentar",
@@ -114,20 +114,20 @@
     "title": "Warum bei uns buchen?",
     "items": [
       {
-        "title": "Sofortige Ticketzustellung",
-        "desc": "Erhalten Sie Ihr Ticket innerhalb von Sekunden per E-Mail. Kein Warten, keine Unsicherheit."
+        "title": "Direkt zur echten Ticketstelle",
+        "desc": "Wir leiten Sie direkt zum offiziellen Portal des marokkanischen Kulturministeriums weiter — keine Wiederverkäufer, keine Aufpreise."
       },
       {
-        "title": "Garantierter Einlass",
-        "desc": "Ihr Ticket ist vorvalidiert. Zeigen Sie einfach Ihr Handy und gehen Sie direkt hinein."
+        "title": "Keine Buchungsgebühr",
+        "desc": "Diese Website ist kostenlos. Sie zahlen den offiziellen Preis direkt auf dem Portal — wir berechnen nichts zusätzlich."
       },
       {
         "title": "Zuverlässige Informationen",
         "desc": "Unabhängige Besucherinfos aus offiziellen und geprüften Quellen — keine Spekulation."
       },
       {
-        "title": "Ihre Daten sind sicher",
-        "desc": "Ihre Daten werden über das offizielle Portal des marokkanischen Kulturministeriums verarbeitet."
+        "title": "Ihre Daten bleiben bei uns",
+        "desc": "Falls Sie Ihre E-Mail angeben, wird sie nur für Besuchstipps verwendet — niemals verkauft. Der Ticketkauf erfolgt direkt auf dem offiziellen Portal, nicht bei uns."
       }
     ]
   },
@@ -150,11 +150,11 @@
     "items": [
       {
         "question": "Wie erhalte ich mein Ticket?",
-        "answer": "Sie erhalten Ihr Ticket unmittelbar nach der Buchung per E-Mail. Es enthält einen QR-Code, den Sie direkt auf Ihrem Handy am Palasteingang vorzeigen können."
+        "answer": "Sie schließen Ihren Kauf direkt auf dem offiziellen Portal des marokkanischen Kulturministeriums ab, das Ihnen Ihr QR-Code-Ticket per E-Mail zusendet."
       },
       {
         "question": "Kann ich meine Buchung stornieren oder ändern?",
-        "answer": "Ja! Wir bieten kostenlose Stornierung bis zu 24 Stunden vor Ihrem geplanten Besuch. Schreiben Sie uns einfach eine E-Mail oder nutzen Sie den Link in Ihrer Buchungsbestätigung."
+        "answer": "Die Stornobedingungen werden vom offiziellen Portal festgelegt, auf dem Sie Ihren Kauf abschließen — prüfen Sie die dort angezeigten Bedingungen beim Checkout."
       },
       {
         "question": "Welche Öffnungszeiten hat der Bahia Palast?",
@@ -170,7 +170,7 @@
       },
       {
         "question": "Wie funktioniert Skip-the-Line?",
-        "answer": "Mit unserem Skip-the-Line-Ticket gehen Sie direkt zum Prioritätseingang. Unsere Tickets sind vorvalidiert, sodass Sie nicht an der Kasse anstehen müssen."
+        "answer": "Wir verweisen Sie auf das offizielle Prioritäts-Ticket im Regierungsportal — es ist von dort vorvalidiert, sodass Sie nicht an der Kasse anstehen müssen."
       }
     ]
   },
@@ -206,7 +206,7 @@
     "editorial": "Redaktion",
     "contact": "Kontakt",
     "copyright": "© {year} Bahia Palace Tickets. Alle Rechte vorbehalten.",
-    "paymentNote": "Sichere Skip-the-Line-Tickets — sofortige Bestätigung",
+    "paymentNote": "Kostenlos — nur offizielle Tickets",
     "disclaimer": "visitbahiapalace.com ist eine unabhängige Besucherinformationswebsite. Wir sind nicht mit dem offiziellen Bahia-Palast oder dem marokkanischen Kulturministerium verbunden. Offizielle Tickets finden Sie unter: e-services.minculture.gov.ma"
   },
   "whatsapp": {
@@ -224,9 +224,9 @@
     "childFree": "Kostenlos",
     "total": "Gesamt",
     "proceedToCheckout": "Weiter zu offiziellen Tickets →",
-    "instantConfirm": "Sofortige Bestätigung",
-    "freeCancelNote": "Kostenlose Stornierung bis 24 Std. vorher",
-    "mobileTicket": "Mobile Ticket akzeptiert",
+    "instantConfirm": "Kostenlos — keine Gebühr",
+    "freeCancelNote": "Direkter Kauf auf dem offiziellen Portal",
+    "mobileTicket": "Kein Konto oder App nötig",
     "duration": "Dauer",
     "groupSize": "Gruppengröße",
     "language": "Verfügbar in",
@@ -292,7 +292,7 @@
     "whatsappUs": "WhatsApp uns für sofortige Hilfe →",
     "ctaSkip": "Überspringen Sie die 2-stündige Schlange",
     "ctaTitle": "Ihren Besuch im Bahia Palast planen",
-    "ctaBody": "Sofortige Bestätigung · Kostenlose Stornierung · Mobile Tickets akzeptiert",
+    "ctaBody": "Kostenlos · Nur offizielle Tickets · Keine Buchungsgebühr",
     "ctaBtn": "Alle Ticket-Optionen ansehen",
     "teamAvail": "Wir antworten schnell auf alle Buchungsanfragen.",
     "items": [
@@ -350,7 +350,7 @@
       },
       {
         "question": "Kann ich mein Ticket stornieren oder ändern?",
-        "answer": "Ja, alle Tickets beinhalten kostenlose Stornierung bis zu 24 Stunden vor dem geplanten Besuch. Klicken Sie auf den Link in Ihrer Buchungsbestätigung oder kontaktieren Sie uns per WhatsApp. Rückerstattungen werden innerhalb von 5–7 Werktagen bearbeitet."
+        "answer": "Die Storno- und Rückerstattungsbedingungen werden vom offiziellen Portal festgelegt, auf dem Sie Ihren Kauf abschließen (e-services.minculture.gov.ma) — prüfen Sie die dort angezeigten Bedingungen beim Checkout. Wir verarbeiten keine Zahlungen und können daher selbst keine Stornierungen vornehmen."
       },
       {
         "question": "Was gibt es in der Nähe des Bahia Palastes zu sehen?",

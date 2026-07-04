@@ -54,7 +54,7 @@ export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
         </LeadButton>
 
         <p className="text-center text-xs text-[#C4A882] mb-5">
-          🔒 Official portal — instant confirmation
+          🔒 Free to use — official tickets only
         </p>
 
         {/* Trust badges */}

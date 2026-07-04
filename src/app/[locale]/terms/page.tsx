@@ -34,22 +34,23 @@ export default async function TermsPage() {
           body: 'By purchasing tickets or using our website, you agree to these Terms of Service. If you do not agree, please do not use our service.',
         },
         {
-          heading: '2. Ticket Purchase',
+          heading: '2. Our Service',
           body: [
-            'Tickets are valid for the date selected at the time of purchase.',
-            'Each QR code is unique and can only be scanned once at the entrance.',
-            'Children under 7 years old enter free and do not require a separate ticket.',
-            'Tickets are non-transferable and non-refundable except as set out in our Refund Policy.',
+            'This website is an independent, unaffiliated information and ticket-comparison guide for Bahia Palace, Marrakech.',
+            'We do not sell tickets, process payments, or issue QR codes ourselves.',
+            "When you choose to book, you will be redirected to the official Ministry of Culture ticketing portal (e-services.minculture.gov.ma) to complete your purchase directly with them.",
+            'Prices, availability, and ticket conditions shown on this site are for comparison purposes and may differ from the official portal at the time of purchase.',
           ],
         },
         {
           heading: '3. Cancellation & Refund',
-          body: 'Free cancellation is available up to 24 hours before your scheduled visit date. Cancellations within 24 hours are not eligible for a refund unless due to exceptional circumstances. See our Refund Policy for full details.',
+          body: 'Cancellation and refund terms are set by the official portal where you complete your purchase, not by us. Review their policy before paying — we cannot process cancellations or refunds on your behalf.',
         },
         {
           heading: '4. Entry Requirements',
           body: [
-            'Present your QR code (digital or printed) at the entrance.',
+            'Entry requirements (ticket format, ID checks, etc.) are set by Bahia Palace and the official ticketing portal — follow the instructions in your confirmation from them.',
+            'Children under 7 years old enter free per the official Ministry of Culture pricing.',
             'Bahia Palace reserves the right to refuse entry to visitors who are disruptive or violate palace rules.',
             'The palace has the right to modify opening hours without prior notice during public holidays or for maintenance.',
           ],
@@ -69,6 +70,14 @@ export default async function TermsPage() {
         {
           heading: '8. Contact',
           body: 'For questions about these terms, please contact us at support@visitbahiapalace.com or via WhatsApp.',
+        },
+        {
+          // TODO(owner): replace these placeholders with your actual registered
+          // business details before launch. Required in most jurisdictions
+          // (in Morocco: legal name, ICE number, and registered address are
+          // standard disclosures for a commercial website).
+          heading: '9. Company Information',
+          body: 'This site is operated by {LEGAL_COMPANY_NAME}, ICE {ICE_NUMBER}, registered at {REGISTERED_ADDRESS}.',
         },
       ]}
     />

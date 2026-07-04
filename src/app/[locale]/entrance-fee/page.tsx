@@ -97,7 +97,7 @@ export default async function EntranceFeePage({ params }: Props) {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {[
             { label: 'Standard Entry', mad: `${OFFICIAL_DOOR_PRICE_MAD} MAD`, usd: `≈ $${OFFICIAL_DOOR_PRICE_USD_APPROX} USD`, note: 'At the gate — queue included', highlight: false },
-            { label: 'Skip-the-Line', mad: `From $${SKIP_THE_LINE_PRICE_USD}`, usd: 'Incl. entry + service fee', note: 'Walk straight in, no waiting', highlight: true },
+            { label: 'Skip-the-Line', mad: `From $${SKIP_THE_LINE_PRICE_USD}`, usd: 'Same as gate price — no fee added', note: 'Walk straight in, no waiting', highlight: true },
             { label: 'Guided Tour', mad: `From $${GUIDED_TOUR_PLANNED_PRICE_USD}`, usd: 'Incl. entry + expert guide', note: 'Entry + 90-min English tour', highlight: false },
           ].map(({ label, mad, usd, note, highlight }) => (
             <div key={label} className={`rounded-2xl border p-6 text-center ${highlight ? 'bg-[#C4452D] border-[#C4452D] text-white shadow-[0_8px_32px_rgba(196,69,45,0.3)]' : 'bg-[#251A0F] border-[rgba(232,163,61,0.13)]'}`}>
@@ -122,7 +122,7 @@ export default async function EntranceFeePage({ params }: Props) {
               { category: 'Foreign children (7–13)', price: '50 MAD', usd: '~$5', note: 'Official Ministry of Culture rate' },
               { category: 'Children under 7', price: 'Free', usd: 'Free', note: 'No ticket required' },
               { category: 'Moroccan adults', price: '30 MAD', usd: '~$3', note: 'Valid Moroccan ID required' },
-              { category: 'Skip-the-Line (online)', price: `From $${SKIP_THE_LINE_PRICE_USD}`, usd: `$${SKIP_THE_LINE_PRICE_USD}`, note: `Incl. ${OFFICIAL_DOOR_PRICE_MAD} MAD entry + service fee` },
+              { category: 'Skip-the-Line (online)', price: `From $${SKIP_THE_LINE_PRICE_USD}`, usd: `$${SKIP_THE_LINE_PRICE_USD}`, note: 'No fee added — same as gate price' },
               { category: 'Guided Tour (online)', price: `From $${GUIDED_TOUR_PLANNED_PRICE_USD}`, usd: `$${GUIDED_TOUR_PLANNED_PRICE_USD}`, note: 'Entry + 90-min expert English guide' },
               { category: 'Private Tour (online)', price: `From $${PRIVATE_TOUR_PLANNED_PRICE_USD}`, usd: `$${PRIVATE_TOUR_PLANNED_PRICE_USD}`, note: 'Entry + exclusive private guide' },
             ].map(({ category, price, note }) => (
@@ -140,10 +140,10 @@ export default async function EntranceFeePage({ params }: Props) {
           <div className="bg-[#8FA63C]/08 rounded-xl p-5 border border-[#8FA63C]/20">
             <div className="flex items-center gap-2 mb-3">
               <Info size={16} className="text-[#8FA63C]" />
-              <h3 className="font-bold text-[#F5E8CC] text-sm">Why is the online price higher?</h3>
+              <h3 className="font-bold text-[#F5E8CC] text-sm">Is there a booking fee?</h3>
             </div>
             <p className="text-sm text-[#C4A882] leading-relaxed">
-              The <strong className="text-[#F5E8CC]">{OFFICIAL_DOOR_PRICE_MAD} MAD gate price</strong> covers standard entry with potentially 1–2 hour queues. Our online prices include the <strong className="text-[#F5E8CC]">{OFFICIAL_DOOR_PRICE_MAD} MAD official entrance fee</strong> plus an independent booking service fee for skip-the-line access, instant mobile confirmation, free cancellation, and English-language support. We are an independent ticketing service, not affiliated with the Moroccan government.
+              No. Skip-the-line tickets are priced the same as the <strong className="text-[#F5E8CC]">{OFFICIAL_DOOR_PRICE_MAD} MAD gate fee</strong> — we don&apos;t add a booking fee. Guided and private tours cost more because they include a professional English-speaking guide. We&apos;re an independent, unaffiliated information site — when you continue, you&apos;ll complete your purchase directly on the official Ministry of Culture portal, not with us.
             </p>
           </div>
           <div className="bg-[#E8A33D]/08 rounded-xl p-5 border border-[#E8A33D]/20">
@@ -198,7 +198,7 @@ export default async function EntranceFeePage({ params }: Props) {
             Book Bahia Palace Tickets Online
           </h2>
           <p className="text-[#C4A882] text-sm mb-5 max-w-md mx-auto">
-            Secure your entry in advance. Instant confirmation, free cancellation up to 24h before.
+            Compare your options, then complete your purchase directly on the official ticket portal.
           </p>
           <LeadButton ticketType="skip-the-line" className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
             See All Ticket Options <ArrowRight size={16} />

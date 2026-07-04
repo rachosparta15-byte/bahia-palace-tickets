@@ -43,8 +43,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE),
   title: 'Bahia Palace Tickets — Skip the Line | Marrakech',
   description:
-    'Book Bahia Palace Marrakech tickets online. Skip-the-line entry, guided tours and private tours with instant QR confirmation and free cancellation up to 24 hours.',
-  keywords: ['Bahia Palace tickets', 'Marrakech palace', 'skip the line Marrakech', 'Bahia Palace guided tour', 'Morocco travel'],
+    'Independent visitor guide to Bahia Palace Marrakech. Compare skip-the-line, guided, and private tour options, then book directly on the official ticket portal.',
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   openGraph: {
     type: 'website',
@@ -53,7 +52,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@bahiapalace',
   },
   manifest: '/site.webmanifest',
   verification: {

@@ -95,9 +95,9 @@ export default async function QuickBookPage({ params }: Props) {
 
             <div className="space-y-3">
               {[
-                { icon: ShieldCheck, text: 'Instant confirmation by email' },
-                { icon: ShieldCheck, text: 'Free cancellation up to 24h before' },
-                { icon: ShieldCheck, text: 'Mobile ticket accepted at entrance' },
+                { icon: ShieldCheck, text: 'Free to use — no booking fees' },
+                { icon: ShieldCheck, text: 'Official tickets only' },
+                { icon: ShieldCheck, text: 'Verified visitor information' },
                 { icon: ShieldCheck, text: 'Skip the queue — walk straight in' },
               ].map(({ icon: Icon, text }) => (
                 <div key={text} className="flex items-center gap-2.5 text-sm text-[#C4A882]">

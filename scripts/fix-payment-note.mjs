@@ -1,41 +1,17 @@
 import { readFileSync, writeFileSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
 
-const __dir = dirname(fileURLToPath(import.meta.url));
-const messagesDir = join(__dir, '..', 'messages');
-
-const replacements = {
-  'en.json': {
-    old: 'Official ticketing via the Ministry of Culture portal',
-    nw:  'Secure skip-the-line tickets — instant confirmation',
-  },
-  'fr.json': {
-    old: 'Billetterie officielle via le portail du Ministère de la Culture',
-    nw:  'Billets coupe-file sécurisés — confirmation instantanée',
-  },
-  'de.json': {
-    old: 'Offizielle Tickets über das Kulturministerium-Portal',
-    nw:  'Sichere Skip-the-Line-Tickets — sofortige Bestätigung',
-  },
-  'it.json': {
-    old: 'Biglietteria ufficiale tramite il portale del Ministero della Cultura',
-    nw:  'Biglietti salta-fila sicuri — conferma immediata',
-  },
-  'es.json': {
-    old: 'Venta oficial de entradas vía el portal del Ministerio de Cultura',
-    nw:  'Entradas seguras sin colas — confirmación instantánea',
-  },
+const notes = {
+  en: 'Free to use — official tickets only',
+  fr: 'Gratuit — billets officiels uniquement',
+  de: 'Kostenlos — nur offizielle Tickets',
+  es: 'Gratis — solo entradas oficiales',
+  it: 'Gratis — solo biglietti ufficiali',
 };
 
-for (const [file, { old: o, nw }] of Object.entries(replacements)) {
-  const path = join(messagesDir, file);
-  const original = readFileSync(path, 'utf8');
-  if (!original.includes(o)) {
-    console.warn(`⚠️  "${o}" not found in ${file}`);
-    continue;
-  }
-  const updated = original.replace(o, nw);
-  writeFileSync(path, updated, 'utf8');
-  console.log(`✅  ${file} updated`);
+for (const locale of Object.keys(notes)) {
+  const path = `messages/${locale}.json`;
+  const m = JSON.parse(readFileSync(path, 'utf8'));
+  m.footer.paymentNote = notes[locale];
+  writeFileSync(path, JSON.stringify(m, null, 2) + '\n', 'utf8');
+  console.log(`${locale}: OK`);
 }

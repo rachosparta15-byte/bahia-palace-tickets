@@ -185,7 +185,7 @@ export function TicketCards({ overrides = {} }: Props) {
 
                     <div className={`flex items-center gap-1.5 mt-3 text-[11px] text-[#C4A882] ${isSingle ? 'hidden sm:flex' : ''}`}>
                       <ShieldCheck size={12} className="text-[#8FA63C]" />
-                      Secure booking — instant confirmation
+                      Free to use — official tickets only
                     </div>
                   </div>
                 </div>

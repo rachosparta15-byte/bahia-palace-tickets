@@ -203,7 +203,7 @@ export default async function HistoryPage({ params }: Props) {
             Visit Bahia Palace — Book Skip-the-Line Tickets
           </h2>
           <p className="text-[#C4A882] text-sm mb-5 max-w-md mx-auto">
-            Walk through history without waiting in line. Instant confirmation, free cancellation.
+            Compare your options, then complete your purchase directly on the official ticket portal.
           </p>
           <LeadButton ticketType="skip-the-line" className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
             Book Bahia Palace Tickets Online <ArrowRight size={16} />

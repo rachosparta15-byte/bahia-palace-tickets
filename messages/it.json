@@ -19,10 +19,10 @@
     "trustNote": "Oltre 50.000 visitatori soddisfatti"
   },
   "trust": {
-    "instant": "Conferma Immediata",
-    "freeCancellation": "Cancellazione Gratuita",
-    "mobile": "Biglietti Mobili",
-    "secure": "Portale ufficiale"
+    "instant": "100% Indipendente",
+    "freeCancellation": "Nessuna Commissione",
+    "mobile": "Informazioni Verificate",
+    "secure": "Solo Biglietti Ufficiali"
   },
   "tickets": {
     "title": "Scegli la tua Esperienza al Palazzo Bahia",
@@ -38,8 +38,8 @@
       "includes": [
         "Biglietto d'ingresso prioritario",
         "Biglietto mobile o stampato",
-        "Conferma immediata",
-        "Cancellazione gratuita 24h prima"
+        "Nessuna commissione",
+        "Solo biglietti ufficiali"
       ],
       "excludes": [
         "Commento guidato",
@@ -59,7 +59,7 @@
         "Guida locale certificata",
         "Storia e curiosità",
         "Piccolo gruppo (max 12)",
-        "Cancellazione gratuita 24h prima"
+        "Solo biglietti ufficiali"
       ],
       "excludes": [
         "Trasporto al palazzo",
@@ -79,7 +79,7 @@
         "Accesso salta fila",
         "Esperienza personalizzata",
         "Orari flessibili",
-        "Cancellazione gratuita 24h prima"
+        "Solo biglietti ufficiali"
       ],
       "excludes": [
         "Trasporto al palazzo",
@@ -98,7 +98,7 @@
         "Ingresso Tombe Saadiane",
         "Salta fila in entrambi i siti",
         "Orari flessibili",
-        "Cancellazione gratuita 24h prima"
+        "Solo biglietti ufficiali"
       ],
       "excludes": [
         "Commento guidato",
@@ -114,20 +114,20 @@
     "title": "Perché Prenotare con Noi?",
     "items": [
       {
-        "title": "Consegna Biglietto Immediata",
-        "desc": "Ricevi il tuo biglietto via email in pochi secondi. Senza attese, senza incertezze."
+        "title": "Dritti alla Vera Biglietteria",
+        "desc": "Ti indirizziamo direttamente al portale ufficiale del Ministero della Cultura marocchino — nessun rivenditore, nessun sovrapprezzo."
       },
       {
-        "title": "Ingresso Garantito",
-        "desc": "Il tuo biglietto è pre-validato. Mostra il telefono e accedi direttamente."
+        "title": "Nessuna Commissione",
+        "desc": "Questo sito è gratuito. Paghi il prezzo ufficiale direttamente sul portale — noi non aggiungiamo nulla."
       },
       {
         "title": "Informazioni Affidabili",
         "desc": "Info per visitatori indipendenti, tratte da fonti ufficiali e verificate."
       },
       {
-        "title": "I tuoi dati sono al sicuro",
-        "desc": "Le tue informazioni sono gestite tramite il portale ufficiale del Ministero della Cultura marocchino."
+        "title": "I Tuoi Dati Restano con Noi",
+        "desc": "Se condividi la tua email, viene usata solo per inviarti consigli di viaggio — mai venduta. L'acquisto del biglietto avviene direttamente sul portale ufficiale, non con noi."
       }
     ]
   },
@@ -150,11 +150,11 @@
     "items": [
       {
         "question": "Come ricevo il mio biglietto?",
-        "answer": "Riceverai il tuo biglietto via email immediatamente dopo la prenotazione. Include un codice QR che puoi mostrare direttamente sul telefono all'ingresso del palazzo."
+        "answer": "Completi l'acquisto direttamente sul portale ufficiale del Ministero della Cultura marocchino, che ti invia il biglietto con codice QR via email."
       },
       {
         "question": "Posso cancellare o modificare la prenotazione?",
-        "answer": "Sì! Offriamo la cancellazione gratuita fino a 24 ore prima della tua visita programmata. Scrivici una email o usa il link di conferma della tua prenotazione."
+        "answer": "La politica di cancellazione è stabilita dal portale ufficiale dove completi l'acquisto — controlla le condizioni mostrate lì al momento del pagamento."
       },
       {
         "question": "Quali sono gli orari di apertura del Palazzo Bahia?",
@@ -170,7 +170,7 @@
       },
       {
         "question": "Come funziona il salto fila?",
-        "answer": "Con il nostro biglietto salta fila, vai direttamente all'ingresso prioritario. I nostri biglietti sono pre-validati, quindi non è necessario fare la coda alla biglietteria."
+        "answer": "Ti indirizziamo al biglietto ufficiale a ingresso prioritario sul portale del governo — è pre-validato da loro, quindi non è necessario fare la coda alla biglietteria."
       }
     ]
   },
@@ -206,7 +206,7 @@
     "editorial": "Redazione",
     "contact": "Contatti",
     "copyright": "© {year} Bahia Palace Tickets. Tutti i diritti riservati.",
-    "paymentNote": "Biglietti salta-fila sicuri — conferma immediata",
+    "paymentNote": "Gratis — solo biglietti ufficiali",
     "disclaimer": "visitbahiapalace.com è un sito di informazioni turistiche indipendente. Non siamo affiliati al Palazzo Bahia ufficiale né al Ministero della Cultura del Marocco. Per i biglietti ufficiali, visita: e-services.minculture.gov.ma"
   },
   "whatsapp": {
@@ -224,9 +224,9 @@
     "childFree": "Gratis",
     "total": "Totale",
     "proceedToCheckout": "Continua per i biglietti ufficiali →",
-    "instantConfirm": "Conferma immediata",
-    "freeCancelNote": "Cancellazione gratuita fino a 24h prima",
-    "mobileTicket": "Biglietto mobile accettato",
+    "instantConfirm": "Gratis — nessuna commissione",
+    "freeCancelNote": "Acquisto diretto sul portale ufficiale",
+    "mobileTicket": "Nessun account o app richiesti",
     "duration": "Durata",
     "groupSize": "Dimensione del gruppo",
     "language": "Disponibile in",
@@ -292,7 +292,7 @@
     "whatsappUs": "Scrivici su WhatsApp per aiuto immediato →",
     "ctaSkip": "Evita la coda di 2 ore",
     "ctaTitle": "Pianifica la tua visita al Palazzo Bahia",
-    "ctaBody": "Conferma immediata · Cancellazione gratuita · Biglietti mobili accettati",
+    "ctaBody": "Gratis · Solo biglietti ufficiali · Nessuna commissione",
     "ctaBtn": "Vedi Tutte le Opzioni Biglietti",
     "teamAvail": "Rispondiamo prontamente a tutte le richieste di prenotazione.",
     "items": [
@@ -350,7 +350,7 @@
       },
       {
         "question": "Posso cancellare o modificare il biglietto?",
-        "answer": "Sì, tutti i biglietti includono cancellazione gratuita fino a 24 ore prima della visita. Clicca sul link nell'email di conferma o contattaci via WhatsApp. I rimborsi vengono elaborati entro 5-7 giorni lavorativi."
+        "answer": "La politica di cancellazione e rimborso è stabilita dal portale ufficiale dove completi l'acquisto (e-services.minculture.gov.ma) — controlla le condizioni mostrate lì al momento del pagamento. Non elaboriamo pagamenti, quindi non possiamo gestire le cancellazioni noi stessi."
       },
       {
         "question": "Cosa c'è da vedere vicino al Palazzo Bahia?",
@@ -605,4 +605,3 @@
     "locationVal": "Rue Riad Zitoun el Jedid, Medina di Marrakech"
   }
 }
-

@@ -36,7 +36,7 @@ if (!_wa) {
   console.warn(
     '\x1b[33m⚠️  NEXT_PUBLIC_WHATSAPP_NUMBER is not set.\x1b[0m',
     '\n   WhatsApp buttons will be hidden site-wide until a real number is configured.',
-    '\n   Set it in Vercel → Settings → Environment Variables (format: 19718677020, no +)',
+    '\n   Set it in Vercel → Settings → Environment Variables (format: 2126XXXXXXXX, no +)',
   );
 }
 

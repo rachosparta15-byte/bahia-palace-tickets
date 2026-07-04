@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   if (locale !== 'en') return { robots: 'noindex', description: REFUND_DESCRIPTIONS[locale] };
   return {
-    title: 'Refund Policy — Free Cancellation on Bahia Palace Tickets',
-    description: 'Visitbahiapalace.com offers free cancellation on Bahia Palace tickets up to 24 hours before your visit. Read our full refund and cancellation conditions.',
+    title: 'Refund & Cancellation Policy — Bahia Palace Tickets',
+    description: 'Visitbahiapalace.com is an independent guide, not a ticket seller. Cancellation and refund terms are set by the official portal where you complete your purchase.',
   };
 }
 
@@ -23,45 +23,29 @@ export default async function RefundPolicyPage() {
   return (
     <LegalPage
       homeLabel={t('home')}
-      title="Refund Policy"
-      subtitle="We want you to visit with confidence. Here is our refund promise."
+      title="Refund & Cancellation Policy"
+      subtitle="Where cancellations and refunds actually come from."
       lastUpdated="15 November 2025"
       sections={[
         {
-          heading: 'Free Cancellation',
-          body: 'All tickets include free cancellation up to 24 hours before your scheduled visit date. Cancel anytime before the deadline using the link in your confirmation email or by contacting us directly.',
+          heading: 'We Don’t Process Payments',
+          body: 'Visitbahiapalace.com is an independent, unaffiliated information and ticket-comparison guide. We don’t sell tickets or take payment ourselves — when you continue past our site, you complete your purchase directly on the official ticketing portal.',
         },
         {
-          heading: 'How to Cancel',
-          body: [
-            'Use the cancellation link in your booking confirmation email.',
-            'Email us at support@visitbahiapalace.com with your reference number.',
-            'Send us a WhatsApp message with your booking reference.',
-          ],
-        },
-        {
-          heading: 'Refund Processing',
-          body: 'Approved refunds are processed within 5–10 business days. The refund is returned to the original payment method. We will send you a confirmation email once the refund has been initiated.',
-        },
-        {
-          heading: 'Late Cancellation (within 24 hours)',
-          body: 'Cancellations made within 24 hours of the scheduled visit are not eligible for a refund under standard conditions. However, we review exceptional circumstances on a case-by-case basis (illness, transport disruptions, etc.).',
-        },
-        {
-          heading: 'No-Shows',
-          body: 'Tickets that are not used (no-shows) are not eligible for a refund, except in cases where the palace was closed due to circumstances beyond our control (official public holiday, emergency closure, etc.).',
+          heading: 'Cancellation & Refund Terms',
+          body: 'Because payment happens on the official portal, its cancellation and refund policy applies to your purchase, not ours. Review the terms shown there at checkout before you pay — they cover deadlines, eligibility, and how refunds are issued.',
         },
         {
           heading: 'Palace Closures',
-          body: 'In the rare event that Bahia Palace closes unexpectedly on the day of your visit, we will offer a full refund or rescheduling at no extra cost.',
+          body: 'If Bahia Palace closes unexpectedly on your visit date, contact the portal where you purchased your ticket — they handle rescheduling and refunds for closures, not us.',
         },
         {
           heading: 'Date Changes',
-          body: 'Need to visit on a different date? Contact us at least 24 hours before your original visit date and we will reschedule your ticket free of charge, subject to availability.',
+          body: 'Need to visit on a different date? Date changes are handled by the official portal under the terms shown at your purchase. We can’t reschedule or refund a ticket ourselves.',
         },
         {
-          heading: 'Contact',
-          body: 'Questions about a refund? Email support@visitbahiapalace.com or WhatsApp us. We respond within 24 hours.',
+          heading: 'Questions About Your Order',
+          body: 'For questions about a specific purchase, contact the portal directly using the reference from your confirmation email. For general questions about this site, email support@visitbahiapalace.com or WhatsApp us — we respond within 24 hours.',
         },
       ]}
     />

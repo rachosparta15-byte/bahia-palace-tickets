@@ -19,10 +19,10 @@
     "trustNote": "Plus de 50 000 visiteurs satisfaits"
   },
   "trust": {
-    "instant": "Confirmation Instantanée",
-    "freeCancellation": "Annulation Gratuite",
-    "mobile": "Billets Mobiles",
-    "secure": "Portail officiel"
+    "instant": "100 % Indépendant",
+    "freeCancellation": "Sans Frais de Réservation",
+    "mobile": "Infos Vérifiées",
+    "secure": "Billets Officiels Uniquement"
   },
   "tickets": {
     "title": "Choisissez votre Expérience au Palais Bahia",
@@ -38,8 +38,8 @@
       "includes": [
         "Billet d'entrée prioritaire",
         "Billet mobile ou imprimé",
-        "Confirmation instantanée",
-        "Annulation gratuite 24h avant"
+        "Aucun frais de réservation",
+        "Billets officiels uniquement"
       ],
       "excludes": [
         "Commentaire guidé",
@@ -59,7 +59,7 @@
         "Guide local certifié",
         "Histoire et anecdotes",
         "Petit groupe (max 12)",
-        "Annulation gratuite 24h avant"
+        "Billets officiels uniquement"
       ],
       "excludes": [
         "Transport jusqu'au palais",
@@ -79,7 +79,7 @@
         "Accès coupe-file",
         "Expérience personnalisée",
         "Horaires flexibles",
-        "Annulation gratuite 24h avant"
+        "Billets officiels uniquement"
       ],
       "excludes": [
         "Transport jusqu'au palais",
@@ -98,7 +98,7 @@
         "Entrée Tombeaux Saadiens",
         "Coupe-file sur les deux sites",
         "Horaires flexibles",
-        "Annulation gratuite 24h avant"
+        "Billets officiels uniquement"
       ],
       "excludes": [
         "Commentaire guidé",
@@ -114,20 +114,20 @@
     "title": "Pourquoi Réserver chez Nous ?",
     "items": [
       {
-        "title": "Livraison Instantanée du Billet",
-        "desc": "Recevez votre billet par e-mail en quelques secondes. Sans attente, sans incertitude."
+        "title": "Droit au Vrai Guichet",
+        "desc": "Nous vous dirigeons directement vers le portail officiel du Ministère de la Culture marocain — aucun revendeur, aucune majoration."
       },
       {
-        "title": "Entrée Garantie",
-        "desc": "Votre billet est pré-validé. Montrez votre téléphone et entrez directement."
+        "title": "Aucun Frais de Réservation",
+        "desc": "Ce site est gratuit. Vous payez le tarif officiel directement sur le portail — nous n'ajoutons rien."
       },
       {
         "title": "Information Fiable",
         "desc": "Informations visiteurs indépendantes, tirées de sources officielles et vérifiées."
       },
       {
-        "title": "Vos Données en Sécurité",
-        "desc": "Vos informations sont traitées via le portail officiel du Ministère de la Culture marocain."
+        "title": "Vos Données Restent Chez Nous",
+        "desc": "Si vous partagez votre e-mail, il sert uniquement à vous envoyer des conseils de visite — jamais revendu. L'achat de votre billet se fait directement sur le portail officiel, pas chez nous."
       }
     ]
   },
@@ -150,11 +150,11 @@
     "items": [
       {
         "question": "Comment vais-je recevoir mon billet ?",
-        "answer": "Vous recevez votre billet par e-mail immédiatement après la réservation. Il contient un QR code à présenter directement sur votre téléphone à l'entrée du palais."
+        "answer": "Vous finalisez votre achat directement sur le portail officiel du Ministère de la Culture marocain, qui vous envoie votre billet avec QR code par e-mail."
       },
       {
         "question": "Puis-je annuler ou modifier ma réservation ?",
-        "answer": "Oui ! Nous offrons l'annulation gratuite jusqu'à 24 heures avant votre visite. Contactez-nous par e-mail ou utilisez le lien de votre confirmation."
+        "answer": "La politique d'annulation est définie par le portail officiel où vous finalisez votre achat — consultez les conditions affichées lors du paiement."
       },
       {
         "question": "Quels sont les horaires d'ouverture du Palais Bahia ?",
@@ -170,7 +170,7 @@
       },
       {
         "question": "Comment fonctionne le coupe-file ?",
-        "answer": "Avec notre billet coupe-file, vous accédez directement à l'entrée prioritaire. Nos billets sont pré-validés, vous n'avez donc pas besoin de faire la queue à la billetterie."
+        "answer": "Nous vous dirigeons vers le billet coupe-file officiel sur le portail du gouvernement — il est pré-validé par leurs soins, vous n'avez donc pas besoin de faire la queue à la billetterie."
       }
     ]
   },
@@ -206,7 +206,7 @@
     "editorial": "Éditorial",
     "contact": "Contact",
     "copyright": "© {year} Bahia Palace Tickets. Tous droits réservés.",
-    "paymentNote": "Billets coupe-file sécurisés — confirmation instantanée",
+    "paymentNote": "Gratuit — billets officiels uniquement",
     "disclaimer": "visitbahiapalace.com est un site d'information touristique indépendant. Nous ne sommes pas affiliés au Palais Bahia officiel ni au Ministère de la Culture du Maroc. Pour les billets officiels, consultez : e-services.minculture.gov.ma"
   },
   "whatsapp": {
@@ -224,9 +224,9 @@
     "childFree": "Gratuit",
     "total": "Total",
     "proceedToCheckout": "Continuer vers les billets officiels →",
-    "instantConfirm": "Confirmation instantanée",
-    "freeCancelNote": "Annulation gratuite jusqu'à 24h avant",
-    "mobileTicket": "Billet mobile accepté",
+    "instantConfirm": "Gratuit — aucun frais",
+    "freeCancelNote": "Achat direct sur le portail officiel",
+    "mobileTicket": "Aucun compte ni appli requis",
     "duration": "Durée",
     "groupSize": "Taille du groupe",
     "language": "Disponible en",
@@ -292,7 +292,7 @@
     "whatsappUs": "WhatsApp nous pour une aide instantanée →",
     "ctaSkip": "Évitez la file de 2h",
     "ctaTitle": "Préparez votre visite au Palais Bahia",
-    "ctaBody": "Confirmation instantanée · Annulation gratuite · Billets mobiles acceptés",
+    "ctaBody": "Gratuit · Billets officiels uniquement · Aucun frais de réservation",
     "ctaBtn": "Voir Toutes les Options de Billets",
     "teamAvail": "Nous répondons rapidement à toutes les demandes de réservation.",
     "items": [
@@ -350,7 +350,7 @@
       },
       {
         "question": "Puis-je annuler ou modifier mon billet ?",
-        "answer": "Oui, tous les billets incluent l'annulation gratuite jusqu'à 24 heures avant votre visite. Pour annuler, cliquez sur le lien dans votre e-mail de confirmation ou contactez-nous via WhatsApp. Les remboursements sont traités dans les 5 à 7 jours ouvrables."
+        "answer": "La politique d'annulation et de remboursement est définie par le portail officiel où vous finalisez votre achat (e-services.minculture.gov.ma) — consultez les conditions affichées lors du paiement. Nous ne traitons pas les paiements, nous ne pouvons donc pas gérer les annulations nous-mêmes."
       },
       {
         "question": "Que voir d'autre près du Palais Bahia ?",
