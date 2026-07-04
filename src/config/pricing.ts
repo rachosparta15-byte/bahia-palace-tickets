@@ -13,6 +13,14 @@ export const OFFICIAL_DOOR_PRICE_LABEL = {
   eur: `~€${OFFICIAL_DOOR_PRICE_EUR_APPROX}`,
 } as const;
 
+/** USD -> EUR approximation, derived from the door price ratio (9/10). Used
+ *  to show a EUR estimate next to any USD ticket price on the site. */
+export const USD_TO_EUR_APPROX = OFFICIAL_DOOR_PRICE_EUR_APPROX / OFFICIAL_DOOR_PRICE_USD_APPROX;
+
+export function approxEUR(usd: number): number {
+  return Math.round(usd * USD_TO_EUR_APPROX);
+}
+
 export type TicketSlug =
   | 'skip-the-line'
   | 'guided-tour'

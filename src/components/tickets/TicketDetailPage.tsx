@@ -6,6 +6,7 @@ import { Breadcrumb } from './Breadcrumb';
 import { BookingWidget } from './BookingWidget';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { ReviewsCarousel } from '@/components/homepage/ReviewsCarousel';
 import { BASE, DIGITAL_TICKET_OFFER_EXTRAS, buildBreadcrumbSchema } from '@/lib/seo';
 import { TICKET_PRICES } from '@/lib/ticket-data';
 
@@ -388,6 +389,8 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
         </div>
         )}
       </div>
+
+      {isLive && <ReviewsCarousel />}
     </div>
   );
 }

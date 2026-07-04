@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { CheckCircle2, MessageCircle } from 'lucide-react';
 import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
 import { LeadButton } from '@/components/layout/LeadButton';
+import { OFFICIAL_DOOR_PRICE_MAD, OFFICIAL_DOOR_PRICE_USD_APPROX, approxEUR } from '@/config/pricing';
 
 interface BookingWidgetProps {
   price: number;
@@ -40,9 +41,30 @@ export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
           <p className="text-4xl font-bold text-[#C4452D] leading-none tabular-nums lining-nums"
              style={{ fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif', fontVariantNumeric: 'lining-nums tabular-nums' }}>
             ${price}
-            <span className="text-sm font-normal text-[#C4A882] ml-1.5">{tt('perPerson')}</span>
+            <span className="text-base font-normal text-[#C4A882] ml-1.5">/ €{approxEUR(price)}</span>
+            <span className="text-sm font-normal text-[#C4A882] ml-1.5 block sm:inline">{tt('perPerson')}</span>
           </p>
         </div>
+
+        {/* What you're paying for */}
+        {slug === 'skip-the-line' && (
+          <div className="mb-6 rounded-xl bg-[#2E1F12] border border-[rgba(232,163,61,0.15)] p-4">
+            <p className="text-[11px] font-bold uppercase tracking-wide text-[#E8A33D] mb-2.5">
+              What you&apos;re paying for
+            </p>
+            <div className="flex items-center justify-between text-xs text-[#C4A882] mb-1.5">
+              <span>Official gate price</span>
+              <span className="font-semibold text-[#F5E8CC]">{OFFICIAL_DOOR_PRICE_MAD} MAD (~${OFFICIAL_DOOR_PRICE_USD_APPROX})</span>
+            </div>
+            <div className="flex items-center justify-between text-xs text-[#C4A882] mb-2.5">
+              <span>Our listed price</span>
+              <span className="font-semibold text-[#8FA63C]">${price} — no fee added</span>
+            </div>
+            <p className="text-[11px] text-[#C4A882]/80 leading-relaxed border-t border-[rgba(232,163,61,0.12)] pt-2.5">
+              Same price as the gate. What you get for using this site: verified visitor info, a pre-booking link so you skip the 30–45 min door queue, and WhatsApp support — not a markup.
+            </p>
+          </div>
+        )}
 
         {/* Booking CTA */}
         <LeadButton
