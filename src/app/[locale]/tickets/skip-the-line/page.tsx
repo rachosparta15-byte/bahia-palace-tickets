@@ -14,23 +14,23 @@ const P = SKIP_THE_LINE_PRICE_USD;
 
 const META: Record<string, { title: string; description: string }> = {
   en: {
-    title: `Bahia Palace Tickets 2026 — Skip the Line from $${P} | No Queue`,
+    title: `Bahia Palace Skip-the-Line Tickets 2026 | From $${P}`,
     description: `Compare Bahia Palace skip-the-line ticket options from $${P} per person and book directly on the official portal — no queuing, no booking fees.`,
   },
   fr: {
-    title: `Billet Coupe-File Palais Bahia 2026 — Dès ${P}$ | Sans Attente`,
+    title: `Billet Coupe-File Palais Bahia 2026 | Dès ${P}$`,
     description: `Comparez les options de billet coupe-file pour le Palais Bahia dès ${P}$ par personne et réservez directement sur le portail officiel — sans file d'attente, sans frais.`,
   },
   de: {
-    title: `Bahia Palast Ticket 2026 — Skip-the-Line ab $${P} | Keine Wartezeit`,
+    title: `Bahia Palast Skip-the-Line Ticket 2026 | Ab $${P}`,
     description: `Vergleichen Sie Skip-the-Line-Optionen für den Bahia Palast ab $${P} pro Person und buchen Sie direkt über das offizielle Portal — keine Warteschlange, keine Gebühren.`,
   },
   it: {
-    title: `Biglietto Palazzo Bahia 2026 — Salta-Fila da $${P} | Senza Coda`,
+    title: `Biglietto Salta-Fila Palazzo Bahia 2026 | Da $${P}`,
     description: `Confronta le opzioni salta-fila per il Palazzo Bahia da $${P} a persona e prenota direttamente sul portale ufficiale — niente coda, nessuna commissione.`,
   },
   es: {
-    title: `Entrada Palacio Bahia 2026 — Sin Cola desde $${P} | Acceso Rápido`,
+    title: `Entrada Sin Cola Palacio Bahia 2026 | Desde $${P}`,
     description: `Compara las opciones sin cola para el Palacio Bahia desde $${P} por persona y reserva directamente en el portal oficial — sin colas, sin comisiones.`,
   },
 };

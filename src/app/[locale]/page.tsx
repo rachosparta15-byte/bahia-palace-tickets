@@ -17,32 +17,35 @@ import { ArticleTicker } from '@/components/homepage/ArticleTicker';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { BASE, buildAlternates, buildOG, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
+import { SKIP_THE_LINE_PRICE_USD } from '@/config/pricing';
 import type { Metadata } from 'next';
 
 interface Props {
   params: Promise<{ locale: string }>;
 }
 
+const P = SKIP_THE_LINE_PRICE_USD;
+
 const HOME_META: Record<string, { title: string; description: string }> = {
   en: {
-    title: 'Bahia Palace Marrakech 2026 | Tickets, Hours & Visitor Guide',
-    description: 'Visit Bahia Palace Marrakech in 2026. Book skip-the-line tickets, check opening hours, entrance fees, and discover the stunning 19th-century Moroccan palace.',
+    title: `Bahia Palace Marrakech 2026 | Tickets from $${P}`,
+    description: `Visit Bahia Palace Marrakech in 2026. Compare skip-the-line, guided and private tour tickets from $${P}, check opening hours and entrance fees, and discover the 19th-century Moroccan palace.`,
   },
   fr: {
-    title: 'Palais Bahia Marrakech 2026 | Billets, Horaires & Guide',
-    description: 'Visitez le Palais Bahia de Marrakech. Réservez vos billets coupe-file pour 2026, consultez les horaires, tarifs et découvrez ce joyau de l\'architecture marocaine.',
+    title: `Palais Bahia Marrakech 2026 | Billets dès ${P}$`,
+    description: `Visitez le Palais Bahia de Marrakech en 2026. Comparez les billets coupe-file, visites guidées et privées dès ${P}$, consultez les horaires et tarifs, et découvrez ce joyau de l'architecture marocaine.`,
   },
   es: {
-    title: 'Palacio Bahia Marrakech 2026 | Entradas, Horarios & Guía',
-    description: 'Visita el Palacio Bahia de Marrakech en 2026. Compra entradas sin cola, consulta horarios, precios y descubre este impresionante palacio marroquí del siglo XIX.',
+    title: `Palacio Bahia Marrakech 2026 | Entradas desde $${P}`,
+    description: `Visita el Palacio Bahia de Marrakech en 2026. Compara entradas sin cola, visitas guiadas y privadas desde $${P}, consulta horarios y precios, y descubre este palacio marroquí del siglo XIX.`,
   },
   de: {
-    title: 'Bahia Palast Marrakesch 2026 | Tickets & Reiseführer',
-    description: 'Besuchen Sie den Bahia Palast in Marrakesch 2026. Tickets ohne Warteschlange, Öffnungszeiten, Eintrittspreise und Infos zum prachtvollen Palast aus dem 19. Jahrhundert.',
+    title: `Bahia Palast Marrakesch 2026 | Tickets ab $${P}`,
+    description: `Besuchen Sie den Bahia Palast in Marrakesch 2026. Vergleichen Sie Skip-the-Line-, Führungs- und Privattouren-Tickets ab $${P}, prüfen Sie Öffnungszeiten und Preise, und entdecken Sie den Palast aus dem 19. Jahrhundert.`,
   },
   it: {
-    title: 'Palazzo Bahia Marrakech 2026 | Biglietti, Orari & Guida',
-    description: 'Visita il Palazzo Bahia di Marrakech nel 2026. Acquista biglietti salta-fila, controlla orari, prezzi e scopri lo storico palazzo marocchino del XIX secolo.',
+    title: `Palazzo Bahia Marrakech 2026 | Biglietti da $${P}`,
+    description: `Visita il Palazzo Bahia di Marrakech nel 2026. Confronta biglietti salta-fila, visite guidate e private da $${P}, controlla orari e prezzi, e scopri lo storico palazzo marocchino del XIX secolo.`,
   },
 };
 
