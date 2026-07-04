@@ -199,7 +199,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
 
             <p className="flex items-center justify-center gap-1.5 text-xs text-[#C4A882]">
               <ShieldCheck size={12} className="text-[#8FA63C]" />
-              Secure booking — instant confirmation
+              Free to use — official tickets only
             </p>
           </div>
         </div>

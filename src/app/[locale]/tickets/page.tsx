@@ -4,6 +4,7 @@ import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { JsonLd } from '@/components/seo/JsonLd';
 import type { Metadata } from 'next';
 import { buildAlternates, buildOG, BASE } from '@/lib/seo';
+import { SKIP_THE_LINE_PRICE_USD } from '@/config/pricing';
 
 export const revalidate = 86400;
 
@@ -11,12 +12,14 @@ interface Props {
   params: Promise<{ locale: string }>;
 }
 
+const P = SKIP_THE_LINE_PRICE_USD;
+
 const TICKETS_META: Record<string, { title: string; description: string }> = {
-  en: { title: 'Bahia Palace Tickets 2026 | Skip-the-Line & Guided Tours', description: 'Buy Bahia Palace Marrakech tickets online and skip the queue. Best prices for skip-the-line entry, guided tours and private tours with instant QR confirmation.' },
-  fr: { title: 'Billets Palais Bahia 2026 | Coupe-File & Visites Guidées', description: 'Achetez vos billets pour le Palais Bahia de Marrakech en ligne. Coupe-file, visites guidées et privées au meilleur prix avec confirmation instantanée par e-mail.' },
-  es: { title: 'Entradas Palacio Bahia 2026 | Sin Cola & Visitas Guiadas', description: 'Compra entradas para el Palacio Bahia de Marrakech online sin colas. Entrada sin cola, visitas guiadas y privadas al mejor precio. Confirmación instantánea.' },
-  de: { title: 'Bahia Palast Tickets 2026 | Führungen & Kombi', description: 'Bahia Palast Marrakesch Tickets online kaufen: Skip-the-Line, Führungen und Privattouren zum besten Preis. Sofortige Buchungsbestätigung per E-Mail erhalten.' },
-  it: { title: 'Biglietti Palazzo Bahia 2026 | Salta-Fila & Visite Guidate', description: 'Acquista i biglietti per il Palazzo Bahia di Marrakech online. Salta-fila, visite guidate e private al miglior prezzo con conferma immediata via email.' },
+  en: { title: `Bahia Palace Tickets 2026 — Skip the Line from $${P}`, description: `Compare Bahia Palace ticket options from $${P}: skip-the-line, guided and private tours. Book directly on the official portal — no booking fees.` },
+  fr: { title: `Billets Palais Bahia 2026 — Coupe-File dès ${P}$`, description: `Comparez les billets pour le Palais Bahia dès ${P}$ : coupe-file, visites guidées et privées. Réservez directement sur le portail officiel — sans frais.` },
+  es: { title: `Entradas Palacio Bahia 2026 — Sin Cola desde $${P}`, description: `Compara las entradas del Palacio Bahia desde $${P}: sin cola, visitas guiadas y privadas. Reserva directamente en el portal oficial — sin comisiones.` },
+  de: { title: `Bahia Palast Tickets 2026 — Skip-the-Line ab $${P}`, description: `Vergleichen Sie Bahia Palast Tickets ab $${P}: Skip-the-Line, Führungen und Privattouren. Direkt über das offizielle Portal buchen — ohne Gebühren.` },
+  it: { title: `Biglietti Palazzo Bahia 2026 — Salta-Fila da $${P}`, description: `Confronta i biglietti per il Palazzo Bahia da $${P}: salta-fila, visite guidate e private. Prenota direttamente sul portale ufficiale — nessuna commissione.` },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -25,7 +28,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: meta.title,
     description: meta.description,
-    keywords: ['bahia palace tickets', 'buy bahia palace tickets online', 'bahia palace skip the line tickets', 'bahia palace tickets price 2026', 'book bahia palace tickets'],
     alternates: buildAlternates(locale, '/tickets'),
     openGraph: buildOG(meta.title, meta.description, locale, '/tickets'),
   };
@@ -60,7 +62,7 @@ export default async function TicketsPage({ params }: Props) {
           image: `${BASE}/og-image.jpg`,
           offers: {
             '@type': 'Offer',
-            price: '10.00',
+            price: SKIP_THE_LINE_PRICE_USD.toFixed(2),
             priceCurrency: 'USD',
             availability: 'https://schema.org/InStock',
             url: `${BASE}/${locale}/tickets/skip-the-line`,
