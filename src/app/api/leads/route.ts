@@ -14,12 +14,25 @@ export async function POST(req: NextRequest) {
       utmMedium?:   string | null;
       utmCampaign?: string | null;
       device?:      string | null;
+      partySize?:   number | null;
+      visitDate?:   string | null;
     };
 
     const ip =
       req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
       req.headers.get('x-real-ip') ??
       null;
+
+    const partySize = Number.isInteger(body.partySize) && (body.partySize as number) > 0 && (body.partySize as number) < 100
+      ? body.partySize as number
+      : null;
+    const visitDate = typeof body.visitDate === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(body.visitDate)
+      ? body.visitDate
+      : null;
+
+    // Ensure new columns exist before inserting (idempotent, same pattern as ipAddress)
+    await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "partySize" INTEGER`).catch(() => {});
+    await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "visitDate" TEXT`).catch(() => {});
 
     await prisma.lead.create({
       data: {
@@ -34,6 +47,8 @@ export async function POST(req: NextRequest) {
         utmCampaign: body.utmCampaign || null,
         device:      body.device      || null,
         ipAddress:   ip,
+        partySize,
+        visitDate,
       },
     });
 

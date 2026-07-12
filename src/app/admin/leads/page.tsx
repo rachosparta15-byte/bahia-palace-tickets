@@ -1,5 +1,5 @@
 ﻿import prisma from '@/lib/db';
-import { Search, Mail, User, Globe, Tag, Calendar, MapPin, Smartphone, Link2, Wifi } from 'lucide-react';
+import { Search, Mail, User, Globe, Tag, Calendar, MapPin, Smartphone, Link2, Wifi, Users, CalendarCheck } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
@@ -44,8 +44,10 @@ function labelReferrer(raw: string | null): { label: string; title: string } {
 export default async function LeadsPage({ searchParams }: Props) {
   const { q } = await searchParams;
 
-  // Ensure ipAddress column exists before querying (idempotent)
+  // Ensure newer columns exist before querying (idempotent)
   await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "ipAddress" TEXT`).catch(() => {});
+  await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "partySize" INTEGER`).catch(() => {});
+  await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "visitDate" TEXT`).catch(() => {});
 
   const leads = await prisma.lead.findMany({
     where: q
@@ -156,6 +158,8 @@ export default async function LeadsPage({ searchParams }: Props) {
                   { icon: Mail,     label: 'Email' },
                   { icon: User,     label: 'Name' },
                   { icon: Tag,      label: 'Ticket' },
+                  { icon: Users,    label: 'Qty' },
+                  { icon: CalendarCheck, label: 'Visit date' },
                   { icon: Link2,    label: 'Traffic source' },
                   { icon: MapPin,   label: 'Source page' },
                   { icon: Smartphone, label: 'Device' },
@@ -178,7 +182,7 @@ export default async function LeadsPage({ searchParams }: Props) {
             <tbody>
               {leads.length === 0 && (
                 <tr>
-                  <td colSpan={8} className="px-4 py-16 text-center text-[#8B6344]">
+                  <td colSpan={11} className="px-4 py-16 text-center text-[#8B6344]">
                     {q ? 'No leads match your search' : 'No interactions yet — they will appear here once visitors use the booking modal'}
                   </td>
                 </tr>
@@ -190,6 +194,8 @@ export default async function LeadsPage({ searchParams }: Props) {
                   utmMedium?: string | null;
                   utmCampaign?: string | null;
                   device?: string | null;
+                  partySize?: number | null;
+                  visitDate?: string | null;
                 };
                 const { label: srcLabel, title: srcTitle } = labelReferrer(l.referrer ?? null);
                 const hasUtm = l.utmSource || l.utmMedium || l.utmCampaign;
@@ -218,6 +224,24 @@ export default async function LeadsPage({ searchParams }: Props) {
                       <span className="bg-[#FAF3E7] text-[#5C3D20] text-xs px-2 py-0.5 rounded-full font-medium">
                         {lead.ticketType}
                       </span>
+                    </td>
+
+                    {/* Party size */}
+                    <td className="px-4 py-3 text-center">
+                      {l.partySize
+                        ? <span className="bg-[#6B7B3A]/15 text-[#4a5a28] text-xs px-2 py-0.5 rounded-full font-semibold">{l.partySize}{l.partySize >= 9 ? '+' : ''}</span>
+                        : <span className="text-[#C4A882] italic text-xs">—</span>
+                      }
+                    </td>
+
+                    {/* Visit date */}
+                    <td className="px-4 py-3 text-xs whitespace-nowrap">
+                      {l.visitDate
+                        ? <span className="text-[#3D2817] font-medium">
+                            {new Date(l.visitDate + 'T00:00:00').toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
+                          </span>
+                        : <span className="text-[#C4A882] italic">—</span>
+                      }
                     </td>
 
                     {/* Traffic source */}

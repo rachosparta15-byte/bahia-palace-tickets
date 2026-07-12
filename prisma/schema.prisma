@@ -191,10 +191,25 @@ model Lead {
   utmCampaign String?
   device      String?
   ipAddress   String?
+  partySize   Int?
+  visitDate   String?
   createdAt   DateTime @default(now())
 
   @@index([createdAt])
   @@index([email])
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  locale    String?
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
 }
 
 model TicketType {

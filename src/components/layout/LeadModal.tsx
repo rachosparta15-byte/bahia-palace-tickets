@@ -55,9 +55,11 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
   const locale    = useLocale();
   const pathname  = usePathname();
 
-  const [email,   setEmail]   = useState('');
-  const [name,    setName]    = useState('');
-  const [loading, setLoading] = useState(false);
+  const [email,     setEmail]     = useState('');
+  const [name,      setName]      = useState('');
+  const [partySize, setPartySize] = useState('');
+  const [visitDate, setVisitDate] = useState('');
+  const [loading,   setLoading]   = useState(false);
 
   // Capture traffic source once when the modal first opens.
   const [source] = useState<TrafficSource>(() => collectTrafficSource(locale, pathname));
@@ -93,6 +95,8 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
         body: JSON.stringify({
           email:       email.trim()  || null,
           name:        name.trim()   || null,
+          partySize:   partySize ? Number(partySize) : null,
+          visitDate:   visitDate || null,
           ticketType,
           locale,
           sourcePage:  source.sourcePage,
@@ -193,6 +197,39 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
                 className="w-full px-4 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12] text-[#F5E8CC] placeholder:text-[#C4A882] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors"
                 style={{ fontSize: '16px', minHeight: '48px' }}
               />
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-[11px] font-semibold text-[#C4A882] uppercase tracking-wide mb-1.5">
+                    How many tickets?
+                  </label>
+                  <select
+                    value={partySize}
+                    onChange={e => setPartySize(e.target.value)}
+                    className="w-full px-3 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12] text-[#F5E8CC] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors appearance-none"
+                    style={{ fontSize: '16px', minHeight: '48px' }}
+                  >
+                    <option value="">Not sure</option>
+                    {[1, 2, 3, 4, 5, 6, 7, 8].map(n => (
+                      <option key={n} value={n}>{n} {n === 1 ? 'ticket' : 'tickets'}</option>
+                    ))}
+                    <option value="9">9+ tickets</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-[11px] font-semibold text-[#C4A882] uppercase tracking-wide mb-1.5">
+                    Visit date
+                  </label>
+                  <input
+                    type="date"
+                    value={visitDate}
+                    min={new Date().toISOString().slice(0, 10)}
+                    onChange={e => setVisitDate(e.target.value)}
+                    className="w-full px-3 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12] text-[#F5E8CC] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors [color-scheme:dark]"
+                    style={{ fontSize: '16px', minHeight: '48px' }}
+                  />
+                </div>
+              </div>
             </div>
 
             <button
