@@ -193,6 +193,7 @@ model Lead {
   ipAddress   String?
   partySize   Int?
   visitDate   String?
+  whatsapp    String?
   createdAt   DateTime @default(now())
 
   @@index([createdAt])

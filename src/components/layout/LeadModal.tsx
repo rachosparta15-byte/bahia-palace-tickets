@@ -23,6 +23,12 @@ interface TrafficSource {
   device:      string;
 }
 
+/** Today's date in the visitor's local timezone as YYYY-MM-DD. */
+function todayLocal(): string {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
 function collectTrafficSource(locale: string, nextPathname: string): TrafficSource {
   // Use window.location.pathname so we get the full path including locale prefix
   // (next-intl's usePathname strips the locale, returning "/" for the homepage).
@@ -57,8 +63,9 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
 
   const [email,     setEmail]     = useState('');
   const [name,      setName]      = useState('');
+  const [whatsapp,  setWhatsapp]  = useState('');
   const [partySize, setPartySize] = useState('');
-  const [visitDate, setVisitDate] = useState('');
+  const [visitDate, setVisitDate] = useState(() => todayLocal());
   const [loading,   setLoading]   = useState(false);
   const [showErrors, setShowErrors] = useState(false);
 
@@ -96,6 +103,7 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
         body: JSON.stringify({
           email:       email.trim()  || null,
           name:        name.trim()   || null,
+          whatsapp:    whatsapp.trim() || null,
           partySize:   partySize ? Number(partySize) : null,
           visitDate:   visitDate || null,
           ticketType,
@@ -198,6 +206,15 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
                 className="w-full px-4 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12] text-[#F5E8CC] placeholder:text-[#C4A882] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors"
                 style={{ fontSize: '16px', minHeight: '48px' }}
               />
+              <input
+                type="tel"
+                inputMode="tel"
+                placeholder="WhatsApp number — to receive your ticket"
+                value={whatsapp}
+                onChange={e => setWhatsapp(e.target.value)}
+                className="w-full px-4 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12] text-[#F5E8CC] placeholder:text-[#C4A882] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors"
+                style={{ fontSize: '16px', minHeight: '48px' }}
+              />
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
@@ -225,7 +242,7 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
                   <input
                     type="date"
                     value={visitDate}
-                    min={new Date().toISOString().slice(0, 10)}
+                    min={todayLocal()}
                     onChange={e => setVisitDate(e.target.value)}
                     className={`w-full px-3 rounded-xl border bg-[#2E1F12] text-[#F5E8CC] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors [color-scheme:dark] ${
                       showErrors && !visitDateValid ? 'border-[#C4452D]' : 'border-[rgba(232,163,61,0.20)]'

@@ -4,10 +4,10 @@ import { email } from '@/lib/email';
 import prisma from '@/lib/db';
 
 const schema = z.object({
-  name:    z.string().min(2).max(120),
+  name:    z.string().trim().min(1).max(120),
   email:   z.email(),
-  subject: z.string().min(2).max(200),
-  message: z.string().min(5).max(5000),
+  subject: z.string().trim().min(1).max(200),
+  message: z.string().trim().min(1).max(5000),
   locale:  z.string().max(10).optional(),
 });
 

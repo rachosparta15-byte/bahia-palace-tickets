@@ -16,6 +16,7 @@ export async function POST(req: NextRequest) {
       device?:      string | null;
       partySize?:   number | null;
       visitDate?:   string | null;
+      whatsapp?:    string | null;
     };
 
     const ip =
@@ -30,9 +31,14 @@ export async function POST(req: NextRequest) {
       ? body.visitDate
       : null;
 
+    const whatsapp = typeof body.whatsapp === 'string'
+      ? body.whatsapp.trim().slice(0, 30) || null
+      : null;
+
     // Ensure new columns exist before inserting (idempotent, same pattern as ipAddress)
     await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "partySize" INTEGER`).catch(() => {});
     await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "visitDate" TEXT`).catch(() => {});
+    await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "whatsapp" TEXT`).catch(() => {});
 
     await prisma.lead.create({
       data: {
@@ -49,6 +55,7 @@ export async function POST(req: NextRequest) {
         ipAddress:   ip,
         partySize,
         visitDate,
+        whatsapp,
       },
     });
 

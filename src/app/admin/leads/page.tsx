@@ -1,5 +1,5 @@
 ﻿import prisma from '@/lib/db';
-import { Search, Mail, User, Globe, Tag, Calendar, MapPin, Smartphone, Link2, Wifi, Users, CalendarCheck } from 'lucide-react';
+import { Search, Mail, User, Globe, Tag, Calendar, MapPin, Smartphone, Link2, Wifi, Users, CalendarCheck, MessageCircle } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
@@ -48,6 +48,7 @@ export default async function LeadsPage({ searchParams }: Props) {
   await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "ipAddress" TEXT`).catch(() => {});
   await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "partySize" INTEGER`).catch(() => {});
   await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "visitDate" TEXT`).catch(() => {});
+  await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "whatsapp" TEXT`).catch(() => {});
 
   const leads = await prisma.lead.findMany({
     where: q
@@ -55,6 +56,7 @@ export default async function LeadsPage({ searchParams }: Props) {
           OR: [
             { email:      { contains: q } },
             { name:       { contains: q } },
+            { whatsapp:   { contains: q } },
             { sourcePage: { contains: q } },
           ],
         }
@@ -157,6 +159,7 @@ export default async function LeadsPage({ searchParams }: Props) {
                 {[
                   { icon: Mail,     label: 'Email' },
                   { icon: User,     label: 'Name' },
+                  { icon: MessageCircle, label: 'WhatsApp' },
                   { icon: Tag,      label: 'Ticket' },
                   { icon: Users,    label: 'Qty' },
                   { icon: CalendarCheck, label: 'Visit date' },
@@ -182,7 +185,7 @@ export default async function LeadsPage({ searchParams }: Props) {
             <tbody>
               {leads.length === 0 && (
                 <tr>
-                  <td colSpan={11} className="px-4 py-16 text-center text-[#8B6344]">
+                  <td colSpan={12} className="px-4 py-16 text-center text-[#8B6344]">
                     {q ? 'No leads match your search' : 'No interactions yet — they will appear here once visitors use the booking modal'}
                   </td>
                 </tr>
@@ -196,6 +199,7 @@ export default async function LeadsPage({ searchParams }: Props) {
                   device?: string | null;
                   partySize?: number | null;
                   visitDate?: string | null;
+                  whatsapp?: string | null;
                 };
                 const { label: srcLabel, title: srcTitle } = labelReferrer(l.referrer ?? null);
                 const hasUtm = l.utmSource || l.utmMedium || l.utmCampaign;
@@ -217,6 +221,21 @@ export default async function LeadsPage({ searchParams }: Props) {
                     {/* Name */}
                     <td className="px-4 py-3 text-[#3D2817]">
                       {lead.name || <span className="text-[#C4A882] italic text-xs">—</span>}
+                    </td>
+
+                    {/* WhatsApp */}
+                    <td className="px-4 py-3 text-xs whitespace-nowrap">
+                      {l.whatsapp
+                        ? <a
+                            href={`https://wa.me/${l.whatsapp.replace(/[^\d]/g, '')}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#1c7c54] font-medium font-mono hover:underline"
+                          >
+                            {l.whatsapp}
+                          </a>
+                        : <span className="text-[#C4A882] italic">—</span>
+                      }
                     </td>
 
                     {/* Ticket type */}
