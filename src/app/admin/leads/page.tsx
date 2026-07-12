@@ -229,7 +229,7 @@ export default async function LeadsPage({ searchParams }: Props) {
                     {/* Party size */}
                     <td className="px-4 py-3 text-center">
                       {l.partySize
-                        ? <span className="bg-[#6B7B3A]/15 text-[#4a5a28] text-xs px-2 py-0.5 rounded-full font-semibold">{l.partySize}{l.partySize >= 9 ? '+' : ''}</span>
+                        ? <span className="bg-[#6B7B3A]/15 text-[#4a5a28] text-xs px-2 py-0.5 rounded-full font-semibold">{l.partySize}</span>
                         : <span className="text-[#C4A882] italic text-xs">—</span>
                       }
                     </td>

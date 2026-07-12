@@ -60,6 +60,7 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
   const [partySize, setPartySize] = useState('');
   const [visitDate, setVisitDate] = useState('');
   const [loading,   setLoading]   = useState(false);
+  const [showErrors, setShowErrors] = useState(false);
 
   // Capture traffic source once when the modal first opens.
   const [source] = useState<TrafficSource>(() => collectTrafficSource(locale, pathname));
@@ -112,18 +113,18 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
     }
   };
 
+  const partySizeValid = /^\d+$/.test(partySize.trim()) && Number(partySize) >= 1 && Number(partySize) <= 99;
+  const visitDateValid = /^\d{4}-\d{2}-\d{2}$/.test(visitDate);
+
   const handleSubmit = async () => {
+    if (!partySizeValid || !visitDateValid) {
+      setShowErrors(true);
+      return;
+    }
     setLoading(true);
     await saveLead(email, name);
     trackEvent('lead_submit', { hasEmail: !!email.trim(), ticketType, locale });
     setLoading(false);
-    openPortal();
-    onDone();
-  };
-
-  const handleSkip = async () => {
-    trackEvent('lead_skip', { ticketType, locale });
-    saveLead('', '');
     openPortal();
     onDone();
   };
@@ -176,7 +177,7 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
           {/* Body */}
           <div className="px-6 py-5 space-y-4">
             <p className="text-sm text-[#C4A882] leading-relaxed">
-              Leave your email and we&apos;ll send you the best time to visit, insider tips, and a discount code when guided tours launch. Completely optional.
+              Tell us how many tickets you need and when you&apos;re visiting. Leave your email too and we&apos;ll send you the best time to visit, insider tips, and a discount code when guided tours launch.
             </p>
 
             <div className="space-y-3">
@@ -201,35 +202,44 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="block text-[11px] font-semibold text-[#C4A882] uppercase tracking-wide mb-1.5">
-                    How many tickets?
+                    How many tickets? <span className="text-[#C4452D]">*</span>
                   </label>
-                  <select
+                  <input
+                    type="number"
+                    inputMode="numeric"
+                    min={1}
+                    max={99}
+                    placeholder="e.g. 2"
                     value={partySize}
                     onChange={e => setPartySize(e.target.value)}
-                    className="w-full px-3 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12] text-[#F5E8CC] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors appearance-none"
+                    className={`w-full px-3 rounded-xl border bg-[#2E1F12] text-[#F5E8CC] placeholder:text-[#C4A882] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors ${
+                      showErrors && !partySizeValid ? 'border-[#C4452D]' : 'border-[rgba(232,163,61,0.20)]'
+                    }`}
                     style={{ fontSize: '16px', minHeight: '48px' }}
-                  >
-                    <option value="">Not sure</option>
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map(n => (
-                      <option key={n} value={n}>{n} {n === 1 ? 'ticket' : 'tickets'}</option>
-                    ))}
-                    <option value="9">9+ tickets</option>
-                  </select>
+                  />
                 </div>
                 <div>
                   <label className="block text-[11px] font-semibold text-[#C4A882] uppercase tracking-wide mb-1.5">
-                    Visit date
+                    Visit date <span className="text-[#C4452D]">*</span>
                   </label>
                   <input
                     type="date"
                     value={visitDate}
                     min={new Date().toISOString().slice(0, 10)}
                     onChange={e => setVisitDate(e.target.value)}
-                    className="w-full px-3 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12] text-[#F5E8CC] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors [color-scheme:dark]"
+                    className={`w-full px-3 rounded-xl border bg-[#2E1F12] text-[#F5E8CC] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors [color-scheme:dark] ${
+                      showErrors && !visitDateValid ? 'border-[#C4452D]' : 'border-[rgba(232,163,61,0.20)]'
+                    }`}
                     style={{ fontSize: '16px', minHeight: '48px' }}
                   />
                 </div>
               </div>
+
+              {showErrors && (!partySizeValid || !visitDateValid) && (
+                <p className="text-xs text-[#C4452D]">
+                  Please tell us how many tickets you need and your visit date to continue.
+                </p>
+              )}
             </div>
 
             <button
@@ -240,15 +250,6 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
               style={{ minHeight: '48px' }}
             >
               {loading ? 'Saving…' : <><span>Send me tips &amp; continue</span><ArrowRight size={15} /></>}
-            </button>
-
-            <button
-              type="button"
-              onClick={handleSkip}
-              className="flex items-center justify-center w-full text-center text-sm text-[#C4A882] hover:text-[#F5E8CC] transition-colors"
-              style={{ minHeight: '44px' }}
-            >
-              Skip &amp; continue to tickets →
             </button>
           </div>
 
