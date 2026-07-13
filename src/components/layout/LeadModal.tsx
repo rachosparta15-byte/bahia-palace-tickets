@@ -123,9 +123,10 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
 
   const partySizeValid = /^\d+$/.test(partySize.trim()) && Number(partySize) >= 1 && Number(partySize) <= 99;
   const visitDateValid = /^\d{4}-\d{2}-\d{2}$/.test(visitDate);
+  const whatsappValid  = whatsapp.replace(/[^\d]/g, '').length >= 7;
 
   const handleSubmit = async () => {
-    if (!partySizeValid || !visitDateValid) {
+    if (!whatsappValid || !partySizeValid || !visitDateValid) {
       setShowErrors(true);
       return;
     }
@@ -206,15 +207,27 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
                 className="w-full px-4 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12] text-[#F5E8CC] placeholder:text-[#C4A882] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors"
                 style={{ fontSize: '16px', minHeight: '48px' }}
               />
-              <input
-                type="tel"
-                inputMode="tel"
-                placeholder="WhatsApp number — to receive your ticket"
-                value={whatsapp}
-                onChange={e => setWhatsapp(e.target.value)}
-                className="w-full px-4 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12] text-[#F5E8CC] placeholder:text-[#C4A882] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors"
-                style={{ fontSize: '16px', minHeight: '48px' }}
-              />
+              <div>
+                <label className="block text-[11px] font-semibold text-[#C4A882] uppercase tracking-wide mb-1.5">
+                  WhatsApp number <span className="text-[#C4452D]">*</span>
+                </label>
+                <input
+                  type="tel"
+                  inputMode="tel"
+                  placeholder="e.g. +212 6 12 34 56 78 — to receive your ticket"
+                  value={whatsapp}
+                  onChange={e => setWhatsapp(e.target.value)}
+                  className={`w-full px-4 rounded-xl border bg-[#2E1F12] text-[#F5E8CC] placeholder:text-[#C4A882] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors ${
+                    showErrors && !whatsappValid ? 'border-[#C4452D]' : 'border-[rgba(232,163,61,0.20)]'
+                  }`}
+                  style={{ fontSize: '16px', minHeight: '48px' }}
+                />
+                {showErrors && !whatsappValid && (
+                  <p className="mt-1.5 text-xs text-[#C4452D]">
+                    Please enter a valid WhatsApp number so we can send your ticket.
+                  </p>
+                )}
+              </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
@@ -266,7 +279,7 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
               className="flex items-center justify-center gap-2 w-full bg-[#C4452D] hover:bg-[#a83826] disabled:opacity-60 text-white font-semibold rounded-xl transition-colors text-sm"
               style={{ minHeight: '48px' }}
             >
-              {loading ? 'Saving…' : <><span>Send me tips &amp; continue</span><ArrowRight size={15} /></>}
+              {loading ? 'Saving…' : <><span>Get your ticket &amp; skip the line</span><ArrowRight size={15} /></>}
             </button>
           </div>
 

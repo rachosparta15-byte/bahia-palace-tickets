@@ -54,6 +54,15 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
   },
   manifest: '/site.webmanifest',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/bahia-palace-icon.svg', type: 'image/svg+xml' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: '/apple-icon.png',
+  },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFY ?? '',
   },
