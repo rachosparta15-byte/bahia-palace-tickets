@@ -124,9 +124,10 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
   const partySizeValid = /^\d+$/.test(partySize.trim()) && Number(partySize) >= 1 && Number(partySize) <= 99;
   const visitDateValid = /^\d{4}-\d{2}-\d{2}$/.test(visitDate);
   const whatsappValid  = whatsapp.replace(/[^\d]/g, '').length >= 7;
+  const emailValid     = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 
   const handleSubmit = async () => {
-    if (!whatsappValid || !partySizeValid || !visitDateValid) {
+    if (!emailValid || !whatsappValid || !partySizeValid || !visitDateValid) {
       setShowErrors(true);
       return;
     }
@@ -198,15 +199,31 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
                 className="w-full px-4 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12] text-[#F5E8CC] placeholder:text-[#C4A882] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors"
                 style={{ fontSize: '16px', minHeight: '48px' }}
               />
-              <input
-                type="email"
-                placeholder="Email address (optional)"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                onKeyDown={e => { if (e.key === 'Enter') handleSubmit(); }}
-                className="w-full px-4 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12] text-[#F5E8CC] placeholder:text-[#C4A882] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors"
-                style={{ fontSize: '16px', minHeight: '48px' }}
-              />
+              <div>
+                <label className="block text-[11px] font-semibold text-[#C4A882] uppercase tracking-wide mb-1.5">
+                  Email address <span className="text-[#C4452D]">*</span>
+                </label>
+                <input
+                  type="email"
+                  placeholder="you@example.com"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  onKeyDown={e => { if (e.key === 'Enter') handleSubmit(); }}
+                  className={`w-full px-4 rounded-xl border bg-[#2E1F12] text-[#F5E8CC] placeholder:text-[#C4A882] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors ${
+                    showErrors && !emailValid ? 'border-[#C4452D]' : 'border-[rgba(232,163,61,0.20)]'
+                  }`}
+                  style={{ fontSize: '16px', minHeight: '48px' }}
+                />
+                {showErrors && !emailValid ? (
+                  <p className="mt-1.5 text-xs text-[#C4452D]">
+                    Please enter a valid email address.
+                  </p>
+                ) : (
+                  <p className="mt-1.5 text-xs text-[#C4A882]">
+                    So we can still reach you if we can&apos;t get through on WhatsApp.
+                  </p>
+                )}
+              </div>
               <div>
                 <label className="block text-[11px] font-semibold text-[#C4A882] uppercase tracking-wide mb-1.5">
                   WhatsApp number <span className="text-[#C4452D]">*</span>
@@ -214,7 +231,7 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
                 <input
                   type="tel"
                   inputMode="tel"
-                  placeholder="e.g. +212 6 12 34 56 78 — to receive your ticket"
+                  placeholder="to receive your ticket"
                   value={whatsapp}
                   onChange={e => setWhatsapp(e.target.value)}
                   className={`w-full px-4 rounded-xl border bg-[#2E1F12] text-[#F5E8CC] placeholder:text-[#C4A882] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors ${
