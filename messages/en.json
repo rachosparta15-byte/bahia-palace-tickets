@@ -178,7 +178,8 @@
     "teamBody": "visitbahiapalace.com is NOT affiliated with the official Bahia Palace administration or the Moroccan Ministry of Culture. We are an independent visitor information website. For official tickets, visit: e-services.minculture.gov.ma",
     "contactCta": "Contact Us",
     "ctaTitle": "Have a Question About Your Visit?",
-    "ctaBody": "Questions about visiting Bahia Palace? Browse our FAQ or send us a message."
+    "ctaBody": "Questions about visiting Bahia Palace? Browse our FAQ or send us a message.",
+    "network": "Part of an independent network of Morocco monument guides."
   },
   "contactPage": {
     "title": "Contact Us",
@@ -474,6 +475,16 @@
     "text": "Avoid common Marrakech scams — protect your visit.",
     "link": "Read our Safety Guide →"
   },
+  "nearby": {
+    "title": "More to See Nearby",
+    "intro": "Two more Marrakech monuments sit within a short walk of Bahia Palace. We publish an independent visitor guide for each of them.",
+    "badiName": "El Badi Palace",
+    "badiWalk": "10-minute walk",
+    "badiBody": "The roofless ruin of Sultan Ahmad al-Mansur's 16th-century showpiece — sunken orange gardens, vast reflecting pools and storks nesting on the ramparts. A 10-minute walk south of Bahia Palace, in the Kasbah.",
+    "saadianName": "Saadian Tombs",
+    "saadianWalk": "12-minute walk",
+    "saadianBody": "The Saadian dynasty's royal necropolis, walled up for two centuries and rediscovered in 1917. The Hall of Twelve Columns holds some of Morocco's finest carved cedar and zellige. About 12 minutes on foot from Bahia Palace."
+  },
   "cta": {
     "title": "You've read about it. Now walk through it.",
     "subtitle": "Book your skip-the-line ticket and step inside without the queue.",
@@ -503,7 +514,8 @@
     "contact": "Contact",
     "copyright": "© {year} Bahia Palace Tickets. All rights reserved.",
     "paymentNote": "Free to use — official tickets only",
-    "disclaimer": "visitbahiapalace.com is an independent visitor information website. We are not affiliated with the official Bahia Palace or the Moroccan Ministry of Culture. For official tickets, visit: e-services.minculture.gov.ma"
+    "disclaimer": "visitbahiapalace.com is an independent visitor information website. We are not affiliated with the official Bahia Palace or the Moroccan Ministry of Culture. For official tickets, visit: e-services.minculture.gov.ma",
+    "network": "Part of an independent network of Morocco monument guides."
   },
   "whatsapp": {
     "tooltip": "Chat with us",

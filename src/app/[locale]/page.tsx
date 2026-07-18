@@ -12,6 +12,7 @@ import { ReviewsCarousel } from '@/components/homepage/ReviewsCarousel';
 import { FaqSection } from '@/components/homepage/FaqSection';
 import { ScamBanner } from '@/components/homepage/ScamBanner';
 import { FinalCTA } from '@/components/homepage/FinalCTA';
+import { NearbyMonuments } from '@/components/homepage/NearbyMonuments';
 import { BlogPreview } from '@/components/homepage/BlogPreview';
 import { ArticleTicker } from '@/components/homepage/ArticleTicker';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -165,6 +166,7 @@ export default async function HomePage({ params }: Props) {
       <BlogPreview />
       <FaqSection />
       <ScamBanner />
+      <NearbyMonuments />
       <FinalCTA />
     </>
   );

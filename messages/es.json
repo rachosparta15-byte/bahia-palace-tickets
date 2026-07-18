@@ -178,7 +178,8 @@
     "teamBody": "visitbahiapalace.com NO está afiliado a la administración oficial del Palacio Bahia ni al Ministerio de Cultura de Marruecos. Somos un sitio web de información independiente. Para entradas oficiales, visita: e-services.minculture.gov.ma",
     "contactCta": "Contáctanos",
     "ctaTitle": "¿Tienes Preguntas sobre tu Visita?",
-    "ctaBody": "¿Preguntas sobre visitar el Palacio Bahia? Consulta nuestras FAQ o envíanos un mensaje."
+    "ctaBody": "¿Preguntas sobre visitar el Palacio Bahia? Consulta nuestras FAQ o envíanos un mensaje.",
+    "network": "Forma parte de una red independiente de guías de monumentos de Marruecos."
   },
   "contactPage": {
     "title": "Contáctanos",
@@ -474,6 +475,16 @@
     "text": "Evita las estafas habituales en Marrakech — protege tu visita.",
     "link": "Lee nuestra Guía de Seguridad →"
   },
+  "nearby": {
+    "title": "Más que ver cerca",
+    "intro": "Otros dos monumentos de Marrakech están a pocos minutos a pie del Palacio Bahía. Publicamos una guía independiente para cada uno.",
+    "badiName": "Palacio El Badi",
+    "badiWalk": "10 minutos a pie",
+    "badiBody": "Las ruinas a cielo abierto del palacio del sultán Ahmad al-Mansur, del siglo XVI: jardines de naranjos hundidos, enormes estanques y cigüeñas anidando en las murallas. A 10 minutos a pie al sur del Palacio Bahía, en la Kasbah.",
+    "saadianName": "Tumbas Saadíes",
+    "saadianWalk": "12 minutos a pie",
+    "saadianBody": "La necrópolis real de la dinastía saadí, tapiada durante dos siglos y redescubierta en 1917. La Sala de las Doce Columnas conserva algunos de los cedros tallados y zelliges más bellos de Marruecos. A unos 12 minutos a pie del Palacio Bahía."
+  },
   "cta": {
     "title": "Ya lo has leído. Ahora entra.",
     "subtitle": "Reserva tu entrada sin colas y accede directamente al palacio.",
@@ -503,7 +514,8 @@
     "contact": "Contacto",
     "copyright": "© {year} Bahia Palace Tickets. Todos los derechos reservados.",
     "paymentNote": "Gratis — solo entradas oficiales",
-    "disclaimer": "visitbahiapalace.com es un sitio web de información turística independiente. No estamos afiliados al Palacio Bahia oficial ni al Ministerio de Cultura de Marruecos. Para entradas oficiales, visita: e-services.minculture.gov.ma"
+    "disclaimer": "visitbahiapalace.com es un sitio web de información turística independiente. No estamos afiliados al Palacio Bahia oficial ni al Ministerio de Cultura de Marruecos. Para entradas oficiales, visita: e-services.minculture.gov.ma",
+    "network": "Forma parte de una red independiente de guías de monumentos de Marruecos."
   },
   "whatsapp": {
     "tooltip": "Chatea con nosotros",

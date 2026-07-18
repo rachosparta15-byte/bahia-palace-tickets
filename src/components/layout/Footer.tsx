@@ -134,6 +134,7 @@ export function Footer() {
         {/* Disclaimer */}
         <div className="border-t border-[rgba(232,163,61,0.15)] pt-4 lg:pt-6 mb-4 lg:mb-6">
           <p className="text-[#C4A882] text-xs leading-relaxed text-center">{t('disclaimer')}</p>
+          <p className="text-[#C4A882]/70 text-xs leading-relaxed text-center mt-2">{t('network')}</p>
         </div>
 
         {/* Legal identity — TODO(owner): replace placeholders with your actual

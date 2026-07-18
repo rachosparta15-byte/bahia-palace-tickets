@@ -178,6 +178,16 @@
     "text": "Vermeiden Sie häufige Betrugsmaschen in Marrakesch — schützen Sie Ihren Urlaub.",
     "link": "Unseren Sicherheitsratgeber lesen →"
   },
+  "nearby": {
+    "title": "Ganz in der Nähe",
+    "intro": "Zwei weitere Monumente von Marrakesch liegen nur wenige Gehminuten vom Bahia-Palast entfernt. Für beide veröffentlichen wir einen unabhängigen Besucherführer.",
+    "badiName": "El-Badi-Palast",
+    "badiWalk": "10 Minuten zu Fuß",
+    "badiBody": "Die dachlose Ruine des Prunkbaus von Sultan Ahmad al-Mansur aus dem 16. Jahrhundert — tiefer gelegene Orangengärten, weite Wasserbecken und Störche, die auf den Mauern nisten. 10 Gehminuten südlich des Bahia-Palasts, in der Kasbah.",
+    "saadianName": "Saadier-Gräber",
+    "saadianWalk": "12 Minuten zu Fuß",
+    "saadianBody": "Die königliche Nekropole der Saadier-Dynastie, zwei Jahrhunderte lang zugemauert und 1917 wiederentdeckt. Der Saal der Zwölf Säulen zeigt einige der schönsten Zedernschnitzereien und Zellige-Arbeiten Marokkos. Rund 12 Gehminuten vom Bahia-Palast."
+  },
   "cta": {
     "title": "Sie haben gelesen. Jetzt eintreten.",
     "subtitle": "Buchen Sie Ihr Ticket ohne Warteschlange und treten Sie direkt ein.",
@@ -207,7 +217,8 @@
     "contact": "Kontakt",
     "copyright": "© {year} Bahia Palace Tickets. Alle Rechte vorbehalten.",
     "paymentNote": "Kostenlos — nur offizielle Tickets",
-    "disclaimer": "visitbahiapalace.com ist eine unabhängige Besucherinformationswebsite. Wir sind nicht mit dem offiziellen Bahia-Palast oder dem marokkanischen Kulturministerium verbunden. Offizielle Tickets finden Sie unter: e-services.minculture.gov.ma"
+    "disclaimer": "visitbahiapalace.com ist eine unabhängige Besucherinformationswebsite. Wir sind nicht mit dem offiziellen Bahia-Palast oder dem marokkanischen Kulturministerium verbunden. Offizielle Tickets finden Sie unter: e-services.minculture.gov.ma",
+    "network": "Teil eines unabhängigen Netzwerks von Reiseführern zu Marokkos Monumenten."
   },
   "whatsapp": {
     "tooltip": "Mit uns chatten",
@@ -255,7 +266,8 @@
     "teamBody": "visitbahiapalace.com ist NICHT mit der offiziellen Verwaltung des Bahia-Palastes oder dem marokkanischen Kulturministerium verbunden. Wir sind eine unabhängige Besucherinformationswebsite. Für offizielle Tickets besuchen Sie: e-services.minculture.gov.ma",
     "contactCta": "Kontakt aufnehmen",
     "ctaTitle": "Fragen zu Ihrem Besuch?",
-    "ctaBody": "Fragen zum Besuch des Bahia-Palastes? Besuchen Sie unsere FAQ oder senden Sie uns eine Nachricht."
+    "ctaBody": "Fragen zum Besuch des Bahia-Palastes? Besuchen Sie unsere FAQ oder senden Sie uns eine Nachricht.",
+    "network": "Teil eines unabhängigen Netzwerks von Reiseführern zu Marokkos Monumenten."
   },
   "contactPage": {
     "title": "Kontaktieren Sie Uns",

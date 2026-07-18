@@ -115,6 +115,7 @@ export default async function AboutPage() {
             {t('teamTitle')}
           </h2>
           <p className="text-[#C4A882] leading-relaxed text-lg">{t('teamBody')}</p>
+          <p className="text-[#C4A882]/70 leading-relaxed text-sm mt-4">{t('network')}</p>
         </section>
 
         {/* CTA */}

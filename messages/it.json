@@ -178,6 +178,16 @@
     "text": "Evita le truffe comuni a Marrakech — proteggi la tua visita.",
     "link": "Leggi la nostra Guida Sicurezza →"
   },
+  "nearby": {
+    "title": "Da vedere qui vicino",
+    "intro": "Altri due monumenti di Marrakech si trovano a pochi minuti a piedi dal Palazzo Bahia. Per entrambi pubblichiamo una guida indipendente.",
+    "badiName": "Palazzo El Badi",
+    "badiWalk": "10 minuti a piedi",
+    "badiBody": "I ruderi a cielo aperto della reggia cinquecentesca del sultano Ahmad al-Mansur: giardini d'aranci ribassati, immense vasche d'acqua e cicogne che nidificano sui bastioni. A 10 minuti a piedi a sud del Palazzo Bahia, nella Kasbah.",
+    "saadianName": "Tombe Saadiane",
+    "saadianWalk": "12 minuti a piedi",
+    "saadianBody": "La necropoli reale della dinastia saadiana, murata per due secoli e riscoperta nel 1917. La Sala delle Dodici Colonne custodisce alcuni dei più bei cedri intagliati e zellige del Marocco. A circa 12 minuti a piedi dal Palazzo Bahia."
+  },
   "cta": {
     "title": "Avete letto tutto. Ora entrate.",
     "subtitle": "Prenota il tuo biglietto salta-fila ed entra senza code.",
@@ -207,7 +217,8 @@
     "contact": "Contatti",
     "copyright": "© {year} Bahia Palace Tickets. Tutti i diritti riservati.",
     "paymentNote": "Gratis — solo biglietti ufficiali",
-    "disclaimer": "visitbahiapalace.com è un sito di informazioni turistiche indipendente. Non siamo affiliati al Palazzo Bahia ufficiale né al Ministero della Cultura del Marocco. Per i biglietti ufficiali, visita: e-services.minculture.gov.ma"
+    "disclaimer": "visitbahiapalace.com è un sito di informazioni turistiche indipendente. Non siamo affiliati al Palazzo Bahia ufficiale né al Ministero della Cultura del Marocco. Per i biglietti ufficiali, visita: e-services.minculture.gov.ma",
+    "network": "Parte di una rete indipendente di guide ai monumenti del Marocco."
   },
   "whatsapp": {
     "tooltip": "Chatta con noi",
@@ -255,7 +266,8 @@
     "teamBody": "visitbahiapalace.com NON è affiliato all'amministrazione ufficiale del Palazzo Bahia né al Ministero della Cultura del Marocco. Siamo un sito di informazioni indipendente. Per i biglietti ufficiali, visita: e-services.minculture.gov.ma",
     "contactCta": "Contattaci",
     "ctaTitle": "Hai Domande sulla Tua Visita?",
-    "ctaBody": "Domande sulla visita al Palazzo Bahia? Consulta le nostre FAQ o inviaci un messaggio."
+    "ctaBody": "Domande sulla visita al Palazzo Bahia? Consulta le nostre FAQ o inviaci un messaggio.",
+    "network": "Parte di una rete indipendente di guide ai monumenti del Marocco."
   },
   "contactPage": {
     "title": "Contattaci",
