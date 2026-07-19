@@ -48,16 +48,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     `Official Bahia Palace entry ticket (${OFFICIAL_DOOR_PRICE_MAD} MAD, purchased for you) ` +
     `plus a premium audio guide, visitor map and support — $${VISITOR_PACK_PRICE_USD} per person.`;
 
-  // Keep the page out of Google until it can actually be bought. Indexing a
-  // "Booking opens soon" page gets a $14 price into search results for a
-  // product no one can purchase, and the ranking it earns is spent on a dead
-  // end. Becomes indexable automatically the moment PAYMENTS_ENABLED is on.
   const { enabled: paymentsEnabled } = getPublicPaymentsFlags();
+
+  // generateMetadata runs even when the page body calls notFound(), so the
+  // real title would still leak the product name and its $14 price into the
+  // browser tab, the HTML source and any social preview — while the page
+  // itself shows nothing. Give away nothing until the product is live.
+  if (!paymentsEnabled) {
+    return { title: 'Not Found', robots: { index: false, follow: false } };
+  }
 
   return {
     title,
     description,
-    robots: paymentsEnabled ? undefined : { index: false, follow: true },
     alternates: buildAlternates(locale, '/visitor-pack'),
     openGraph: buildOG(title, description, locale, '/visitor-pack'),
   };
