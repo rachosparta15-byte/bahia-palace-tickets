@@ -55,6 +55,26 @@ const ARTICLES = {
       'marrakech-souk-basket-hat-shop-straw-goods.webp',
     ],
   },
+
+  // ── Two more city-wide articles that were carrying palace interiors ──
+  'marrakech-the-red-city-where-history-comes-alive': {
+    // Ochre medina walls — the "red city" the title is named after.
+    cover: 'marrakech-medina-alley-hanging-carpets.webp',
+    inline: [
+      'marrakech-souk-antique-bazaar-carpets-brassware.webp',
+      'marrakech-souk-metalwork-brass-lanterns-copper.webp',
+      'marrakech-jemaa-el-fna-square-food-stalls-koutoubia.webp',
+    ],
+  },
+  'marrakech-2-day-itinerary': {
+    // The square and the Koutoubia — first stop on any Marrakech itinerary.
+    cover: 'marrakech-jemaa-el-fna-square-food-stalls-koutoubia.webp',
+    inline: [
+      'marrakech-souk-lantern-shop-brass-glass-lamps.webp',
+      'marrakech-medina-alley-hanging-carpets.webp',
+      'marrakech-jemaa-el-fna-green-umbrellas-juice-stalls.webp',
+    ],
+  },
 };
 
 /** Translated slugs of the same three articles. */
@@ -71,6 +91,11 @@ const ALIASES = {
     'the-human-and-solidary-guide-to-mousawama-haggling-with-soul-in-marrakech',
   'der-menschliche-und-solidarische-leitfaden-die-mousawama-und-die-seele-von-marrakesch-verstehen':
     'the-human-and-solidary-guide-to-mousawama-haggling-with-soul-in-marrakech',
+  // red city
+  'marrakech-la-ville-rouge-o-l-histoire-prend-vie':       'marrakech-the-red-city-where-history-comes-alive',
+  'marrakech-la-ciudad-roja-donde-la-historia-cobra-vida': 'marrakech-the-red-city-where-history-comes-alive',
+  'marrakech-la-citta-rossa-dove-la-storia-prende-vita':   'marrakech-the-red-city-where-history-comes-alive',
+  'marrakesch-die-rote-stadt-wo-die-geschichte-lebt':      'marrakech-the-red-city-where-history-comes-alive',
 };
 
 /** Gallery metadata — written from what is visible in each photo. */
