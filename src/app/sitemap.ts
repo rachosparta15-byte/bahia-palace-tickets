@@ -100,7 +100,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let dbPosts: { slug: string; locale: string; updatedAt: Date }[] = [];
   try {
     dbPosts = await prisma.blogPost.findMany({
-      where: { published: true },
+      // Scheduled posts must stay out of the sitemap too, or Google is told
+      // about a URL that still 404s.
+      where: { published: true, publishedAt: { lte: new Date() } },
       select: { slug: true, locale: true, updatedAt: true },
     });
   } catch { /* DB unavailable at sitemap generation time */ }

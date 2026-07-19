@@ -9,6 +9,7 @@ import prisma from '@/lib/db';
 import { getBlogPosts } from '@/lib/blog';
 import type { Metadata } from 'next';
 import { buildAlternates, buildOG, buildBreadcrumbSchema } from '@/lib/seo';
+import { livePostFilter } from '@/lib/blog-schedule';
 
 export const revalidate = 3600;
 
@@ -72,7 +73,7 @@ export default async function BlogIndexPage({ params }: Props) {
   const tb = await getTranslations('breadcrumb');
 
   const dbPosts = await prisma.blogPost.findMany({
-    where:   { locale, published: true },
+    where:   { locale, ...livePostFilter() },
     orderBy: { publishedAt: 'desc' },
   });
 

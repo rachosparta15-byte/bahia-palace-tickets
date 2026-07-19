@@ -11,6 +11,7 @@ import type { Metadata } from 'next';
 import { BASE, buildAlternates, buildBreadcrumbSchema } from '@/lib/seo';
 import { getBlogPost } from '@/lib/blog';
 import { HISTORY_HREFLANG, HISTORY_SLUGS } from '@/lib/blog-hreflang';
+import { livePostFilter, isLive } from '@/lib/blog-schedule';
 
 const ALL_LOCALES = ['en', 'fr', 'it', 'de', 'es'];
 
@@ -30,7 +31,7 @@ async function buildBlogAlternates(locale: string, slug: string) {
 
   let presentLocales: string[] = [];
   try {
-    const rows = await prisma.blogPost.findMany({ where: { slug, published: true }, select: { locale: true } });
+    const rows = await prisma.blogPost.findMany({ where: { slug, ...livePostFilter() }, select: { locale: true } });
     presentLocales = rows.map((r) => r.locale);
   } catch { /* db unavailable */ }
   if (presentLocales.length === 0) {
@@ -108,7 +109,9 @@ type NormalizedPost = {
 async function getPost(locale: string, slug: string): Promise<NormalizedPost | null> {
   try {
     const db = await prisma.blogPost.findUnique({ where: { slug_locale: { slug, locale } } });
-    if (db?.published) return db as unknown as NormalizedPost;
+    // isLive() rather than db.published: a post scheduled for a future date is
+    // published but must still 404 until its moment arrives.
+    if (db && isLive(db)) return db as unknown as NormalizedPost;
   } catch { /* db unavailable */ }
 
   const s = getBlogPost(locale, slug);
@@ -213,7 +216,7 @@ export default async function BlogPostPage({ params }: Props) {
   let related: NormalizedPost[] = [];
   try {
     const dbRelated = await prisma.blogPost.findMany({
-      where: { locale, published: true, slug: { not: slug } },
+      where: { locale, ...livePostFilter(), slug: { not: slug } },
       orderBy: { publishedAt: 'desc' },
       take: 2,
     });
