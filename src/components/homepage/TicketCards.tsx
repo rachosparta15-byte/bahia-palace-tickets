@@ -3,32 +3,60 @@
 import { useTranslations } from 'next-intl';
 import { useRouter } from '@/i18n/navigation';
 import { LeadButton } from '@/components/layout/LeadButton';
+import { usePaymentsFlags } from '@/components/layout/PaymentsFlagsProvider';
 import { Check, ArrowRight, Clock, Star, Zap, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import { TICKET_PRICES } from '@/lib/ticket-data';
 
 const TICKET_IMAGES = {
+  'visitor-pack':        '/images/ticket-skip-the-line.webp',
   'skip-the-line':       '/images/ticket-skip-the-line.webp',
   'guided-tour':         '/images/gallery/bahia-palace-octagonal-cedar-ceiling-carved-wood.jpg',
   'private-tour':        '/images/gallery/bahia-palace-grand-courtyard-balcony-view-fountain.jpg',
   'combo-saadian-tombs': '/images/gallery/bahia-palace-inner-courtyard-central-fountain-stucco.jpg',
 };
 
+/**
+ * Which products appear on the homepage.
+ *
+ * The Complete Visitor Pack replaced Skip-the-Line here. They both bundle the
+ * same 100 MAD official entry, so showing both meant advertising the same
+ * visit at two prices ($10 and $14) — and every ticket CTA now leads to the
+ * pack, so a $10 card would have advertised a price the buyer could not get.
+ * One product, one price, one destination.
+ *
+ * skip-the-line is kept in the map (not deleted) because /tickets/skip-the-line
+ * still exists as an information page describing the official 100 MAD route.
+ */
 const TICKET_LIVE = {
+  'visitor-pack':        true,
   'skip-the-line':       true,
   'guided-tour':         false,
   'private-tour':        false,
   'combo-saadian-tombs': false,
 };
 
-type TicketKey = 'skipTheLine' | 'guidedTour' | 'privateTour' | 'combo';
+type TicketKey = 'visitorPack' | 'skipTheLine' | 'guidedTour' | 'privateTour' | 'combo';
 
 const TICKET_SLUGS: Record<TicketKey, string> = {
+  visitorPack:  'visitor-pack',
   skipTheLine:  'skip-the-line',
   guidedTour:   'guided-tour',
   privateTour:  'private-tour',
   combo:        'combo-saadian-tombs',
 };
+
+/** Where the card body links. The pack has its own page, not a /tickets/ one. */
+const TICKET_HREF: Record<string, string> = {
+  'visitor-pack': '/visitor-pack',
+};
+
+/**
+ * NOTE on the admin panel: skip-the-line and visitor-pack liveness is decided
+ * in code by the payments switch (see liveKeys below), NOT by the DB's
+ * TicketType.available. A stale available=true row previously resurrected the
+ * $10 card alongside the $14 pack — one visit advertised at two prices.
+ */
 
 interface TicketOverride {
   price?: number;
@@ -43,11 +71,30 @@ interface Props {
 export function TicketCards({ overrides = {} }: Props) {
   const t = useTranslations('tickets');
   const router = useRouter();
+  const { enabled: paymentsEnabled } = usePaymentsFlags();
 
-  const allKeys: TicketKey[] = ['skipTheLine', 'guidedTour', 'privateTour', 'combo'];
+  const allKeys: TicketKey[] = ['visitorPack', 'skipTheLine', 'guidedTour', 'privateTour', 'combo'];
 
+  /**
+   * The pack and skip-the-line are mutually exclusive on the homepage, and
+   * the payments switch decides which one is shown — the card must always
+   * advertise what the button actually does:
+   *
+   *   payments ON  → Visitor Pack ($14). Every CTA goes to its checkout.
+   *   payments OFF → Skip-the-Line ($10), exactly as today. CTAs go to the
+   *                  official portal, where 100 MAD is what you really pay.
+   *
+   * Showing the $14 pack while the buttons lead to the ministry portal would
+   * advertise a product we cannot deliver; showing $10 while they lead to a
+   * $14 checkout would be a bait-and-switch. Neither is allowed to happen.
+   */
   const liveKeys = allKeys.filter((key) => {
     const slug = TICKET_SLUGS[key];
+
+    if (slug === 'visitor-pack') return paymentsEnabled;
+    if (slug === 'skip-the-line') return !paymentsEnabled;
+
+    // Remaining products are admin-toggleable as before.
     return overrides[slug]?.live ?? TICKET_LIVE[slug as keyof typeof TICKET_LIVE];
   });
 
@@ -90,7 +137,7 @@ export function TicketCards({ overrides = {} }: Props) {
             return (
               <div
                 key={slug}
-                onClick={() => router.push(`/tickets/${slug}` as any)}
+                onClick={() => router.push((TICKET_HREF[slug] ?? `/tickets/${slug}`) as any)}
                 className={`relative flex overflow-hidden rounded-2xl border border-[rgba(232,163,61,0.22)] bg-[#251A0F] shadow-[0_0_28px_rgba(232,163,61,0.10),0_0_64px_rgba(232,163,61,0.07),0_16px_56px_rgba(0,0,0,0.50)] transition-all cursor-pointer hover:shadow-[0_0_36px_rgba(232,163,61,0.20),0_0_80px_rgba(232,163,61,0.12),0_20px_64px_rgba(0,0,0,0.55)] hover:border-[rgba(232,163,61,0.42)] motion-reduce:transition-none active:scale-[0.99]
                   ${isSingle
                     ? 'w-full max-w-2xl flex-col sm:flex-row'
@@ -162,7 +209,11 @@ export function TicketCards({ overrides = {} }: Props) {
                   <div className="mt-auto pt-4 border-t border-[rgba(232,163,61,0.15)]">
                     <div className="flex items-center justify-between gap-4">
                       <div>
-                        <p className="text-[10px] text-[#C4A882] uppercase tracking-wide mb-0.5">{t('from')}</p>
+                        {/* "From" would imply a cheaper option exists. The pack
+                            is a single fixed price, so the label is omitted. */}
+                        {slug !== 'visitor-pack' && (
+                          <p className="text-[10px] text-[#C4A882] uppercase tracking-wide mb-0.5">{t('from')}</p>
+                        )}
                         <p
                           className="font-bold text-[#C4452D] tabular-nums lining-nums"
                           style={{ fontSize: isSingle ? '1.75rem' : '1.5rem', lineHeight: 1, fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif', fontVariantNumeric: 'lining-nums tabular-nums' }}
@@ -183,9 +234,15 @@ export function TicketCards({ overrides = {} }: Props) {
                       </div>
                     </div>
 
+                    {/* "Free to use" is true of the comparison products, which
+                        send you to the official portal — but NOT of the pack,
+                        which we charge for. Saying it on a paid product would
+                        be plainly false. */}
                     <div className={`flex items-center gap-1.5 mt-3 text-[11px] text-[#C4A882] ${isSingle ? 'hidden sm:flex' : ''}`}>
                       <ShieldCheck size={12} className="text-[#8FA63C]" />
-                      Free to use — official tickets only
+                      {slug === 'visitor-pack'
+                        ? 'Official entry ticket included — no queue at the booth'
+                        : 'Free to use — official tickets only'}
                     </div>
                   </div>
                 </div>

@@ -18,7 +18,8 @@ import { ArticleTicker } from '@/components/homepage/ArticleTicker';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { BASE, buildAlternates, buildOG, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
-import { SKIP_THE_LINE_PRICE_USD } from '@/config/pricing';
+import { SKIP_THE_LINE_PRICE_USD, VISITOR_PACK_PRICE_USD } from '@/config/pricing';
+import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -70,6 +71,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
+  // Drives which offer the structured data advertises — see `offers` below.
+  const { enabled: paymentsEnabled } = getPublicPaymentsFlags();
 
   const tf   = await getTranslations({ locale, namespace: 'faq' });
   const faqs = tf.raw('items') as Array<{ question: string; answer: string }>;
@@ -109,8 +112,30 @@ export default async function HomePage({ params }: Props) {
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Friday'], opens: '09:00', closes: '12:00' },
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Friday'], opens: '14:00', closes: '17:00' },
     ],
+    // Structured data must advertise the price a visitor can actually pay —
+    // this is what Google shows in search results. When the pack is live it
+    // IS the offer; quoting the retired $10 product would put a price in
+    // search results that no button on the site leads to.
     offers: [
-      { '@type': 'Offer', name: 'Skip-the-Line Entry', price: '10', priceCurrency: 'USD', url: `${BASE}/${locale}/tickets/skip-the-line`, availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
+      paymentsEnabled
+        ? {
+            '@type': 'Offer',
+            name: 'Complete Visitor Pack — official entry ticket + audio guide',
+            price: String(VISITOR_PACK_PRICE_USD),
+            priceCurrency: 'USD',
+            url: `${BASE}/${locale}/visitor-pack`,
+            availability: 'https://schema.org/InStock',
+            ...DIGITAL_TICKET_OFFER_EXTRAS,
+          }
+        : {
+            '@type': 'Offer',
+            name: 'Skip-the-Line Entry',
+            price: String(SKIP_THE_LINE_PRICE_USD),
+            priceCurrency: 'USD',
+            url: `${BASE}/${locale}/tickets/skip-the-line`,
+            availability: 'https://schema.org/InStock',
+            ...DIGITAL_TICKET_OFFER_EXTRAS,
+          },
     ],
     touristType: ['History enthusiasts', 'Architecture lovers', 'Cultural tourists'],
   };

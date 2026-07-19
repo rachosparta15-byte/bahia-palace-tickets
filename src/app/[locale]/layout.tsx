@@ -8,6 +8,8 @@ import { Footer } from '@/components/layout/Footer';
 import { MobileBottomNav } from '@/components/layout/MobileBottomNav';
 import { CookieBanner } from '@/components/layout/CookieBanner';
 import { Analytics } from '@/components/analytics/Analytics';
+import { PaymentsFlagsProvider } from '@/components/layout/PaymentsFlagsProvider';
+import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 import type { Metadata } from 'next';
 import { BASE } from '@/lib/seo';
 
@@ -56,8 +58,13 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const messages = await getMessages();
 
+  // Booleans only — no key material reaches the client. Ticket CTAs use this
+  // to decide between the official portal and our own Visitor Pack checkout.
+  const paymentsFlags = getPublicPaymentsFlags();
+
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
+     <PaymentsFlagsProvider value={paymentsFlags}>
       <div className="flex flex-col min-h-screen" lang={locale}>
         <Header />
         <VideoPromoBar variant="C" />
@@ -73,6 +80,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <CookieBanner />
         <Analytics />
       </div>
+     </PaymentsFlagsProvider>
     </NextIntlClientProvider>
   );
 }

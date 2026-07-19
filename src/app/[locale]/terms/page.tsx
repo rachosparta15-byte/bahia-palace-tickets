@@ -1,5 +1,6 @@
 import { LegalPage } from '@/components/legal/LegalPage';
 import { getTranslations } from 'next-intl/server';
+import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 import type { Metadata } from 'next';
 
 export const revalidate = 86400;
@@ -22,6 +23,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function TermsPage() {
   const t = await getTranslations('breadcrumb');
+
+  // See the DRAFT section below: hidden until the Visitor Pack is on sale.
+  // It also contradicts section 2 ("we do not sell tickets"), so publishing
+  // both at once would make the document argue with itself in public.
+  const { enabled: paymentsEnabled } = getPublicPaymentsFlags();
+
   return (
     <LegalPage
       homeLabel={t('home')}
@@ -79,6 +86,30 @@ export default async function TermsPage() {
           heading: '9. Company Information',
           body: 'This site is operated by {LEGAL_COMPANY_NAME}, ICE {ICE_NUMBER}, registered at {REGISTERED_ADDRESS}.',
         },
+        ...(!paymentsEnabled ? [] : [{
+          // ─────────────────────────────────────────────────────────────
+          // DRAFT — NOT LEGALLY REVIEWED. Covers the Complete Visitor Pack.
+          //
+          // ⚠️ CONFLICT WITH SECTION 2 ABOVE: section 2 states that we do
+          // not sell tickets or process payments. That is true of the rest
+          // of this site, but NOT of the Visitor Pack, where we take payment
+          // directly and purchase the official ticket on the customer's
+          // behalf. Sections 2 and 3 must be reconciled with this one by a
+          // lawyer BEFORE payments are enabled — as written the document
+          // contradicts itself.
+          //
+          // The Visitor Pack is unreachable while PAYMENTS_ENABLED=false,
+          // so this section is inert until that flag is flipped.
+          // ─────────────────────────────────────────────────────────────
+          heading: '10. Complete Visitor Pack (DRAFT — pending legal review)',
+          body: [
+            'DRAFT: The following applies only to the Complete Visitor Pack, and only once it is available for purchase. It has not yet been reviewed by a lawyer.',
+            'The Complete Visitor Pack is a bundle sold by {LEGAL_COMPANY_NAME}. It comprises (a) the official Bahia Palace entry ticket, priced at 100 MAD by Morocco’s Ministry of Culture, which we purchase on your behalf, and (b) our own audio guide, visitor map and support service.',
+            'The pack price is not the official entry price. The official ticket portion is passed through at the official rate; the remainder is our service fee. You are free to purchase the official entry ticket yourself at the palace for 100 MAD instead, and we tell you how on our tickets page.',
+            'We act as your agent in purchasing the official entry ticket. Entry itself remains subject to the rules of Bahia Palace and the Ministry of Culture, over which we have no control.',
+            'If we are unable to obtain your official entry ticket for your chosen date, your remedy is a full refund of the pack price.',
+          ],
+        }]),
       ]}
     />
   );

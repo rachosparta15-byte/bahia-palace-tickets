@@ -108,6 +108,18 @@
       "meetingPoint": "Bahia Palace main entrance first, then Saadian Tombs (10-min walk)",
       "longDesc": "Two of Marrakech's most breathtaking historic sites, one convenient ticket. Start at Bahia Palace's dazzling courtyards, then walk 10 minutes to the Saadian Tombs — opulent royal mausoleums sealed for 200 years and only rediscovered in 1917. Best value for history lovers.",
       "whyOnline": "Combined ticket only available online — saves time at both sites"
+    },
+    "visitorPack": {
+      "name": "Complete Visitor Pack",
+      "tagline": "Official entry ticket + digital audio guide",
+      "duration": "Self-guided • ~1–2 hours",
+      "whyOnline": "Queues can reach 2 hours — book online and walk straight in",
+      "includes": [
+        "Official entry ticket (100 MAD, purchased for you)",
+        "Premium audio guide",
+        "Visitor map",
+        "Human support"
+      ]
     }
   },
   "ticketDetail": {
@@ -615,5 +627,142 @@
     "priceVal": "100 MAD (~$10)",
     "locationLabel": "Location",
     "locationVal": "Rue Riad Zitoun el Jedid, Marrakech Medina"
+  },
+  "visitorPack": {
+    "testMode": {
+      "badge": "TEST MODE",
+      "message": "This is a test environment — no real payment is possible."
+    },
+    "hero": {
+      "eyebrow": "Complete Visitor Pack",
+      "title": "Everything you need for Bahia Palace, in one pack",
+      "subtitle": "Your official entry ticket, purchased for you, plus our premium audio guide, visitor map and real human support.",
+      "ctaPrimary": "Get My Visitor Pack",
+      "ctaDisabled": "Booking opens soon",
+      "ctaDisabledHint": "We are not taking payments yet. Check back shortly."
+    },
+    "price": {
+      "amount": "$14",
+      "perPerson": "per person",
+      "freeAlternative": "Just want the official ticket? Here’s how",
+      "includes": "Official entry ticket + digital audio guide",
+      "taxesIncluded": "Taxes and fees included"
+    },
+    "included": {
+      "title": "Everything Included",
+      "subtitle": "One pack, no surprises at the gate.",
+      "items": {
+        "ticket": {
+          "title": "Official entry ticket",
+          "desc": "The real 100 MAD Ministry of Culture ticket, bought on your behalf. Not a resale, not a markup hidden in the total."
+        },
+        "audio": {
+          "title": "Premium audio guide",
+          "desc": "Room-by-room narration covering the harem, the courtyards and the painted ceilings most visitors walk straight past."
+        },
+        "map": {
+          "title": "Visitor map",
+          "desc": "A clear route through the palace with the photo spots and the quiet corners marked."
+        },
+        "support": {
+          "title": "Support for anything",
+          "desc": "Message us with any question before or during your visit — tickets, how to get there, opening times, or what else is worth seeing in Marrakech. A real person answers."
+        },
+        "language": {
+          "title": "Five languages",
+          "desc": "Audio guide and map available in English, French, Spanish, German and Italian."
+        },
+        "offline": {
+          "title": "Works offline",
+          "desc": "Download before you go — no roaming data needed inside the palace."
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": {
+        "one": {
+          "title": "Choose your date",
+          "desc": "Pick the day you want to visit and how many people are coming."
+        },
+        "two": {
+          "title": "Pay securely",
+          "desc": "One payment covers the official ticket and everything we add to it."
+        },
+        "three": {
+          "title": "We arrange your ticket",
+          "desc": "We buy your official entry ticket and send it to you before your visit."
+        },
+        "four": {
+          "title": "Visit the palace",
+          "desc": "Show your ticket, open the audio guide, and take your time."
+        }
+      }
+    },
+    "audioPreview": {
+      "title": "Hear the palace before you walk it",
+      "subtitle": "A short sample from the Grand Courtyard chapter of the audio guide.",
+      "unavailable": "Audio preview coming soon.",
+      "chapters": "Chapters"
+    },
+    "testimonials": {
+      "title": "What visitors say",
+      "placeholderNotice": "Sample reviews shown for layout purposes — not real customer reviews."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": {
+        "official": {
+          "q": "Is this the official Bahia Palace ticket?",
+          "a": "Yes — the entry ticket in the pack is the official 100 MAD ticket set by Morocco’s Ministry of Culture, which we purchase on your behalf. The pack costs $14 because it also includes our audio guide, visitor map and support. You are always free to buy the official ticket yourself at the gate for 100 MAD instead."
+        },
+        "cheaper": {
+          "q": "Can I get in cheaper?",
+          "a": "Yes. The official ticket at the door is 100 MAD (about $10). If you only want entry and no extras, that is the cheaper option and we explain how to do it on our free tickets page."
+        },
+        "refund": {
+          "q": "Can I get a refund?",
+          "a": "See our refund policy for the current terms. If your visit date changes, contact us and we will do what we can."
+        },
+        "delivery": {
+          "q": "When do I receive my ticket?",
+          "a": "We send your official entry ticket and audio guide access to your email before your visit date."
+        },
+        "group": {
+          "q": "Can I book for a group?",
+          "a": "Yes — choose the number of visitors at checkout. Each visitor gets their own official entry ticket."
+        }
+      }
+    },
+    "form": {
+      "title": "Choose your visit",
+      "dateLabel": "Visit date",
+      "visitorsLabel": "Number of visitors",
+      "nameLabel": "Full name",
+      "namePlaceholder": "As it should appear on your ticket",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "Where we send your ticket and audio guide",
+      "totalLabel": "Total",
+      "submit": "Continue to secure payment",
+      "submitting": "Starting checkout…",
+      "legalNotice": "By continuing you agree to our <terms>Terms</terms> and <refund>Refund Policy</refund>.",
+      "errors": {
+        "generic": "Something went wrong starting checkout. Please try again.",
+        "disabled": "Booking opens soon — no payment can be taken yet.",
+        "pastDate": "Please choose a date that is not in the past.",
+        "name": "Please enter your full name.",
+        "email": "Please enter a valid email address."
+      },
+      "summaryTitle": "Order summary",
+      "productName": "Bahia Palace — Complete Visitor Pack"
+    },
+    "confirmation": {
+      "packTitle": "Your Complete Visitor Pack",
+      "ticketPending": "Official entry ticket",
+      "ticketPendingDesc": "We are arranging your official entry ticket. It will be emailed to you before your visit date.",
+      "audioTitle": "Audio guide access",
+      "audioPendingDesc": "Your audio guide is being prepared. Access details will arrive with your ticket.",
+      "mockNotice": "This is a test-mode order. No payment was taken and no real ticket has been issued."
+    }
   }
 }

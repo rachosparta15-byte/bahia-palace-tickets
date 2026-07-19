@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { usePathname } from '@/i18n/navigation';
 import { Link } from '@/i18n/navigation';
+import { usePaymentsFlags } from './PaymentsFlagsProvider';
 
 /* ─────────────────── Custom brand icons ─────────────────── */
 
@@ -112,6 +113,16 @@ const NAV_ITEMS = [
 export function MobileBottomNav() {
   const t = useTranslations('nav');
   const pathname = usePathname();
+  const { enabled: paymentsEnabled } = usePaymentsFlags();
+
+  // The Tickets tab is a buying entry point, so it follows the same rule as
+  // every other ticket CTA: the pack when it is purchasable, the official
+  // comparison page when it is not. See LeadButton for the full contract.
+  const navItems = NAV_ITEMS.map((item) =>
+    item.key === 'tickets' && paymentsEnabled
+      ? { ...item, href: '/visitor-pack' as const }
+      : item
+  );
 
   return (
     <nav
@@ -125,7 +136,7 @@ export function MobileBottomNav() {
       }}
     >
       <div className="flex h-[62px]">
-        {NAV_ITEMS.map(({ href, Icon, key }) => {
+        {navItems.map(({ href, Icon, key }) => {
           const active = pathname === href || pathname.startsWith(href + '/');
           const iconColor = active ? '#FFFFFF' : '#F7E7D8';
 

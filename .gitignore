@@ -32,6 +32,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+.dev.vars
+.dev.vars.*
 
 # vercel
 .vercel
@@ -58,3 +60,4 @@ article-*.md
 /data/leads.json
 
 .vercel
+.blog-image-backup-2026-07.json

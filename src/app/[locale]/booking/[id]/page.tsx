@@ -4,12 +4,15 @@ import { Link } from '@/i18n/navigation';
 import QRCode from 'qrcode';
 import prisma from '@/lib/db';
 import { email } from '@/lib/email';
+import { payments } from '@/lib/payments';
+import { mockConfirmationAllowed } from '@/lib/payments/guard';
+import { VisitorPackConfirmation } from '@/components/visitor-pack/VisitorPackConfirmation';
 import { CheckCircle2, Calendar, Users, Mail, Download, ArrowLeft } from 'lucide-react';
 import type { Metadata } from 'next';
 
 interface Props {
   params:       Promise<{ locale: string; id: string }>;
-  searchParams: Promise<{ mock_success?: string }>;
+  searchParams: Promise<{ mock_success?: string; session_id?: string }>;
 }
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -17,14 +20,33 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function BookingConfirmPage({ params, searchParams }: Props) {
-  const { id }          = await params;
-  const { mock_success } = await searchParams;
+  const { locale, id }               = await params;
+  const { mock_success, session_id } = await searchParams;
 
   let booking = await prisma.booking.findUnique({ where: { id } });
   if (!booking) notFound();
 
-  // Confirm mock payment if needed (idempotent — only runs once)
-  if (mock_success === '1' && booking.status === 'pending') {
+  // Real (test-mode) Stripe return. Arriving at this URL is NOT proof of
+  // payment — the id is guessable — so confirm only if Stripe says it was
+  // paid, and only for the session we recorded against this booking.
+  if (
+    session_id &&
+    booking.status === 'pending' &&
+    booking.paymentSessionId === session_id
+  ) {
+    const { paid } = await payments.verifyCheckoutSession(session_id);
+    if (paid) {
+      booking = await prisma.booking.update({
+        where: { id },
+        data:  { status: 'confirmed' },
+      });
+    }
+  }
+
+  // Confirm mock payment if needed (idempotent — only runs once).
+  // Gated on the mock provider being active: with a real provider this
+  // query parameter would be a free-booking exploit.
+  if (mock_success === '1' && mockConfirmationAllowed() && booking.status === 'pending') {
     booking = await prisma.booking.update({
       where: { id },
       data:  { status: 'confirmed', paymentSessionId: `mock_${Date.now()}` },
@@ -47,6 +69,11 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
   const visitDate = booking.visitDate.toISOString().split('T')[0];
   const isConfirmed = booking.status === 'confirmed';
 
+  // The Visitor Pack's official ticket is not issued at purchase time (see
+  // lib/fulfillment), so this QR is an order reference — NOT an entry pass.
+  // Captioning it "scan at entrance" for a pack order would be a false promise.
+  const isVisitorPack = booking.ticketType === 'visitor-pack';
+
   return (
     <div className="min-h-screen py-16 px-6 bg-[#1C1108]">
       <div className="max-w-2xl mx-auto">
@@ -56,8 +83,16 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
           <div className="flex items-center gap-3 bg-[#8FA63C]/08 border border-[#8FA63C]/25 rounded-xl px-5 py-4 mb-8">
             <CheckCircle2 size={22} className="text-[#8FA63C] shrink-0" />
             <div>
-              <p className="font-semibold text-[#F5E8CC] text-sm">Booking confirmed!</p>
-              <p className="text-xs text-[#C4A882]">Your ticket has been sent to {booking.customerEmail}</p>
+              <p className="font-semibold text-[#F5E8CC] text-sm">
+                {isVisitorPack ? 'Payment confirmed!' : 'Booking confirmed!'}
+              </p>
+              {/* For the Visitor Pack the official ticket has NOT been issued yet
+                  (see lib/fulfillment), so we must not claim it was sent. */}
+              <p className="text-xs text-[#C4A882]">
+                {isVisitorPack
+                  ? `Your order confirmation has been sent to ${booking.customerEmail}. Your official entry ticket follows separately — see below.`
+                  : `Your ticket has been sent to ${booking.customerEmail}`}
+              </p>
             </div>
           </div>
         ) : (
@@ -91,7 +126,9 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
                   height={180}
                   className="rounded-xl"
                 />
-                <p className="text-xs text-[#C4A882] mt-2 text-center">Scan at entrance</p>
+                <p className="text-xs text-[#C4A882] mt-2 text-center">
+                  {isVisitorPack ? 'Your order reference' : 'Scan at entrance'}
+                </p>
               </div>
 
               {/* Booking details */}
@@ -136,7 +173,9 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
             <div className="bg-[#2E1F12] rounded-xl p-4 text-sm text-[#C4A882] space-y-1.5 mb-6">
               <p>📍 <strong>Meeting point:</strong> Main entrance, Rue Riad Zitoun el Jedid, Marrakech Medina</p>
               <p>🕘 <strong>Opening hours:</strong> Daily 9:00 AM – 5:00 PM (last entry 4:30 PM)</p>
-              <p>📱 Show this page or the email QR code at the entrance — no printing required.</p>
+              {!isVisitorPack && (
+                <p>📱 Show this page or the email QR code at the entrance — no printing required.</p>
+              )}
             </div>
 
             {/* Actions */}
@@ -157,6 +196,15 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
             </div>
           </div>
         </div>
+
+        {/* Visitor Pack: official ticket + audio guide status (both pending). */}
+        {isVisitorPack && (
+          <VisitorPackConfirmation
+            locale={locale}
+            visitors={booking.adults}
+            reference={booking.reference}
+          />
+        )}
 
         {/* Cancel link */}
         <p className="text-center mt-6 text-sm text-[#C4A882]">

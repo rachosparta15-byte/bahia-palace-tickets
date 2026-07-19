@@ -3,7 +3,7 @@ import { z } from 'zod';
 import prisma from '@/lib/db';
 import { payments } from '@/lib/payments';
 import { generateReference } from '@/lib/utils';
-import { isValidTicketSlug, TICKET_PRICES } from '@/lib/ticket-data';
+import { isLegacyBookableSlug, TICKET_PRICES } from '@/lib/ticket-data';
 
 const schema = z.object({
   ticket:          z.string(),
@@ -27,7 +27,9 @@ export async function POST(req: NextRequest) {
 
     const { ticket, date, adults, children, customerName, customerEmail, customerPhone, locale, specialRequests } = input.data;
 
-    if (!isValidTicketSlug(ticket)) {
+    // Rejects both unknown slugs and products that have moved to their own
+    // gated checkout (e.g. visitor-pack) — see isLegacyBookableSlug.
+    if (!isLegacyBookableSlug(ticket)) {
       return NextResponse.json({ error: 'Unknown ticket type' }, { status: 400 });
     }
 

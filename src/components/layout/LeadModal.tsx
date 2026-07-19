@@ -4,9 +4,11 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ArrowRight } from 'lucide-react';
 import { useLocale } from 'next-intl';
-import { usePathname } from '@/i18n/navigation';
+import { usePathname, useRouter } from '@/i18n/navigation';
 import { BOOKING_URL } from '@/lib/booking';
 import { trackEvent } from '@/lib/analytics';
+import { storeLeadPrefill } from '@/lib/lead-handoff';
+import { usePaymentsFlags } from './PaymentsFlagsProvider';
 
 interface Props {
   ticketType: string;
@@ -58,6 +60,9 @@ function collectTrafficSource(locale: string, nextPathname: string): TrafficSour
 }
 
 export function LeadModal({ ticketType, onClose, onDone }: Props) {
+  const router = useRouter();
+  // Decides portal vs. our own checkout. False unless the server says otherwise.
+  const { enabled: paymentsEnabled } = usePaymentsFlags();
   const locale    = useLocale();
   const pathname  = usePathname();
 
@@ -132,9 +137,28 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
       return;
     }
     setLoading(true);
+    // The lead is saved before any handoff, so we keep it either way.
     await saveLead(email, name);
     trackEvent('lead_submit', { hasEmail: !!email.trim(), ticketType, locale });
     setLoading(false);
+
+    if (paymentsEnabled) {
+      // Carry what they already typed so the pack form doesn't ask twice.
+      storeLeadPrefill({
+        name: name.trim() || undefined,
+        email: email.trim() || undefined,
+        visitDate: visitDate || undefined,
+        visitors: Number(partySize) || undefined,
+      });
+      trackEvent('pack_handoff', { ticketType, locale });
+      onClose();
+      // next-intl's router prepends the active locale, so a French visitor
+      // lands on /fr/visitor-pack without us building the path by hand.
+      router.push('/visitor-pack');
+      return;
+    }
+
+    // Payments off → unchanged legacy behaviour: the official portal.
     openPortal();
     onDone();
   };
