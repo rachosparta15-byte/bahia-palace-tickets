@@ -128,7 +128,10 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
 
   const partySizeValid = /^\d+$/.test(partySize.trim()) && Number(partySize) >= 1 && Number(partySize) <= 99;
   const visitDateValid = /^\d{4}-\d{2}-\d{2}$/.test(visitDate);
-  const whatsappValid  = whatsapp.replace(/[^\d]/g, '').length >= 7;
+  // WhatsApp is optional. Empty is fine; if something IS typed it still has to
+  // look like a number, otherwise we save a value we can never actually use.
+  const whatsappEntered = whatsapp.trim().length > 0;
+  const whatsappValid   = !whatsappEntered || whatsapp.replace(/[^\d]/g, '').length >= 7;
   const emailValid     = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 
   const handleSubmit = async () => {
@@ -244,18 +247,19 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
                   </p>
                 ) : (
                   <p className="mt-1.5 text-xs text-[#C4A882]">
-                    So we can still reach you if we can&apos;t get through on WhatsApp.
+                    This is how we reach you. Add WhatsApp below only if you prefer it.
                   </p>
                 )}
               </div>
               <div>
                 <label className="block text-[11px] font-semibold text-[#C4A882] uppercase tracking-wide mb-1.5">
-                  WhatsApp number <span className="text-[#C4452D]">*</span>
+                  WhatsApp number{' '}
+                  <span className="font-normal normal-case text-[#C4A882]/70">(optional)</span>
                 </label>
                 <input
                   type="tel"
                   inputMode="tel"
-                  placeholder="to receive your ticket"
+                  placeholder="faster replies, if you use it"
                   value={whatsapp}
                   onChange={e => setWhatsapp(e.target.value)}
                   className={`w-full px-4 rounded-xl border bg-[#2E1F12] text-[#F5E8CC] placeholder:text-[#C4A882] focus:outline-none focus:ring-2 focus:ring-[#E8A33D]/40 focus:border-[#E8A33D] transition-colors ${
@@ -265,7 +269,8 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
                 />
                 {showErrors && !whatsappValid && (
                   <p className="mt-1.5 text-xs text-[#C4452D]">
-                    Please enter a valid WhatsApp number so we can send your ticket.
+                    That does not look like a valid number. Leave it blank if you
+                    would rather we used email.
                   </p>
                 )}
               </div>
