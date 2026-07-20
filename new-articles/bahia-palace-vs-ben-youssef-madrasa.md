@@ -61,7 +61,7 @@ Our guide to [visiting Bahia Palace without the crowds](/en/blog/best-time-to-vi
 
 Yes, and the walk is part of the point.
 
-Bahia sits in the southern medina on Rue Riad Zitoun el Jedid, about ten minutes on foot from Jemaa el-Fna. Ben Youssef is north of the square, past the souks. Walking from one to the other takes roughly 25 to 35 minutes depending on how lost you get, and you will get somewhat lost. The route takes you through the busiest stretch of the souks, which is either a bonus or an ordeal depending on your tolerance for being offered things.
+Bahia sits in the southern medina on Rue Riad Zitoun el Jedid, about ten minutes on foot from Jemaa el-Fna. Ben Youssef is north of the square, past the souks. Walking from one to the other takes roughly half an hour or so depending on how lost you get, and you will get somewhat lost. The route takes you through the busiest stretch of the souks, which is either a bonus or an ordeal depending on your tolerance for being offered things.
 
 Two practical notes. First, do it in that order: Bahia first thing, then walk north through the souks, then Ben Youssef. Going the other way puts you in the souks at their most crowded. Second, read our [Marrakech safety and scams guide](/en/blog/marrakech-safety-guide) before you make that walk, because the stretch between the two is where the "this street is closed, follow me" routine is most common.
 
@@ -104,7 +104,7 @@ If someone gave you one hour in the medina and asked you to be impressed, Ben Yo
 Neither is better; they do different things. Ben Youssef offers the most concentrated craftsmanship in Marrakech in one courtyard. Bahia offers scale, gardens and a stronger historical narrative. First-time visitors usually get more from Bahia, photographers usually get more from Ben Youssef.
 
 **How long does it take to walk between Bahia Palace and Ben Youssef Madrasa?**
-About 25 to 35 minutes on foot through the medina, depending on your route and how often you stop. The walk passes through the souks. Taxis cannot take you door to door because most of the route is pedestrian-only lanes.
+Around half an hour on foot through the medina, though it depends heavily on your route and how often you stop. The walk passes through the souks. Taxis cannot take you door to door because most of the route is pedestrian-only lanes.
 
 **Can I visit both in one morning?**
 Yes. Start at Bahia at 9:00, spend around 75 minutes, walk north through the souks, and reach Ben Youssef before midday. Both fill up as the morning goes on, so the early start matters more than the order.

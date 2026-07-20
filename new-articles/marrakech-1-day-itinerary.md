@@ -60,7 +60,7 @@ A decision point here. If you are more interested in scale and ruins than in tom
 
 Forty-five minutes, and the timing matters more here than anywhere else on this list.
 
-The tombs are a compact site and the main chamber, the one everyone photographs, is small. Queues to enter that chamber build steadily from about 11:30 and by early afternoon you can wait 20 minutes for a two-minute look. Arriving at 11:00 usually gets you in with a short wait.
+The tombs are a compact site and the main chamber, the one everyone photographs, is small enough that only a few people fit at once. A queue forms for it as the morning goes on, and by the afternoon you can be waiting a while for a very short look. Arriving before midday is the whole trick.
 
 Our guide to [combining Bahia Palace and the Saadian Tombs in one morning](/en/blog/bahia-palace-and-saadian-tombs-one-day) has more detail on making this pairing work.
 
@@ -132,7 +132,7 @@ If you can extend to two days, do. One day in Marrakech works, but it works by b
 
 **Cash.** Carry dirhams in small denominations. Monuments, taxis and market stalls are cash-first, and nobody has change for a 200 note at 9am.
 
-**Shoes.** Medina paving is uneven and you will cover 8 to 12 km. This is not the day for new sandals.
+**Shoes.** Medina paving is uneven and you will be walking on it most of the day. This is not the day for new sandals.
 
 **Dress.** Shoulders and knees covered gets you into every monument without discussion. Our [dress code guide](/en/blog/bahia-palace-dress-code) has the specifics.
 
