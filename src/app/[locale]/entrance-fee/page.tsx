@@ -20,8 +20,8 @@ export const revalidate = 86400;
 
 const MAD = OFFICIAL_DOOR_PRICE_MAD;
 const META: Record<string, { title: string; description: string }> = {
-  en: { title: `Bahia Palace Ticket Price 2026 | ${MAD} MAD — Official Fee`, description: `Adults pay ${MAD} MAD at the gate — children under 7 enter free. Compare Ramadan rates, Moroccan national discounts, and skip-the-line online prices. Updated for 2026.` },
-  fr: { title: 'Prix Entrée Palais Bahia 2026 | Tarifs en MAD & EUR', description: `Adultes : ${MAD} MAD à la caisse, enfants de moins de 7 ans gratuits. Comparez le tarif Ramadan, les réductions pour Marocains et le coupe-file en ligne. Mis à jour 2026.` },
+  en: { title: `Bahia Palace Tickets 2026: ${MAD} MAD — Read Before You Pay`, description: `Entry is ${MAD} MAD cash at the gate. Under 7 free, Moroccans 30 MAD. There's no official online booking, and the 11am–2pm queue runs 40 minutes.` },
+  fr: { title: `Palais Bahia Tarifs 2026 : ${MAD} MAD — À lire avant de payer`, description: `L'entrée coûte ${MAD} MAD en espèces sur place. Gratuit avant 7 ans, 30 MAD pour les Marocains. Aucune réservation officielle en ligne n'existe.` },
   es: { title: 'Precio Entrada Palacio Bahia 2026 | Tarifas en MAD y EUR', description: `Adultos pagan ${MAD} MAD en taquilla — menores de 7 años gratis. Compare tarifa Ramadán, precio nacional marroquí y la entrada sin cola online. Actualizado 2026.` },
   de: { title: 'Bahia Palast Eintrittspreis 2026 | Aktuelle Ticketpreise', description: `Erwachsene zahlen ${MAD} MAD an der Kasse — Kinder unter 7 Jahren frei. Ramadan-Tarif, Marokkanerpreis und Skip-the-Line-Online-Ticket im Vergleich. Aktuell 2026.` },
   it: { title: 'Prezzo Biglietto Palazzo Bahia 2026 | Tariffe Aggiornate', description: `Adulti: ${MAD} MAD in cassa, bambini sotto i 7 anni gratis. Confronta tariffe Ramadan, sconto nazionali marocchini e il salta-fila online. Aggiornato per il 2026.` },
