@@ -61,3 +61,9 @@ article-*.md
 
 .vercel
 .blog-image-backup-2026-07.json
+
+# local sqlite database files
+prisma/*.db
+prisma/*.db-journal
+*.db-shm
+*.db-wal
