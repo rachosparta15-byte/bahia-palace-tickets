@@ -32,6 +32,9 @@ export interface PaymentsStatus {
 
 /** Only the exact lowercase string "true" counts. Everything else is off. */
 function flagEnabled(): boolean {
+  // ⚠️ Before setting this to true, complete GO-LIVE.md in the repo root.
+  // Several claims on the site ("no booking fees", "official tickets only",
+  // "free to use") become false once payments are enabled.
   return process.env.PAYMENTS_ENABLED === 'true';
 }
 
