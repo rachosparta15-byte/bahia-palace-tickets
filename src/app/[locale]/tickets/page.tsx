@@ -12,14 +12,12 @@ interface Props {
   params: Promise<{ locale: string }>;
 }
 
-const P = SKIP_THE_LINE_PRICE_USD;
-
 const TICKETS_META: Record<string, { title: string; description: string }> = {
-  en: { title: `Bahia Palace Tickets 2026 — Skip the Line from $${P}`, description: `Compare Bahia Palace ticket options from $${P}: skip-the-line, guided and private tours. Book directly on the official portal — no booking fees.` },
-  fr: { title: `Billets Palais Bahia 2026 — Coupe-File dès ${P}$`, description: `Comparez les billets pour le Palais Bahia dès ${P}$ : coupe-file, visites guidées et privées. Réservez directement sur le portail officiel — sans frais.` },
-  es: { title: `Entradas Palacio Bahia 2026 — Sin Cola desde $${P}`, description: `Compara las entradas del Palacio Bahia desde $${P}: sin cola, visitas guiadas y privadas. Reserva directamente en el portal oficial — sin comisiones.` },
-  de: { title: `Bahia Palast Tickets 2026 — Skip-the-Line ab $${P}`, description: `Vergleichen Sie Bahia Palast Tickets ab $${P}: Skip-the-Line, Führungen und Privattouren. Direkt über das offizielle Portal buchen — ohne Gebühren.` },
-  it: { title: `Biglietti Palazzo Bahia 2026 — Salta-Fila da $${P}`, description: `Confronta i biglietti per il Palazzo Bahia da $${P}: salta-fila, visite guidate e private. Prenota direttamente sul portale ufficiale — nessuna commissione.` },
+  en: { title: `Bahia Palace Tickets 2026 — Skip-the-Line, Guided & Private`, description: `Compare Bahia Palace ticket options: skip-the-line, guided and private tours. Book directly on the official portal — no booking fees.` },
+  fr: { title: `Billets Palais Bahia 2026 — Coupe-File, Guidées & Privées`, description: `Comparez les billets pour le Palais Bahia : coupe-file, visites guidées et privées. Réservez directement sur le portail officiel — sans frais.` },
+  es: { title: `Entradas Palacio Bahía 2026 — Sin Cola, Guiadas y Privadas`, description: `Compara las entradas del Palacio Bahía: sin cola, visitas guiadas y privadas. Reserva directamente en el portal oficial — sin comisiones.` },
+  de: { title: `Bahia Palast Tickets 2026 — Skip-the-Line, Touren & Privat`, description: `Vergleichen Sie Bahia Palast Tickets: Skip-the-Line, Führungen und Privattouren. Direkt über das offizielle Portal buchen — ohne Gebühren.` },
+  it: { title: `Biglietti Palazzo Bahia 2026 — Salta-Fila, Guidate e Private`, description: `Confronta i biglietti per il Palazzo Bahia: salta-fila, visite guidate e private. Prenota direttamente sul portale ufficiale — nessuna commissione.` },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

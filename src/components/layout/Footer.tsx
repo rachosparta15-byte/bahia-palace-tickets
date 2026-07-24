@@ -137,16 +137,6 @@ export function Footer() {
           <p className="text-[#C4A882]/70 text-xs leading-relaxed text-center mt-2">{t('network')}</p>
         </div>
 
-        {/* Legal identity — TODO(owner): replace placeholders with your actual
-            registered business details before launch (legal name, ICE number,
-            registered address — standard disclosures for a commercial site
-            operating in Morocco). */}
-        <div className="pb-4 lg:pb-6">
-          <p className="text-[#C4A882]/60 text-[11px] leading-relaxed text-center">
-            {'{LEGAL_COMPANY_NAME}'} · ICE {'{ICE_NUMBER}'} · {'{REGISTERED_ADDRESS}'}
-          </p>
-        </div>
-
         {/* Bottom bar */}
         <div className="border-t border-[rgba(232,163,61,0.15)] pt-4 lg:pt-8 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
           <p className="text-[#C4A882] text-xs">{t('copyright', { year })}</p>

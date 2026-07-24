@@ -79,12 +79,13 @@ export default async function TermsPage() {
           body: 'For questions about these terms, please contact us at support@visitbahiapalace.com or via WhatsApp.',
         },
         {
-          // TODO(owner): replace these placeholders with your actual registered
-          // business details before launch. Required in most jurisdictions
-          // (in Morocco: legal name, ICE number, and registered address are
-          // standard disclosures for a commercial website).
+          // TODO(owner): before launch, add your actual registered business
+          // details here (in Morocco: legal name, ICE number, and registered
+          // address are standard disclosures for a commercial website). The
+          // unrendered placeholder tokens were removed so nothing broken shows
+          // to visitors in the meantime.
           heading: '9. Company Information',
-          body: 'This site is operated by {LEGAL_COMPANY_NAME}, ICE {ICE_NUMBER}, registered at {REGISTERED_ADDRESS}.',
+          body: 'This website is operated as an independent visitor-information service. For business or legal enquiries, contact support@visitbahiapalace.com.',
         },
         ...(!paymentsEnabled ? [] : [{
           // ─────────────────────────────────────────────────────────────
@@ -104,7 +105,7 @@ export default async function TermsPage() {
           heading: '10. Complete Visitor Pack (DRAFT — pending legal review)',
           body: [
             'DRAFT: The following applies only to the Complete Visitor Pack, and only once it is available for purchase. It has not yet been reviewed by a lawyer.',
-            'The Complete Visitor Pack is a bundle sold by {LEGAL_COMPANY_NAME}. It comprises (a) the official Bahia Palace entry ticket, priced at 100 MAD by Morocco’s Ministry of Culture, which we purchase on your behalf, and (b) our own audio guide, visitor map and support service.',
+            'The Complete Visitor Pack is a bundle sold by the operator of this website. It comprises (a) the official Bahia Palace entry ticket, priced at 100 MAD by Morocco’s Ministry of Culture, which we purchase on your behalf, and (b) our own audio guide, visitor map and support service.',
             'The pack price is not the official entry price. The official ticket portion is passed through at the official rate; the remainder is our service fee. You are free to purchase the official entry ticket yourself at the palace for 100 MAD instead, and we tell you how on our tickets page.',
             'We act as your agent in purchasing the official entry ticket. Entry itself remains subject to the rules of Bahia Palace and the Ministry of Culture, over which we have no control.',
             'If we are unable to obtain your official entry ticket for your chosen date, your remedy is a full refund of the pack price.',

@@ -18,13 +18,12 @@ const PRIVATE_TOUR_PLANNED_PRICE_USD = TICKET_PRICES['private-tour'];
 
 export const revalidate = 86400;
 
-const MAD = OFFICIAL_DOOR_PRICE_MAD;
 const META: Record<string, { title: string; description: string }> = {
-  en: { title: `Bahia Palace Tickets 2026: ${MAD} MAD — Read Before You Pay`, description: `Entry is ${MAD} MAD cash at the gate. Under 7 free, Moroccans 30 MAD. There's no official online booking, and the 11am–2pm queue runs 40 minutes.` },
-  fr: { title: `Palais Bahia Tarifs 2026 : ${MAD} MAD — À lire avant de payer`, description: `L'entrée coûte ${MAD} MAD en espèces sur place. Gratuit avant 7 ans, 30 MAD pour les Marocains. Aucune réservation officielle en ligne n'existe.` },
-  es: { title: 'Precio Entrada Palacio Bahia 2026 | Tarifas en MAD y EUR', description: `Adultos pagan ${MAD} MAD en taquilla — menores de 7 años gratis. Compare tarifa Ramadán, precio nacional marroquí y la entrada sin cola online. Actualizado 2026.` },
-  de: { title: 'Bahia Palast Eintrittspreis 2026 | Aktuelle Ticketpreise', description: `Erwachsene zahlen ${MAD} MAD an der Kasse — Kinder unter 7 Jahren frei. Ramadan-Tarif, Marokkanerpreis und Skip-the-Line-Online-Ticket im Vergleich. Aktuell 2026.` },
-  it: { title: 'Prezzo Biglietto Palazzo Bahia 2026 | Tariffe Aggiornate', description: `Adulti: ${MAD} MAD in cassa, bambini sotto i 7 anni gratis. Confronta tariffe Ramadan, sconto nazionali marocchini e il salta-fila online. Aggiornato per il 2026.` },
+  en: { title: `Bahia Palace Entrance Fee 2026 — Read Before You Pay`, description: `What Bahia Palace entry costs at the gate, who gets in free, and the Moroccan national rate — plus opening hours and how long the ticket queue really runs.` },
+  fr: { title: `Tarifs Palais Bahia 2026 — À lire avant de payer`, description: `Ce que coûte l'entrée du Palais Bahia au guichet, qui entre gratuitement et le tarif pour les Marocains — avec les horaires et le temps d'attente réel à la billetterie.` },
+  es: { title: `Precio Entrada Palacio Bahía 2026 — Léelo antes de pagar`, description: `Lo que cuesta la entrada al Palacio Bahía en taquilla, quién entra gratis y la tarifa para marroquíes — además de horarios y cuánto dura realmente la cola.` },
+  de: { title: `Bahia Palast Eintrittspreis 2026 — Vor dem Zahlen lesen`, description: `Was der Eintritt in den Bahia-Palast an der Kasse kostet, wer frei hineinkommt und der Marokkaner-Tarif — plus Öffnungszeiten und echte Wartezeiten an der Schlange.` },
+  it: { title: `Prezzo Biglietto Palazzo Bahia 2026 — Leggi prima di pagare`, description: `Quanto costa l'ingresso al Palazzo Bahia in biglietteria, chi entra gratis e la tariffa per i marocchini — con orari e quanto dura davvero la coda all'ingresso.` },
 };
 
 interface Props { params: Promise<{ locale: string }> }

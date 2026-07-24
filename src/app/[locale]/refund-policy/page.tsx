@@ -23,8 +23,8 @@ export default async function RefundPolicyPage() {
   const t = await getTranslations('breadcrumb');
 
   // The Visitor Pack clause is unfinished and unreviewed. While the pack
-  // cannot be bought, showing a visitor a policy full of {PLACEHOLDERS} and
-  // the words "pending legal review" reads as an unfinished business, so it
+  // cannot be bought, showing a visitor a policy full of unfilled placeholders
+  // and the words "pending legal review" reads as an unfinished business, so it
   // stays hidden until the product it describes is actually on sale.
   const { enabled: paymentsEnabled } = getPublicPaymentsFlags();
 
@@ -74,8 +74,8 @@ export default async function RefundPolicyPage() {
           heading: 'Complete Visitor Pack (DRAFT — pending legal review)',
           body: [
             'DRAFT: The following applies only to the Complete Visitor Pack, and only once it is available for purchase. It has not yet been reviewed by a lawyer.',
-            'Unlike the rest of this site, the Complete Visitor Pack is sold directly by {LEGAL_COMPANY_NAME}, ICE {ICE_NUMBER}, registered at {REGISTERED_ADDRESS}. We take the payment, so we handle the refund.',
-            'DRAFT — cancellation window to be confirmed: cancel at least {REFUND_WINDOW_HOURS} hours before your visit date for a full refund of the pack price.',
+            'Unlike the rest of this site, the Complete Visitor Pack is sold directly by the operator of this website. We take the payment, so we handle the refund.',
+            'DRAFT — cancellation window to be confirmed: cancel far enough before your visit date (exact cutoff to be finalised before launch) for a full refund of the pack price.',
             'If we cannot obtain your official entry ticket for your chosen date, you receive a full refund of the pack price, including our service fee.',
             'If Bahia Palace closes unexpectedly on your visit date, you may choose a full refund or a change of date at no charge.',
             'To request a refund, email support@visitbahiapalace.com with your order reference.',
