@@ -36,3 +36,9 @@ flag switches the product — it does NOT switch the copy.
 - [ ] End-to-end test purchase in 2 languages
 - [ ] Verify QR delivery email in both languages
 - [ ] Verify free-cancellation flow actually works
+
+## SEO / structured data (post-launch)
+- [ ] Add first-party review system (post-purchase email → rating) to
+      enable a legitimate aggregateRating on ticket pages. This resolves
+      the GSC "review/aggregateRating missing" warning honestly, only
+      once payments are live and real reviews exist.
