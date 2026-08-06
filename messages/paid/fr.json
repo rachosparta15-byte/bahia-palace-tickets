@@ -1,0 +1,127 @@
+{
+  "trust": {
+    "freeCancellation": "Annulation gratuite",
+    "secure": "Billet officiel inclus"
+  },
+  "tickets": {
+    "skipTheLine": {
+      "includes": [
+        null,
+        null,
+        "Guide numérique & assistance inclus",
+        "Billet officiel inclus"
+      ]
+    },
+    "guidedTour": {
+      "includes": [
+        null,
+        null,
+        null,
+        null,
+        "Billet officiel inclus"
+      ]
+    },
+    "privateTour": {
+      "includes": [
+        null,
+        null,
+        null,
+        null,
+        "Billet officiel inclus"
+      ]
+    },
+    "combo": {
+      "includes": [
+        null,
+        null,
+        null,
+        null,
+        "Billet officiel inclus"
+      ]
+    }
+  },
+  "ticketDetail": {
+    "proceedToCheckout": "Continuer vers la réservation →",
+    "instantConfirm": "Inclut le billet officiel + guide numérique + assistance",
+    "freeCancelNote": "Annulation gratuite jusqu'à l'envoi de votre billet"
+  },
+  "whyUs": {
+    "items": [
+      {
+        "title": "Le billet officiel, géré pour vous",
+        "desc": "Nous achetons le véritable billet du Ministère de la Culture en votre nom et l'associons à un guide numérique et à une assistance — un seul paiement, simple."
+      },
+      {
+        "title": "Prix transparent",
+        "desc": "12,90 € par personne, toutes taxes comprises, et rien n’est ajouté au paiement. Cela couvre le billet officiel du ministère de la Culture acheté en votre nom, un audioguide numérique, l’assistance WhatsApp et l’annulation gratuite jusqu’à l’envoi de votre billet."
+      },
+      null,
+      {
+        "desc": "Si vous partagez votre e-mail, il ne sert qu'à vous envoyer des conseils de visite — jamais vendu. Votre réservation est finalisée en toute sécurité chez nous ; les paiements par carte sont traités par Stripe et nous ne conservons jamais vos données de carte."
+      }
+    ]
+  },
+  "faqPage": {
+    "ctaBody": "Service de réservation indépendant · Billet officiel inclus · Annulation gratuite",
+    "items": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "answer": "Choisissez votre date et finalisez votre réservation chez nous. Nous achetons votre billet officiel du Ministère de la Culture et vous envoyons votre QR code par e-mail et WhatsApp avant votre visite. Vous préférez l'acheter vous-même ? C'est possible sur e-services.minculture.gov.ma."
+      },
+      {
+        "answer": "Vous pouvez annuler ou changer votre date gratuitement via WhatsApp à tout moment avant la transmission de votre QR code — remboursement intégral. Une fois le billet transmis, la prestation est réalisée ; voir notre politique d'annulation pour les détails."
+      }
+    ]
+  },
+  "faq": {
+    "items": [
+      {
+        "answer": "Après votre réservation chez nous, nous vous envoyons votre billet officiel avec QR code par e-mail et WhatsApp avant votre visite."
+      },
+      {
+        "answer": "Annulation et changement de date gratuits via WhatsApp à tout moment avant la transmission de votre QR code."
+      },
+      null,
+      null,
+      null,
+      {
+        "answer": "Votre réservation inclut le billet d'entrée officiel pré-validé, vous évitez donc la file d'attente à la billetterie."
+      }
+    ]
+  },
+  "cta": {
+    "stickyMobile": "Sans file d'attente — réservez maintenant"
+  },
+  "footer": {
+    "paymentNote": "Service de réservation indépendant — billet officiel inclus",
+    "disclaimer": "visitbahiapalace.com est un service de réservation indépendant. Nous ne sommes affiliés ni au palais de la Bahia ni au ministère marocain de la Culture. Les billets d’entrée peuvent aussi être achetés directement auprès du ministère sur <portal>e-services.minculture.gov.ma</portal>."
+  },
+  "aboutPage": {
+    "missionBody": "Aider les voyageurs internationaux à préparer leur visite du Palais Bahia avec des informations précises et utiles — histoire, conseils pratiques, sécurité — ainsi qu'un service de réservation optionnel incluant le billet officiel, un guide numérique et une assistance.",
+    "whyBody": "Guides touristiques complets et contexte historique · Conseils pratiques sur les horaires et les tarifs · Informations de sécurité pour les touristes · Un service de réservation optionnel et payant (billet officiel + guide numérique + assistance) · L'alternative en autonomie pour le billet officiel sur e-services.minculture.gov.ma",
+    "teamBody": "visitbahiapalace.com n'est PAS affilié à l'administration officielle du Palais Bahia ni au Ministère de la Culture du Maroc. Nous sommes un service de réservation indépendant. Vous pouvez aussi acheter le billet officiel directement sur e-services.minculture.gov.ma."
+  },
+  "contactPage": {
+    "addressVal": "Service de réservation indépendant — non affilié au Palais Bahia officiel ni au Ministère de la Culture du Maroc."
+  },
+  "visitorPack": {
+    "faq": {
+      "items": {
+        "cheaper": {
+          "a": "L’entrée seule coûte 100 MAD au guichet. Notre prix comprend ce billet acheté en votre nom, l’audioguide en cinq langues, le plan du visiteur, l’assistance WhatsApp avant et pendant votre visite, et l’annulation gratuite jusqu’à l’envoi de votre QR code. Le ministère vend aussi l’entrée directement sur son portail si c’est tout ce dont vous avez besoin."
+        }
+      }
+    }
+  }
+}

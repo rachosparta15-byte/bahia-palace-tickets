@@ -105,7 +105,7 @@ export function GalleryClient({ images, pageUrl, locale }: { images: GalleryImag
               </div>
 
               {/* Gold top-right corner accent */}
-              <div className="absolute top-0 right-0 border-t-[26px] border-r-[26px] border-t-transparent border-r-[#E8A33D]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute top-0 right-0 border-t-[26px] border-e-[26px] border-t-transparent border-e-[#E8A33D]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </button>
 
             {/* Pinterest save button — sibling of lightbox button so it's valid HTML */}

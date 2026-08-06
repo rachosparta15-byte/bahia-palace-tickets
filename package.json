@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "sync:legal": "node scripts/sync-legal.mjs",
     "dev": "next dev",
     "postinstall": "prisma generate",
-    "build": "next build",
+    "build": "node scripts/check-launch-ready.mjs && next build",
     "start": "next start",
     "lint": "eslint",
     "seed:blog": "npx tsx scripts/seed-blog.ts",
-    "seed:gallery": "npx tsx prisma/seed-gallery.ts"
+    "seed:gallery": "npx tsx prisma/seed-gallery.ts",
+    "check:launch": "node scripts/check-launch-ready.mjs",
+    "test:guide": "node --experimental-strip-types --import ./scripts/ts-resolve.mjs scripts/guide-access.test.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -29,6 +32,8 @@
     "@radix-ui/react-tabs": "^1.1.13",
     "@radix-ui/react-toast": "^1.2.15",
     "@react-pdf/renderer": "^4.5.1",
+    "@stripe/react-stripe-js": "^5.6.1",
+    "@stripe/stripe-js": "^8.11.0",
     "@tailwindcss/typography": "^0.5.19",
     "@tiptap/extension-color": "^3.23.5",
     "@tiptap/extension-font-family": "^3.23.5",

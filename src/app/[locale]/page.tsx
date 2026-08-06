@@ -18,7 +18,11 @@ import { ArticleTicker } from '@/components/homepage/ArticleTicker';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { BASE, buildAlternates, buildOG, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
-import { SKIP_THE_LINE_PRICE_USD, VISITOR_PACK_PRICE_USD } from '@/config/pricing';
+import {
+  SKIP_THE_LINE_PRICE_EUR,
+  VISITOR_PACK_PRICE_EUR_CENTS,
+  formatEURAmount,
+} from '@/config/pricing';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 import type { Metadata } from 'next';
 
@@ -42,6 +46,14 @@ const HOME_META: Record<string, { title: string; description: string }> = {
   de: {
     title: `Bahia Palast Marrakesch 2026 | Tickets, Zeiten & Guide`,
     description: `Besuchen Sie den Bahia Palast in Marrakesch 2026. Vergleichen Sie Skip-the-Line-, Führungs- und Privattouren-Tickets, prüfen Sie Öffnungszeiten und Preise, und entdecken Sie den Palast aus dem 19. Jahrhundert.`,
+  },
+  ar: {
+    title: `قصر الباهية مراكش 2026 | التذاكر والمواعيد ودليل الزيارة`,
+    description: `كل ما تحتاجه لزيارة قصر الباهية في مراكش: رسم الدخول الرسمي 100 درهم (30 درهماً للمغاربة والمقيمين)، المواعيد يومياً من 9:00 إلى 5:00، وكيف تتفادى طابور شبّاك التذاكر.`,
+  },
+  pt: {
+    title: `Palácio da Bahia, Marraquexe 2026 | Bilhetes e horários`,
+    description: `Tudo para visitar o Palácio da Bahia em Marraquexe: entrada oficial de 100 MAD, aberto todos os dias das 9:00 às 17:00, e como evitar a fila da bilheteira.`,
   },
   it: {
     title: `Palazzo Bahia Marrakech 2026 | Biglietti, Orari e Guida`,
@@ -119,8 +131,11 @@ export default async function HomePage({ params }: Props) {
         ? {
             '@type': 'Offer',
             name: 'Complete Visitor Pack — official entry ticket + audio guide',
-            price: String(VISITOR_PACK_PRICE_USD),
-            priceCurrency: 'USD',
+            // Must match the currency actually charged at checkout — a
+            // structured-data price in the wrong currency is a rich-result
+            // penalty and, worse, a price the visitor never agreed to.
+            price: formatEURAmount(VISITOR_PACK_PRICE_EUR_CENTS),
+            priceCurrency: 'EUR',
             url: `${BASE}/${locale}/visitor-pack`,
             availability: 'https://schema.org/InStock',
             ...DIGITAL_TICKET_OFFER_EXTRAS,
@@ -128,8 +143,8 @@ export default async function HomePage({ params }: Props) {
         : {
             '@type': 'Offer',
             name: 'Skip-the-Line Entry',
-            price: String(SKIP_THE_LINE_PRICE_USD),
-            priceCurrency: 'USD',
+            price: SKIP_THE_LINE_PRICE_EUR.toFixed(2),
+            priceCurrency: 'EUR',
             url: `${BASE}/${locale}/tickets/skip-the-line`,
             availability: 'https://schema.org/InStock',
             ...DIGITAL_TICKET_OFFER_EXTRAS,

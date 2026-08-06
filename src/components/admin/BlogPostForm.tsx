@@ -148,7 +148,7 @@ export function BlogPostForm({ initial = {}, mode }: Props) {
               ) : (
                 <span className="text-xs text-[#8B6344]">
                   🔒 /{form.locale}/blog/{form.slug}
-                  <span className="ml-1 text-amber-600 font-medium">(Draft — only visible after publishing)</span>
+                  <span className="ms-1 text-amber-600 font-medium">(Draft — only visible after publishing)</span>
                 </span>
               )}
             </div>

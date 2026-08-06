@@ -9,14 +9,16 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE } from '@/lib/seo';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 import { TestModeBanner } from '@/components/visitor-pack/TestModeBanner';
-import { PriceBreakdown } from '@/components/visitor-pack/PriceBreakdown';
+import { ValuePoints } from '@/components/visitor-pack/ValuePoints';
 import { VisitorPackCheckoutForm } from '@/components/visitor-pack/VisitorPackCheckoutForm';
+import { CheckoutDisclosure } from '@/components/visitor-pack/CheckoutDisclosure';
 import { AudioGuidePreview } from '@/components/visitor-pack/AudioGuidePreview';
-import { Testimonials } from '@/components/visitor-pack/Testimonials';
 import {
-  VISITOR_PACK_PRICE_USD,
+  VISITOR_PACK_PRICE_EUR_CENTS,
   OFFICIAL_DOOR_PRICE_MAD,
-  OFFICIAL_DOOR_PRICE_USD_APPROX,
+  OFFICIAL_DOOR_PRICE_EUR_CENTS,
+  MAD_TO_EUR_RATE_CHECKED_ON,
+  formatEURAmount,
 } from '@/config/pricing';
 import {
   Ticket,
@@ -43,10 +45,10 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const title = `Complete Visitor Pack — Bahia Palace Ticket + Audio Guide ($${VISITOR_PACK_PRICE_USD})`;
+  const title = `Complete Visitor Pack — Bahia Palace Ticket + Audio Guide (€${formatEURAmount(VISITOR_PACK_PRICE_EUR_CENTS)})`;
   const description =
     `Official Bahia Palace entry ticket (${OFFICIAL_DOOR_PRICE_MAD} MAD, purchased for you) ` +
-    `plus a premium audio guide, visitor map and support — $${VISITOR_PACK_PRICE_USD} per person.`;
+    `plus a premium audio guide, visitor map and support — €${formatEURAmount(VISITOR_PACK_PRICE_EUR_CENTS)} per person.`;
 
   const { enabled: paymentsEnabled } = getPublicPaymentsFlags();
 
@@ -113,14 +115,15 @@ export default async function VisitorPackPage({ params }: Props) {
     '@type': 'Product',
     name: 'Bahia Palace — Complete Visitor Pack',
     description:
-      `Official Bahia Palace entry ticket (${OFFICIAL_DOOR_PRICE_MAD} MAD / ~$${OFFICIAL_DOOR_PRICE_USD_APPROX}, ` +
-      `purchased on the visitor's behalf) bundled with a premium audio guide, visitor map and support.`,
+      `Official Bahia Palace entry ticket (${OFFICIAL_DOOR_PRICE_MAD} MAD ≈ €${formatEURAmount(OFFICIAL_DOOR_PRICE_EUR_CENTS)} ` +
+      `at the rate of ${MAD_TO_EUR_RATE_CHECKED_ON}, purchased on the visitor's behalf) ` +
+      `bundled with a premium audio guide, visitor map and support.`,
     url: `${BASE}/${locale}/visitor-pack`,
     image: `${BASE}/og-image.jpg`,
     offers: {
       '@type': 'Offer',
-      price: VISITOR_PACK_PRICE_USD.toFixed(2),
-      priceCurrency: 'USD',
+      price: formatEURAmount(VISITOR_PACK_PRICE_EUR_CENTS),
+      priceCurrency: 'EUR',
       availability: paymentsEnabled
         ? 'https://schema.org/InStock'
         : 'https://schema.org/PreOrder',
@@ -152,7 +155,24 @@ export default async function VisitorPackPage({ params }: Props) {
       />
 
       {/* ── Hero + price card ─────────────────────────────────────────── */}
-      <section className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] px-6 pt-8 pb-16">
+      {/*
+        Mobile: the price and the button have to be reachable without scrolling.
+
+        The hero spent roughly 390px above the card -- eyebrow, a three-line H1
+        at 2rem, a three-line subtitle, then a 40px gap -- on top of ~190px of
+        header and banners. The card began around 575px down a ~700px viewport,
+        so a phone showed the price, one value point, and no button at all.
+        Someone tapping "Tickets" landed on something that reads as an article.
+
+        The fix is ordering, not deletion: on a phone the card comes straight
+        after the headline and the descriptive paragraph drops below it, which
+        is what every large ticketing site does on mobile. The eyebrow is hidden
+        there because the breadcrumb and the H1 already say "Visitor Pack".
+        Explicit row/column placement restores the original arrangement from
+        `lg` up, so desktop is untouched and the subtitle is never duplicated in
+        the DOM.
+      */}
+      <section className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] px-6 pt-5 pb-12 sm:pt-8 sm:pb-16">
         <div className="max-w-6xl mx-auto">
           <Breadcrumb
             variant="light"
@@ -163,49 +183,60 @@ export default async function VisitorPackPage({ params }: Props) {
             ]}
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 mt-8 items-start">
-            <div className="lg:col-span-3">
-              <p className="text-xs uppercase tracking-[0.2em] text-[#E8A33D] font-semibold">
+          <div className="mt-5 grid grid-cols-1 gap-6 sm:mt-8 lg:grid-cols-5 lg:gap-x-10 lg:gap-y-5 items-start">
+            <div className="lg:col-span-3 lg:col-start-1 lg:row-start-1">
+              <p className="hidden text-xs uppercase tracking-[0.2em] text-[#E8A33D] font-semibold sm:block">
                 {t('hero.eyebrow')}
               </p>
               <h1
-                className="mt-4 font-bold text-[#F5E8CC] leading-tight"
-                style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 4.5vw, 3rem)' }}
+                className="font-bold text-[#F5E8CC] leading-tight sm:mt-4"
+                style={{
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: 'clamp(1.6rem, 4.5vw, 3rem)',
+                }}
               >
                 {t('hero.title')}
               </h1>
-              <p className="mt-5 text-lg text-[#C4A882] leading-relaxed max-w-xl">
-                {t('hero.subtitle')}
-              </p>
 
               {/* No CTA here on purpose: the price card carries the single
                   call to action, so the two don't sit side by side. */}
             </div>
 
-            {/* Price card. Kept intentionally simple — see PriceBreakdown for
-                what must stay and why. */}
-            <div className="lg:col-span-2">
-              <div className="rounded-2xl border border-[rgba(232,163,61,0.20)] bg-[#1C1108] p-6 sm:p-7">
+            {/* Price card: the total, four value points, one CTA. The
+                itemised cost split it used to carry was removed on
+                22/07/2026 — see ValuePoints for where the §3.2 disclosure
+                lives now. */}
+            <div className="lg:col-span-2 lg:col-start-4 lg:row-start-1">
+              <div className="rounded-2xl border border-[rgba(232,163,61,0.20)] bg-[#1C1108] p-5 sm:p-7">
                 <div className="flex items-baseline gap-2">
                   <span
                     className="font-bold text-[#E8A33D]"
-                    style={{ fontFamily: 'var(--font-heading)', fontSize: '3rem', lineHeight: 1 }}
+                    style={{
+                      fontFamily: 'var(--font-heading)',
+                      fontSize: 'clamp(2.5rem, 9vw, 3rem)',
+                      lineHeight: 1,
+                    }}
                   >
                     {t('price.amount')}
                   </span>
                   <span className="text-[#C4A882] text-sm">{t('price.perPerson')}</span>
                 </div>
 
-                <PriceBreakdown className="mt-4" />
+                <ValuePoints locale={locale} />
 
                 <a
                   href="#checkout"
-                  className="mt-6 flex w-full items-center justify-center rounded-lg bg-[#C4452D] px-6 py-3.5 font-semibold text-white transition-colors hover:bg-[#A33824]"
+                  className="mt-5 flex w-full items-center justify-center rounded-lg bg-[#C4452D] px-6 py-3.5 font-semibold text-white transition-colors hover:bg-[#A33824] sm:mt-6"
                 >
                   {paymentsEnabled ? t('hero.ctaPrimary') : t('hero.ctaDisabled')}
                 </a>
               </div>
             </div>
+
+            {/* Below the card on a phone, back under the headline from lg up. */}
+            <p className="text-lg text-[#C4A882] leading-relaxed max-w-xl lg:col-span-3 lg:col-start-1 lg:row-start-2 lg:-mt-1">
+              {t('hero.subtitle')}
+            </p>
           </div>
         </div>
       </section>
@@ -239,6 +270,18 @@ export default async function VisitorPackPage({ params }: Props) {
                 <p className="mt-2 text-sm text-[#C4A882] leading-relaxed">
                   {t(`included.items.${key}.desc`)}
                 </p>
+
+                {/* No "buy it yourself" link on this card.
+
+                    It sat under the FIRST thing the pack offers, which turned
+                    the strongest value proposition into a comparison prompt.
+                    The route to the official ticket is still on this page,
+                    twice: the "What does the EUR 12.90 cover?" answer in the FAQ
+                    gives the gate price and says the Ministry sells entry
+                    directly, and the link below the FAQ leads to our tickets
+                    page. That keeps `evidence.officialPortalLinkShown` on every
+                    order truthful and answers anyone who goes looking, without
+                    putting the alternative in front of a buyer who was not. */}
               </div>
             ))}
           </div>
@@ -286,6 +329,7 @@ export default async function VisitorPackPage({ params }: Props) {
       {/* ── Checkout ──────────────────────────────────────────────────── */}
       <section className="py-20 bg-[#1C1108]">
         <div className="max-w-xl mx-auto px-6">
+          <CheckoutDisclosure />
           <VisitorPackCheckoutForm
             locale={locale}
             paymentsEnabled={paymentsEnabled}
@@ -294,8 +338,15 @@ export default async function VisitorPackPage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── Testimonials (PLACEHOLDER data — see component) ───────────── */}
-      <Testimonials locale={locale} />
+      {/* ── Testimonials ──────────────────────────────────────────────
+          Not mounted. <Testimonials> still holds only placeholder copy, and it
+          rendered "No real customer has said this" immediately below the pay
+          button — an anti-endorsement in the one slot where social proof does
+          the most work. Absence beats that, and inventing reviews is banned
+          outright (UCPD Annex I; FTC consumer-review rule).
+
+          Re-mount the moment real reviews exist: this is the single largest
+          conversion lever still unused on this page. */}
 
       {/* ── FAQ ───────────────────────────────────────────────────────── */}
       <section className="py-20 bg-[#251A0F]">

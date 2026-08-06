@@ -1,8 +1,8 @@
-import { TICKET_PRICES_USD, type TicketSlug } from '@/config/pricing';
+import { TICKET_PRICES_EUR, type TicketSlug } from '@/config/pricing';
 
 export type { TicketSlug };
 
-export const TICKET_PRICES: Record<TicketSlug, number> = TICKET_PRICES_USD;
+export const TICKET_PRICES: Record<TicketSlug, number> = TICKET_PRICES_EUR;
 
 export const TICKET_NAME_KEYS: Record<TicketSlug, string> = {
   'skip-the-line':        'skipTheLine',

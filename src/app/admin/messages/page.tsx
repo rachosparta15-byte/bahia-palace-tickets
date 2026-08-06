@@ -76,7 +76,7 @@ export default async function MessagesPage({ searchParams }: Props) {
                 name="q"
                 defaultValue={q}
                 placeholder="Search by name, email, subject or message…"
-                className="pl-8 pr-4 py-2 text-sm border border-[#D4BC96] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C4452D]/30 focus:border-[#C4452D] w-80 bg-white"
+                className="ps-8 pe-4 py-2 text-sm border border-[#D4BC96] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C4452D]/30 focus:border-[#C4452D] w-80 bg-white"
               />
             </div>
             <button

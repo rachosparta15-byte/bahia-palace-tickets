@@ -10,12 +10,19 @@ import { locales, type Locale } from '@/i18n/routing';
 import { LogoMark } from '@/components/ui/LogoMark';
 import { LeadButton } from '@/components/layout/LeadButton';
 
+/**
+ * Each language named in itself, never translated. Someone looking for Arabic
+ * scans for العربية, not for the word "Arabic" written in a language they do
+ * not read — which is the entire job of a language switcher.
+ */
 const LOCALE_LABELS: Record<Locale, string> = {
   en: 'English',
   fr: 'Français',
   it: 'Italiano',
   de: 'Deutsch',
   es: 'Español',
+  pt: 'Português',
+  ar: 'العربية',
 };
 
 export function Header() {
@@ -133,7 +140,7 @@ export function Header() {
                       key={loc}
                       onClick={() => switchLocale(loc)}
                       className={cn(
-                        'w-full text-left px-4 py-2 text-sm transition-colors',
+                        'w-full text-start px-4 py-2 text-sm transition-colors',
                         locale === loc
                           ? 'text-[#E8A33D] font-semibold'
                           : 'text-white/70 hover:text-white hover:bg-white/5'

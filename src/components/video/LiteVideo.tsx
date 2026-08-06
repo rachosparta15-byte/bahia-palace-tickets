@@ -44,7 +44,7 @@ export function LiteVideo({ videoId, title }: Props) {
       <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="w-14 h-14 rounded-full bg-[#C4452D]/90 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-          <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6 ml-1" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6 ms-1" aria-hidden="true">
             <path d="M8 5v14l11-7z" />
           </svg>
         </div>

@@ -40,6 +40,20 @@ if (!_wa) {
   );
 }
 
+// The audio guide will not open without a token this secret signs. A missing
+// value is silent at build time but very loud at 9am in Marrakech.
+const _gts = process.env.GUIDE_TOKEN_SECRET ?? '';
+if (_gts.trim().length < 24) {
+  console.warn(
+    '\x1b[33m⚠️  GUIDE_TOKEN_SECRET is missing or shorter than 24 characters.\x1b[0m',
+    '\n   Audio-guide access tokens cannot be signed: paying customers will see',
+    '\n   "access link being prepared" instead of a link, and /api/guide/redeem',
+    '\n   will answer 503 for every device.',
+    '\n   Generate with: openssl rand -base64 32',
+    '\n   Then set it in Vercel → Settings → Environment Variables.',
+  );
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   outputFileTracingIncludes: {
@@ -48,6 +62,7 @@ const nextConfig = {
   async redirects() {
     const TEST_SLUGS = ['z', 'xdxxxxxxxx', 'test'];
     const LOCALES    = ['en', 'fr', 'it', 'de', 'es'];
+
     const testRedirects = TEST_SLUGS.flatMap(slug =>
       LOCALES.map(locale => ({
         source:      `/${locale}/blog/${slug}`,
@@ -138,6 +153,47 @@ const nextConfig = {
       destination: `/${locale}/blog/${to}`,
       permanent:   true,
     }));
+    // ─────────────────────────────────────────────────────────────────
+    // Terms of Sale — one canonical URL per language.
+    //
+    // French is published at /fr/cgv (the conventional French name), every
+    // other locale at /<locale>/terms. The two "wrong" spellings redirect
+    // so the document never answers on two URLs at once.
+    //
+    // These live HERE rather than as redirect() calls inside the pages
+    // because both routes set `revalidate`, which makes them statically
+    // rendered — a redirect() then cannot emit an HTTP status and Next
+    // serves a 200 shell that redirects on the client. A crawler sees an
+    // empty 200, i.e. a duplicate of nothing. Config redirects are real
+    // 308s, issued before any rendering. (Verified: /fr/terms returned
+    // 200 with homepage markup until this was moved here.)
+    //
+    // The hand-written legal pages are gone, replaced by the documents synced
+    // from marrakechlocal (src/content/legal, `npm run sync:legal`). The old
+    // text named a different selling entity from the rest of the network — one
+    // order has one counterparty, and a customer who reads "your contract is
+    // with X" and is then charged by Y has been misled about who they are
+    // dealing with. The seller across every site is MarrakechLocal.
+    //
+    // /terms, /cgv, /refund-policy, /privacy and /cookies are indexed and
+    // linked from already-sent confirmation emails, so they 308 to the synced
+    // document rather than 404. /cgv was the French name for the Terms of Sale
+    // and lands on the same page as /terms in every locale.
+    const LEGAL_MOVES = [
+      { from: 'terms',         to: 'legal/terms' },
+      { from: 'cgv',           to: 'legal/terms' },
+      { from: 'refund-policy', to: 'legal/refunds' },
+      { from: 'privacy',       to: 'legal/privacy' },
+      { from: 'cookies',       to: 'legal/cookies' },
+    ];
+    const legalRedirects = LEGAL_MOVES.flatMap(({ from, to }) =>
+      LOCALES.map(locale => ({
+        source:      `/${locale}/${from}`,
+        destination: `/${locale}/${to}`,
+        permanent:   true,
+      })),
+    );
+
     return [
       ...testRedirects,
       ...comingSoonRedirects,
@@ -145,6 +201,7 @@ const nextConfig = {
       ...blogMergeEnOnly,
       ...crossLocaleHistory,
       ...BLOG_DELETED,
+      ...legalRedirects,
     ];
   },
   async headers() {

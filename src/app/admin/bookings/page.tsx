@@ -71,7 +71,7 @@ export default async function BookingsPage({ searchParams }: Props) {
             ))}
           </div>
 
-          <form className="ml-auto flex items-center gap-2">
+          <form className="ms-auto flex items-center gap-2">
             {activeStatus && activeStatus !== 'all' && (
               <input type="hidden" name="status" value={activeStatus} />
             )}
@@ -81,7 +81,7 @@ export default async function BookingsPage({ searchParams }: Props) {
                 name="q"
                 defaultValue={q}
                 placeholder="Reference, name or email…"
-                className="pl-8 pr-4 py-2 text-sm border border-[#D4BC96] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C4452D]/30 focus:border-[#C4452D] w-64 bg-white"
+                className="ps-8 pe-4 py-2 text-sm border border-[#D4BC96] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C4452D]/30 focus:border-[#C4452D] w-64 bg-white"
               />
             </div>
             <button
@@ -98,7 +98,7 @@ export default async function BookingsPage({ searchParams }: Props) {
             <thead>
               <tr className="border-b border-[#E8D5B7]">
                 {['Reference', 'Name', 'Email', 'Ticket', 'Visit Date', 'Pax', 'Amount', 'Status', ''].map(h => (
-                  <th key={h} className="px-4 py-3 text-left text-xs font-semibold text-[#8B6344] uppercase tracking-wide">
+                  <th key={h} className="px-4 py-3 text-start text-xs font-semibold text-[#8B6344] uppercase tracking-wide">
                     {h}
                   </th>
                 ))}

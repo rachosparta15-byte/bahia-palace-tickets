@@ -16,7 +16,7 @@
     "subheadline": "Instant confirmation • Mobile tickets • Free cancellation up to 24h",
     "ctaBook": "Plan Your Visit",
     "ctaTours": "See Tour Options",
-    "trustNote": "Trusted by 50,000+ visitors"
+    "trustNote": "Independent booking service · Official tickets only"
   },
   "trust": {
     "instant": "100% Independent",
@@ -26,20 +26,20 @@
   },
   "tickets": {
     "title": "Choose Your Bahia Palace Experience",
-    "subtitle": "Skip the queues and enjoy a seamless visit to one of Marrakech's most stunning palaces",
+    "subtitle": "Buy online, skip the ticket-office queue, and walk up to the entrance with your code ready",
     "from": "From",
     "perPerson": "per person",
     "bookNow": "Get Tickets",
     "learnMore": "Learn More",
     "skipTheLine": {
       "name": "Skip-the-Line Entry",
-      "tagline": "Fast-track access to Bahia Palace",
+      "tagline": "The official ticket, plus what the ticket office does not give you",
       "duration": "Self-guided • ~1–2 hours",
       "includes": [
-        "Priority entry ticket",
-        "Mobile or printed ticket",
-        "No booking fee",
-        "Official tickets only"
+        "Official Bahia Palace entry ticket",
+        "Audio guide in your own language",
+        "WhatsApp support before and during your visit",
+        "Free cancellation until we send your code"
       ],
       "excludes": [
         "Guided commentary",
@@ -47,8 +47,8 @@
         "Food & drinks"
       ],
       "meetingPoint": "Main entrance of Bahia Palace, Rue Riad Zitoun el Jedid, Marrakech Medina",
-      "longDesc": "Skip the ticket queue and walk straight into one of Marrakech's most magnificent palaces. Your pre-validated QR ticket means zero time wasted at the booth. Explore at your own pace — most visitors spend 1 to 2 hours discovering the intricate zellige tilework, carved cedar ceilings, and lush inner gardens.",
-      "whyOnline": "Queues can reach 2 hours — book online and walk straight in"
+      "longDesc": "Buy online and you skip the ticket-office queue entirely — your QR code is already valid, so you go straight to the entrance instead of the booth. Explore at your own pace: most visitors spend 1 to 2 hours discovering the intricate zellige tilework, carved cedar ceilings and lush inner gardens.",
+      "whyOnline": "At the gate you queue and pay cash in dirhams, and nobody hands you a guide. Here it is one card payment, an audio guide in your own language, WhatsApp support, and free cancellation until we send your code."
     },
     "guidedTour": {
       "name": "Expert Guided Tour",
@@ -68,7 +68,7 @@
       ],
       "meetingPoint": "Main entrance of Bahia Palace — look for the guide holding the Bahia Palace Tickets sign",
       "longDesc": "Unlock the real secrets of Bahia Palace with a passionate certified guide. Learn why the palace was built in secret, discover the political intrigue behind its architecture, and uncover stories you simply won't find in any guidebook. Small groups of maximum 12 people ensure a personalised experience.",
-      "whyOnline": "Certified guides book out fast — secure your slot online now"
+      "whyOnline": "At the gate you queue and pay cash in dirhams, and nobody hands you a guide. Here it is one card payment, an audio guide in your own language, WhatsApp support, and free cancellation until we send your code."
     },
     "privateTour": {
       "name": "Private Tour",
@@ -87,7 +87,7 @@
       ],
       "meetingPoint": "Main entrance of Bahia Palace — your private guide will meet you there",
       "longDesc": "The ultimate Bahia Palace experience. Your private certified guide dedicates the entire visit to you and your group. Set your own pace, ask any question, and explore areas at your leisure. Perfect for families, couples, and anyone who wants the palace story told exclusively for them.",
-      "whyOnline": "Advance reservation required — private tours cannot be booked on-site"
+      "whyOnline": "At the gate you queue and pay cash in dirhams, and nobody hands you a guide. Here it is one card payment, an audio guide in your own language, WhatsApp support, and free cancellation until we send your code."
     },
     "combo": {
       "name": "Combo: Bahia + Saadian Tombs",
@@ -107,13 +107,13 @@
       ],
       "meetingPoint": "Bahia Palace main entrance first, then Saadian Tombs (10-min walk)",
       "longDesc": "Two of Marrakech's most breathtaking historic sites, one convenient ticket. Start at Bahia Palace's dazzling courtyards, then walk 10 minutes to the Saadian Tombs — opulent royal mausoleums sealed for 200 years and only rediscovered in 1917. Best value for history lovers.",
-      "whyOnline": "Combined ticket only available online — saves time at both sites"
+      "whyOnline": "At the gate you queue and pay cash in dirhams, and nobody hands you a guide. Here it is one card payment, an audio guide in your own language, WhatsApp support, and free cancellation until we send your code."
     },
     "visitorPack": {
       "name": "Complete Visitor Pack",
       "tagline": "Official entry ticket + digital audio guide",
       "duration": "Self-guided • ~1–2 hours",
-      "whyOnline": "Queues can reach 2 hours — book online and walk straight in",
+      "whyOnline": "At the gate you queue and pay cash in dirhams, and nobody hands you a guide. Here it is one card payment, an audio guide in your own language, WhatsApp support, and free cancellation until we send your code.",
       "includes": [
         "Official entry ticket (100 MAD, purchased for you)",
         "Premium audio guide",
@@ -234,11 +234,11 @@
     "items": [
       {
         "question": "Is Bahia Palace worth visiting in 2026?",
-        "answer": "Absolutely. Bahia Palace is one of the best-preserved examples of 19th-century Moroccan architecture. With 150 rooms, intricate zellige tilework, hand-painted cedar ceilings, and lush inner gardens, it offers an unmatched glimpse into Moroccan royal life. Most visitors rate it as the highlight of their Marrakech trip. At 100 MAD (≈$10), it's exceptional value — and with a skip-the-line ticket, the experience becomes completely seamless."
+        "answer": "Absolutely. Bahia Palace is one of the best-preserved examples of 19th-century Moroccan architecture. With 150 rooms, intricate zellige tilework, hand-painted cedar ceilings, and lush inner gardens, it offers an unmatched glimpse into Moroccan royal life. Most visitors rate it as the highlight of their Marrakech trip. At 100 MAD (≈ €9.90), it's exceptional value — and with a skip-the-line ticket, the experience becomes completely seamless."
       },
       {
         "question": "How much does Bahia Palace cost to enter?",
-        "answer": "The official gate entrance fee is 100 MAD (approximately $10 USD or €9). Children under 7 enter free, and children aged 7–13 pay 50 MAD. If you book online, skip-the-line tickets start from $10 — this includes priority entry and avoids queues that can reach 1–2 hours during peak season."
+        "answer": "The official gate entrance fee is 100 MAD (about €9.90). Children under 7 enter free, and children aged 7–13 pay 50 MAD. Booked online with us it is €12.90 per person — the official ticket, a multilingual audio guide and support — and it means you skip the ticket-office queue, which can reach 1–2 hours in peak season."
       },
       {
         "question": "How long do you need at Bahia Palace?",
@@ -250,7 +250,7 @@
       },
       {
         "question": "Is Bahia Palace free to enter?",
-        "answer": "Bahia Palace is not free for adult visitors. The entrance fee is 100 MAD (≈$10 USD). Children under 7 enter free, and children aged 7–13 pay 50 MAD (≈$5). Photography is included in the ticket price with no extra charges."
+        "answer": "Bahia Palace is not free for adult visitors. The entrance fee is 100 MAD (≈ €9.90). Children under 7 enter free, and children aged 7–13 pay 50 MAD (≈ €4.95). Photography is included in the ticket price with no extra charges."
       },
       {
         "question": "How do I get to Bahia Palace from Jemaa el-Fnaa?",
@@ -479,7 +479,7 @@
       },
       {
         "question": "How do I skip the line?",
-        "answer": "We point you to the official priority-entry ticket on the government portal — it's pre-validated by them, so there's no need to queue at the ticket booth."
+        "answer": "We point you to the official ticket on the government portal — it is pre-validated, so there is no need to queue at the ticket booth."
       }
     ]
   },
@@ -501,7 +501,7 @@
     "title": "You've read about it. Now walk through it.",
     "subtitle": "Book your skip-the-line ticket and step inside without the queue.",
     "button": "Book Bahia Palace Tickets",
-    "stickyMobile": "Skip the Line from $10"
+    "stickyMobile": "Skip the queue — €12.90"
   },
   "footer": {
     "tagline": "The easiest way to visit Bahia Palace.",
@@ -526,7 +526,7 @@
     "contact": "Contact",
     "copyright": "© {year} Bahia Palace Tickets. All rights reserved.",
     "paymentNote": "Free to use — official tickets only",
-    "disclaimer": "visitbahiapalace.com is an independent visitor information website. We are not affiliated with the official Bahia Palace or the Moroccan Ministry of Culture. For official tickets, visit: e-services.minculture.gov.ma",
+    "disclaimer": "visitbahiapalace.com is an independent visitor information and booking service. We are not affiliated with the official Bahia Palace or the Moroccan Ministry of Culture. Entry tickets can also be bought directly from the Ministry at <portal>e-services.minculture.gov.ma</portal>.",
     "network": "Part of an independent network of Morocco monument guides."
   },
   "whatsapp": {
@@ -624,7 +624,7 @@
     "hoursLabel": "Open daily",
     "hoursVal": "9:00 – 17:00",
     "priceLabel": "Entry",
-    "priceVal": "100 MAD (~$10)",
+    "priceVal": "100 MAD (≈ €9.36)",
     "locationLabel": "Location",
     "locationVal": "Rue Riad Zitoun el Jedid, Marrakech Medina"
   },
@@ -642,11 +642,14 @@
       "ctaDisabledHint": "We are not taking payments yet. Check back shortly."
     },
     "price": {
-      "amount": "$14",
+      "amount": "€12.90",
       "perPerson": "per person",
       "freeAlternative": "Just want the official ticket? Here’s how",
       "includes": "Official entry ticket + digital audio guide",
-      "taxesIncluded": "Taxes and fees included"
+      "taxesIncluded": "Taxes and fees included",
+      "officialLine": "Official entry ticket ({mad})",
+      "serviceLine": "Audio guide, map & support",
+      "convertedNote": "The official ticket price is set in Moroccan dirhams. The euro figure is converted at the rate of {date} and is shown for guidance."
     },
     "included": {
       "title": "Everything Included",
@@ -654,7 +657,7 @@
       "items": {
         "ticket": {
           "title": "Official entry ticket",
-          "desc": "The real 100 MAD Ministry of Culture ticket, bought on your behalf. Not a resale, not a markup hidden in the total."
+          "desc": "The real 100 MAD Ministry of Culture ticket, bought in your name. Not a resale — and the price you see is the price you pay."
         },
         "audio": {
           "title": "Premium audio guide",
@@ -714,11 +717,11 @@
       "items": {
         "official": {
           "q": "Is this the official Bahia Palace ticket?",
-          "a": "Yes — the entry ticket in the pack is the official 100 MAD ticket set by Morocco’s Ministry of Culture, which we purchase on your behalf. The pack costs $14 because it also includes our audio guide, visitor map and support. You are always free to buy the official ticket yourself at the gate for 100 MAD instead."
+          "a": "Yes. The entry ticket in the pack is the official 100 MAD ticket set by Morocco’s Ministry of Culture, bought in your name. The €12.90 also covers the digital audio guide, the visitor map, WhatsApp support and free cancellation until we send it."
         },
         "cheaper": {
-          "q": "Can I get in cheaper?",
-          "a": "Yes. The official ticket at the door is 100 MAD (about $10). If you only want entry and no extras, that is the cheaper option and we explain how to do it on our free tickets page."
+          "q": "What does the €12.90 cover?",
+          "a": "Entry alone is 100 MAD at the gate. Our price covers that ticket bought in your name, plus the audio guide in five languages, the visitor map, WhatsApp support before and during your visit, and free cancellation right up until we send your QR code. The Ministry also sells entry directly on its own portal if that is all you need."
         },
         "refund": {
           "q": "Can I get a refund?",
@@ -726,7 +729,7 @@
         },
         "delivery": {
           "q": "When do I receive my ticket?",
-          "a": "We send your official entry ticket and audio guide access to your email before your visit date."
+          "a": "If you are visiting today, usually within 10 minutes while the palace is open, and within the hour at the latest. If you book after it closes, the same evening — your code carries no date, so it still admits you the next morning. For a later date we send it about 24 hours before the day you told us you are visiting."
         },
         "group": {
           "q": "Can I book for a group?",
@@ -751,10 +754,14 @@
         "disabled": "Booking opens soon — no payment can be taken yet.",
         "pastDate": "Please choose a date that is not in the past.",
         "name": "Please enter your full name.",
-        "email": "Please enter a valid email address."
+        "email": "Please enter a valid email address.",
+        "visitors": "Please enter a number between 1 and {max}.",
+        "consent": "Please confirm this before continuing — it is required to complete your booking."
       },
       "summaryTitle": "Order summary",
-      "productName": "Bahia Palace — Complete Visitor Pack"
+      "productName": "Bahia Palace — Complete Visitor Pack",
+      "acceptCombined": "I can cancel free of charge until my QR code is sent. I understand that sending it completes my order, so the 14-day cooling-off right no longer applies from that moment, and I accept the <terms>Terms of Sale</terms> and the <refund>cancellation policy</refund>.",
+      "securePayment": "<b>Secure payment.</b> Your card details go straight to Stripe and never reach our servers."
     },
     "confirmation": {
       "packTitle": "Your Complete Visitor Pack",
@@ -762,7 +769,77 @@
       "ticketPendingDesc": "We are arranging your official entry ticket. It will be emailed to you before your visit date.",
       "audioTitle": "Audio guide access",
       "audioPendingDesc": "Your audio guide is being prepared. Access details will arrive with your ticket.",
-      "mockNotice": "This is a test-mode order. No payment was taken and no real ticket has been issued."
+      "mockNotice": "This is a test-mode order. No payment was taken and no real ticket has been issued.",
+      "audioReadyBadge": "Ready",
+      "audioReadyDesc": "Your audio guide is ready. Open it on your phone and download it before you go — it works offline inside the palace.",
+      "audioOpen": "Open your audio guide",
+      "ticketReady": "Your official entry ticket",
+      "ticketReadyBadge": "Ready",
+      "ticketReadyDesc": "Your official Bahia Palace entry ticket has been purchased and sent to you. Show it at the entrance — on your phone is fine, no printing needed.",
+      "ticketView": "View your ticket",
+      "ticketCodeLabel": "Ticket code",
+      "ticketPendingRefundable": "Your ticket has not been sent yet, so you can still cancel for a full refund. Once we send it, the booking becomes non-refundable (Terms of Sale, §5).",
+      "audioOfflineTip": "Open it the morning of your visit, while you have wifi. It downloads once (about 47 MB), then plays with no signal at all inside the palace. When your phone offers “Add to Home Screen”, choose it — that stops the audio being cleared later.",
+      "audioLinkPendingDesc": "Your access link is being prepared and will arrive by email shortly. If it has not reached you within a few minutes, contact us with your booking reference."
+    },
+    "valuePoints": {
+      "cancellation": "Free cancellation until we send your ticket",
+      "audioGuide": "Digital audio guide included",
+      "whatsapp": "Support via WhatsApp",
+      "skipLine": "Skip the ticket queue — available on site",
+      "priceDetailToggle": "Price details"
+    },
+    "inclusions": {
+      "ticket": "Official Bahia Palace entry ticket",
+      "audio": "Digital audio guide with the palace’s history",
+      "whatsapp": "WhatsApp support before and during your visit",
+      "cancellation": "Free cancellation"
+    },
+    "reassurance": {
+      "cancellation": {
+        "title": "Free cancellation.",
+        "body": "Change your mind any time before we send your ticket and you get every cent back — one WhatsApp message, no forms, no reason needed."
+      },
+      "delivery": {
+        "title": "Your ticket arrives before you need it.",
+        "body": "Visiting today? Usually within 10 minutes while the palace is open. Booking further ahead? We send it about 24 hours before your visit date, so it is fresh on your phone when you go."
+      },
+      "price": {
+        "title": "€12.90 per person, all taxes included.",
+        "body": "The official Ministry of Culture entry ticket bought in your name, the digital audio guide in five languages, and a real person on WhatsApp before and during your visit. Nothing is added at checkout."
+      },
+      "independence": "visitbahiapalace.com is an independent booking service run by specialists in Marrakech’s monuments. We are not the Ministry of Culture or the palace administration. Full details in our <terms>Terms of Sale</terms>."
     }
+  },
+  "booking": {
+    "cancellation": {
+      "title": "Need to cancel?",
+      "body": "Free cancellation until your ticket (QR code) is sent. To cancel and get a full refund, contact us:",
+      "whatsappCta": "Cancel via WhatsApp",
+      "whatsappMessage": "Hello, I would like to cancel my Bahia Palace booking {reference} and request a full refund.",
+      "emailSubject": "Cancellation request — booking {reference}",
+      "referenceHint": "Please quote your booking reference: {reference}",
+      "closed": "This booking can no longer be cancelled (ticket already delivered).",
+      "alreadyCancelled": "This booking has been cancelled."
+    }
+  },
+  "datePicker": {
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "previousMonth": "Previous month",
+    "nextMonth": "Next month"
+  },
+  "heroBanner": {
+    "outside": "<deg></deg> outside",
+    "coolNoQueue": "Cool palace, no queue",
+    "eyebrow": "Bahia Palace · Marrakech",
+    "title": "Step inside Morocco's most beautiful palace",
+    "subtitle": "Named <em>Bahia</em> — Arabic for “the brilliant one”"
+  },
+  "trustStrip": {
+    "instantConfirm": "Instant confirm",
+    "freeCancel": "Free cancel",
+    "mobileTicket": "Mobile ticket",
+    "secureBooking": "Secure booking"
   }
 }

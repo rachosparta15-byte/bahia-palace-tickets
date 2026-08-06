@@ -2,7 +2,7 @@
 // Safe to re-run — each ALTER TABLE is wrapped in a try/catch that skips
 // "duplicate column" errors.
 import dotenv from 'dotenv';
-dotenv.config({ path: '.env.local' });
+dotenv.config({ path: '.env.prod' });
 dotenv.config({ path: '.env' });
 
 import { PrismaLibSql } from '@prisma/adapter-libsql';

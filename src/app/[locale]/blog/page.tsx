@@ -139,7 +139,7 @@ export default async function BlogIndexPage({ params }: Props) {
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width:768px) 100vw, 33vw"
                     />
-                    <div className="absolute top-3 left-3">
+                    <div className="absolute top-3 start-3">
                       <span className="bg-[#C4452D] text-white text-xs font-semibold px-2.5 py-1 rounded-full">
                         {catLabel}
                       </span>

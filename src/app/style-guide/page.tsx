@@ -173,7 +173,7 @@ export default function StyleGuidePage() {
                 >
                   {t}
                 </h3>
-                <p className="text-[#5C3D20] text-sm">From $12 per person</p>
+                <p className="text-[#5C3D20] text-sm">From €12.90 per person</p>
               </div>
             ))}
           </div>

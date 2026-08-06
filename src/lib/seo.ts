@@ -6,7 +6,7 @@ const _url  = new URL(_raw);
 if (_url.hostname === 'visitbahiapalace.com') _url.hostname = 'www.visitbahiapalace.com';
 export const BASE = _url.origin; // always https://www.visitbahiapalace.com
 
-const LOCALES = ['en', 'fr', 'it', 'de', 'es'] as const;
+import { locales as LOCALES } from '@/i18n/routing';
 
 export function buildAlternates(locale: string, path: string) {
   const langs: Record<string, string> = { 'x-default': `${BASE}/en${path}` };
@@ -17,7 +17,7 @@ export function buildAlternates(locale: string, path: string) {
 export const DIGITAL_TICKET_OFFER_EXTRAS = {
   shippingDetails: {
     '@type': 'OfferShippingDetails',
-    shippingRate: { '@type': 'MonetaryAmount', value: '0', currency: 'USD' },
+    shippingRate: { '@type': 'MonetaryAmount', value: '0', currency: 'EUR' },
     shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'MA' },
     deliveryTime: {
       '@type': 'ShippingDeliveryTime',

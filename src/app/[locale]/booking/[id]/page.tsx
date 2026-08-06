@@ -3,10 +3,15 @@ import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import QRCode from 'qrcode';
 import prisma from '@/lib/db';
-import { email } from '@/lib/email';
+import { ensureColumns } from '@/lib/db/ensure-columns';
 import { payments } from '@/lib/payments';
+import { confirmBookingPaid } from '@/lib/payments/confirm-booking';
 import { mockConfirmationAllowed } from '@/lib/payments/guard';
+import { qrIsDelivered, BOOKING_STATUS } from '@/lib/booking-lifecycle';
+import { AUDIO_GUIDE_URL } from '@/lib/booking';
+import { buildGuideAccessUrl } from '@/lib/guide-token';
 import { VisitorPackConfirmation } from '@/components/visitor-pack/VisitorPackConfirmation';
+import { CancellationNotice } from '@/components/booking/CancellationNotice';
 import { CheckCircle2, Calendar, Users, Mail, Download, ArrowLeft } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -19,12 +24,28 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: 'Booking Confirmed — Bahia Palace Tickets', robots: 'noindex' };
 }
 
+/** Currency-aware total. EUR keeps its cents; the legacy USD rows never had any. */
+function formatTotal(amount: number, currency: string): string {
+  return currency === 'EUR' ? `€${amount.toFixed(2)}` : `$${amount.toFixed(0)}`;
+}
+
 export default async function BookingConfirmPage({ params, searchParams }: Props) {
   const { locale, id }               = await params;
   const { mock_success, session_id } = await searchParams;
 
+  await ensureColumns();
+
   let booking = await prisma.booking.findUnique({ where: { id } });
   if (!booking) notFound();
+
+  // ─── Fallback confirmation ────────────────────────────────────────
+  // The Stripe WEBHOOK (/api/webhooks/stripe) is the primary, reload-
+  // independent path — a payment is confirmed even if the customer never
+  // returns here. These two branches remain as a fallback for the customer
+  // who DOES land back on this page (e.g. local dev with no webhook
+  // forwarder). All side effects — status flip, order-confirmation email,
+  // lead→paid, fulfilment intent — live in confirmBookingPaid(), which is
+  // idempotent, so the webhook and a page load cannot double-fire.
 
   // Real (test-mode) Stripe return. Arriving at this URL is NOT proof of
   // payment — the id is guessable — so confirm only if Stripe says it was
@@ -36,10 +57,8 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
   ) {
     const { paid } = await payments.verifyCheckoutSession(session_id);
     if (paid) {
-      booking = await prisma.booking.update({
-        where: { id },
-        data:  { status: 'confirmed' },
-      });
+      await confirmBookingPaid(id, { via: 'return-page', paymentSessionId: session_id });
+      booking = (await prisma.booking.findUnique({ where: { id } })) ?? booking;
     }
   }
 
@@ -47,32 +66,37 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
   // Gated on the mock provider being active: with a real provider this
   // query parameter would be a free-booking exploit.
   if (mock_success === '1' && mockConfirmationAllowed() && booking.status === 'pending') {
-    booking = await prisma.booking.update({
-      where: { id },
-      data:  { status: 'confirmed', paymentSessionId: `mock_${Date.now()}` },
-    });
-    await email.sendBookingConfirmation({
-      to:           booking.customerEmail,
-      customerName: booking.customerName,
-      reference:    booking.reference,
-      ticketType:   booking.ticketType,
-      visitDate:    booking.visitDate.toISOString().split('T')[0],
-      adults:       booking.adults,
-      children:     booking.children,
-      totalAmount:  booking.totalAmount,
-      currency:     booking.currency,
-      locale:       booking.locale,
-    });
+    await confirmBookingPaid(id, { via: 'mock', paymentSessionId: `mock_${Date.now()}` });
+    booking = (await prisma.booking.findUnique({ where: { id } })) ?? booking;
   }
 
   const qrDataUrl = await QRCode.toDataURL(booking.reference, { width: 220, margin: 2, color: { dark: '#F5E8CC', light: '#1C1108' } });
   const visitDate = booking.visitDate.toISOString().split('T')[0];
-  const isConfirmed = booking.status === 'confirmed';
+  // Paid covers BOTH states after payment: 'confirmed' (QR not yet sent) and
+  // 'qr_sent'. Testing only for 'confirmed' would make a fulfilled booking
+  // suddenly render as 'pending payment' the moment its QR went out.
+  const isConfirmed =
+    booking.status === BOOKING_STATUS.paidAwaitingQr ||
+    booking.status === BOOKING_STATUS.qrSent;
 
   // The Visitor Pack's official ticket is not issued at purchase time (see
   // lib/fulfillment), so this QR is an order reference — NOT an entry pass.
   // Captioning it "scan at entrance" for a pack order would be a false promise.
   const isVisitorPack = booking.ticketType === 'visitor-pack';
+
+  // The tokenised audio-guide link, minted only for a PAID pack. Same
+  // deterministic token as the one in the confirmation email, so both open the
+  // same activation budget rather than each granting a fresh one. Null when
+  // GUIDE_TOKEN_SECRET is unset — the panel then says the link is being
+  // prepared instead of handing out the ungated URL.
+  const audioGuideUrl =
+    isVisitorPack && isConfirmed
+      ? buildGuideAccessUrl(AUDIO_GUIDE_URL, {
+          reference: booking.reference,
+          partySize: booking.adults,
+          visitDate,
+        })
+      : null;
 
   return (
     <div className="min-h-screen py-16 px-6 bg-[#1C1108]">
@@ -157,7 +181,7 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
                 <div>
                   <p className="text-xs text-[#C4A882] uppercase tracking-wide mb-1">Total Paid</p>
                   <p className="font-bold text-[#C4452D] text-xl" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
-                    ${booking.totalAmount.toFixed(0)}
+                    {formatTotal(booking.totalAmount, booking.currency)}
                   </p>
                 </div>
                 <div>
@@ -203,18 +227,24 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
             locale={locale}
             visitors={booking.adults}
             reference={booking.reference}
+            confirmed={isConfirmed}
+            audioGuideUrl={audioGuideUrl}
+            qrDelivered={qrIsDelivered(booking)}
+            qrCode={booking.qrCode}
+            hasQrFile={Boolean(booking.qrFileRef)}
+            bookingId={booking.id}
           />
         )}
 
-        {/* Cancel link */}
-        <p className="text-center mt-6 text-sm text-[#C4A882]">
-          Need to cancel?{' '}
-          <Link href="/contact" className="text-[#C4452D] hover:underline">
-            Contact us
-          </Link>{' '}
-          with reference{' '}
-          <span className="font-semibold">{booking.reference}</span>
-        </p>
+        {/* Cancellation — state-aware. Replaces the old unconditional
+            "Need to cancel? Contact us" line, which offered cancellation
+            even after the QR had gone out and the policy had closed it. */}
+        <CancellationNotice
+          locale={locale}
+          reference={booking.reference}
+          status={booking.status}
+          qrDelivered={qrIsDelivered(booking)}
+        />
       </div>
     </div>
   );

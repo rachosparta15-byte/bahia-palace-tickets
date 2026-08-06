@@ -1,0 +1,861 @@
+{
+  "terms": {
+    "slug": "terms",
+    "locale": "it",
+    "site": "visitbahiapalace",
+    "brand": "Visit Bahia Palace",
+    "title": "Condizioni di vendita",
+    "updated": "2026-07-29",
+    "lede": "Queste condizioni disciplinano il servizio di prenotazione gestito da [MARRAKECH LOCAL LLC] su visitbahiapalace.com e sui siti dei monumenti della sua rete. Spiegano esattamente che cosa stai acquistando, che cosa no, e che cosa succede se qualcosa va storto.",
+    "sections": [
+      {
+        "id": "who-we-are",
+        "heading": "1. Con chi stipuli il contratto",
+        "paragraphs": [
+          "Il servizio di prenotazione presente su questo sito e su ciascun sito della nostra rete è gestito da [MARRAKECH LOCAL LLC], società a responsabilità limitata (LLC) costituita nello Stato del [US STATE OF FORMATION], Stati Uniti, con sede legale in [REGISTERED ADDRESS LINE 1], [REGISTERED ADDRESS LINE 2], [CITY], [STATE] [ZIP], United States (la «Società», «noi»).",
+          "Qualunque sia il sito della rete su cui hai prenotato, il tuo contratto è con [MARRAKECH LOCAL LLC]. È questa l'entità che compare sulla tua fattura e sul tuo estratto conto. L'assistenza è fornita dallo stesso team all'indirizzo [SUPPORT@MARRAKECHLOCAL.COM].",
+          "Siamo un'azienda privata indipendente. Non siamo un'autorità pubblica, né l'amministrazione di un monumento, né una biglietteria ufficiale, né un ente turistico nazionale o regionale. Non siamo affiliati al Ministero della Cultura marocchino o alla direzione di alcun monumento, né da essi sostenuti, incaricati o autorizzati. Nulla sui nostri siti deve essere inteso diversamente."
+        ]
+      },
+      {
+        "id": "what-you-buy",
+        "heading": "2. Che cosa stai acquistando",
+        "paragraphs": [
+          "Ci incarichi di svolgere due prestazioni per tuo conto:"
+        ],
+        "list": [
+          "Un acquisto di concierge: otteniamo un biglietto d'ingresso ufficiale per il monumento, la data e il numero di visitatori che selezioni, acquistandolo dal canale di biglietteria ufficiale, a tuo nome e su tua istruzione.",
+          "Un'audioguida digitale: una guida registrata e multilingue di quel monumento, fornita come contenuto digitale che ascolti sul tuo dispositivo."
+        ]
+      },
+      {
+        "id": "what-you-are-not-buying",
+        "heading": "3. Che cosa non stai acquistando",
+        "paragraphs": [
+          "Per evitare fraintendimenti, il nostro servizio non comprende:"
+        ],
+        "list": [
+          "Una guida in carne e ossa o una visita guidata. L'audioguida è una registrazione, non una persona.",
+          "Il trasporto da e per il monumento.",
+          "L'ingresso prioritario o «salta la fila» dove il monumento stesso non prevede un accesso prioritario. Quando un monumento ha una sola fila, avere un biglietto significa che non fai la coda alla biglietteria, non che salti la fila d'ingresso.",
+          "Alcuna garanzia di ammissione quando l'ingresso viene negato per motivi che dipendono da te, tra cui presentarsi nella data sbagliata, fuori dagli orari di apertura, o essere respinto dal personale del monumento per condotta o abbigliamento.",
+          "Alcun diritto o licenza concessi dal monumento o da una pubblica autorità."
+        ]
+      },
+      {
+        "id": "price",
+        "heading": "4. Prezzo e trasparenza",
+        "paragraphs": [
+          "Tutti i prezzi sono indicati in euro, comprendono tutte le imposte e i costi, e corrispondono all'importo totale che ti verrà addebitato. Al momento del pagamento non si aggiungono supplementi.",
+          "Il nostro prezzo è superiore a quello ufficiale al botteghino. Mostriamo il prezzo ufficiale accanto al nostro su ogni pagina di prenotazione, insieme a un link al portale ufficiale del ministero all'indirizzo https://www.tickets-monuments.ma/, così puoi confrontarli e acquistare direttamente se preferisci. La differenza copre l'ottenimento del biglietto per tuo conto, l'audioguida digitale, l'assistenza multilingue e la finestra di cancellazione gratuita descritta nella nostra Informativa su rimborsi e cancellazioni.",
+          "I prezzi ufficiali sono fissati da terzi e cambiano senza che ce ne venga data notizia. Li verifichiamo regolarmente; tuttavia, quando il prezzo ufficiale indicato sul nostro sito differisce da quello effettivamente praticato al monumento, fa fede quello del monumento e la nostra indicazione costituisce un errore, non un'offerta."
+        ]
+      },
+      {
+        "id": "formation",
+        "heading": "5. Conclusione del contratto",
+        "paragraphs": [
+          "Il tuo ordine è una proposta d'acquisto. Il contratto si conclude quando ti inviamo un'e-mail di conferma contenente il tuo riferimento di prenotazione. Se non possiamo evadere un ordine — ad esempio perché il monumento è chiuso nella data scelta, i biglietti non sono disponibili o la richiesta appare fraudolenta — te lo comunicheremo e ti rimborseremo integralmente.",
+          "Non devi accettare che siamo indipendenti dal monumento: te lo comunichiamo. Questa indicazione compare nella pagina di pagamento, subito sopra il modulo, prima che tu inserisca qualsiasi dato della carta, ed è registrata insieme al tuo ordine.",
+          "Prima di poter pagare devi spuntare una casella che conferma entrambi gli elementi: che accetti che il servizio inizi con la consegna del tuo codice QR, che sia integralmente eseguito in quel momento e che pertanto perdi il diritto di recesso di 14 giorni, sia per l'acquisto effettuato per tuo conto sia per l'audioguida digitale; e che accetti queste Condizioni e la nostra Informativa su rimborsi e cancellazioni. La dicitura sul diritto di recesso è scritta per esteso accanto alla casella, non nascosta dietro un collegamento.",
+          "Conserviamo il testo esatto che ti è stato mostrato, nella tua lingua, insieme all'ora in cui l'hai accettato. Lo facciamo perché entrambe le parti possano poi stabilire che cosa sia stato realmente concordato."
+        ]
+      },
+      {
+        "id": "delivery",
+        "heading": "6. Consegna",
+        "paragraphs": [
+          "Dopo il pagamento otteniamo il tuo biglietto e ti inviamo un codice QR insieme a un link alla tua audioguida digitale, via e-mail e, se ci hai fornito un numero, via WhatsApp. La consegna avviene prima della data della visita.",
+          "La consegna del codice QR è il momento in cui il nostro servizio è eseguito. È anche il momento in cui termina il tuo diritto di cancellazione: vedi l'Informativa su rimborsi e cancellazioni.",
+          "È tua responsabilità fornirci un indirizzo e-mail funzionante e controllare la cartella spam. Se 48 ore prima della visita non hai ricevuto il codice QR, contattaci subito a [SUPPORT@MARRAKECHLOCAL.COM] o via WhatsApp al +212 607-223008: te lo rinvieremo."
+        ]
+      },
+      {
+        "id": "your-visit",
+        "heading": "7. La tua visita",
+        "paragraphs": [
+          "I biglietti sono validi per il monumento, la data e il numero di visitatori indicati. L'ingresso resta soggetto al regolamento, agli orari e alla capienza del monumento, sui quali non abbiamo alcun controllo.",
+          "I monumenti in Marocco chiudono occasionalmente con brevissimo preavviso per restauri, ricorrenze religiose, visite ufficiali o maltempo. Se il monumento è chiuso nella data prenotata e non riesci a entrare, contattaci: otterremo un biglietto per un'altra data quando possibile, oppure ti rimborseremo integralmente. È l'unica circostanza in cui un biglietto già consegnato viene rimborsato, perché il servizio non ha potuto essere utilizzato senza colpa da parte tua."
+        ]
+      },
+      {
+        "id": "audio-guide",
+        "heading": "8. L'audioguida",
+        "paragraphs": [
+          "L'audioguida ti è concessa in licenza per uso personale e non commerciale in relazione alla tua visita. Non puoi ridistribuirla, rivenderla, pubblicarla né diffonderla pubblicamente.",
+          "Si riproduce in un normale browser web e richiede una connessione a internet al momento del caricamento. Non sostituisce una guida turistica abilitata e non conferisce alcun diritto di accesso."
+        ]
+      },
+      {
+        "id": "liability",
+        "heading": "9. La nostra responsabilità",
+        "paragraphs": [
+          "Siamo tenuti a eseguire il servizio descritto in queste condizioni con ragionevole diligenza e competenza. In caso contrario, rispondiamo dei danni che ne siano conseguenza prevedibile.",
+          "La nostra responsabilità complessiva in relazione a una prenotazione è limitata all'importo che hai versato per essa, salvo dove la legge non consenta tale limitazione. Non escludiamo né limitiamo la responsabilità per morte o lesioni personali causate da nostra negligenza, per dolo o dichiarazioni fraudolente, né alcuna altra responsabilità non escludibile per legge.",
+          "Non rispondiamo di atti od omissioni del monumento o del suo personale, di chiusure o restrizioni d'accesso imposte dal monumento o da una pubblica autorità, né di spese di viaggio, alloggio o altre spese sostenute in relazione a una visita.",
+          "Nulla in queste condizioni pregiudica i tuoi diritti di consumatore previsti dalla legge."
+        ]
+      },
+      {
+        "id": "complaints",
+        "heading": "10. Reclami e risoluzione delle controversie",
+        "paragraphs": [
+          "Se qualcosa è andato storto, scrivici prima a [SUPPORT@MARRAKECHLOCAL.COM] indicando il tuo riferimento di prenotazione. Cerchiamo di rispondere entro 24 ore e di risolvere i reclami entro 14 giorni.",
+          "Se la nostra risposta non ti soddisfa e risiedi nell'Unione europea, potresti poterti rivolgere all'organismo ADR del tuo Paese. Chiedicelo e ti indicheremo quello competente per il tuo caso.",
+          "Ti preghiamo di segnalarci il problema prima di contattare la tua banca. Un chargeback avviato senza averci contattato è più lento di un rimborso e, quando possiamo dimostrare che il servizio è stato erogato come descritto, lo contestiamo."
+        ]
+      },
+      {
+        "id": "law",
+        "heading": "11. Legge applicabile",
+        "paragraphs": [
+          "Queste condizioni sono regolate dalla legge dello Stato del [US STATE OF FORMATION], Stati Uniti.",
+          "Se sei un consumatore residente nell'Unione europea o nel Regno Unito, questa scelta di legge non ti priva della tutela garantita dalle norme imperative in materia di consumo del Paese in cui risiedi, e puoi adire i tribunali di quel Paese."
+        ]
+      },
+      {
+        "id": "changes",
+        "heading": "12. Modifiche a queste condizioni",
+        "paragraphs": [
+          "Possiamo aggiornare queste condizioni. Alla tua prenotazione si applica la versione in vigore alla data in cui l'hai effettuata, e conserviamo ogni versione. La data in cima alla pagina indica l'ultima modifica."
+        ]
+      },
+      {
+        "id": "contact",
+        "heading": "13. Contatti",
+        "paragraphs": [
+          "[MARRAKECH LOCAL LLC], [REGISTERED ADDRESS LINE 1], [REGISTERED ADDRESS LINE 2], [CITY], [STATE] [ZIP], United States. E-mail: [SUPPORT@MARRAKECHLOCAL.COM]. Comunicazioni legali: [LEGAL@MARRAKECHLOCAL.COM]."
+        ]
+      }
+    ],
+    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+  },
+  "refunds": {
+    "slug": "refunds",
+    "locale": "it",
+    "site": "visitbahiapalace",
+    "brand": "Visit Bahia Palace",
+    "title": "Informativa su rimborsi e cancellazioni",
+    "updated": "2026-07-29",
+    "lede": "In breve: cancella in qualsiasi momento prima che inviamo il tuo codice QR e ti restituiamo tutto. Una volta inviato il codice QR, il biglietto è emesso per una data precisa e non è rimborsabile. Questa pagina spiega perché, ed elenca le eccezioni.",
+    "sections": [
+      {
+        "id": "summary",
+        "heading": "1. La regola, in una riga",
+        "paragraphs": [
+          "Cancellazione gratuita e rimborso totale in qualsiasi momento prima che inviamo il tuo codice QR. Nessun rimborso dopo l'invio, salvo i casi specifici elencati al punto 5."
+        ]
+      },
+      {
+        "id": "before-delivery",
+        "heading": "2. Prima che il tuo codice QR venga inviato",
+        "paragraphs": [
+          "Scrivi a [SUPPORT@MARRAKECHLOCAL.COM] indicando il riferimento della prenotazione, oppure manda un messaggio WhatsApp al +212 607-223008. Cancelleremo la prenotazione e rimborseremo l'intero importo versato, senza commissioni e senza chiederti spiegazioni.",
+          "I rimborsi tornano sul metodo di pagamento originario. La velocità con cui il denaro ricompare la decide la tua banca; in pratica sono 3-10 giorni lavorativi.",
+          "Puoi verificare se il biglietto è già stato inviato cercando la nostra e-mail di consegna. Nel dubbio, chiedicelo: ti diremo lo stato della prenotazione prima che tu decida."
+        ]
+      },
+      {
+        "id": "after-delivery",
+        "heading": "3. Dopo che il tuo codice QR è stato inviato",
+        "paragraphs": [
+          "Una volta inviato il codice QR, la prenotazione non è rimborsabile. Il codice resta utilizzabile in un altro giorno: a non essere più possibile è il rimborso, non la visita.",
+          "Non è un limite arbitrario. A quel punto abbiamo acquistato il biglietto dal canale ufficiale e te l'abbiamo consegnato. Il codice fa entrare chiunque lo presenti — non riporta né nome né data — quindi da quando ti arriva può essere usato, salvato o inoltrato, e non abbiamo modo di dimostrare che non sia accaduto. La prestazione per cui ci hai incaricati è stata eseguita."
+        ]
+      },
+      {
+        "id": "legal-basis",
+        "heading": "4. Perché il diritto di recesso di 14 giorni non si applica dopo la consegna",
+        "paragraphs": [
+          "I consumatori dell'UE e del Regno Unito hanno di norma 14 giorni per recedere da un contratto a distanza. A ciò che vendiamo si applicano due eccezioni consolidate che, insieme, ne coprono l'intero contenuto. Le esponiamo chiaramente anziché nasconderle, così puoi verificare il nostro ragionamento.",
+          "Il biglietto d'Il biglietto d’ingresso. Quello che ci affidi è una prestazione: ottenere per tuo conto un biglietto ufficiale. I contratti di servizi sono esclusi dal diritto di recesso una volta che il servizio è stato interamente prestato, quando l’esecuzione è iniziata con il tuo previo consenso espresso e con la tua accettazione di perdere il diritto a esecuzione completata (direttiva 2011/83/UE, articolo 16, lettera a; in Italia art. 59, comma 1, lettera a, del Codice del Consumo). Il tuo incarico è eseguito per intero nel momento in cui il biglietto è nelle tue mani: è quel momento, non la data della visita, a segnare il limite.",
+          "L'audioguida. La fornitura di contenuto digitale non su supporto materiale è esclusa dal diritto di recesso quando l'esecuzione è iniziata con l'accordo espresso e preventivo del consumatore e con la sua accettazione del fatto di perdere così tale diritto (articolo 16, lettera m, della direttiva; art. 59, comma 1, lettera o, del Codice del Consumo). È esattamente ciò che raccoglie la seconda casella della nostra pagina di pagamento, nella tua lingua e prima del pagamento — e conserviamo il testo che ti è stato mostrato insieme all'ora della tua accettazione.",
+          "Poiché raccogliamo tale accordo e poiché non avviamo l'esecuzione finché non inviamo il tuo codice QR, mantieni un diritto di cancellazione reale e senza limiti fino al momento stesso della consegna. Riteniamo sia una soluzione più equa di una finestra di 14 giorni che scadrebbe mentre sei ancora in attesa del biglietto."
+        ]
+      },
+      {
+        "id": "exceptions",
+        "heading": "5. Quando rimborsiamo comunque una prenotazione consegnata",
+        "paragraphs": [
+          "Rimborsiamo integralmente, anche dopo la consegna, in ciascuno di questi casi:"
+        ],
+        "list": [
+          "Il monumento era chiuso nella data prenotata e non hai potuto entrare, comprese le chiusure impreviste per restauri, visite ufficiali, ricorrenze religiose o maltempo.",
+          "Il biglietto fornito non era valido per la data, il monumento o il numero di visitatori prenotati.",
+          "Non abbiamo consegnato il tuo codice QR prima della data della visita.",
+          "Abbiamo commesso nella tua prenotazione un errore che non siamo riusciti a correggere prima della visita."
+        ]
+      },
+      {
+        "id": "no-show",
+        "heading": "6. Se non ti presenti",
+        "paragraphs": [
+          "Un codice che non hai usato non è rimborsabile, ma non è nemmeno perduto: non riporta alcuna data, quindi ti farà entrare anche alla prossima visita. Quello che non possiamo fare è riprendercelo: da quando ti è arrivato non abbiamo modo di dimostrare che non sia stato usato o passato ad altri.",
+          "Se sai in anticipo che non potrai venire, diccelo comunque. Se non abbiamo ancora inviato il codice QR, cancelleremo e rimborseremo per intero. Se lo abbiamo inviato, non possiamo rimborsare — ma dove il monumento consente un cambio di data lo chiederemo per tuo conto, senza alcuna garanzia che accetti."
+        ]
+      },
+      {
+        "id": "changes",
+        "heading": "7. Modificare una prenotazione",
+        "paragraphs": [
+          "Prima della consegna cambiamo gratuitamente la data o il numero di visitatori, salvo disponibilità. Se la nuova prenotazione costa di più, paghi la differenza; se costa meno, te la rimborsiamo.",
+          "Dopo la consegna il cambio di data è a discrezione del monumento e di norma non è possibile."
+        ]
+      },
+      {
+        "id": "how-to-claim",
+        "heading": "8. Come presentare una richiesta",
+        "paragraphs": [
+          "Scrivi a [SUPPORT@MARRAKECHLOCAL.COM] con il riferimento della prenotazione e, se pertinente, una fotografia dell'avviso di chiusura o del biglietto che ti è stato rifiutato. Cerchiamo di rispondere entro 24 ore e di decidere sulle richieste di rimborso entro 14 giorni dal ricevimento delle informazioni necessarie.",
+          "Se respingiamo una richiesta, te ne indichiamo per iscritto il motivo e ti spieghiamo come contestare la decisione."
+        ]
+      },
+      {
+        "id": "chargebacks",
+        "heading": "9. Prima di contattare la tua banca",
+        "paragraphs": [
+          "Parlane prima con noi. Rimborsiamo rapidamente quando il rimborso è dovuto, e un chargeback richiede molto più tempo di un'e-mail.",
+          "Quando una prenotazione è stata consegnata come descritto e le condizioni di cui sopra sono state accettate al momento del pagamento, contestiamo il chargeback e forniamo al prestatore di servizi di pagamento la registrazione di ciò che è stato mostrato e accettato al momento dell'acquisto."
+        ]
+      }
+    ],
+    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+  },
+  "delivery": {
+    "slug": "delivery",
+    "locale": "it",
+    "site": "visitbahiapalace",
+    "brand": "Visit Bahia Palace",
+    "title": "Politica di consegna ed esecuzione",
+    "updated": "2026-07-29",
+    "lede": "Che cosa ricevi dopo il pagamento, come ti arriva e in quanto tempo. Tutto ciò che vendiamo viene consegnato per via elettronica: non c’è nulla da spedire e non viene addebitata alcuna spesa di spedizione.",
+    "sections": [
+      {
+        "id": "what-is-delivered",
+        "heading": "1. Che cosa viene consegnato",
+        "list": [
+          "Un codice QR o un riferimento d’ingresso per il monumento e la data prenotati, ottenuto dal canale ufficiale di biglietteria su tua istruzione.",
+          "Un link all’audioguida digitale di quel monumento, nella lingua scelta al momento dell’acquisto.",
+          "Una conferma di prenotazione con il tuo riferimento, la data della visita, il numero di biglietti e l’importo pagato."
+        ]
+      },
+      {
+        "id": "method",
+        "heading": "2. Come avviene la consegna",
+        "paragraphs": [
+          "Via e-mail, all’indirizzo indicato in fase di acquisto. È il metodo principale e predefinito, nonché l’unico che richiediamo.",
+          "In aggiunta via WhatsApp, al +212 607-223008, se ci hai fornito un numero di cellulare e lo hai richiesto. È una comodità, non un sostituto: inviamo sempre anche l’e-mail, così un WhatsApp non arrivato non significa mai una prenotazione non consegnata.",
+          "Non c’è alcuna spedizione fisica. Nulla viene spedito per posta e in nessun momento vengono addebitate spese di spedizione, gestione o consegna."
+        ]
+      },
+      {
+        "id": "timing",
+        "heading": "3. Quando arriva",
+        "paragraphs": [
+          "Arrivano due cose, e solo due. Una conferma di pagamento, subito. Poi un unico invio con tutto il resto — il codice QR, il link all’audioguida e il tuo numero di assistenza — insieme in un solo messaggio. Niente arriva a pezzi."
+        ],
+        "table": {
+          "head": [
+            "Prenotazione per",
+            "Quando arrivano codice QR e audioguida"
+          ],
+          "rows": [
+            [
+              "Oggi, mentre il monumento è aperto",
+              "Di solito entro 10 minuti, e al massimo entro un’ora"
+            ],
+            [
+              "Oggi, dopo la chiusura del monumento",
+              "La sera stessa. Il tuo codice non riporta alcuna data, quindi ti farà entrare il mattino dopo"
+            ],
+            [
+              "Domani",
+              "Di solito entro 10 minuti dal pagamento"
+            ],
+            [
+              "Una data successiva",
+              "Circa 24 ore prima del giorno di visita che ci hai indicato, non al momento della prenotazione"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "why-we-wait",
+        "heading": "4. Perché una prenotazione per la settimana prossima non arriva oggi",
+        "paragraphs": [
+          "Perché il codice è un titolo al portatore, senza nome e senza data: tenerlo per settimane prima del viaggio è il modo migliore per perderlo. Finisce in una vecchia e-mail sotto altre cento più recenti, o in un telefono che è stato cambiato. Inviarlo circa un giorno prima lo mette in cima alla casella proprio quando ti serve.",
+          "Inoltre allunga il tuo diritto di cancellazione. Puoi annullare con rimborso completo finché non abbiamo inviato il codice: una prenotazione fatta dieci giorni prima resta quindi annullabile per nove. Inviarlo subito chiuderebbe quella finestra già il primo giorno.",
+          "Se preferisci averlo adesso, chiedicelo. Scrivi a [SUPPORT@MARRAKECHLOCAL.COM] o manda un messaggio al +212 607-223008 e te lo invieremo in anticipo — tenendo presente che questo pone fine al tuo diritto di cancellazione, esattamente come accadrebbe con la tempistica normale."
+        ]
+      },
+      {
+        "id": "where",
+        "heading": "5. Dove consegniamo",
+        "paragraphs": [
+          "Ovunque. La consegna è elettronica, quindi non esiste un paese in cui non possiamo consegnare né alcun supplemento di destinazione. Ti serve soltanto un indirizzo e-mail consultabile durante il viaggio.",
+          "La prestazione in sé viene eseguita a Marrakech, in Marocco. Stai acquistando l’ingresso a un monumento che si trova lì, in una data a tua scelta, più un’audioguida digitale utilizzabile ovunque."
+        ]
+      },
+      {
+        "id": "not-arrived",
+        "heading": "6. Se non è arrivato nulla",
+        "paragraphs": [
+          "Controlla prima la cartella spam o promozioni, poi l’indirizzo digitato in fase di acquisto: un indirizzo scritto male è di gran lunga la causa più frequente.",
+          "Se 48 ore prima della visita non hai ricevuto il codice QR, contattaci subito a [SUPPORT@MARRAKECHLOCAL.COM] o via WhatsApp al +212 607-223008. Lo rinvieremo, anche a un altro indirizzo se preferisci.",
+          "Puntiamo a rispondere entro 24 ore, 09:00–21:00 (GMT+1), 7 days a week. Se la visita è domani, usa WhatsApp: ci arriva prima dell’e-mail."
+        ]
+      },
+      {
+        "id": "failure",
+        "heading": "7. Se non possiamo consegnare",
+        "paragraphs": [
+          "Se non riusciamo a ottenere il tuo biglietto — la data va esaurita, il monumento chiude o il canale ufficiale non è disponibile — te lo comunichiamo appena lo sappiamo e ti rimborsiamo per intero. Non sostituiamo una data diversa o un monumento diverso senza chiedertelo prima.",
+          "Il rimborso integrale in questa situazione non è un gesto commerciale. È ciò che ti spetta: non abbiamo consegnato ciò per cui hai pagato."
+        ]
+      }
+    ],
+    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+  },
+  "payments": {
+    "slug": "payments",
+    "locale": "it",
+    "site": "visitbahiapalace",
+    "brand": "Visit Bahia Palace",
+    "title": "Pagamenti e sicurezza",
+    "updated": "2026-07-29",
+    "lede": "Chi incassa il tuo pagamento, cosa possiamo e non possiamo vedere, e come apparirà l’addebito sul tuo estratto conto.",
+    "sections": [
+      {
+        "id": "who-processes",
+        "heading": "1. Chi elabora il tuo pagamento",
+        "paragraphs": [
+          "I pagamenti con carta sono elaborati da Stripe. Dove offerto e se lo scegli, i pagamenti PayPal sono elaborati da PayPal. Entrambi sono istituti di pagamento regolamentati ed entrambi figurano come responsabili del trattamento nella nostra Informativa sulla privacy.",
+          "Paghi sul sito in cui ti trovi già. Non ti reindirizziamo a un altro marchio o a un altro dominio per incassare, perché ritrovarsi su un sito sconosciuto proprio al momento del pagamento è esattamente quando le persone abbandonano una prenotazione — e fanno bene."
+        ]
+      },
+      {
+        "id": "card-data",
+        "heading": "2. Ciò che non vediamo mai",
+        "paragraphs": [
+          "Il numero della carta, la data di scadenza e il codice di sicurezza vengono inseriti direttamente in un modulo ospitato da Stripe e trasmessi a Stripe. Non passano dai nostri server e non vengono mai memorizzati nei nostri sistemi. Non potremmo recuperare il numero della tua carta nemmeno se ce lo chiedessi.",
+          "Stripe è certificata PCI DSS Livello 1, il livello più alto definito dai circuiti di pagamento. La nostra integrazione è progettata perché l’ambiente dei dati di carta resti interamente dalla loro parte.",
+          "Ciò che conserviamo è elencato nell’Informativa sulla privacy: nome, e-mail, telefono se fornito, monumento e data prenotati, importo e un riferimento di pagamento del fornitore."
+        ]
+      },
+      {
+        "id": "statement",
+        "heading": "3. Cosa appare sull’estratto conto",
+        "paragraphs": [
+          "L’addebito riporta una dicitura che identifica il sito su cui hai prenotato, così che la riga sull’estratto corrisponda al marchio da cui ricordi di aver acquistato. La dicitura esatta della tua prenotazione ti viene mostrata prima del pagamento e ripetuta nell’e-mail di conferma.",
+          "È una scelta deliberata. La maggior parte delle contestazioni sulle carte non è frode: sono persone che settimane dopo non riconoscono una riga sull’estratto. Se non riesci a collocare un nostro addebito, scrivi a [SUPPORT@MARRAKECHLOCAL.COM] indicando importo e data e te lo identificheremo in giornata."
+        ]
+      },
+      {
+        "id": "authentication",
+        "heading": "4. Autenticazione forte del cliente",
+        "paragraphs": [
+          "I pagamenti dei clienti dello Spazio economico europeo e del Regno Unito sono soggetti ad autenticazione forte. La tua banca può chiederti di confermare il pagamento nella sua app o tramite un codice: è il 3-D Secure, è richiesto dalla normativa ed è la tua banca a chiederlo, non noi.",
+          "Se l’autenticazione non riesce, il pagamento non si completa e nessuna prenotazione viene creata. Non viene addebitato nulla e puoi riprovare."
+        ]
+      },
+      {
+        "id": "currency",
+        "heading": "5. Valuta",
+        "paragraphs": [
+          "Tutti i prezzi sono indicati e addebitati in euro (EUR). Il prezzo ufficiale d’ingresso al monumento è indicato anche in dirham marocchini (MAD) accanto al nostro, così vedi esattamente quanto chiede la biglietteria e quanto costa in più il nostro servizio.",
+          "Se la tua carta è denominata in un’altra valuta, la conversione la esegue la tua banca al proprio tasso e può aggiungere una propria commissione. Quella conversione riguarda te e la tua banca; noi riceviamo l’importo in euro indicato."
+        ]
+      },
+      {
+        "id": "fraud",
+        "heading": "6. Prevenzione delle frodi",
+        "paragraphs": [
+          "Stripe e PayPal effettuano controlli antifrode sui pagamenti effettuati tramite questo sito, il che comporta il trattamento di informazioni tecniche sul dispositivo e sulla transazione. È necessario per incassare in sicurezza e si basa sul nostro legittimo interesse a prevenire le frodi; è descritto nelle nostre Informative su privacy e cookie.",
+          "Possiamo rifiutare una prenotazione, oppure annullarla e rimborsarla, quando un pagamento viene segnalato ad alto rischio. In tal caso rimborsiamo per intero sul metodo di pagamento originario."
+        ]
+      },
+      {
+        "id": "disputes",
+        "heading": "7. Contestazioni e storni",
+        "paragraphs": [
+          "Se qualcosa non va con una prenotazione, contattaci prima di rivolgerti alla banca. Quando è dovuto un rimborso lo eroghiamo rapidamente, e uno storno richiede molto più tempo per essere risolto di quanto ne richieda un’e-mail.",
+          "Quando una prenotazione è stata consegnata come descritto e le nostre condizioni sono state accettate all’acquisto, contesteremo lo storno e forniremo al fornitore la registrazione di ciò che è stato esattamente mostrato e accettato al momento dell’acquisto, compresi il confronto dei prezzi e la politica di rimborso così come apparivano a schermo."
+        ]
+      }
+    ],
+    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+  },
+  "privacy": {
+    "slug": "privacy",
+    "locale": "it",
+    "site": "visitbahiapalace",
+    "brand": "Visit Bahia Palace",
+    "title": "Informativa sulla privacy",
+    "updated": "2026-07-29",
+    "lede": "Quali dati personali raccoglie [MARRAKECH LOCAL LLC], perché, con chi li condividiamo e quali diritti hai su di essi. Scritta per essere letta: se qualcosa non ti è chiaro, scrivici a [PRIVACY@MARRAKECHLOCAL.COM] e te lo spiegheremo.",
+    "sections": [
+      {
+        "id": "controller",
+        "heading": "1. Titolare del trattamento",
+        "paragraphs": [
+          "Il titolare del trattamento è [MARRAKECH LOCAL LLC], [REGISTERED ADDRESS LINE 1], [REGISTERED ADDRESS LINE 2], [CITY], [STATE] [ZIP], United States. Contatto per ogni questione di protezione dei dati: [PRIVACY@MARRAKECHLOCAL.COM].",
+          "Siamo stabiliti al di fuori dell'Unione europea e del Regno Unito ma offriamo servizi a persone situate in entrambi i territori. Abbiamo quindi nominato rappresentanti ai sensi dell'articolo 27 del GDPR e dell'articolo 27 del GDPR britannico. Puoi rivolgerti a loro anziché a noi, se preferisci."
+        ],
+        "list": [
+          "Rappresentante UE: [EU ARTICLE 27 REPRESENTATIVE — NAME AND EU ADDRESS]",
+          "Rappresentante Regno Unito: [UK REPRESENTATIVE — NAME AND UK ADDRESS]"
+        ]
+      },
+      {
+        "id": "what-we-collect",
+        "heading": "2. Che cosa raccogliamo e perché",
+        "paragraphs": [
+          "Non raccogliamo categorie particolari di dati, non effettuiamo profilazione e non adottiamo decisioni automatizzate che producano effetti giuridici nei tuoi confronti."
+        ],
+        "table": {
+          "head": [
+            "Dati",
+            "Finalità",
+            "Base giuridica",
+            "Conservazione"
+          ],
+          "rows": [
+            [
+              "Nome, e-mail, telefono / WhatsApp",
+              "Creare la prenotazione, consegnare biglietto e audioguida, contattarti sulla visita",
+              "Esecuzione del contratto",
+              "7 anni"
+            ],
+            [
+              "Dati della prenotazione (monumento, data, numero di visitatori, importo pagato)",
+              "Eseguire la prenotazione e assolvere obblighi contabili e fiscali",
+              "Contratto; obbligo di legge",
+              "7 anni"
+            ],
+            [
+              "Registrazione del consenso (testo mostrato e ora di accettazione)",
+              "Dimostrare quanto concordato e rispondere a controversie di pagamento",
+              "Obbligo di legge; legittimo interesse alla difesa in giudizio",
+              "7 anni"
+            ],
+            [
+              "Istantanea probatoria del checkout (prezzi e avvisi mostrati, user-agent, Paese)",
+              "Rispondere a chargeback e contestazioni per frode",
+              "Legittimo interesse a prevenire e contestare le frodi sui pagamenti",
+              "24 mesi"
+            ],
+            [
+              "Dati di pagamento",
+              "Incassare. I dati della carta sono inseriti direttamente in Stripe e non raggiungono mai i nostri server",
+              "Contratto",
+              "Conservati da Stripe secondo la sua informativa"
+            ],
+            [
+              "Dati di analisi (pagine viste, posizione approssimativa, dispositivo)",
+              "Capire quali guide risultano utili",
+              "Consenso — disattivato finché non lo autorizzi",
+              "14 mesi"
+            ],
+            [
+              "Indirizzo per la newsletter",
+              "Inviarti la lettera mensile che hai richiesto",
+              "Consenso",
+              "Fino alla cancellazione"
+            ],
+            [
+              "Messaggi dal modulo di contatto",
+              "Risponderti",
+              "Legittimo interesse a dar seguito alle richieste",
+              "24 mesi"
+            ],
+            [
+              "Log del server (indirizzo IP, richiesta, marca temporale)",
+              "Sicurezza, prevenzione degli abusi, diagnosi dei guasti",
+              "Legittimo interesse alla sicurezza del servizio",
+              "30 giorni"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "children",
+        "heading": "3. Minori",
+        "paragraphs": [
+          "I nostri servizi non sono rivolti ai minori e non raccogliamo consapevolmente dati di persone di età inferiore ai 14 anni. Quando una prenotazione include bambini, raccogliamo solo il numero di visitatori, non i loro nomi né le loro età."
+        ]
+      },
+      {
+        "id": "sharing",
+        "heading": "4. Con chi condividiamo i dati",
+        "paragraphs": [
+          "Non vendiamo dati personali e non lo faremo mai. Li condividiamo solo con i fornitori necessari a far funzionare il servizio, ciascuno dei quali li tratta su nostra istruzione e in forza di un contratto scritto:"
+        ],
+        "list": [
+          "Stripe, Inc. — payment processing, fraud prevention, chargeback handling (United States / Ireland; basis: Contract; Standard Contractual Clauses for transfers); PayPal (Europe) S.à r.l. et Cie, S.C.A. — optional alternative payment method (Luxembourg / United States; basis: Contract; Standard Contractual Clauses for transfers); Vercel Inc. — website hosting, CDN, server logs (United States (edge nodes worldwide); basis: Contract; Standard Contractual Clauses for transfers); Resend, Inc. — transactional email — order confirmations and ticket delivery (United States; basis: Contract; Standard Contractual Clauses for transfers); WhatsApp Ireland Ltd (Meta) — optional ticket delivery and customer support messaging (Ireland / United States; basis: Contract; Standard Contractual Clauses for transfers); Google Ireland Ltd — analytics and, once enabled, advertising — consent-gated (Ireland / United States; basis: Consent; Standard Contractual Clauses for transfers)",
+          "Il canale di biglietteria ufficiale, che riceve i dati del visitatore necessari a emettere il biglietto.",
+          "I nostri consulenti professionali e le autorità pubbliche, quando siamo tenuti per legge a comunicarli."
+        ]
+      },
+      {
+        "id": "transfers",
+        "heading": "5. Trasferimenti internazionali",
+        "paragraphs": [
+          "Siamo una società statunitense e diversi nostri fornitori hanno sede negli Stati Uniti o vi trasferiscono dati. Quando dati personali di persone nell'UE o nel Regno Unito sono trasferiti fuori da tali aree, ci basiamo sulle Clausole Contrattuali Standard della Commissione europea, integrate dall'Addendum britannico sui trasferimenti internazionali dove si applica il GDPR britannico, e valutiamo caso per caso se siano necessarie garanzie supplementari.",
+          "Puoi richiedere copia delle garanzie in essere scrivendo a [PRIVACY@MARRAKECHLOCAL.COM]."
+        ]
+      },
+      {
+        "id": "rights",
+        "heading": "6. I tuoi diritti",
+        "paragraphs": [
+          "Se ti si applica il GDPR o il GDPR britannico, hai diritto a:"
+        ],
+        "list": [
+          "Accedere ai dati personali che ti riguardano e ottenerne copia.",
+          "Far rettificare i dati inesatti.",
+          "Ottenere la cancellazione dei dati, quando non ci servono più e nessun obbligo di legge ci impone di conservarli.",
+          "Limitare il trattamento od opporti ad esso quando si fonda sul nostro legittimo interesse.",
+          "Ricevere i dati che ci hai fornito in un formato portabile e leggibile da dispositivo automatico.",
+          "Revocare il consenso in qualsiasi momento, quando il trattamento si fonda su di esso, senza pregiudicare i trattamenti già effettuati.",
+          "Proporre reclamo alla tua autorità di controllo. In Italia è il Garante per la protezione dei dati personali."
+        ]
+      },
+      {
+        "id": "exercising",
+        "heading": "7. Come esercitarli",
+        "paragraphs": [
+          "Scrivi a [PRIVACY@MARRAKECHLOCAL.COM]. Rispondiamo entro un mese. Potremmo chiederti di confermare la tua identità, ma solo nella misura necessaria: non pretenderemo la scansione di un passaporto per rispondere a una domanda su una prenotazione da 12,90 €.",
+          "Non possiamo cancellare i dati che dobbiamo conservare per finalità contabili, né una registrazione del consenso e un'istantanea probatoria relativi a un pagamento finché resta aperto un termine di contestazione. In tal caso te lo diremo, indicando quando i dati saranno eliminati."
+        ]
+      },
+      {
+        "id": "security",
+        "heading": "8. Sicurezza",
+        "paragraphs": [
+          "Tutto il traffico è cifrato in transito. I dati della carta sono inseriti direttamente nei campi ospitati da Stripe e non sono mai trasmessi ai nostri server né conservati da noi: non deteniamo alcun numero di carta. L'accesso ai dati degli ordini è limitato alle persone che ne hanno bisogno per fornire assistenza.",
+          "Se si verifica una violazione che possa comportare un rischio per i tuoi diritti, la notificheremo all'autorità di controllo competente entro 72 ore e, in caso di rischio elevato, te ne daremo comunicazione diretta."
+        ]
+      },
+      {
+        "id": "cookies-link",
+        "heading": "9. Cookie",
+        "paragraphs": [
+          "I cookie e le tecnologie analoghe sono trattati separatamente nella nostra Informativa sui cookie, che spiega anche come modificare o revocare le tue scelte."
+        ]
+      },
+      {
+        "id": "changes",
+        "heading": "10. Modifiche",
+        "paragraphs": [
+          "Aggiorneremo questa informativa quando cambieranno i nostri trattamenti. Quando una modifica è sostanziale lo segnaleremo in modo evidente, anziché limitarci a cambiare la data in cima alla pagina."
+        ]
+      }
+    ],
+    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+  },
+  "cookies": {
+    "slug": "cookies",
+    "locale": "it",
+    "site": "visitbahiapalace",
+    "brand": "Visit Bahia Palace",
+    "title": "Informativa sui cookie",
+    "updated": "2026-07-29",
+    "lede": "Quali cookie usiamo, a cosa serve ciascuno e come cambiare idea. Su questo sito non si attiva nulla oltre allo strettamente necessario finché non hai attivamente acconsentito.",
+    "sections": [
+      {
+        "id": "how-we-handle",
+        "heading": "1. Come gestiamo il consenso",
+        "paragraphs": [
+          "Alla prima visita ti viene chiesto di scegliere. Finché non accetti, vengono impostati solo cookie strettamente necessari: lo script di analisi non viene caricato affatto, anziché essere caricato e poi pregato di comportarsi bene. Rifiutare è esattamente facile quanto accettare, e nessuna casella è pre-spuntata.",
+          "Puoi modificare o revocare la tua scelta in qualsiasi momento tramite il link «Impostazioni cookie» nel piè di pagina. La revoca del consenso all'analisi elimina anche i cookie di analisi a cui abbiamo accesso."
+        ]
+      },
+      {
+        "id": "necessary",
+        "heading": "2. Cookie strettamente necessari",
+        "paragraphs": [
+          "Sono indispensabili al funzionamento del sito e del pagamento, e vengono impostati senza consenso perché il servizio non può essere fornito senza di essi."
+        ],
+        "table": {
+          "head": [
+            "Cookie",
+            "Impostato da",
+            "Finalità",
+            "Durata"
+          ],
+          "rows": [
+            [
+              "NEXT_LOCALE",
+              "visitbahiapalace.com",
+              "Ricorda la lingua scelta per non rilevarla di nuovo a ogni visita",
+              "1 anno"
+            ],
+            [
+              "ml_consent",
+              "visitbahiapalace.com",
+              "Memorizza le tue scelte sui cookie e quando le hai fatte",
+              "6 mesi"
+            ],
+            [
+              "__stripe_mid, __stripe_sid",
+              "Stripe",
+              "Prevenzione delle frodi sul modulo di pagamento. Necessari per incassare in sicurezza",
+              "1 anno / 30 minuti"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "analytics",
+        "heading": "3. Cookie di analisi — disattivati finché non li autorizzi",
+        "paragraphs": [
+          "Usiamo Google Analytics per vedere quali guide vengono lette e quali no. Gli indirizzi IP sono anonimizzati e non usiamo i dati di analisi per identificare singole persone."
+        ],
+        "table": {
+          "head": [
+            "Cookie",
+            "Impostato da",
+            "Finalità",
+            "Durata"
+          ],
+          "rows": [
+            [
+              "_ga",
+              "Google",
+              "Distingue i visitatori",
+              "2 anni"
+            ],
+            [
+              "_ga_*",
+              "Google",
+              "Mantiene lo stato della sessione",
+              "2 anni"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "advertising",
+        "heading": "4. Cookie pubblicitari",
+        "paragraphs": [
+          "Al momento non pubblichiamo annunci e non viene impostato alcun cookie pubblicitario. Se introdurremo la pubblicità, aggiorneremo prima questa informativa, aggiungeremo a questa pagina i cookie specifici e richiederemo un consenso separato. La pubblicità non verrà mai attivata sulla base di un consenso dato alla sola analisi."
+        ]
+      },
+      {
+        "id": "browser",
+        "heading": "5. Gestire i cookie dal browser",
+        "paragraphs": [
+          "Indipendentemente dal nostro banner, puoi bloccare o eliminare i cookie dalle impostazioni del browser. Bloccare i cookie strettamente necessari impedirà il funzionamento del pagamento e probabilmente anche del selettore di lingua."
+        ]
+      },
+      {
+        "id": "contact",
+        "heading": "6. Domande",
+        "paragraphs": [
+          "Scrivi a [PRIVACY@MARRAKECHLOCAL.COM]."
+        ]
+      }
+    ],
+    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+  },
+  "accessibility": {
+    "slug": "accessibility",
+    "locale": "it",
+    "site": "visitbahiapalace",
+    "brand": "Visit Bahia Palace",
+    "title": "Dichiarazione di accessibilità",
+    "updated": "2026-07-29",
+    "lede": "A cosa puntiamo, cosa sappiamo essere imperfetto, e come segnalarci ciò che ti blocca.",
+    "sections": [
+      {
+        "id": "commitment",
+        "heading": "1. Il nostro obiettivo",
+        "paragraphs": [
+          "Visit Bahia Palace punta al livello AA delle WCAG 2.1, il riferimento della norma EN 301 549, norma armonizzata a supporto dell’Atto europeo sull’accessibilità (direttiva (UE) 2019/882), applicabile ai servizi di commercio elettronico rivolti ai consumatori nell’UE dal 28 giugno 2025.",
+          "Questa dichiarazione descrive uno stato di fatto, non proclama la perfezione. Dove siamo carenti preferiamo dirlo qui piuttosto che lasciartelo scoprire al momento del pagamento."
+        ]
+      },
+      {
+        "id": "what-we-do",
+        "heading": "2. Cosa è già in atto",
+        "list": [
+          "Ogni comando interattivo è raggiungibile e utilizzabile da tastiera, con un contorno di focus visibile che rispetta il contrasto 3:1 rispetto allo sfondo.",
+          "Il testo corrente rispetta un contrasto di 4,5:1, e il testo sopra le fotografie poggia su una velatura con soglia misurata, non presunta.",
+          "Le animazioni sono racchiuse in prefers-reduced-motion: un’impostazione di sistema le rimuove invece di limitarsi ad accorciarle.",
+          "Il sito è pienamente utilizzabile a 320 px di larghezza e al 200% di zoom, senza scorrimento orizzontale.",
+          "L’arabo è servito in vero destra-sinistra, con proprietà CSS logiche: l’impaginazione è realmente speculare, non rattoppata visivamente.",
+          "I campi dei moduli hanno etichette permanenti, e gli errori vengono annunciati e non solo colorati di rosso.",
+          "Il banner dei cookie offre Accetta e Rifiuta con identica evidenza e dimensione, e si chiude solo con una scelta esplicita."
+        ]
+      },
+      {
+        "id": "known-gaps",
+        "heading": "3. Limiti noti",
+        "list": [
+          "Le audioguide non hanno ancora la trascrizione integrale in tutte le lingue in cui esiste l’audio. Dove c’è, è pubblicata accanto al player; dove non c’è, la guida è offerta in testo anziché come audio muto.",
+          "Alcune fotografie hanno testi alternativi scritti solo a partire da metadati verificati. Dove non è stato possibile confermare cosa mostri un’immagine, il testo alternativo descrive ciò che è visibile invece di nominare l’edificio.",
+          "I campi di pagamento di terzi sono resi da Stripe e PayPal dentro i loro frame. Non abbiamo controllo sul loro markup interno e ci affidiamo alla loro conformità.",
+          "Questo sito non è ancora stato verificato da uno specialista indipendente di accessibilità. La verifica è prevista prima del lancio e questa dichiarazione sarà aggiornata con esiti e data."
+        ]
+      },
+      {
+        "id": "feedback",
+        "heading": "4. Segnalarci un problema",
+        "paragraphs": [
+          "Se qualcosa su questo sito ti blocca, scrivi a [SUPPORT@MARRAKECHLOCAL.COM] indicando l’indirizzo della pagina e cosa è successo. Puntiamo a rispondere entro 24 ore, 09:00–21:00 (GMT+1), 7 days a week.",
+          "Se non riesci a completare una prenotazione per una barriera di accessibilità, diccelo: la completeremo noi via e-mail o WhatsApp al +212 607-223008, allo stesso prezzo. Non devi pagare di più, né pagare una persona, perché una pagina ti ha lasciato a piedi.",
+          "Se la nostra risposta non ti soddisfa, i consumatori dell’UE possono rivolgersi all’autorità nazionale di vigilanza del mercato o di applicazione del proprio Paese."
+        ]
+      }
+    ],
+    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+  },
+  "notice": {
+    "slug": "notice",
+    "locale": "it",
+    "site": "visitbahiapalace",
+    "brand": "Visit Bahia Palace",
+    "title": "Note legali",
+    "updated": "2026-07-29",
+    "lede": "Informazioni sull'editore di visitbahiapalace.com e dei siti della sua rete, fornite per adempiere agli obblighi di identificazione applicabili nei mercati in cui vendiamo.",
+    "sections": [
+      {
+        "id": "publisher",
+        "heading": "1. Editore e gestore",
+        "list": [
+          "Società: [MARRAKECH LOCAL LLC]",
+          "Forma giuridica: Limited Liability Company (LLC), costituita nello Stato del [US STATE OF FORMATION], Stati Uniti",
+          "Sede legale: [REGISTERED ADDRESS LINE 1], [REGISTERED ADDRESS LINE 2], [CITY], [STATE] [ZIP], United States",
+          "Agente registrato: [REGISTERED AGENT NAME AND ADDRESS]",
+          "Numero di registrazione: [COMPANY REGISTRATION NUMBER]",
+          "Codice fiscale statunitense (EIN): [EIN]",
+          "Rappresentata da: [LEGAL REPRESENTATIVE NAME(S)]",
+          "E-mail: [LEGAL@MARRAKECHLOCAL.COM]",
+          "Assistenza clienti: [SUPPORT@MARRAKECHLOCAL.COM] · WhatsApp +212 607-223008 · 09:00–21:00 (GMT+1), 7 days a week"
+        ]
+      },
+      {
+        "id": "responsibility",
+        "heading": "2. Responsabile dei contenuti",
+        "paragraphs": [
+          "La responsabilità editoriale dei contenuti di questo sito è di [LEGAL REPRESENTATIVE NAME(S)], all'indirizzo sopra indicato."
+        ]
+      },
+      {
+        "id": "network",
+        "heading": "3. Siti gestiti",
+        "paragraphs": [
+          "[MARRAKECH LOCAL LLC] gestisce visitbahiapalace.com insieme a una rete di siti dedicati ciascuno a un solo monumento. Tutti incassano tramite gli stessi conti intestati a [MARRAKECH LOCAL LLC], applicano le stesse condizioni e la stessa informativa sui rimborsi, e sono seguiti dallo stesso team. L'elenco aggiornato dei siti è pubblicato nel piè di pagina di ogni pagina."
+        ]
+      },
+      {
+        "id": "independence",
+        "heading": "4. Dichiarazione di indipendenza",
+        "paragraphs": [
+          "[MARRAKECH LOCAL LLC] è una società commerciale privata. Non è un ente pubblico, né l'amministrazione di un monumento, né un ente turistico. Non è affiliata al Ministero della Cultura marocchino, alla direzione di alcun monumento o ad alcuna agenzia governativa, non è da essi sostenuta e non agisce per loro conto.",
+          "Quando vendiamo un biglietto d'ingresso lo facciamo in qualità di concierge, su istruzione del cliente e acquistandolo per suo conto dal canale ufficiale. Non deteniamo alcuna concessione, licenza o incarico da parte di un monumento o di un'autorità.",
+          "I biglietti ufficiali possono essere acquistati direttamente sul portale del ministero all'indirizzo https://www.tickets-monuments.ma/ (Ministère de la Jeunesse, de la Culture et de la Communication), che linkiamo da ogni pagina di prenotazione."
+        ]
+      },
+      {
+        "id": "ip",
+        "heading": "5. Proprietà intellettuale",
+        "paragraphs": [
+          "Testi, impaginazione, audioguide e fotografie originali di questo sito sono di proprietà di [MARRAKECH LOCAL LLC], salvo diversa indicazione, e non possono essere riprodotti senza autorizzazione.",
+          "Le fotografie utilizzate su licenza o con licenza Creative Commons sono accreditate accanto all'immagine, con link alla licenza applicabile. I nomi dei monumenti e i marchi di terzi sono usati in senso descrittivo e restano di proprietà dei rispettivi titolari; il loro uso qui non implica alcuna associazione.",
+          "Se ritieni che un contenuto di questo sito violi i tuoi diritti, scrivi a [LEGAL@MARRAKECHLOCAL.COM] indicando l'URL e i dati dell'opera. Rimuoveremo il materiale mentre svolgiamo le verifiche."
+        ]
+      },
+      {
+        "id": "accuracy",
+        "heading": "6. Accuratezza",
+        "paragraphs": [
+          "In Marocco orari, prezzi e modalità di accesso cambiano spesso e senza preavviso. Li verifichiamo regolarmente e datiamo ogni guida, ma non possiamo garantire che ogni dettaglio sia aggiornato nel momento in cui lo leggi. Quando un dato è determinante per i tuoi piani, confermalo con il monumento.",
+          "Hai trovato qualcosa di superato? Segnalalo a [SUPPORT@MARRAKECHLOCAL.COM] e lo correggeremo."
+        ]
+      },
+      {
+        "id": "external-links",
+        "heading": "7. Link esterni",
+        "paragraphs": [
+          "Rimandiamo a siti di terzi, tra cui il portale ufficiale di biglietteria e i nostri partner commerciali. Non controlliamo i loro contenuti e non ne rispondiamo. I link commerciali sono segnalati nella nostra Informativa su affiliazione e pubblicità."
+        ]
+      },
+      {
+        "id": "dispute",
+        "heading": "8. Risoluzione delle controversie di consumo",
+        "paragraphs": [
+          "Siamo disponibili a risolvere direttamente le controversie di consumo. Scrivi in prima battuta a [SUPPORT@MARRAKECHLOCAL.COM]. I consumatori dell'Unione europea possono inoltre rivolgersi all'organismo ADR del proprio Paese."
+        ]
+      }
+    ],
+    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+  },
+  "affiliate-disclosure": {
+    "slug": "affiliate-disclosure",
+    "locale": "it",
+    "site": "visitbahiapalace",
+    "brand": "Visit Bahia Palace",
+    "title": "Informativa su affiliazione e pubblicità",
+    "updated": "2026-07-29",
+    "lede": "Come guadagna Visit Bahia Palace, per intero. In tre modi, tutti dichiarati qui, e nessuno consente di comprare una raccomandazione.",
+    "sections": [
+      {
+        "id": "summary",
+        "heading": "1. In sintesi",
+        "list": [
+          "Il nostro servizio di prenotazione: applichiamo un prezzo superiore a quello del botteghino, e la differenza è il nostro margine. Il prezzo ufficiale è mostrato accanto al nostro su ogni pagina di prenotazione.",
+          "Commissione di affiliazione: alcuni link ad hotel, riad e tour ci fanno guadagnare una commissione se prenoti tramite essi, senza costi aggiuntivi per te.",
+          "Pubblicità: al momento nessuna. Se la introdurremo, gli annunci saranno segnalati e questa pagina verrà aggiornata prima."
+        ]
+      },
+      {
+        "id": "affiliate-links",
+        "heading": "2. Come funzionano i link di affiliazione",
+        "paragraphs": [
+          "Quando rimandiamo a un partner, il link contiene un codice di tracciamento che ci identifica. Se prenoti, il partner ci versa una percentuale di quanto incassa. Tu paghi esattamente lo stesso prezzo che pagheresti andando diretto: la commissione esce dal margine del partner, non dalla tua tasca.",
+          "Ogni link di affiliazione su questo sito porta l'attributo HTML rel=\"sponsored nofollow\", con cui si comunica ai motori di ricerca la natura commerciale del link. Le pagine che contengono link di affiliazione mostrano un avviso in alto, prima che i link compaiano."
+        ]
+      },
+      {
+        "id": "partners",
+        "heading": "3. Con chi abbiamo rapporti commerciali",
+        "paragraphs": [
+          "Partecipiamo a programmi di affiliazione per alloggi, tour e transfer. L'elenco aggiornato dei partner è mantenuto nel nostro codice sorgente e pubblicato qui; se ne aggiungiamo uno, questa pagina cambia nello stesso momento."
+        ]
+      },
+      {
+        "id": "editorial",
+        "heading": "4. Che cosa non compra una commissione",
+        "paragraphs": [
+          "Nessun hotel, riad, ristorante, tour operator o partner può pagare per comparire in una guida, per essere raccomandato, per figurare più in alto o per far togliere una critica. Non abbiamo mai accettato denaro in cambio di una raccomandazione e non intendiamo farlo.",
+          "Quando riteniamo che qualcosa sia sopravvalutato lo diciamo, comprese le cose su cui potremmo guadagnare una commissione, e compreso il nostro stesso servizio di prenotazione, il cui prezzo confrontiamo apertamente con l'acquisto diretto.",
+          "Quando un rapporto con un partner potrebbe ragionevolmente sembrare aver influenzato ciò che abbiamo scritto, lo indichiamo nell'articolo stesso anziché affidarci a questa pagina."
+        ]
+      },
+      {
+        "id": "advertising",
+        "heading": "5. Pubblicità",
+        "paragraphs": [
+          "Al momento non mostriamo pubblicità. Qualora lo facessimo, gli annunci saranno chiaramente identificati come pubblicità e visivamente separati dal contenuto editoriale, i cookie pubblicitari richiederanno un consenso a sé, e le nostre informative su privacy e cookie saranno aggiornate prima del primo annuncio.",
+          "Gli inserzionisti non avranno alcuna influenza sui contenuti editoriali, e non accetteremo pubblicità indistinguibile da una guida."
+        ]
+      },
+      {
+        "id": "gifts",
+        "heading": "6. Viaggi stampa e ospitalità offerta",
+        "paragraphs": [
+          "Se accettiamo un soggiorno, un pasto o un'attività gratuiti o scontati per poterne scrivere, lo dichiariamo nel pezzo stesso. Accettare ospitalità non ci impegna a una recensione positiva, e lo diciamo al fornitore prima di accettare."
+        ]
+      },
+      {
+        "id": "questions",
+        "heading": "7. Domande",
+        "paragraphs": [
+          "Se vuoi sapere se un determinato link o una raccomandazione sono commerciali, chiedilo a [SUPPORT@MARRAKECHLOCAL.COM] e te lo diremo con franchezza."
+        ]
+      }
+    ],
+    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+  }
+}

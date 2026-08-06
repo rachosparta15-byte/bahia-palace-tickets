@@ -90,14 +90,35 @@ export async function verifyWebhookSignature(payload: string, signature: string)
   }
 }
 
-export async function refundPayment(paymentSessionId: string, amount?: number): Promise<boolean> {
+export async function refundPayment(
+  paymentSessionId: string,
+  amount?: number,
+  /**
+   * A stable key (e.g. the booking id) so a retried refund is a no-op at
+   * Stripe rather than a second refund. This closes the one remaining
+   * double-refund window: refund succeeds, then our DB write fails, and the
+   * request is retried. Stripe returns the SAME refund for the same key.
+   */
+  idempotencyKey?: string
+): Promise<{ ok: boolean; refundId?: string }> {
   const Stripe = (await import('stripe')).default;
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { apiVersion: '2026-04-22.dahlia' });
-  const session = await stripe.checkout.sessions.retrieve(paymentSessionId);
-  if (!session.payment_intent) return false;
-  await stripe.refunds.create({
-    payment_intent: session.payment_intent as string,
-    ...(amount ? { amount: Math.round(amount * 100) } : {}),
-  });
-  return true;
+  try {
+    const session = await stripe.checkout.sessions.retrieve(paymentSessionId);
+    if (!session.payment_intent) return { ok: false };
+    const refund = await stripe.refunds.create(
+      {
+        payment_intent: session.payment_intent as string,
+        ...(amount ? { amount: Math.round(amount * 100) } : {}),
+      },
+      idempotencyKey ? { idempotencyKey: `refund_${idempotencyKey}` } : undefined
+    );
+    return { ok: true, refundId: refund.id };
+  } catch (err) {
+    // Never throw into the cancel route — it must be able to tell the admin
+    // "the refund did not go through, the booking was NOT cancelled" rather
+    // than 500. Returning ok:false is that signal.
+    console.error('[payments] refund failed:', err);
+    return { ok: false };
+  }
 }

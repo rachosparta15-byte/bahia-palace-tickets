@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { useRouter } from '@/i18n/navigation';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { usePaymentsFlags } from '@/components/layout/PaymentsFlagsProvider';
-import { Check, ArrowRight, Clock, Star, Zap, ShieldCheck } from 'lucide-react';
+import { Check, ArrowRight, Clock, Star, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import { TICKET_PRICES } from '@/lib/ticket-data';
 
@@ -131,7 +131,6 @@ export function TicketCards({ overrides = {} }: Props) {
             const name      = t(`${key}.name`      as any);
             const tagline   = t(`${key}.tagline`   as any);
             const duration  = t(`${key}.duration`  as any);
-            const whyOnline = t(`${key}.whyOnline` as any);
             const includes  = (t.raw(`${key}.includes` as any) as string[]);
 
             return (
@@ -159,7 +158,7 @@ export function TicketCards({ overrides = {} }: Props) {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#160D06]/40" />
 
                   {/* Available Now ribbon */}
-                  <div className="absolute top-4 left-0 bg-[#C4452D] text-white text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-r-full flex items-center gap-1.5 shadow-lg">
+                  <div className="absolute top-4 left-0 bg-[#C4452D] text-white text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-e-full flex items-center gap-1.5 shadow-lg">
                     <Star size={9} className="fill-current" /> Available Now
                   </div>
                 </div>
@@ -178,11 +177,6 @@ export function TicketCards({ overrides = {} }: Props) {
                   <div className="flex items-center gap-1.5 text-xs text-[#8FA63C] mb-4">
                     <Clock size={12} />
                     <span>{duration}</span>
-                  </div>
-
-                  <div className={`flex items-start gap-2 bg-[#E8A33D]/08 border border-[#E8A33D]/18 rounded-lg px-3 py-2.5 mb-4 ${isSingle ? 'hidden sm:flex' : ''}`}>
-                    <Zap size={12} className="text-[#E8A33D] mt-0.5 shrink-0" />
-                    <p className="text-xs text-[#E8A33D] leading-snug font-semibold">{whyOnline}</p>
                   </div>
 
                   {isSingle ? (
@@ -209,17 +203,15 @@ export function TicketCards({ overrides = {} }: Props) {
                   <div className="mt-auto pt-4 border-t border-[rgba(232,163,61,0.15)]">
                     <div className="flex items-center justify-between gap-4">
                       <div>
-                        {/* "From" would imply a cheaper option exists. The pack
-                            is a single fixed price, so the label is omitted. */}
-                        {slug !== 'visitor-pack' && (
-                          <p className="text-[10px] text-[#C4A882] uppercase tracking-wide mb-0.5">{t('from')}</p>
-                        )}
+                        {/* No "From": there is one fixed price per person, so
+                            the label would imply a cheaper option that does not
+                            exist. */}
                         <p
                           className="font-bold text-[#C4452D] tabular-nums lining-nums"
                           style={{ fontSize: isSingle ? '1.75rem' : '1.5rem', lineHeight: 1, fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif', fontVariantNumeric: 'lining-nums tabular-nums' }}
                         >
-                          ${price}
-                          <span className="text-xs font-normal text-[#C4A882] ml-1">{t('perPerson')}</span>
+                          €{price.toFixed(2)}
+                          <span className="text-xs font-normal text-[#C4A882] ms-1">{t('perPerson')}</span>
                         </p>
                       </div>
                       <div onClick={(e) => e.stopPropagation()}>
@@ -234,15 +226,18 @@ export function TicketCards({ overrides = {} }: Props) {
                       </div>
                     </div>
 
-                    {/* "Free to use" is true of the comparison products, which
-                        send you to the official portal — but NOT of the pack,
-                        which we charge for. Saying it on a paid product would
-                        be plainly false. */}
+                    {/* Payments OFF → the non-pack cards hand off to the free
+                        official portal, so "Free to use" is true of them.
+                        Payments ON → every CTA leads to the paid pack, so that
+                        claim would be false; show the included-ticket line
+                        instead. Gated on the same flag as the funnel. */}
                     <div className={`flex items-center gap-1.5 mt-3 text-[11px] text-[#C4A882] ${isSingle ? 'hidden sm:flex' : ''}`}>
                       <ShieldCheck size={12} className="text-[#8FA63C]" />
                       {slug === 'visitor-pack'
                         ? 'Official entry ticket included — no queue at the booth'
-                        : 'Free to use — official tickets only'}
+                        : paymentsEnabled
+                          ? 'Official ticket included — free cancellation'
+                          : 'Free to use — official tickets only'}
                     </div>
                   </div>
                 </div>

@@ -25,12 +25,43 @@ model Booking {
   status           String   @default("pending")
   paymentProvider  String   @default("mock")
   paymentSessionId String?
+  /// The Lead this booking grew out of, when there was one. Nullable because
+  /// a visitor can reach checkout directly without ever opening the lead modal.
+  leadId           String?
+  /// When the customer ticked the Terms of Sale & cancellation policy box.
+  /// Null on rows created before that checkbox existed — absence is not consent.
+  termsAcceptedAt  DateTime?
+
+  // ── QR delivery (manual fulfilment) ──────────────────────────────
+  // Section 5 of the Terms of Sale hangs the entire refund rule on QR
+  // delivery: free cancellation before, none after. `qrSentAt` is the
+  // legal fact that decides it — see src/lib/booking-lifecycle.ts, which
+  // reads THIS field rather than `status`, so a mislabelled status can
+  // never silently grant or deny a refund the terms don't allow.
+  /// When the QR was marked delivered. Null = still refundable.
+  qrSentAt         DateTime?
+  /// The ticket code, when delivery is a code string rather than a file.
+  qrCode           String?
+  /// Storage reference for an uploaded QR image/PDF. See src/lib/qr-storage.
+  qrFileRef        String?
+  /// Who marked it delivered, e.g. "admin:owner@example.com". Audit trail:
+  /// "the QR was sent" is a claim we may have to stand behind in a dispute.
+  qrDeliveredBy    String?
+
+  // ── Refund (automated on cancellation) ───────────────────────────
+  /// The provider refund id, once a refund has been issued. Its presence is
+  /// the idempotency guard: a retried cancel must never refund twice, so the
+  /// cancel route refuses to call the provider again when this is set.
+  refundId         String?
+  /// When the refund was issued. Null = not refunded.
+  refundedAt       DateTime?
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
 
   @@index([status])
   @@index([createdAt])
   @@index([customerEmail])
+  @@index([leadId])
 }
 
 model PageView {
@@ -194,10 +225,19 @@ model Lead {
   partySize   Int?
   visitDate   String?
   whatsapp    String?
+  /// "lead" until a payment for it actually confirms, then "paid". This is
+  /// what lets the admin tell an unconverted enquiry from a real sale — the
+  /// two used to live in unrelated tables with nothing joining them.
+  /// Only ever set to "paid" from the payment confirmation path, never by
+  /// the client.
+  status      String   @default("lead")
+  /// The Booking this lead converted into. Set at the same moment as status.
+  bookingId   String?
   createdAt   DateTime @default(now())
 
   @@index([createdAt])
   @@index([email])
+  @@index([status])
 }
 
 model ContactMessage {
@@ -211,6 +251,86 @@ model ContactMessage {
   createdAt DateTime @default(now())
 
   @@index([createdAt])
+}
+
+/// One device that has redeemed an audio-guide access token.
+///
+/// This table IS the anti-sharing control. The signed token proves someone
+/// paid; the row count per booking is what stops that one token being posted
+/// publicly and used by a thousand people. See src/app/api/guide/redeem.
+///
+/// Deliberately NOT burn-once. iOS evicts Cache Storage and localStorage
+/// after ~7 days idle, taking the guide's stored activation with it, so a
+/// real customer re-redeems as a matter of course. A one-shot code would
+/// lock out the honest case in order to inconvenience the dishonest one.
+model GuideActivation {
+  id          String   @id @default(cuid())
+  /// The token's nonce (payload.x). Ties an activation to the exact token
+  /// that created it, so re-issuing a token later starts a fresh budget.
+  tokenId     String
+  /// Booking this grants access to. Not a relation: bookings may be deleted
+  /// for GDPR erasure and an orphaned activation must not block that.
+  bookingId   String
+  /// Booking reference, denormalised so support can search without a join.
+  reference   String
+  /// Random id the guide generates and keeps in localStorage. Cleared
+  /// storage means a NEW deviceId, which is why the cap needs headroom.
+  deviceId    String
+  /// First redemption from this device. Never updated — the audit fact.
+  activatedAt DateTime @default(now())
+  /// Most recent redemption. Drives stale-slot recycling when the cap is hit.
+  lastSeenAt  DateTime @default(now())
+
+  /// One row per device per token: re-redeem is an upsert, not a new slot.
+  @@unique([tokenId, deviceId])
+  @@index([bookingId])
+  @@index([reference])
+}
+
+/// One access code per seat. The first device to open a code keeps it.
+///
+/// Replaces the signed-token-plus-cap arrangement above, which asked the wrong
+/// question. A signature proves a booking was paid for; it cannot tell the
+/// customer apart from the twenty people they forwarded the link to, because
+/// all twenty hold a byte-identical copy. A row can, because it remembers.
+///
+/// A booking for four gets four rows and four links. Sharing one outside the
+/// party is self-defeating: the stranger's device claims it and the customer is
+/// the one locked out.
+///
+/// `deviceId` is null until first use. After that it is the only device this
+/// code will ever admit — and it is admitted every time, forever. No expiry, no
+/// budget, nothing that can run out while somebody is standing at the gate.
+/// `unlockedAt` records the one escape hatch: support clearing the binding for a
+/// customer whose phone genuinely lost its storage. That is a human decision
+/// with a name against it, not an automatic allowance anyone could farm.
+model GuideCode {
+  id          String    @id @default(cuid())
+  /// Canonical form — uppercase, undashed, confusables folded. See guide-code.ts.
+  code        String    @unique
+  /// Not a relation: bookings are deleted for GDPR erasure and an orphaned code
+  /// must never block that. Same reasoning as GuideActivation above.
+  bookingId   String
+  /// Denormalised so support can find a booking's codes without a join.
+  reference   String
+  /// 1-based seat number, so a customer can be told "your second link".
+  seat        Int
+  /// Null until claimed. Once set, the only device this code admits.
+  deviceId    String?
+  /// When the binding happened. Null while unclaimed; never overwritten after.
+  claimedAt   DateTime?
+  /// Every successful open. Lets support see which codes are actually in use.
+  lastSeenAt  DateTime?
+  /// Set when support clears a binding. Null on a code that never needed it.
+  unlockedAt  DateTime?
+  /// How many times a binding has been cleared. A code climbing this number is
+  /// either an unlucky customer or a shared link, and the count is how you tell.
+  unlockCount Int       @default(0)
+  createdAt   DateTime  @default(now())
+
+  @@index([bookingId])
+  @@index([reference])
+  @@index([deviceId])
 }
 
 model TicketType {

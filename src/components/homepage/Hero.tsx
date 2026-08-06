@@ -1,3 +1,4 @@
+import { getTranslations } from 'next-intl/server';
 import { ArrowRight, Sun, Landmark } from 'lucide-react';
 
 async function getTemp(): Promise<number | null> {
@@ -15,6 +16,14 @@ async function getTemp(): Promise<number | null> {
 }
 
 export async function Hero() {
+  /*
+   * This copy used to be English string literals in the markup, so the hero
+   * read the same in every language — including the four that shipped long
+   * before Arabic did. Nobody notices in French; in Arabic the page is
+   * right-to-left with an English headline sitting in it, which is what made
+   * it obvious.
+   */
+  const t = await getTranslations('heroBanner');
   const temp = await getTemp();
   return (
     <section className="relative flex flex-col overflow-hidden min-h-[260px] sm:min-h-0 bg-[#160D06]">
@@ -58,14 +67,20 @@ export async function Hero() {
               <div className="flex items-center gap-2">
                 <Sun size={16} className="text-[#E8A33D] shrink-0 sm:w-5 sm:h-5" />
                 <span className="text-white text-xs sm:text-base font-semibold whitespace-nowrap">
-                  <span className="text-[#E8A33D] font-extrabold text-base sm:text-xl">{temp ?? 40}°C</span> outside
+                  {t.rich('outside', {
+                    deg: () => (
+                      <span className="text-[#E8A33D] font-extrabold text-base sm:text-xl">
+                        {temp ?? 40}°C
+                      </span>
+                    ),
+                  })}
                 </span>
               </div>
               <ArrowRight size={14} className="text-white/25 shrink-0" />
               <div className="flex items-center gap-2">
                 <Landmark size={16} className="text-[#27906E] shrink-0 sm:w-5 sm:h-5" />
                 <span className="text-white text-xs sm:text-base font-semibold whitespace-nowrap">
-                  Cool palace, no queue
+                  {t('coolNoQueue')}
                 </span>
               </div>
             </div>
@@ -80,7 +95,7 @@ export async function Hero() {
             <h1 className="hero-title mb-4 sm:mb-6 leading-none">
               <span className="block text-[#E8A33D] text-xs sm:text-sm font-bold tracking-[0.3em] uppercase mb-2 sm:mb-3"
                 style={{ fontFamily: 'var(--font-body)' }}>
-                Bahia Palace · Marrakech
+                {t('eyebrow')}
               </span>
               <span className="sr-only"> — </span>
               <span
@@ -93,7 +108,7 @@ export async function Hero() {
                   letterSpacing: '-0.02em',
                 }}
               >
-                Step inside Morocco&apos;s most beautiful palace
+                {t('title')}
               </span>
               <span className="sr-only"> </span>
               <span
@@ -107,7 +122,7 @@ export async function Hero() {
                   color: 'rgba(245, 232, 204, 0.65)',
                 }}
               >
-                Named <em>Bahia</em> — Arabic for &quot;the brilliant one&quot;
+                {t.rich('subtitle', { em: (c) => <em>{c}</em> })}
               </span>
             </h1>
           </div>

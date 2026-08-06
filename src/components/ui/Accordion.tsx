@@ -24,7 +24,7 @@ export function Accordion({ items, className }: AccordionProps) {
         <div key={i}>
           <button
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
-            className="w-full flex items-center justify-between gap-4 py-5 text-left group"
+            className="w-full flex items-center justify-between gap-4 py-5 text-start group"
             aria-expanded={openIndex === i}
           >
             <span className="font-semibold text-[#F5E8CC] text-base leading-snug group-hover:text-[#E8A33D] transition-colors">
@@ -47,7 +47,7 @@ export function Accordion({ items, className }: AccordionProps) {
                 transition={{ duration: 0.25, ease: 'easeInOut' }}
                 className="overflow-hidden"
               >
-                <p className="text-[#C4A882] leading-relaxed pb-5 pr-4 sm:pr-8 border-l-2 border-[#E8A33D]/30 pl-4 ml-1">{item.answer}</p>
+                <p className="text-[#C4A882] leading-relaxed pb-5 pe-4 sm:pe-8 border-s-2 border-[#E8A33D]/30 ps-4 ms-1">{item.answer}</p>
               </motion.div>
             )}
           </AnimatePresence>

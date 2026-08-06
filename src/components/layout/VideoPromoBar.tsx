@@ -40,7 +40,7 @@ export async function VideoPromoBar({ variant = 'A' }: Props) {
     <div className={c.bar}>
       <Link href="/videos" className={c.link}>
         <div className={c.circle}>
-          <svg viewBox="0 0 24 24" fill={c.fill} className="w-2.5 h-2.5 ml-px" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill={c.fill} className="w-2.5 h-2.5 ms-px" aria-hidden="true">
             <path d="M8 5v14l11-7z" />
           </svg>
         </div>

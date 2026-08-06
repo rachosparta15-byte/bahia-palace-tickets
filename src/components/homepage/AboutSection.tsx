@@ -44,8 +44,8 @@ export function AboutSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#160D06]/45 to-transparent" />
               {/* Gold corner accents */}
-              <div className="absolute top-6 left-6 w-10 h-10 border-l-2 border-t-2 border-[#E8A33D]/60" aria-hidden="true" />
-              <div className="absolute bottom-6 right-6 w-10 h-10 border-r-2 border-b-2 border-[#E8A33D]/60" aria-hidden="true" />
+              <div className="absolute top-6 left-6 w-10 h-10 border-s-2 border-t-2 border-[#E8A33D]/60" aria-hidden="true" />
+              <div className="absolute bottom-6 right-6 w-10 h-10 border-e-2 border-b-2 border-[#E8A33D]/60" aria-hidden="true" />
             </div>
           </div>
         </div>

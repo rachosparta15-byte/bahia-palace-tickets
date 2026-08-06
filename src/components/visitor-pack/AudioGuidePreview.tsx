@@ -50,7 +50,7 @@ export async function AudioGuidePreview({ locale }: { locale: string }) {
               className="w-14 h-14 rounded-full bg-[#3D2817] border border-[rgba(232,163,61,0.25)] flex items-center justify-center shrink-0"
               aria-hidden="true"
             >
-              <Play size={20} className="text-[#C4A882] ml-0.5" />
+              <Play size={20} className="text-[#C4A882] ms-0.5" />
             </div>
             <div className="min-w-0">
               <p className="font-semibold text-[#F5E8CC] flex items-center gap-2">
@@ -71,7 +71,7 @@ export async function AudioGuidePreview({ locale }: { locale: string }) {
             {PLACEHOLDER_CHAPTERS.map((c) => (
               <li key={c.n} className="flex items-baseline justify-between gap-4 text-sm">
                 <span className="text-[#F5E8CC]">
-                  <span className="text-[#E8A33D] font-semibold mr-2.5 tabular-nums">
+                  <span className="text-[#E8A33D] font-semibold me-2.5 tabular-nums">
                     {String(c.n).padStart(2, '0')}
                   </span>
                   {c.title}

@@ -1,11 +1,28 @@
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { Mail } from 'lucide-react';
 
+import { getImprintLines, getLegalDocs } from '@/content/legal';
+import { BOOKING_URL } from '@/lib/booking';
+
 export function Footer() {
   const t = useTranslations('footer');
+  const locale = useLocale();
   const year = new Date().getFullYear();
+
+  const legalDocs = getLegalDocs(locale);
+  /**
+   * Trader identification, taken from the publisher block of the Legal Notice.
+   *
+   * On the footer of every page rather than only on /legal because the EU
+   * Consumer Rights Directive and the German Telemediengesetz expect the trader
+   * to be identifiable without hunting, and because it is the first thing a card
+   * acquirer's reviewer looks for on the domain that takes the payment. Sourced
+   * from the same synced document as the legal pages, so the company details
+   * cannot say one thing here and another there.
+   */
+  const imprint = getImprintLines(locale);
 
   return (
     <footer className="bg-[#160D06] text-[#C4A882]">
@@ -113,27 +130,59 @@ export function Footer() {
           {/* Legal — col 2, row 2 on mobile; col 4 on desktop */}
           <div className="order-3 lg:order-4">
             <h4 className="text-white font-semibold mb-2 lg:mb-4 text-xs uppercase tracking-wider">{t('legal')}</h4>
+            {/* Titles come from the synced bundle rather than the message
+                catalogue, so a document added upstream appears here and a link
+                can never point at a policy this site no longer publishes. */}
             <ul className="space-y-1.5 lg:space-y-2">
-              {[
-                { href: '/terms', label: t('terms') },
-                { href: '/privacy', label: t('privacy') },
-                { href: '/refund-policy', label: t('refund') },
-                { href: '/cookies', label: t('cookies') },
-                { href: '/about/editorial', label: t('editorial') },
-              ].map(({ href, label }) => (
-                <li key={href}>
-                  <Link href={href} className="text-xs sm:text-sm text-[#C4A882] hover:text-[#E8A33D] transition-colors leading-snug">
-                    {label}
+              {legalDocs.map((doc) => (
+                <li key={doc.slug}>
+                  <Link
+                    href={`/legal/${doc.slug}`}
+                    className="text-xs sm:text-sm text-[#C4A882] hover:text-[#E8A33D] transition-colors leading-snug"
+                  >
+                    {doc.title}
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/about/editorial" className="text-xs sm:text-sm text-[#C4A882] hover:text-[#E8A33D] transition-colors leading-snug">
+                  {t('editorial')}
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
+        {/* Trader identification */}
+        <address className="border-t border-[rgba(232,163,61,0.15)] pt-4 lg:pt-6 mb-4 not-italic text-[#C4A882]/70 text-xs leading-relaxed">
+          {imprint.map((line) => (
+            <span key={line} className="block">
+              {line}
+            </span>
+          ))}
+        </address>
+
         {/* Disclaimer */}
         <div className="border-t border-[rgba(232,163,61,0.15)] pt-4 lg:pt-6 mb-4 lg:mb-6">
-          <p className="text-[#C4A882] text-xs leading-relaxed text-center">{t('disclaimer')}</p>
+          {/*
+            The portal is a real link, not just an address in prose. Every order
+            records `evidence.officialPortalLinkShown`; that record has to match
+            what was actually on the page the customer paid on.
+          */}
+          <p className="text-[#C4A882] text-xs leading-relaxed text-center">
+            {t.rich('disclaimer', {
+              portal: (chunks) => (
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="underline underline-offset-2 transition-colors hover:text-[#E8A33D]"
+                >
+                  {chunks}
+                </a>
+              ),
+            })}
+          </p>
           <p className="text-[#C4A882]/70 text-xs leading-relaxed text-center mt-2">{t('network')}</p>
         </div>
 

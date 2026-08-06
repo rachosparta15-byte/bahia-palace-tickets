@@ -1,8 +1,12 @@
 import prisma from '@/lib/db';
+import { ensureColumns } from '@/lib/db/ensure-columns';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { BookingActions } from '@/components/admin/BookingActions';
+import { QrDelivery } from '@/components/admin/QrDelivery';
+import { qrIsDelivered } from '@/lib/booking-lifecycle';
+import { getWhatsAppNumber } from '@/lib/whatsapp';
 
 export const dynamic = 'force-dynamic';
 
@@ -12,9 +16,18 @@ interface Props {
 
 function statusColor(status: string) {
   if (status === 'confirmed') return 'bg-emerald-100 text-emerald-800 border-emerald-200';
+  if (status === 'qr_sent')   return 'bg-sky-100     text-sky-800     border-sky-200';
   if (status === 'pending')   return 'bg-amber-100   text-amber-800   border-amber-200';
   if (status === 'cancelled') return 'bg-red-100     text-red-800     border-red-200';
   return 'bg-gray-100 text-gray-700 border-gray-200';
+}
+
+/** Human label — "confirmed" alone doesn't say whether the ticket went out. */
+function statusLabel(status: string) {
+  if (status === 'confirmed') return 'paid — QR not sent';
+  if (status === 'qr_sent')   return 'QR delivered';
+  if (status === 'pending')   return 'awaiting payment';
+  return status;
 }
 
 function Row({ label, value }: { label: string; value: React.ReactNode }) {
@@ -28,6 +41,7 @@ function Row({ label, value }: { label: string; value: React.ReactNode }) {
 
 export default async function BookingDetailPage({ params }: Props) {
   const { id } = await params;
+  await ensureColumns();
   const booking = await prisma.booking.findUnique({ where: { id } });
   if (!booking) notFound();
 
@@ -49,7 +63,7 @@ export default async function BookingDetailPage({ params }: Props) {
           Booking {booking.reference}
         </h1>
         <span className={`px-3 py-1 rounded-full text-sm font-medium border ${statusColor(booking.status)}`}>
-          {booking.status}
+          {statusLabel(booking.status)}
         </span>
       </div>
 
@@ -95,9 +109,31 @@ export default async function BookingDetailPage({ params }: Props) {
         </div>
 
         <div className="space-y-6">
+          {/* QR delivery sits above Actions on purpose: it is the step that
+              decides whether "Cancel booking" below is still permitted. */}
+          <div className="bg-white rounded-2xl border border-[#E8D5B7] px-5 py-5">
+            <h2 className="font-semibold text-[#3D2817] mb-4">Fulfilment</h2>
+            <QrDelivery
+              bookingId={booking.id}
+              status={booking.status}
+              qrSentAt={booking.qrSentAt ? booking.qrSentAt.toISOString() : null}
+              qrCode={booking.qrCode}
+              hasFile={Boolean(booking.qrFileRef)}
+              qrDeliveredBy={booking.qrDeliveredBy}
+              customerEmail={booking.customerEmail}
+              customerPhone={booking.customerPhone}
+              whatsappNumber={getWhatsAppNumber() ?? ''}
+              reference={booking.reference}
+            />
+          </div>
+
           <div className="bg-white rounded-2xl border border-[#E8D5B7] px-5 py-5">
             <h2 className="font-semibold text-[#3D2817] mb-4">Actions</h2>
-            <BookingActions bookingId={booking.id} status={booking.status} />
+            <BookingActions
+              bookingId={booking.id}
+              status={booking.status}
+              qrDelivered={qrIsDelivered(booking)}
+            />
           </div>
         </div>
       </div>

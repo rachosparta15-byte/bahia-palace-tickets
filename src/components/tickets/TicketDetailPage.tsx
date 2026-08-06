@@ -9,6 +9,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { ReviewsCarousel } from '@/components/homepage/ReviewsCarousel';
 import { BASE, DIGITAL_TICKET_OFFER_EXTRAS, buildBreadcrumbSchema } from '@/lib/seo';
 import { TICKET_PRICES } from '@/lib/ticket-data';
+import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 
 export type TicketKey = 'skipTheLine' | 'guidedTour' | 'privateTour' | 'combo';
 
@@ -99,6 +100,9 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
   const faqItems     = tf.raw('items') as Array<{ question: string; answer: string }>;
   const isLive       = ALL_TICKETS.find((tk) => tk.key === ticketKey)?.live ?? true;
   const related      = ALL_TICKETS.filter((tk) => tk.key !== ticketKey && tk.live);
+  // Same switch as the funnel: OFF → free portal hand-off (the claim is true);
+  // ON → the paid pack (the claim would be false, so swap it).
+  const { enabled: paymentsEnabled } = getPublicPaymentsFlags();
   const heroImg      = HERO_IMAGES[ticketKey];
   const gallery      = GALLERY_IMAGES[ticketKey];
 
@@ -115,7 +119,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
     offers: {
       '@type': 'Offer',
       url: pageUrl,
-      priceCurrency: 'USD',
+      priceCurrency: 'EUR',
       price: price.toFixed(2),
       priceValidUntil: '2026-12-31',
       availability: 'https://schema.org/InStock',
@@ -190,8 +194,8 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
               <div>
                 <p className="text-[10px] text-[#C4A882] uppercase tracking-wide">{t('from')}</p>
                 <p className="text-2xl font-bold text-[#C4452D] leading-none">
-                  ${price}
-                  <span className="text-sm font-normal text-[#C4A882] ml-1">{t('perPerson')}</span>
+                  €{price.toFixed(2)}
+                  <span className="text-sm font-normal text-[#C4A882] ms-1">{t('perPerson')}</span>
                 </p>
               </div>
               <LeadButton
@@ -205,7 +209,9 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
 
             <p className="flex items-center justify-center gap-1.5 text-xs text-[#C4A882]">
               <ShieldCheck size={12} className="text-[#8FA63C]" />
-              Free to use — official tickets only
+              {paymentsEnabled
+                ? 'Official ticket included — free cancellation'
+                : 'Free to use — official tickets only'}
             </p>
           </div>
         </div>
@@ -379,7 +385,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
                     <p className="text-sm text-[#C4A882] mb-3 leading-snug">{relTagline}</p>
                     <p className="text-[#C4452D] font-bold" style={{ fontFamily: 'var(--font-heading)' }}>
                       {t('from')} ${rel.price}
-                      <span className="text-xs font-normal text-[#C4A882] ml-1">{t('perPerson')}</span>
+                      <span className="text-xs font-normal text-[#C4A882] ms-1">{t('perPerson')}</span>
                     </p>
                   </div>
                 </Link>

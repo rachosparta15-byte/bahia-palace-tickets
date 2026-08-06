@@ -4,7 +4,7 @@ import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { JsonLd } from '@/components/seo/JsonLd';
 import type { Metadata } from 'next';
 import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE } from '@/lib/seo';
-import { SKIP_THE_LINE_PRICE_USD } from '@/config/pricing';
+import { SKIP_THE_LINE_PRICE_EUR } from '@/config/pricing';
 
 export const revalidate = 86400;
 
@@ -60,8 +60,8 @@ export default async function TicketsPage({ params }: Props) {
           image: `${BASE}/og-image.jpg`,
           offers: {
             '@type': 'Offer',
-            price: SKIP_THE_LINE_PRICE_USD.toFixed(2),
-            priceCurrency: 'USD',
+            price: SKIP_THE_LINE_PRICE_EUR.toFixed(2),
+            priceCurrency: 'EUR',
             availability: 'https://schema.org/InStock',
             url: `${BASE}/${locale}/tickets/skip-the-line`,
           },

@@ -62,6 +62,10 @@ article-*.md
 .vercel
 .blog-image-backup-2026-07.json
 
+# Delivered QR tickets (manual fulfilment). Customer bearer instruments —
+# never commit these, and note Vercel storage is ephemeral (see src/lib/qr-storage).
+/storage/
+
 # local sqlite database files
 prisma/*.db
 prisma/*.db-journal

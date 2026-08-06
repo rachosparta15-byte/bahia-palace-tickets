@@ -16,7 +16,7 @@
     "subheadline": "Confirmación instantánea • Entradas móviles • Cancelación gratuita hasta 24h",
     "ctaBook": "Planifica tu visita",
     "ctaTours": "Ver Tours",
-    "trustNote": "Más de 50.000 visitantes satisfechos"
+    "trustNote": "Servicio de reservas independiente · Solo entradas oficiales"
   },
   "trust": {
     "instant": "100% Independiente",
@@ -26,20 +26,20 @@
   },
   "tickets": {
     "title": "Elige tu Experiencia en el Palacio Bahia",
-    "subtitle": "Evita las colas y disfruta de una visita sin estrés a uno de los palacios más impresionantes de Marrakech",
+    "subtitle": "Compre en línea, evite la cola de la taquilla y preséntese en la entrada con su código listo",
     "from": "Desde",
     "perPerson": "por persona",
     "bookNow": "Ver entradas",
     "learnMore": "Saber más",
     "skipTheLine": {
       "name": "Entrada Sin Colas",
-      "tagline": "Acceso prioritario al Palacio Bahia",
+      "tagline": "La entrada oficial, más lo que la taquilla no le da",
       "duration": "Visita libre • ~1–2 horas",
       "includes": [
-        "Entrada prioritaria",
-        "Entrada móvil o impresa",
-        "Sin comisión de reserva",
-        "Solo entradas oficiales"
+        "Entrada oficial al Palacio de la Bahía",
+        "Audioguía en su idioma",
+        "Asistencia por WhatsApp antes y durante la visita",
+        "Cancelación gratuita hasta que enviemos su código"
       ],
       "excludes": [
         "Comentario guiado",
@@ -47,8 +47,8 @@
         "Comida y bebida"
       ],
       "meetingPoint": "Entrada principal del Palacio Bahia, Calle Riad Zitoun el Jedid, Medina de Marrakech",
-      "longDesc": "Sáltate la cola de entradas y entra directamente en uno de los palacios más magníficos de Marrakech. Tu ticket QR prevalidado significa cero tiempo perdido en taquilla. Explora a tu propio ritmo — la mayoría de los visitantes pasan entre 1 y 2 horas descubriendo los intrincados azulejos de zellige, los techos de cedro tallado y los exuberantes jardines interiores.",
-      "whyOnline": "Las colas pueden durar 2 horas — reserva online y entra directamente"
+      "longDesc": "Comprando en línea se ahorra por completo la cola de la taquilla: su código QR ya es válido, así que va directamente a la entrada en vez de a la ventanilla. Visite a su ritmo: la mayoría dedica de 1 a 2 horas a los zellige, los techos de cedro tallado y los jardines interiores.",
+      "whyOnline": "En taquilla hay que hacer cola y pagar en efectivo, en dírhams, y nadie le da una audioguía. Aquí es un solo pago con tarjeta, una audioguía en su idioma, asistencia por WhatsApp y cancelación gratuita hasta que enviemos su código."
     },
     "guidedTour": {
       "name": "Tour Guiado por un Experto",
@@ -68,7 +68,7 @@
       ],
       "meetingPoint": "Entrada principal del Palacio Bahia — busca al guía con el cartel de Bahia Palace Tickets",
       "longDesc": "Descubre los verdaderos secretos del Palacio Bahia con un apasionado guía certificado. Aprende por qué el palacio se construyó en secreto, descubre las intrigas políticas detrás de su arquitectura y desvela historias que simplemente no encontrarás en ninguna guía. Grupos reducidos de máximo 12 personas garantizan una experiencia personalizada.",
-      "whyOnline": "Los guías certificados se agotan rápido — reserva tu plaza online ahora"
+      "whyOnline": "En taquilla hay que hacer cola y pagar en efectivo, en dírhams, y nadie le da una audioguía. Aquí es un solo pago con tarjeta, una audioguía en su idioma, asistencia por WhatsApp y cancelación gratuita hasta que enviemos su código."
     },
     "privateTour": {
       "name": "Tour Privado",
@@ -87,7 +87,7 @@
       ],
       "meetingPoint": "Entrada principal del Palacio Bahia — tu guía privado te esperará allí",
       "longDesc": "La experiencia definitiva en el Palacio Bahia. Tu guía certificado privado dedica toda la visita a ti y a tu grupo. Marca tu propio ritmo, haz cualquier pregunta y explora las áreas a tu antojo. Perfecto para familias, parejas y cualquiera que quiera que la historia del palacio le sea contada exclusivamente para ellos.",
-      "whyOnline": "Reserva anticipada obligatoria — los tours privados no se pueden reservar in situ"
+      "whyOnline": "En taquilla hay que hacer cola y pagar en efectivo, en dírhams, y nadie le da una audioguía. Aquí es un solo pago con tarjeta, una audioguía en su idioma, asistencia por WhatsApp y cancelación gratuita hasta que enviemos su código."
     },
     "combo": {
       "name": "Combo: Bahia + Tumbas Saadíes",
@@ -107,14 +107,14 @@
       ],
       "meetingPoint": "Primero la entrada principal del Palacio Bahia, luego las Tumbas Saadíes (10 min a pie)",
       "longDesc": "Dos de los monumentos históricos más impresionantes de Marrakech, una sola entrada cómoda. Empieza en los deslumbrantes patios del Palacio Bahia, luego camina 10 minutos hasta las Tumbas Saadíes — opulentos mausoleos reales sellados durante 200 años y redescubiertos en 1917. El mejor valor para los amantes de la historia.",
-      "whyOnline": "Entrada combinada disponible solo online — ahorra tiempo en ambos sitios"
+      "whyOnline": "En taquilla hay que hacer cola y pagar en efectivo, en dírhams, y nadie le da una audioguía. Aquí es un solo pago con tarjeta, una audioguía en su idioma, asistencia por WhatsApp y cancelación gratuita hasta que enviemos su código."
     },
     "visitorPack": {
       "_needsTranslation": true,
       "name": "Complete Visitor Pack",
       "tagline": "Official entry ticket + digital audio guide",
       "duration": "Self-guided • ~1–2 hours",
-      "whyOnline": "Queues can reach 2 hours — book online and walk straight in",
+      "whyOnline": "En taquilla hay que hacer cola y pagar en efectivo, en dírhams, y nadie le da una audioguía. Aquí es un solo pago con tarjeta, una audioguía en su idioma, asistencia por WhatsApp y cancelación gratuita hasta que enviemos su código.",
       "includes": [
         "Official entry ticket (100 MAD, purchased for you)",
         "Premium audio guide",
@@ -235,11 +235,11 @@
     "items": [
       {
         "question": "¿Vale la pena visitar el Palacio Bahia en 2026?",
-        "answer": "Absolutamente. El Palacio Bahia es uno de los mejores ejemplos conservados de arquitectura marroquí del siglo XIX. Con 150 habitaciones, intrincados zellige, techos de cedro pintados a mano y exuberantes jardines interiores, ofrece una visión incomparable de la vida real marroquí. A 100 MAD (≈10$) es un valor excepcional — y con una entrada sin colas, la experiencia se vuelve completamente fluida."
+        "answer": "Absolutamente. El Palacio Bahia es uno de los mejores ejemplos conservados de arquitectura marroquí del siglo XIX. Con 150 habitaciones, intrincados zellige, techos de cedro pintados a mano y exuberantes jardines interiores, ofrece una visión incomparable de la vida real marroquí. A 100 MAD (≈ 9,90 €) es un valor excepcional — y con una entrada sin colas, la experiencia se vuelve completamente fluida."
       },
       {
         "question": "¿Cuánto cuesta la entrada al Palacio Bahia?",
-        "answer": "El precio oficial en taquilla es de 100 MAD (aproximadamente 10$ USD o 9€). Los niños menores de 7 años entran gratis, y los estudiantes con DNI válido pagan 50 MAD. Si reservas online, las entradas sin colas empiezan desde 10$ — incluye acceso prioritario y evita colas que pueden durar 1-2 horas en temporada alta."
+        "answer": "El precio oficial en taquilla es de 100 MAD (aproximadamente 9,90 €). Los niños menores de 7 años entran gratis, y los estudiantes con DNI válido pagan 50 MAD. Reservado online con nosotros son 12,90 € por persona — la entrada oficial, una audioguía multilingüe y asistencia — y te ahorras la cola de la taquilla, que puede durar 1-2 horas en temporada alta."
       },
       {
         "question": "¿Cuánto tiempo se necesita en el Palacio Bahia?",
@@ -251,7 +251,7 @@
       },
       {
         "question": "¿Es gratuita la entrada?",
-        "answer": "No, la entrada cuesta 100 MAD (≈10$ USD) para adultos. Los niños menores de 7 años entran gratis y los estudiantes con DNI válido pagan 50 MAD. La fotografía está incluida en el precio de la entrada."
+        "answer": "No, la entrada cuesta 100 MAD (≈ 9,90 €) para adultos. Los niños menores de 7 años entran gratis y los estudiantes con DNI válido pagan 50 MAD. La fotografía está incluida en el precio de la entrada."
       },
       {
         "question": "¿Cómo llegar al Palacio Bahia desde Jemaa el-Fna?",
@@ -480,7 +480,7 @@
       },
       {
         "question": "¿Cómo funciona la entrada sin colas?",
-        "answer": "Te dirigimos a la entrada prioritaria oficial en el portal del gobierno — está prevalidada por ellos, así que no necesitas hacer cola en taquilla."
+        "answer": "Te dirigimos a la entrada oficial en el portal del gobierno — está prevalidada, así que no necesitas hacer cola en taquilla."
       }
     ]
   },
@@ -502,7 +502,7 @@
     "title": "Ya lo has leído. Ahora entra.",
     "subtitle": "Reserva tu entrada sin colas y accede directamente al palacio.",
     "button": "Reservar entradas Palacio Bahia",
-    "stickyMobile": "Salta la fila desde $10"
+    "stickyMobile": "Sin cola — 12,90 €"
   },
   "footer": {
     "tagline": "La forma más fácil de visitar el Palacio Bahia.",
@@ -527,7 +527,7 @@
     "contact": "Contacto",
     "copyright": "© {year} Bahia Palace Tickets. Todos los derechos reservados.",
     "paymentNote": "Gratis — solo entradas oficiales",
-    "disclaimer": "visitbahiapalace.com es un sitio web de información turística independiente. No estamos afiliados al Palacio Bahia oficial ni al Ministerio de Cultura de Marruecos. Para entradas oficiales, visita: e-services.minculture.gov.ma",
+    "disclaimer": "visitbahiapalace.com es un servicio independiente de información y reservas. No estamos afiliados al Palacio de la Bahía ni al Ministerio de Cultura de Marruecos. Las entradas también pueden comprarse directamente al Ministerio en <portal>e-services.minculture.gov.ma</portal>.",
     "network": "Forma parte de una red independiente de guías de monumentos de Marruecos."
   },
   "whatsapp": {
@@ -625,7 +625,7 @@
     "hoursLabel": "Abierto todos los días",
     "hoursVal": "9:00 – 17:00",
     "priceLabel": "Entrada",
-    "priceVal": "100 MAD (~10 €)",
+    "priceVal": "100 MAD (≈ 9,36 €)",
     "locationLabel": "Ubicación",
     "locationVal": "Rue Riad Zitoun el Jedid, Medina de Marrakech"
   },
@@ -644,11 +644,14 @@
       "ctaDisabledHint": "We are not taking payments yet. Check back shortly."
     },
     "price": {
-      "amount": "$14",
+      "amount": "12,90 €",
       "perPerson": "per person",
       "freeAlternative": "Just want the official ticket? Here’s how",
       "includes": "Official entry ticket + digital audio guide",
-      "taxesIncluded": "Taxes and fees included"
+      "taxesIncluded": "Taxes and fees included",
+      "officialLine": "Official entry ticket ({mad})",
+      "serviceLine": "Audio guide, map & support",
+      "convertedNote": "The official ticket price is set in Moroccan dirhams. The euro figure is converted at the rate of {date} and is shown for guidance."
     },
     "included": {
       "title": "Everything Included",
@@ -656,7 +659,7 @@
       "items": {
         "ticket": {
           "title": "Official entry ticket",
-          "desc": "The real 100 MAD Ministry of Culture ticket, bought on your behalf. Not a resale, not a markup hidden in the total."
+          "desc": "La entrada real del Ministerio de Cultura de 100 MAD, comprada a su nombre. No es una reventa, y el precio que ve es el precio que paga."
         },
         "audio": {
           "title": "Premium audio guide",
@@ -715,20 +718,20 @@
       "title": "Frequently asked questions",
       "items": {
         "official": {
-          "q": "Is this the official Bahia Palace ticket?",
-          "a": "Yes — the entry ticket in the pack is the official 100 MAD ticket set by Morocco’s Ministry of Culture, which we purchase on your behalf. The pack costs $14 because it also includes our audio guide, visitor map and support. You are always free to buy the official ticket yourself at the gate for 100 MAD instead."
+          "q": "¿Es esta la entrada oficial del Palacio de la Bahía?",
+          "a": "Sí. La entrada del pack es la oficial de 100 MAD fijada por el Ministerio de Cultura de Marruecos, comprada a su nombre. Los 12,90 € cubren además la audioguía digital, el mapa del visitante, la asistencia por WhatsApp y la cancelación gratuita hasta que la enviemos."
         },
         "cheaper": {
-          "q": "Can I get in cheaper?",
-          "a": "Yes. The official ticket at the door is 100 MAD (about $10). If you only want entry and no extras, that is the cheaper option and we explain how to do it on our free tickets page."
+          "q": "¿Qué cubren los 12,90 €?",
+          "a": "La entrada sola cuesta 100 MAD en taquilla. Nuestro precio incluye esa entrada comprada a su nombre, la audioguía en cinco idiomas, el mapa del visitante, la asistencia por WhatsApp antes y durante su visita, y la cancelación gratuita hasta que enviemos su código QR. El Ministerio también vende la entrada directamente en su portal si es lo único que necesita."
         },
         "refund": {
           "q": "Can I get a refund?",
           "a": "See our refund policy for the current terms. If your visit date changes, contact us and we will do what we can."
         },
         "delivery": {
-          "q": "When do I receive my ticket?",
-          "a": "We send your official entry ticket and audio guide access to your email before your visit date."
+          "q": "¿Cuándo recibo mi entrada?",
+          "a": "Si visita hoy, normalmente en menos de 10 minutos mientras el palacio está abierto, y como máximo en una hora. Si reserva después del cierre, esa misma tarde: su código no lleva fecha, así que le da acceso a la mañana siguiente. Para una fecha posterior lo enviamos unas 24 horas antes del día indicado."
         },
         "group": {
           "q": "Can I book for a group?",
@@ -753,10 +756,14 @@
         "disabled": "Booking opens soon — no payment can be taken yet.",
         "pastDate": "Please choose a date that is not in the past.",
         "name": "Please enter your full name.",
-        "email": "Please enter a valid email address."
+        "email": "Please enter a valid email address.",
+        "visitors": "Introduce un número entre 1 y {max}.",
+        "consent": "Confirme esto antes de continuar: es necesario para completar su reserva."
       },
       "summaryTitle": "Order summary",
-      "productName": "Bahia Palace — Complete Visitor Pack"
+      "productName": "Bahia Palace — Complete Visitor Pack",
+      "acceptCombined": "Puedo cancelar gratis hasta que se envíe mi código QR. Entiendo que ese envío completa mi pedido, por lo que a partir de ese momento el derecho de desistimiento de 14 días deja de aplicarse, y acepto las <terms>Condiciones de venta</terms> y la <refund>política de cancelación</refund>.",
+      "securePayment": "<b>Pago seguro.</b> Los datos de su tarjeta van directamente a Stripe y nunca llegan a nuestros servidores."
     },
     "confirmation": {
       "packTitle": "Your Complete Visitor Pack",
@@ -764,7 +771,77 @@
       "ticketPendingDesc": "We are arranging your official entry ticket. It will be emailed to you before your visit date.",
       "audioTitle": "Audio guide access",
       "audioPendingDesc": "Your audio guide is being prepared. Access details will arrive with your ticket.",
-      "mockNotice": "This is a test-mode order. No payment was taken and no real ticket has been issued."
+      "mockNotice": "This is a test-mode order. No payment was taken and no real ticket has been issued.",
+      "audioReadyBadge": "Ready",
+      "audioReadyDesc": "Your audio guide is ready. Open it on your phone and download it before you go — it works offline inside the palace.",
+      "audioOpen": "Open your audio guide",
+      "ticketReady": "Your official entry ticket",
+      "ticketReadyBadge": "Ready",
+      "ticketReadyDesc": "Your official Bahia Palace entry ticket has been purchased and sent to you. Show it at the entrance — on your phone is fine, no printing needed.",
+      "ticketView": "View your ticket",
+      "ticketCodeLabel": "Ticket code",
+      "ticketPendingRefundable": "Your ticket has not been sent yet, so you can still cancel for a full refund. Once we send it, the booking becomes non-refundable (Terms of Sale, §5).",
+      "audioOfflineTip": "Open it the morning of your visit, while you have wifi. It downloads once (about 47 MB), then plays with no signal at all inside the palace. When your phone offers “Add to Home Screen”, choose it — that stops the audio being cleared later.",
+      "audioLinkPendingDesc": "Your access link is being prepared and will arrive by email shortly. If it has not reached you within a few minutes, contact us with your booking reference."
+    },
+    "valuePoints": {
+      "cancellation": "Cancelación gratuita hasta que enviemos tu entrada",
+      "audioGuide": "Audioguía digital incluida",
+      "whatsapp": "Soporte por WhatsApp",
+      "skipLine": "Sin colas — disponible in situ",
+      "priceDetailToggle": "Detalle del precio"
+    },
+    "inclusions": {
+      "ticket": "Entrada oficial del Palacio de la Bahía",
+      "audio": "Audioguía digital con la historia del palacio",
+      "whatsapp": "Soporte por WhatsApp antes y durante tu visita",
+      "cancellation": "Cancelación gratuita"
+    },
+    "reassurance": {
+      "cancellation": {
+        "title": "Cancelación gratuita.",
+        "body": "Cambie de opinión en cualquier momento antes de que enviemos su entrada y le devolvemos hasta el último céntimo: un mensaje de WhatsApp, sin formularios ni explicaciones."
+      },
+      "delivery": {
+        "title": "Su entrada llega antes de que la necesite.",
+        "body": "¿Visita hoy? Normalmente en menos de 10 minutos mientras el palacio está abierto. ¿Reserva con antelación? Se la enviamos unas 24 horas antes de su fecha de visita, para que la tenga a mano en el móvil."
+      },
+      "price": {
+        "title": "12,90 € por persona, impuestos incluidos.",
+        "body": "La entrada oficial del Ministerio de Cultura comprada a su nombre, la audioguía digital en cinco idiomas y una persona real por WhatsApp antes y durante su visita. No se añade nada al pagar."
+      },
+      "independence": "visitbahiapalace.com es un servicio de reservas independiente, gestionado por especialistas en los monumentos de Marrakech. No somos el Ministerio de Cultura ni la administración del palacio. Todos los detalles en nuestras <terms>Condiciones de venta</terms>."
     }
+  },
+  "booking": {
+    "cancellation": {
+      "title": "¿Necesitas cancelar?",
+      "body": "Cancelación gratuita hasta que enviemos tu entrada (código QR). Para cancelar y recibir un reembolso íntegro, contáctanos:",
+      "whatsappCta": "Cancelar por WhatsApp",
+      "whatsappMessage": "Hola, quisiera cancelar mi reserva {reference} del Palacio de la Bahía y solicitar un reembolso íntegro.",
+      "emailSubject": "Solicitud de cancelación — reserva {reference}",
+      "referenceHint": "Indica tu número de reserva: {reference}",
+      "closed": "Esta reserva ya no se puede cancelar (entrada ya entregada).",
+      "alreadyCancelled": "Esta reserva ha sido cancelada."
+    }
+  },
+  "datePicker": {
+    "today": "Hoy",
+    "tomorrow": "Mañana",
+    "previousMonth": "Mes anterior",
+    "nextMonth": "Mes siguiente"
+  },
+  "heroBanner": {
+    "outside": "<deg></deg> fuera",
+    "coolNoQueue": "Palacio fresco, sin cola",
+    "eyebrow": "Palacio Bahía · Marrakech",
+    "title": "Entra en el palacio más bello de Marruecos",
+    "subtitle": "Llamado <em>Bahía</em> — «la brillante» en árabe"
+  },
+  "trustStrip": {
+    "instantConfirm": "Confirmación inmediata",
+    "freeCancel": "Cancelación gratuita",
+    "mobileTicket": "Entrada en el móvil",
+    "secureBooking": "Pago seguro"
   }
 }
