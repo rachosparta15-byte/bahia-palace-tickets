@@ -7,9 +7,10 @@
  * Usage:
  *   npx tsx scripts/seed-blog-articles.ts
  */
-// Load .env.local first (Turso creds), then .env as fallback — mirrors Next.js behaviour.
+// Load .env.prod (PRODUCTION Turso creds), then .env as fallback.
+// NOT .env.local: that is the local-only SQLite dev database now.
 import dotenv from 'dotenv';
-dotenv.config({ path: '.env.local' });
+dotenv.config({ path: '.env.prod' });
 dotenv.config({ path: '.env' });
 import fs from 'node:fs';
 import path from 'node:path';

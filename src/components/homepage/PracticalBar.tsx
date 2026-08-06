@@ -12,7 +12,7 @@ export function PracticalBar() {
           <div className="flex items-center gap-2.5">
             <Clock size={15} className="text-[#E8A33D] shrink-0" />
             <span className="text-[#C4A882]">
-              <span className="text-[#9A8060] mr-1">{t('hoursLabel')}:</span>
+              <span className="text-[#9A8060] me-1">{t('hoursLabel')}:</span>
               <span className="text-[#F5E8CC] font-medium">{t('hoursVal')}</span>
             </span>
           </div>
@@ -24,7 +24,7 @@ export function PracticalBar() {
           <div className="flex items-center gap-2.5">
             <Ticket size={15} className="text-[#E8A33D] shrink-0" />
             <span className="text-[#C4A882]">
-              <span className="text-[#9A8060] mr-1">{t('priceLabel')}:</span>
+              <span className="text-[#9A8060] me-1">{t('priceLabel')}:</span>
               <span className="text-[#F5E8CC] font-medium">{t('priceVal')}</span>
             </span>
           </div>
@@ -36,7 +36,7 @@ export function PracticalBar() {
           <div className="flex items-center gap-2.5">
             <MapPin size={15} className="text-[#E8A33D] shrink-0" />
             <span className="text-[#C4A882]">
-              <span className="text-[#9A8060] mr-1">{t('locationLabel')}:</span>
+              <span className="text-[#9A8060] me-1">{t('locationLabel')}:</span>
               <span className="text-[#F5E8CC] font-medium">{t('locationVal')}</span>
             </span>
           </div>

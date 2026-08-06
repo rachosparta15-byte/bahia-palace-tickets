@@ -5,16 +5,24 @@ import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE, DIGITAL_TICKET_O
 import { CheckCircle2, Info, ArrowRight, Tag } from 'lucide-react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import { Link } from '@/i18n/navigation';
 import {
   OFFICIAL_DOOR_PRICE_MAD,
-  OFFICIAL_DOOR_PRICE_USD_APPROX,
-  OFFICIAL_DOOR_PRICE_EUR_APPROX,
+  OFFICIAL_DOOR_PRICE_EUR_CENTS,
+  VISITOR_PACK_PRICE_EUR_CENTS,
+  MAD_TO_EUR_RATE,
+  MAD_TO_EUR_RATE_CHECKED_ON,
+  formatEUR,
+  formatEURAmount,
 } from '@/config/pricing';
 import { TICKET_PRICES } from '@/lib/ticket-data';
+import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 
-const SKIP_THE_LINE_PRICE_USD = TICKET_PRICES['skip-the-line'];
-const GUIDED_TOUR_PLANNED_PRICE_USD = TICKET_PRICES['guided-tour'];
-const PRIVATE_TOUR_PLANNED_PRICE_USD = TICKET_PRICES['private-tour'];
+const ENTRY_PRICE_EUR = TICKET_PRICES['skip-the-line'];
+/** A MAD figure converted at the pinned rate, for the euro column. */
+const madToEur = (mad: number) => formatEUR(Math.round(mad * MAD_TO_EUR_RATE * 100));
+const GUIDED_TOUR_PLANNED_PRICE_EUR = TICKET_PRICES['guided-tour'];
+const PRIVATE_TOUR_PLANNED_PRICE_EUR = TICKET_PRICES['private-tour'];
 
 export const revalidate = 86400;
 
@@ -46,16 +54,19 @@ function getPriceSchema(locale: string) {
     name: 'Bahia Palace',
     url: `${BASE}/${locale}/entrance-fee`,
     offers: [
-      { '@type': 'Offer', name: 'Standard Entry (gate)',     price: String(OFFICIAL_DOOR_PRICE_USD_APPROX), priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
-      { '@type': 'Offer', name: 'Skip-the-Line (online)',   price: String(SKIP_THE_LINE_PRICE_USD), priceCurrency: 'USD', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
-      { '@type': 'Offer', name: 'Guided Tour (online)',      price: String(GUIDED_TOUR_PLANNED_PRICE_USD), priceCurrency: 'USD', availability: 'https://schema.org/PreOrder', ...DIGITAL_TICKET_OFFER_EXTRAS },
-      { '@type': 'Offer', name: 'Private Tour (online)',     price: String(PRIVATE_TOUR_PLANNED_PRICE_USD), priceCurrency: 'USD', availability: 'https://schema.org/PreOrder', ...DIGITAL_TICKET_OFFER_EXTRAS },
+      { '@type': 'Offer', name: 'Standard Entry (gate)',     price: (OFFICIAL_DOOR_PRICE_EUR_CENTS / 100).toFixed(2), priceCurrency: 'EUR', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
+      { '@type': 'Offer', name: 'Skip-the-Line (online)',   price: ENTRY_PRICE_EUR.toFixed(2), priceCurrency: 'EUR', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
+      { '@type': 'Offer', name: 'Guided Tour (online)',      price: String(GUIDED_TOUR_PLANNED_PRICE_EUR), priceCurrency: 'EUR', availability: 'https://schema.org/PreOrder', ...DIGITAL_TICKET_OFFER_EXTRAS },
+      { '@type': 'Offer', name: 'Private Tour (online)',     price: String(PRIVATE_TOUR_PLANNED_PRICE_EUR), priceCurrency: 'EUR', availability: 'https://schema.org/PreOrder', ...DIGITAL_TICKET_OFFER_EXTRAS },
     ],
   };
 }
 
 export default async function EntranceFeePage({ params }: Props) {
   const { locale } = await params;
+  // Same switch as the funnel: OFF → free portal hand-off (no fee is true);
+  // ON → the paid pack, where "no fee added / not with us" is false.
+  const { enabled: paymentsEnabled } = getPublicPaymentsFlags();
   return (
     <div className="min-h-screen bg-[#1C1108]">
       <JsonLd data={getPriceSchema(locale)} />
@@ -99,9 +110,9 @@ export default async function EntranceFeePage({ params }: Props) {
         {/* Price cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {[
-            { label: 'Standard Entry', mad: `${OFFICIAL_DOOR_PRICE_MAD} MAD`, usd: `≈ $${OFFICIAL_DOOR_PRICE_USD_APPROX} USD`, note: 'At the gate — queue included', highlight: false },
-            { label: 'Skip-the-Line', mad: `From $${SKIP_THE_LINE_PRICE_USD}`, usd: 'Same as gate price — no fee added', note: 'Walk straight in, no waiting', highlight: true },
-            { label: 'Guided Tour', mad: `From $${GUIDED_TOUR_PLANNED_PRICE_USD}`, usd: 'Incl. entry + expert guide', note: 'Entry + 90-min English tour', highlight: false },
+            { label: 'Standard Entry', mad: `${OFFICIAL_DOOR_PRICE_MAD} MAD`, usd: `≈ ${madToEur(OFFICIAL_DOOR_PRICE_MAD)}`, note: 'At the gate — queue included', highlight: false },
+            { label: 'Skip-the-Line', mad: `€${ENTRY_PRICE_EUR.toFixed(2)}`, usd: paymentsEnabled ? 'Official ticket + digital guide + support' : 'Same as gate price — no fee added', note: paymentsEnabled ? 'Free cancellation via WhatsApp' : 'No ticket-office queue', highlight: true },
+            { label: 'Guided Tour', mad: `From €${GUIDED_TOUR_PLANNED_PRICE_EUR}`, usd: 'Incl. entry + expert guide', note: 'Entry + 90-min English tour', highlight: false },
           ].map(({ label, mad, usd, note, highlight }) => (
             <div key={label} className={`rounded-2xl border p-6 text-center ${highlight ? 'bg-[#C4452D] border-[#C4452D] text-white shadow-[0_8px_32px_rgba(196,69,45,0.3)]' : 'bg-[#251A0F] border-[rgba(232,163,61,0.13)]'}`}>
               <p className={`text-xs font-bold uppercase tracking-widest mb-3 ${highlight ? 'text-white/70' : 'text-[#C4A882]'}`}>{label}</p>
@@ -121,13 +132,13 @@ export default async function EntranceFeePage({ params }: Props) {
           </div>
           <div className="divide-y divide-[rgba(232,163,61,0.10)]">
             {[
-              { category: 'Foreign adults', price: `${OFFICIAL_DOOR_PRICE_MAD} MAD`, usd: `~$${OFFICIAL_DOOR_PRICE_USD_APPROX}`, note: 'Gate price — long queues possible' },
-              { category: 'Foreign children (7–13)', price: '50 MAD', usd: '~$5', note: 'Official Ministry of Culture rate' },
+              { category: 'Foreign adults', price: `${OFFICIAL_DOOR_PRICE_MAD} MAD`, usd: madToEur(OFFICIAL_DOOR_PRICE_MAD), note: 'Gate price — long queues possible' },
+              { category: 'Foreign children (7–13)', price: '50 MAD', usd: madToEur(50), note: 'Official Ministry of Culture rate' },
               { category: 'Children under 7', price: 'Free', usd: 'Free', note: 'No ticket required' },
-              { category: 'Moroccan adults', price: '30 MAD', usd: '~$3', note: 'Valid Moroccan ID required' },
-              { category: 'Skip-the-Line (online)', price: `From $${SKIP_THE_LINE_PRICE_USD}`, usd: `$${SKIP_THE_LINE_PRICE_USD}`, note: 'No fee added — same as gate price' },
-              { category: 'Guided Tour (online)', price: `From $${GUIDED_TOUR_PLANNED_PRICE_USD}`, usd: `$${GUIDED_TOUR_PLANNED_PRICE_USD}`, note: 'Entry + 90-min expert English guide' },
-              { category: 'Private Tour (online)', price: `From $${PRIVATE_TOUR_PLANNED_PRICE_USD}`, usd: `$${PRIVATE_TOUR_PLANNED_PRICE_USD}`, note: 'Entry + exclusive private guide' },
+              { category: 'Moroccan adults', price: '30 MAD', usd: madToEur(30), note: 'Valid Moroccan ID required' },
+              { category: 'Skip-the-Line (online)', price: `€${ENTRY_PRICE_EUR.toFixed(2)}`, usd: `€${ENTRY_PRICE_EUR.toFixed(2)}`, note: paymentsEnabled ? 'Official ticket + digital guide included' : 'No fee added — same as gate price' },
+              { category: 'Guided Tour (online)', price: `From €${GUIDED_TOUR_PLANNED_PRICE_EUR}`, usd: `€${GUIDED_TOUR_PLANNED_PRICE_EUR}`, note: 'Entry + 90-min expert English guide' },
+              { category: 'Private Tour (online)', price: `From €${PRIVATE_TOUR_PLANNED_PRICE_EUR}`, usd: `€${PRIVATE_TOUR_PLANNED_PRICE_EUR}`, note: 'Entry + exclusive private guide' },
             ].map(({ category, price, note }) => (
               <div key={category} className="grid grid-cols-3 px-6 py-4 text-sm">
                 <span className="font-semibold text-[#F5E8CC]">{category}</span>
@@ -146,7 +157,57 @@ export default async function EntranceFeePage({ params }: Props) {
               <h3 className="font-bold text-[#F5E8CC] text-sm">Is there a booking fee?</h3>
             </div>
             <p className="text-sm text-[#C4A882] leading-relaxed">
-              No. Skip-the-line tickets are priced the same as the <strong className="text-[#F5E8CC]">{OFFICIAL_DOOR_PRICE_MAD} MAD gate fee</strong> — we don&apos;t add a booking fee. Guided and private tours cost more because they include a professional English-speaking guide. We&apos;re an independent, unaffiliated information site — when you continue, you&apos;ll complete your purchase directly on the official Ministry of Culture portal, not with us.
+              {/*
+                This page ranks better than any other on the site (position ~6.6
+                in Search Console, 3,500 impressions a quarter across locales)
+                and converted almost none of it: 20 clicks, and the answer box
+                used to end by sending the reader to the ministry portal. Our
+                strongest SEO asset was pointing at somebody else's checkout.
+
+                It still says plainly that we are not the Ministry -- that is
+                required and it stays -- and the portal address remains in the
+                footer and the FAQ. What changed is the last line: it now offers
+                the reader somewhere to go on this site.
+              */}
+              {paymentsEnabled ? (
+                <>
+                  {/*
+                    This opened with "No — we add no booking fee", which the
+                    go-live checklist lists for removal and which does not
+                    survive the arithmetic underneath it. The gate ticket is
+                    100 MAD and we charge €13.99; the difference is what pays
+                    for buying the ticket, the audio guide and the support. That
+                    is a service being sold, and calling it "no fee" is a claim
+                    a regulator would read as misleading no matter how carefully
+                    the next sentence explains it.
+
+                    Saying what the price is instead costs nothing. Somebody
+                    comparing us to the 100 MAD door price is going to do that
+                    subtraction anyway, and it is far better that they find the
+                    number already explained than feel they caught us at it.
+                  */}
+                  Our price is not the gate fee.{' '}
+                  <strong className="text-[#F5E8CC]">
+                    €{formatEURAmount(VISITOR_PACK_PRICE_EUR_CENTS)}
+                  </strong>{' '}
+                  per person is an all-inclusive service price: it covers the official{' '}
+                  {OFFICIAL_DOOR_PRICE_MAD} MAD ticket bought in your name, a digital audio guide,
+                  WhatsApp support, and free cancellation until we send it. Nothing is added at
+                  checkout — what you see is what you pay. We are an independent booking service,
+                  not the Ministry of Culture.{' '}
+                  <Link
+                    href="/visitor-pack"
+                    className="font-semibold text-[#E8A33D] underline underline-offset-4 hover:text-[#F5C96A]"
+                  >
+                    See everything that is included
+                  </Link>
+                  .
+                </>
+              ) : (
+                <>
+                  No. Skip-the-line tickets are priced the same as the <strong className="text-[#F5E8CC]">{OFFICIAL_DOOR_PRICE_MAD} MAD gate fee</strong> — we don&apos;t add a booking fee. Guided and private tours cost more because they include a professional English-speaking guide. We&apos;re an independent, unaffiliated information site — when you continue, you&apos;ll complete your purchase directly on the official Ministry of Culture portal, not with us.
+                </>
+              )}
             </p>
           </div>
           <div className="bg-[#E8A33D]/08 rounded-xl p-5 border border-[#E8A33D]/20">
@@ -155,7 +216,7 @@ export default async function EntranceFeePage({ params }: Props) {
               <h3 className="font-bold text-[#F5E8CC] text-sm">How much is Bahia Palace in MAD?</h3>
             </div>
             <p className="text-sm text-[#C4A882] leading-relaxed">
-              The <strong className="text-[#F5E8CC]">Bahia Palace entrance fee</strong> is <strong className="text-[#F5E8CC]">{OFFICIAL_DOOR_PRICE_MAD} MAD</strong> (approximately ${OFFICIAL_DOOR_PRICE_USD_APPROX} USD or €{OFFICIAL_DOOR_PRICE_EUR_APPROX} EUR at 2026 exchange rates) for foreign adult visitors. Moroccan nationals pay 30 MAD. This is the price set by the Moroccan Ministry of Culture.
+              The <strong className="text-[#F5E8CC]">Bahia Palace entrance fee</strong> is <strong className="text-[#F5E8CC]">{OFFICIAL_DOOR_PRICE_MAD} MAD</strong> (approximately €{formatEURAmount(OFFICIAL_DOOR_PRICE_EUR_CENTS)}, converted at the rate of {MAD_TO_EUR_RATE_CHECKED_ON}) for foreign adult visitors. Moroccan nationals pay 30 MAD. This is the price set by the Moroccan Ministry of Culture.
             </p>
           </div>
         </div>
@@ -201,7 +262,9 @@ export default async function EntranceFeePage({ params }: Props) {
             Book Bahia Palace Tickets Online
           </h2>
           <p className="text-[#C4A882] text-sm mb-5 max-w-md mx-auto">
-            Compare your options, then complete your purchase directly on the official ticket portal.
+            {paymentsEnabled
+              ? 'Compare your options and book with us — or buy the official ticket yourself on the Ministry portal.'
+              : 'Compare your options, then complete your purchase directly on the official ticket portal.'}
           </p>
           <LeadButton ticketType="skip-the-line" className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
             See All Ticket Options <ArrowRight size={16} />

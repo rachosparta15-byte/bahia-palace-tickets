@@ -165,9 +165,9 @@ export function BookingForm({ ticket, ticketName, date, adults, children, locale
           </div>
           <div className="flex items-center justify-between mb-1">
             <span className="text-white/70 text-sm">
-              {adults} × ${price}
+              {adults} × €{price.toFixed(2)}
             </span>
-            <span className="text-white/70 text-sm">${adults * price}</span>
+            <span className="text-white/70 text-sm">€{(adults * price).toFixed(2)}</span>
           </div>
           {children > 0 && (
             <div className="flex items-center justify-between mb-1">

@@ -1,17 +1,19 @@
+import { useTranslations } from 'next-intl';
 import { CheckCircle, Ban, Smartphone, ShieldCheck } from 'lucide-react';
 
 export function TrustStrip() {
+  const t = useTranslations('trustStrip');
 
   const items = [
-    { icon: CheckCircle, label: 'Instant confirm', color: '#8FA63C' },
-    { icon: Ban,         label: 'Free cancel',     color: '#3B65C8' },
-    { icon: Smartphone,  label: 'Mobile ticket',   color: '#C4452D' },
-    { icon: ShieldCheck, label: 'Secure booking',  color: '#8FA63C' },
+    { icon: CheckCircle, label: t('instantConfirm'), color: '#8FA63C' },
+    { icon: Ban,         label: t('freeCancel'),     color: '#3B65C8' },
+    { icon: Smartphone,  label: t('mobileTicket'),   color: '#C4452D' },
+    { icon: ShieldCheck, label: t('secureBooking'),  color: '#8FA63C' },
   ];
 
   return (
     <section className="bg-[#251A0F] border-y border-[rgba(232,163,61,0.15)] py-3 relative">
-      <div className="absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-[#251A0F] to-transparent z-10 pointer-events-none sm:hidden" />
+      <div className="absolute end-0 top-0 bottom-0 w-10 bg-linear-to-l from-[#251A0F] to-transparent z-10 pointer-events-none sm:hidden rtl:bg-linear-to-r" />
 
       <div
         className="flex items-center gap-2.5 overflow-x-auto px-4 max-w-6xl mx-auto sm:justify-center"

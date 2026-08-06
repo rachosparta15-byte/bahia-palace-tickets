@@ -169,7 +169,7 @@ export default async function LocationPage({ params }: Props) {
             ].map(({ from, distance, time }) => (
               <div key={from} className="flex items-center justify-between px-5 py-3 text-sm">
                 <span className="text-[#F5E8CC] font-medium">{from}</span>
-                <div className="flex gap-4 text-right">
+                <div className="flex gap-4 text-end">
                   <span className="text-[#C4A882]">{distance}</span>
                   <span className="text-[#8FA63C] font-semibold">{time}</span>
                 </div>

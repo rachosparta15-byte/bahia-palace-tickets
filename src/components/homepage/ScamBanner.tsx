@@ -8,7 +8,7 @@ export function ScamBanner() {
   return (
     <section className="bg-[#2E1F12] border-y border-[#E8A33D]/20">
       <div className="max-w-6xl mx-auto px-6 py-4">
-        <div className="flex flex-wrap items-center justify-center gap-3 text-center sm:text-left">
+        <div className="flex flex-wrap items-center justify-center gap-3 text-center sm:text-start">
           <AlertTriangle size={18} className="text-[#E8A33D] shrink-0" />
           <p className="text-sm text-[#C4A882]">{t('text')}</p>
           <Link

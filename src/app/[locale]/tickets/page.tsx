@@ -4,7 +4,7 @@ import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { JsonLd } from '@/components/seo/JsonLd';
 import type { Metadata } from 'next';
 import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE } from '@/lib/seo';
-import { SKIP_THE_LINE_PRICE_USD } from '@/config/pricing';
+import { SKIP_THE_LINE_PRICE_EUR } from '@/config/pricing';
 
 export const revalidate = 86400;
 
@@ -12,12 +12,28 @@ interface Props {
   params: Promise<{ locale: string }>;
 }
 
+/*
+ * These descriptions said "book directly on the official portal — no booking
+ * fees", which was two problems in one line.
+ *
+ * It sent the reader away. This is the page that ranks, and its meta
+ * description pointed at somebody else's checkout.
+ *
+ * And "no booking fees" stopped being true the moment the pack went on sale.
+ * The €13.99 is a service price covering the ticket, the audio guide and
+ * support — not a ticket with a fee bolted on. Describing that as "no fees"
+ * while charging more than the gate price is the kind of phrasing that is
+ * technically arguable and indefensible in front of a regulator, which is why
+ * the go-live checklist lists it for removal.
+ *
+ * What replaces it says what the page is for and what the price includes.
+ */
 const TICKETS_META: Record<string, { title: string; description: string }> = {
-  en: { title: `Bahia Palace Tickets 2026 — Skip-the-Line, Guided & Private`, description: `Compare Bahia Palace ticket options: skip-the-line, guided and private tours. Book directly on the official portal — no booking fees.` },
-  fr: { title: `Billets Palais Bahia 2026 — Coupe-File, Guidées & Privées`, description: `Comparez les billets pour le Palais Bahia : coupe-file, visites guidées et privées. Réservez directement sur le portail officiel — sans frais.` },
-  es: { title: `Entradas Palacio Bahía 2026 — Sin Cola, Guiadas y Privadas`, description: `Compara las entradas del Palacio Bahía: sin cola, visitas guiadas y privadas. Reserva directamente en el portal oficial — sin comisiones.` },
-  de: { title: `Bahia Palast Tickets 2026 — Skip-the-Line, Touren & Privat`, description: `Vergleichen Sie Bahia Palast Tickets: Skip-the-Line, Führungen und Privattouren. Direkt über das offizielle Portal buchen — ohne Gebühren.` },
-  it: { title: `Biglietti Palazzo Bahia 2026 — Salta-Fila, Guidate e Private`, description: `Confronta i biglietti per il Palazzo Bahia: salta-fila, visite guidate e private. Prenota direttamente sul portale ufficiale — nessuna commissione.` },
+  en: { title: `Bahia Palace Tickets 2026 — Skip-the-Line, Guided & Private`, description: `Compare Bahia Palace ticket options: skip-the-line, guided and private tours. Prices, what each includes, and how to book.` },
+  fr: { title: `Billets Palais Bahia 2026 — Coupe-File, Guidées & Privées`, description: `Comparez les billets pour le Palais Bahia : coupe-file, visites guidées et privées. Tarifs, contenu de chaque offre et modalités de réservation.` },
+  es: { title: `Entradas Palacio Bahía 2026 — Sin Cola, Guiadas y Privadas`, description: `Compara las entradas del Palacio Bahía: sin cola, visitas guiadas y privadas. Precios, qué incluye cada una y cómo reservar.` },
+  de: { title: `Bahia Palast Tickets 2026 — Skip-the-Line, Touren & Privat`, description: `Vergleichen Sie Bahia Palast Tickets: Skip-the-Line, Führungen und Privattouren. Preise, Leistungen und wie Sie buchen.` },
+  it: { title: `Biglietti Palazzo Bahia 2026 — Salta-Fila, Guidate e Private`, description: `Confronta i biglietti per il Palazzo Bahia: salta-fila, visite guidate e private. Prezzi, che cosa include ciascuno e come prenotare.` },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -60,8 +76,8 @@ export default async function TicketsPage({ params }: Props) {
           image: `${BASE}/og-image.jpg`,
           offers: {
             '@type': 'Offer',
-            price: SKIP_THE_LINE_PRICE_USD.toFixed(2),
-            priceCurrency: 'USD',
+            price: SKIP_THE_LINE_PRICE_EUR.toFixed(2),
+            priceCurrency: 'EUR',
             availability: 'https://schema.org/InStock',
             url: `${BASE}/${locale}/tickets/skip-the-line`,
           },

@@ -67,6 +67,18 @@
   --font-body:     var(--font-dm-sans), system-ui, sans-serif;
   --font-accent:   var(--font-amiri), Georgia, serif;
 
+  /*
+   * Arabic faces, swapped in by the :lang(ar) rule further down.
+   *
+   * Playfair, Cormorant and DM Sans carry no Arabic glyphs, so an Arabic page
+   * set in them falls through to whatever the system happens to have — usually
+   * a mismatched face at the wrong optical size with the diacritics clipped.
+   * Amiri is a proper naskh face and is already loaded in the root layout, so
+   * this costs no extra request.
+   */
+  --font-display-ar: var(--font-amiri), "Noto Naskh Arabic", "Times New Roman", serif;
+  --font-body-ar:    "Noto Sans Arabic", var(--font-amiri), "Segoe UI", sans-serif;
+
   /* ── Font sizes ── */
   --text-hero:     clamp(2.5rem, 6vw, 4.5rem);
   --text-h1:       clamp(2rem, 4.5vw, 3.5rem);
@@ -688,4 +700,58 @@
 .prose div[style*="background: #F0F7FF"] li,
 .prose div[style*="background: #F0F7FF"] strong {
   color: #1a3a5c;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Arabic
+   Scoped with :lang(ar) rather than [dir="rtl"] — direction and
+   script are different things, and only the script decides the face.
+   ───────────────────────────────────────────────────────────── */
+:lang(ar) {
+  /*
+   * Redefine the tokens rather than set font-family on elements.
+   *
+   * Several components set `style={{ fontFamily: 'var(--font-display)' }}`
+   * inline, and an inline style beats any stylesheet rule — so a
+   * `:lang(ar) h1 { font-family: ... }` rule loses, and the Arabic headline
+   * renders in Cormorant, which has no Arabic glyphs at all. Swapping what the
+   * variable resolves to inside this scope fixes every one of those inline
+   * styles at once, without touching the components.
+   */
+  --font-display: var(--font-display-ar);
+  --font-heading: var(--font-display-ar);
+  --font-body: var(--font-body-ar);
+
+  font-family: var(--font-body-ar);
+  /* Naskh sits smaller on the line than Latin at the same size, and its
+     ascenders and diacritics need more room than a Latin line height gives. */
+  line-height: 1.85;
+}
+
+:lang(ar) h1,
+:lang(ar) h2,
+:lang(ar) h3,
+:lang(ar) h4,
+:lang(ar) .u-display-tight {
+  font-family: var(--font-display-ar);
+  line-height: 1.45;
+  /* Latin display tracking is negative here; Arabic must never be tracked in,
+     because the letters join and negative tracking breaks the joins. */
+  letter-spacing: 0;
+}
+
+/* Uppercase and small-caps do nothing in Arabic except make eyebrows look
+   like a rendering fault. */
+:lang(ar) .uppercase {
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+/* Prices, dates and phone numbers stay in Western digits and stay LTR inside
+   an RTL line, so "€12.90" does not come out as "90.12€". */
+:lang(ar) .tabular-nums,
+:lang(ar) time,
+:lang(ar) [dir="ltr"] {
+  direction: ltr;
+  unicode-bidi: isolate;
 }

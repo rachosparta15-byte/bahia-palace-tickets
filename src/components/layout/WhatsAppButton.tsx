@@ -40,7 +40,7 @@ export function WhatsAppButton() {
     >
       <MessageCircle size={26} fill="white" strokeWidth={0} />
       <span className="
-        absolute right-full mr-3 px-3 py-1.5 rounded-lg
+        absolute right-full me-3 px-3 py-1.5 rounded-lg
         bg-[#251A0F] text-white text-sm font-medium whitespace-nowrap
         opacity-0 group-hover:opacity-100
         pointer-events-none transition-opacity duration-200

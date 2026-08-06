@@ -5,6 +5,7 @@ import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE } from '@/lib/seo
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 
 export const revalidate = 86400;
 
@@ -58,6 +59,7 @@ const timeline = [
 
 export default async function HistoryPage({ params }: Props) {
   const { locale } = await params;
+  const { enabled: paymentsEnabled } = getPublicPaymentsFlags();
   return (
     <div className="min-h-screen bg-[#1C1108]">
       <JsonLd data={getHistorySchema(locale)} />
@@ -127,11 +129,11 @@ export default async function HistoryPage({ params }: Props) {
             Bahia Palace Timeline: From Construction to Heritage Site
           </h2>
           <div className="relative">
-            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-[rgba(232,163,61,0.25)]" />
+            <div className="absolute start-6 top-0 bottom-0 w-0.5 bg-[rgba(232,163,61,0.25)]" />
             <div className="space-y-6">
               {timeline.map(({ year, title, text }) => (
-                <div key={year} className="pl-14 relative">
-                  <div className="absolute left-3.5 top-1.5 w-5 h-5 rounded-full bg-[#C4452D] border-2 border-[#1C1108] shadow" />
+                <div key={year} className="ps-14 relative">
+                  <div className="absolute start-3.5 top-1.5 w-5 h-5 rounded-full bg-[#C4452D] border-2 border-[#1C1108] shadow" />
                   <span className="text-xs font-bold text-[#C4452D] uppercase tracking-widest">{year}</span>
                   <h3 className="font-bold text-[#F5E8CC] mt-0.5 mb-2" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.15rem' }}>{title}</h3>
                   <p className="text-sm text-[#C4A882] leading-relaxed">{text}</p>
@@ -203,7 +205,9 @@ export default async function HistoryPage({ params }: Props) {
             Visit Bahia Palace — Book Skip-the-Line Tickets
           </h2>
           <p className="text-[#C4A882] text-sm mb-5 max-w-md mx-auto">
-            Compare your options, then complete your purchase directly on the official ticket portal.
+            {paymentsEnabled
+              ? 'Compare your options and book with us — or buy the official ticket yourself on the Ministry portal.'
+              : 'Compare your options, then complete your purchase directly on the official ticket portal.'}
           </p>
           <LeadButton ticketType="skip-the-line" className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
             Book Bahia Palace Tickets Online <ArrowRight size={16} />

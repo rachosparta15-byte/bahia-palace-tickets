@@ -7,6 +7,7 @@ import { ArrowLeft, Clock, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import prisma from '@/lib/db';
 import type { Metadata } from 'next';
+import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 
 const IMAGES: Record<string, string> = {
   'skip-the-line':       '/images/gallery/bahia-palace-main-gate-lanterns-full-view.jpg',
@@ -25,6 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function QuickBookPage({ params }: Props) {
   const { slug, locale } = await params;
+  const { enabled: paymentsEnabled } = getPublicPaymentsFlags();
 
   if (!isValidTicketSlug(slug)) notFound();
 
@@ -74,7 +76,7 @@ export default async function QuickBookPage({ params }: Props) {
             <div className="relative h-56 rounded-2xl overflow-hidden mb-5 shadow-md">
               <Image src={imgSrc} alt={name} fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-              <div className="absolute bottom-4 left-4">
+              <div className="absolute bottom-4 start-4">
                 <span className="bg-[#C4452D] text-white text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
                   Available Now
                 </span>
@@ -95,8 +97,8 @@ export default async function QuickBookPage({ params }: Props) {
 
             <div className="space-y-3">
               {[
-                { icon: ShieldCheck, text: 'Free to use — no booking fees' },
-                { icon: ShieldCheck, text: 'Official tickets only' },
+                { icon: ShieldCheck, text: paymentsEnabled ? 'Free cancellation via WhatsApp' : 'Free to use — no booking fees' },
+                { icon: ShieldCheck, text: paymentsEnabled ? 'Official ticket included' : 'Official tickets only' },
                 { icon: ShieldCheck, text: 'Verified visitor information' },
                 { icon: ShieldCheck, text: 'Skip the queue — walk straight in' },
               ].map(({ icon: Icon, text }) => (

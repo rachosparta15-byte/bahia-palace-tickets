@@ -100,9 +100,10 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
   const openPortal = () =>
     window.open(BOOKING_URL, '_blank', 'noopener,noreferrer');
 
-  const saveLead = async (email: string, name: string) => {
+  /** Returns the saved Lead's id, or null if capture failed. */
+  const saveLead = async (email: string, name: string): Promise<string | null> => {
     try {
-      await fetch('/api/leads', {
+      const res = await fetch('/api/leads', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -121,8 +122,11 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
           device:      source.device,
         }),
       });
+      const data = (await res.json()) as { ok?: boolean; id?: string };
+      return data.id ?? null;
     } catch {
       // best-effort — never block the user
+      return null;
     }
   };
 
@@ -141,17 +145,19 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
     }
     setLoading(true);
     // The lead is saved before any handoff, so we keep it either way.
-    await saveLead(email, name);
+    const leadId = await saveLead(email, name);
     trackEvent('lead_submit', { hasEmail: !!email.trim(), ticketType, locale });
     setLoading(false);
 
     if (paymentsEnabled) {
-      // Carry what they already typed so the pack form doesn't ask twice.
+      // Carry what they already typed so the pack form doesn't ask twice —
+      // plus the row id, so checkout updates this lead instead of duplicating it.
       storeLeadPrefill({
         name: name.trim() || undefined,
         email: email.trim() || undefined,
         visitDate: visitDate || undefined,
         visitors: Number(partySize) || undefined,
+        leadId: leadId ?? undefined,
       });
       trackEvent('pack_handoff', { ticketType, locale });
       onClose();
@@ -203,7 +209,7 @@ export function LeadModal({ ticketType, onClose, onDone }: Props) {
               <button
                 onClick={onClose}
                 aria-label="Close"
-                className="text-white/40 hover:text-white/80 transition-colors shrink-0 flex items-center justify-center -mr-2 -mt-1"
+                className="text-white/40 hover:text-white/80 transition-colors shrink-0 flex items-center justify-center -me-2 -mt-1"
                 style={{ minWidth: '44px', minHeight: '44px' }}
               >
                 <X size={18} />

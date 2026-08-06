@@ -6,8 +6,8 @@ import { createClient } from '@libsql/client';
 import { randomUUID } from 'crypto';
 import { readFileSync } from 'fs';
 
-// ── Load .env.local ──────────────────────────────────────────────────────────
-const envContent = readFileSync('.env.local', 'utf8');
+// ── Load .env.prod (PRODUCTION database) ──────────────────────────────────────────────────────────
+const envContent = readFileSync('.env.prod', 'utf8');
 for (const line of envContent.split('\n')) {
   const [key, ...vals] = line.split('=');
   if (key && vals.length) process.env[key.trim()] = vals.join('=').trim().replace(/^"|"$/g, '').replace(/^'|'$/g, '');

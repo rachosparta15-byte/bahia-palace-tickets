@@ -131,7 +131,7 @@ export function RichTextEditor({ value, onChange }: Props) {
             if (e.target.value) editor.chain().focus().setFontFamily(e.target.value).run();
             else editor.chain().focus().unsetFontFamily().run();
           }}
-          className="text-xs border border-[#D4BC96] rounded px-1.5 py-1 text-[#3D2817] bg-white focus:outline-none mr-1"
+          className="text-xs border border-[#D4BC96] rounded px-1.5 py-1 text-[#3D2817] bg-white focus:outline-none me-1"
         >
           {FONTS.map(f => <option key={f.value} value={f.value}>{f.label}</option>)}
         </select>
@@ -143,7 +143,7 @@ export function RichTextEditor({ value, onChange }: Props) {
             if (e.target.value) (editor.chain().focus() as any).setFontSize(e.target.value).run();
             else (editor.chain().focus() as any).unsetFontSize().run();
           }}
-          className="text-xs border border-[#D4BC96] rounded px-1.5 py-1 text-[#3D2817] bg-white focus:outline-none mr-2"
+          className="text-xs border border-[#D4BC96] rounded px-1.5 py-1 text-[#3D2817] bg-white focus:outline-none me-2"
         >
           <option value="">Size</option>
           {SIZES.map(s => <option key={s} value={s}>{s}</option>)}
@@ -280,7 +280,7 @@ export function RichTextEditor({ value, onChange }: Props) {
       <EditorContent editor={editor} />
 
       {/* ── Word count ── */}
-      <div className="px-4 py-1.5 border-t border-[#E8D5B7] bg-[#FDFAF5] text-right">
+      <div className="px-4 py-1.5 border-t border-[#E8D5B7] bg-[#FDFAF5] text-end">
         <span className="text-[11px] text-[#8B6344]">
           {editor.storage.characterCount?.words?.() ?? editor.getText().split(/\s+/).filter(Boolean).length} words
         </span>

@@ -1,0 +1,67 @@
+{
+  "trust": {
+    "freeCancellation": "Cancelamento gratuito",
+    "secure": "Bilhete oficial incluído"
+  },
+  "tickets": {
+    "skipTheLine": {
+      "includes": [
+        null,
+        null,
+        "Guia digital e apoio incluídos",
+        "Bilhete oficial incluído"
+      ]
+    },
+    "guidedTour": {
+      "includes": [
+        null,
+        null,
+        null,
+        null,
+        "Bilhete oficial incluído"
+      ]
+    },
+    "privateTour": {
+      "includes": [
+        null,
+        null,
+        null,
+        null,
+        "Bilhete oficial incluído"
+      ]
+    },
+    "combo": {
+      "includes": [
+        null,
+        null,
+        null,
+        null,
+        "Bilhete oficial incluído"
+      ]
+    }
+  },
+  "ticketDetail": {
+    "proceedToCheckout": "Continuar para a reserva →",
+    "instantConfirm": "Inclui bilhete oficial + guia digital + apoio",
+    "freeCancelNote": "Cancelamento gratuito até enviarmos o bilhete"
+  },
+  "whyUs": {
+    "items": [
+      {
+        "title": "Bilhete oficial, tratado por nós",
+        "desc": "Compramos o verdadeiro bilhete do Ministério da Cultura em seu nome e juntamos-lhe um guia digital e apoio — um só pagamento, simples."
+      },
+      {
+        "title": "Preço transparente",
+        "desc": "13,99 € por pessoa, impostos incluídos, e nada acrescentado no pagamento. Cobre o bilhete oficial do Ministério da Cultura comprado em seu nome, um audioguia digital, apoio por WhatsApp e cancelamento gratuito até enviarmos o bilhete."
+      },
+      null,
+      {
+        "desc": "Se partilhar o seu e-mail, é usado apenas para enviar sugestões de visita — nunca é vendido. A reserva é concluída connosco em segurança; os pagamentos com cartão são tratados pela Stripe e nunca guardamos os dados do seu cartão."
+      }
+    ]
+  },
+  "footer": {
+    "disclaimer": "visitbahiapalace.com é um serviço de reservas independente. Não estamos associados ao Palácio da Bahia nem ao Ministério da Cultura marroquino. Os bilhetes de entrada também podem ser comprados directamente ao Ministério em <portal>e-services.minculture.gov.ma</portal>."
+  }
+}

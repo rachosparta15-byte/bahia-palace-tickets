@@ -289,7 +289,7 @@ const posts: BlogPost[] = [
 <h2>What Is the Standard Bahia Palace Entrance Fee in 2026?</h2>
 <p>The adult entrance fee for Bahia Palace is 100 MAD in 2026 — set by Morocco's Ministry of Culture and applied uniformly to all foreign visitors regardless of nationality. At current exchange rates that is approximately €9, $10 USD, or £8 GBP. Morocco welcomed a record 17.4 million international tourists in 2024 (<a href="https://www.visitmorocco.com" rel="noopener noreferrer">Office National Marocain du Tourisme</a>), and Bahia Palace consistently ranks among the country's most visited cultural monuments. At 100 MAD, it remains one of the better-value heritage sites in Marrakech relative to what you get inside.</p>
 
-<table><thead><tr><th>Visitor Type</th><th>Price (MAD)</th><th>Approx. EUR</th><th>Approx. USD</th><th>Approx. GBP</th></tr></thead><tbody><tr><td>Adult (foreign visitor)</td><td>100 MAD</td><td>~€9</td><td>~$10</td><td>~£8</td></tr><tr><td>Child under 7</td><td>Free</td><td>Free</td><td>Free</td><td>Free</td></tr><tr><td>Child 7 and over</td><td>100 MAD</td><td>~€9</td><td>~$10</td><td>~£8</td></tr></tbody></table>
+<table><thead><tr><th>Visitor Type</th><th>Price (MAD)</th><th>Approx. EUR</th></tr></thead><tbody><tr><td>Adult (foreign visitor)</td><td>100 MAD</td><td>~€9.36</td></tr><tr><td>Child under 7</td><td>Free</td><td>Free</td></tr><tr><td>Child 7 and over</td><td>100 MAD</td><td>~€9.36</td></tr></tbody></table>
 
 <p>Currency conversions are approximate as of mid-2026. The Moroccan dirham (MAD) is a closed currency — you cannot purchase dirhams before arriving in Morocco. Exchange at your hotel, an ATM on arrival, or a bureau de change in Marrakech's city centre.</p>
 

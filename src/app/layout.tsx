@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from 'next';
+import { getLocale } from 'next-intl/server';
+import { dirFor } from '@/i18n/routing';
 import { BASE } from '@/lib/seo';
 import { Analytics } from '@vercel/analytics/next';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
@@ -78,9 +80,19 @@ const orgSchema = {
   contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', availableLanguage: ['English', 'French'] },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  /*
+   * `lang` and `dir` have to be on <html>: it is what assistive tech reads,
+   * what Google reads, and what CSS logical properties resolve against. They
+   * were previously set on a <div> inside the locale layout, which does none
+   * of those things -- and the document has never carried a direction at all,
+   * so Arabic would have rendered left-to-right.
+   */
+  const locale = await getLocale();
+  const dir = dirFor(locale);
+
   return (
-    <html suppressHydrationWarning>
+    <html lang={locale} dir={dir} suppressHydrationWarning>
       <body className={`${playfair.variable} ${cormorant.variable} ${dmSans.variable} ${amiri.variable}`}>
         <script
           type="application/ld+json"

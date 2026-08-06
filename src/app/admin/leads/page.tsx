@@ -1,11 +1,14 @@
 ﻿import prisma from '@/lib/db';
-import { Search, Mail, User, Globe, Tag, Calendar, MapPin, Smartphone, Link2, Wifi, Users, CalendarCheck, MessageCircle } from 'lucide-react';
+import { ensureColumns } from '@/lib/db/ensure-columns';
+import { Search, Mail, User, Globe, Tag, Calendar, MapPin, Smartphone, Link2, Wifi, Users, CalendarCheck, MessageCircle, CircleDot } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
 interface Props {
-  searchParams: Promise<{ q?: string }>;
+  searchParams: Promise<{ q?: string; status?: string }>;
 }
+
+const STATUS_TABS = ['all', 'paid', 'lead'] as const;
 
 /** Turns a raw document.referrer URL into a readable source label. */
 function labelReferrer(raw: string | null): { label: string; title: string } {
@@ -42,25 +45,27 @@ function labelReferrer(raw: string | null): { label: string; title: string } {
 }
 
 export default async function LeadsPage({ searchParams }: Props) {
-  const { q } = await searchParams;
+  const { q, status } = await searchParams;
+  const activeStatus = STATUS_TABS.includes(status as typeof STATUS_TABS[number])
+    ? (status as typeof STATUS_TABS[number])
+    : 'all';
 
-  // Ensure newer columns exist before querying (idempotent)
-  await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "ipAddress" TEXT`).catch(() => {});
-  await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "partySize" INTEGER`).catch(() => {});
-  await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "visitDate" TEXT`).catch(() => {});
-  await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "whatsapp" TEXT`).catch(() => {});
+  await ensureColumns();
 
   const leads = await prisma.lead.findMany({
-    where: q
-      ? {
-          OR: [
-            { email:      { contains: q } },
-            { name:       { contains: q } },
-            { whatsapp:   { contains: q } },
-            { sourcePage: { contains: q } },
-          ],
-        }
-      : {},
+    where: {
+      ...(activeStatus !== 'all' ? { status: activeStatus } : {}),
+      ...(q
+        ? {
+            OR: [
+              { email:      { contains: q } },
+              { name:       { contains: q } },
+              { whatsapp:   { contains: q } },
+              { sourcePage: { contains: q } },
+            ],
+          }
+        : {}),
+    },
     orderBy: { createdAt: 'desc' },
     take: 200,
   });
@@ -68,10 +73,26 @@ export default async function LeadsPage({ searchParams }: Props) {
   const withEmail    = leads.filter(l => l.email).length;
   const withoutEmail = leads.length - withEmail;
 
+  // Counted across ALL leads, not just the 200 shown or the active filter —
+  // a conversion rate computed from a filtered page would be meaningless.
+  const [totalLeads, paidLeads] = await Promise.all([
+    prisma.lead.count(),
+    prisma.lead.count({ where: { status: 'paid' } }),
+  ]);
+  const conversionPct = totalLeads > 0 ? Math.round((paidLeads / totalLeads) * 100) : 0;
+
+  function tabHref(s: string) {
+    const params = new URLSearchParams();
+    if (s !== 'all') params.set('status', s);
+    if (q) params.set('q', q);
+    const qs = params.toString();
+    return `/admin/leads${qs ? `?${qs}` : ''}`;
+  }
+
   // Traffic source breakdown
   const bySource: Record<string, number> = {};
   for (const l of leads) {
-    const { label } = labelReferrer((l as any).referrer ?? null);
+    const { label } = labelReferrer(l.referrer ?? null);
     bySource[label] = (bySource[label] ?? 0) + 1;
   }
   const topSources = Object.entries(bySource)
@@ -92,6 +113,8 @@ export default async function LeadsPage({ searchParams }: Props) {
         <div className="flex flex-wrap gap-3">
           {[
             { label: 'Total interactions', value: leads.length,  color: 'bg-[#3D2817] text-white' },
+            { label: 'Paid bookings',      value: paidLeads,     color: 'bg-emerald-100 text-emerald-800' },
+            { label: 'Converted',          value: `${conversionPct}%`, color: 'bg-[#C4452D]/15 text-[#C4452D]' },
             { label: 'With email',         value: withEmail,     color: 'bg-[#6B7B3A]/20 text-[#4a5a28]' },
             { label: 'Skipped email',      value: withoutEmail,  color: 'bg-[#E8D5B7] text-[#8B6344]' },
           ].map(({ label, value, color }) => (
@@ -117,7 +140,7 @@ export default async function LeadsPage({ searchParams }: Props) {
                     style={{ width: `${Math.round((count / leads.length) * 100)}%` }}
                   />
                 </div>
-                <span className="text-xs text-[#8B6344] w-8 text-right">{count}</span>
+                <span className="text-xs text-[#8B6344] w-8 text-end">{count}</span>
               </div>
             ))}
           </div>
@@ -125,16 +148,35 @@ export default async function LeadsPage({ searchParams }: Props) {
       )}
 
       <div className="bg-white rounded-2xl border border-[#E8D5B7]">
-        {/* Search */}
-        <div className="px-6 py-4 border-b border-[#E8D5B7]">
-          <form className="flex items-center gap-2">
+        {/* Status filter + search */}
+        <div className="px-6 py-4 border-b border-[#E8D5B7] flex items-center gap-4 flex-wrap">
+          <div className="flex gap-1">
+            {STATUS_TABS.map(s => (
+              <a
+                key={s}
+                href={tabHref(s)}
+                className={`px-3 py-1.5 rounded-lg text-sm font-medium capitalize transition-colors ${
+                  activeStatus === s
+                    ? 'bg-[#3D2817] text-white'
+                    : 'text-[#5C3D20] hover:bg-[#FAF3E7]'
+                }`}
+              >
+                {s === 'lead' ? 'Lead only' : s === 'paid' ? 'Paid' : 'All'}
+              </a>
+            ))}
+          </div>
+
+          <form className="ms-auto flex items-center gap-2">
+            {activeStatus !== 'all' && (
+              <input type="hidden" name="status" value={activeStatus} />
+            )}
             <div className="relative">
               <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8B6344]" />
               <input
                 name="q"
                 defaultValue={q}
                 placeholder="Search by email, name or page…"
-                className="pl-8 pr-4 py-2 text-sm border border-[#D4BC96] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C4452D]/30 focus:border-[#C4452D] w-72 bg-white"
+                className="ps-8 pe-4 py-2 text-sm border border-[#D4BC96] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C4452D]/30 focus:border-[#C4452D] w-72 bg-white"
               />
             </div>
             <button
@@ -144,7 +186,7 @@ export default async function LeadsPage({ searchParams }: Props) {
               Search
             </button>
             {q && (
-              <a href="/admin/leads" className="text-sm text-[#8B6344] hover:text-[#3D2817]">
+              <a href={tabHref(activeStatus)} className="text-sm text-[#8B6344] hover:text-[#3D2817]">
                 Clear
               </a>
             )}
@@ -157,6 +199,7 @@ export default async function LeadsPage({ searchParams }: Props) {
             <thead>
               <tr className="border-b border-[#E8D5B7]">
                 {[
+                  { icon: CircleDot, label: 'Status' },
                   { icon: Mail,     label: 'Email' },
                   { icon: User,     label: 'Name' },
                   { icon: MessageCircle, label: 'WhatsApp' },
@@ -172,7 +215,7 @@ export default async function LeadsPage({ searchParams }: Props) {
                 ].map(({ icon: Icon, label }) => (
                   <th
                     key={label}
-                    className="px-4 py-3 text-left text-xs font-semibold text-[#8B6344] uppercase tracking-wide whitespace-nowrap"
+                    className="px-4 py-3 text-start text-xs font-semibold text-[#8B6344] uppercase tracking-wide whitespace-nowrap"
                   >
                     <span className="flex items-center gap-1.5">
                       <Icon size={11} />
@@ -185,8 +228,10 @@ export default async function LeadsPage({ searchParams }: Props) {
             <tbody>
               {leads.length === 0 && (
                 <tr>
-                  <td colSpan={12} className="px-4 py-16 text-center text-[#8B6344]">
-                    {q ? 'No leads match your search' : 'No interactions yet — they will appear here once visitors use the booking modal'}
+                  <td colSpan={13} className="px-4 py-16 text-center text-[#8B6344]">
+                    {q || activeStatus !== 'all'
+                      ? 'No leads match this filter'
+                      : 'No interactions yet — they will appear here once visitors use the booking modal'}
                   </td>
                 </tr>
               )}
@@ -200,7 +245,10 @@ export default async function LeadsPage({ searchParams }: Props) {
                   partySize?: number | null;
                   visitDate?: string | null;
                   whatsapp?: string | null;
+                  status?: string | null;
+                  bookingId?: string | null;
                 };
+                const isPaid = l.status === 'paid';
                 const { label: srcLabel, title: srcTitle } = labelReferrer(l.referrer ?? null);
                 const hasUtm = l.utmSource || l.utmMedium || l.utmCampaign;
                 const utmText = [l.utmSource, l.utmMedium, l.utmCampaign].filter(Boolean).join(' / ');
@@ -208,8 +256,30 @@ export default async function LeadsPage({ searchParams }: Props) {
                 return (
                   <tr
                     key={lead.id}
-                    className="border-b border-[#E8D5B7]/60 hover:bg-[#FAF3E7]/60 transition-colors"
+                    className={`border-b border-[#E8D5B7]/60 transition-colors ${
+                      isPaid ? 'bg-emerald-50/60 hover:bg-emerald-50' : 'hover:bg-[#FAF3E7]/60'
+                    }`}
                   >
+                    {/* Status — the lead vs. paid-booking distinction */}
+                    <td className="px-4 py-3 whitespace-nowrap">
+                      {isPaid ? (
+                        <a
+                          href={`/admin/bookings?q=${encodeURIComponent(lead.email ?? '')}`}
+                          className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-semibold text-emerald-800 hover:bg-emerald-200"
+                          title={l.bookingId ? `Booking ${l.bookingId}` : 'Paid booking'}
+                        >
+                          Paid
+                        </a>
+                      ) : (
+                        <span
+                          className="inline-flex items-center gap-1 rounded-full bg-[#E8D5B7] px-2.5 py-0.5 text-xs font-medium text-[#8B6344]"
+                          title={l.bookingId ? 'Reached checkout but never paid' : 'Never reached checkout'}
+                        >
+                          {l.bookingId ? 'Abandoned' : 'Lead'}
+                        </span>
+                      )}
+                    </td>
+
                     {/* Email */}
                     <td className="px-4 py-3">
                       {lead.email

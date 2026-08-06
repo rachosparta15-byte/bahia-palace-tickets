@@ -1,0 +1,1247 @@
+﻿{
+    "exported_at":  "2026-06-23 17:04:54 UTC",
+    "database":  "bahia-palace-rachosparta15-byte",
+    "total_records":  124,
+    "records":  [
+                    {
+                        "slug":  "10-hidden-details-bahia-palace",
+                        "locale":  "de",
+                        "title":  "10 versteckte Details in Bahia Palace (Touristenguide 2026)",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:38.039+00:00",
+                        "createdAt":  "2026-05-23T22:57:58.841Z",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-and-saadian-tombs-one-day",
+                        "locale":  "de",
+                        "title":  "Bahia Palace \u0026 Saadische GrÃ¤ber: beide an einem halben Tag",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:38.124+00:00",
+                        "createdAt":  "2026-06-07T13:11:30.898+00:00",
+                        "category":  "guides",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-audio-guide",
+                        "locale":  "de",
+                        "title":  "Bahia Palace Audioguide: Brauchen Sie einen? (2026)",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:38.209+00:00",
+                        "createdAt":  "2026-06-07T13:11:31.096+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-dress-code",
+                        "locale":  "de",
+                        "title":  "Dresscode Bahia Palace 2026: Was Sie anziehen sollten",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:38.294+00:00",
+                        "createdAt":  "2026-06-07T13:11:31.300+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-entrance-fee-2026",
+                        "locale":  "de",
+                        "title":  "Eintritt Bahia Palace 2026: Preise, Rabatte und Spartipps",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:38.382+00:00",
+                        "createdAt":  "2026-06-07T13:11:31.409+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-guided-tour",
+                        "locale":  "de",
+                        "title":  "Bahia Palace gefÃ¼hrte Tour 2026: Preise, Optionen und Fazit",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:38.520+00:00",
+                        "createdAt":  "2026-06-21T05:54:25.111+00:00",
+                        "category":  "guides",
+                        "author":  "Abdellah"
+                    },
+                    {
+                        "slug":  "bahia-palace-history",
+                        "locale":  "de",
+                        "title":  "Geschichte von Bahia Palace: Aufstieg und Fall Ba Ahmeds",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:38.830+00:00",
+                        "createdAt":  "2026-06-07T13:11:31.488+00:00",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-opening-hours-2026",
+                        "locale":  "de",
+                        "title":  "Bahia Palace Ãffnungszeiten 2026: Zeiten und Tipps",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:38.988+00:00",
+                        "createdAt":  "2026-06-07T13:11:31.569+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-photography-guide",
+                        "locale":  "de",
+                        "title":  "Bahia Palace Fotoguide: Licht, Motive und Tipps",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:39.129+00:00",
+                        "createdAt":  "2026-06-07T13:11:31.650+00:00",
+                        "category":  "guides",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-room-by-room-guide",
+                        "locale":  "de",
+                        "title":  "Was in Bahia Palace sehen: Raum-fÃ¼r-Raum-FÃ¼hrer",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:39.283+00:00",
+                        "createdAt":  "2026-06-07T13:11:31.801+00:00",
+                        "category":  "guides",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-tips-before-visiting",
+                        "locale":  "de",
+                        "title":  "10 Dinge, die Sie vor dem Besuch von Bahia Palace wissen sollten",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:39.424+00:00",
+                        "createdAt":  "2026-06-07T13:11:31.922+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-vs-badi-palace-marrakech",
+                        "locale":  "de",
+                        "title":  "Bahia Palace vs El Badi Palace: Welchen besuchen?",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:39.526+00:00",
+                        "createdAt":  "2026-06-07T13:11:32.010+00:00",
+                        "category":  "comparisons",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-vs-majorelle-garden",
+                        "locale":  "de",
+                        "title":  "Bahia Palace vs Majorelle Garten: Was zuerst besuchen?",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:39.631+00:00",
+                        "createdAt":  "2026-06-07T13:11:32.093+00:00",
+                        "category":  "comparisons",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-who-built-it",
+                        "locale":  "de",
+                        "title":  "bahia-palace-who-built-it",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:39.782+00:00",
+                        "createdAt":  "2026-06-21T14:36:39.782+00:00",
+                        "category":  "history",
+                        "author":  "Abdellah"
+                    },
+                    {
+                        "slug":  "bahia-palace-with-kids",
+                        "locale":  "de",
+                        "title":  "Bahia Palace mit Kindern: FamilienreisefÃ¼hrer 2026",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:39.922+00:00",
+                        "createdAt":  "2026-06-07T13:11:32.175+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "best-time-to-visit-bahia-palace",
+                        "locale":  "de",
+                        "title":  "Beste Zeit fÃ¼r Bahia Palace ohne Menschenmassen (2026)",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:40.018+00:00",
+                        "createdAt":  "2026-05-23T22:29:02.140Z",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "der-menschliche-und-solidarische-leitfaden-die-mousawama-und-die-seele-von-marrakesch-verstehen",
+                        "locale":  "de",
+                        "title":  "Der menschliche und solidarische Leitfaden: Die \"Mousawama\" und die Seele von Marrakesch verstehen",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-17T20:51:59.399+00:00",
+                        "createdAt":  "2026-06-17T20:51:59.399+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "die-stimmen-des-bahia-palastes",
+                        "locale":  "de",
+                        "title":  "Die Stimmen des Bahia-Palastes",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-17T19:43:01.405+00:00",
+                        "createdAt":  "2026-06-16T01:25:51.792+00:00",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "how-to-get-to-bahia-palace",
+                        "locale":  "de",
+                        "title":  "So kommt man zum Bahia Palace von Jemaa el-Fna",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:40.294+00:00",
+                        "createdAt":  "2026-06-07T13:11:32.422+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "how-to-get-to-bahia-palace-marrakech",
+                        "locale":  "de",
+                        "title":  "Wie kommt man zum Bahia Palace von Jemaa el-Fna?",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:40.116+00:00",
+                        "createdAt":  "2026-06-07T13:11:32.337+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "is-bahia-palace-worth-visiting",
+                        "locale":  "de",
+                        "title":  "Lohnt sich Bahia Palace? Ehrliche Bewertung 2026",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:40.398+00:00",
+                        "createdAt":  "2026-06-07T13:11:32.678+00:00",
+                        "category":  "reviews",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "marrakech-2-day-itinerary",
+                        "locale":  "de",
+                        "title":  "Marrakech in 2 Tagen: der perfekte Reiseplan mit Bahia Palace",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:40.616+00:00",
+                        "createdAt":  "2026-06-07T13:11:33.373+00:00",
+                        "category":  "itineraries",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "marrakech-safety-guide",
+                        "locale":  "de",
+                        "title":  "Marrakech Sicherheitsratgeber 2026: Betrug \u0026 Tipps",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:40.826+00:00",
+                        "createdAt":  "2026-06-07T13:11:33.500+00:00",
+                        "category":  "safety",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "so-vermeiden-sie-betrug-in-der-medina-von-marrakesch-warum-online-ticketbuchung-wichtig-ist",
+                        "locale":  "de",
+                        "title":  "So vermeiden Sie Betrug in der Medina von Marrakesch \u0026 warum Online-Ticketbuchung wichtig ist",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-12T14:44:11.463+00:00",
+                        "createdAt":  "2026-06-12T14:42:33.503+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "10-hidden-details-bahia-palace",
+                        "locale":  "en",
+                        "title":  "10 Hidden Details in Bahia Palace Most Tourists Never Notice",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:33.291+00:00",
+                        "createdAt":  "2026-05-23T22:57:58.841Z",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-and-saadian-tombs-one-day",
+                        "locale":  "en",
+                        "title":  "Bahia Palace \u0026 Saadian Tombs: Can You Visit Both in One Day?",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:34.076+00:00",
+                        "createdAt":  "2026-05-31T13:05:47.368+00:00",
+                        "category":  "guides",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-audio-guide",
+                        "locale":  "en",
+                        "title":  "Bahia Palace Audio Guide: Do You Need One?",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:34.185+00:00",
+                        "createdAt":  "2026-05-31T13:05:47.785+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-dress-code",
+                        "locale":  "en",
+                        "title":  "Bahia Palace Dress Code: What to Wear (and What to Avoid)",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:34.270+00:00",
+                        "createdAt":  "2026-05-31T12:34:21.167+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-entrance-fee-2026",
+                        "locale":  "en",
+                        "title":  "Bahia Palace Entrance Fee 2026: Ticket Prices, Discounts \u0026 How to Save Money",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:34.358+00:00",
+                        "createdAt":  "2026-05-31T12:34:20.985+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-guided-tour",
+                        "locale":  "en",
+                        "title":  "Bahia Palace Guided Tour 2026: Options, Prices \u0026 Is It Worth It?",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:34.449+00:00",
+                        "createdAt":  "2026-06-21T05:54:18.720+00:00",
+                        "category":  "guides",
+                        "author":  "Abdellah"
+                    },
+                    {
+                        "slug":  "bahia-palace-history",
+                        "locale":  "en",
+                        "title":  "Bahia Palace History: The Rise \u0026 Fall of Grand Vizier Ba Ahmed",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:34.537+00:00",
+                        "createdAt":  "2026-05-31T13:05:46.846+00:00",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-opening-hours-2026",
+                        "locale":  "en",
+                        "title":  "Bahia Palace Opening Hours 2026: Everything You Need to Know Before You Visit",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:34.624+00:00",
+                        "createdAt":  "2026-05-31T12:34:19.870+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-photography-guide",
+                        "locale":  "en",
+                        "title":  "Bahia Palace Photography Guide: Best Shots, Light \u0026 Tips",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:34.714+00:00",
+                        "createdAt":  "2026-05-31T13:05:47.281+00:00",
+                        "category":  "guides",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-room-by-room-guide",
+                        "locale":  "en",
+                        "title":  "What to See Inside Bahia Palace: A Room-by-Room Guide",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:34.802+00:00",
+                        "createdAt":  "2026-05-31T13:05:47.050+00:00",
+                        "category":  "guides",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-tips-before-visiting",
+                        "locale":  "en",
+                        "title":  "10 Things to Know Before Visiting Bahia Palace Marrakech",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:34.897+00:00",
+                        "createdAt":  "2026-05-31T12:34:21.368+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-vs-badi-palace-marrakech",
+                        "locale":  "en",
+                        "title":  "Bahia Palace vs El Badi Palace: Which One Should You Visit?",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:34.982+00:00",
+                        "createdAt":  "2026-05-26T13:55:15.329+00:00",
+                        "category":  "comparisons",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-vs-majorelle-garden",
+                        "locale":  "en",
+                        "title":  "Bahia Palace vs Majorelle Garden: Which Should You Visit First?",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:35.083+00:00",
+                        "createdAt":  "2026-05-31T13:05:46.640+00:00",
+                        "category":  "comparisons",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-who-built-it",
+                        "locale":  "en",
+                        "title":  "Who Built Bahia Palace? The Story of Grand Vizier Ba Ahmed",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:35.168+00:00",
+                        "createdAt":  "2026-06-21T14:36:35.168+00:00",
+                        "category":  "history",
+                        "author":  "Abdellah"
+                    },
+                    {
+                        "slug":  "bahia-palace-with-kids",
+                        "locale":  "en",
+                        "title":  "Bahia Palace with Kids: Family Visitor Guide 2026",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:35.262+00:00",
+                        "createdAt":  "2026-05-31T13:05:47.177+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "best-colors-to-wear-for-a-photoshoot-at-bahia-palace-marrakech",
+                        "locale":  "en",
+                        "title":  "Best Colors to Wear for a Photoshoot at Bahia Palace Marrakech",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-12T13:46:54.345+00:00",
+                        "createdAt":  "2026-06-12T13:46:54.345+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "best-time-to-visit-bahia-palace",
+                        "locale":  "en",
+                        "title":  "Best Time to Visit Bahia Palace Without Crowds (2026 Guide)",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:35.358+00:00",
+                        "createdAt":  "2026-05-23T22:29:02.140Z",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "how-to-avoid-scams-in-the-souks-of-marrakech-complete-guide-for-travelers",
+                        "locale":  "en",
+                        "title":  "How to Avoid Scams in the Souks of Marrakech (Complete Guide for Travelers)",
+                        "published":  "1",
+                        "updatedAt":  "2026-05-31T21:56:16.857+00:00",
+                        "createdAt":  "2026-05-31T21:56:16.857+00:00",
+                        "category":  "safety",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "how-to-get-to-bahia-palace",
+                        "locale":  "en",
+                        "title":  "How to Get to Bahia Palace from Jemaa el-Fna (Walk, Taxi \u0026 Map)",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:35.535+00:00",
+                        "createdAt":  "2026-05-31T13:05:45.523+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "how-to-get-to-bahia-palace-marrakech",
+                        "locale":  "en",
+                        "title":  "How to Get to Bahia Palace from Jemaa el-Fna (Walking, Taxi \u0026 More)",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:35.442+00:00",
+                        "createdAt":  "2026-05-31T12:34:21.551+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "is-bahia-palace-worth-visiting",
+                        "locale":  "en",
+                        "title":  "Is Bahia Palace Worth Visiting? An Honest 2026 Review",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:35.621+00:00",
+                        "createdAt":  "2026-05-31T13:05:47.455+00:00",
+                        "category":  "reviews",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "marrakech-2-day-itinerary",
+                        "locale":  "en",
+                        "title":  "Marrakech in 2 Days: The Perfect Itinerary Including Bahia Palace",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:35.713+00:00",
+                        "createdAt":  "2026-05-31T13:05:47.542+00:00",
+                        "category":  "itineraries",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "marrakech-safety-guide",
+                        "locale":  "en",
+                        "title":  "Marrakech Safety Guide 2026: How to Stay Safe \u0026 Avoid Scams Near Bahia Palace",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:35.801+00:00",
+                        "createdAt":  "2026-05-27T21:23:05.206+00:00",
+                        "category":  "safety",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "marrakech-the-red-city-where-history-comes-alive",
+                        "locale":  "en",
+                        "title":  "Marrakech: The Red City Where History Comes Alive",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-01T21:00:38.229+00:00",
+                        "createdAt":  "2026-06-01T21:00:38.229+00:00",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "the-and-solidary-guide-understanding-mousawama-and-the-soul-of-marrakesh",
+                        "locale":  "en",
+                        "title":  "The and Solidary Guide: Understanding \"Mousawama\" and the Soul of Marrakesh",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-17T20:52:45.031+00:00",
+                        "createdAt":  "2026-06-17T20:25:41.193+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "the-voices-of-bahia-what-the-world-s-greatest-creators-say-about-the-palace",
+                        "locale":  "en",
+                        "title":  "The Voices of Bahia: What the World\u0027s Greatest Creators Say About the Palace",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-17T19:36:40.966+00:00",
+                        "createdAt":  "2026-06-16T01:09:23.809+00:00",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "10-hidden-details-bahia-palace",
+                        "locale":  "es",
+                        "title":  "10 detalles ocultos de Bahia Palace que los turistas ignoran",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:43.632+00:00",
+                        "createdAt":  "2026-05-23T22:57:58.841Z",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-and-saadian-tombs-one-day",
+                        "locale":  "es",
+                        "title":  "Bahia Palace y Tumbas SaadÃ­es: los dos en medio dÃ­a",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:43.718+00:00",
+                        "createdAt":  "2026-06-07T13:11:36.678+00:00",
+                        "category":  "guides",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-audio-guide",
+                        "locale":  "es",
+                        "title":  "AudioguÃ­a Bahia Palace: Â¿la necesitas? (2026)",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:43.804+00:00",
+                        "createdAt":  "2026-06-07T13:11:36.910+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-dress-code",
+                        "locale":  "es",
+                        "title":  "CÃ³digo vestimenta Bahia Palace 2026: quÃ© ponerse",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:43.890+00:00",
+                        "createdAt":  "2026-06-07T13:11:37.012+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-entrance-fee-2026",
+                        "locale":  "es",
+                        "title":  "Precio entrada Bahia Palace 2026: tarifas y cÃ³mo ahorrar",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:43.974+00:00",
+                        "createdAt":  "2026-06-07T13:11:37.271+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-guided-tour",
+                        "locale":  "es",
+                        "title":  "Visita guiada Palacio Bahia 2026: precios, opciones y veredicto",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:44.058+00:00",
+                        "createdAt":  "2026-06-21T05:54:29.396+00:00",
+                        "category":  "guides",
+                        "author":  "Abdellah"
+                    },
+                    {
+                        "slug":  "bahia-palace-history",
+                        "locale":  "es",
+                        "title":  "Historia de Bahia Palace: el ascenso y caÃ­da de Ba Ahmed",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:44.142+00:00",
+                        "createdAt":  "2026-06-07T13:11:37.465+00:00",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-opening-hours-2026",
+                        "locale":  "es",
+                        "title":  "Horario Bahia Palace 2026: todo lo que debes saber",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:44.226+00:00",
+                        "createdAt":  "2026-06-07T13:11:37.776+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-photography-guide",
+                        "locale":  "es",
+                        "title":  "GuÃ­a fotogrÃ¡fica Bahia Palace: luz, spots y consejos",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:44.309+00:00",
+                        "createdAt":  "2026-06-07T13:11:37.913+00:00",
+                        "category":  "guides",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-room-by-room-guide",
+                        "locale":  "es",
+                        "title":  "QuÃ© ver en Bahia Palace: guÃ­a sala por sala",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:44.391+00:00",
+                        "createdAt":  "2026-06-07T13:11:38.307+00:00",
+                        "category":  "guides",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-tips-before-visiting",
+                        "locale":  "es",
+                        "title":  "10 cosas que saber antes de visitar Bahia Palace (2026)",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:44.477+00:00",
+                        "createdAt":  "2026-06-07T13:11:38.610+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-vs-badi-palace-marrakech",
+                        "locale":  "es",
+                        "title":  "Bahia Palace vs El Badi Palace: Â¿cuÃ¡l visitar?",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:44.563+00:00",
+                        "createdAt":  "2026-06-07T13:11:39.705+00:00",
+                        "category":  "comparisons",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-vs-majorelle-garden",
+                        "locale":  "es",
+                        "title":  "Bahia Palace vs JardÃ­n Majorelle: Â¿cuÃ¡l visitar primero?",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:44.648+00:00",
+                        "createdAt":  "2026-06-07T13:11:39.879+00:00",
+                        "category":  "comparisons",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-who-built-it",
+                        "locale":  "es",
+                        "title":  "bahia-palace-who-built-it",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:44.733+00:00",
+                        "createdAt":  "2026-06-21T14:36:44.733+00:00",
+                        "category":  "history",
+                        "author":  "Abdellah"
+                    },
+                    {
+                        "slug":  "bahia-palace-with-kids",
+                        "locale":  "es",
+                        "title":  "Bahia Palace con niÃ±os: guÃ­a para familias 2026",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:44.818+00:00",
+                        "createdAt":  "2026-06-07T13:11:40.008+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "best-time-to-visit-bahia-palace",
+                        "locale":  "es",
+                        "title":  "Mejor hora para visitar Bahia Palace sin colas (2026)",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:44.904+00:00",
+                        "createdAt":  "2026-05-23T22:29:02.140Z",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "how-to-get-to-bahia-palace",
+                        "locale":  "es",
+                        "title":  "CÃ³mo llegar a Bahia Palace desde Jemaa el-Fna",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:45.078+00:00",
+                        "createdAt":  "2026-06-07T13:11:40.308+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "how-to-get-to-bahia-palace-marrakech",
+                        "locale":  "es",
+                        "title":  "CÃ³mo llegar a Bahia Palace desde Jemaa el-Fna",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:44.988+00:00",
+                        "createdAt":  "2026-06-07T13:11:40.206+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "is-bahia-palace-worth-visiting",
+                        "locale":  "es",
+                        "title":  "Â¿Vale la pena Bahia Palace? ReseÃ±a honesta 2026",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:45.161+00:00",
+                        "createdAt":  "2026-06-07T13:11:40.412+00:00",
+                        "category":  "reviews",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "la-gu-a-humana-y-solidaria-comprender-la-mousawama-y-el-alma-de-marrakech",
+                        "locale":  "es",
+                        "title":  "La GuÃ­a Humana y Solidaria: Comprender la \"Mousawama\" y el Alma de Marrakech.",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-17T20:44:38.299+00:00",
+                        "createdAt":  "2026-06-17T20:35:41.110+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "las-voces-de-la-bah-a-lo-que-los-grandes-creadores-del-mundo-dicen-del-palacio",
+                        "locale":  "es",
+                        "title":  "Las Voces de la BahÃ­a: Lo que los Grandes Creadores del Mundo Dicen del Palacio",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-17T19:34:25.493+00:00",
+                        "createdAt":  "2026-06-16T01:12:30.893+00:00",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "marrakech-2-day-itinerary",
+                        "locale":  "es",
+                        "title":  "Marrakech en 2 dÃ­as: el itinerario perfecto con Bahia Palace",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:45.247+00:00",
+                        "createdAt":  "2026-06-07T13:11:40.704+00:00",
+                        "category":  "itineraries",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "marrakech-la-ciudad-roja-donde-la-historia-cobra-vida",
+                        "locale":  "es",
+                        "title":  "Marrakech: La Ciudad Roja donde la Historia Cobra Vida",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-01T21:04:41.009+00:00",
+                        "createdAt":  "2026-06-01T21:04:41.009+00:00",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "marrakech-safety-guide",
+                        "locale":  "es",
+                        "title":  "GuÃ­a seguridad Marrakech 2026: timos y consejos",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:45.334+00:00",
+                        "createdAt":  "2026-06-07T13:11:40.895+00:00",
+                        "category":  "safety",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "10-hidden-details-bahia-palace",
+                        "locale":  "fr",
+                        "title":  "10 dÃ©tails cachÃ©s de Bahia Palace que les touristes ratent",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:35.891+00:00",
+                        "createdAt":  "2026-05-23T22:57:58.841Z",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-and-saadian-tombs-one-day",
+                        "locale":  "fr",
+                        "title":  "Bahia Palace \u0026 Tombeaux Saadiens : les deux en une demi-journÃ©e",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:35.981+00:00",
+                        "createdAt":  "2026-06-07T13:11:27.908+00:00",
+                        "category":  "guides",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-audio-guide",
+                        "locale":  "fr",
+                        "title":  "Audioguide Bahia Palace : en avez-vous besoin ? (2026)",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:36.066+00:00",
+                        "createdAt":  "2026-06-07T13:11:28.004+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-dress-code",
+                        "locale":  "fr",
+                        "title":  "Code vestimentaire Bahia Palace 2026 : comment s\u0027habiller",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:36.155+00:00",
+                        "createdAt":  "2026-06-07T13:11:28.263+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-entrance-fee-2026",
+                        "locale":  "fr",
+                        "title":  "Tarif entrÃ©e Bahia Palace 2026 : prix et bons plans",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:36.240+00:00",
+                        "createdAt":  "2026-06-07T13:11:28.401+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-guided-tour",
+                        "locale":  "fr",
+                        "title":  "Visite guidÃ©e Palais Bahia 2026 : prix, options et verdict",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:36.325+00:00",
+                        "createdAt":  "2026-06-21T05:54:21.717+00:00",
+                        "category":  "guides",
+                        "author":  "Abdellah"
+                    },
+                    {
+                        "slug":  "bahia-palace-history",
+                        "locale":  "fr",
+                        "title":  "Histoire de Bahia Palace : Ba Ahmed, la grandeur et la chute",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:36.410+00:00",
+                        "createdAt":  "2026-06-07T13:11:28.983+00:00",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-opening-hours-2026",
+                        "locale":  "fr",
+                        "title":  "Bahia Palace horaires 2026 : programme complet et conseils",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:36.500+00:00",
+                        "createdAt":  "2026-06-07T13:11:29.196+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-photography-guide",
+                        "locale":  "fr",
+                        "title":  "Guide photo Bahia Palace : lumiÃ¨re, spots et astuces",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:36.583+00:00",
+                        "createdAt":  "2026-06-07T13:11:29.367+00:00",
+                        "category":  "guides",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-room-by-room-guide",
+                        "locale":  "fr",
+                        "title":  "Que voir Ã  Bahia Palace : guide piÃ¨ce par piÃ¨ce",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:36.667+00:00",
+                        "createdAt":  "2026-06-07T13:11:29.445+00:00",
+                        "category":  "guides",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-tips-before-visiting",
+                        "locale":  "fr",
+                        "title":  "10 choses Ã  savoir avant de visiter Bahia Palace (2026)",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:36.755+00:00",
+                        "createdAt":  "2026-06-07T13:11:29.526+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-vs-badi-palace-marrakech",
+                        "locale":  "fr",
+                        "title":  "Bahia Palace vs El Badi Palace : lequel visiter ?",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:36.843+00:00",
+                        "createdAt":  "2026-06-07T13:11:29.613+00:00",
+                        "category":  "comparisons",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-vs-majorelle-garden",
+                        "locale":  "fr",
+                        "title":  "Bahia Palace ou Jardin Majorelle : lequel visiter en premier ?",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:36.937+00:00",
+                        "createdAt":  "2026-06-07T13:11:29.704+00:00",
+                        "category":  "comparisons",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-who-built-it",
+                        "locale":  "fr",
+                        "title":  "bahia-palace-who-built-it",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:37.119+00:00",
+                        "createdAt":  "2026-06-21T14:36:37.119+00:00",
+                        "category":  "history",
+                        "author":  "Abdellah"
+                    },
+                    {
+                        "slug":  "bahia-palace-with-kids",
+                        "locale":  "fr",
+                        "title":  "Bahia Palace avec des enfants : guide famille 2026",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:37.205+00:00",
+                        "createdAt":  "2026-06-07T13:11:29.803+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "best-time-to-visit-bahia-palace",
+                        "locale":  "fr",
+                        "title":  "Meilleure heure pour visiter Bahia Palace (2026)",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:37.324+00:00",
+                        "createdAt":  "2026-05-23T22:29:02.140Z",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "comment-viter-les-arnaques-dans-les-souks-de-marrakech-guide-complet",
+                        "locale":  "fr",
+                        "title":  "Comment Ã©viter les arnaques dans les souks de Marrakech (Guide complet)",
+                        "published":  "1",
+                        "updatedAt":  "2026-05-31T22:01:00.797+00:00",
+                        "createdAt":  "2026-05-31T22:01:00.797+00:00",
+                        "category":  "safety",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "how-to-get-to-bahia-palace",
+                        "locale":  "fr",
+                        "title":  "Comment rejoindre Bahia Palace depuis Jemaa el-Fna",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:37.605+00:00",
+                        "createdAt":  "2026-06-07T13:11:30.097+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "how-to-get-to-bahia-palace-marrakech",
+                        "locale":  "fr",
+                        "title":  "Comment aller Ã  Bahia Palace depuis Jemaa el-Fna",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:37.484+00:00",
+                        "createdAt":  "2026-06-07T13:11:29.966+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "is-bahia-palace-worth-visiting",
+                        "locale":  "fr",
+                        "title":  "Bahia Palace vaut-il le dÃ©tour ? Avis honnÃªte 2026",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:37.695+00:00",
+                        "createdAt":  "2026-06-07T13:11:30.201+00:00",
+                        "category":  "reviews",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "le-guide-humain-et-solidaire-comprendre-la-mousawama-et-l-me-de-marrakech",
+                        "locale":  "fr",
+                        "title":  "Le Guide Humain et Solidaire : Comprendre la \"Mousawama\" et lâÃme de Marrakech",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-17T20:43:31.968+00:00",
+                        "createdAt":  "2026-06-17T20:18:02.447+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "les-meilleures-couleurs-porter-pour-un-shooting-photo-au-palais-bahia-de-marrakech",
+                        "locale":  "fr",
+                        "title":  "Les Meilleures Couleurs Ã  Porter pour un Shooting Photo au Palais Bahia de Marrakech",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-12T13:26:37.333+00:00",
+                        "createdAt":  "2026-06-12T13:26:37.333+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "les-voix-de-la-bahia-ce-que-les-grands-cr-ateurs-du-monde-disent-du-palais",
+                        "locale":  "fr",
+                        "title":  "Les Voix de la Bahia : Ce que les Grands CrÃ©ateurs du Monde Disent du Palais",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-17T19:35:31.125+00:00",
+                        "createdAt":  "2026-06-16T01:04:15.933+00:00",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "marrakech-2-day-itinerary",
+                        "locale":  "fr",
+                        "title":  "Marrakech en 2 jours : l\u0027itinÃ©raire parfait avec Bahia Palace",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:37.783+00:00",
+                        "createdAt":  "2026-06-07T13:11:30.304+00:00",
+                        "category":  "itineraries",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "marrakech-la-ville-rouge-o-l-histoire-prend-vie",
+                        "locale":  "fr",
+                        "title":  "Marrakech : la Ville Rouge oÃ¹ lâHistoire prend vie",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-01T21:02:10.873+00:00",
+                        "createdAt":  "2026-06-01T21:02:10.873+00:00",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "marrakech-safety-guide",
+                        "locale":  "fr",
+                        "title":  "Guide sÃ©curitÃ© Marrakech 2026 : arnaques et conseils",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:37.868+00:00",
+                        "createdAt":  "2026-06-07T13:11:30.410+00:00",
+                        "category":  "safety",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "palais-bahia-billets-tarifs-coupe-file",
+                        "locale":  "fr",
+                        "title":  "Billets Palais Bahia 2026 : tarifs, coupe-file et oÃ¹ acheter",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:37.955+00:00",
+                        "createdAt":  "2026-06-17T17:46:38.243+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "10-hidden-details-bahia-palace",
+                        "locale":  "it",
+                        "title":  "10 dettagli nascosti di Bahia Palace che i turisti ignorano",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:40.929+00:00",
+                        "createdAt":  "2026-05-23T22:57:58.841Z",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-and-saadian-tombs-one-day",
+                        "locale":  "it",
+                        "title":  "Bahia Palace e Tombe Saadiane: entrambi in mezza giornata",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:41.084+00:00",
+                        "createdAt":  "2026-06-07T13:11:33.697+00:00",
+                        "category":  "guides",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-audio-guide",
+                        "locale":  "it",
+                        "title":  "Audioguida Bahia Palace: ne avete bisogno? (2026)",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:41.216+00:00",
+                        "createdAt":  "2026-06-07T13:11:33.797+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-dress-code",
+                        "locale":  "it",
+                        "title":  "Codice abbigliamento Bahia Palace 2026: cosa indossare",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:41.326+00:00",
+                        "createdAt":  "2026-06-07T13:11:33.889+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-entrance-fee-2026",
+                        "locale":  "it",
+                        "title":  "Biglietto Bahia Palace 2026: prezzi e come risparmiare",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:41.415+00:00",
+                        "createdAt":  "2026-06-07T13:11:33.997+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-guided-tour",
+                        "locale":  "it",
+                        "title":  "Tour guidato Palazzo Bahia 2026: prezzi, opzioni e verdetto",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:41.618+00:00",
+                        "createdAt":  "2026-06-21T05:54:27.148+00:00",
+                        "category":  "guides",
+                        "author":  "Abdellah"
+                    },
+                    {
+                        "slug":  "bahia-palace-history",
+                        "locale":  "it",
+                        "title":  "Storia di Bahia Palace: Ba Ahmed dal nulla al potere",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:41.703+00:00",
+                        "createdAt":  "2026-06-07T13:11:34.098+00:00",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-opening-hours-2026",
+                        "locale":  "it",
+                        "title":  "Orari Bahia Palace 2026: programma completo e consigli",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:41.886+00:00",
+                        "createdAt":  "2026-06-07T13:11:34.182+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-photography-guide",
+                        "locale":  "it",
+                        "title":  "Guida fotografica Bahia Palace: luce, spot e consigli",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:41.975+00:00",
+                        "createdAt":  "2026-06-07T13:11:34.372+00:00",
+                        "category":  "guides",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-room-by-room-guide",
+                        "locale":  "it",
+                        "title":  "Cosa vedere a Bahia Palace: guida stanza per stanza",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:42.063+00:00",
+                        "createdAt":  "2026-06-07T13:11:34.566+00:00",
+                        "category":  "guides",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-tips-before-visiting",
+                        "locale":  "it",
+                        "title":  "10 cose da sapere prima di visitare Bahia Palace (2026)",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:42.155+00:00",
+                        "createdAt":  "2026-06-07T13:11:34.804+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-vs-badi-palace-marrakech",
+                        "locale":  "it",
+                        "title":  "Bahia Palace vs El Badi Palace: quale visitare?",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:42.239+00:00",
+                        "createdAt":  "2026-06-07T13:11:34.907+00:00",
+                        "category":  "comparisons",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-vs-majorelle-garden",
+                        "locale":  "it",
+                        "title":  "Bahia Palace o Giardino Majorelle: quale visitare prima?",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:42.323+00:00",
+                        "createdAt":  "2026-06-07T13:11:34.998+00:00",
+                        "category":  "comparisons",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "bahia-palace-who-built-it",
+                        "locale":  "it",
+                        "title":  "bahia-palace-who-built-it",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:42.416+00:00",
+                        "createdAt":  "2026-06-21T14:36:42.416+00:00",
+                        "category":  "history",
+                        "author":  "Abdellah"
+                    },
+                    {
+                        "slug":  "bahia-palace-with-kids",
+                        "locale":  "it",
+                        "title":  "Bahia Palace con bambini: guida per famiglie 2026",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:42.622+00:00",
+                        "createdAt":  "2026-06-07T13:11:35.170+00:00",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "best-time-to-visit-bahia-palace",
+                        "locale":  "it",
+                        "title":  "Miglior orario per visitare Bahia Palace (2026)",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:42.710+00:00",
+                        "createdAt":  "2026-05-23T22:29:02.140Z",
+                        "category":  "visit-tips",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "how-to-get-to-bahia-palace",
+                        "locale":  "it",
+                        "title":  "Come raggiungere Bahia Palace da Jemaa el-Fna",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:43.009+00:00",
+                        "createdAt":  "2026-06-07T13:11:35.480+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "how-to-get-to-bahia-palace-marrakech",
+                        "locale":  "it",
+                        "title":  "Come arrivare a Bahia Palace da Jemaa el-Fna",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:42.923+00:00",
+                        "createdAt":  "2026-06-07T13:11:35.386+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "is-bahia-palace-worth-visiting",
+                        "locale":  "it",
+                        "title":  "Bahia Palace vale la pena? Recensione onesta 2026",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:43.095+00:00",
+                        "createdAt":  "2026-06-07T13:11:35.766+00:00",
+                        "category":  "reviews",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "la-guida-umana-e-solidale-capire-la-mousawama-e-l-anima-di-marrakech",
+                        "locale":  "it",
+                        "title":  "  âLa Guida Umana e Solidale: Capire la \"Mousawama\" e l\u0027Anima di Marrakech",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-17T20:52:14.494+00:00",
+                        "createdAt":  "2026-06-17T20:39:53.308+00:00",
+                        "category":  "practical",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "le-voci-della-bahia-cosa-dicono-del-palazzo-i-pi-grandi-creatori-del-mondo",
+                        "locale":  "it",
+                        "title":  "Le Voci della Bahia: Cosa Dicono del Palazzo i PiÃ¹ Grandi Creatori del Mondo",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-17T19:40:59.408+00:00",
+                        "createdAt":  "2026-06-16T01:16:47.355+00:00",
+                        "category":  "history",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "marrakech-2-day-itinerary",
+                        "locale":  "it",
+                        "title":  "Marrakech in 2 giorni: itinerario perfetto con Bahia Palace",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:43.320+00:00",
+                        "createdAt":  "2026-06-07T13:11:35.910+00:00",
+                        "category":  "itineraries",
+                        "author":  "Bahia Palace Team"
+                    },
+                    {
+                        "slug":  "marrakech-safety-guide",
+                        "locale":  "it",
+                        "title":  "Guida sicurezza Marrakech 2026: truffe e consigli",
+                        "published":  "1",
+                        "updatedAt":  "2026-06-21T14:36:43.529+00:00",
+                        "createdAt":  "2026-06-07T13:11:36.066+00:00",
+                        "category":  "safety",
+                        "author":  "Bahia Palace Team"
+                    }
+                ]
+}

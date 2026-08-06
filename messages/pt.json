@@ -1,0 +1,593 @@
+{
+  "hero": {
+    "badge": "Guia do visitante · Sem filas",
+    "headline": "Palácio da Bahia, Marraquexe: bilhetes e guia de visita",
+    "subheadline": "Preços oficiais · Horários · Como evitar a fila da bilheteira",
+    "ctaBook": "Planeie a sua visita",
+    "ctaTours": "Ver opções de visita",
+    "trustNote": "Serviço de reservas independente · Apenas bilhetes oficiais"
+  },
+  "nav": {
+    "home": "Início",
+    "tickets": "Bilhetes",
+    "blog": "Blogue",
+    "about": "Sobre nós",
+    "contact": "Contacto",
+    "faq": "Perguntas frequentes",
+    "safetyGuide": "Guia de segurança",
+    "bookNow": "Planeie a sua visita",
+    "gallery": "Galeria"
+  },
+  "breadcrumb": {
+    "home": "Início",
+    "tickets": "Bilhetes",
+    "blog": "Blogue",
+    "faq": "Perguntas frequentes",
+    "about": "Sobre nós",
+    "contact": "Contacto",
+    "safetyGuide": "Guia de segurança"
+  },
+  "trust": {
+    "instant": "100% independentes",
+    "freeCancellation": "Sem taxas de reserva",
+    "mobile": "Informação verificada",
+    "secure": "Só bilhetes oficiais"
+  },
+  "cta": {
+    "title": "Já leu sobre ele. Agora entre.",
+    "subtitle": "Reserve o seu bilhete e entre sem esperar na fila.",
+    "button": "Reservar bilhetes do Palácio da Bahia",
+    "stickyMobile": "Sem fila — 13,99 €"
+  },
+  "scamBanner": {
+    "text": "Conheça as burlas mais comuns em Marraquexe antes de sair do hotel.",
+    "link": "Ler o guia de segurança →"
+  },
+  "whatsapp": {
+    "tooltip": "Fale connosco",
+    "message": "Olá! Tenho uma questão sobre os bilhetes do Palácio da Bahia."
+  },
+  "datePicker": {
+    "today": "Hoje",
+    "tomorrow": "Amanhã",
+    "previousMonth": "Mês anterior",
+    "nextMonth": "Mês seguinte"
+  },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "viewAll": "Ver todas as perguntas →",
+    "items": [
+      {
+        "question": "Como recebo o meu bilhete?",
+        "answer": "A compra é concluída directamente no portal oficial de bilhetes do Ministério da Cultura de Marrocos, que lhe envia o bilhete com código QR por e-mail."
+      },
+      {
+        "question": "Posso cancelar ou alterar a reserva?",
+        "answer": "A política de cancelamento é definida pelo portal oficial onde conclui a compra — consulte as condições apresentadas aí no pagamento."
+      },
+      {
+        "question": "Qual é o horário do Palácio da Bahia?",
+        "answer": "O Palácio da Bahia está aberto todos os dias das 9:00 às 17:00 (última entrada às 16:30). O horário pode mudar durante o Ramadão e nos feriados."
+      },
+      {
+        "question": "Há algum código de vestuário?",
+        "answer": "O Palácio da Bahia não impõe regras rígidas, mas vestuário discreto é sinal de respeito. Recomenda-se cobrir ombros e joelhos."
+      },
+      {
+        "question": "É permitido fotografar lá dentro?",
+        "answer": "Sim, fotografia pessoal é permitida em todo o Palácio da Bahia. Tripés e equipamento profissional exigem autorização especial."
+      },
+      {
+        "question": "Como evito a fila?",
+        "answer": "Encaminhamo-lo para o bilhete oficial no portal do governo — já vem validado, por isso não precisa de esperar na bilheteira."
+      }
+    ]
+  },
+  "reviews": {
+    "title": "O que dizem os visitantes",
+    "tripAdvisorNote": "Palácio da Bahia · Marraquexe · Medina",
+    "subtitle": "Experiências reais de visitantes de todo o mundo",
+    "tripAdvisorPrompt": "Leia opiniões genuínas de visitantes no TripAdvisor — a maior plataforma de viagens do mundo.",
+    "tripAdvisorCta": "Ler opiniões no TripAdvisor",
+    "seeAllOnTripAdvisor": "Ver todas as opiniões no TripAdvisor"
+  },
+  "visitorPack": {
+    "hero": {
+      "eyebrow": "Pack completo do visitante",
+      "title": "Tudo o que precisa para o Palácio da Bahia, num só pack",
+      "subtitle": "O seu bilhete de entrada oficial, comprado em seu nome, mais o nosso audioguia, um mapa do visitante e apoio de uma pessoa real.",
+      "ctaPrimary": "Quero o meu pack",
+      "ctaDisabled": "Reservas indisponíveis de momento",
+      "ctaDisabledHint": "Ainda não estamos a aceitar pagamentos. Volte dentro de pouco tempo."
+    },
+    "price": {
+      "amount": "13,99 €",
+      "perPerson": "por pessoa",
+      "freeAlternative": "Só quer o bilhete oficial? Veja como",
+      "includes": "Bilhete de entrada oficial + audioguia digital",
+      "taxesIncluded": "Impostos e taxas incluídos",
+      "officialLine": "Bilhete de entrada oficial ({mad})",
+      "serviceLine": "Audioguia, mapa e apoio",
+      "convertedNote": "O preço do bilhete oficial é fixado em dirhams marroquinos. O valor em euros é convertido à taxa de {date} e serve apenas de orientação."
+    },
+    "valuePoints": {
+      "cancellation": "Cancelamento gratuito até enviarmos o bilhete",
+      "audioGuide": "Audioguia digital incluído",
+      "whatsapp": "Apoio por WhatsApp",
+      "skipLine": "Evite a fila da bilheteira — disponível no local",
+      "priceDetailToggle": "Detalhe do preço"
+    },
+    "reassurance": {
+      "cancellation": {
+        "title": "Cancelamento gratuito.",
+        "body": "Mude de ideias a qualquer momento antes de enviarmos o bilhete e devolvemos tudo — uma mensagem de WhatsApp, sem formulários e sem ter de justificar."
+      },
+      "delivery": {
+        "title": "O bilhete chega antes de precisar dele.",
+        "body": "Visita hoje? Normalmente em 10 minutos, enquanto o palácio está aberto. Reserva com antecedência? Enviamos cerca de 24 horas antes da data da visita, para o ter à mão no telemóvel."
+      },
+      "price": {
+        "title": "13,99 € por pessoa, impostos incluídos.",
+        "body": "O bilhete oficial do Ministério da Cultura comprado em seu nome, o audioguia digital em cinco línguas e uma pessoa real no WhatsApp antes e durante a visita. Nada é acrescentado no pagamento."
+      },
+      "independence": "visitbahiapalace.com é um serviço de reservas independente, gerido por especialistas nos monumentos de Marraquexe. Não somos o Ministério da Cultura nem a administração do palácio. Todos os detalhes nas nossas <terms>condições de venda</terms>."
+    },
+    "included": {
+      "title": "Tudo o que está incluído",
+      "subtitle": "Um pack, sem surpresas à porta.",
+      "items": {
+        "ticket": {
+          "title": "Bilhete de entrada oficial",
+          "desc": "O verdadeiro bilhete de 100 MAD do Ministério da Cultura, comprado em seu nome. Não é revenda — e o preço que vê é o preço que paga."
+        },
+        "audio": {
+          "title": "Audioguia de qualidade",
+          "desc": "Narração sala a sala sobre o harém, os pátios e os tectos pintados por onde a maioria dos visitantes passa sem reparar."
+        },
+        "map": {
+          "title": "Mapa do visitante",
+          "desc": "Um percurso claro pelo palácio, com os melhores sítios para fotografar e os cantos mais sossegados assinalados."
+        },
+        "support": {
+          "title": "Apoio para o que precisar",
+          "desc": "Escreva-nos com qualquer dúvida antes ou durante a visita — bilhetes, como chegar, horários, ou o que mais vale a pena ver em Marraquexe."
+        },
+        "languages": {
+          "title": "Cinco línguas",
+          "desc": "Audioguia e mapa em inglês, francês, espanhol, alemão e italiano."
+        },
+        "offline": {
+          "title": "Funciona sem rede",
+          "desc": "Descarregue antes de sair — não precisa de dados em roaming dentro do palácio."
+        },
+        "language": {
+          "title": "Cinco línguas",
+          "desc": "Audioguia e mapa disponíveis em inglês, francês, espanhol, alemão e italiano."
+        }
+      }
+    },
+    "form": {
+      "acceptCombined": "Posso cancelar gratuitamente até o meu código QR ser enviado. Compreendo que esse envio conclui integralmente a minha encomenda e que, a partir desse momento, o direito de livre resolução de 14 dias deixa de se aplicar, e aceito as <terms>condições de venda</terms> e a <refund>política de cancelamento</refund>.",
+      "securePayment": "<b>Pagamento seguro.</b> Os dados do seu cartão vão directamente para a Stripe e nunca chegam aos nossos servidores.",
+      "errors": {
+        "consent": "Confirme antes de continuar — é necessário para concluir a reserva.",
+        "generic": "Ocorreu um problema ao iniciar o pagamento. Tente novamente.",
+        "disabled": "As reservas abrem em breve — ainda não é possível aceitar pagamentos.",
+        "pastDate": "Escolha uma data que não esteja no passado.",
+        "name": "Introduza o seu nome completo.",
+        "email": "Introduza um endereço de e-mail válido.",
+        "visitors": "Introduza um número entre 1 e {max}."
+      },
+      "title": "Escolha a sua visita",
+      "dateLabel": "Data da visita",
+      "visitorsLabel": "Número de visitantes",
+      "nameLabel": "Nome completo",
+      "namePlaceholder": "Como deve aparecer no bilhete",
+      "emailLabel": "Endereço de e-mail",
+      "emailPlaceholder": "Para onde enviamos o bilhete e o audioguia",
+      "totalLabel": "Total",
+      "submit": "Continuar para o pagamento seguro",
+      "submitting": "A iniciar o pagamento…",
+      "legalNotice": "Ao continuar aceita as nossas <terms>condições</terms> e a <refund>política de reembolso</refund>.",
+      "summaryTitle": "Resumo da encomenda",
+      "productName": "Palácio da Bahia — Pack completo do visitante"
+    },
+    "testMode": {
+      "badge": "MODO DE TESTE",
+      "message": "Este é um ambiente de teste — não é possível efectuar qualquer pagamento real."
+    },
+    "howItWorks": {
+      "title": "Como funciona",
+      "steps": {
+        "one": {
+          "title": "Escolha a data",
+          "desc": "Indique o dia em que quer visitar e quantas pessoas vão."
+        },
+        "two": {
+          "title": "Pague em segurança",
+          "desc": "Um só pagamento cobre o bilhete oficial e tudo o que lhe juntamos."
+        },
+        "three": {
+          "title": "Tratamos do bilhete",
+          "desc": "Compramos o seu bilhete de entrada oficial e enviamo-lo antes da visita."
+        },
+        "four": {
+          "title": "Visite o palácio",
+          "desc": "Mostre o bilhete, abra o audioguia e demore o tempo que quiser."
+        }
+      }
+    },
+    "audioPreview": {
+      "title": "Ouça o palácio antes de o percorrer",
+      "subtitle": "Uma pequena amostra do capítulo do grande pátio, no audioguia.",
+      "unavailable": "Pré-escuta disponível em breve.",
+      "chapters": "Capítulos"
+    },
+    "testimonials": {
+      "title": "O que dizem os visitantes",
+      "placeholderNotice": "Opiniões de exemplo, apenas para efeitos de maquetagem — não são opiniões reais de clientes."
+    },
+    "faq": {
+      "title": "Perguntas frequentes",
+      "items": {
+        "official": {
+          "q": "Este é o bilhete oficial do Palácio da Bahia?",
+          "a": "Sim. O bilhete de entrada do pack é o bilhete oficial de 100 MAD fixado pelo Ministério da Cultura de Marrocos, comprado em seu nome. Os 13,99 € cobrem também o audioguia digital, o mapa do visitante, o apoio por WhatsApp e o cancelamento gratuito até o enviarmos."
+        },
+        "cheaper": {
+          "q": "O que cobrem os 13,99 €?",
+          "a": "Só a entrada custa 100 MAD na bilheteira. O nosso preço cobre esse bilhete comprado em seu nome, mais o audioguia em cinco línguas, o mapa do visitante, o apoio por WhatsApp antes e durante a visita, e o cancelamento gratuito até enviarmos o seu código QR. O Ministério também vende a entrada directamente no seu portal, se for só isso que precisa."
+        },
+        "refund": {
+          "q": "Posso pedir reembolso?",
+          "a": "Consulte a nossa política de reembolso para as condições em vigor. Se a data da visita mudar, contacte-nos e faremos o que estiver ao nosso alcance."
+        },
+        "delivery": {
+          "q": "Quando recebo o meu bilhete?",
+          "a": "Se visita hoje, normalmente em 10 minutos enquanto o palácio está aberto, e no máximo dentro de uma hora. Se reservar depois do fecho, na mesma noite — o código não tem data, por isso deixa-o entrar na manhã seguinte. Para uma data posterior, enviamos cerca de 24 horas antes do dia que indicou."
+        },
+        "group": {
+          "q": "Posso reservar para um grupo?",
+          "a": "Sim — escolha o número de visitantes no pagamento. Cada visitante recebe o seu próprio bilhete de entrada oficial e recebe tudo numa só entrega."
+        }
+      }
+    },
+    "confirmation": {
+      "packTitle": "O seu pack completo do visitante",
+      "ticketPending": "Bilhete de entrada oficial",
+      "ticketPendingDesc": "Estamos a tratar do seu bilhete de entrada oficial. Será enviado por e-mail antes da data da visita.",
+      "audioTitle": "Acesso ao audioguia",
+      "audioPendingDesc": "O seu audioguia está a ser preparado. Os dados de acesso chegam com o bilhete.",
+      "mockNotice": "Esta encomenda é em modo de teste. Não foi cobrado qualquer valor nem emitido qualquer bilhete real.",
+      "audioReadyBadge": "Pronto",
+      "audioReadyDesc": "O seu audioguia está pronto. Abra-o no telemóvel e descarregue-o antes de sair — funciona sem rede dentro do palácio.",
+      "audioOpen": "Abrir o audioguia",
+      "ticketReady": "O seu bilhete de entrada oficial",
+      "ticketReadyBadge": "Pronto",
+      "ticketReadyDesc": "O seu bilhete oficial do Palácio da Bahia foi comprado e enviado. Mostre-o à entrada — no telemóvel serve, não precisa de imprimir.",
+      "ticketView": "Ver o bilhete",
+      "ticketCodeLabel": "Código do bilhete",
+      "ticketPendingRefundable": "O bilhete ainda não foi enviado, por isso pode cancelar e receber o reembolso total. Depois de o enviarmos, a reserva deixa de ser reembolsável (condições de venda, §5).",
+      "audioOfflineTip": "Abra-o na manhã da visita, enquanto tem wi-fi. Descarrega uma vez (cerca de 47 MB) e depois toca sem qualquer rede dentro do palácio. Se o telemóvel sugerir «Adicionar ao ecrã principal», aceite — isso impede que o áudio seja apagado mais tarde.",
+      "audioLinkPendingDesc": "O link de acesso está a ser preparado e chegará por e-mail dentro de instantes. Se não o receber em poucos minutos, contacte-nos indicando a referência da reserva."
+    },
+    "inclusions": {
+      "ticket": "Bilhete de entrada oficial do Palácio da Bahia",
+      "audio": "Audioguia digital com a história do palácio",
+      "whatsapp": "Apoio por WhatsApp antes e durante a visita",
+      "cancellation": "Cancelamento gratuito"
+    }
+  },
+  "heroBanner": {
+    "outside": "<deg></deg> lá fora",
+    "coolNoQueue": "Palácio fresco, sem fila",
+    "eyebrow": "Palácio da Bahia · Marraquexe",
+    "title": "Entre no palácio mais bonito de Marrocos",
+    "subtitle": "Chamado <em>Bahia</em> — «a resplandecente» em árabe"
+  },
+  "story": {
+    "body": "Em 1866, o homem mais poderoso de Marrocos começou a construir um palácio para a mulher que amava. Era o grão-vizir Ba Ahmed — e chamou-lhe Bahia, «a resplandecente» em árabe. Mandou vir de Fez os melhores artesãos, que passaram décadas a esculpir tectos de cedro, a cortar à mão os mosaicos de zellige e a encher 150 divisões com interiores como Marrocos nunca tinha visto. Ba Ahmed morreu em 1900. Desde então o palácio permanece em silêncio — e continua a tirar o fôlego a quem entra."
+  },
+  "trustStrip": {
+    "instantConfirm": "Confirmação imediata",
+    "freeCancel": "Cancelamento gratuito",
+    "mobileTicket": "Bilhete no telemóvel",
+    "secureBooking": "Pagamento seguro"
+  },
+  "tickets": {
+    "title": "Escolha como quer visitar o Palácio da Bahia",
+    "subtitle": "Compre online, evite a fila da bilheteira e chegue à entrada com o código pronto",
+    "from": "Desde",
+    "perPerson": "por pessoa",
+    "bookNow": "Comprar bilhetes",
+    "learnMore": "Saber mais",
+    "skipTheLine": {
+      "name": "Entrada sem fila",
+      "tagline": "O bilhete oficial, mais o que a bilheteira não lhe dá",
+      "duration": "Visita livre • 1 a 2 horas",
+      "includes": [
+        "Bilhete de entrada oficial do Palácio da Bahia",
+        "Audioguia na sua língua",
+        "Apoio por WhatsApp antes e durante a visita",
+        "Cancelamento gratuito até enviarmos o código"
+      ],
+      "excludes": [
+        "Guia acompanhante",
+        "Transporte até ao palácio",
+        "Comidas e bebidas"
+      ],
+      "meetingPoint": "Entrada principal do Palácio da Bahia, Rue Riad Zitoun el Jedid, Medina de Marraquexe",
+      "longDesc": "Comprando online evita por completo a fila da bilheteira — o seu código QR já está válido, por isso vai directamente para a entrada em vez do guichê. Visite ao seu ritmo: a maioria das pessoas demora 1 a 2 horas entre os azulejos zellige, os tectos de cedro esculpido e os jardins interiores.",
+      "whyOnline": "Na bilheteira espera na fila, paga em dirhams e ninguém lhe dá um guia. Aqui é um só pagamento com cartão, um audioguia na sua língua, apoio por WhatsApp e cancelamento gratuito até enviarmos o seu código."
+    },
+    "guidedTour": {
+      "name": "Visita guiada com especialista",
+      "tagline": "Descubra os segredos do palácio com um guia local",
+      "duration": "Com guia • cerca de 2 horas",
+      "includes": [
+        "Acesso sem fila",
+        "Guia local certificado",
+        "História e histórias",
+        "Grupo pequeno (máx. 12)",
+        "Apenas bilhetes oficiais"
+      ],
+      "excludes": [
+        "Transporte até ao palácio",
+        "Comidas e bebidas",
+        "Gorjetas (opcionais)"
+      ],
+      "meetingPoint": "Entrada principal do Palácio da Bahia — procure o guia com a placa Bahia Palace Tickets",
+      "longDesc": "Descubra os verdadeiros segredos do Palácio da Bahia com um guia certificado e apaixonado. Saiba porque o palácio foi construído longe dos olhares, conheça a intriga política por trás da sua arquitectura e ouça histórias que não estão em nenhum guia de viagem. Grupos de 12 pessoas no máximo, para que a visita continue pessoal.",
+      "whyOnline": "Na bilheteira espera na fila, paga em dirhams e ninguém lhe dá um guia. Aqui é um só pagamento com cartão, um audioguia na sua língua, apoio por WhatsApp e cancelamento gratuito até enviarmos o seu código."
+    },
+    "privateTour": {
+      "name": "Visita privada",
+      "tagline": "Uma experiência exclusiva, só para si",
+      "duration": "Privada • cerca de 2,5 horas",
+      "includes": [
+        "Guia privado certificado",
+        "Acesso sem fila",
+        "Visita à sua medida",
+        "Horário flexível",
+        "Apenas bilhetes oficiais"
+      ],
+      "excludes": [
+        "Transporte até ao palácio",
+        "Comidas e bebidas"
+      ],
+      "meetingPoint": "Entrada principal do Palácio da Bahia — o seu guia privado estará à sua espera",
+      "longDesc": "A melhor forma de conhecer o Palácio da Bahia. O seu guia certificado dedica a visita inteira a si e a quem o acompanha: anda ao seu ritmo, pergunta o que quiser e demora-se onde lhe apetecer. Ideal para famílias, casais e para quem quer ouvir a história do palácio contada só para si.",
+      "whyOnline": "Na bilheteira espera na fila, paga em dirhams e ninguém lhe dá um guia. Aqui é um só pagamento com cartão, um audioguia na sua língua, apoio por WhatsApp e cancelamento gratuito até enviarmos o seu código."
+    },
+    "combo": {
+      "name": "Combinado: Bahia + Túmulos Saadianos",
+      "tagline": "Dois monumentos icónicos de Marraquexe no mesmo dia",
+      "duration": "Visita livre • 3 a 4 horas",
+      "includes": [
+        "Entrada no Palácio da Bahia",
+        "Entrada nos Túmulos Saadianos",
+        "Sem fila nos dois locais",
+        "Horário flexível",
+        "Apenas bilhetes oficiais"
+      ],
+      "excludes": [
+        "Guia acompanhante",
+        "Transporte entre os locais",
+        "Comidas e bebidas"
+      ],
+      "meetingPoint": "Primeiro a entrada principal do Palácio da Bahia, depois os Túmulos Saadianos (10 min a pé)",
+      "longDesc": "Dois dos locais históricos mais impressionantes de Marraquexe numa só compra. Comece pelos pátios deslumbrantes do Palácio da Bahia e caminhe dez minutos até aos Túmulos Saadianos — mausoléus reais sumptuosos que ficaram selados durante dois séculos e só foram redescobertos em 1917. A melhor relação qualidade-preço para quem gosta de história.",
+      "whyOnline": "Na bilheteira espera na fila, paga em dirhams e ninguém lhe dá um guia. Aqui é um só pagamento com cartão, um audioguia na sua língua, apoio por WhatsApp e cancelamento gratuito até enviarmos o seu código."
+    },
+    "visitorPack": {
+      "name": "Pack completo do visitante",
+      "tagline": "Bilhete de entrada oficial + audioguia digital",
+      "duration": "Visita livre • 1 a 2 horas",
+      "whyOnline": "Na bilheteira espera na fila, paga em dirhams e ninguém lhe dá um guia. Aqui é um só pagamento com cartão, um audioguia na sua língua, apoio por WhatsApp e cancelamento gratuito até enviarmos o seu código.",
+      "includes": [
+        "Bilhete de entrada oficial (100 MAD, comprado para si)",
+        "Audioguia de qualidade",
+        "Mapa do visitante",
+        "Apoio de uma pessoa real"
+      ]
+    }
+  },
+  "whyUs": {
+    "title": "Porquê reservar connosco?",
+    "items": [
+      {
+        "title": "Directamente à bilheteira verdadeira",
+        "desc": "Encaminhamo-lo directamente para o portal oficial de bilhetes do Ministério da Cultura de Marrocos — sem revendedores e sem margens."
+      },
+      {
+        "title": "Sem taxas de reserva",
+        "desc": "Este site é gratuito. Paga o preço normal directamente no portal oficial — não acrescentamos nada."
+      },
+      {
+        "title": "Informação fiável",
+        "desc": "Informação independente para visitantes, recolhida de fontes oficiais e verificadas — nada de suposições."
+      },
+      {
+        "title": "Os seus dados ficam connosco",
+        "desc": "Se partilhar o seu e-mail, é usado apenas para enviar sugestões de visita — nunca é vendido. A compra do bilhete é feita directamente no portal oficial, não connosco."
+      }
+    ]
+  },
+  "highlights": {
+    "title": "O que vai ver",
+    "item1label": "O grande pátio",
+    "item1caption": "Laranjeiras dão sombra a um pátio onde outrora trabalhavam os artesãos. A maioria dos visitantes passa aqui os primeiros dez minutos, apenas a olhar para cima.",
+    "item2label": "Os tectos esculpidos",
+    "item2caption": "Um só tecto de cedro levava anos a fazer. Cada viga é diferente da seguinte, e nenhuma foi tocada por uma máquina.",
+    "item3label": "Os mosaicos zellige",
+    "item3caption": "Cada peça cortada à mão e assente com precisão. A geometria não tem um único erro.",
+    "item4label": "A grande sala de recepção",
+    "item4caption": "A maior sala do palácio — era aqui que Ba Ahmed recebia os dignitários estrangeiros. Só o tecto pintado levou vários anos de trabalho."
+  },
+  "nearby": {
+    "title": "Mais para ver ali perto",
+    "intro": "Há mais dois monumentos de Marraquexe a poucos minutos a pé do Palácio da Bahia. Publicamos um guia independente para cada um.",
+    "badiName": "Palácio El Badi",
+    "badiWalk": "10 minutos a pé",
+    "badiBody": "A ruína sem tecto da obra-prima do sultão Ahmad al-Mansur, do século XVI — jardins de laranjeiras rebaixados, enormes espelhos de água e cegonhas a nidificar nas muralhas. Dez minutos a sul do Palácio da Bahia, na Kasbah.",
+    "saadianName": "Túmulos Saadianos",
+    "saadianWalk": "12 minutos a pé",
+    "saadianBody": "A necrópole real da dinastia saadiana, emparedada durante dois séculos e redescoberta em 1917. A Sala das Doze Colunas guarda alguns dos melhores trabalhos de cedro e zellige de Marrocos. Cerca de 12 minutos a pé do Palácio da Bahia."
+  },
+  "palaceStats": {
+    "stat1label": "Construído em",
+    "stat2label": "Divisões",
+    "stat3label": "Área do palácio",
+    "stat4label": "Preço de entrada",
+    "stat1val": "1866",
+    "stat2val": "150+",
+    "stat3val": "8000 m²",
+    "stat4val": "100 MAD"
+  },
+  "booking": {
+    "cancellation": {
+      "title": "Precisa de cancelar?",
+      "body": "Cancelamento gratuito até o seu bilhete (código QR) ser enviado. Para cancelar e receber o reembolso total, contacte-nos:",
+      "whatsappCta": "Cancelar por WhatsApp",
+      "whatsappMessage": "Olá, gostaria de cancelar a minha reserva do Palácio da Bahia {reference} e pedir o reembolso total.",
+      "emailSubject": "Pedido de cancelamento — reserva {reference}",
+      "referenceHint": "Indique a referência da sua reserva: {reference}",
+      "closed": "Esta reserva já não pode ser cancelada (o bilhete já foi entregue).",
+      "alreadyCancelled": "Esta reserva foi cancelada."
+    }
+  },
+  "practicalBar": {
+    "hoursLabel": "Aberto todos os dias",
+    "priceLabel": "Entrada",
+    "locationLabel": "Localização",
+    "locationVal": "Rue Riad Zitoun el Jedid, Medina de Marraquexe",
+    "priceVal": "100 MAD (≈ 9,36 €)",
+    "hoursVal": "9:00 – 17:00"
+  },
+  "blogPreview": {
+    "title": "Do guia do visitante",
+    "subtitle": "Dicas, história e conselhos práticos para a sua visita ao Palácio da Bahia",
+    "minRead": "min de leitura",
+    "viewAll": "Ler todos os artigos"
+  },
+  "about": {
+    "title": "Sobre o Palácio da Bahia",
+    "body": "Construído no final do século XIX para Si Moussa, grão-vizir do sultão, o Palácio da Bahia («palácio da bela») é uma obra-prima da arquitectura marroquina. Os seus oito hectares de zellige minucioso, tectos de cedro esculpido e jardins luxuriantes encantam visitantes há mais de um século.",
+    "readMore": "Ler a história completa →"
+  },
+  "videos": {
+    "promoBar": "A Bahia em vídeo"
+  },
+  "footer": {
+    "tagline": "A maneira mais simples de visitar o Palácio da Bahia.",
+    "tickets": "Bilhetes",
+    "skipTheLine": "Entrada sem fila",
+    "viewAllTickets": "Ver todos os bilhetes",
+    "openingHours": "Horários",
+    "entranceFee": "Preço de entrada",
+    "explore": "Explorar",
+    "blog": "Blogue de viagens",
+    "safetyGuide": "Guia de segurança",
+    "faq": "Perguntas frequentes",
+    "about": "Sobre nós",
+    "history": "História do palácio",
+    "location": "Localização e mapa",
+    "legal": "Legal",
+    "terms": "Condições de serviço",
+    "privacy": "Política de privacidade",
+    "refund": "Política de reembolso",
+    "cookies": "Política de cookies",
+    "editorial": "Política editorial",
+    "contact": "Contacto",
+    "copyright": "© {year} Bahia Palace Tickets. Todos os direitos reservados.",
+    "paymentNote": "Utilização gratuita — apenas bilhetes oficiais",
+    "network": "Parte de uma rede independente de guias de monumentos de Marrocos.",
+    "disclaimer": "O visitbahiapalace.com é um serviço independente de informação e reservas. Não estamos associados ao Palácio da Bahia oficial nem ao Ministério da Cultura de Marrocos. Os bilhetes de entrada também podem ser comprados directamente ao Ministério em <portal>e-services.minculture.gov.ma</portal>."
+  },
+  "ticketDetail": {
+    "includes": "O que está incluído",
+    "excludes": "Não incluído",
+    "meetingPoint": "Ponto de encontro",
+    "bookingInfo": "Informação da reserva",
+    "dateLabel": "Escolha a data",
+    "adultsLabel": "Adultos",
+    "childrenLabel": "Crianças (menos de 12)",
+    "childFree": "Grátis",
+    "total": "Total",
+    "proceedToCheckout": "Continuar para os bilhetes oficiais →",
+    "instantConfirm": "Preço tudo incluído",
+    "freeCancelNote": "Compre directamente no portal oficial",
+    "mobileTicket": "Sem conta e sem aplicação",
+    "duration": "Duração",
+    "groupSize": "Dimensão do grupo",
+    "language": "Disponível em",
+    "gallery": "Galeria",
+    "faqTitle": "Perguntas sobre esta visita",
+    "alsoConsider": "Também pode gostar",
+    "whatsappCta": "Tem alguma dúvida? Fale connosco no WhatsApp →",
+    "whatsappMsg": "Olá! Tenho uma questão sobre o bilhete {ticket}.",
+    "adult": "adulto",
+    "child": "criança",
+    "adults": "adultos",
+    "children": "crianças",
+    "openingHours": "Horário",
+    "openingHoursVal": "Todos os dias das 9:00 às 17:00 (última entrada às 16:30)"
+  },
+  "aboutPage": {
+    "metaTitle": "visitbahiapalace.com — guia independente do Palácio da Bahia",
+    "metaDesc": "O visitbahiapalace.com é um guia independente do Palácio da Bahia, em Marraquexe. Compare bilhetes, confirme horários e planeie a visita.",
+    "hero": "Sobre o visitbahiapalace.com",
+    "heroSub": "Um site independente de informação para visitantes do Palácio da Bahia, um dos monumentos oitocentistas mais bonitos de Marrocos.",
+    "missionTitle": "A nossa missão",
+    "missionBody": "Ajudar quem viaja de fora a planear a visita ao Palácio da Bahia com informação exacta e útil — história, dicas práticas, orientações de segurança e ligações directas à compra de bilhetes oficiais.",
+    "whyTitle": "O que oferecemos",
+    "whyBody": "Guias completos e contexto histórico · Dicas práticas sobre horários e preços de entrada · Informação de segurança para turistas · Respostas às perguntas mais comuns · Ligações directas à compra de bilhetes oficiais em e-services.minculture.gov.ma",
+    "teamTitle": "Aviso importante",
+    "teamBody": "O visitbahiapalace.com NÃO está associado à administração oficial do Palácio da Bahia nem ao Ministério da Cultura de Marrocos. Somos um site independente de informação para visitantes. Para bilhetes oficiais: e-services.minculture.gov.ma",
+    "contactCta": "Contacte-nos",
+    "ctaTitle": "Tem alguma dúvida sobre a visita?",
+    "ctaBody": "Dúvidas sobre visitar o Palácio da Bahia? Consulte as perguntas frequentes ou escreva-nos.",
+    "network": "Parte de uma rede independente de guias de monumentos de Marrocos."
+  },
+  "contactPage": {
+    "title": "Contacte-nos",
+    "subtitle": "Dúvidas, sugestões ou pedidos especiais — estamos aqui para ajudar.",
+    "nameLabel": "O seu nome",
+    "emailLabel": "Endereço de e-mail",
+    "subjectLabel": "Assunto",
+    "messageLabel": "Mensagem",
+    "send": "Enviar mensagem",
+    "sending": "A enviar…",
+    "success": "Mensagem enviada! Respondemos dentro de 24 horas.",
+    "error": "Ocorreu um problema. Tente novamente ou fale connosco no WhatsApp.",
+    "orWhatsapp": "Ou fale connosco já no WhatsApp",
+    "whatsappBtn": "Abrir conversa no WhatsApp",
+    "addressTitle": "Sobre este site",
+    "addressVal": "Informação independente para visitantes — sem qualquer associação ao Palácio da Bahia oficial ou ao Ministério da Cultura de Marrocos.",
+    "hoursTitle": "Tempo de resposta",
+    "hoursVal": "Respondemos a todas as mensagens dentro de 24 horas.",
+    "emailTitle": "E-mail",
+    "emailVal": "support@visitbahiapalace.com"
+  },
+  "blog": {
+    "title": "Guia de viagem a Marraquexe e ao Palácio da Bahia",
+    "subtitle": "Guia do Palácio da Bahia em Marraquexe 2026: como evitar a fila, horários, preços dos bilhetes, história e o que esperar da visita.",
+    "readMore": "Ler o artigo",
+    "readTime": "{min} min de leitura",
+    "categories": {
+      "visit-tips": "Dicas de visita",
+      "history": "História",
+      "practical": "Informação prática",
+      "comparisons": "Comparações",
+      "safety": "Segurança",
+      "guides": "Guias",
+      "tips": "Dicas",
+      "reviews": "Opiniões",
+      "itineraries": "Itinerários"
+    },
+    "all": "Todos os artigos",
+    "bookCta": "Planeie a sua visita — sem filas →",
+    "relatedPosts": "Artigos relacionados",
+    "share": "Partilhar este artigo"
+  }
+}

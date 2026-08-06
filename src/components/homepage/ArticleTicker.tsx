@@ -39,7 +39,7 @@ export function ArticleTicker({ locale }: Props) {
             <span className="text-white/80 text-sm whitespace-nowrap group-hover:text-white transition-colors">
               {post.title}
             </span>
-            <span className="text-white/20 text-sm shrink-0 ml-2">·</span>
+            <span className="text-white/20 text-sm shrink-0 ms-2">·</span>
           </Link>
         ))}
       </div>

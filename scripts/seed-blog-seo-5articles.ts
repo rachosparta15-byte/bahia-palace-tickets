@@ -1,5 +1,5 @@
 import { config } from 'dotenv';
-config({ path: '.env.local' });
+config({ path: '.env.prod' });
 config({ path: '.env' });
 
 import { PrismaLibSql } from '@prisma/adapter-libsql';

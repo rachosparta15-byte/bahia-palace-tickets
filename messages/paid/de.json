@@ -1,0 +1,127 @@
+{
+  "trust": {
+    "freeCancellation": "Kostenlose Stornierung",
+    "secure": "Offizielles Ticket inklusive"
+  },
+  "tickets": {
+    "skipTheLine": {
+      "includes": [
+        null,
+        null,
+        "Digitaler Guide & Support inklusive",
+        "Offizielles Ticket inklusive"
+      ]
+    },
+    "guidedTour": {
+      "includes": [
+        null,
+        null,
+        null,
+        null,
+        "Offizielles Ticket inklusive"
+      ]
+    },
+    "privateTour": {
+      "includes": [
+        null,
+        null,
+        null,
+        null,
+        "Offizielles Ticket inklusive"
+      ]
+    },
+    "combo": {
+      "includes": [
+        null,
+        null,
+        null,
+        null,
+        "Offizielles Ticket inklusive"
+      ]
+    }
+  },
+  "ticketDetail": {
+    "proceedToCheckout": "Weiter zur Buchung →",
+    "instantConfirm": "Inklusive offiziellem Ticket + digitalem Guide + Support",
+    "freeCancelNote": "Kostenlose Stornierung, bis Ihr Ticket versendet wird"
+  },
+  "whyUs": {
+    "items": [
+      {
+        "title": "Offizielles Ticket, für Sie erledigt",
+        "desc": "Wir kaufen das echte Ticket des Kulturministeriums in Ihrem Namen und kombinieren es mit einem digitalen Guide und Support — ein einfacher Checkout."
+      },
+      {
+        "title": "Transparenter Preis",
+        "desc": "13,99 € pro Person, inklusive aller Steuern, und beim Bezahlen kommt nichts hinzu. Das deckt das offizielle Ticket des Kulturministeriums in Ihrem Namen, einen digitalen Audioguide, den WhatsApp-Support und die kostenlose Stornierung bis zum Versand Ihres Tickets."
+      },
+      null,
+      {
+        "desc": "Wenn Sie Ihre E-Mail angeben, wird sie nur für Besuchstipps verwendet — niemals verkauft. Ihre Buchung wird sicher bei uns abgeschlossen; Kartenzahlungen werden von Stripe abgewickelt und wir speichern Ihre Kartendaten nie."
+      }
+    ]
+  },
+  "faqPage": {
+    "ctaBody": "Unabhängiger Buchungsservice · Offizielles Ticket inklusive · Kostenlose Stornierung",
+    "items": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "answer": "Wählen Sie Ihr Datum und schließen Sie die Buchung bei uns ab. Wir kaufen Ihr offizielles Ticket des Kulturministeriums und senden Ihnen Ihren QR-Code vor dem Besuch per E-Mail und WhatsApp. Lieber selbst kaufen? Das können Sie unter e-services.minculture.gov.ma."
+      },
+      {
+        "answer": "Sie können jederzeit vor der Zustellung Ihres QR-Tickets kostenlos stornieren oder das Datum ändern — volle Rückerstattung via WhatsApp. Sobald das Ticket zugestellt ist, gilt die Leistung als erbracht; Einzelheiten finden Sie in unseren Stornierungsbedingungen."
+      }
+    ]
+  },
+  "faq": {
+    "items": [
+      {
+        "answer": "Nach Ihrer Buchung bei uns senden wir Ihnen Ihr offizielles QR-Code-Ticket vor dem Besuch per E-Mail und WhatsApp."
+      },
+      {
+        "answer": "Kostenlose Stornierung und Datumsänderung via WhatsApp jederzeit vor der Zustellung Ihres QR-Tickets."
+      },
+      null,
+      null,
+      null,
+      {
+        "answer": "Ihre Buchung enthält das offizielle, vorab validierte Eintrittsticket, sodass Sie die Warteschlange an der Kasse überspringen."
+      }
+    ]
+  },
+  "cta": {
+    "stickyMobile": "Ohne Anstehen — jetzt buchen"
+  },
+  "footer": {
+    "paymentNote": "Unabhängiger Buchungsservice — offizielles Ticket inklusive",
+    "disclaimer": "visitbahiapalace.com ist ein unabhängiger Buchungsservice. Wir sind weder mit dem Bahia-Palast noch mit dem marokkanischen Kulturministerium verbunden. Eintrittstickets können auch direkt beim Ministerium erworben werden unter <portal>e-services.minculture.gov.ma</portal>."
+  },
+  "aboutPage": {
+    "missionBody": "Internationalen Reisenden zu helfen, ihren Besuch im Bahia-Palast mit genauen, hilfreichen Informationen zu planen — Geschichte, praktische Tipps, Sicherheitshinweise — sowie ein optionaler Buchungsservice, der das offizielle Ticket, einen digitalen Guide und Support umfasst.",
+    "whyBody": "Umfassende Besucherführer und historischer Kontext · Praktische Tipps zu Öffnungszeiten und Eintrittspreisen · Sicherheitsinformationen für Touristen · Ein optionaler kostenpflichtiger Buchungsservice (offizielles Ticket + digitaler Guide + Support) · Die Selbstbuchungs-Alternative für das offizielle Ticket unter e-services.minculture.gov.ma",
+    "teamBody": "visitbahiapalace.com ist NICHT mit der offiziellen Verwaltung des Bahia-Palastes oder dem marokkanischen Kulturministerium verbunden. Wir sind ein unabhängiger Buchungsservice. Sie können das offizielle Ticket auch direkt unter e-services.minculture.gov.ma kaufen."
+  },
+  "contactPage": {
+    "addressVal": "Unabhängiger Buchungsservice — nicht mit dem offiziellen Bahia-Palast oder dem marokkanischen Kulturministerium verbunden."
+  },
+  "visitorPack": {
+    "faq": {
+      "items": {
+        "cheaper": {
+          "a": "Der reine Eintritt kostet an der Kasse 100 MAD. Unser Preis umfasst dieses Ticket in Ihrem Namen, den Audioguide in fünf Sprachen, die Besucherkarte, den WhatsApp-Support vor und während Ihres Besuchs sowie die kostenlose Stornierung bis zum Versand Ihres QR-Codes. Das Ministerium verkauft den Eintritt auch direkt über sein Portal, wenn Sie nur das benötigen."
+        }
+      }
+    }
+  }
+}

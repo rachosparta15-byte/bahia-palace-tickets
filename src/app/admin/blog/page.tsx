@@ -39,7 +39,7 @@ export default async function AdminBlogPage() {
             <thead>
               <tr className="border-b border-[#E8D5B7]">
                 {['Title', 'Public URL', 'Locale', 'Category', 'Status', 'Date', ''].map(h => (
-                  <th key={h} className="px-4 py-3 text-left text-xs font-semibold text-[#8B6344] uppercase tracking-wide">
+                  <th key={h} className="px-4 py-3 text-start text-xs font-semibold text-[#8B6344] uppercase tracking-wide">
                     {h}
                   </th>
                 ))}

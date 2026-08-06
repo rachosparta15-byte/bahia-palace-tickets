@@ -1,7 +1,14 @@
 import { defineRouting } from 'next-intl/routing';
 
-export const locales = ['en', 'fr', 'it', 'de', 'es'] as const;
+export const locales = ['en', 'fr', 'it', 'de', 'es', 'ar', 'pt'] as const;
 export type Locale = (typeof locales)[number];
+
+/** Arabic is the only right-to-left locale here; Hebrew/Farsi would join it. */
+export const rtlLocales: readonly Locale[] = ['ar'];
+
+export function dirFor(locale: string): 'rtl' | 'ltr' {
+  return (rtlLocales as readonly string[]).includes(locale) ? 'rtl' : 'ltr';
+}
 
 export const routing = defineRouting({
   locales,

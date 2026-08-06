@@ -134,7 +134,7 @@ export default async function AnalyticsPage() {
                   <div className="flex-1 bg-[#FAF3E7] rounded-full h-3 overflow-hidden">
                     <div className={`${step.color} h-3 rounded-full transition-all`} style={{ width: `${Math.round((step.value / funnelMax) * 100)}%` }} />
                   </div>
-                  <span className="text-xs text-[#8B6344] w-10 text-right">{pct(step.value, funnelMax)}</span>
+                  <span className="text-xs text-[#8B6344] w-10 text-end">{pct(step.value, funnelMax)}</span>
                 </div>
                 {i < funnelSteps.length - 1 && (
                   <div className="flex justify-center mt-1">
@@ -158,7 +158,7 @@ export default async function AnalyticsPage() {
               <div key={label} className="flex items-center gap-3">
                 <span className="text-sm text-[#3D2817] w-24 shrink-0">{label}</span>
                 <Bar value={value} max={modalOpens || 1} color={color} />
-                <span className="text-sm font-bold text-[#3D2817] w-8 text-right">{value}</span>
+                <span className="text-sm font-bold text-[#3D2817] w-8 text-end">{value}</span>
                 <span className="text-xs text-[#8B6344] w-10">{pct(value, modalOpens)}</span>
               </div>
             ))}
@@ -192,7 +192,7 @@ export default async function AnalyticsPage() {
                 <div key={p.path} className="flex items-center gap-3">
                   <span className="text-xs font-mono text-[#5C3D20] truncate w-40 shrink-0" title={p.path}>{p.path || '/'}</span>
                   <Bar value={Number(p.n)} max={topPagesMax} color="bg-[#2E4A7B]" />
-                  <span className="text-xs font-bold text-[#3D2817] w-8 text-right">{Number(p.n)}</span>
+                  <span className="text-xs font-bold text-[#3D2817] w-8 text-end">{Number(p.n)}</span>
                 </div>
               ))}
             </div>
@@ -213,7 +213,7 @@ export default async function AnalyticsPage() {
                   <div key={r.referrerDomain} className="flex items-center gap-3">
                     <span className="text-xs text-[#3D2817] w-28 shrink-0 truncate">{r.referrerDomain}</span>
                     <Bar value={Number(r.n)} max={topRefMax} color="bg-[#C4452D]" />
-                    <span className="text-xs font-bold text-[#3D2817] w-6 text-right">{Number(r.n)}</span>
+                    <span className="text-xs font-bold text-[#3D2817] w-6 text-end">{Number(r.n)}</span>
                   </div>
                 ))}
               </div>

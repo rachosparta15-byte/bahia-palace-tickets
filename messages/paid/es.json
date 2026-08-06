@@ -1,0 +1,127 @@
+{
+  "trust": {
+    "freeCancellation": "Cancelación gratuita",
+    "secure": "Entrada oficial incluida"
+  },
+  "tickets": {
+    "skipTheLine": {
+      "includes": [
+        null,
+        null,
+        "Guía digital y asistencia incluidas",
+        "Entrada oficial incluida"
+      ]
+    },
+    "guidedTour": {
+      "includes": [
+        null,
+        null,
+        null,
+        null,
+        "Entrada oficial incluida"
+      ]
+    },
+    "privateTour": {
+      "includes": [
+        null,
+        null,
+        null,
+        null,
+        "Entrada oficial incluida"
+      ]
+    },
+    "combo": {
+      "includes": [
+        null,
+        null,
+        null,
+        null,
+        "Entrada oficial incluida"
+      ]
+    }
+  },
+  "ticketDetail": {
+    "proceedToCheckout": "Continuar a la reserva →",
+    "instantConfirm": "Incluye entrada oficial + guía digital + asistencia",
+    "freeCancelNote": "Cancelación gratuita hasta el envío de tu entrada"
+  },
+  "whyUs": {
+    "items": [
+      {
+        "title": "La entrada oficial, gestionada por ti",
+        "desc": "Compramos la entrada auténtica del Ministerio de Cultura en tu nombre y la combinamos con una guía digital y asistencia — un único pago, sencillo."
+      },
+      {
+        "title": "Precio transparente",
+        "desc": "13,99 € por persona, impuestos incluidos, y sin nada añadido al pagar. Cubre la entrada oficial del Ministerio de Cultura comprada a su nombre, una audioguía digital, la asistencia por WhatsApp y la cancelación gratuita hasta que enviemos su entrada."
+      },
+      null,
+      {
+        "desc": "Si compartes tu correo, solo se usa para enviarte consejos de visita — nunca se vende. Tu reserva se completa de forma segura con nosotros; los pagos con tarjeta los procesa Stripe y nunca guardamos los datos de tu tarjeta."
+      }
+    ]
+  },
+  "faqPage": {
+    "ctaBody": "Servicio de reservas independiente · Entrada oficial incluida · Cancelación gratuita",
+    "items": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "answer": "Elige tu fecha y completa la reserva con nosotros. Compramos tu entrada oficial del Ministerio de Cultura y te enviamos tu código QR por correo y WhatsApp antes de tu visita. ¿Prefieres comprarla tú? Puedes hacerlo en e-services.minculture.gov.ma."
+      },
+      {
+        "answer": "Puedes cancelar o cambiar tu fecha gratis por WhatsApp en cualquier momento antes de la entrega de tu código QR — reembolso íntegro. Una vez entregada la entrada, el servicio queda prestado; consulta nuestra política de cancelación para más detalles."
+      }
+    ]
+  },
+  "faq": {
+    "items": [
+      {
+        "answer": "Tras reservar con nosotros, te enviamos tu entrada oficial con código QR por correo y WhatsApp antes de tu visita."
+      },
+      {
+        "answer": "Cancelación y cambio de fecha gratis por WhatsApp en cualquier momento antes de la entrega de tu código QR."
+      },
+      null,
+      null,
+      null,
+      {
+        "answer": "Tu reserva incluye la entrada oficial previamente validada, así que te saltas la cola de la taquilla."
+      }
+    ]
+  },
+  "cta": {
+    "stickyMobile": "Sin colas — reserva ahora"
+  },
+  "footer": {
+    "paymentNote": "Servicio de reservas independiente — entrada oficial incluida",
+    "disclaimer": "visitbahiapalace.com es un servicio de reservas independiente. No estamos afiliados al Palacio de la Bahía ni al Ministerio de Cultura de Marruecos. Las entradas también pueden comprarse directamente al Ministerio en <portal>e-services.minculture.gov.ma</portal>."
+  },
+  "aboutPage": {
+    "missionBody": "Ayudar a los viajeros internacionales a planificar su visita al Palacio Bahía con información precisa y útil — historia, consejos prácticos, seguridad — además de un servicio de reservas opcional que incluye la entrada oficial, una guía digital y asistencia.",
+    "whyBody": "Guías turísticas completas y contexto histórico · Consejos prácticos sobre horarios y precios · Información de seguridad para turistas · Un servicio de reservas opcional y de pago (entrada oficial + guía digital + asistencia) · La alternativa por tu cuenta para la entrada oficial en e-services.minculture.gov.ma",
+    "teamBody": "visitbahiapalace.com NO está afiliado a la administración oficial del Palacio Bahía ni al Ministerio de Cultura de Marruecos. Somos un servicio de reservas independiente. También puedes comprar la entrada oficial directamente en e-services.minculture.gov.ma."
+  },
+  "contactPage": {
+    "addressVal": "Servicio de reservas independiente — no afiliado al Palacio Bahía oficial ni al Ministerio de Cultura de Marruecos."
+  },
+  "visitorPack": {
+    "faq": {
+      "items": {
+        "cheaper": {
+          "a": "La entrada sola cuesta 100 MAD en taquilla. Nuestro precio incluye esa entrada comprada a su nombre, la audioguía en cinco idiomas, el mapa del visitante, la asistencia por WhatsApp antes y durante su visita, y la cancelación gratuita hasta que enviemos su código QR. El Ministerio también vende la entrada directamente en su portal si es lo único que necesita."
+        }
+      }
+    }
+  }
+}

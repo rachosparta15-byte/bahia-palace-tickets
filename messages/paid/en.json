@@ -1,0 +1,127 @@
+{
+  "trust": {
+    "freeCancellation": "Free Cancellation",
+    "secure": "Official Ticket Included"
+  },
+  "tickets": {
+    "skipTheLine": {
+      "includes": [
+        null,
+        null,
+        "Digital guide & support included",
+        "Official ticket included"
+      ]
+    },
+    "guidedTour": {
+      "includes": [
+        null,
+        null,
+        null,
+        null,
+        "Official ticket included"
+      ]
+    },
+    "privateTour": {
+      "includes": [
+        null,
+        null,
+        null,
+        null,
+        "Official ticket included"
+      ]
+    },
+    "combo": {
+      "includes": [
+        null,
+        null,
+        null,
+        null,
+        "Official ticket included"
+      ]
+    }
+  },
+  "ticketDetail": {
+    "proceedToCheckout": "Continue to booking →",
+    "instantConfirm": "Includes official ticket + digital guide + support",
+    "freeCancelNote": "Free cancellation until your ticket is sent"
+  },
+  "whyUs": {
+    "items": [
+      {
+        "title": "Official Ticket, Sorted for You",
+        "desc": "We buy the genuine Ministry of Culture ticket on your behalf and bundle it with a digital guide and support — one simple checkout."
+      },
+      {
+        "title": "Transparent Pricing",
+        "desc": "€13.99 per person, all taxes included, and nothing added at checkout. That covers the official Ministry of Culture ticket bought in your name, a digital audio guide, WhatsApp support, and free cancellation until we send your ticket."
+      },
+      null,
+      {
+        "desc": "If you share your email, it's only used to send visit tips — never sold. Your booking is completed securely with us; card payments are handled by Stripe and we never store your card details."
+      }
+    ]
+  },
+  "faqPage": {
+    "ctaBody": "Independent booking service · Official ticket included · Free cancellation",
+    "items": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "answer": "Choose your date and complete checkout with us. We buy your official Ministry of Culture ticket and send your QR code by email and WhatsApp before your visit. Prefer to buy it yourself? You can, at e-services.minculture.gov.ma."
+      },
+      {
+        "answer": "You can cancel or change your date for free via WhatsApp any time before your QR ticket is delivered — full refund. Once the ticket is delivered, the service is provided; see our Refund Policy for details."
+      }
+    ]
+  },
+  "faq": {
+    "items": [
+      {
+        "answer": "After you book with us, we send your official QR code ticket by email and WhatsApp before your visit."
+      },
+      {
+        "answer": "Free cancellation and date changes via WhatsApp any time before your QR ticket is delivered."
+      },
+      null,
+      null,
+      null,
+      {
+        "answer": "Your booking includes the official pre-validated entry ticket, so you skip the ticket-booth queue."
+      }
+    ]
+  },
+  "cta": {
+    "stickyMobile": "Skip the line — book now"
+  },
+  "footer": {
+    "paymentNote": "Independent booking service — official ticket included",
+    "disclaimer": "visitbahiapalace.com is an independent booking service. We are not affiliated with the official Bahia Palace or the Moroccan Ministry of Culture. Entry tickets can also be bought directly from the Ministry at <portal>e-services.minculture.gov.ma</portal>."
+  },
+  "aboutPage": {
+    "missionBody": "To help international travellers plan their visit to Bahia Palace with accurate, helpful information — history, practical tips, safety guidance — and an optional booking service that includes the official ticket, a digital guide and support.",
+    "whyBody": "Comprehensive visitor guides and historical context · Practical tips on opening hours and entrance fees · Safety information for tourists · An optional paid booking service (official ticket + digital guide + support) · The do-it-yourself official-ticket alternative at e-services.minculture.gov.ma",
+    "teamBody": "visitbahiapalace.com is NOT affiliated with the official Bahia Palace administration or the Moroccan Ministry of Culture. We are an independent booking service. You can also buy the official ticket directly at e-services.minculture.gov.ma."
+  },
+  "contactPage": {
+    "addressVal": "Independent booking service — not affiliated with the official Bahia Palace or the Moroccan Ministry of Culture."
+  },
+  "visitorPack": {
+    "faq": {
+      "items": {
+        "cheaper": {
+          "a": "Entry alone is 100 MAD at the gate. Our price covers that ticket bought in your name, plus the audio guide in five languages, the visitor map, WhatsApp support before and during your visit, and free cancellation right up until we send your QR code. The Ministry also sells entry directly on its own portal if that is all you need."
+        }
+      }
+    }
+  }
+}

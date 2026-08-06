@@ -67,7 +67,12 @@ export async function verifyCheckoutSession(_sessionId: string): Promise<{ paid:
   return { paid: false };
 }
 
-export async function refundPayment(paymentSessionId: string, amount?: number): Promise<boolean> {
-  console.log('[MOCK PAYMENT] Refund processed:', { paymentSessionId, amount });
-  return true;
+export async function refundPayment(
+  paymentSessionId: string,
+  amount?: number,
+  idempotencyKey?: string
+): Promise<{ ok: boolean; refundId?: string }> {
+  const refundId = `mock_re_${Date.now()}`;
+  console.log('[MOCK PAYMENT] Refund processed:', { paymentSessionId, amount, idempotencyKey, refundId });
+  return { ok: true, refundId };
 }

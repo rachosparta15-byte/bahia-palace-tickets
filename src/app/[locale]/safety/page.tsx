@@ -96,7 +96,7 @@ export default async function SafetyPage({ params }: { params: Promise<{ locale:
           {tips.map((tip, i) => (
             <div
               key={i}
-              className="bg-[#251A0F] rounded-2xl border-l-4 border-amber-500 p-6 hover:border-[#E8A33D] transition-colors"
+              className="bg-[#251A0F] rounded-2xl border-s-4 border-amber-500 p-6 hover:border-[#E8A33D] transition-colors"
             >
               <div className="flex items-start gap-3">
                 <span className="text-2xl shrink-0 mt-0.5">{ICON_MAP[tip.icon] ?? '⚠️'}</span>

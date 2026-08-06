@@ -33,11 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     metadataBase: new URL(BASE),
     alternates: {
       languages: {
-        'en': `${BASE}/en`,
-        'fr': `${BASE}/fr`,
-        'it': `${BASE}/it`,
-        'de': `${BASE}/de`,
-        'es': `${BASE}/es`,
+        ...Object.fromEntries(routing.locales.map((l) => [l, `${BASE}/${l}`])),
         'x-default': `${BASE}/en`,
       },
     },
@@ -65,7 +61,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
      <PaymentsFlagsProvider value={paymentsFlags}>
-      <div className="flex flex-col min-h-screen" lang={locale}>
+      <div className="flex flex-col min-h-screen">
         <Header />
         <VideoPromoBar variant="C" />
         <main className="flex-1 pt-[134px]">{children}</main>

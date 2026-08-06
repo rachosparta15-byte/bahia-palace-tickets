@@ -79,7 +79,7 @@ export default async function OpeningHoursPage({ params }: Props) {
             ].map(({ day, hours, status, note }) => (
               <div key={day} className="flex items-center justify-between px-6 py-4">
                 <span className="font-semibold text-[#F5E8CC] text-sm">{day}</span>
-                <div className="text-right">
+                <div className="text-end">
                   <span className={`font-bold text-sm ${status === 'open' ? 'text-[#8FA63C]' : 'text-[#E8A33D]'}`}>{hours}</span>
                   {note && <p className="text-xs text-[#C4A882] mt-0.5">{note}</p>}
                 </div>
@@ -143,7 +143,7 @@ export default async function OpeningHoursPage({ params }: Props) {
               <div key={season} className="flex gap-3 bg-[#251A0F] rounded-xl border border-[rgba(232,163,61,0.13)] p-4">
                 <CheckCircle2 size={15} className={`shrink-0 mt-0.5 ${best ? 'text-[#8FA63C]' : 'text-[#C4A882]'}`} />
                 <div>
-                  <p className="font-semibold text-[#F5E8CC] text-sm">{season}{best && <span className="ml-2 text-[10px] bg-[#8FA63C] text-white px-2 py-0.5 rounded-full uppercase tracking-wide">Recommended</span>}</p>
+                  <p className="font-semibold text-[#F5E8CC] text-sm">{season}{best && <span className="ms-2 text-[10px] bg-[#8FA63C] text-white px-2 py-0.5 rounded-full uppercase tracking-wide">Recommended</span>}</p>
                   <p className="text-xs text-[#C4A882] mt-1 leading-relaxed">{tip}</p>
                 </div>
               </div>

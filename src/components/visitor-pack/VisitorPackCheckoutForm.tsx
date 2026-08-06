@@ -1,26 +1,27 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useForm, useWatch } from 'react-hook-form';
+import { useForm, useWatch, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useTranslations } from 'next-intl';
 import { useRouter, Link } from '@/i18n/navigation';
 import { Button } from '@/components/ui/Button';
-import { PriceBreakdown } from './PriceBreakdown';
+import { PackInclusions } from './PackInclusions';
+import { SharedPaymentElement } from './SharedPaymentElement';
+import { DatePicker, toISODate } from '@/components/ui/DatePicker';
 import { CreditCard, Calendar, Users, Lock, FlaskConical } from 'lucide-react';
 import {
-  VISITOR_PACK_PRICE_USD,
+  VISITOR_PACK_PRICE_EUR_CENTS,
   VISITOR_PACK_MAX_VISITORS,
+  formatEURAmount,
+  formatEUR,
 } from '@/config/pricing';
 import { consumeLeadPrefill } from '@/lib/lead-handoff';
 
-/** Today in YYYY-MM-DD, for the date input's min attribute. */
+/** Today in YYYY-MM-DD, local time. Used as the default and the minimum. */
 function todayISO(): string {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(
-    d.getDate()
-  ).padStart(2, '0')}`;
+  return toISODate(new Date());
 }
 
 // `visitors` is a plain number here, not z.coerce — the select registers with
@@ -31,6 +32,19 @@ const schema = z.object({
   visitors: z.number().int().min(1).max(VISITOR_PACK_MAX_VISITORS),
   customerName: z.string().min(2),
   customerEmail: z.string().email(),
+  // `.refine` rather than `z.literal(true)`: literal narrows the inferred
+  // type to `true`, which the unchecked default value then contradicts.
+  acceptedConsent: z.boolean().refine((v) => v === true),
+  /**
+   * Lead row created back in the modal, carried here by the prefill handoff
+   * and sent on so checkout updates that row instead of writing a second one.
+   *
+   * Lives in the form rather than in component state because `reset()`
+   * already populates it in the prefill effect — a separate setState there
+   * would be a cascading render the React compiler rejects. Empty string when
+   * the visitor came straight to this page; the API creates a Lead itself.
+   */
+  leadId: z.string().optional(),
 });
 type FormData = z.infer<typeof schema>;
 
@@ -53,8 +67,11 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
   const t = useTranslations('visitorPack.form');
   const tHero = useTranslations('visitorPack.hero');
   const tTest = useTranslations('visitorPack.testMode');
+  const tDate = useTranslations('datePicker');
   const router = useRouter();
   const [serverError, setServerError] = useState<string | null>(null);
+  /** Set once the parent has created the Payment Intent; swaps the form for the card field. */
+  const [payment, setPayment] = useState<{ clientSecret: string; orderId: string } | null>(null);
 
   const {
     register,
@@ -64,7 +81,18 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
-    defaultValues: { visitors: 1, date: '' },
+    defaultValues: {
+      visitors: 1,
+      // Default to today so the field is never an empty "mm/dd/yyyy". The
+      // order summary echoes the full date back in the visitor's language,
+      // and the picker highlights it — a pre-filled date must stay obvious,
+      // because a wrong visit date is non-refundable once the QR ships
+      // (Terms §5 and §7).
+      date: todayISO(),
+      // Unticked by default, always. Pre-ticking a consent box is not consent.
+      acceptedConsent: false,
+      leadId: '',
+    },
   });
 
   /**
@@ -79,13 +107,18 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
     if (!prefill) return;
 
     reset({
-      date: prefill.visitDate ?? '',
+      leadId: prefill.leadId ?? '',
+      // Fall back to today, not to empty, if the modal captured no date.
+      date: prefill.visitDate ?? todayISO(),
       visitors:
         prefill.visitors && prefill.visitors >= 1 && prefill.visitors <= VISITOR_PACK_MAX_VISITORS
           ? prefill.visitors
           : 1,
       customerName: prefill.name ?? '',
       customerEmail: prefill.email ?? '',
+      // Never carried over from step 1 — consent is given on this page, next
+      // to the price and the policy links it actually refers to.
+      acceptedConsent: false,
     });
   }, [reset]);
 
@@ -104,48 +137,63 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
         year: 'numeric',
       })
     : '';
-  const total = VISITOR_PACK_PRICE_USD * visitors;
+  // Integer cents throughout, formatted only at the point of display — the
+  // same arithmetic the server does, so the two totals cannot disagree.
+  const totalCents = VISITOR_PACK_PRICE_EUR_CENTS * visitors;
 
   async function onSubmit(data: FormData) {
     setServerError(null);
 
-    // Belt and braces: even if this component were rendered with the wrong
-    // prop, don't fire a request that we know should not happen.
     if (!paymentsEnabled) {
       setServerError(t('errors.disabled'));
       return;
     }
 
+    /*
+     * One name field on screen, two on the wire. Splitting on the last space
+     * keeps multi-part first names intact ("Anne Marie Dupont" -> "Anne Marie"
+     * + "Dupont"), which matters because this name goes on the order record.
+     */
+    const parts = data.customerName.trim().split(/\s+/);
+    const lastName = parts.length > 1 ? parts.pop()! : '—';
+    const firstName = parts.join(' ');
+
     try {
-      const res = await fetch('/api/visitor-pack/checkout', {
+      const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, locale }),
+        body: JSON.stringify({
+          visitDate: data.date,
+          quantity: data.visitors,
+          locale,
+          customer: { firstName, lastName, email: data.customerEmail },
+          // Three ticks, three fields. Never derived from one another.
+          consent: {
+            waiverAndTerms: data.acceptedConsent,
+          },
+        }),
       });
 
+      const payload = await res.json().catch(() => ({}));
+
       if (!res.ok) {
-        const payload = await res.json().catch(() => ({}));
         setServerError(
-          payload?.error === 'payments_disabled'
-            ? t('errors.disabled')
-            : payload?.error === 'date_in_past'
+          payload?.error === 'consent_required'
+            ? t('errors.consent')
+            : payload?.error === 'visit_date_in_past'
               ? t('errors.pastDate')
-              : t('errors.generic')
+              : payload?.error === 'booking_not_open' ||
+                  payload?.error === 'checkout_unavailable' ||
+                  payload?.error === 'payment_setup_failed'
+                ? t('errors.disabled')
+                : t('errors.generic')
         );
         return;
       }
 
-      const { url } = (await res.json()) as { url: string };
-
-      // Mock provider returns an internal path; Stripe returns an absolute URL
-      // to its own hosted checkout, which needs a full navigation.
-      if (url.startsWith('/')) {
-        router.push(url as never);
-      } else {
-        // assign() rather than `location.href = …`: the React compiler lint
-        // treats the assignment as mutating an out-of-scope value.
-        window.location.assign(url);
-      }
+      // The card form replaces this one; nothing is charged until the customer
+      // submits it, and the order stays cancellable until the code is sent.
+      setPayment({ clientSecret: payload.clientSecret, orderId: payload.orderId });
     } catch {
       setServerError(t('errors.generic'));
     }
@@ -156,12 +204,43 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
   const errCls = 'text-xs text-[#C4452D] mt-1';
   const labelCls = 'block text-sm font-semibold text-[#F5E8CC] mb-1.5';
 
+  /*
+   * Step two. The details form is replaced rather than hidden, so there is one
+   * thing on screen to do and no way to edit the visit date underneath a
+   * Payment Intent that was priced for the old one.
+   */
+  if (payment) {
+    return (
+      <div className="bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-6 sm:p-7" id="checkout">
+        <h2
+          className="font-bold text-[#F5E8CC] mb-2"
+          style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem' }}
+        >
+          {t('title')}
+        </h2>
+        <p className="mb-5 text-sm text-[#C4A882]">
+          {formatEUR(totalCents)} — {visitors} {visitors === 1 ? 'visitor' : 'visitors'} · {payment.orderId}
+        </p>
+        <SharedPaymentElement
+          clientSecret={payment.clientSecret}
+          amountLabel={formatEUR(totalCents)}
+          returnUrl={`${typeof window !== 'undefined' ? window.location.origin : ''}/${locale}/visitor-pack/confirmation?order=${payment.orderId}`}
+          publishableKey={process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}
+        />
+      </div>
+    );
+  }
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
       className="bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-6 sm:p-7"
       id="checkout"
     >
+      {/* Carries the step-1 Lead id through to the API. Not sensitive: an
+          opaque cuid that only ever lets checkout overwrite the visitor's
+          own name/date/party size on their own lead row. */}
+      <input {...register('leadId')} type="hidden" />
       <h2
         className="font-bold text-[#F5E8CC] mb-5"
         style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem' }}
@@ -172,35 +251,71 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
       <div className="space-y-5">
         <div>
           <label htmlFor="vp-date" className={labelCls}>
-            <Calendar size={13} className="inline mr-1.5 -mt-0.5 text-[#E8A33D]" />
+            <Calendar size={13} className="inline me-1.5 -mt-0.5 text-[#E8A33D]" />
             {t('dateLabel')} <span className="text-[#C4452D]">*</span>
           </label>
-          <input
-            id="vp-date"
-            {...register('date')}
-            type="date"
-            min={todayISO()}
-            className={inputCls}
+          {/* Controller rather than register(): the picker is a button and a
+              grid, not an <input>, so there is no native event for RHF to
+              subscribe to. */}
+          <Controller
+            control={control}
+            name="date"
+            render={({ field }) => (
+              <DatePicker
+                id="vp-date"
+                value={field.value}
+                onChange={field.onChange}
+                min={todayISO()}
+                locale={locale}
+                invalid={Boolean(errors.date)}
+                labels={{
+                  field: t('dateLabel'),
+                  today: tDate('today'),
+                  tomorrow: tDate('tomorrow'),
+                  previousMonth: tDate('previousMonth'),
+                  nextMonth: tDate('nextMonth'),
+                }}
+              />
+            )}
           />
           {errors.date && <p className={errCls}>{t('errors.pastDate')}</p>}
         </div>
 
         <div>
           <label htmlFor="vp-visitors" className={labelCls}>
-            <Users size={13} className="inline mr-1.5 -mt-0.5 text-[#E8A33D]" />
+            <Users size={13} className="inline me-1.5 -mt-0.5 text-[#E8A33D]" />
             {t('visitorsLabel')} <span className="text-[#C4452D]">*</span>
           </label>
-          <select
+          {/* Typed, not a dropdown: a 20-option select is a long scroll on a
+              phone for a number most people already know. `type="number"`
+              still offers steppers on desktop, and inputMode="numeric" brings
+              up the digit keypad on mobile rather than the full keyboard. */}
+          <input
             id="vp-visitors"
             {...register('visitors', { valueAsNumber: true })}
-            className={inputCls}
-          >
-            {Array.from({ length: VISITOR_PACK_MAX_VISITORS }, (_, i) => i + 1).map((n) => (
-              <option key={n} value={n}>
-                {n}
-              </option>
-            ))}
-          </select>
+            type="number"
+            inputMode="numeric"
+            min={1}
+            max={VISITOR_PACK_MAX_VISITORS}
+            step={1}
+            // react-hook-form applies its defaultValue on hydration, which
+            // left this box visibly empty on first paint (the old <select>
+            // showed "1" straight away because a select falls back to its
+            // first option). Rendering the same 1 server-side removes the
+            // flash; RHF still owns the value from mount onward.
+            defaultValue={1}
+            aria-describedby={errors.visitors ? 'vp-visitors-error' : undefined}
+            className={`${inputCls} ${errors.visitors ? 'border-[#C4452D]' : ''}`}
+          />
+          {/* `min`/`max` on the element are a hint, not a guarantee — the
+              value can still be typed or pasted out of range, so the same
+              bounds are enforced by the zod schema here and again by the
+              API route. */}
+          {errors.visitors && (
+            <p id="vp-visitors-error" role="alert" className={errCls}>
+              {t('errors.visitors', { max: VISITOR_PACK_MAX_VISITORS })}
+            </p>
+          )}
         </div>
 
         <div>
@@ -234,9 +349,10 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
         </div>
       </div>
 
-      {/* Order summary — OTA-style: product, when, who, one total.
-          The "what's included" line and the /tickets link inside
-          PriceBreakdown are required here; see that component. */}
+      {/* Order summary — OTA-style: product, when, who, what's included,
+          one total. The itemised cost split that used to sit here was
+          removed on the owner's instruction; see PackInclusions for where
+          the §3.2 official-price disclosure lives now. */}
       <div className="mt-7 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12]/50 p-5">
         <p className="text-xs uppercase tracking-wider text-[#C4A882] font-semibold">
           {t('summaryTitle')}
@@ -251,11 +367,12 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
           </p>
           <p className="flex items-center gap-2">
             <Users size={13} className="shrink-0 text-[#E8A33D]" aria-hidden="true" />
-            {visitors} × ${VISITOR_PACK_PRICE_USD}
+            {visitors} × €{formatEURAmount(VISITOR_PACK_PRICE_EUR_CENTS)}
           </p>
         </div>
 
-        <PriceBreakdown className="mt-4 pt-4 border-t border-[rgba(232,163,61,0.20)]" />
+        {/* What's included, with the cost split collapsed inside it. */}
+        <PackInclusions className="mt-4 pt-4 border-t border-[rgba(232,163,61,0.20)]" />
 
         <div className="flex items-baseline justify-between mt-4 pt-4 border-t border-[rgba(232,163,61,0.20)]">
           <span className="font-bold text-[#F5E8CC]">{t('totalLabel')}</span>
@@ -263,7 +380,7 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
             className="font-bold text-2xl text-[#E8A33D] tabular-nums"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            ${total}
+            €{formatEURAmount(totalCents)}
           </span>
         </div>
       </div>
@@ -276,6 +393,65 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
           {tTest('badge')} — {tTest('message')}
         </p>
       )}
+
+      {/* Terms of Sale & cancellation policy — mandatory, unticked by default.
+          Placed immediately above the pay button so the thing being consented
+          to is on screen at the moment of consent. The server rejects the
+          request without it; this is the visible half of that check. */}
+      {/* One tick, two statements.
+
+          The waiver sentence is plain text in the label; only the Terms and
+          cancellation-policy titles are links. That is what lets a single box
+          still carry weight: Articles 16(a) and 16(m) want the buyer to have
+          acknowledged losing the 14-day right, and an acknowledgment sitting
+          behind a link they never opened is not one. Merging down to "I accept
+          the Terms" alone would have discarded exactly that.
+
+          Placed immediately above the pay button so the thing being consented
+          to is on screen at the moment of consent. The server rejects the
+          request without it; this is the visible half of that check. */}
+      <div className="mt-6">
+        <label
+          htmlFor="vp-consent"
+          className="flex cursor-pointer items-start gap-3 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12]/50 p-4 transition-colors hover:border-[rgba(232,163,61,0.35)]"
+        >
+          <input
+            id="vp-consent"
+            {...register('acceptedConsent')}
+            type="checkbox"
+            aria-describedby={errors.acceptedConsent ? 'vp-consent-error' : undefined}
+            className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[#C4452D]"
+          />
+          <span className="text-sm leading-relaxed text-[#C4A882]">
+            {t.rich('acceptCombined', {
+              terms: (chunks) => (
+                <Link
+                  href="/legal/terms"
+                  target="_blank"
+                  className="text-[#E8A33D] underline underline-offset-2 hover:text-[#F5C96A]"
+                >
+                  {chunks}
+                </Link>
+              ),
+              refund: (chunks) => (
+                <Link
+                  href="/legal/refunds"
+                  target="_blank"
+                  className="text-[#E8A33D] underline underline-offset-2 hover:text-[#F5C96A]"
+                >
+                  {chunks}
+                </Link>
+              ),
+            })}{' '}
+            <span className="text-[#C4452D]">*</span>
+          </span>
+        </label>
+        {errors.acceptedConsent && (
+          <p id="vp-consent-error" role="alert" className={errCls}>
+            {t('errors.consent')}
+          </p>
+        )}
+      </div>
 
       <div className="mt-6">
         {paymentsEnabled ? (
@@ -294,6 +470,17 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
           </div>
         )}
 
+        {paymentsEnabled && (
+          <p className="mt-4 flex items-center justify-center gap-2 rounded-lg border border-[#8FA63C]/25 bg-[#8FA63C]/10 px-3.5 py-2.5 text-center text-xs leading-relaxed text-[#C4A882]">
+            <Lock size={13} className="shrink-0 text-[#8FA63C]" aria-hidden="true" />
+            <span>
+              {t.rich('securePayment', {
+                b: (chunks) => <strong className="font-semibold text-[#F5E8CC]">{chunks}</strong>,
+              })}
+            </span>
+          </p>
+        )}
+
         {serverError && (
           <p role="alert" className="text-sm text-[#C4452D] text-center mt-3">
             {serverError}
@@ -303,12 +490,12 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
         <p className="text-xs text-[#C4A882] text-center mt-4 leading-relaxed">
           {t.rich('legalNotice', {
             terms: (chunks) => (
-              <Link href="/terms" className="text-[#E8A33D] underline underline-offset-2 hover:text-[#F5C96A]">
+              <Link href="/legal/terms" className="text-[#E8A33D] underline underline-offset-2 hover:text-[#F5C96A]">
                 {chunks}
               </Link>
             ),
             refund: (chunks) => (
-              <Link href="/refund-policy" className="text-[#E8A33D] underline underline-offset-2 hover:text-[#F5C96A]">
+              <Link href="/legal/refunds" className="text-[#E8A33D] underline underline-offset-2 hover:text-[#F5C96A]">
                 {chunks}
               </Link>
             ),

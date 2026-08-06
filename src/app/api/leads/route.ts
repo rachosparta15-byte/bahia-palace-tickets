@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/db';
+import { ensureColumns } from '@/lib/db/ensure-columns';
 
 export async function POST(req: NextRequest) {
   try {
@@ -35,12 +36,9 @@ export async function POST(req: NextRequest) {
       ? body.whatsapp.trim().slice(0, 30) || null
       : null;
 
-    // Ensure new columns exist before inserting (idempotent, same pattern as ipAddress)
-    await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "partySize" INTEGER`).catch(() => {});
-    await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "visitDate" TEXT`).catch(() => {});
-    await prisma.$executeRawUnsafe(`ALTER TABLE "Lead" ADD COLUMN "whatsapp" TEXT`).catch(() => {});
+    await ensureColumns();
 
-    await prisma.lead.create({
+    const lead = await prisma.lead.create({
       data: {
         email:       body.email       || null,
         name:        body.name        || null,
@@ -56,12 +54,22 @@ export async function POST(req: NextRequest) {
         partySize,
         visitDate,
         whatsapp,
+        // status defaults to "lead"; only the payment confirmation path
+        // promotes it to "paid". Never accepted from the request body.
       },
     });
 
-    return NextResponse.json({ ok: true });
+    // The id goes back to the browser so the checkout step can UPDATE this
+    // row instead of writing a second, near-identical one. It is an opaque
+    // cuid and grants nothing on its own: the checkout route only ever uses
+    // it to overwrite the visitor's own name/qty/date, and the fields that
+    // matter for trust (status, bookingId, ipAddress) are server-set.
+    return NextResponse.json({ ok: true, id: lead.id });
   } catch (err) {
     console.error('[leads] save error:', err);
+    // Still a 200: lead capture is best-effort and must never block the
+    // visitor's journey. The caller treats a missing id as "no lead to
+    // update" and creates one at checkout instead.
     return NextResponse.json({ ok: false }, { status: 200 });
   }
 }
