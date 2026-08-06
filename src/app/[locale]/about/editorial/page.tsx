@@ -44,7 +44,7 @@ export default async function EditorialPage({ params }: Props) {
       url: BASE,
     },
     knowsAbout: ['Bahia Palace', 'Marrakech', 'Moroccan architecture', 'Heritage tourism'],
-    email: 'support@visitbahiapalace.com',
+    email: 'support@marrakechlocal.com',
   };
 
   return (
@@ -191,11 +191,11 @@ export default async function EditorialPage({ params }: Props) {
             </p>
           </div>
           <a
-            href="mailto:support@visitbahiapalace.com"
+            href="mailto:support@marrakechlocal.com"
             className="shrink-0 bg-[#C4452D] text-white font-semibold px-8 py-3.5 rounded-xl hover:bg-[#A33824] transition-colors flex items-center gap-2"
           >
             <Mail size={16} />
-            support@visitbahiapalace.com
+            support@marrakechlocal.com
           </a>
         </section>
 

@@ -6,6 +6,17 @@ import type { BookingEmailParams, RefundEmailParams, ContactEmailParams, TicketD
 
 const FROM = process.env.EMAIL_FROM ?? 'tickets@visitbahiapalace.com';
 
+/**
+ * Where replies go.
+ *
+ * FROM is on visitbahiapalace.com, which is set up to SEND (Resend verified its
+ * SPF and DKIM) but has no MX records, so it cannot RECEIVE. A customer hitting
+ * reply on their booking confirmation was getting a bounce — from the one
+ * message every customer gets, at the moment they most want to ask something.
+ */
+const REPLY_TO = process.env.SUPPORT_EMAIL ?? 'support@marrakechlocal.com';
+const SUPPORT = REPLY_TO;
+
 function esc(s: string): string {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
@@ -18,6 +29,7 @@ export async function sendBookingConfirmation(params: BookingEmailParams): Promi
   await resend.emails.send({
     from: `Bahia Palace Tickets <${FROM}>`,
     to: params.to,
+    replyTo: REPLY_TO,
     subject: `Booking Confirmed — ${params.reference} | Bahia Palace`,
     html: buildBookingHtml(params),
   });
@@ -31,6 +43,7 @@ export async function sendRefundConfirmation(params: RefundEmailParams): Promise
   await resend.emails.send({
     from: `Bahia Palace Tickets <${FROM}>`,
     to: params.to,
+    replyTo: REPLY_TO,
     subject: `Refund Processed — ${params.reference}`,
     html: `<p>Hi ${esc(params.customerName)},</p><p>Your refund of ${esc(String(params.amount))} ${esc(params.currency)} for booking <strong>${esc(params.reference)}</strong> has been processed.</p>`,
   });
@@ -44,6 +57,7 @@ export async function sendTicketDelivery(params: TicketDeliveryEmailParams): Pro
   await resend.emails.send({
     from: `Bahia Palace Tickets <${FROM}>`,
     to: params.to,
+    replyTo: REPLY_TO,
     subject: `Your Bahia Palace ticket — ${params.reference}`,
     html:
       `<p>Hi ${esc(params.customerName)},</p>` +
@@ -61,7 +75,7 @@ export async function sendContactNotification(params: ContactEmailParams): Promi
 
   await resend.emails.send({
     from: `Bahia Palace Tickets <${FROM}>`,
-    to: process.env.SUPPORT_EMAIL ?? 'support@visitbahiapalace.com',
+    to: process.env.SUPPORT_EMAIL ?? SUPPORT,
     subject: `Contact Form: ${params.subject}`,
     html: `<p><strong>From:</strong> ${esc(params.name)} &lt;${esc(params.from)}&gt;</p><p><strong>Message:</strong></p><p>${esc(params.message)}</p>`,
   });

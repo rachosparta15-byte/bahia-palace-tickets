@@ -1,3 +1,4 @@
+import { SITE } from '@/config/site';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
@@ -52,7 +53,7 @@ export function Footer() {
             <div className="text-sm text-[#C4A882]">
               <div className="flex items-center gap-2">
                 <Mail size={14} className="text-[#E8A33D] shrink-0" />
-                <span>support@visitbahiapalace.com</span>
+                <span>{SITE.supportEmail}</span>
               </div>
             </div>
 

@@ -15,6 +15,18 @@
 export const SITE = {
   domain: 'visitbahiapalace.com',
   brand: 'Visit Bahia Palace',
-  /** Monitored inbox for this brand. */
-  supportEmail: 'admin@visitbahiapalace.com',
+  /**
+   * The company inbox — on a domain that can actually receive mail.
+   *
+   * This said admin@visitbahiapalace.com, the footer said
+   * support@visitbahiapalace.com, and the legal documents said
+   * support@marrakechlocal.com: three addresses for one business, and the first
+   * two on a domain with NO MX RECORDS. Every message to either of them
+   * bounced, including everything the contact form generated.
+   *
+   * A branded inbox is the nicer answer and is one DNS change away. Until it
+   * exists, an address that works beats an address that matches — a processor
+   * testing our contact channels should find a mailbox, not a bounce.
+   */
+  supportEmail: 'support@marrakechlocal.com',
 } as const;
