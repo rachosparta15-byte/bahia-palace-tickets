@@ -171,14 +171,30 @@ export default async function EntranceFeePage({ params }: Props) {
               */}
               {paymentsEnabled ? (
                 <>
-                  No — we add no booking fee. Our{' '}
+                  {/*
+                    This opened with "No — we add no booking fee", which the
+                    go-live checklist lists for removal and which does not
+                    survive the arithmetic underneath it. The gate ticket is
+                    100 MAD and we charge €13.99; the difference is what pays
+                    for buying the ticket, the audio guide and the support. That
+                    is a service being sold, and calling it "no fee" is a claim
+                    a regulator would read as misleading no matter how carefully
+                    the next sentence explains it.
+
+                    Saying what the price is instead costs nothing. Somebody
+                    comparing us to the 100 MAD door price is going to do that
+                    subtraction anyway, and it is far better that they find the
+                    number already explained than feel they caught us at it.
+                  */}
+                  Our price is not the gate fee.{' '}
                   <strong className="text-[#F5E8CC]">
                     €{formatEURAmount(VISITOR_PACK_PRICE_EUR_CENTS)}
                   </strong>{' '}
-                  covers the official {OFFICIAL_DOOR_PRICE_MAD} MAD ticket bought in your name, a
-                  digital audio guide, WhatsApp support, and free cancellation until we send it —
-                  that is what the price is for, not the ticket alone. We are an independent
-                  booking service, not the Ministry of Culture.{' '}
+                  per person is an all-inclusive service price: it covers the official{' '}
+                  {OFFICIAL_DOOR_PRICE_MAD} MAD ticket bought in your name, a digital audio guide,
+                  WhatsApp support, and free cancellation until we send it. Nothing is added at
+                  checkout — what you see is what you pay. We are an independent booking service,
+                  not the Ministry of Culture.{' '}
                   <Link
                     href="/visitor-pack"
                     className="font-semibold text-[#E8A33D] underline underline-offset-4 hover:text-[#F5C96A]"
