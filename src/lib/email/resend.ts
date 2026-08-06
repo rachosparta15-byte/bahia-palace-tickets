@@ -68,40 +68,61 @@ export async function sendContactNotification(params: ContactEmailParams): Promi
 }
 
 /**
- * The audio-guide access block. Empty string when there is no link, so a
- * non-pack order (or an unconfigured GUIDE_TOKEN_SECRET) simply omits it
- * rather than promising something that will not open.
+ * The audio-guide access block. Empty string when there are no links, so a
+ * non-pack order simply omits it rather than promising something that will not
+ * open.
  *
- * THE ADVICE HERE IS THE PRODUCT WORKING. Two lines carry real weight:
+ * ONE BUTTON PER PERSON. Each link locks itself to the first phone that opens
+ * it, so which link goes to whom matters, and this email is the only place that
+ * can say so. Two people tapping the same one means the second is refused and
+ * has to be told why — a support conversation that costs far more than the
+ * extra sentence here.
+ *
+ * THE ADVICE IS THE PRODUCT WORKING. Two lines carry real weight:
  *
  *   "Open it the morning of your visit" — the guide downloads ~47MB on first
- *   open and then plays with no signal inside the palace. Opening it two
- *   weeks early on hotel wifi still works, but iOS evicts idle storage after
- *   about a week, so early activation is the one that tends to be gone by
- *   the time it is needed.
+ *   open and then plays with no signal inside the palace. Opening it two weeks
+ *   early on hotel wifi still works, but iOS evicts idle storage after about a
+ *   week, so early activation is the one that tends to be gone by the time it
+ *   is needed.
  *
- *   "Add to Home Screen" — installed PWAs are exempt from that eviction. It
- *   is the single most effective thing a customer can do to keep the guide.
+ *   "Add to Home Screen" — installed PWAs are exempt from that eviction. It is
+ *   the single most effective thing a customer can do to keep the guide, and
+ *   now also the thing that keeps their device recognised.
  */
-function buildAudioGuideBlock(url: string | null | undefined): string {
-  if (!url) return '';
-  const safe = esc(url);
+function buildAudioGuideBlock(urls: readonly string[] | null | undefined): string {
+  if (!urls || urls.length === 0) return '';
+
+  const many = urls.length > 1;
+  const buttons = urls
+    .map(
+      (url, i) => `
+      <p style="margin:0 0 10px">
+        <a href="${esc(url)}" style="display:inline-block;background:#C4452D;color:#fff;text-decoration:none;font-weight:bold;font-size:14px;padding:12px 22px;border-radius:8px">${
+          many ? `Open guide ${i + 1} of ${urls.length}` : 'Open my audio guide'
+        }</a>
+      </p>`
+    )
+    .join('');
+
   return `
     <div style="margin:28px 0 0;padding:20px;background:#FAF3E7;border-radius:10px;border:1px solid #E8D5B7">
       <p style="margin:0 0 6px;font-weight:bold;color:#3D2817;font-size:15px">🎧 Your audio guide</p>
       <p style="margin:0 0 14px;color:#666;font-size:14px;line-height:1.5">
-        17 stops, 5 languages, two narrators. This link is yours — it unlocks the guide on your phone.
+        17 stops, 5 languages, two narrators.${
+          many
+            ? ` You have ${urls.length} links, one per person. <strong>Give each person their own</strong> — a link belongs to the first phone that opens it, so two people cannot share one.`
+            : ' This link is yours — it unlocks the guide on your phone.'
+        }
       </p>
-      <p style="margin:0 0 16px">
-        <a href="${safe}" style="display:inline-block;background:#C4452D;color:#fff;text-decoration:none;font-weight:bold;font-size:14px;padding:12px 22px;border-radius:8px">Open my audio guide</a>
-      </p>
-      <p style="margin:0 0 8px;color:#666;font-size:13px;line-height:1.6">
+      ${buttons}
+      <p style="margin:14px 0 8px;color:#666;font-size:13px;line-height:1.6">
         <strong>Open it the morning of your visit</strong>, on wifi. It downloads once (about 47&nbsp;MB),
         then works with no signal at all inside the palace.
       </p>
       <p style="margin:0;color:#666;font-size:13px;line-height:1.6">
         When it asks, choose <strong>Add to Home Screen</strong> — that stops your phone clearing the
-        downloaded audio. Keep this email: you can re-open the link if you ever need to set it up again.
+        downloaded audio. Keep this email: the same link re-opens on the same phone at any time.
       </p>
     </div>
   `;
@@ -129,7 +150,7 @@ function buildBookingHtml(p: BookingEmailParams): string {
             <tr><td style="padding:8px;color:#666">Total</td><td style="padding:8px;font-weight:bold;color:#C4452D">${p.totalAmount} ${p.currency}</td></tr>
           </table>
           <p style="color:#666;font-size:14px">Show this email at the entrance or use your QR code.</p>
-          ${buildAudioGuideBlock(p.audioGuideUrl)}
+          ${buildAudioGuideBlock(p.audioGuideUrls)}
         </div>
         <div style="background:#3D2817;padding:20px;text-align:center">
           <p style="color:#E8D5B7;margin:0;font-size:13px">© ${new Date().getFullYear()} Bahia Palace Tickets • Marrakech, Morocco</p>

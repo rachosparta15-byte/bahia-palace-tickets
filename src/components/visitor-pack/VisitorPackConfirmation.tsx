@@ -23,7 +23,7 @@ export async function VisitorPackConfirmation({
   visitors,
   reference,
   confirmed,
-  audioGuideUrl,
+  audioGuideUrls,
   qrDelivered,
   qrCode,
   hasQrFile,
@@ -39,7 +39,7 @@ export async function VisitorPackConfirmation({
    * minted (GUIDE_TOKEN_SECRET unset). Null is NOT a reason to fall back to
    * the bare guide URL — that ungated link is exactly what the token replaces.
    */
-  audioGuideUrl: string | null;
+  audioGuideUrls: readonly string[];
   /** The owner has bought and sent the official ticket. */
   qrDelivered: boolean;
   /** Ticket code, when delivery was a code rather than a file. */
@@ -136,7 +136,7 @@ export async function VisitorPackConfirmation({
             reachable while a booking is still pending (the id is in the URL).
             Showing the link before payment verifies would hand the paid
             product to anyone who starts a checkout and abandons it. */}
-        {confirmed && audioGuideUrl ? (
+        {confirmed && audioGuideUrls.length > 0 ? (
           <div className="rounded-xl border border-[rgba(232,163,61,0.30)] bg-[#2E1F12]/50 p-5">
             <div className="flex items-center gap-2.5">
               <Headphones size={17} className="shrink-0 text-[#E8A33D]" aria-hidden="true" />
@@ -146,15 +146,26 @@ export async function VisitorPackConfirmation({
               </span>
             </div>
             <p className="mt-2.5 text-sm leading-relaxed text-[#C4A882]">{t('audioReadyDesc')}</p>
-            <a
-              href={audioGuideUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#C4452D] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#A33824]"
-            >
-              {t('audioOpen')}
-              <ArrowUpRight size={15} aria-hidden="true" />
-            </a>
+            {/* One button per person. Each link binds to the first phone that
+                opens it, so a party of three must not be handed one button and
+                left to guess — the numbering is what stops two people tapping
+                the same link and the second being refused at the palace. */}
+            <div className="mt-4 flex flex-col items-start gap-2">
+              {audioGuideUrls.map((url, i) => (
+                <a
+                  key={url}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl bg-[#C4452D] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#A33824]"
+                >
+                  {audioGuideUrls.length > 1
+                    ? `${t('audioOpen')} — ${i + 1}/${audioGuideUrls.length}`
+                    : t('audioOpen')}
+                  <ArrowUpRight size={15} aria-hidden="true" />
+                </a>
+              ))}
+            </div>
 
             {/* The two sentences that decide whether the guide still works on
                 the day. iOS drops idle Cache Storage after about a week, so
@@ -165,7 +176,7 @@ export async function VisitorPackConfirmation({
               <p className="text-xs leading-relaxed text-[#C4A882]">{t('audioOfflineTip')}</p>
             </div>
           </div>
-        ) : confirmed && !audioGuideUrl ? (
+        ) : confirmed && audioGuideUrls.length === 0 ? (
           /* Paid, but we could not sign an access link — GUIDE_TOKEN_SECRET is
              unset or too short. Say so as OUR delay, and never fall back to the
              bare guide URL: an ungated link is the thing the token replaces. */

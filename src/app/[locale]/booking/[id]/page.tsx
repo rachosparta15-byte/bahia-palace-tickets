@@ -9,7 +9,8 @@ import { confirmBookingPaid } from '@/lib/payments/confirm-booking';
 import { mockConfirmationAllowed } from '@/lib/payments/guard';
 import { qrIsDelivered, BOOKING_STATUS } from '@/lib/booking-lifecycle';
 import { AUDIO_GUIDE_URL } from '@/lib/booking';
-import { buildGuideAccessUrl } from '@/lib/guide-token';
+import { issueGuideCodes } from '@/lib/guide-access';
+import { buildGuideCodeUrl } from '@/lib/guide-code';
 import { VisitorPackConfirmation } from '@/components/visitor-pack/VisitorPackConfirmation';
 import { CancellationNotice } from '@/components/booking/CancellationNotice';
 import { CheckCircle2, Calendar, Users, Mail, Download, ArrowLeft } from 'lucide-react';
@@ -84,19 +85,21 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
   // Captioning it "scan at entrance" for a pack order would be a false promise.
   const isVisitorPack = booking.ticketType === 'visitor-pack';
 
-  // The tokenised audio-guide link, minted only for a PAID pack. Same
-  // deterministic token as the one in the confirmation email, so both open the
-  // same activation budget rather than each granting a fresh one. Null when
-  // GUIDE_TOKEN_SECRET is unset — the panel then says the link is being
-  // prepared instead of handing out the ungated URL.
-  const audioGuideUrl =
+  /*
+   * One access link per paid seat, read back from the codes that payment
+   * confirmation issued. Not minted here: this page is reachable while a
+   * booking is still pending, and issuing on render would hand out codes for a
+   * checkout somebody abandoned.
+   *
+   * `issueGuideCodes` is idempotent, so calling it again for a booking that is
+   * genuinely confirmed simply returns what already exists. That covers the
+   * case where the confirmation email failed and this page is the customer's
+   * only route to their links.
+   */
+  const audioGuideUrls =
     isVisitorPack && isConfirmed
-      ? buildGuideAccessUrl(AUDIO_GUIDE_URL, {
-          reference: booking.reference,
-          partySize: booking.adults,
-          visitDate,
-        })
-      : null;
+      ? (await issueGuideCodes(booking)).map((code) => buildGuideCodeUrl(AUDIO_GUIDE_URL, code))
+      : [];
 
   return (
     <div className="min-h-screen py-16 px-6 bg-[#1C1108]">
@@ -228,7 +231,7 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
             visitors={booking.adults}
             reference={booking.reference}
             confirmed={isConfirmed}
-            audioGuideUrl={audioGuideUrl}
+            audioGuideUrls={audioGuideUrls}
             qrDelivered={qrIsDelivered(booking)}
             qrCode={booking.qrCode}
             hasQrFile={Boolean(booking.qrFileRef)}

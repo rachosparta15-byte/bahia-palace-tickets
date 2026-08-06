@@ -22,7 +22,7 @@ export interface BookingEmailParams {
    *
    * Null when the product is not the pack, or GUIDE_TOKEN_SECRET is unset.
    */
-  audioGuideUrl?: string | null;
+  audioGuideUrls?: readonly string[] | null;
 }
 
 export interface RefundEmailParams {
@@ -43,7 +43,8 @@ export async function sendBookingConfirmation(params: BookingEmailParams): Promi
   console.log('  Adults:    ', params.adults);
   console.log('  Children:  ', params.children);
   console.log('  Total:     ', `${params.totalAmount} ${params.currency}`);
-  if (params.audioGuideUrl) console.log('  Guide:     ', params.audioGuideUrl);
+  for (const [i, url] of (params.audioGuideUrls ?? []).entries())
+    console.log(`  Guide ${i + 1}:   `, url);
   console.log('========================================\n');
 }
 

@@ -26,7 +26,8 @@ import { email } from '@/lib/email';
 import { fulfillTicket } from '@/lib/fulfillment';
 import { BOOKING_STATUS } from '@/lib/booking-lifecycle';
 import { AUDIO_GUIDE_URL } from '@/lib/booking';
-import { buildGuideAccessUrl } from '@/lib/guide-token';
+import { issueGuideCodes } from '@/lib/guide-access';
+import { buildGuideCodeUrl } from '@/lib/guide-code';
 
 export type ConfirmVia = 'webhook' | 'return-page' | 'mock';
 
@@ -62,30 +63,38 @@ export async function confirmBookingPaid(
 
   const visitDate = booking.visitDate.toISOString().split('T')[0];
 
-  // ─── Audio-guide access token ─────────────────────────────────────
-  // Minted HERE because this is the only place that knows a payment is real,
-  // and it is already the exactly-once seam. The token goes in the
-  // confirmation email so the customer keeps it even if they close the tab —
-  // which matters more than usual, since iOS can evict the guide's stored
-  // activation after ~7 days idle and the email is then the only way back in.
-  //
-  // Null when GUIDE_TOKEN_SECRET is unset. Deliberately NOT falling back to
-  // the bare guide URL: that ungated link is the thing this replaces.
-  const guideUrl =
-    booking.ticketType === 'visitor-pack'
-      ? buildGuideAccessUrl(AUDIO_GUIDE_URL, {
-          reference: booking.reference,
-          partySize: booking.adults,
-          visitDate,
-        })
-      : null;
-
-  if (booking.ticketType === 'visitor-pack' && !guideUrl) {
-    console.error(
-      `[confirm] No audio-guide link for ${booking.reference}: GUIDE_TOKEN_SECRET is ` +
-        `unset or too short. The customer has paid for a guide they cannot open. ` +
-        `Set it in Vercel → Settings → Environment Variables.`
-    );
+  /*
+   * ─── Audio-guide access codes ──────────────────────────────────────
+   *
+   * Issued HERE because this is the only place that knows a payment is real,
+   * and it is already the exactly-once seam. One code per paid seat; each one
+   * locks to the first phone that opens it, so a party of three gets three
+   * links and nobody has to share.
+   *
+   * The links go in the confirmation email so the customer keeps them after
+   * closing the tab. That matters more than it sounds: iOS clears idle site
+   * storage after about a week, and when it does the email is the only way
+   * back in.
+   *
+   * `issueGuideCodes` is idempotent, which is what makes it safe here — this
+   * function is reached again by webhook retries and by a customer refreshing
+   * the confirmation page, and a second call must not mint a second set of
+   * codes for the same booking.
+   */
+  let guideUrls: string[] = [];
+  if (booking.ticketType === 'visitor-pack') {
+    try {
+      const codes = await issueGuideCodes(booking);
+      guideUrls = codes.map((code) => buildGuideCodeUrl(AUDIO_GUIDE_URL, code));
+    } catch (error) {
+      // Never fail a confirmed payment over this. The customer has paid and is
+      // confirmed; the codes can be issued again from the admin dashboard.
+      console.error(
+        `[confirm] Could not issue guide codes for ${booking.reference}. The booking ` +
+          `stands and the customer is confirmed — re-issue from /admin.`,
+        error
+      );
+    }
   }
 
   // Order confirmation email. Non-fatal: a customer who has paid is confirmed
@@ -102,7 +111,7 @@ export async function confirmBookingPaid(
       totalAmount: booking.totalAmount,
       currency: booking.currency,
       locale: booking.locale,
-      audioGuideUrl: guideUrl,
+      audioGuideUrls: guideUrls,
     });
   } catch (err) {
     console.error('[confirm] order-confirmation email failed (non-fatal):', err);
