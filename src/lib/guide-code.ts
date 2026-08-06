@@ -96,19 +96,20 @@ export function buildGuideCodeUrl(base: string, code: string): string {
 }
 
 /**
- * How many codes a booking gets: one per PAID seat.
+ * How many codes a booking gets: one per person who was charged.
  *
- * Children under twelve enter free and are not charged, so counting them here
- * would hand out the paid digital product for nothing — and the booking form
- * accepts up to twenty of them. One adult and twenty children is €13.99 for
- * twenty-one codes, which is the same leak the whole one-code-one-device design
- * exists to close, arriving through the front door instead.
+ * That is adults plus children, because children aged 7 to 13 pay the same
+ * €13.99 — the ministry charges 50 MAD for them at the gate and the pack is a
+ * flat per-person price. Children under 7 enter free and are never entered on
+ * the form, so they never reach this function.
  *
- * A child listening on a parent's phone is the normal case and costs nothing.
- * A family that genuinely wants a second device asks support, who can issue one
- * — a decision with a person behind it, which is the right shape for an
- * exception that should stay rare.
+ * This briefly returned `adults` only, from when children were free. The price
+ * changed and this did not, so a family of two adults and a ten-year-old paid
+ * for three seats and received two links. Nothing failed and nothing logged —
+ * the third person simply had no guide, which is the kind of shortfall a
+ * customer discovers standing in the palace.
  */
-export function seatCount(adults: number, _children: number): number {
-  return Math.max(1, adults || 0);
+export function seatCount(adults: number, children: number): number {
+  return Math.max(1, (adults || 0) + (children || 0));
 }
+

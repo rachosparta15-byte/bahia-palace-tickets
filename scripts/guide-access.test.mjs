@@ -34,19 +34,20 @@ const check = (name, fn) => {
 // Two paying adults and one free child. Children under twelve are not charged
 // and must not draw a code, or one adult plus twenty children buys twenty-one.
 const codes = await issueGuideCodes({ id: BOOKING_ID, reference: REF, adults: 2, children: 1 });
-check('codes follow the PAID seats, not the head count', () => assert.equal(codes.length, 2));
-check('every code is distinct', () => assert.equal(new Set(codes).size, 2));
+check('one code per charged person, children included', () => assert.equal(codes.length, 3));
+check('every code is distinct', () => assert.equal(new Set(codes).size, 3));
 check('codes are 16 characters', () => codes.forEach((c) => assert.equal(c.length, 16)));
 
 // Re-issuing must not mint more.
 const again = await issueGuideCodes({ id: BOOKING_ID, reference: REF, adults: 2, children: 1 });
 check('re-issuing is idempotent', () => assert.deepEqual([...again].sort(), [...codes].sort()));
 
-const freeloader = await issueGuideCodes({
+// Children are charged now, so twenty of them is twenty paid seats — the old
+// leak this guarded against closed when the price became per person.
+const big = await issueGuideCodes({
   id: BOOKING_ID + '-kids', reference: REF + 'K', adults: 1, children: 20,
 });
-check('one adult and twenty children still buys exactly one code', () =>
-  assert.equal(freeloader.length, 1));
+check('a large party gets a code each', () => assert.equal(big.length, 21));
 
 // First device claims.
 const first = await redeemGuideCode(codes[0], 'device-alpha');
