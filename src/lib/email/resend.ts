@@ -142,6 +142,53 @@ function buildAudioGuideBlock(urls: readonly string[] | null | undefined): strin
   `;
 }
 
+/**
+ * Support and cancellation, in the email rather than only on the website.
+ *
+ * These two are not footer decoration — they are half of what the €13.99 buys.
+ * The customer has just paid for a service whose visible parts are a ticket and
+ * an audio guide; the human on WhatsApp and the free cancellation are the parts
+ * that only exist if we say so, at the moment they are wondering what they got.
+ *
+ * It also heads off the two support messages that would otherwise arrive: "how
+ * do I reach you" and "can I still cancel". Both are answered here, in the one
+ * message every customer opens.
+ */
+function buildSupportBlock(whatsapp: string | null): string {
+  const digits = (whatsapp ?? '').replace(/\D/g, '');
+  /*
+   * The stored value is digits only — wa.me wants it that way and the config
+   * strips the plus. Printing that raw gives "212607223008", which reads like a
+   * reference number rather than something you can call. Grouped and prefixed,
+   * it reads as a phone number, which is the whole point of putting it here.
+   */
+  const shown = digits.length >= 11
+    ? `+${digits.slice(0, 3)} ${digits.slice(3, 6)}-${digits.slice(6)}`
+    : `+${digits}`;
+  const wa = digits
+    ? `<p style="margin:0 0 10px;color:#3D2817;font-size:14px">
+         WhatsApp <a href="https://wa.me/${digits}" style="color:#C4452D;font-weight:bold;text-decoration:none">${esc(shown)}</a>
+         &nbsp;·&nbsp; 09:00–21:00 (GMT+1), 7 days a week
+       </p>`
+    : '';
+
+  return `
+    <div style="margin:24px 0 0;padding:20px;background:#FFF;border-radius:10px;border:1px solid #E8D5B7">
+      <p style="margin:0 0 10px;font-weight:bold;color:#3D2817;font-size:15px">💬 A person, not a form</p>
+      ${wa}
+      <p style="margin:0 0 16px;color:#666;font-size:14px;line-height:1.5">
+        Or reply to this email — it reaches the same team.
+      </p>
+      <p style="margin:0 0 6px;font-weight:bold;color:#3D2817;font-size:15px">↩️ Free cancellation</p>
+      <p style="margin:0;color:#666;font-size:14px;line-height:1.55">
+        Cancel any time <strong>before we send your entry ticket</strong> and we refund you in full —
+        no fee, no questions. Once the ticket is sent it is bought and in your hands, so it cannot be
+        refunded. Just message us.
+      </p>
+    </div>
+  `;
+}
+
 function buildBookingHtml(p: BookingEmailParams): string {
   return `
     <!DOCTYPE html>
@@ -165,6 +212,7 @@ function buildBookingHtml(p: BookingEmailParams): string {
           </table>
           <p style="color:#666;font-size:14px">Show this email at the entrance or use your QR code.</p>
           ${buildAudioGuideBlock(p.audioGuideUrls)}
+          ${buildSupportBlock(p.whatsapp ?? null)}
         </div>
         <div style="background:#3D2817;padding:20px;text-align:center">
           <p style="color:#E8D5B7;margin:0;font-size:13px">© ${new Date().getFullYear()} Bahia Palace Tickets • Marrakech, Morocco</p>

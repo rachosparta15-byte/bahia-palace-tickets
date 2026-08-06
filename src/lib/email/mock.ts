@@ -23,6 +23,8 @@ export interface BookingEmailParams {
    * Null when the product is not the pack, or GUIDE_TOKEN_SECRET is unset.
    */
   audioGuideUrls?: readonly string[] | null;
+  /** Display form, e.g. "+212 607-223008". Shown in the email and linked via wa.me. */
+  whatsapp?: string | null;
 }
 
 export interface RefundEmailParams {

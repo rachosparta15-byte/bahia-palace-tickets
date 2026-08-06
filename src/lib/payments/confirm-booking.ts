@@ -26,6 +26,7 @@ import { email } from '@/lib/email';
 import { fulfillTicket } from '@/lib/fulfillment';
 import { BOOKING_STATUS } from '@/lib/booking-lifecycle';
 import { AUDIO_GUIDE_URL } from '@/lib/booking';
+import { getWhatsAppNumber } from '@/lib/whatsapp';
 import { issueGuideCodes } from '@/lib/guide-access';
 import { buildGuideCodeUrl } from '@/lib/guide-code';
 
@@ -112,6 +113,7 @@ export async function confirmBookingPaid(
       currency: booking.currency,
       locale: booking.locale,
       audioGuideUrls: guideUrls,
+      whatsapp: getWhatsAppNumber(),
     });
   } catch (err) {
     console.error('[confirm] order-confirmation email failed (non-fatal):', err);
