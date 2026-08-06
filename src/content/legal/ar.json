@@ -127,8 +127,7 @@
           "MarrakechLocal LLC، 30 N Gould St, Ste R, Sheridan, WY 82801, United States. البريد الإلكتروني: support@marrakechlocal.com. الإشعارات القانونية: legal@marrakechlocal.com."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   },
   "refunds": {
     "slug": "refunds",
@@ -218,8 +217,7 @@
           "ومتى سُلِّم الحجز كما وُصف وقُبلت الشروط أعلاه عند الدفع، اعترضنا على ردّ المبلغ وزوّدنا مزوّد خدمة الدفع بسجلّ ما عُرض وما قُبل لحظة الشراء."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   },
   "delivery": {
     "slug": "delivery",
@@ -313,8 +311,7 @@
           "الاسترداد الكامل في هذه الحالة ليس بادرة حسن نية، بل هو حقك: لم نُسلِّم ما دفعتَ مقابله."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   },
   "payments": {
     "slug": "payments",
@@ -382,8 +379,7 @@
           "وحين يكون الحجز قد سُلِّم كما وُصِف وقُبِلت شروطنا عند الشراء، فإننا نعترض على رد المبلغ ونزوّد مزوّد الخدمة بسجل ما عُرِض وما قُبِل بالضبط لحظة الشراء، بما في ذلك مقارنة الأسعار وسياسة الاسترداد كما ظهرتا على الشاشة."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   },
   "privacy": {
     "slug": "privacy",
@@ -550,8 +546,7 @@
           "سنحدّث هذه السياسة كلما تغيّرت معالجتنا للبيانات. ومتى كان التغيير جوهرياً أعلنّاه بوضوح، بدل الاكتفاء بتغيير التاريخ في الأعلى بصمت."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   },
   "cookies": {
     "slug": "cookies",
@@ -655,8 +650,7 @@
           "راسل privacy@marrakechlocal.com."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   },
   "accessibility": {
     "slug": "accessibility",
@@ -707,8 +701,7 @@
           "وإن لم يُرضِك ردّنا، فللمستهلكين في الاتحاد الأوروبي أن يرفعوا الأمر إلى سلطة مراقبة السوق أو الإنفاذ الوطنية في بلدهم."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   },
   "notice": {
     "slug": "notice",
@@ -788,8 +781,7 @@
           "نحن مستعدّون لتسوية نزاعات المستهلك مباشرةً. راسل support@marrakechlocal.com ابتداءً. ويجوز لمستهلكي الاتحاد الأوروبي أيضاً اللجوء إلى هيئة التسوية البديلة للنزاعات في بلدهم."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   },
   "affiliate-disclosure": {
     "slug": "affiliate-disclosure",
@@ -855,7 +847,6 @@
           "إن أردت أن تعرف ما إذا كان رابط أو توصية بعينها تجارياً، فاسأل على support@marrakechlocal.com وسنجيبك بصراحة."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   }
 }

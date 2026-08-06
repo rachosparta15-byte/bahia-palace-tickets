@@ -127,8 +127,7 @@
           "MarrakechLocal LLC, 30 N Gould St, Ste R, Sheridan, WY 82801, United States. E-mail : support@marrakechlocal.com. Notifications juridiques : legal@marrakechlocal.com."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   },
   "refunds": {
     "slug": "refunds",
@@ -218,8 +217,7 @@
           "Lorsqu’une réservation a été livrée conformément à sa description et que les conditions ci-dessus ont été acceptées lors du paiement, nous contestons l’opposition et fournissons au prestataire de paiement l’enregistrement de ce qui a été affiché et accepté au moment de l’achat."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   },
   "delivery": {
     "slug": "delivery",
@@ -313,8 +311,7 @@
           "Un remboursement intégral dans cette situation n’est pas un geste commercial. C’est ce qui vous est dû : nous n’avons pas livré ce que vous aviez payé."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   },
   "payments": {
     "slug": "payments",
@@ -382,8 +379,7 @@
           "Lorsqu’une réservation a été livrée telle que décrite et que nos conditions ont été acceptées lors de la commande, nous contestons la rétrofacturation et fournissons au prestataire l’enregistrement exact de ce qui a été affiché et accepté au moment de l’achat, y compris la comparaison des prix et la politique de remboursement telles qu’elles apparaissaient à l’écran."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   },
   "privacy": {
     "slug": "privacy",
@@ -550,8 +546,7 @@
           "Nous mettrons cette politique à jour lorsque nos traitements évolueront. Lorsqu’une modification est substantielle, nous l’indiquerons de manière visible plutôt que de simplement changer la date en tête de page."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   },
   "cookies": {
     "slug": "cookies",
@@ -655,8 +650,7 @@
           "Écrivez à privacy@marrakechlocal.com."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   },
   "accessibility": {
     "slug": "accessibility",
@@ -707,8 +701,7 @@
           "Si notre réponse ne vous satisfait pas, les consommateurs de l’UE peuvent saisir l’autorité nationale de surveillance du marché ou de contrôle de leur pays."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   },
   "notice": {
     "slug": "notice",
@@ -788,8 +781,7 @@
           "Nous sommes disposés à régler directement les litiges de consommation. Écrivez d’abord à support@marrakechlocal.com. Les consommateurs de l’Union européenne peuvent également recourir gratuitement à un médiateur de la consommation."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   },
   "affiliate-disclosure": {
     "slug": "affiliate-disclosure",
@@ -855,7 +847,6 @@
           "Pour savoir si un lien ou une recommandation en particulier est commercial, écrivez à support@marrakechlocal.com : nous vous répondrons franchement."
         ]
       }
-    ],
-    "notice": "Draft pending review by a lawyer qualified in UK/EU consumer law. Render this notice with the document."
+    ]
   }
 }
