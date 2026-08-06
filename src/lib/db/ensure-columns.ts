@@ -50,6 +50,38 @@ const TABLES: readonly string[] = [
      ON "GuideActivation"("bookingId")`,
   `CREATE INDEX IF NOT EXISTS "GuideActivation_reference_idx"
      ON "GuideActivation"("reference")`,
+
+  /*
+   * GuideCode replaced GuideActivation as the thing that decides who gets in.
+   * It is listed here for exactly the reason above, and more urgently: this
+   * table sits on the path of BOTH payment confirmation and every redemption,
+   * so a production database without it turns a successful card charge into a
+   * 500 and leaves the customer with no links at all.
+   *
+   * GuideActivation is deliberately left in place rather than dropped. It holds
+   * the activation history of everyone who bought under the token system, and
+   * that is the record you need if one of them writes in.
+   */
+  `CREATE TABLE IF NOT EXISTS "GuideCode" (
+     "id" TEXT NOT NULL PRIMARY KEY,
+     "code" TEXT NOT NULL,
+     "bookingId" TEXT NOT NULL,
+     "reference" TEXT NOT NULL,
+     "seat" INTEGER NOT NULL,
+     "deviceId" TEXT,
+     "claimedAt" DATETIME,
+     "lastSeenAt" DATETIME,
+     "unlockedAt" DATETIME,
+     "unlockCount" INTEGER NOT NULL DEFAULT 0,
+     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+   )`,
+  // Unique because a collision would silently hand one customer another
+  // booking's guide. The issuer retries on this constraint rather than trusting
+  // eighty bits blindly.
+  `CREATE UNIQUE INDEX IF NOT EXISTS "GuideCode_code_key" ON "GuideCode"("code")`,
+  `CREATE INDEX IF NOT EXISTS "GuideCode_bookingId_idx" ON "GuideCode"("bookingId")`,
+  `CREATE INDEX IF NOT EXISTS "GuideCode_reference_idx" ON "GuideCode"("reference")`,
+  `CREATE INDEX IF NOT EXISTS "GuideCode_deviceId_idx" ON "GuideCode"("deviceId")`,
 ];
 
 const COLUMNS: readonly string[] = [
