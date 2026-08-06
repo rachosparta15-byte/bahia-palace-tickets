@@ -31,15 +31,22 @@ const check = (name, fn) => {
   }
 };
 
-// A party of three: two adults, one child.
+// Two paying adults and one free child. Children under twelve are not charged
+// and must not draw a code, or one adult plus twenty children buys twenty-one.
 const codes = await issueGuideCodes({ id: BOOKING_ID, reference: REF, adults: 2, children: 1 });
-check('a party of three gets three codes', () => assert.equal(codes.length, 3));
-check('every code is distinct', () => assert.equal(new Set(codes).size, 3));
+check('codes follow the PAID seats, not the head count', () => assert.equal(codes.length, 2));
+check('every code is distinct', () => assert.equal(new Set(codes).size, 2));
 check('codes are 16 characters', () => codes.forEach((c) => assert.equal(c.length, 16)));
 
 // Re-issuing must not mint more.
 const again = await issueGuideCodes({ id: BOOKING_ID, reference: REF, adults: 2, children: 1 });
 check('re-issuing is idempotent', () => assert.deepEqual([...again].sort(), [...codes].sort()));
+
+const freeloader = await issueGuideCodes({
+  id: BOOKING_ID + '-kids', reference: REF + 'K', adults: 1, children: 20,
+});
+check('one adult and twenty children still buys exactly one code', () =>
+  assert.equal(freeloader.length, 1));
 
 // First device claims.
 const first = await redeemGuideCode(codes[0], 'device-alpha');
@@ -75,11 +82,13 @@ check('a different seat still admits a different device', () => {
 });
 
 // Formatting, case and confusable characters all resolve to the same row.
-const dashed = codes[2].replace(/(.{4})/g, '$1-').replace(/-$/, '');
+const dashed = codes[1].replace(/(.{4})/g, '$1-').replace(/-$/, '');
 const messy = dashed.toLowerCase().replace(/0/g, 'O').replace(/1/g, 'l');
+// Seat two is already held by device-beta, so this asserts the LOOKUP survives
+// mangling — a resolved code that refuses the wrong device, not a 404.
 const viaMessy = await redeemGuideCode(messy, 'device-gamma');
-check('a dashed, lowercased, confusable-mangled code still resolves', () =>
-  assert.equal(viaMessy.ok, true));
+check('a dashed, lowercased, confusable-mangled code still resolves to its row', () =>
+  assert.equal(viaMessy.reason, 'other_device'));
 
 // Nonsense.
 const nonsense = await redeemGuideCode('NOTAREALCODE0000', 'device-delta');

@@ -92,7 +92,7 @@ export type TicketSlug =
  * prices in different currencies. It covers the official ticket, the
  * multilingual audio guide, support and WhatsApp.
  */
-export const ENTRY_PRICE_EUR_CENTS = 1290;
+export const ENTRY_PRICE_EUR_CENTS = 1399;
 
 /** @deprecated Use ENTRY_PRICE_EUR_CENTS. Kept so nothing silently reads a stale USD number. */
 export const SKIP_THE_LINE_PRICE_EUR = ENTRY_PRICE_EUR_CENTS / 100;

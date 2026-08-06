@@ -276,7 +276,7 @@ export default async function VisitorPackPage({ params }: Props) {
                     It sat under the FIRST thing the pack offers, which turned
                     the strongest value proposition into a comparison prompt.
                     The route to the official ticket is still on this page,
-                    twice: the "What does the EUR 12.90 cover?" answer in the FAQ
+                    twice: the "What does the EUR 13.99 cover?" answer in the FAQ
                     gives the gate price and says the Ministry sells entry
                     directly, and the link below the FAQ leads to our tickets
                     page. That keeps `evidence.officialPortalLinkShown` on every

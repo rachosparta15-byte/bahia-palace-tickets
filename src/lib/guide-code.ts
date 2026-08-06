@@ -95,7 +95,20 @@ export function buildGuideCodeUrl(base: string, code: string): string {
   return url.toString();
 }
 
-/** How many codes a booking gets. Every head through the gate needs its own. */
-export function seatCount(adults: number, children: number): number {
-  return Math.max(1, (adults || 0) + (children || 0));
+/**
+ * How many codes a booking gets: one per PAID seat.
+ *
+ * Children under twelve enter free and are not charged, so counting them here
+ * would hand out the paid digital product for nothing — and the booking form
+ * accepts up to twenty of them. One adult and twenty children is €13.99 for
+ * twenty-one codes, which is the same leak the whole one-code-one-device design
+ * exists to close, arriving through the front door instead.
+ *
+ * A child listening on a parent's phone is the normal case and costs nothing.
+ * A family that genuinely wants a second device asks support, who can issue one
+ * — a decision with a person behind it, which is the right shape for an
+ * exception that should stay rare.
+ */
+export function seatCount(adults: number, _children: number): number {
+  return Math.max(1, adults || 0);
 }

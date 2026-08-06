@@ -37,7 +37,7 @@
     "title": "Já leu sobre ele. Agora entre.",
     "subtitle": "Reserve o seu bilhete e entre sem esperar na fila.",
     "button": "Reservar bilhetes do Palácio da Bahia",
-    "stickyMobile": "Sem fila — 12,90 €"
+    "stickyMobile": "Sem fila — 13,99 €"
   },
   "scamBanner": {
     "text": "Conheça as burlas mais comuns em Marraquexe antes de sair do hotel.",
@@ -101,7 +101,7 @@
       "ctaDisabledHint": "Ainda não estamos a aceitar pagamentos. Volte dentro de pouco tempo."
     },
     "price": {
-      "amount": "12,90 €",
+      "amount": "13,99 €",
       "perPerson": "por pessoa",
       "freeAlternative": "Só quer o bilhete oficial? Veja como",
       "includes": "Bilhete de entrada oficial + audioguia digital",
@@ -127,7 +127,7 @@
         "body": "Visita hoje? Normalmente em 10 minutos, enquanto o palácio está aberto. Reserva com antecedência? Enviamos cerca de 24 horas antes da data da visita, para o ter à mão no telemóvel."
       },
       "price": {
-        "title": "12,90 € por pessoa, impostos incluídos.",
+        "title": "13,99 € por pessoa, impostos incluídos.",
         "body": "O bilhete oficial do Ministério da Cultura comprado em seu nome, o audioguia digital em cinco línguas e uma pessoa real no WhatsApp antes e durante a visita. Nada é acrescentado no pagamento."
       },
       "independence": "visitbahiapalace.com é um serviço de reservas independente, gerido por especialistas nos monumentos de Marraquexe. Não somos o Ministério da Cultura nem a administração do palácio. Todos os detalhes nas nossas <terms>condições de venda</terms>."
@@ -232,10 +232,10 @@
       "items": {
         "official": {
           "q": "Este é o bilhete oficial do Palácio da Bahia?",
-          "a": "Sim. O bilhete de entrada do pack é o bilhete oficial de 100 MAD fixado pelo Ministério da Cultura de Marrocos, comprado em seu nome. Os 12,90 € cobrem também o audioguia digital, o mapa do visitante, o apoio por WhatsApp e o cancelamento gratuito até o enviarmos."
+          "a": "Sim. O bilhete de entrada do pack é o bilhete oficial de 100 MAD fixado pelo Ministério da Cultura de Marrocos, comprado em seu nome. Os 13,99 € cobrem também o audioguia digital, o mapa do visitante, o apoio por WhatsApp e o cancelamento gratuito até o enviarmos."
         },
         "cheaper": {
-          "q": "O que cobrem os 12,90 €?",
+          "q": "O que cobrem os 13,99 €?",
           "a": "Só a entrada custa 100 MAD na bilheteira. O nosso preço cobre esse bilhete comprado em seu nome, mais o audioguia em cinco línguas, o mapa do visitante, o apoio por WhatsApp antes e durante a visita, e o cancelamento gratuito até enviarmos o seu código QR. O Ministério também vende a entrada directamente no seu portal, se for só isso que precisa."
         },
         "refund": {

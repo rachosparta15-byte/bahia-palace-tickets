@@ -205,7 +205,7 @@
     "title": "Sie haben gelesen. Jetzt eintreten.",
     "subtitle": "Buchen Sie Ihr Ticket ohne Warteschlange und treten Sie direkt ein.",
     "button": "Bahia Palast Tickets buchen",
-    "stickyMobile": "Ohne Warteschlange — 12,90 €"
+    "stickyMobile": "Ohne Warteschlange — 13,99 €"
   },
   "footer": {
     "tagline": "Der einfachste Weg, den Bahia Palast zu besuchen.",
@@ -327,7 +327,7 @@
       },
       {
         "question": "Wie viel kostet der Eintritt in den Bahia Palast?",
-        "answer": "Der offizielle Eintrittspreis beträgt 100 MAD (ca. 9,90 €). Kinder unter 7 Jahren haben freien Eintritt, Studierende mit gültigem Ausweis zahlen 50 MAD. Bei uns online gebucht kostet es 12,90 € pro Person — das offizielle Ticket, ein mehrsprachiger Audioguide und Support — und Sie sparen sich die Schlange am Ticketschalter."
+        "answer": "Der offizielle Eintrittspreis beträgt 100 MAD (ca. 9,90 €). Kinder unter 7 Jahren haben freien Eintritt, Studierende mit gültigem Ausweis zahlen 50 MAD. Bei uns online gebucht kostet es 13,99 € pro Person — das offizielle Ticket, ein mehrsprachiger Audioguide und Support — und Sie sparen sich die Schlange am Ticketschalter."
       },
       {
         "question": "Wie lange benötigt man für den Bahia Palast?",
@@ -644,7 +644,7 @@
       "ctaDisabledHint": "We are not taking payments yet. Check back shortly."
     },
     "price": {
-      "amount": "12,90 €",
+      "amount": "13,99 €",
       "perPerson": "per person",
       "freeAlternative": "Just want the official ticket? Here’s how",
       "includes": "Official entry ticket + digital audio guide",
@@ -719,10 +719,10 @@
       "items": {
         "official": {
           "q": "Ist das das offizielle Ticket für den Bahia-Palast?",
-          "a": "Ja. Das Eintrittsticket im Paket ist das offizielle 100-MAD-Ticket des marokkanischen Kulturministeriums, in Ihrem Namen gekauft. Die 12,90 € decken zusätzlich den digitalen Audioguide, die Besucherkarte, den WhatsApp-Support und die kostenlose Stornierung bis zum Versand ab."
+          "a": "Ja. Das Eintrittsticket im Paket ist das offizielle 100-MAD-Ticket des marokkanischen Kulturministeriums, in Ihrem Namen gekauft. Die 13,99 € decken zusätzlich den digitalen Audioguide, die Besucherkarte, den WhatsApp-Support und die kostenlose Stornierung bis zum Versand ab."
         },
         "cheaper": {
-          "q": "Was decken die 12,90 € ab?",
+          "q": "Was decken die 13,99 € ab?",
           "a": "Der reine Eintritt kostet an der Kasse 100 MAD. Unser Preis umfasst dieses Ticket in Ihrem Namen, den Audioguide in fünf Sprachen, die Besucherkarte, den WhatsApp-Support vor und während Ihres Besuchs sowie die kostenlose Stornierung bis zum Versand Ihres QR-Codes. Das Ministerium verkauft den Eintritt auch direkt über sein Portal, wenn Sie nur das benötigen."
         },
         "refund": {
@@ -807,7 +807,7 @@
         "body": "Besuch noch heute? In der Regel innerhalb von 10 Minuten, solange der Palast geöffnet ist. Buchen Sie früher? Dann senden wir es etwa 24 Stunden vor Ihrem Besuchstag, damit es griffbereit auf Ihrem Handy liegt."
       },
       "price": {
-        "title": "12,90 € pro Person, inklusive aller Steuern.",
+        "title": "13,99 € pro Person, inklusive aller Steuern.",
         "body": "Das offizielle Eintrittsticket des Kulturministeriums, in Ihrem Namen gekauft, der digitale Audioguide in fünf Sprachen und ein echter Mensch auf WhatsApp vor und während Ihres Besuchs. Beim Bezahlen kommt nichts hinzu."
       },
       "independence": "visitbahiapalace.com ist ein unabhängiger Buchungsservice, geführt von Spezialisten für die Monumente von Marrakesch. Wir sind weder das Kulturministerium noch die Palastverwaltung. Alle Einzelheiten in unseren <terms>Verkaufsbedingungen</terms>."
