@@ -34,7 +34,18 @@ export async function POST(req: NextRequest) {
     }
 
     const price       = TICKET_PRICES[ticket];
-    const totalAmount = adults * price;
+    /*
+     * Everyone who needs a ticket is charged the same. The gate tariff is
+     * 100 MAD for an adult and 50 MAD for a child aged 7 to 13, and children
+     * under 7 enter free — so `children` here means 7 to 13, and the form
+     * labels it that way. Under-7s are simply not entered.
+     *
+     * This used to be `adults * price` while the form showed children as
+     * "Free", which meant a family could be told their ten-year-old was free,
+     * arrive, and be turned away for a ticket we never bought. One price per
+     * head removes both the contradiction and the refusal.
+     */
+    const totalAmount = (adults + children) * price;
     const reference   = generateReference();
     const visitDate   = new Date(date + 'T00:00:00.000Z');
 

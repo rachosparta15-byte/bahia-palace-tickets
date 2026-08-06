@@ -130,8 +130,6 @@
     "bookingInfo": "Información de reserva",
     "dateLabel": "Seleccionar fecha",
     "adultsLabel": "Adultos",
-    "childrenLabel": "Niños (menores de 7 años)",
-    "childFree": "Gratis",
     "total": "Total",
     "proceedToCheckout": "Continuar a las entradas oficiales →",
     "instantConfirm": "Precio todo incluido",
@@ -150,7 +148,9 @@
     "adults": "adultos",
     "children": "niños",
     "openingHours": "Horario de apertura",
-    "openingHoursVal": "Todos los días de 9:00 a 17:00 (última entrada 16:30)"
+    "openingHoursVal": "Todos los días de 9:00 a 17:00 (última entrada 16:30)",
+    "childrenLabel": "Niños (7–13)",
+    "childrenNote": "Menores de 7 años entran gratis: no los incluya."
   },
   "whyUs": {
     "title": "¿Por Qué Reservar con Nosotros?",
@@ -763,7 +763,8 @@
       "summaryTitle": "Order summary",
       "productName": "Bahia Palace — Complete Visitor Pack",
       "acceptCombined": "Puedo cancelar gratis hasta que se envíe mi código QR. Entiendo que ese envío completa mi pedido, por lo que a partir de ese momento el derecho de desistimiento de 14 días deja de aplicarse, y acepto las <terms>Condiciones de venta</terms> y la <refund>política de cancelación</refund>.",
-      "securePayment": "<b>Pago seguro.</b> Los datos de su tarjeta van directamente a Stripe y nunca llegan a nuestros servidores."
+      "securePayment": "<b>Pago seguro.</b> Los datos de su tarjeta van directamente a Stripe y nunca llegan a nuestros servidores.",
+      "visitorsHint": "Cuente a todas las personas que necesitan entrada, incluidos los niños a partir de 7 años. Los menores de 7 años entran gratis y no se cuentan."
     },
     "confirmation": {
       "packTitle": "Your Complete Visitor Pack",

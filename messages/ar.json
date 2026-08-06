@@ -190,7 +190,8 @@
       "submitting": "جارٍ بدء الدفع…",
       "legalNotice": "بمتابعتك فإنك توافق على <terms>الشروط</terms> و<refund>سياسة الاسترجاع</refund>.",
       "summaryTitle": "ملخّص الطلب",
-      "productName": "قصر الباهية — الباقة الكاملة للزائر"
+      "productName": "قصر الباهية — الباقة الكاملة للزائر",
+      "visitorsHint": "احسب كل من يحتاج تذكرة، بمن فيهم الأطفال من سن 7 فما فوق. الأطفال دون السابعة يدخلون مجاناً ولا يُحسبون."
     },
     "testMode": {
       "badge": "وضع تجريبي",
@@ -511,8 +512,6 @@
     "bookingInfo": "معلومات الحجز",
     "dateLabel": "اختر التاريخ",
     "adultsLabel": "بالغون",
-    "childrenLabel": "أطفال (أقل من 12)",
-    "childFree": "مجاناً",
     "total": "المجموع",
     "proceedToCheckout": "تابع إلى التذاكر الرسمية ←",
     "instantConfirm": "ثمن شامل",
@@ -531,7 +530,9 @@
     "adults": "بالغون",
     "children": "أطفال",
     "openingHours": "المواعيد",
-    "openingHoursVal": "يومياً من 9:00 صباحاً حتى 5:00 مساءً (آخر دخول 4:30)"
+    "openingHoursVal": "يومياً من 9:00 صباحاً حتى 5:00 مساءً (آخر دخول 4:30)",
+    "childrenLabel": "الأطفال (7–13)",
+    "childrenNote": "دون السابعة يدخلون مجاناً — لا تحسبهم."
   },
   "aboutPage": {
     "metaTitle": "visitbahiapalace.com — دليل مستقل لقصر الباهية",

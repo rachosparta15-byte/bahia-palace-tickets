@@ -31,7 +31,9 @@ export function BookingForm({ ticket, ticketName, date, adults, children, locale
   const t = useTranslations('ticketDetail');
   const router = useRouter();
   const price = TICKET_PRICES[ticket];
-  const total = adults * price;
+  // Every ticketed head, matching /api/bookings. `children` means 7–13, who
+  // need a 50 MAD ticket at the gate; under-7s enter free and are not entered.
+  const total = (adults + children) * price;
 
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<FormData>({
     resolver: zodResolver(schema),
@@ -121,7 +123,7 @@ export function BookingForm({ ticket, ticketName, date, adults, children, locale
         <div className="pt-2">
           <Button type="submit" variant="primary" size="lg" loading={isSubmitting} className="w-full">
             <CreditCard size={16} />
-            {isSubmitting ? 'Processing…' : `Pay $${total} — Confirm Booking`}
+            {isSubmitting ? 'Processing…' : `Pay €${total.toFixed(2)} — Confirm Booking`}
           </Button>
           <div className="mt-4 space-y-1.5">
             {(['Secure checkout', 'Ticket sent by email', 'Support via WhatsApp'] as const).map((item) => (
@@ -171,14 +173,16 @@ export function BookingForm({ ticket, ticketName, date, adults, children, locale
           </div>
           {children > 0 && (
             <div className="flex items-center justify-between mb-1">
-              <span className="text-white/70 text-sm">{children} child{children !== 1 ? 'ren' : ''}</span>
-              <span className="text-[#8FA63C] text-sm font-semibold">{t('childFree')}</span>
+              <span className="text-white/70 text-sm">
+                {children} × €{price.toFixed(2)}
+              </span>
+              <span className="text-white/70 text-sm">€{(children * price).toFixed(2)}</span>
             </div>
           )}
           <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/15">
             <span className="font-semibold">Total</span>
             <span className="font-bold text-2xl" style={{ fontFamily: 'var(--font-heading)' }}>
-              ${total}
+              €{total.toFixed(2)}
             </span>
           </div>
         </div>

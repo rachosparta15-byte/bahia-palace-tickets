@@ -190,7 +190,8 @@
       "submitting": "A iniciar o pagamento…",
       "legalNotice": "Ao continuar aceita as nossas <terms>condições</terms> e a <refund>política de reembolso</refund>.",
       "summaryTitle": "Resumo da encomenda",
-      "productName": "Palácio da Bahia — Pack completo do visitante"
+      "productName": "Palácio da Bahia — Pack completo do visitante",
+      "visitorsHint": "Conte todas as pessoas que precisam de bilhete, incluindo crianças a partir dos 7 anos. As crianças com menos de 7 anos entram gratuitamente e não devem ser contadas."
     },
     "testMode": {
       "badge": "MODO DE TESTE",
@@ -511,8 +512,6 @@
     "bookingInfo": "Informação da reserva",
     "dateLabel": "Escolha a data",
     "adultsLabel": "Adultos",
-    "childrenLabel": "Crianças (menos de 12)",
-    "childFree": "Grátis",
     "total": "Total",
     "proceedToCheckout": "Continuar para os bilhetes oficiais →",
     "instantConfirm": "Preço tudo incluído",
@@ -531,7 +530,9 @@
     "adults": "adultos",
     "children": "crianças",
     "openingHours": "Horário",
-    "openingHoursVal": "Todos os dias das 9:00 às 17:00 (última entrada às 16:30)"
+    "openingHoursVal": "Todos os dias das 9:00 às 17:00 (última entrada às 16:30)",
+    "childrenLabel": "Crianças (7–13)",
+    "childrenNote": "Menores de 7 anos entram gratuitamente — não os inclua."
   },
   "aboutPage": {
     "metaTitle": "visitbahiapalace.com — guia independente do Palácio da Bahia",

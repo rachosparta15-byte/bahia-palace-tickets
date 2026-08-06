@@ -244,8 +244,6 @@
     "bookingInfo": "Informations de réservation",
     "dateLabel": "Choisir une date",
     "adultsLabel": "Adultes",
-    "childrenLabel": "Enfants (moins de 7 ans)",
-    "childFree": "Gratuit",
     "total": "Total",
     "proceedToCheckout": "Continuer vers les billets officiels →",
     "instantConfirm": "Prix tout compris",
@@ -264,7 +262,9 @@
     "adults": "adultes",
     "children": "enfants",
     "openingHours": "Horaires d'ouverture",
-    "openingHoursVal": "Tous les jours 9h00 – 17h00 (dernière entrée 16h30)"
+    "openingHoursVal": "Tous les jours 9h00 – 17h00 (dernière entrée 16h30)",
+    "childrenLabel": "Enfants (7–13 ans)",
+    "childrenNote": "Moins de 7 ans : entrée gratuite, ne les comptez pas."
   },
   "aboutPage": {
     "metaTitle": "Visitbahiapalace.com — Guide Indépendant du Palais Bahia",
@@ -763,7 +763,8 @@
       "summaryTitle": "Order summary",
       "productName": "Bahia Palace — Complete Visitor Pack",
       "acceptCombined": "Je peux annuler gratuitement jusqu’à l’envoi de mon QR code. Je comprends que cet envoi exécute intégralement ma commande et que le droit de rétractation de 14 jours ne s’applique donc plus à partir de ce moment, et j’accepte les <terms>conditions de vente</terms> et la <refund>politique d’annulation</refund>.",
-      "securePayment": "<b>Paiement sécurisé.</b> Vos données bancaires sont transmises directement à Stripe et n’atteignent jamais nos serveurs."
+      "securePayment": "<b>Paiement sécurisé.</b> Vos données bancaires sont transmises directement à Stripe et n’atteignent jamais nos serveurs.",
+      "visitorsHint": "Comptez toutes les personnes qui ont besoin d’un billet, enfants de 7 ans et plus inclus. Les enfants de moins de 7 ans entrent gratuitement et ne sont pas à compter."
     },
     "confirmation": {
       "packTitle": "Your Complete Visitor Pack",

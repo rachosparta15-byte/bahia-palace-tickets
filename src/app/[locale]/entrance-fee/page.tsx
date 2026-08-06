@@ -89,7 +89,7 @@ export default async function EntranceFeePage({ params }: Props) {
               Bahia Palace Entrance Fee 2026
             </h1>
             <p className="mt-3 text-white/75 text-lg max-w-2xl">
-              Current ticket prices for Bahia Palace Marrakech — updated for 2026. Compare standard entry, skip-the-line, and guided tour costs in MAD and USD.
+              Current ticket prices for Bahia Palace Marrakech — updated for 2026. Compare standard entry, skip-the-line and guided tour costs in dirhams and euro.
             </p>
           </div>
           <div className="md:w-72 rounded-2xl overflow-hidden shrink-0">
