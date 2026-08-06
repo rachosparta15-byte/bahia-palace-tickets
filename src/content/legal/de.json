@@ -6,14 +6,14 @@
     "brand": "Visit Bahia Palace",
     "title": "Verkaufsbedingungen",
     "updated": "2026-07-29",
-    "lede": "Diese Bedingungen gelten für den Buchungsservice, den [MARRAKECH LOCAL LLC] auf visitbahiapalace.com und auf den Monumentsseiten seines Netzwerks betreibt. Sie erklären genau, was Sie kaufen, was nicht, und was passiert, wenn etwas schiefgeht.",
+    "lede": "Diese Bedingungen gelten für den Buchungsservice, den MarrakechLocal LLC auf visitbahiapalace.com und auf den Monumentsseiten seines Netzwerks betreibt. Sie erklären genau, was Sie kaufen, was nicht, und was passiert, wenn etwas schiefgeht.",
     "sections": [
       {
         "id": "who-we-are",
         "heading": "1. Mit wem Sie den Vertrag schließen",
         "paragraphs": [
-          "Der Buchungsservice auf dieser Seite und auf jeder Seite unseres Netzwerks wird betrieben von [MARRAKECH LOCAL LLC], einer Limited Liability Company nach dem Recht des Bundesstaates [US STATE OF FORMATION], USA, mit Sitz in [REGISTERED ADDRESS LINE 1], [REGISTERED ADDRESS LINE 2], [CITY], [STATE] [ZIP], United States (die „Gesellschaft“, „wir“).",
-          "Unabhängig davon, auf welcher Seite des Netzwerks Sie gebucht haben, kommt Ihr Vertrag mit [MARRAKECH LOCAL LLC] zustande. Dieses Unternehmen steht auf Ihrer Rechnung und auf Ihrer Kartenabrechnung. Der Support wird vom selben Team unter [SUPPORT@MARRAKECHLOCAL.COM] geleistet.",
+          "Der Buchungsservice auf dieser Seite und auf jeder Seite unseres Netzwerks wird betrieben von MarrakechLocal LLC, einer Limited Liability Company nach dem Recht des Bundesstaates Wyoming, USA, mit Sitz in 30 N Gould St, Ste R, Sheridan, WY 82801, United States (die „Gesellschaft“, „wir“).",
+          "Unabhängig davon, auf welcher Seite des Netzwerks Sie gebucht haben, kommt Ihr Vertrag mit MarrakechLocal LLC zustande. Dieses Unternehmen steht auf Ihrer Rechnung und auf Ihrer Kartenabrechnung. Der Support wird vom selben Team unter support@marrakechlocal.com geleistet.",
           "Wir sind ein unabhängiges privates Unternehmen. Wir sind keine Behörde, keine Monumentsverwaltung, keine offizielle Kasse und kein nationales oder regionales Fremdenverkehrsamt. Wir sind weder mit dem marokkanischen Kulturministerium noch mit der Leitung eines Monuments verbunden, noch von ihnen unterstützt, beauftragt oder ermächtigt. Nichts auf unseren Seiten ist anders zu verstehen."
         ]
       },
@@ -67,7 +67,7 @@
         "paragraphs": [
           "Nach der Zahlung besorgen wir Ihr Ticket und senden Ihnen einen QR-Code sowie einen Link zu Ihrem digitalen Audioguide per E-Mail und, sofern Sie uns eine Nummer gegeben haben, per WhatsApp. Die Lieferung erfolgt vor Ihrem Besuchstag.",
           "Die Zustellung des QR-Codes ist der Zeitpunkt, zu dem unsere Leistung erbracht ist. Es ist zugleich der Zeitpunkt, zu dem Ihr Stornorecht endet — siehe die Rückerstattungs- und Stornierungsrichtlinie.",
-          "Es liegt in Ihrer Verantwortung, uns eine funktionierende E-Mail-Adresse zu nennen und Ihren Spam-Ordner zu prüfen. Haben Sie 48 Stunden vor Ihrem Besuch keinen QR-Code erhalten, melden Sie sich sofort unter [SUPPORT@MARRAKECHLOCAL.COM] oder per WhatsApp unter +212 607-223008; wir senden ihn erneut."
+          "Es liegt in Ihrer Verantwortung, uns eine funktionierende E-Mail-Adresse zu nennen und Ihren Spam-Ordner zu prüfen. Haben Sie 48 Stunden vor Ihrem Besuch keinen QR-Code erhalten, melden Sie sich sofort unter support@marrakechlocal.com oder per WhatsApp unter +212 607-223008; wir senden ihn erneut."
         ]
       },
       {
@@ -100,7 +100,7 @@
         "id": "complaints",
         "heading": "10. Beschwerden und Streitbeilegung",
         "paragraphs": [
-          "Ist etwas schiefgegangen, wenden Sie sich zuerst unter [SUPPORT@MARRAKECHLOCAL.COM] an uns und nennen Sie Ihre Buchungsreferenz. Wir bemühen uns, innerhalb von 24 Stunden zu antworten und Beschwerden binnen 14 Tagen zu klären.",
+          "Ist etwas schiefgegangen, wenden Sie sich zuerst unter support@marrakechlocal.com an uns und nennen Sie Ihre Buchungsreferenz. Wir bemühen uns, innerhalb von 24 Stunden zu antworten und Beschwerden binnen 14 Tagen zu klären.",
           "Sind Sie mit unserer Antwort nicht zufrieden und wohnen Sie in der EU, können Sie gegebenenfalls die Verbraucherschlichtungsstelle Ihres Landes einschalten. Auf Anfrage nennen wir Ihnen die für Ihren Fall zuständige Stelle.",
           "Bitte wenden Sie sich zuerst an uns, bevor Sie Ihre Bank einschalten. Eine ohne vorherigen Kontakt eingeleitete Rückbuchung dauert für Sie länger als eine Erstattung, und wo wir nachweisen können, dass die Leistung wie beschrieben erbracht wurde, widersprechen wir ihr."
         ]
@@ -109,7 +109,7 @@
         "id": "law",
         "heading": "11. Anwendbares Recht",
         "paragraphs": [
-          "Diese Bedingungen unterliegen dem Recht des Bundesstaates [US STATE OF FORMATION], USA.",
+          "Diese Bedingungen unterliegen dem Recht des Bundesstaates Wyoming, USA.",
           "Sind Sie Verbraucher mit Wohnsitz in der Europäischen Union oder im Vereinigten Königreich, entzieht Ihnen diese Rechtswahl nicht den Schutz der zwingenden verbraucherschützenden Vorschriften Ihres Wohnsitzstaates; Sie können auch die Gerichte dieses Staates anrufen."
         ]
       },
@@ -124,7 +124,7 @@
         "id": "contact",
         "heading": "13. Kontakt",
         "paragraphs": [
-          "[MARRAKECH LOCAL LLC], [REGISTERED ADDRESS LINE 1], [REGISTERED ADDRESS LINE 2], [CITY], [STATE] [ZIP], United States. E-Mail: [SUPPORT@MARRAKECHLOCAL.COM]. Rechtliche Mitteilungen: [LEGAL@MARRAKECHLOCAL.COM]."
+          "MarrakechLocal LLC, 30 N Gould St, Ste R, Sheridan, WY 82801, United States. E-Mail: support@marrakechlocal.com. Rechtliche Mitteilungen: legal@marrakechlocal.com."
         ]
       }
     ],
@@ -150,7 +150,7 @@
         "id": "before-delivery",
         "heading": "2. Bevor Ihr QR-Code versandt wird",
         "paragraphs": [
-          "Schreiben Sie an [SUPPORT@MARRAKECHLOCAL.COM] unter Angabe Ihrer Buchungsreferenz oder schicken Sie eine WhatsApp an +212 607-223008. Wir stornieren die Buchung und erstatten den vollen gezahlten Betrag — ohne Gebühr und ohne Rückfragen.",
+          "Schreiben Sie an support@marrakechlocal.com unter Angabe Ihrer Buchungsreferenz oder schicken Sie eine WhatsApp an +212 607-223008. Wir stornieren die Buchung und erstatten den vollen gezahlten Betrag — ohne Gebühr und ohne Rückfragen.",
           "Erstattungen gehen auf das ursprüngliche Zahlungsmittel zurück. Wie schnell das Geld wieder erscheint, entscheidet Ihre Bank; in der Praxis sind es 3 bis 10 Werktage.",
           "Ob Ihr Ticket bereits versandt wurde, erkennen Sie an unserer Liefer-E-Mail. Im Zweifel fragen Sie uns — wir sagen Ihnen den Stand Ihrer Buchung, bevor Sie sich entscheiden."
         ]
@@ -206,7 +206,7 @@
         "id": "how-to-claim",
         "heading": "8. So machen Sie einen Anspruch geltend",
         "paragraphs": [
-          "Schreiben Sie an [SUPPORT@MARRAKECHLOCAL.COM] mit Ihrer Buchungsreferenz und, soweit einschlägig, einem Foto des Schließungshinweises oder des abgewiesenen Tickets. Wir bemühen uns, innerhalb von 24 Stunden zu antworten und über Erstattungsanträge binnen 14 Tagen nach Eingang der erforderlichen Angaben zu entscheiden.",
+          "Schreiben Sie an support@marrakechlocal.com mit Ihrer Buchungsreferenz und, soweit einschlägig, einem Foto des Schließungshinweises oder des abgewiesenen Tickets. Wir bemühen uns, innerhalb von 24 Stunden zu antworten und über Erstattungsanträge binnen 14 Tagen nach Eingang der erforderlichen Angaben zu entscheiden.",
           "Lehnen wir einen Anspruch ab, begründen wir das schriftlich und erklären, wie Sie die Entscheidung anfechten können."
         ]
       },
@@ -285,7 +285,7 @@
         "paragraphs": [
           "Weil der Code ein Inhaberpapier ohne Namen und ohne Datum ist: ihn wochenlang vor der Reise aufzubewahren, ist der sicherste Weg, ihn zu verlieren. Er landet in einer alten E-Mail unter hundert neueren oder in einem Telefon, das ausgetauscht wurde. Etwa einen Tag vorher gesendet, steht er genau dann oben im Posteingang, wenn Sie ihn brauchen.",
           "Es verlängert außerdem Ihr Widerrufsrecht. Sie können bis zum Versand des Codes jederzeit kostenlos stornieren — eine zehn Tage im Voraus getätigte Buchung bleibt also neun Tage lang stornierbar. Sofortiger Versand würde dieses Fenster schon am ersten Tag schließen.",
-          "Wenn Sie ihn lieber jetzt hätten, sagen Sie Bescheid. Schreiben Sie an [SUPPORT@MARRAKECHLOCAL.COM] oder per WhatsApp an +212 607-223008, dann senden wir ihn vorab — mit dem Hinweis, dass damit Ihr Widerrufsrecht endet, genau wie es im normalen Ablauf der Fall wäre."
+          "Wenn Sie ihn lieber jetzt hätten, sagen Sie Bescheid. Schreiben Sie an support@marrakechlocal.com oder per WhatsApp an +212 607-223008, dann senden wir ihn vorab — mit dem Hinweis, dass damit Ihr Widerrufsrecht endet, genau wie es im normalen Ablauf der Fall wäre."
         ]
       },
       {
@@ -301,7 +301,7 @@
         "heading": "6. Wenn nichts angekommen ist",
         "paragraphs": [
           "Prüfen Sie zuerst Spam- und Werbeordner und anschließend die beim Kauf eingegebene Adresse — eine vertippte Adresse ist mit Abstand die häufigste Ursache.",
-          "Haben Sie 48 Stunden vor Ihrem Besuch keinen QR-Code erhalten, melden Sie sich sofort unter [SUPPORT@MARRAKECHLOCAL.COM] oder per WhatsApp unter +212 607-223008. Wir senden ihn erneut, auf Wunsch an eine andere Adresse.",
+          "Haben Sie 48 Stunden vor Ihrem Besuch keinen QR-Code erhalten, melden Sie sich sofort unter support@marrakechlocal.com oder per WhatsApp unter +212 607-223008. Wir senden ihn erneut, auf Wunsch an eine andere Adresse.",
           "Wir antworten möglichst innerhalb von 24 Stunden, 09:00–21:00 (GMT+1), 7 days a week. Ist Ihr Besuch morgen, nutzen Sie WhatsApp — das erreicht uns schneller als E-Mail."
         ]
       },
@@ -347,7 +347,7 @@
         "heading": "3. Was auf Ihrem Kontoauszug erscheint",
         "paragraphs": [
           "Die Belastung trägt einen Verwendungszweck, der die Seite ausweist, auf der Sie gebucht haben, damit die Zeile auf Ihrem Auszug zu der Marke passt, bei der Sie sich erinnern gekauft zu haben. Der genaue Text für Ihre Buchung wird Ihnen vor der Zahlung angezeigt und in der Bestätigungs-E-Mail wiederholt.",
-          "Das ist Absicht. Die meisten Kartenreklamationen sind kein Betrug; es sind Menschen, die Wochen später eine Zeile auf einem Auszug nicht wiedererkennen. Können Sie eine Belastung von uns nicht zuordnen, schreiben Sie mit Betrag und Datum an [SUPPORT@MARRAKECHLOCAL.COM] — wir klären sie noch am selben Tag."
+          "Das ist Absicht. Die meisten Kartenreklamationen sind kein Betrug; es sind Menschen, die Wochen später eine Zeile auf einem Auszug nicht wiedererkennen. Können Sie eine Belastung von uns nicht zuordnen, schreiben Sie mit Betrag und Datum an support@marrakechlocal.com — wir klären sie noch am selben Tag."
         ]
       },
       {
@@ -392,18 +392,18 @@
     "brand": "Visit Bahia Palace",
     "title": "Datenschutzerklärung",
     "updated": "2026-07-29",
-    "lede": "Welche personenbezogenen Daten [MARRAKECH LOCAL LLC] erhebt, wozu, an wen wir sie weitergeben und welche Rechte Sie daran haben. Zum Lesen geschrieben — ist etwas unklar, fragen Sie unter [PRIVACY@MARRAKECHLOCAL.COM], und wir erklären es.",
+    "lede": "Welche personenbezogenen Daten MarrakechLocal LLC erhebt, wozu, an wen wir sie weitergeben und welche Rechte Sie daran haben. Zum Lesen geschrieben — ist etwas unklar, fragen Sie unter privacy@marrakechlocal.com, und wir erklären es.",
     "sections": [
       {
         "id": "controller",
         "heading": "1. Verantwortlicher",
         "paragraphs": [
-          "Verantwortlicher ist [MARRAKECH LOCAL LLC], [REGISTERED ADDRESS LINE 1], [REGISTERED ADDRESS LINE 2], [CITY], [STATE] [ZIP], United States. Kontakt für alle Datenschutzfragen: [PRIVACY@MARRAKECHLOCAL.COM].",
-          "Wir sind außerhalb der EU und des Vereinigten Königreichs niedergelassen, bieten unsere Dienste aber Personen in beiden Räumen an. Wir haben daher Vertreter nach Artikel 27 DSGVO und Artikel 27 UK-GDPR benannt. Sie können sich statt an uns auch an sie wenden."
+          "Verantwortlicher ist MarrakechLocal LLC, 30 N Gould St, Ste R, Sheridan, WY 82801, United States. Kontakt für alle Datenschutzfragen: privacy@marrakechlocal.com.",
+          "Wir sind außerhalb der EU und des Vereinigten Königreichs niedergelassen, bieten unsere Dienste aber Personen in beiden Räumen an. Damit sind wir verpflichtet, Vertreter nach Artikel 27 DSGVO und Artikel 27 UK-GDPR zu benennen. Diese Benennung läuft; sobald sie abgeschlossen ist, werden sie hier namentlich genannt. Bis dahin schreiben Sie uns bitte direkt an privacy@marrakechlocal.com — wir bearbeiten jede Anfrage selbst und innerhalb derselben Fristen."
         ],
         "list": [
-          "EU-Vertreter: [EU ARTICLE 27 REPRESENTATIVE — NAME AND EU ADDRESS]",
-          "UK-Vertreter: [UK REPRESENTATIVE — NAME AND UK ADDRESS]"
+          "EU-Vertreter: Appointment in progress — contact us directly in the meantime",
+          "UK-Vertreter: Appointment in progress — contact us directly in the meantime"
         ]
       },
       {
@@ -501,7 +501,7 @@
         "heading": "5. Datenübermittlung in Drittländer",
         "paragraphs": [
           "Wir sind ein US-Unternehmen, und mehrere unserer Dienstleister sitzen in den USA oder übermitteln Daten dorthin. Werden personenbezogene Daten von Personen in der EU oder im Vereinigten Königreich aus diesen Räumen übermittelt, stützen wir uns auf die Standardvertragsklauseln der Europäischen Kommission, ergänzt um das britische International Data Transfer Addendum, soweit die UK-GDPR gilt, und prüfen im Einzelfall, ob zusätzliche Garantien erforderlich sind.",
-          "Eine Kopie der geltenden Garantien können Sie unter [PRIVACY@MARRAKECHLOCAL.COM] anfordern."
+          "Eine Kopie der geltenden Garantien können Sie unter privacy@marrakechlocal.com anfordern."
         ]
       },
       {
@@ -524,7 +524,7 @@
         "id": "exercising",
         "heading": "7. Wie Sie diese Rechte ausüben",
         "paragraphs": [
-          "Schreiben Sie an [PRIVACY@MARRAKECHLOCAL.COM]. Wir antworten innerhalb eines Monats. Wir können Sie um eine Identitätsbestätigung bitten, aber nur im erforderlichen Umfang — für eine Frage zu einer Buchung über 13,99 € verlangen wir keinen Ausweisscan.",
+          "Schreiben Sie an privacy@marrakechlocal.com. Wir antworten innerhalb eines Monats. Wir können Sie um eine Identitätsbestätigung bitten, aber nur im erforderlichen Umfang — für eine Frage zu einer Buchung über 13,99 € verlangen wir keinen Ausweisscan.",
           "Daten, die wir aus handels- oder steuerrechtlichen Gründen aufbewahren müssen, können wir ebenso wenig löschen wie einen Einwilligungsnachweis und einen Beweis-Snapshot zu einer Zahlung, solange eine Anfechtungsfrist läuft. Wir sagen Ihnen in diesem Fall, wann die Löschung erfolgt."
         ]
       },
@@ -652,7 +652,7 @@
         "id": "contact",
         "heading": "6. Fragen",
         "paragraphs": [
-          "Schreiben Sie an [PRIVACY@MARRAKECHLOCAL.COM]."
+          "Schreiben Sie an privacy@marrakechlocal.com."
         ]
       }
     ],
@@ -702,7 +702,7 @@
         "id": "feedback",
         "heading": "4. Ein Problem melden",
         "paragraphs": [
-          "Wenn Sie auf dieser Website etwas blockiert, schreiben Sie an [SUPPORT@MARRAKECHLOCAL.COM] mit der Adresse der Seite und dem, was passiert ist. Wir antworten möglichst innerhalb von 24 Stunden, 09:00–21:00 (GMT+1), 7 days a week.",
+          "Wenn Sie auf dieser Website etwas blockiert, schreiben Sie an support@marrakechlocal.com mit der Adresse der Seite und dem, was passiert ist. Wir antworten möglichst innerhalb von 24 Stunden, 09:00–21:00 (GMT+1), 7 days a week.",
           "Können Sie eine Buchung wegen einer Barriere nicht abschließen, sagen Sie es uns: Wir schließen sie per E-Mail oder WhatsApp unter +212 607-223008 für Sie ab, zum selben Preis. Niemand soll mehr zahlen oder einen Menschen bezahlen müssen, weil eine Seite versagt hat.",
           "Sind Sie mit unserer Antwort nicht zufrieden, können Verbraucherinnen und Verbraucher in der EU die nationale Marktüberwachungs- oder Durchsetzungsbehörde ihres Landes einschalten."
         ]
@@ -723,36 +723,36 @@
         "id": "publisher",
         "heading": "1. Anbieter und Betreiber",
         "list": [
-          "Unternehmen: [MARRAKECH LOCAL LLC]",
-          "Rechtsform: Limited Liability Company (LLC), gegründet im Bundesstaat [US STATE OF FORMATION], USA",
-          "Sitz: [REGISTERED ADDRESS LINE 1], [REGISTERED ADDRESS LINE 2], [CITY], [STATE] [ZIP], United States",
-          "Registered Agent: [REGISTERED AGENT NAME AND ADDRESS]",
-          "Registernummer: [COMPANY REGISTRATION NUMBER]",
-          "US-Steuernummer (EIN): [EIN]",
-          "Vertreten durch: [LEGAL REPRESENTATIVE NAME(S)]",
-          "E-Mail: [LEGAL@MARRAKECHLOCAL.COM]",
-          "Kundenbetreuung: [SUPPORT@MARRAKECHLOCAL.COM] · WhatsApp +212 607-223008 · 09:00–21:00 (GMT+1), 7 days a week"
+          "Unternehmen: MarrakechLocal LLC",
+          "Rechtsform: Limited Liability Company (LLC), gegründet im Bundesstaat Wyoming, USA",
+          "Sitz: 30 N Gould St, Ste R, Sheridan, WY 82801, United States",
+          "Registered Agent: Registered Agents Inc, 30 N Gould St Ste R, Sheridan, WY 82801, United States",
+          "Registernummer: 2026-002047078",
+          "US-Steuernummer (EIN): 98-1960250",
+          "Vertreten durch: Abdellah Amejal",
+          "E-Mail: legal@marrakechlocal.com",
+          "Kundenbetreuung: support@marrakechlocal.com · WhatsApp +212 607-223008 · 09:00–21:00 (GMT+1), 7 days a week"
         ]
       },
       {
         "id": "responsibility",
         "heading": "2. Inhaltlich verantwortlich",
         "paragraphs": [
-          "Für den Inhalt dieser Seite ist [LEGAL REPRESENTATIVE NAME(S)] unter der oben genannten Anschrift verantwortlich."
+          "Für den Inhalt dieser Seite ist Abdellah Amejal unter der oben genannten Anschrift verantwortlich."
         ]
       },
       {
         "id": "network",
         "heading": "3. Betriebene Seiten",
         "paragraphs": [
-          "[MARRAKECH LOCAL LLC] betreibt visitbahiapalace.com sowie ein Netzwerk von Seiten, die sich jeweils einem einzigen Monument widmen. Alle rechnen über dieselben Konten von [MARRAKECH LOCAL LLC] ab, wenden dieselben Bedingungen und dieselbe Rückerstattungsrichtlinie an und werden vom selben Team betreut. Die aktuelle Liste steht in der Fußzeile jeder Seite."
+          "MarrakechLocal LLC betreibt visitbahiapalace.com sowie ein Netzwerk von Seiten, die sich jeweils einem einzigen Monument widmen. Alle rechnen über dieselben Konten von MarrakechLocal LLC ab, wenden dieselben Bedingungen und dieselbe Rückerstattungsrichtlinie an und werden vom selben Team betreut. Die aktuelle Liste steht in der Fußzeile jeder Seite."
         ]
       },
       {
         "id": "independence",
         "heading": "4. Unabhängigkeitserklärung",
         "paragraphs": [
-          "[MARRAKECH LOCAL LLC] ist ein privates Wirtschaftsunternehmen. Es ist keine öffentliche Stelle, keine Monumentsverwaltung und kein Fremdenverkehrsamt. Es ist weder mit dem marokkanischen Kulturministerium, einer Monumentsleitung oder einer Behörde verbunden noch von ihnen unterstützt, und handelt nicht in deren Namen.",
+          "MarrakechLocal LLC ist ein privates Wirtschaftsunternehmen. Es ist keine öffentliche Stelle, keine Monumentsverwaltung und kein Fremdenverkehrsamt. Es ist weder mit dem marokkanischen Kulturministerium, einer Monumentsleitung oder einer Behörde verbunden noch von ihnen unterstützt, und handelt nicht in deren Namen.",
           "Verkaufen wir ein Eintrittsticket, handeln wir als Concierge auf Weisung der Kundin oder des Kunden und kaufen für diese im offiziellen Kanal ein. Wir verfügen über keine Konzession, Lizenz oder Beauftragung eines Monuments oder einer Behörde.",
           "Offizielle Tickets sind direkt über das Ministeriumsportal unter https://www.tickets-monuments.ma/ (Ministère de la Jeunesse, de la Culture et de la Communication) erhältlich; wir verlinken es von jeder Buchungsseite."
         ]
@@ -761,9 +761,9 @@
         "id": "ip",
         "heading": "5. Urheberrecht",
         "paragraphs": [
-          "Texte, Gestaltung, Audioguides und eigene Fotografien dieser Seite sind, soweit nicht anders gekennzeichnet, Eigentum von [MARRAKECH LOCAL LLC] und dürfen ohne Erlaubnis nicht vervielfältigt werden.",
+          "Texte, Gestaltung, Audioguides und eigene Fotografien dieser Seite sind, soweit nicht anders gekennzeichnet, Eigentum von MarrakechLocal LLC und dürfen ohne Erlaubnis nicht vervielfältigt werden.",
           "Lizenzierte oder unter einer Creative-Commons-Lizenz genutzte Fotografien sind neben dem Bild mit Urheberangabe und Link auf die jeweilige Lizenz gekennzeichnet. Monumentsnamen und Marken Dritter werden beschreibend verwendet und bleiben Eigentum ihrer Inhaber; ihre Nennung begründet keine Verbindung.",
-          "Sehen Sie durch Inhalte dieser Seite Ihre Rechte verletzt, schreiben Sie an [LEGAL@MARRAKECHLOCAL.COM] unter Angabe der URL und der Werkangaben. Wir nehmen das Material für die Dauer der Prüfung offline."
+          "Sehen Sie durch Inhalte dieser Seite Ihre Rechte verletzt, schreiben Sie an legal@marrakechlocal.com unter Angabe der URL und der Werkangaben. Wir nehmen das Material für die Dauer der Prüfung offline."
         ]
       },
       {
@@ -771,7 +771,7 @@
         "heading": "6. Richtigkeit der Angaben",
         "paragraphs": [
           "In Marokko ändern sich Öffnungszeiten, Preise und Zugangsregelungen häufig und ohne Vorankündigung. Wir prüfen sie regelmäßig und datieren jeden Guide, können aber nicht garantieren, dass jedes Detail zum Zeitpunkt Ihres Lesens aktuell ist. Wo eine Angabe für Ihre Planung wesentlich ist, bestätigen Sie sie beim Monument.",
-          "Etwas veraltet gefunden? Melden Sie es an [SUPPORT@MARRAKECHLOCAL.COM], wir korrigieren es."
+          "Etwas veraltet gefunden? Melden Sie es an support@marrakechlocal.com, wir korrigieren es."
         ]
       },
       {
@@ -785,7 +785,7 @@
         "id": "dispute",
         "heading": "8. Verbraucherstreitbeilegung",
         "paragraphs": [
-          "Wir sind bereit, Verbraucherstreitigkeiten unmittelbar beizulegen. Wenden Sie sich zunächst an [SUPPORT@MARRAKECHLOCAL.COM]. Verbraucherinnen und Verbraucher in der EU können sich zusätzlich an die Verbraucherschlichtungsstelle ihres Landes wenden."
+          "Wir sind bereit, Verbraucherstreitigkeiten unmittelbar beizulegen. Wenden Sie sich zunächst an support@marrakechlocal.com. Verbraucherinnen und Verbraucher in der EU können sich zusätzlich an die Verbraucherschlichtungsstelle ihres Landes wenden."
         ]
       }
     ],
@@ -852,7 +852,7 @@
         "id": "questions",
         "heading": "7. Fragen",
         "paragraphs": [
-          "Möchten Sie wissen, ob ein bestimmter Link oder eine Empfehlung kommerziell ist, fragen Sie unter [SUPPORT@MARRAKECHLOCAL.COM] — wir sagen es Ihnen offen."
+          "Möchten Sie wissen, ob ein bestimmter Link oder eine Empfehlung kommerziell ist, fragen Sie unter support@marrakechlocal.com — wir sagen es Ihnen offen."
         ]
       }
     ],
