@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { BookingActions } from '@/components/admin/BookingActions';
 import { QrDelivery } from '@/components/admin/QrDelivery';
+import { GuideCodes, type GuideCodeRow } from '@/components/admin/GuideCodes';
+import { formatGuideCode } from '@/lib/guide-code';
 import { qrIsDelivered } from '@/lib/booking-lifecycle';
 import { getWhatsAppNumber } from '@/lib/whatsapp';
 
@@ -43,6 +45,28 @@ export default async function BookingDetailPage({ params }: Props) {
   const { id } = await params;
   await ensureColumns();
   const booking = await prisma.booking.findUnique({ where: { id } });
+
+  /*
+   * The guide codes for this booking, if any. Read rather than issued: this
+   * page must show what the customer actually holds, not conjure codes for a
+   * booking that was never paid.
+   */
+  const guideCodes: GuideCodeRow[] = booking
+    ? (
+        await prisma.guideCode.findMany({
+          where: { bookingId: booking.id },
+          orderBy: { seat: 'asc' },
+        })
+      ).map((row) => ({
+        code: row.code,
+        display: formatGuideCode(row.code),
+        seat: row.seat,
+        claimed: row.deviceId !== null,
+        claimedAt: row.claimedAt ? row.claimedAt.toISOString() : null,
+        lastSeenAt: row.lastSeenAt ? row.lastSeenAt.toISOString() : null,
+        unlockCount: row.unlockCount,
+      }))
+    : [];
   if (!booking) notFound();
 
   return (
@@ -126,6 +150,11 @@ export default async function BookingDetailPage({ params }: Props) {
               reference={booking.reference}
             />
           </div>
+
+          {/* Below fulfilment because it is a support tool, not a step: the
+              codes issue themselves on payment and need no action unless a
+              customer's phone lost them. */}
+          <GuideCodes reference={booking.reference} codes={guideCodes} />
 
           <div className="bg-white rounded-2xl border border-[#E8D5B7] px-5 py-5">
             <h2 className="font-semibold text-[#3D2817] mb-4">Actions</h2>
