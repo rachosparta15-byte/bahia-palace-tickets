@@ -67,6 +67,21 @@ export interface TicketDeliveryEmailParams {
   qrCode?: string;
   /** Absolute URL to the booking page where the ticket can be viewed. */
   bookingUrl?: string;
+  /**
+   * The audio guide links belong HERE, not in the confirmation.
+   *
+   * The published delivery policy says so in as many words: "A payment
+   * confirmation, immediately. Then one delivery containing everything else —
+   * the QR code, the audio guide link and your support number, together in a
+   * single message. Nothing is sent piecemeal." Sending the guide at
+   * confirmation also started the digital-content clock early, while the terms
+   * were still promising free cancellation until delivery.
+   */
+  audioGuideUrls?: readonly string[] | null;
+  /** Display form, e.g. "+212 607-223008". */
+  whatsapp?: string | null;
+  /** The visit date the customer chose, for the practical block. */
+  visitDate?: string;
 }
 
 export async function sendTicketDelivery(params: TicketDeliveryEmailParams): Promise<void> {

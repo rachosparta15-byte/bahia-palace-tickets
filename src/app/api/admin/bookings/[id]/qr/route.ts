@@ -19,6 +19,9 @@ import { verifyAdminToken, ADMIN_COOKIE } from '@/lib/auth';
 import { BOOKING_STATUS, canMarkQrSent } from '@/lib/booking-lifecycle';
 import { detectQrType, saveQrFile, MAX_QR_MB } from '@/lib/qr-storage';
 import { email } from '@/lib/email';
+import { AUDIO_GUIDE_URL } from '@/lib/booking';
+import { buildGuideCodeUrl } from '@/lib/guide-code';
+import { getWhatsAppNumber } from '@/lib/whatsapp';
 
 export async function POST(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const store = await cookies();
@@ -115,6 +118,24 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
       reference: updated.reference,
       qrCode: qrCode ?? undefined,
       bookingUrl: base ? `${base}/${updated.locale}/booking/${updated.id}` : undefined,
+      visitDate: updated.visitDate.toISOString().split('T')[0],
+      whatsapp: getWhatsAppNumber(),
+      /*
+       * The guide links ride along with the ticket, which is what the published
+       * delivery policy promises: one delivery containing everything, nothing
+       * sent piecemeal. They used to go out with the order confirmation, which
+       * also started the digital-content clock while the terms were still
+       * offering free cancellation until delivery.
+       *
+       * Read, not issued. Issuing here would mint codes for a booking that was
+       * never paid — the issuer runs at payment confirmation.
+       */
+      audioGuideUrls: (
+        await prisma.guideCode.findMany({
+          where: { bookingId: updated.id },
+          orderBy: { seat: 'asc' },
+        })
+      ).map((row) => buildGuideCodeUrl(AUDIO_GUIDE_URL, row.code)),
     });
   } catch (err) {
     console.error('[qr] ticket-delivery email failed (non-fatal):', err);

@@ -25,10 +25,8 @@ import { ensureColumns } from '@/lib/db/ensure-columns';
 import { email } from '@/lib/email';
 import { fulfillTicket } from '@/lib/fulfillment';
 import { BOOKING_STATUS } from '@/lib/booking-lifecycle';
-import { AUDIO_GUIDE_URL } from '@/lib/booking';
 import { getWhatsAppNumber } from '@/lib/whatsapp';
 import { issueGuideCodes } from '@/lib/guide-access';
-import { buildGuideCodeUrl } from '@/lib/guide-code';
 
 export type ConfirmVia = 'webhook' | 'return-page' | 'mock';
 
@@ -82,11 +80,12 @@ export async function confirmBookingPaid(
    * the confirmation page, and a second call must not mint a second set of
    * codes for the same booking.
    */
-  let guideUrls: string[] = [];
   if (booking.ticketType === 'visitor-pack') {
     try {
-      const codes = await issueGuideCodes(booking);
-      guideUrls = codes.map((code) => buildGuideCodeUrl(AUDIO_GUIDE_URL, code));
+      // Issued now, delivered later. The codes must exist the moment the
+      // payment is real — this is the exactly-once seam — but they reach the
+      // customer with the ticket, in one message, as the delivery policy says.
+      await issueGuideCodes(booking);
     } catch (error) {
       // Never fail a confirmed payment over this. The customer has paid and is
       // confirmed; the codes can be issued again from the admin dashboard.
@@ -112,7 +111,12 @@ export async function confirmBookingPaid(
       totalAmount: booking.totalAmount,
       currency: booking.currency,
       locale: booking.locale,
-      audioGuideUrls: guideUrls,
+      /*
+       * NOT the guide links. The delivery policy promises one delivery with
+       * everything in it, and that is the ticket email. Sending them here made
+       * two deliveries out of one and started the digital-content clock while
+       * the terms still offered free cancellation until the ticket was sent.
+       */
       whatsapp: getWhatsAppNumber(),
     });
   } catch (err) {

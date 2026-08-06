@@ -49,6 +49,19 @@ export async function sendRefundConfirmation(params: RefundEmailParams): Promise
   });
 }
 
+/**
+ * The ticket. This is the email a customer opens standing at the palace gate,
+ * on a phone, possibly in the sun, with a queue behind them.
+ *
+ * It used to be five lines of unstyled text while the order confirmation was
+ * fully designed — the least important message dressed better than the most
+ * important one. Everything here follows from where it gets read: the code is
+ * the largest thing on the screen, in a monospace face so 8 and B cannot be
+ * confused, and the practical instructions come before the pleasantries.
+ *
+ * It also carries the audio guide links, because the published delivery policy
+ * promises exactly one delivery containing everything.
+ */
 export async function sendTicketDelivery(params: TicketDeliveryEmailParams): Promise<void> {
   // @ts-ignore — installed in Phase B: npm install resend
   const { Resend } = await import('resend');
@@ -58,14 +71,89 @@ export async function sendTicketDelivery(params: TicketDeliveryEmailParams): Pro
     from: `Bahia Palace Tickets <${FROM}>`,
     to: params.to,
     replyTo: REPLY_TO,
-    subject: `Your Bahia Palace ticket — ${params.reference}`,
-    html:
-      `<p>Hi ${esc(params.customerName)},</p>` +
-      `<p>Your official Bahia Palace entry ticket for booking <strong>${esc(params.reference)}</strong> is ready.</p>` +
-      (params.qrCode ? `<p>Ticket code: <strong>${esc(params.qrCode)}</strong></p>` : '') +
-      (params.bookingUrl ? `<p><a href="${esc(params.bookingUrl)}">View your ticket</a></p>` : '') +
-      `<p>Show it at the entrance. Enjoy your visit!</p>`,
+    subject: `Your Bahia Palace entry ticket — ${params.reference}`,
+    html: buildTicketHtml(params),
   });
+}
+
+function buildTicketHtml(p: TicketDeliveryEmailParams): string {
+  // One code per line. A party of three gets three, and running them together
+  // on one line is how somebody shows the same code twice at the gate.
+  const codes = (p.qrCode ?? '')
+    .split(/[,•\n]/)
+    .map((c) => c.trim())
+    .filter(Boolean);
+
+  const codeBlock = codes.length
+    ? codes
+        .map(
+          (c) => `
+      <div style="margin:0 0 10px;padding:16px;background:#FFF;border:2px dashed #C4452D;border-radius:10px;text-align:center">
+        <p style="margin:0;font-family:'Courier New',monospace;font-size:21px;font-weight:bold;letter-spacing:.06em;color:#3D2817">${esc(c)}</p>
+      </div>`
+        )
+        .join('')
+    : '';
+
+  return `
+    <!DOCTYPE html>
+    <html>
+    <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/></head>
+    <body style="font-family:sans-serif;background:#FAF3E7;padding:32px 16px;margin:0">
+      <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+
+        <div style="background:#C4452D;padding:30px;text-align:center">
+          <h1 style="color:#fff;margin:0;font-size:23px">Your ticket is ready</h1>
+          <p style="color:rgba(255,255,255,0.88);margin:8px 0 0;font-size:14px">Bahia Palace · Marrakech</p>
+        </div>
+
+        <div style="padding:30px">
+          <p style="margin:0 0 6px">Hi <strong>${esc(p.customerName)}</strong>,</p>
+          <p style="margin:0 0 22px;color:#666;font-size:14px;line-height:1.55">
+            Here is your official Ministry of Culture entry ticket for booking
+            <strong>${esc(p.reference)}</strong>${p.visitDate ? `, for ${esc(p.visitDate)}` : ''}.
+          </p>
+
+          <p style="margin:0 0 10px;font-weight:bold;color:#3D2817;font-size:15px">
+            🎟️ ${codes.length > 1 ? `Your ${codes.length} entry codes` : 'Your entry code'}
+          </p>
+          ${codeBlock}
+
+          <div style="margin:20px 0 0;padding:18px;background:#FAF3E7;border-radius:10px">
+            <p style="margin:0 0 8px;font-weight:bold;color:#3D2817;font-size:14px">At the entrance</p>
+            <p style="margin:0 0 6px;color:#666;font-size:14px;line-height:1.55">
+              Show this screen at the gate — no need to print anything, and no need to visit the
+              ticket office.
+            </p>
+            <p style="margin:0;color:#666;font-size:14px;line-height:1.55">
+              ${codes.length > 1 ? 'One code admits one visitor, so keep them all on one phone or share one each. ' : ''}The
+              codes are open-dated: if your plans change you can use them on another day.
+            </p>
+          </div>
+
+          ${buildAudioGuideBlock(p.audioGuideUrls)}
+          ${buildSupportBlock(p.whatsapp ?? null)}
+
+          ${
+            p.bookingUrl
+              ? `<p style="margin:22px 0 0;text-align:center">
+                   <a href="${esc(p.bookingUrl)}" style="color:#C4452D;font-size:13px">View this booking online</a>
+                 </p>`
+              : ''
+          }
+        </div>
+
+        <div style="background:#3D2817;padding:20px;text-align:center">
+          <p style="color:#E8D5B7;margin:0;font-size:13px">© ${new Date().getFullYear()} Bahia Palace Tickets • Marrakech, Morocco</p>
+          <p style="color:rgba(232,213,183,0.7);margin:6px 0 0;font-size:11px;line-height:1.5">
+            visitbahiapalace.com is an independent booking service, operated by MarrakechLocal LLC.<br/>
+            We are not affiliated with the Moroccan Ministry of Culture.
+          </p>
+        </div>
+      </div>
+    </body>
+    </html>
+  `;
 }
 
 export async function sendContactNotification(params: ContactEmailParams): Promise<void> {
