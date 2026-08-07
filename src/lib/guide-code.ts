@@ -38,7 +38,18 @@ import { randomBytes } from 'crypto';
 const ALPHABET = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
 
 /** 16 characters of base32 is 80 bits. Guessing one is not a strategy. */
-const CODE_LENGTH = 16;
+const CODE_LENGTH = 8;
+
+/**
+ * Lengths this will still read back.
+ *
+ * New codes are eight characters. Sixteen is here because that is what this
+ * guide generated before, and refusing a code we ourselves issued — to someone
+ * standing in the palace holding the email — is the one failure that is never
+ * worth the tidiness. Generation only ever produces the short form; this list
+ * is purely about being able to honour our own past.
+ */
+const ACCEPTED_LENGTHS = [CODE_LENGTH, 16];
 
 /** Groups of four, dashed — the shape people can read back without losing place. */
 const GROUP = 4;
@@ -82,7 +93,7 @@ export function normaliseGuideCode(input: string | null | undefined): string | n
     .replace(/[IL]/g, '1')
     .replace(/O/g, '0')
     .replace(/U/g, 'V');
-  return cleaned.length === CODE_LENGTH ? cleaned : null;
+  return ACCEPTED_LENGTHS.includes(cleaned.length) ? cleaned : null;
 }
 
 /**

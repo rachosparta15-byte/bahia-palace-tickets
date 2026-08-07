@@ -122,6 +122,60 @@ function fail(error: RedeemError, status: number, cors: Record<string, string>) 
   return NextResponse.json({ ok: false, error }, { status, headers: cors });
 }
 
+/**
+ * Failed-attempt accounting, kept in the same database as everything else.
+ *
+ * Written with raw SQL and CREATE TABLE IF NOT EXISTS rather than a Prisma
+ * model, because this project deploys by pushing schema and a throttle that
+ * only starts working after the next migration is not a throttle.
+ */
+const FAILURE_WINDOW_MINUTES = 10;
+const MAX_FAILURES = 20;
+
+async function attemptsTable() {
+  await prisma.$executeRawUnsafe(
+    `CREATE TABLE IF NOT EXISTS GuideAttempt (
+       id INTEGER PRIMARY KEY AUTOINCREMENT,
+       ip TEXT NOT NULL,
+       at TEXT NOT NULL
+     )`,
+  );
+}
+
+async function tooManyFailures(ip: string): Promise<boolean> {
+  try {
+    await attemptsTable();
+    const since = new Date(Date.now() - FAILURE_WINDOW_MINUTES * 60_000).toISOString();
+    const rows = await prisma.$queryRawUnsafe<{ n: number | bigint }[]>(
+      `SELECT COUNT(*) AS n FROM GuideAttempt WHERE ip = ? AND at > ?`,
+      ip,
+      since,
+    );
+    return Number(rows?.[0]?.n ?? 0) >= MAX_FAILURES;
+  } catch (error) {
+    // A limiter that cannot read its own table must not become the reason a
+    // paying visitor is refused. Log it and let the code itself decide.
+    console.error('[guide/redeem] rate-limit check failed; allowing', error);
+    return false;
+  }
+}
+
+async function recordFailure(ip: string): Promise<void> {
+  await attemptsTable();
+  const now = new Date();
+  await prisma.$executeRawUnsafe(
+    `INSERT INTO GuideAttempt (ip, at) VALUES (?, ?)`,
+    ip,
+    now.toISOString(),
+  );
+  // The table is only ever read over a ten-minute window; older rows are dead
+  // weight in a database we pay for.
+  await prisma.$executeRawUnsafe(
+    `DELETE FROM GuideAttempt WHERE at < ?`,
+    new Date(now.getTime() - 24 * 60 * 60_000).toISOString(),
+  );
+}
+
 export async function POST(req: NextRequest) {
   const cors = corsHeaders(req.headers.get('origin'));
 
