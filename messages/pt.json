@@ -218,16 +218,6 @@
         }
       }
     },
-    "audioPreview": {
-      "title": "Ouça o palácio antes de o percorrer",
-      "subtitle": "Uma pequena amostra do capítulo do grande pátio, no audioguia.",
-      "unavailable": "Pré-escuta disponível em breve.",
-      "chapters": "Capítulos"
-    },
-    "testimonials": {
-      "title": "O que dizem os visitantes",
-      "placeholderNotice": "Opiniões de exemplo, apenas para efeitos de maquetagem — não são opiniões reais de clientes."
-    },
     "faq": {
       "title": "Perguntas frequentes",
       "items": {

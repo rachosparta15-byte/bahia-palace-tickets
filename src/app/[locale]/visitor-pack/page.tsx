@@ -12,7 +12,6 @@ import { TestModeBanner } from '@/components/visitor-pack/TestModeBanner';
 import { ValuePoints } from '@/components/visitor-pack/ValuePoints';
 import { VisitorPackCheckoutForm } from '@/components/visitor-pack/VisitorPackCheckoutForm';
 import { CheckoutDisclosure } from '@/components/visitor-pack/CheckoutDisclosure';
-import { AudioGuidePreview } from '@/components/visitor-pack/AudioGuidePreview';
 import {
   VISITOR_PACK_PRICE_EUR_CENTS,
   OFFICIAL_DOOR_PRICE_MAD,
@@ -323,8 +322,15 @@ export default async function VisitorPackPage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── Audio guide preview ───────────────────────────────────────── */}
-      <AudioGuidePreview locale={locale} />
+      {/* ── Audio guide preview ────────────────────────────────────────
+          Removed. The component's own copy read "Audio preview coming soon"
+          — a "coming soon" sitting directly on the product being sold, in the
+          section meant to prove it exists. Saying nothing about the preview is
+          better than announcing its absence next to the price; the guide is
+          described in full above and is 17 real recordings, not a promise.
+
+          To bring it back, mount <AudioGuidePreview /> again — but only with
+          an actual clip playing. */}
 
       {/* ── Checkout ──────────────────────────────────────────────────── */}
       <section className="py-20 bg-[#1C1108]">
@@ -339,14 +345,18 @@ export default async function VisitorPackPage({ params }: Props) {
       </section>
 
       {/* ── Testimonials ──────────────────────────────────────────────
-          Not mounted. <Testimonials> still holds only placeholder copy, and it
-          rendered "No real customer has said this" immediately below the pay
-          button — an anti-endorsement in the one slot where social proof does
-          the most work. Absence beats that, and inventing reviews is banned
-          outright (UCPD Annex I; FTC consumer-review rule).
+          Deleted, component and copy, in every locale.
 
-          Re-mount the moment real reviews exist: this is the single largest
-          conversion lever still unused on this page. */}
+          It was never mounted, but it shipped: the invented reviews travelled
+          in the client bundle of a page that takes money, one import away from
+          being live and one deleted notice away from reading as genuine.
+          Fabricated reviews are banned outright — UCPD Annex I in the EU/UK,
+          the FTC consumer-review rule in the US — so the safe state is not a
+          well-commented placeholder, it is nothing at all.
+
+          When real reviews exist, write a component that renders only what a
+          customer actually said. Social proof is the largest conversion lever
+          left on this page, and it has to be earned before it can be used. */}
 
       {/* ── FAQ ───────────────────────────────────────────────────────── */}
       <section className="py-20 bg-[#251A0F]">

@@ -702,16 +702,6 @@
         }
       }
     },
-    "audioPreview": {
-      "title": "Hear the palace before you walk it",
-      "subtitle": "A short sample from the Grand Courtyard chapter of the audio guide.",
-      "unavailable": "Audio preview coming soon.",
-      "chapters": "Chapters"
-    },
-    "testimonials": {
-      "title": "What visitors say",
-      "placeholderNotice": "Sample reviews shown for layout purposes — not real customer reviews."
-    },
     "faq": {
       "title": "Frequently asked questions",
       "items": {

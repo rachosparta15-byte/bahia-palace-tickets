@@ -1,3 +1,4 @@
+import { VISITOR_PACK_PRICE_EUR_CENTS, formatEURAmount } from '@/config/pricing';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { ZelligePattern, OrnamentDivider } from '@/components/ui/ZelligePattern';
@@ -173,7 +174,7 @@ export default function StyleGuidePage() {
                 >
                   {t}
                 </h3>
-                <p className="text-[#5C3D20] text-sm">From €13.99 per person</p>
+                <p className="text-[#5C3D20] text-sm">From €{formatEURAmount(VISITOR_PACK_PRICE_EUR_CENTS)} per person</p>
               </div>
             ))}
           </div>

@@ -145,8 +145,13 @@ function buildTicketHtml(p: TicketDeliveryEmailParams): string {
 
         <div style="background:#3D2817;padding:20px;text-align:center">
           <p style="color:#E8D5B7;margin:0;font-size:13px">© ${new Date().getFullYear()} Bahia Palace Tickets • Marrakech, Morocco</p>
-          <p style="color:rgba(232,213,183,0.7);margin:6px 0 0;font-size:11px;line-height:1.5">
-            visitbahiapalace.com is an independent booking service, operated by MarrakechLocal LLC.<br/>
+          <p style="color:#C9B48F;margin:8px 0 0;font-size:12px;line-height:1.6">
+            <!-- An explicit anchor with an explicit colour: Gmail auto-links a bare
+                 domain and paints it its default blue, which on this brown turned the
+                 one disclaimer we are required to show into an unreadable smudge.
+                 11px at 70% opacity was not helping either. -->
+            <a href="https://visitbahiapalace.com" style="color:#E8D5B7;text-decoration:none">visitbahiapalace.com</a>
+            is an independent booking service, operated by MarrakechLocal&nbsp;LLC.<br/>
             We are not affiliated with the Moroccan Ministry of Culture.
           </p>
         </div>
@@ -196,35 +201,53 @@ function buildAudioGuideBlock(urls: readonly string[] | null | undefined): strin
   if (!urls || urls.length === 0) return '';
 
   const many = urls.length > 1;
+
+  /*
+   * One row per person, every row identical.
+   *
+   * These were inline-block buttons in separate paragraphs, so each sized
+   * itself to its own label — "Open guide 1 of 4" is wider than "Open guide 4
+   * of 4" is wider than nothing — and four things that plainly belong together
+   * came out ragged and adrift, looking like four accidents rather than four
+   * seats. A table with fixed widths is the only layout email clients honour
+   * consistently, and equal rows are what make the set read as a set.
+   */
   const buttons = urls
     .map(
       (url, i) => `
-      <p style="margin:0 0 10px">
-        <a href="${esc(url)}" style="display:inline-block;background:#C4452D;color:#fff;text-decoration:none;font-weight:bold;font-size:14px;padding:12px 22px;border-radius:8px">${
-          many ? `Open guide ${i + 1} of ${urls.length}` : 'Open my audio guide'
-        }</a>
-      </p>`
+      <tr>
+        <td style="padding:0 0 8px">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#FFFFFF;border:1px solid #E8D5B7;border-radius:8px">
+            <tr>
+              <td style="padding:11px 14px;font-size:14px;color:#3D2817">${
+                many ? `Guest ${i + 1}` : 'Your guide'
+              }</td>
+              <td align="right" style="padding:8px 10px 8px 0">
+                <a href="${esc(url)}" style="display:inline-block;background:#C4452D;color:#fff;text-decoration:none;font-weight:bold;font-size:13px;padding:9px 18px;border-radius:6px;white-space:nowrap">Open guide</a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>`
     )
     .join('');
 
   return `
     <div style="margin:28px 0 0;padding:20px;background:#FAF3E7;border-radius:10px;border:1px solid #E8D5B7">
-      <p style="margin:0 0 6px;font-weight:bold;color:#3D2817;font-size:15px">🎧 Your audio guide</p>
-      <p style="margin:0 0 14px;color:#666;font-size:14px;line-height:1.5">
+      <p style="margin:0 0 6px;font-weight:bold;color:#3D2817;font-size:16px">Your audio guide</p>
+      <p style="margin:0 0 16px;color:#6B5B47;font-size:14px;line-height:1.55">
         17 stops, 5 languages, two narrators.${
           many
-            ? ` You have ${urls.length} links, one per person. <strong>Give each person their own</strong> — a link belongs to the first phone that opens it, so two people cannot share one.`
+            ? ` One link each — <strong style="color:#3D2817">give every person their own</strong>. A link belongs to the first phone that opens it, so two people cannot share one.`
             : ' This link is yours — it unlocks the guide on your phone.'
         }
       </p>
-      ${buttons}
-      <p style="margin:14px 0 8px;color:#666;font-size:13px;line-height:1.6">
-        <strong>Open it the morning of your visit</strong>, on wifi. It downloads once (about 47&nbsp;MB),
-        then works with no signal at all inside the palace.
-      </p>
-      <p style="margin:0;color:#666;font-size:13px;line-height:1.6">
-        When it asks, choose <strong>Add to Home Screen</strong> — that stops your phone clearing the
-        downloaded audio. Keep this email: the same link re-opens on the same phone at any time.
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">${buttons}</table>
+      <p style="margin:16px 0 0;color:#6B5B47;font-size:13px;line-height:1.65">
+        <strong style="color:#3D2817">Open it the morning of your visit</strong>, on wifi. It downloads once
+        (about 47&nbsp;MB), then works with no signal at all inside the palace. When it asks, choose
+        <strong style="color:#3D2817">Add to Home Screen</strong> — that stops your phone clearing the
+        audio. Keep this email: the same link re-opens on the same phone at any time.
       </p>
     </div>
   `;
