@@ -183,15 +183,21 @@ export function DatePicker({
     );
   }, [locale]);
 
+  /**
+   * DD/MM/YYYY, written by hand rather than by Intl.
+   *
+   * Intl with numeric parts still follows the locale's order, so an English
+   * visitor would be shown 08/13/2026 and a French one 13/08/2026 for the same
+   * day — and 03/08 is a real date in both orders, read two different ways.
+   * On the one field where a misread costs the customer a non-refundable
+   * ticket for the wrong day, the order is fixed and the same for everyone.
+   */
   const selectedLabel = useMemo(() => {
     if (!selected) return null;
-    return new Intl.DateTimeFormat(locale, {
-      weekday: 'long',
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric',
-    }).format(selected);
-  }, [locale, selected]);
+    const dd = String(selected.getDate()).padStart(2, '0');
+    const mm = String(selected.getMonth() + 1).padStart(2, '0');
+    return `${dd}/${mm}/${selected.getFullYear()}`;
+  }, [selected]);
 
   const isDisabled = (d: Date) => d < minDate;
   const isSameDay = (a: Date, b: Date) =>

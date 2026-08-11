@@ -29,6 +29,9 @@ export interface CheckoutParams {
   customerEmail: string;
   locale: string;
   quantity?: number;
+  /** Split name, so PayPal's guest form opens already filled in. */
+  customerFirstName?: string;
+  customerLastName?: string;
 }
 
 const SANDBOX = 'https://api-m.sandbox.paypal.com';
@@ -102,6 +105,26 @@ export async function createCheckoutSession(params: CheckoutParams): Promise<Che
           amount: { currency_code: params.currency.toUpperCase(), value: total },
         },
       ],
+      /*
+       * The buyer's details, carried over from our own form.
+       *
+       * They have already typed their name and email once. Without this,
+       * PayPal's guest card form opens with empty First name, Last name and
+       * Email boxes and asks for all three again — three fields of friction at
+       * the last step, and a second chance to enter an email that differs from
+       * the one their ticket is about to be sent to.
+       */
+      payer: {
+        email_address: params.customerEmail,
+        ...(params.customerFirstName || params.customerLastName
+          ? {
+              name: {
+                given_name: params.customerFirstName ?? '',
+                surname: params.customerLastName ?? '',
+              },
+            }
+          : {}),
+      },
       application_context: {
         brand_name: 'Visit Bahia Palace',
         locale: params.locale,

@@ -157,13 +157,11 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
 
   // Echo the chosen date back in the summary, in the visitor's own language.
   const watchedDate = useWatch({ control, name: 'date' });
+  // DD/MM/YYYY, matching the picker exactly. The summary and the field must
+  // never show the same day in two formats — that is the moment someone
+  // decides they picked the wrong one and starts over.
   const formattedDate = watchedDate
-    ? new Date(`${watchedDate}T00:00:00`).toLocaleDateString(locale, {
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-      })
+    ? `${watchedDate.slice(8, 10)}/${watchedDate.slice(5, 7)}/${watchedDate.slice(0, 4)}`
     : '';
   // Integer cents throughout, formatted only at the point of display — the
   // same arithmetic the server does, so the two totals cannot disagree.

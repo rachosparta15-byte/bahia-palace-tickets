@@ -454,8 +454,27 @@ export function PayPalCheckout({
          * `min-h` reserves room before the iframe arrives, so the page does
          * not jump under the pointer at the moment someone reaches to click.
          */}
+        {/*
+         * A light panel under PayPal's own UI, on purpose.
+         *
+         * Everything PayPal renders here lives in their iframe: the white card
+         * inputs, and the grey "You acknowledge the terms… No PayPal account
+         * required" note beneath them. None of it can be restyled from this
+         * document — that is what the iframe is for, and it is why the card
+         * number never reaches our servers.
+         *
+         * On the site's dark brown, their light-mode grey text was unreadable
+         * and the white boxes looked pasted on. Giving them the cream they were
+         * designed for fixes both, and reads as a deliberate payment panel
+         * rather than a broken one. It is the same cream as the confirmation
+         * email, so it is not a colour from nowhere.
+         *
+         * Restyling the fields to match the dark form needs Advanced (Expanded)
+         * Checkout, where the fields are ours and the `style` object above
+         * applies. Until then this is the honest best.
+         */}
         <div
-          className={`relative isolate z-10 min-h-[100px] space-y-2.5 ${
+          className={`relative isolate z-10 min-h-[100px] space-y-2.5 rounded-xl bg-[#FAF3E7] p-4 ${
             busy ? 'pointer-events-none opacity-50' : ''
           }`}
         >
