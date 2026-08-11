@@ -40,19 +40,23 @@ if (!_wa) {
   );
 }
 
-// The audio guide will not open without a token this secret signs. A missing
-// value is silent at build time but very loud at 9am in Marrakech.
-const _gts = process.env.GUIDE_TOKEN_SECRET ?? '';
-if (_gts.trim().length < 24) {
-  console.warn(
-    '\x1b[33m⚠️  GUIDE_TOKEN_SECRET is missing or shorter than 24 characters.\x1b[0m',
-    '\n   Audio-guide access tokens cannot be signed: paying customers will see',
-    '\n   "access link being prepared" instead of a link, and /api/guide/redeem',
-    '\n   will answer 503 for every device.',
-    '\n   Generate with: openssl rand -base64 32',
-    '\n   Then set it in Vercel → Settings → Environment Variables.',
-  );
-}
+// GUIDE_TOKEN_SECRET was checked here and no longer is.
+//
+// The audio guide used to open from a URL signed by that secret. It now opens
+// from a per-seat access code issued by `issueGuideCodes()` at confirmation and
+// mailed as guide.visitbahiapalace.com/?k=CODE — no signing key involved, on
+// this side or the guide's. src/lib/guide-token.ts is the remains of the old
+// scheme and has no importers left.
+//
+// The check stayed behind and fired on every build and every dev start, saying
+// paying customers would see "access link being prepared" and that
+// /api/guide/redeem would answer 503 for every device. That route does exist
+// here, but it redeems access CODES via lib/guide-access.ts and never reads
+// this secret, so the warning described a failure that could not happen. It was
+// the loudest thing in the launch-day log, and a warning that cries wolf is
+// worse than no warning: it trains you to scroll past the one that matters.
+//
+// If a signed-token guide ever comes back, bring the check back with it.
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

@@ -3,6 +3,7 @@
 // Set EMAIL_PROVIDER=resend and RESEND_API_KEY in .env.
 
 import type { BookingEmailParams, RefundEmailParams, ContactEmailParams, TicketDeliveryEmailParams } from './mock';
+import { crossSellSites } from '@/config/network-sites';
 
 const FROM = process.env.EMAIL_FROM ?? 'tickets@visitbahiapalace.com';
 
@@ -300,6 +301,58 @@ function buildSupportBlock(whatsapp: string | null): string {
   `;
 }
 
+/**
+ * The other monuments in the network, for the order-confirmation email.
+ *
+ * WHERE THIS APPEARS: in the confirmation sent when payment goes through, and
+ * nowhere else. Deliberately NOT in the ticket-delivery email — that one gets
+ * opened at the gate with a queue behind you, and the only thing that may sit
+ * near the QR code is the QR code.
+ *
+ * WHY IT CHECKS `ticketsOpen`: three of these sites are live as visitor guides
+ * but cannot take payment yet. "Book now" on a site that answers "Booking opens
+ * soon" is a broken promise made by an email the customer just paid for, so a
+ * closed site is offered as a guide and shows no price at all.
+ *
+ * Tables and inline styles, not flexbox or grid: Outlook renders neither, and
+ * an email that collapses into one column is still readable, whereas one that
+ * overlaps is not. Stacks naturally on a phone because each site is its own row.
+ */
+function buildNetworkBlock(): string {
+  const sites = crossSellSites();
+  if (sites.length === 0) return '';
+
+  const rows = sites
+    .map((s) => {
+      const action =
+        s.ticketsOpen && s.priceEUR !== null
+          ? `Book from &euro;${s.priceEUR.toFixed(2)}`
+          : 'Visitor guide';
+      return `
+        <tr>
+          <td style="padding:12px 0;border-top:1px solid #EFE4D2">
+            <a href="${esc(s.url)}" style="color:#C4452D;font-weight:bold;font-size:14px;text-decoration:none">${esc(s.name)}</a>
+            <span style="color:#999;font-size:12px"> &middot; ${esc(s.location)}</span>
+            <p style="margin:4px 0 0;color:#666;font-size:13px;line-height:1.5">${esc(s.blurb)}</p>
+            <p style="margin:6px 0 0;color:#A8781F;font-size:12px;font-weight:bold">${action}</p>
+          </td>
+        </tr>`;
+    })
+    .join('');
+
+  return `
+    <div style="margin:24px 0 0;padding:18px;background:#FAF3E7;border-radius:10px">
+      <p style="margin:0 0 4px;font-weight:bold;color:#3D2817;font-size:14px">While you are in Morocco</p>
+      <p style="margin:0;color:#666;font-size:13px;line-height:1.55">
+        Three more monuments we run visitor sites for. Tickets are not on sale on
+        these yet &mdash; they are guides to opening hours, getting there and what to see.
+      </p>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:8px">
+        ${rows}
+      </table>
+    </div>`;
+}
+
 function buildBookingHtml(p: BookingEmailParams): string {
   return `
     <!DOCTYPE html>
@@ -324,6 +377,7 @@ function buildBookingHtml(p: BookingEmailParams): string {
           <p style="color:#666;font-size:14px">Show this email at the entrance or use your QR code.</p>
           ${buildAudioGuideBlock(p.audioGuideUrls)}
           ${buildSupportBlock(p.whatsapp ?? null)}
+          ${buildNetworkBlock()}
         </div>
         <div style="background:#3D2817;padding:20px;text-align:center">
           <p style="color:#E8D5B7;margin:0;font-size:13px">© ${new Date().getFullYear()} Bahia Palace Tickets • Marrakech, Morocco</p>

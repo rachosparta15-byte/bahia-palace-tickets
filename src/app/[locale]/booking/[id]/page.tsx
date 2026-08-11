@@ -13,6 +13,7 @@ import { issueGuideCodes } from '@/lib/guide-access';
 import { buildGuideCodeUrl } from '@/lib/guide-code';
 import { VisitorPackConfirmation } from '@/components/visitor-pack/VisitorPackConfirmation';
 import { CancellationNotice } from '@/components/booking/CancellationNotice';
+import { NetworkCrossSell } from '@/components/booking/NetworkCrossSell';
 import { CheckCircle2, Calendar, Users, Mail, Download, ArrowLeft } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -206,7 +207,16 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs text-[#C4A882] uppercase tracking-wide mb-1">Total Paid</p>
+                  {/* "Total Paid" only when it has been.
+                      This page used to be reached only after a successful
+                      payment. PayPal's cancel_url now lands the customer here
+                      too, on a booking where nothing was charged — and the
+                      label told them they had paid €13.99. Someone who
+                      abandoned at PayPal would leave believing they were
+                      charged, and either dispute it or turn up at the gate. */}
+                  <p className="text-xs text-[#C4A882] uppercase tracking-wide mb-1">
+                    {isConfirmed ? 'Total Paid' : 'Total Due'}
+                  </p>
                   <p className="font-bold text-[#C4452D] text-xl" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
                     {formatTotal(booking.totalAmount, booking.currency)}
                   </p>
@@ -231,13 +241,19 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
 
             {/* Actions */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href={qrDataUrl}
-                download={`bahia-palace-${booking.reference}.png`}
-                className="flex-1 flex items-center justify-center gap-2 border border-[rgba(232,163,61,0.25)] text-[#F5E8CC] font-semibold text-sm px-5 py-3 rounded-xl hover:border-[#C4452D] hover:text-[#C4452D] transition-colors"
-              >
-                <Download size={15} /> Save QR Code
-              </a>
+              {/* No QR download until the booking is paid. Offering it on an
+                  unpaid booking hands over something that looks like a ticket
+                  and is not one — the holder would be refused at the gate,
+                  having been given it by us. */}
+              {isConfirmed && (
+                <a
+                  href={qrDataUrl}
+                  download={`bahia-palace-${booking.reference}.png`}
+                  className="flex-1 flex items-center justify-center gap-2 border border-[rgba(232,163,61,0.25)] text-[#F5E8CC] font-semibold text-sm px-5 py-3 rounded-xl hover:border-[#C4452D] hover:text-[#C4452D] transition-colors"
+                >
+                  <Download size={15} /> Save QR Code
+                </a>
+              )}
               <Link
                 href="/"
                 className="flex-1 flex items-center justify-center gap-2 bg-[#C4452D] text-white font-semibold text-sm px-5 py-3 rounded-xl hover:bg-[#A33824] transition-colors"
@@ -272,6 +288,12 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
           status={booking.status}
           qrDelivered={qrIsDelivered(booking)}
         />
+
+        {/* The rest of the network — last on the page, and only once the
+            booking is actually paid. On a pending or cancelled booking the
+            customer's question is "did my payment go through?", and answering
+            it with three adverts for other monuments would be a poor reply. */}
+        {isConfirmed && <NetworkCrossSell className="mt-6" />}
       </div>
     </div>
   );

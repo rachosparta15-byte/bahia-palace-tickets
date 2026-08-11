@@ -30,6 +30,6 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": [
-    "scripts/simulate-purchase.mts","node_modules"]
+  "_comment_exclude": "The whole scripts/ directory, not one file at a time. These are node --experimental-strip-types runners: they must import with explicit .ts extensions, which this config forbids and which cannot be enabled without allowImportingTsExtensions. Listing them individually meant every new script broke `next build` — the build type-checks the project, so a helper that never ships stopped the site from deploying. Excluded as a directory so adding a script cannot do that again.",
+  "exclude": ["scripts", "node_modules"]
 }

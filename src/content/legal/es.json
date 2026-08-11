@@ -65,6 +65,7 @@
         "id": "delivery",
         "heading": "6. Entrega",
         "paragraphs": [
+          "Las visitas deben reservarse con al menos dos días completos de antelación; no es posible seleccionar fechas anteriores. No mantenemos stock de entradas — cada una se obtiene del monumento para ti una vez confirmado tu pago — y dos días es el plazo más corto en el que podemos hacerlo de forma fiable, incluso en fin de semana o festivo. Si no pudiéramos conseguir tu entrada, cancelamos la reserva y te reembolsamos íntegramente.",
           "Tras el pago obtenemos su entrada y le enviamos un código QR junto con un enlace a su audioguía digital, por correo electrónico y, si nos ha facilitado un número, por WhatsApp. La entrega se realiza antes de la fecha de su visita.",
           "La entrega del código QR es el momento en que se ejecuta nuestro servicio. Es también el momento en que finaliza su derecho de cancelación: véase la Política de reembolso y cancelación.",
           "Es su responsabilidad facilitarnos una dirección de correo válida y revisar su carpeta de spam. Si 48 horas antes de su visita no ha recibido el código QR, contacte de inmediato en support@marrakechlocal.com o por WhatsApp en +212 607-223008; se lo reenviaremos."
@@ -326,7 +327,7 @@
         "id": "who-processes",
         "heading": "1. Quién procesa su pago",
         "paragraphs": [
-          "Los pagos con tarjeta los procesa Stripe. Cuando se ofrece y usted lo elige, los pagos por PayPal los procesa PayPal. Ambos son entidades de pago reguladas y ambos figuran como encargados del tratamiento en nuestra Política de privacidad.",
+          "Todos los pagos de este sitio son procesados por PayPal (Europe) S.à r.l. et Cie, S.C.A., entidad de crédito autorizada en Luxemburgo y supervisada por la Commission de Surveillance du Secteur Financier. Puedes pagar con saldo de PayPal o con tarjeta de débito o crédito a través de PayPal; no hace falta una cuenta de PayPal para pagar con tarjeta. PayPal figura como encargado del tratamiento en nuestra Política de Privacidad.",
           "Usted paga en el sitio en el que ya se encuentra. No le redirigimos a otra marca ni a otro dominio para cobrarle, porque acabar en un sitio desconocido justo en el momento de pagar es precisamente cuando la gente abandona una reserva — y con razón."
         ]
       },
@@ -334,8 +335,8 @@
         "id": "card-data",
         "heading": "2. Lo que nunca vemos",
         "paragraphs": [
-          "El número de su tarjeta, su fecha de caducidad y su código de seguridad se introducen directamente en un formulario alojado por Stripe y se transmiten a Stripe. No pasan por nuestros servidores y nunca se almacenan en nuestros sistemas. No podríamos recuperar el número de su tarjeta aunque nos lo pidiera.",
-          "Stripe cuenta con la certificación PCI DSS de nivel 1, el nivel más alto definido por las redes de tarjetas. Nuestra integración está diseñada para que el entorno de datos de tarjeta permanezca íntegramente de su lado.",
+          "Se te redirige al sitio de PayPal para pagar. El número de tu tarjeta, su fecha de caducidad y su código de seguridad se introducen allí, en paypal.com, y se transmiten a PayPal. No pasan por nuestros servidores ni se almacenan nunca en nuestros sistemas. No podríamos recuperar el número de tu tarjeta aunque nos lo pidieras.",
+          "PayPal está certificado en PCI DSS nivel 1, el nivel más alto definido por las redes de tarjetas. Como todo el paso de pago ocurre en su sitio, ningún dato de tarjeta entra en nuestro entorno.",
           "Lo que sí conservamos figura en la Política de privacidad: su nombre, correo electrónico, teléfono si lo facilitó, el monumento y la fecha reservados, el importe y una referencia de pago del proveedor."
         ]
       },
@@ -343,8 +344,8 @@
         "id": "statement",
         "heading": "3. Qué aparece en su extracto",
         "paragraphs": [
-          "El cargo se muestra con un identificador que señala el sitio en el que reservó, de modo que la línea de su extracto coincida con la marca a la que recuerda haber comprado. El identificador exacto de su reserva se le muestra antes de pagar y se repite en su correo de confirmación.",
-          "Es intencionado. La mayoría de las disputas de tarjeta no son fraude: son personas que no reconocen una línea en un extracto semanas después. Si no ubica un cargo nuestro, escriba a support@marrakechlocal.com con el importe y la fecha y se lo identificaremos el mismo día."
+          "Como el cobro se realiza a través de PayPal, la línea de tu extracto empieza por PAYPAL seguido de nuestro nombre comercial. Si tu banco solo muestra la parte de PayPal, el detalle completo — nuestro nombre, el importe y la fecha — está en la actividad de tu cuenta de PayPal y en el recibo que PayPal te envía por correo.",
+          "Esto importa más de lo que parece. La mayoría de las disputas de tarjeta no son fraude: son personas que no reconocen una línea del extracto semanas después. Si no logras identificar un cargo nuestro, escribe a support@marrakechlocal.com con el importe y la fecha y lo identificaremos el mismo día."
         ]
       },
       {
@@ -367,7 +368,7 @@
         "id": "fraud",
         "heading": "6. Prevención del fraude",
         "paragraphs": [
-          "Stripe y PayPal realizan controles antifraude sobre los pagos efectuados a través de este sitio, lo que implica tratar información técnica sobre el dispositivo y la operación. Es necesario para cobrar con seguridad y se basa en nuestro interés legítimo en prevenir el fraude; se describe en nuestras Políticas de privacidad y de cookies.",
+          "PayPal realiza controles antifraude sobre los pagos efectuados a través de este sitio, lo que implica tratar información técnica sobre el dispositivo y la transacción. Es necesario para cobrar con seguridad y se basa en nuestro interés legítimo en prevenir el fraude; se describe en nuestras Políticas de Privacidad y de Cookies.",
           "Podemos rechazar una reserva, o cancelarla y reembolsarla, cuando un pago se marque como de alto riesgo. Si lo hacemos, reembolsamos íntegramente al medio de pago original."
         ]
       },
@@ -376,7 +377,7 @@
         "heading": "7. Disputas y retrocesos de cargo",
         "paragraphs": [
           "Si algo va mal con una reserva, contáctenos antes de acudir a su banco. Cuando procede un reembolso lo abonamos con rapidez, y un retroceso de cargo tarda mucho más en resolverse que un correo electrónico.",
-          "Cuando una reserva se entregó según lo descrito y nuestras condiciones se aceptaron en la compra, impugnaremos el retroceso y facilitaremos al proveedor el registro exacto de lo que se mostró y se aceptó en el momento de la compra, incluida la comparación de precios y la política de reembolso tal como aparecían en pantalla."
+          "Cuando una reserva se ha entregado según lo descrito y nuestras condiciones se aceptaron al pagar, impugnaremos la disputa y facilitaremos a PayPal el registro exacto de lo que se mostró y se aceptó en el momento de la compra, incluidas la comparación de precios y la política de reembolso tal como aparecían en pantalla. También puedes abrir un caso en el Centro de Resoluciones de PayPal; contactarnos primero suele ser más rápido."
         ]
       }
     ]
@@ -442,9 +443,9 @@
             ],
             [
               "Datos de pago",
-              "Cobrar. Los datos de la tarjeta se introducen directamente en Stripe y nunca llegan a nuestros servidores",
+              "Cobrar el pago. El pago se completa en el sitio de PayPal y los datos de la tarjeta nunca llegan a nuestros servidores",
               "Contrato",
-              "Conservados por Stripe conforme a su propia política"
+              "Conservados por PayPal conforme a su propia política"
             ],
             [
               "Datos de analítica (páginas vistas, ubicación aproximada, dispositivo)",
@@ -487,7 +488,7 @@
           "No vendemos datos personales y nunca lo haremos. Solo los compartimos con los proveedores necesarios para operar el servicio, cada uno de los cuales los trata siguiendo nuestras instrucciones y bajo contrato escrito:"
         ],
         "list": [
-          "Stripe, Inc. — payment processing, fraud prevention, chargeback handling (United States / Ireland; basis: Contract; Standard Contractual Clauses for transfers); PayPal (Europe) S.à r.l. et Cie, S.C.A. — optional alternative payment method (Luxembourg / United States; basis: Contract; Standard Contractual Clauses for transfers); Vercel Inc. — website hosting, CDN, server logs (United States (edge nodes worldwide); basis: Contract; Standard Contractual Clauses for transfers); Resend, Inc. — transactional email — order confirmations and ticket delivery (United States; basis: Contract; Standard Contractual Clauses for transfers); WhatsApp Ireland Ltd (Meta) — optional ticket delivery and customer support messaging (Ireland / United States; basis: Contract; Standard Contractual Clauses for transfers); Google Ireland Ltd — analytics and, once enabled, advertising — consent-gated (Ireland / United States; basis: Consent; Standard Contractual Clauses for transfers)",
+          "PayPal (Europe) S.à r.l. et Cie, S.C.A. — procesamiento de pagos, prevención del fraude, gestión de disputas (Luxemburgo / Estados Unidos; base: Contrato; Cláusulas Contractuales Tipo para las transferencias); Vercel Inc. — website hosting, CDN, server logs (United States (edge nodes worldwide); basis: Contract; Standard Contractual Clauses for transfers); Resend, Inc. — transactional email — order confirmations and ticket delivery (United States; basis: Contract; Standard Contractual Clauses for transfers); WhatsApp Ireland Ltd (Meta) — optional ticket delivery and customer support messaging (Ireland / United States; basis: Contract; Standard Contractual Clauses for transfers); Google Ireland Ltd — analytics and, once enabled, advertising — consent-gated (Ireland / United States; basis: Consent; Standard Contractual Clauses for transfers)",
           "El canal de venta oficial, que recibe los datos de visitante necesarios para emitir su entrada.",
           "Nuestros asesores profesionales, y las autoridades públicas cuando la ley nos obligue a comunicarlos."
         ]
@@ -528,7 +529,7 @@
         "id": "security",
         "heading": "8. Seguridad",
         "paragraphs": [
-          "Todo el tráfico va cifrado en tránsito. Los datos de la tarjeta se introducen directamente en los campos alojados por Stripe y nunca se transmiten a nuestros servidores ni se almacenan en ellos: no conservamos ningún número de tarjeta. El acceso a los datos de pedido se limita a las personas que lo necesitan para prestar soporte.",
+          "Todo el tráfico se cifra en tránsito. El pago se completa en el sitio de PayPal, por lo que los datos de tarjeta nunca se transmiten ni se almacenan en nuestros servidores y no conservamos ningún número de tarjeta. El acceso a los datos de pedido se limita a las personas que lo necesitan para dar soporte.",
           "Si se produce una violación de seguridad que pueda entrañar un riesgo para sus derechos, lo notificaremos a la autoridad de control competente en un plazo de 72 horas y, cuando el riesgo sea alto, se lo comunicaremos directamente."
         ]
       },
@@ -569,7 +570,8 @@
         "id": "necessary",
         "heading": "2. Cookies estrictamente necesarias",
         "paragraphs": [
-          "Son imprescindibles para que el sitio y el pago funcionen, y se instalan sin consentimiento porque el servicio no puede prestarse sin ellas."
+          "Son imprescindibles para que el sitio y el pago funcionen, y se instalan sin consentimiento porque el servicio no puede prestarse sin ellas.",
+          "No instalamos cookies de pago. Como pagas en paypal.com y no aquí, las cookies que PayPal utilice para asegurar ese pago se instalan en su dominio y se rigen por la política de cookies de PayPal, no por esta."
         ],
         "table": {
           "head": [
@@ -590,12 +592,6 @@
               "visitbahiapalace.com",
               "Guarda sus decisiones sobre cookies y cuándo las tomó",
               "6 meses"
-            ],
-            [
-              "__stripe_mid, __stripe_sid",
-              "Stripe",
-              "Prevención del fraude en el formulario de pago. Necesarias para cobrar de forma segura",
-              "1 año / 30 minutos"
             ]
           ]
         }
@@ -688,7 +684,7 @@
         "list": [
           "Las audioguías todavía no tienen transcripción completa en todos los idiomas en que hay audio. Cuando existe, se publica junto al reproductor; cuando no, la guía se ofrece en texto en lugar de audio mudo.",
           "Algunas fotografías llevan texto alternativo redactado solo a partir de metadatos verificados. Si no pudimos confirmar qué muestra una imagen, el texto alternativo describe lo visible en lugar de nombrar el edificio.",
-          "Los campos de pago de terceros los muestra Stripe y PayPal dentro de sus propios marcos. No tenemos control sobre su marcado interno y dependemos de su propia conformidad.",
+          "El paso de pago es el propio sitio de PayPal, no una página que controlemos. No tenemos control sobre su marcado y nos remitimos a la conformidad de PayPal.",
           "Este sitio aún no ha sido auditado por un especialista independiente en accesibilidad. Está previsto antes del lanzamiento, y esta declaración se actualizará con los hallazgos y la fecha."
         ]
       },

@@ -18,10 +18,17 @@ import {
   formatEUR,
 } from '@/config/pricing';
 import { consumeLeadPrefill } from '@/lib/lead-handoff';
+import { earliestVisitDate, BOOKING_LEAD_DAYS } from '@/config/booking-window';
 
-/** Today in YYYY-MM-DD, local time. Used as the default and the minimum. */
-function todayISO(): string {
-  return toISODate(new Date());
+/**
+ * The first date on sale, YYYY-MM-DD — today plus the lead time.
+ *
+ * Used as both the default and the minimum, so the field opens on a date the
+ * customer can actually buy. Defaulting to today while today is disabled would
+ * show a pre-filled value the pay button then rejects.
+ */
+function firstBookableISO(): string {
+  return earliestVisitDate();
 }
 
 // `visitors` is a plain number here, not z.coerce — the select registers with
@@ -83,12 +90,12 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
     resolver: zodResolver(schema),
     defaultValues: {
       visitors: 1,
-      // Default to today so the field is never an empty "mm/dd/yyyy". The
-      // order summary echoes the full date back in the visitor's language,
-      // and the picker highlights it — a pre-filled date must stay obvious,
-      // because a wrong visit date is non-refundable once the QR ships
-      // (Terms §5 and §7).
-      date: todayISO(),
+      // Default to the first bookable day so the field is never an empty
+      // "mm/dd/yyyy" and never holds a date the server will refuse. The order
+      // summary echoes the full date back in the visitor's language, and the
+      // picker highlights it — a pre-filled date must stay obvious, because a
+      // wrong visit date is non-refundable once the QR ships (Terms §5, §7).
+      date: firstBookableISO(),
       // Unticked by default, always. Pre-ticking a consent box is not consent.
       acceptedConsent: false,
       leadId: '',
@@ -108,8 +115,19 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
 
     reset({
       leadId: prefill.leadId ?? '',
-      // Fall back to today, not to empty, if the modal captured no date.
-      date: prefill.visitDate ?? todayISO(),
+      /*
+       * Clamped to the booking window, not carried over blindly.
+       *
+       * The lead modal captures a date for the sales follow-up and accepts
+       * anything, including today. Someone who filled it in on Monday and
+       * came back to buy on Wednesday would otherwise arrive with a date the
+       * calendar now greys out — pre-filled, invisible above the fold, and
+       * refused only at the pay button.
+       */
+      date:
+        prefill.visitDate && prefill.visitDate >= firstBookableISO()
+          ? prefill.visitDate
+          : firstBookableISO(),
       visitors:
         prefill.visitors && prefill.visitors >= 1 && prefill.visitors <= VISITOR_PACK_MAX_VISITORS
           ? prefill.visitors
@@ -177,22 +195,41 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
       const payload = await res.json().catch(() => ({}));
 
       if (!res.ok) {
-        setServerError(
-          payload?.error === 'consent_required'
-            ? t('errors.consent')
-            : payload?.error === 'visit_date_in_past'
-              ? t('errors.pastDate')
-              : payload?.error === 'booking_not_open' ||
-                  payload?.error === 'checkout_unavailable' ||
-                  payload?.error === 'payment_setup_failed'
-                ? t('errors.disabled')
-                : t('errors.generic')
-        );
+        /*
+         * Every error code the route can return, mapped to the sentence the
+         * customer sees. A lookup rather than a ternary chain because the
+         * chain had grown to five branches and its indentation no longer
+         * matched its nesting — which is how the wrong message gets shown for
+         * the wrong failure. Unknown codes fall through to the generic line.
+         */
+        const messages: Record<string, string> = {
+          consent_required: t('errors.consent'),
+          visit_date_too_soon: t('errors.tooSoon', { days: BOOKING_LEAD_DAYS }),
+          visit_date_in_past: t('errors.pastDate'),
+          booking_not_open: t('errors.disabled'),
+          checkout_unavailable: t('errors.disabled'),
+          payment_setup_failed: t('errors.disabled'),
+        };
+        setServerError(messages[payload?.error] ?? t('errors.generic'));
         return;
       }
 
-      // The card form replaces this one; nothing is charged until the customer
-      // submits it, and the order stays cancellable until the code is sent.
+      /*
+       * PayPal: approval happens on paypal.com, so we leave the site.
+       *
+       * `window.location.href`, not router.push — the destination is a foreign
+       * origin the Next router cannot handle. No setState after it either: the
+       * navigation is already committed, and flipping to the card step first
+       * would flash Stripe's element for a moment on a PayPal checkout.
+       */
+      if (payload.redirectUrl) {
+        window.location.href = payload.redirectUrl;
+        return;
+      }
+
+      // Stripe: the card form replaces this one; nothing is charged until the
+      // customer submits it, and the order stays cancellable until the code is
+      // sent.
       setPayment({ clientSecret: payload.clientSecret, orderId: payload.orderId });
     } catch {
       setServerError(t('errors.generic'));
@@ -265,7 +302,7 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
                 id="vp-date"
                 value={field.value}
                 onChange={field.onChange}
-                min={todayISO()}
+                min={firstBookableISO()}
                 locale={locale}
                 invalid={Boolean(errors.date)}
                 labels={{
@@ -278,6 +315,13 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
               />
             )}
           />
+          {/* Why the first two days are greyed out, said before the customer
+              hunts for them. A disabled cell with no explanation reads as a
+              broken calendar; this turns it into a stated policy, and it is
+              the same reason the Terms give for the lead time. */}
+          <p className="mt-1.5 text-xs leading-relaxed text-[#C4A882]/80">
+            {t('dateHint', { days: BOOKING_LEAD_DAYS })}
+          </p>
           {errors.date && <p className={errCls}>{t('errors.pastDate')}</p>}
         </div>
 

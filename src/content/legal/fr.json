@@ -65,6 +65,7 @@
         "id": "delivery",
         "heading": "6. Livraison",
         "paragraphs": [
+          "Les visites doivent être réservées au moins deux jours francs à l’avance ; les dates antérieures ne peuvent pas être sélectionnées. Nous ne détenons pas de stock de billets — chacun est obtenu auprès du monument pour vous une fois votre paiement encaissé — et deux jours constituent le délai le plus court permettant de le faire de manière fiable, y compris un week-end ou un jour férié. Si nous ne parvenons pas à obtenir votre billet, nous annulons la réservation et vous remboursons intégralement.",
           "Après paiement, nous obtenons votre billet et vous adressons un QR code accompagné d’un lien vers votre audioguide numérique, par e-mail et, si vous nous avez communiqué un numéro, par WhatsApp. La livraison intervient avant votre date de visite.",
           "La livraison du QR code marque l’exécution de notre prestation. Elle marque également le terme de votre droit d’annulation — voir la Politique de remboursement et d’annulation.",
           "Il vous appartient de nous fournir une adresse e-mail valide et de vérifier vos courriers indésirables. Si vous n’avez pas reçu votre QR code 48 heures avant votre visite, contactez-nous sans délai à support@marrakechlocal.com ou par WhatsApp au +212 607-223008 : nous vous le renverrons."
@@ -326,7 +327,7 @@
         "id": "who-processes",
         "heading": "1. Qui traite votre paiement",
         "paragraphs": [
-          "Les paiements par carte sont traités par Stripe. Lorsqu’il est proposé et que vous le choisissez, le paiement PayPal est traité par PayPal. Tous deux sont des établissements de paiement réglementés et figurent comme sous-traitants dans notre Politique de confidentialité.",
+          "Tous les paiements effectués sur ce site sont traités par PayPal (Europe) S.à r.l. et Cie, S.C.A., établissement de crédit agréé au Luxembourg et supervisé par la Commission de Surveillance du Secteur Financier. Vous pouvez payer avec un solde PayPal ou par carte bancaire via PayPal ; aucun compte PayPal n’est nécessaire pour payer par carte. PayPal est désigné comme sous-traitant dans notre Politique de confidentialité.",
           "Vous payez sur le site où vous vous trouvez déjà. Nous ne vous redirigeons ni vers une autre marque ni vers un autre domaine pour encaisser votre argent : être renvoyé vers un site inconnu au moment de payer est précisément ce qui fait abandonner une réservation — et à juste titre."
         ]
       },
@@ -334,8 +335,8 @@
         "id": "card-data",
         "heading": "2. Ce que nous ne voyons jamais",
         "paragraphs": [
-          "Votre numéro de carte, sa date d’expiration et son cryptogramme sont saisis directement dans un formulaire hébergé par Stripe et transmis à Stripe. Ils ne transitent pas par nos serveurs et ne sont jamais enregistrés dans nos systèmes. Nous serions incapables de retrouver votre numéro de carte si vous nous le demandiez.",
-          "Stripe est certifié PCI DSS niveau 1, le niveau le plus élevé défini par les réseaux de cartes. Notre intégration est conçue pour que l’environnement des données de carte reste entièrement de leur côté.",
+          "Vous êtes redirigé vers le site de PayPal pour payer. Votre numéro de carte, sa date d’expiration et son code de sécurité y sont saisis, sur paypal.com, et transmis à PayPal. Ils ne transitent pas par nos serveurs et ne sont jamais conservés dans nos systèmes. Nous ne pourrions pas retrouver votre numéro de carte même si vous nous le demandiez.",
+          "PayPal est certifié PCI DSS niveau 1, le niveau le plus élevé défini par les réseaux de cartes. L’étape de paiement se déroulant intégralement sur leur site, aucune donnée de carte n’entre dans notre environnement.",
           "Ce que nous conservons est listé dans la Politique de confidentialité : votre nom, votre e-mail, votre téléphone le cas échéant, le monument et la date réservés, le montant, et une référence de paiement fournie par le prestataire."
         ]
       },
@@ -343,8 +344,8 @@
         "id": "statement",
         "heading": "3. Ce qui apparaît sur votre relevé",
         "paragraphs": [
-          "Le débit porte un libellé identifiant le site sur lequel vous avez réservé, afin que la ligne de votre relevé corresponde à la marque auprès de laquelle vous vous souvenez d’avoir acheté. Le libellé exact de votre réservation vous est indiqué avant le paiement et rappelé dans votre e-mail de confirmation.",
-          "C’est délibéré. La plupart des litiges de carte ne sont pas des fraudes : ce sont des personnes qui ne reconnaissent pas une ligne sur un relevé, des semaines plus tard. Si un débit de notre part vous semble inconnu, écrivez à support@marrakechlocal.com en indiquant le montant et la date, et nous l’identifierons le jour même."
+          "Le paiement étant encaissé via PayPal, la ligne sur votre relevé commence par PAYPAL suivi de notre nom commercial. Si votre banque n’affiche que la mention PayPal, le détail complet — notre nom, le montant et la date — figure dans l’activité de votre compte PayPal et dans le reçu que PayPal vous envoie par e-mail.",
+          "Ce point compte plus qu’il n’y paraît. La plupart des litiges de carte ne sont pas des fraudes : ce sont des personnes qui ne reconnaissent pas une ligne sur un relevé, des semaines plus tard. Si vous ne parvenez pas à identifier un débit de notre part, écrivez à support@marrakechlocal.com en indiquant le montant et la date : nous l’identifierons le jour même."
         ]
       },
       {
@@ -367,7 +368,7 @@
         "id": "fraud",
         "heading": "6. Prévention de la fraude",
         "paragraphs": [
-          "Stripe et PayPal effectuent des contrôles antifraude sur les paiements réalisés via ce site, ce qui implique le traitement d’informations techniques sur l’appareil et la transaction. Cela est nécessaire pour encaisser en toute sécurité et repose sur notre intérêt légitime à prévenir la fraude ; c’est décrit dans nos Politiques de confidentialité et de cookies.",
+          "PayPal effectue des contrôles antifraude sur les paiements réalisés via ce site, ce qui implique le traitement d’informations techniques sur l’appareil et la transaction. Ce traitement est nécessaire pour encaisser les paiements en toute sécurité et repose sur notre intérêt légitime à prévenir la fraude ; il est décrit dans nos Politiques de confidentialité et de cookies.",
           "Nous pouvons refuser une réservation, ou l’annuler et la rembourser, lorsqu’un paiement est signalé comme à risque élevé. Le cas échéant, nous remboursons intégralement sur le moyen de paiement d’origine."
         ]
       },
@@ -376,7 +377,7 @@
         "heading": "7. Litiges et rétrofacturations",
         "paragraphs": [
           "Si quelque chose ne va pas avec une réservation, contactez-nous avant de contacter votre banque. Lorsqu’un remboursement est dû, nous le versons rapidement, et une rétrofacturation met bien plus de temps à se régler qu’un e-mail.",
-          "Lorsqu’une réservation a été livrée telle que décrite et que nos conditions ont été acceptées lors de la commande, nous contestons la rétrofacturation et fournissons au prestataire l’enregistrement exact de ce qui a été affiché et accepté au moment de l’achat, y compris la comparaison des prix et la politique de remboursement telles qu’elles apparaissaient à l’écran."
+          "Lorsqu’une réservation a été livrée conformément à la description et que nos conditions ont été acceptées lors du paiement, nous contestons le litige et fournissons à PayPal le relevé exact de ce qui a été affiché et accepté au moment de l’achat, y compris la comparaison de prix et la politique de remboursement telles qu’elles apparaissaient à l’écran. Vous pouvez également ouvrir un litige dans le Centre de résolution PayPal ; nous contacter d’abord est généralement plus rapide."
         ]
       }
     ]
@@ -442,9 +443,9 @@
             ],
             [
               "Données de paiement",
-              "Encaisser le paiement. Les données de carte sont saisies directement chez Stripe et n’atteignent jamais nos serveurs",
+              "Encaisser le paiement. Le paiement est finalisé sur le site de PayPal et les données de carte n’atteignent jamais nos serveurs",
               "Contrat",
-              "Conservées par Stripe selon sa propre politique"
+              "Conservées par PayPal selon sa propre politique"
             ],
             [
               "Données de mesure d’audience (pages vues, localisation approximative, appareil)",
@@ -487,7 +488,7 @@
           "Nous ne vendons pas de données personnelles et ne le ferons jamais. Nous ne les partageons qu’avec les prestataires nécessaires à l’exploitation du service, chacun agissant sur nos instructions dans le cadre d’un contrat écrit :"
         ],
         "list": [
-          "Stripe, Inc. — payment processing, fraud prevention, chargeback handling (United States / Ireland; basis: Contract; Standard Contractual Clauses for transfers); PayPal (Europe) S.à r.l. et Cie, S.C.A. — optional alternative payment method (Luxembourg / United States; basis: Contract; Standard Contractual Clauses for transfers); Vercel Inc. — website hosting, CDN, server logs (United States (edge nodes worldwide); basis: Contract; Standard Contractual Clauses for transfers); Resend, Inc. — transactional email — order confirmations and ticket delivery (United States; basis: Contract; Standard Contractual Clauses for transfers); WhatsApp Ireland Ltd (Meta) — optional ticket delivery and customer support messaging (Ireland / United States; basis: Contract; Standard Contractual Clauses for transfers); Google Ireland Ltd — analytics and, once enabled, advertising — consent-gated (Ireland / United States; basis: Consent; Standard Contractual Clauses for transfers)",
+          "PayPal (Europe) S.à r.l. et Cie, S.C.A. — traitement des paiements, prévention de la fraude, gestion des litiges (Luxembourg / États-Unis ; base : Contrat ; Clauses contractuelles types pour les transferts); Vercel Inc. — website hosting, CDN, server logs (United States (edge nodes worldwide); basis: Contract; Standard Contractual Clauses for transfers); Resend, Inc. — transactional email — order confirmations and ticket delivery (United States; basis: Contract; Standard Contractual Clauses for transfers); WhatsApp Ireland Ltd (Meta) — optional ticket delivery and customer support messaging (Ireland / United States; basis: Contract; Standard Contractual Clauses for transfers); Google Ireland Ltd — analytics and, once enabled, advertising — consent-gated (Ireland / United States; basis: Consent; Standard Contractual Clauses for transfers)",
           "Le canal de billetterie officiel, qui reçoit les informations de visiteur nécessaires à l’émission de votre billet.",
           "Nos conseils professionnels, ainsi que les autorités publiques lorsque la loi nous impose une communication."
         ]
@@ -528,7 +529,7 @@
         "id": "security",
         "heading": "8. Sécurité",
         "paragraphs": [
-          "L’ensemble des échanges est chiffré en transit. Les données de carte sont saisies directement dans les champs hébergés par Stripe et ne sont jamais transmises à nos serveurs ni stockées par nous : nous ne détenons aucun numéro de carte. L’accès aux données de commande est réservé aux personnes qui en ont besoin pour assurer l’assistance.",
+          "Tout le trafic est chiffré en transit. Le paiement est finalisé sur le site de PayPal : les données de carte ne sont donc jamais transmises à nos serveurs ni stockées chez nous, et nous ne détenons aucun numéro de carte. L’accès aux données de commande est limité aux personnes qui en ont besoin pour assurer le support.",
           "En cas de violation susceptible d’engendrer un risque pour vos droits, nous en informons l’autorité de contrôle compétente dans les 72 heures et, lorsque le risque est élevé, nous vous en avisons directement."
         ]
       },
@@ -569,7 +570,8 @@
         "id": "necessary",
         "heading": "2. Cookies strictement nécessaires",
         "paragraphs": [
-          "Ils sont indispensables au fonctionnement du site et du paiement, et sont déposés sans consentement car le service ne peut être fourni sans eux."
+          "Ils sont indispensables au fonctionnement du site et du paiement, et sont déposés sans consentement car le service ne peut être fourni sans eux.",
+          "Nous ne déposons aucun cookie de paiement. Le paiement ayant lieu sur paypal.com et non ici, les cookies utilisés par PayPal pour sécuriser ce paiement sont déposés sur leur domaine et relèvent de la politique de cookies de PayPal, pas de celle-ci."
         ],
         "table": {
           "head": [
@@ -590,12 +592,6 @@
               "visitbahiapalace.com",
               "Enregistre vos choix en matière de cookies et la date de ces choix",
               "6 mois"
-            ],
-            [
-              "__stripe_mid, __stripe_sid",
-              "Stripe",
-              "Prévention de la fraude sur le formulaire de paiement. Nécessaires à un encaissement sécurisé",
-              "1 an / 30 minutes"
             ]
           ]
         }
@@ -688,7 +684,7 @@
         "list": [
           "Les audioguides n’ont pas encore de transcription intégrale dans toutes les langues où l’audio existe. Lorsqu’une transcription existe, elle est publiée à côté du lecteur ; sinon, le guide est proposé en texte plutôt qu’en audio muet.",
           "Certaines photographies portent un texte alternatif rédigé uniquement à partir de métadonnées vérifiées. Faute de confirmation de ce que montre une image, le texte alternatif décrit ce qui est visible au lieu de nommer le bâtiment.",
-          "Les champs de paiement de tiers sont affichés par Stripe et PayPal dans leurs propres cadres. Nous n’avons aucune prise sur leur balisage interne et nous nous en remettons à leur propre conformité.",
+          "L’étape de paiement se déroule sur le site de PayPal, et non sur une page que nous contrôlons. Nous n’avons aucune maîtrise de son balisage et nous nous en remettons à la conformité propre de PayPal.",
           "Ce site n’a pas encore fait l’objet d’un audit par un spécialiste indépendant de l’accessibilité. Cet audit est prévu avant le lancement, et cette déclaration sera mise à jour avec ses conclusions et sa date."
         ]
       },

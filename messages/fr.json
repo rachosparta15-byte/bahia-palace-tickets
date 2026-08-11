@@ -748,13 +748,15 @@
         "name": "Please enter your full name.",
         "email": "Please enter a valid email address.",
         "visitors": "Veuillez saisir un nombre entre 1 et {max}.",
-        "consent": "Merci de confirmer avant de continuer — c’est requis pour finaliser votre réservation."
+        "consent": "Merci de confirmer avant de continuer — c’est requis pour finaliser votre réservation.",
+        "tooSoon": "Veuillez choisir une date située au moins {days} jours après aujourd’hui."
       },
       "summaryTitle": "Order summary",
       "productName": "Bahia Palace — Complete Visitor Pack",
       "acceptCombined": "Je peux annuler gratuitement jusqu’à l’envoi de mon QR code. Je comprends que cet envoi exécute intégralement ma commande et que le droit de rétractation de 14 jours ne s’applique donc plus à partir de ce moment, et j’accepte les <terms>conditions de vente</terms> et la <refund>politique d’annulation</refund>.",
-      "securePayment": "<b>Paiement sécurisé.</b> Vos données bancaires sont transmises directement à Stripe et n’atteignent jamais nos serveurs.",
-      "visitorsHint": "Comptez toutes les personnes qui ont besoin d’un billet, enfants de 7 ans et plus inclus. Les enfants de moins de 7 ans entrent gratuitement et ne sont pas à compter."
+      "securePayment": "<b>Paiement sécurisé.</b> Vous payez sur PayPal. Vos données bancaires vont directement à PayPal et n’atteignent jamais nos serveurs.",
+      "visitorsHint": "Comptez toutes les personnes qui ont besoin d’un billet, enfants de 7 ans et plus inclus. Les enfants de moins de 7 ans entrent gratuitement et ne sont pas à compter.",
+      "dateHint": "Nous retirons votre billet au monument : la première date de visite possible est dans {days} jours."
     },
     "confirmation": {
       "packTitle": "Your Complete Visitor Pack",

@@ -4,6 +4,8 @@ import prisma from '@/lib/db';
 import { payments } from '@/lib/payments';
 import { generateReference } from '@/lib/utils';
 import { isLegacyBookableSlug, TICKET_PRICES } from '@/lib/ticket-data';
+import { earliestVisitDate, isTooSoon } from '@/config/booking-window';
+import { getPaymentsStatus } from '@/lib/payments/guard';
 
 const schema = z.object({
   ticket:          z.string(),
@@ -31,6 +33,25 @@ export async function POST(req: NextRequest) {
     // gated checkout (e.g. visitor-pack) — see isLegacyBookableSlug.
     if (!isLegacyBookableSlug(ticket)) {
       return NextResponse.json({ error: 'Unknown ticket type' }, { status: 400 });
+    }
+
+    /*
+     * The booking window. This route had no date check at all beyond the
+     * YYYY-MM-DD shape, so it would happily take money for a visit last March.
+     * We source each ticket from the monument by hand after payment clears,
+     * which is why the window exists — see config/booking-window.ts.
+     */
+    if (isTooSoon(date)) {
+      return NextResponse.json(
+        { error: 'visit_date_too_soon', earliest: earliestVisitDate() },
+        { status: 422 },
+      );
+    }
+
+    // The switch is the authority on whether any checkout may start, and this
+    // route was never asking it.
+    if (!getPaymentsStatus().enabled) {
+      return NextResponse.json({ error: 'booking_not_open' }, { status: 503 });
     }
 
     const price       = TICKET_PRICES[ticket];

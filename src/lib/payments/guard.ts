@@ -21,13 +21,14 @@
 export type PaymentsDisabledReason =
   | 'flag-off'
   | 'missing-secret-key'
-  | 'missing-publishable-key';
+  | 'missing-publishable-key'
+  | 'missing-paypal-credentials';
 
 export interface PaymentsStatus {
   enabled: boolean;
   /** Set only when enabled === false. */
   reason?: PaymentsDisabledReason;
-  /** True when the configured keys are Stripe TEST keys. */
+  /** True when the active provider cannot move real money. */
   testMode: boolean;
 }
 
@@ -82,19 +83,57 @@ export function isStripeTestMode(): boolean {
 }
 
 /**
+ * Test mode for the ACTIVE provider, whichever it is.
+ *
+ * `isStripeTestMode()` reads a Stripe publishable key, and this site no longer
+ * has one: under PayPal it found an empty string and reported test mode
+ * forever, so a live PayPal checkout would have rendered a bright "TEST MODE —
+ * no money will be taken" banner directly above a button that charges a real
+ * card. Customers believe that banner.
+ *
+ * PayPal's own signal is the environment: anything that is not exactly "live"
+ * points at the sandbox host and cannot take money. Mock is always test.
+ */
+export function isTestMode(): boolean {
+  switch (activeProvider()) {
+    case 'stripe':
+      return isStripeTestMode();
+    case 'paypal':
+      return process.env.PAYPAL_ENVIRONMENT !== 'live';
+    default:
+      return true;
+  }
+}
+
+/**
  * Server-side authority on whether a checkout may be created.
  * Call this at the top of every payment route. Never trust the client.
  */
 export function getPaymentsStatus(): PaymentsStatus {
-  const testMode = isStripeTestMode();
+  const testMode = isTestMode();
 
   if (!flagEnabled()) {
     return { enabled: false, reason: 'flag-off', testMode };
   }
 
-  // Key checks apply only to the real Stripe provider. The mock provider
-  // touches no network and has no keys, so demanding them would make the
-  // offline dev path impossible to exercise.
+  /*
+   * PayPal needs both halves of its credential pair before the button may
+   * work. Without this the route reported "enabled", the form swapped to the
+   * pay step, and the failure surfaced as a generic error deep inside the
+   * adapter — after the customer had entered their details. Refuse up front
+   * and show "Booking opens soon" instead.
+   */
+  if (activeProvider() === 'paypal') {
+    const id = process.env.PAYPAL_CLIENT_ID ?? '';
+    const secret = process.env.PAYPAL_CLIENT_SECRET ?? '';
+    if (!id || !secret || id.includes('REPLACE_WITH') || secret.includes('REPLACE_WITH')) {
+      return { enabled: false, reason: 'missing-paypal-credentials', testMode };
+    }
+    return { enabled: true, testMode };
+  }
+
+  // The mock provider touches no network and has no keys, so demanding them
+  // would make the offline dev path impossible to exercise.
   if (activeProvider() !== 'stripe') {
     return { enabled: true, testMode };
   }

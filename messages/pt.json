@@ -168,7 +168,7 @@
     },
     "form": {
       "acceptCombined": "Posso cancelar gratuitamente até o meu código QR ser enviado. Compreendo que esse envio conclui integralmente a minha encomenda e que, a partir desse momento, o direito de livre resolução de 14 dias deixa de se aplicar, e aceito as <terms>condições de venda</terms> e a <refund>política de cancelamento</refund>.",
-      "securePayment": "<b>Pagamento seguro.</b> Os dados do seu cartão vão directamente para a Stripe e nunca chegam aos nossos servidores.",
+      "securePayment": "<b>Pagamento seguro.</b> Paga no PayPal. Os dados do seu cartão vão diretamente para o PayPal e nunca chegam aos nossos servidores.",
       "errors": {
         "consent": "Confirme antes de continuar — é necessário para concluir a reserva.",
         "generic": "Ocorreu um problema ao iniciar o pagamento. Tente novamente.",
@@ -176,7 +176,8 @@
         "pastDate": "Escolha uma data que não esteja no passado.",
         "name": "Introduza o seu nome completo.",
         "email": "Introduza um endereço de e-mail válido.",
-        "visitors": "Introduza um número entre 1 e {max}."
+        "visitors": "Introduza um número entre 1 e {max}.",
+        "tooSoon": "Escolha uma data com pelo menos {days} dias de antecedência."
       },
       "title": "Escolha a sua visita",
       "dateLabel": "Data da visita",
@@ -191,7 +192,8 @@
       "legalNotice": "Ao continuar aceita as nossas <terms>condições</terms> e a <refund>política de reembolso</refund>.",
       "summaryTitle": "Resumo da encomenda",
       "productName": "Palácio da Bahia — Pack completo do visitante",
-      "visitorsHint": "Conte todas as pessoas que precisam de bilhete, incluindo crianças a partir dos 7 anos. As crianças com menos de 7 anos entram gratuitamente e não devem ser contadas."
+      "visitorsHint": "Conte todas as pessoas que precisam de bilhete, incluindo crianças a partir dos 7 anos. As crianças com menos de 7 anos entram gratuitamente e não devem ser contadas.",
+      "dateHint": "Levantamos o seu bilhete no monumento, por isso a primeira data de visita disponível é daqui a {days} dias."
     },
     "testMode": {
       "badge": "MODO DE TESTE",
