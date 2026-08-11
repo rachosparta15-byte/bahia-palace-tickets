@@ -31,8 +31,27 @@ export async function Hero() {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 hero-ken-burns">
           {/* eslint-disable-next-line @next/next/no-img-element */}
+          {/*
+            One 1600x900 file used to go to every device, phone included, where
+            it is the LCP element — 255 KB on a throttled mobile connection,
+            which was most of the 5.5s LCP this page measured at.
+
+            It sits under two dark gradients (92% and 68%) and a zellige
+            overlay, so its detail is never actually seen. That makes low
+            quality the right answer rather than a compromise: 640w at q62 is
+            36 KB and is indistinguishable once the overlays are on top.
+
+            sizes="100vw" because it is a full-bleed background — the browser
+            then picks 640w on a phone and 1600w on a desktop by itself. The
+            width/height pair is the source ratio, so the box is reserved
+            before the file lands and the layout cannot shift.
+          */}
           <img
-            src="/images/hero-bg.webp"
+            src="/images/hero-bg-1024.webp"
+            srcSet="/images/hero-bg-640.webp 640w, /images/hero-bg-1024.webp 1024w, /images/hero-bg-1600.webp 1600w"
+            sizes="100vw"
+            width={1600}
+            height={900}
             alt="Bahia Palace interior courtyard with zellige tiles and arched columns"
             className="w-full h-full object-cover"
             fetchPriority="high"
