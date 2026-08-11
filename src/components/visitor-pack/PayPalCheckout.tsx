@@ -148,6 +148,7 @@ export function PayPalCheckout({
   const [diagnostic, setDiagnostic] = useState<string | null>(null);
 
   const buttonsRef = useRef<HTMLDivElement>(null);
+  const cardButtonRef = useRef<HTMLDivElement>(null);
   const cardFieldsRef = useRef<{
     submit: () => Promise<void>;
     NumberField: (o?: Record<string, unknown>) => { render: (s: string) => Promise<void> };
@@ -221,6 +222,34 @@ export function PayPalCheckout({
           })
           .render(buttonsRef.current!)
           .catch(() => {});
+
+        /*
+         * A separate "Debit or Credit Card" button, on our page.
+         *
+         * Without Advanced Checkout the card option exists but is buried:
+         * the customer must press the yellow PayPal button, wait for the
+         * popup, and find "Pay with Debit or Credit Card" underneath a login
+         * form. Most people who do not have a PayPal account read that popup
+         * as "you need a PayPal account" and leave.
+         *
+         * Rendering the card funding source as its own button says plainly,
+         * on this page, that a card is accepted. The card form is still
+         * PayPal's and still opens in their popup — that part needs Advanced
+         * Checkout to change — but the choice is visible before the customer
+         * commits to anything.
+         *
+         * isEligible() guards it: on a merchant or in a country where card
+         * funding is not offered, this renders nothing rather than a button
+         * that opens an error.
+         */
+        const cardButton = window.paypal.Buttons({
+          ...shared,
+          fundingSource: 'card',
+          style: { layout: 'horizontal', color: 'black', shape: 'rect', height: 45, tagline: false },
+        });
+        if (cardButton.isEligible?.() !== false && cardButtonRef.current) {
+          await cardButton.render(cardButtonRef.current).catch(() => {});
+        }
 
         /*
          * Eligibility is decided here; the fields are rendered in the effect
@@ -329,8 +358,14 @@ export function PayPalCheckout({
       )}
 
       {/* Card first: most visitors do not have a PayPal account, and putting
-          the button on top makes the card look like the fallback. */}
-      <div className={status === 'loading' ? 'hidden' : ''}>
+          the button on top makes the card look like the fallback.
+
+          Deliberately NOT hidden with `display: none` while loading. PayPal's
+          buttons and fields measure their container as they mount, and a
+          container with no box gives them nothing to measure — the same class
+          of failure as rendering into an element that does not exist yet. An
+          empty area for a moment is the safer trade. */}
+      <div>
         {cardEligible && (
           <div className="mb-5">
             <p className="mb-3 flex items-center gap-2 text-sm font-semibold text-[#F5E8CC]">
@@ -389,9 +424,17 @@ export function PayPalCheckout({
           </div>
         )}
 
-        {/* PayPal's own button. Hidden while a capture is in flight so it
-            cannot be pressed a second time behind the spinner. */}
-        <div ref={buttonsRef} className={busy ? 'pointer-events-none opacity-50' : ''} />
+        {/* PayPal's own buttons. Dimmed and inert while a capture is in
+            flight so neither can be pressed a second time behind the
+            spinner. The card button renders only when the merchant has no
+            embedded card fields — with those on the page it would be a
+            second, worse route to the same thing. */}
+        <div
+          className={`space-y-2.5 ${busy ? 'pointer-events-none opacity-50' : ''}`}
+        >
+          <div ref={buttonsRef} />
+          {!cardEligible && <div ref={cardButtonRef} />}
+        </div>
       </div>
 
       {message && (
