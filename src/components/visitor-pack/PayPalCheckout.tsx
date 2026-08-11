@@ -140,9 +140,23 @@ export function PayPalCheckout({
   const [status, setStatus] = useState<'loading' | 'ready' | 'paying' | 'error'>('loading');
   const [message, setMessage] = useState<string | null>(null);
   const [cardEligible, setCardEligible] = useState(false);
+  /**
+   * Why the card fields did or did not appear. Shown only with ?ppdebug=1,
+   * because "not eligible" and "my render call was broken" look identical from
+   * the outside — and one of them was in fact my bug.
+   */
+  const [diagnostic, setDiagnostic] = useState<string | null>(null);
 
   const buttonsRef = useRef<HTMLDivElement>(null);
-  const cardFieldsRef = useRef<{ submit: () => Promise<void> } | null>(null);
+  const cardFieldsRef = useRef<{
+    submit: () => Promise<void>;
+    NumberField: (o?: Record<string, unknown>) => { render: (s: string) => Promise<void> };
+    ExpiryField: (o?: Record<string, unknown>) => { render: (s: string) => Promise<void> };
+    CVVField: (o?: Record<string, unknown>) => { render: (s: string) => Promise<void> };
+    NameField: (o?: Record<string, unknown>) => { render: (s: string) => Promise<void> };
+  } | null>(null);
+  /** Stops a re-render mounting a second set of PayPal iframes. */
+  const fieldsRenderedRef = useRef(false);
   // Guards against a second mount rendering a second set of PayPal iframes
   // into containers that already hold one.
   const mountedRef = useRef(false);
@@ -208,26 +222,30 @@ export function PayPalCheckout({
           .render(buttonsRef.current!)
           .catch(() => {});
 
+        /*
+         * Eligibility is decided here; the fields are rendered in the effect
+         * below, not now.
+         *
+         * They cannot be rendered here because their containers do not exist
+         * yet: #pp-card-number and the rest live inside a block that only
+         * renders once `cardEligible` is true, and React has not committed
+         * that state at this point. Calling render() against a selector that
+         * matches nothing fails silently — an eligible merchant would still
+         * have seen no card fields, and the cause would have looked exactly
+         * like being ineligible.
+         */
         const fields = window.paypal.CardFields(shared);
         if (fields.isEligible()) {
-          const style = {
-            input: {
-              'font-size': '14px',
-              'font-family': 'sans-serif',
-              color: '#F5E8CC',
-              padding: '10px 14px',
-            },
-            ':focus': { color: '#F5E8CC' },
-            '.invalid': { color: '#C4452D' },
-          };
-          await Promise.all([
-            fields.NumberField({ style }).render('#pp-card-number'),
-            fields.ExpiryField({ style }).render('#pp-card-expiry'),
-            fields.CVVField({ style }).render('#pp-card-cvv'),
-            fields.NameField({ style }).render('#pp-card-name'),
-          ]);
           cardFieldsRef.current = fields;
           if (!cancelled) setCardEligible(true);
+          if (!cancelled) setDiagnostic('card fields: eligible');
+        } else {
+          console.info('[paypal] card fields not available on this account — button only');
+          if (!cancelled) {
+            setDiagnostic(
+              'card fields: NOT eligible — Advanced (Expanded) Checkout is off for this PayPal account',
+            );
+          }
         }
 
         if (!cancelled) setStatus('ready');
@@ -245,6 +263,41 @@ export function PayPalCheckout({
     // and re-running would render a second set of PayPal iframes.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  /**
+   * Renders the four card fields, once their containers are actually on the
+   * page. Runs when `cardEligible` flips to true, which is the render that
+   * puts them there.
+   */
+  useEffect(() => {
+    if (!cardEligible || !cardFieldsRef.current) return;
+    if (fieldsRenderedRef.current) return;
+    fieldsRenderedRef.current = true;
+
+    const fields = cardFieldsRef.current;
+    const style = {
+      input: {
+        'font-size': '14px',
+        'font-family': 'sans-serif',
+        color: '#F5E8CC',
+        padding: '10px 14px',
+      },
+      ':focus': { color: '#F5E8CC' },
+      '.invalid': { color: '#C4452D' },
+    };
+
+    Promise.all([
+      fields.NumberField({ style }).render('#pp-card-number'),
+      fields.ExpiryField({ style }).render('#pp-card-expiry'),
+      fields.CVVField({ style }).render('#pp-card-cvv'),
+      fields.NameField({ style }).render('#pp-card-name'),
+    ]).catch(() => {
+      // The fields could not mount after all. Drop back to the PayPal button
+      // rather than leaving four empty boxes with a pay button under them.
+      setCardEligible(false);
+      fieldsRenderedRef.current = false;
+    });
+  }, [cardEligible]);
 
   async function submitCard() {
     if (!cardFieldsRef.current) return;
@@ -346,6 +399,13 @@ export function PayPalCheckout({
           {message}
         </p>
       )}
+
+      {diagnostic && typeof window !== 'undefined' &&
+        new URLSearchParams(window.location.search).has('ppdebug') && (
+          <p className="mt-4 rounded-lg border border-[#E8A33D]/30 bg-[#2E1F12] px-3 py-2 text-center font-mono text-[11px] text-[#C4A882]">
+            {diagnostic}
+          </p>
+        )}
 
       <p className="mt-5 flex items-center justify-center gap-2 rounded-lg border border-[#8FA63C]/25 bg-[#8FA63C]/10 px-3.5 py-2.5 text-center text-xs leading-relaxed text-[#C4A882]">
         <Lock size={13} className="shrink-0 text-[#8FA63C]" aria-hidden="true" />
