@@ -9,7 +9,8 @@
  *
  * Going live is deliberately a TWO-part act:
  *   1. set PAYMENTS_ENABLED=true, AND
- *   2. supply live Stripe keys.
+ *   2. supply live provider credentials (Stripe keys, or PayPal client id
+ *      and secret with PAYPAL_ENVIRONMENT=live).
  * Neither alone does anything.
  *
  * The default is OFF. Absent, empty, or malformed values are OFF. Only the
@@ -38,9 +39,23 @@ function flagEnabled(): boolean {
   return process.env.PAYMENTS_ENABLED === 'true';
 }
 
-/** Which payment adapter is live. Mirrors the switch in ./index.ts. */
-export function activeProvider(): 'mock' | 'stripe' {
-  return process.env.PAYMENT_PROVIDER === 'stripe' ? 'stripe' : 'mock';
+/**
+ * Which payment adapter is live. Mirrors the switch in ./index.ts.
+ *
+ * PayPal was added to ./index.ts and this function still recognised only
+ * 'stripe' — so PAYMENT_PROVIDER=paypal fell through to 'mock' here while a
+ * real provider was actually charging cards. That is not a cosmetic mismatch:
+ * `mockShortcutAllowed()` below is keyed on this, so the `?mock_success=1`
+ * shortcut would have stayed live and anyone could have marked their own
+ * booking paid by appending a query parameter to a URL.
+ *
+ * Any new provider must be added here at the same time as in ./index.ts.
+ */
+export function activeProvider(): 'mock' | 'stripe' | 'paypal' {
+  const p = process.env.PAYMENT_PROVIDER;
+  if (p === 'stripe') return 'stripe';
+  if (p === 'paypal') return 'paypal';
+  return 'mock';
 }
 
 /**

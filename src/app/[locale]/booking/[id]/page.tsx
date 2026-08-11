@@ -18,7 +18,7 @@ import type { Metadata } from 'next';
 
 interface Props {
   params:       Promise<{ locale: string; id: string }>;
-  searchParams: Promise<{ mock_success?: string; session_id?: string }>;
+  searchParams: Promise<{ mock_success?: string; session_id?: string; paypal?: string }>;
 }
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -32,7 +32,7 @@ function formatTotal(amount: number, currency: string): string {
 
 export default async function BookingConfirmPage({ params, searchParams }: Props) {
   const { locale, id }               = await params;
-  const { mock_success, session_id } = await searchParams;
+  const { mock_success, session_id, paypal } = await searchParams;
 
   await ensureColumns();
 
@@ -59,6 +59,30 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
     const { paid } = await payments.verifyCheckoutSession(session_id);
     if (paid) {
       await confirmBookingPaid(id, { via: 'return-page', paymentSessionId: session_id });
+      booking = (await prisma.booking.findUnique({ where: { id } })) ?? booking;
+    }
+  }
+
+  /*
+   * PayPal return.
+   *
+   * Same rule as the Stripe branch above, and for the same reason: landing on
+   * this URL proves nothing, so the order must be the one recorded against
+   * this booking and PayPal must say the money moved.
+   *
+   * Unlike Stripe, the return also CAPTURES. PayPal's approval and its capture
+   * are two separate steps, and an approved-but-uncaptured order has taken
+   * nothing — treating approval as payment is how a visitor leaves with a
+   * confirmed booking we were never paid for. verifyCheckoutSession() in the
+   * PayPal adapter captures and reports whether it completed.
+   */
+  if (paypal === '1' && booking.status === 'pending' && booking.paymentSessionId) {
+    const { paid } = await payments.verifyCheckoutSession(booking.paymentSessionId);
+    if (paid) {
+      await confirmBookingPaid(id, {
+        via: 'return-page',
+        paymentSessionId: booking.paymentSessionId,
+      });
       booking = (await prisma.booking.findUnique({ where: { id } })) ?? booking;
     }
   }
