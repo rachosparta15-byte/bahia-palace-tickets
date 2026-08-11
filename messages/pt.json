@@ -193,7 +193,14 @@
       "summaryTitle": "Resumo da encomenda",
       "productName": "Palácio da Bahia — Pack completo do visitante",
       "visitorsHint": "Conte todas as pessoas que precisam de bilhete, incluindo crianças a partir dos 7 anos. As crianças com menos de 7 anos entram gratuitamente e não devem ser contadas.",
-      "dateHint": "Levantamos o seu bilhete no monumento, por isso a primeira data de visita disponível é daqui a {days} dias."
+      "dateHint": "Levantamos o seu bilhete no monumento, por isso a primeira data de visita disponível é daqui a {days} dias.",
+      "payWithCard": "Pagar com cartão",
+      "cardNumber": "Número do cartão",
+      "expiry": "Data de validade",
+      "cvv": "Código de segurança",
+      "nameOnCard": "Nome no cartão",
+      "pay": "Pagar",
+      "orPayPal": "ou"
     },
     "testMode": {
       "badge": "MODO DE TESTE",

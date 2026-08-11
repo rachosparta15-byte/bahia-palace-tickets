@@ -756,7 +756,14 @@
       "acceptCombined": "Je peux annuler gratuitement jusqu’à l’envoi de mon QR code. Je comprends que cet envoi exécute intégralement ma commande et que le droit de rétractation de 14 jours ne s’applique donc plus à partir de ce moment, et j’accepte les <terms>conditions de vente</terms> et la <refund>politique d’annulation</refund>.",
       "securePayment": "<b>Paiement sécurisé.</b> Vous payez sur PayPal. Vos données bancaires vont directement à PayPal et n’atteignent jamais nos serveurs.",
       "visitorsHint": "Comptez toutes les personnes qui ont besoin d’un billet, enfants de 7 ans et plus inclus. Les enfants de moins de 7 ans entrent gratuitement et ne sont pas à compter.",
-      "dateHint": "Nous retirons votre billet au monument : la première date de visite possible est dans {days} jours."
+      "dateHint": "Nous retirons votre billet au monument : la première date de visite possible est dans {days} jours.",
+      "payWithCard": "Payer par carte",
+      "cardNumber": "Numéro de carte",
+      "expiry": "Date d’expiration",
+      "cvv": "Cryptogramme",
+      "nameOnCard": "Nom sur la carte",
+      "pay": "Payer",
+      "orPayPal": "ou"
     },
     "confirmation": {
       "packTitle": "Your Complete Visitor Pack",

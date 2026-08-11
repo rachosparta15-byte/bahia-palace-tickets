@@ -19,12 +19,25 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self'",
-      `script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === 'development' ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://www.google-analytics.com`,
+      // PayPal's SDK loads from www.paypal.com and paypalobjects.com, and it
+      // in turn loads a fraud-detection script from c.paypal.com. All three
+      // are required: without any one of them the card fields never mount and
+      // the checkout shows an empty box with no error in the UI.
+      `script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === 'development' ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://www.google-analytics.com https://www.paypal.com https://www.paypalobjects.com https://c.paypal.com`,
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "img-src 'self' data: blob: https://images.unsplash.com https://source.unsplash.com https://*.public.blob.vercel-storage.com https://i.ytimg.com",
-      "connect-src 'self' https://www.google-analytics.com",
-      "frame-src https://www.youtube.com https://www.youtube-nocookie.com",
+      "img-src 'self' data: blob: https://images.unsplash.com https://source.unsplash.com https://*.public.blob.vercel-storage.com https://i.ytimg.com https://www.paypalobjects.com https://t.paypal.com",
+      // The SDK talks to PayPal directly from the browser while the customer
+      // types. Sandbox hosts are listed too so the same policy works in a
+      // sandbox deployment — they can take no money, so allowing them costs
+      // nothing and a policy that only works in production is one nobody can
+      // test before shipping.
+      "connect-src 'self' https://www.google-analytics.com https://www.paypal.com https://api-m.paypal.com https://c.paypal.com https://www.sandbox.paypal.com https://api-m.sandbox.paypal.com",
+      // The card number, expiry and CSC each render inside their own PayPal
+      // iframe. That is the whole point of hosted fields: the values are typed
+      // into PayPal's document, not ours, so this page never has access to a
+      // card number and stays out of PCI scope.
+      "frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.paypal.com https://www.sandbox.paypal.com https://c.paypal.com",
       "frame-ancestors 'none'",
     ].join('; '),
   },

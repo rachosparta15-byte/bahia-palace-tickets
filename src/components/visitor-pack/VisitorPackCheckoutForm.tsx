@@ -9,6 +9,7 @@ import { useRouter, Link } from '@/i18n/navigation';
 import { Button } from '@/components/ui/Button';
 import { PackInclusions } from './PackInclusions';
 import { SharedPaymentElement } from './SharedPaymentElement';
+import { PayPalCheckout } from './PayPalCheckout';
 import { DatePicker, toISODate } from '@/components/ui/DatePicker';
 import { CreditCard, Calendar, Users, Lock, FlaskConical } from 'lucide-react';
 import {
@@ -79,6 +80,15 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
   const [serverError, setServerError] = useState<string | null>(null);
   /** Set once the parent has created the Payment Intent; swaps the form for the card field. */
   const [payment, setPayment] = useState<{ clientSecret: string; orderId: string } | null>(null);
+  /** Set once a PayPal order exists; swaps the form for PayPal's own fields. */
+  const [paypal, setPaypal] = useState<{
+    orderId: string;
+    bookingId: string;
+    reference: string;
+    clientId: string;
+    environment: 'live' | 'sandbox';
+    fallbackUrl: string;
+  } | null>(null);
 
   const {
     register,
@@ -215,15 +225,22 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
       }
 
       /*
-       * PayPal: approval happens on paypal.com, so we leave the site.
+       * PayPal: approve in place, on this page.
        *
-       * `window.location.href`, not router.push — the destination is a foreign
-       * origin the Next router cannot handle. No setState after it either: the
-       * navigation is already committed, and flipping to the card step first
-       * would flash Stripe's element for a moment on a PayPal checkout.
+       * The order was opened server-side at a price this browser never
+       * supplied; the next step mounts PayPal's card fields and button against
+       * it. `redirectUrl` is carried along only so PayPalCheckout can fall
+       * back to PayPal's hosted page if the SDK cannot load at all.
        */
-      if (payload.redirectUrl) {
-        window.location.href = payload.redirectUrl;
+      if (payload.paypalOrderId) {
+        setPaypal({
+          orderId: payload.paypalOrderId,
+          bookingId: payload.bookingId,
+          reference: payload.orderId,
+          clientId: payload.paypalClientId,
+          environment: payload.paypalEnvironment === 'live' ? 'live' : 'sandbox',
+          fallbackUrl: payload.redirectUrl,
+        });
         return;
       }
 
@@ -246,6 +263,44 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
    * thing on screen to do and no way to edit the visit date underneath a
    * Payment Intent that was priced for the old one.
    */
+  if (paypal) {
+    return (
+      <div className="bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-6 sm:p-7" id="checkout">
+        <h2
+          className="font-bold text-[#F5E8CC] mb-2"
+          style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem' }}
+        >
+          {t('title')}
+        </h2>
+        <p className="mb-5 text-sm text-[#C4A882]">
+          {formatEUR(totalCents)} — {visitors} {visitors === 1 ? 'visitor' : 'visitors'} ·{' '}
+          {paypal.reference}
+        </p>
+        <PayPalCheckout
+          bookingId={paypal.bookingId}
+          paypalOrderId={paypal.orderId}
+          clientId={paypal.clientId}
+          environment={paypal.environment}
+          fallbackUrl={paypal.fallbackUrl}
+          confirmationUrl={`/${locale}/booking/${paypal.bookingId}`}
+          amountLabel={formatEUR(totalCents)}
+          locale={locale}
+          labels={{
+            payWithCard: t('payWithCard'),
+            cardNumber: t('cardNumber'),
+            expiry: t('expiry'),
+            cvv: t('cvv'),
+            nameOnCard: t('nameOnCard'),
+            pay: t('pay'),
+            processing: t('submitting'),
+            error: t('errors.generic'),
+            orPayPal: t('orPayPal'),
+          }}
+        />
+      </div>
+    );
+  }
+
   if (payment) {
     return (
       <div className="bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-6 sm:p-7" id="checkout">

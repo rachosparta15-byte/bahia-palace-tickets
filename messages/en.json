@@ -754,7 +754,14 @@
       "acceptCombined": "I can cancel free of charge until my QR code is sent. I understand that sending it completes my order, so the 14-day cooling-off right no longer applies from that moment, and I accept the <terms>Terms of Sale</terms> and the <refund>cancellation policy</refund>.",
       "securePayment": "<b>Secure payment.</b> You pay on PayPal. Your card details go straight to PayPal and never reach our servers.",
       "visitorsHint": "Count everyone who needs a ticket, including children aged 7 and over. Children under 7 enter free and should not be counted.",
-      "dateHint": "We collect your ticket from the monument, so the earliest visit date is {days} days from today."
+      "dateHint": "We collect your ticket from the monument, so the earliest visit date is {days} days from today.",
+      "payWithCard": "Pay by card",
+      "cardNumber": "Card number",
+      "expiry": "Expiry date",
+      "cvv": "Security code",
+      "nameOnCard": "Name on card",
+      "pay": "Pay",
+      "orPayPal": "or"
     },
     "confirmation": {
       "packTitle": "Your Complete Visitor Pack",

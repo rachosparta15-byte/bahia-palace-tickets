@@ -756,7 +756,14 @@
       "acceptCombined": "Ich kann bis zum Versand meines QR-Codes kostenlos stornieren. Mir ist bewusst, dass der Versand meine Bestellung vollständig erfüllt und das 14-tägige Widerrufsrecht ab diesem Moment nicht mehr gilt, und ich akzeptiere die <terms>Verkaufsbedingungen</terms> und die <refund>Stornierungsrichtlinie</refund>.",
       "securePayment": "<b>Sichere Zahlung.</b> Sie zahlen über PayPal. Ihre Kartendaten gehen direkt an PayPal und erreichen unsere Server nie.",
       "visitorsHint": "Zählen Sie alle mit, die ein Ticket brauchen, Kinder ab 7 Jahren eingeschlossen. Kinder unter 7 haben freien Eintritt und zählen nicht mit.",
-      "dateHint": "Wir holen Ihr Ticket am Monument ab – der früheste Besuchstermin liegt daher {days} Tage in der Zukunft."
+      "dateHint": "Wir holen Ihr Ticket am Monument ab – der früheste Besuchstermin liegt daher {days} Tage in der Zukunft.",
+      "payWithCard": "Mit Karte zahlen",
+      "cardNumber": "Kartennummer",
+      "expiry": "Gültig bis",
+      "cvv": "Prüfziffer",
+      "nameOnCard": "Name auf der Karte",
+      "pay": "Zahlen",
+      "orPayPal": "oder"
     },
     "confirmation": {
       "packTitle": "Your Complete Visitor Pack",

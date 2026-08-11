@@ -225,8 +225,21 @@ async function createPayPalCheckout(body: {
   return NextResponse.json({
     orderId: booking.reference,
     bookingId: booking.id,
+    /*
+     * The PayPal order id, for the embedded checkout to approve in place.
+     *
+     * `redirectUrl` is still returned beside it as a fallback. If the SDK
+     * cannot load — an ad blocker, a corporate proxy, a browser that refuses
+     * third-party frames — the page falls back to sending the customer to
+     * PayPal rather than showing a dead box. One of the two always works.
+     */
+    paypalOrderId: session.id,
     redirectUrl: session.url,
     amount: Math.round(unitEUR * body.quantity * 100),
     currency: 'EUR',
+    // Safe to expose: the client id is public by design, it is in every PayPal
+    // SDK script tag on the internet. The secret never leaves the server.
+    paypalClientId: process.env.PAYPAL_CLIENT_ID ?? '',
+    paypalEnvironment: process.env.PAYPAL_ENVIRONMENT === 'live' ? 'live' : 'sandbox',
   });
 }
