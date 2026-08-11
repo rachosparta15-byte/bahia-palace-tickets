@@ -763,7 +763,11 @@
       "cvv": "Código de seguridad",
       "nameOnCard": "Nombre en la tarjeta",
       "pay": "Pagar",
-      "orPayPal": "o"
+      "orPayPal": "o",
+      "phoneLabel": "Número de teléfono",
+      "phoneOptional": "(opcional)",
+      "phonePlaceholder": "Incluye el prefijo del país, p. ej. +34",
+      "phoneHint": "Para enviarte la entrada por WhatsApp y para no tener que escribirlo otra vez al pagar."
     },
     "confirmation": {
       "packTitle": "Your Complete Visitor Pack",

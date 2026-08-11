@@ -761,7 +761,11 @@
       "cvv": "Security code",
       "nameOnCard": "Name on card",
       "pay": "Pay",
-      "orPayPal": "or"
+      "orPayPal": "or",
+      "phoneLabel": "Phone number",
+      "phoneOptional": "(optional)",
+      "phonePlaceholder": "Include your country code, e.g. +44",
+      "phoneHint": "For WhatsApp delivery of your ticket, and so you do not have to type it again at payment."
     },
     "confirmation": {
       "packTitle": "Your Complete Visitor Pack",

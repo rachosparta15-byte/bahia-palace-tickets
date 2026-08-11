@@ -32,6 +32,27 @@ export interface CheckoutParams {
   /** Split name, so PayPal's guest form opens already filled in. */
   customerFirstName?: string;
   customerLastName?: string;
+  /** As typed. Normalised before it is sent — see toPayPalPhone. */
+  customerPhone?: string;
+}
+
+/**
+ * A phone in the shape PayPal accepts, or nothing.
+ *
+ * PayPal wants digits only in `national_number` and rejects the whole order if
+ * the value is malformed — so a customer typing "+212 6 07 22 30 08" or
+ * "n/a" must not be able to stop the checkout. Anything that does not look
+ * like a phone number is dropped: the field is optional, and its only job is
+ * to save the customer from typing it twice.
+ *
+ * The leading + and any country code are kept as digits. PayPal's schema has
+ * no separate country-code field here, and a number with its country code is
+ * more use to us on WhatsApp than one without.
+ */
+function toPayPalPhone(raw?: string): { national_number: string } | null {
+  const digits = (raw ?? '').replace(/\D/g, '');
+  if (digits.length < 5 || digits.length > 14) return null;
+  return { national_number: digits };
 }
 
 const SANDBOX = 'https://api-m.sandbox.paypal.com';
@@ -121,6 +142,14 @@ export async function createCheckoutSession(params: CheckoutParams): Promise<Che
               name: {
                 given_name: params.customerFirstName ?? '',
                 surname: params.customerLastName ?? '',
+              },
+            }
+          : {}),
+        ...(toPayPalPhone(params.customerPhone)
+          ? {
+              phone: {
+                phone_type: 'MOBILE',
+                phone_number: toPayPalPhone(params.customerPhone)!,
               },
             }
           : {}),

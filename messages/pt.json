@@ -200,7 +200,11 @@
       "cvv": "Código de segurança",
       "nameOnCard": "Nome no cartão",
       "pay": "Pagar",
-      "orPayPal": "ou"
+      "orPayPal": "ou",
+      "phoneLabel": "Número de telefone",
+      "phoneOptional": "(opcional)",
+      "phonePlaceholder": "Com o indicativo do país, ex. +351",
+      "phoneHint": "Para receber o bilhete por WhatsApp e para não ter de o escrever outra vez no pagamento."
     },
     "testMode": {
       "badge": "MODO DE TESTE",

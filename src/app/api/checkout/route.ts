@@ -207,6 +207,7 @@ async function createPayPalCheckout(body: {
       // Prefills PayPal's guest form with what they already typed here.
       customerFirstName: body.customer.firstName,
       customerLastName: body.customer.lastName,
+      customerPhone: body.customer.phone,
     });
   } catch (error) {
     console.error('[checkout] PayPal order creation failed', error);

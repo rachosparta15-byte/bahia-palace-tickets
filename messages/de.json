@@ -763,7 +763,11 @@
       "cvv": "Prüfziffer",
       "nameOnCard": "Name auf der Karte",
       "pay": "Zahlen",
-      "orPayPal": "oder"
+      "orPayPal": "oder",
+      "phoneLabel": "Telefonnummer",
+      "phoneOptional": "(optional)",
+      "phonePlaceholder": "Mit Ländervorwahl, z. B. +49",
+      "phoneHint": "Für den Ticketversand per WhatsApp – und damit Sie sie beim Bezahlen nicht erneut eingeben müssen."
     },
     "confirmation": {
       "packTitle": "Your Complete Visitor Pack",

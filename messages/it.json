@@ -763,7 +763,11 @@
       "cvv": "Codice di sicurezza",
       "nameOnCard": "Nome sulla carta",
       "pay": "Paga",
-      "orPayPal": "oppure"
+      "orPayPal": "oppure",
+      "phoneLabel": "Numero di telefono",
+      "phoneOptional": "(facoltativo)",
+      "phonePlaceholder": "Con il prefisso internazionale, es. +39",
+      "phoneHint": "Per ricevere il biglietto su WhatsApp e per non doverlo riscrivere al pagamento."
     },
     "confirmation": {
       "packTitle": "Your Complete Visitor Pack",

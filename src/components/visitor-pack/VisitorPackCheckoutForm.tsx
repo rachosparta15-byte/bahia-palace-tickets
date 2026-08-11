@@ -40,6 +40,18 @@ const schema = z.object({
   visitors: z.number().int().min(1).max(VISITOR_PACK_MAX_VISITORS),
   customerName: z.string().min(2),
   customerEmail: z.string().email(),
+  /*
+   * Optional, deliberately.
+   *
+   * The Terms already promise delivery "by email and, where you have given us
+   * a number, by WhatsApp" — a promise the site could never keep, because it
+   * never asked. It asks now.
+   *
+   * Not required: a mandatory phone field costs sales from people who will not
+   * give a number to a website, and email delivery works without it. Its other
+   * job is to prefill PayPal's own phone box so nobody types it twice.
+   */
+  customerPhone: z.string().max(32).optional(),
   // `.refine` rather than `z.literal(true)`: literal narrows the inferred
   // type to `true`, which the unchecked default value then contradicts.
   acceptedConsent: z.boolean().refine((v) => v === true),
@@ -192,7 +204,14 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
           visitDate: data.date,
           quantity: data.visitors,
           locale,
-          customer: { firstName, lastName, email: data.customerEmail },
+          customer: {
+            firstName,
+            lastName,
+            email: data.customerEmail,
+            // Omitted rather than sent empty: the API treats an absent phone
+            // and a blank string differently downstream.
+            ...(data.customerPhone?.trim() ? { phone: data.customerPhone.trim() } : {}),
+          },
           // Three ticks, three fields. Never derived from one another.
           consent: {
             waiverAndTerms: data.acceptedConsent,
@@ -456,6 +475,23 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
             className={inputCls}
           />
           {errors.customerEmail && <p className={errCls}>{t('errors.email')}</p>}
+        </div>
+
+        <div>
+          <label htmlFor="vp-phone" className={labelCls}>
+            {t('phoneLabel')}{' '}
+            <span className="font-normal text-[#C4A882]/70">{t('phoneOptional')}</span>
+          </label>
+          <input
+            id="vp-phone"
+            {...register('customerPhone')}
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            placeholder={t('phonePlaceholder')}
+            className={inputCls}
+          />
+          <p className="mt-1.5 text-xs leading-relaxed text-[#C4A882]/80">{t('phoneHint')}</p>
         </div>
       </div>
 
