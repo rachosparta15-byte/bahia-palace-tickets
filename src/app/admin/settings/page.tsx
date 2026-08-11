@@ -1,5 +1,6 @@
 ﻿import prisma from '@/lib/db';
 import { SettingsForm } from '@/components/admin/SettingsForm';
+import { ChangePasswordForm } from '@/components/admin/ChangePasswordForm';
 
 export const dynamic = 'force-dynamic';
 
@@ -60,6 +61,11 @@ export default async function SettingsPage() {
         <p className="text-sm text-[#8B6344] mt-1">Global configuration — contact info, prices, social links.</p>
       </div>
       <SettingsForm grouped={grouped} />
+      {/* Below the site settings: a password is changed rarely, and putting it
+          on top would push the fields edited weekly off the first screen. */}
+      <div className="mt-10">
+        <ChangePasswordForm />
+      </div>
     </div>
   );
 }
