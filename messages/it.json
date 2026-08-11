@@ -721,7 +721,7 @@
         },
         "delivery": {
           "q": "Quando ricevo il biglietto?",
-          "a": "Se visiti oggi, di solito entro 10 minuti mentre il palazzo è aperto, e al massimo entro un’ora. Se prenoti dopo la chiusura, la sera stessa — il codice non riporta alcuna data, quindi ti fa entrare la mattina seguente. Per una data successiva lo inviamo circa 24 ore prima del giorno indicato."
+          "a": "Le visite si prenotano con almeno due giorni di anticipo: è il tempo che ci serve per ottenere il tuo biglietto ufficiale dal palazzo. Te lo inviamo circa 24 ore prima del giorno che ci hai indicato. Il codice non ha una fascia oraria, quindi puoi arrivare quando preferisci in quella data."
         },
         "group": {
           "q": "Can I book for a group?",
@@ -804,7 +804,7 @@
       },
       "delivery": {
         "title": "Il tuo biglietto arriva prima che ti serva.",
-        "body": "Visiti oggi? Di solito entro 10 minuti, mentre il palazzo è aperto. Prenoti con più anticipo? Lo inviamo circa 24 ore prima della data della visita, così ce l’hai a portata di mano sul telefono."
+        "body": "Le visite si prenotano con almeno due giorni di anticipo. Inviamo il biglietto circa 24 ore prima della data della visita, così è pronto sul telefono quando parti."
       },
       "price": {
         "title": "13,99 € a persona, tasse incluse.",

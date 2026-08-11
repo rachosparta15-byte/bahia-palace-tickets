@@ -719,7 +719,7 @@
         },
         "delivery": {
           "q": "When do I receive my ticket?",
-          "a": "If you are visiting today, usually within 10 minutes while the palace is open, and within the hour at the latest. If you book after it closes, the same evening — your code carries no date, so it still admits you the next morning. For a later date we send it about 24 hours before the day you told us you are visiting."
+          "a": "Visits are booked at least two days in advance, which is the time we need to obtain your official ticket from the palace. We send it about 24 hours before the day you told us you are visiting. Your code carries no time slot, so you can arrive whenever suits you on that date."
         },
         "group": {
           "q": "Can I book for a group?",
@@ -802,7 +802,7 @@
       },
       "delivery": {
         "title": "Your ticket arrives before you need it.",
-        "body": "Visiting today? Usually within 10 minutes while the palace is open. Booking further ahead? We send it about 24 hours before your visit date, so it is fresh on your phone when you go."
+        "body": "Visits are booked at least two days ahead. We send your ticket about 24 hours before your visit date, so it is fresh on your phone when you go."
       },
       "price": {
         "title": "€13.99 per person, all taxes included.",

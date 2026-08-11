@@ -721,7 +721,7 @@
         },
         "delivery": {
           "q": "Wann erhalte ich mein Ticket?",
-          "a": "Bei einem Besuch noch heute in der Regel innerhalb von 10 Minuten, solange der Palast geöffnet ist, spätestens innerhalb einer Stunde. Buchen Sie nach Schließung, kommt es am selben Abend — Ihr Code trägt kein Datum und lässt Sie am nächsten Morgen ein. Für ein späteres Datum senden wir es etwa 24 Stunden vor dem angegebenen Tag."
+          "a": "Besuche werden mindestens zwei Tage im Voraus gebucht — so lange brauchen wir, um Ihr offizielles Ticket am Palast zu besorgen. Wir senden es etwa 24 Stunden vor dem von Ihnen angegebenen Tag. Ihr Code enthält kein Zeitfenster, Sie können an diesem Tag also kommen, wann es Ihnen passt."
         },
         "group": {
           "q": "Can I book for a group?",
@@ -804,7 +804,7 @@
       },
       "delivery": {
         "title": "Ihr Ticket kommt, bevor Sie es brauchen.",
-        "body": "Besuch noch heute? In der Regel innerhalb von 10 Minuten, solange der Palast geöffnet ist. Buchen Sie früher? Dann senden wir es etwa 24 Stunden vor Ihrem Besuchstag, damit es griffbereit auf Ihrem Handy liegt."
+        "body": "Besuche werden mindestens zwei Tage im Voraus gebucht. Ihr Ticket senden wir etwa 24 Stunden vor dem Besuchstag, damit es am Tag selbst auf Ihrem Handy bereitliegt."
       },
       "price": {
         "title": "13,99 € pro Person, inklusive aller Steuern.",

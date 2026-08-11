@@ -124,7 +124,7 @@
       },
       "delivery": {
         "title": "O bilhete chega antes de precisar dele.",
-        "body": "Visita hoje? Normalmente em 10 minutos, enquanto o palácio está aberto. Reserva com antecedência? Enviamos cerca de 24 horas antes da data da visita, para o ter à mão no telemóvel."
+        "body": "As visitas reservam-se com pelo menos dois dias de antecedência. Enviamos o seu bilhete cerca de 24 horas antes da data da visita, para o ter à mão no telemóvel nesse dia."
       },
       "price": {
         "title": "13,99 € por pessoa, impostos incluídos.",
@@ -244,7 +244,7 @@
         },
         "delivery": {
           "q": "Quando recebo o meu bilhete?",
-          "a": "Se visita hoje, normalmente em 10 minutos enquanto o palácio está aberto, e no máximo dentro de uma hora. Se reservar depois do fecho, na mesma noite — o código não tem data, por isso deixa-o entrar na manhã seguinte. Para uma data posterior, enviamos cerca de 24 horas antes do dia que indicou."
+          "a": "As visitas reservam-se com pelo menos dois dias de antecedência: é o tempo de que precisamos para obter o seu bilhete oficial no palácio. Enviamo-lo cerca de 24 horas antes do dia que nos indicou. O seu código não tem hora marcada, por isso pode chegar quando preferir nesse dia."
         },
         "group": {
           "q": "Posso reservar para um grupo?",

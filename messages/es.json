@@ -721,7 +721,7 @@
         },
         "delivery": {
           "q": "¿Cuándo recibo mi entrada?",
-          "a": "Si visita hoy, normalmente en menos de 10 minutos mientras el palacio está abierto, y como máximo en una hora. Si reserva después del cierre, esa misma tarde: su código no lleva fecha, así que le da acceso a la mañana siguiente. Para una fecha posterior lo enviamos unas 24 horas antes del día indicado."
+          "a": "Las visitas se reservan con al menos dos días de antelación: es el tiempo que necesitamos para conseguir tu entrada oficial en el palacio. Te la enviamos unas 24 horas antes del día que nos indicaste. Tu código no incluye franja horaria, así que puedes llegar cuando prefieras ese día."
         },
         "group": {
           "q": "Can I book for a group?",
@@ -804,7 +804,7 @@
       },
       "delivery": {
         "title": "Su entrada llega antes de que la necesite.",
-        "body": "¿Visita hoy? Normalmente en menos de 10 minutos mientras el palacio está abierto. ¿Reserva con antelación? Se la enviamos unas 24 horas antes de su fecha de visita, para que la tenga a mano en el móvil."
+        "body": "Las visitas se reservan con al menos dos días de antelación. Enviamos tu entrada unas 24 horas antes de la fecha de visita, para que la tengas a mano en el móvil ese día."
       },
       "price": {
         "title": "13,99 € por persona, impuestos incluidos.",

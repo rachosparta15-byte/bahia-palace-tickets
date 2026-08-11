@@ -721,7 +721,7 @@
         },
         "delivery": {
           "q": "Quand vais-je recevoir mon billet ?",
-          "a": "Si vous visitez aujourd’hui, généralement sous 10 minutes pendant les heures d’ouverture, et dans l’heure au plus tard. Si vous réservez après la fermeture, le soir même — votre code ne porte aucune date, il vous fait donc entrer le lendemain matin. Pour une date ultérieure, nous l’envoyons environ 24 heures avant le jour indiqué."
+          "a": "Les visites se réservent au moins deux jours à l’avance : c’est le temps qu’il nous faut pour obtenir votre billet officiel auprès du palais. Nous vous l’envoyons environ 24 heures avant la date que vous nous avez indiquée. Votre code ne comporte aucun créneau horaire : vous arrivez quand vous voulez ce jour-là."
         },
         "group": {
           "q": "Can I book for a group?",
@@ -804,7 +804,7 @@
       },
       "delivery": {
         "title": "Votre billet arrive avant que vous en ayez besoin.",
-        "body": "Vous visitez aujourd’hui ? En général sous 10 minutes pendant les heures d’ouverture. Vous réservez plus tôt ? Nous l’envoyons environ 24 heures avant votre date de visite, pour qu’il soit bien en évidence sur votre téléphone."
+        "body": "Les visites se réservent au moins deux jours à l’avance. Nous envoyons votre billet environ 24 heures avant la date de visite, pour qu’il soit bien présent sur votre téléphone le jour venu."
       },
       "price": {
         "title": "13,99 € par personne, toutes taxes comprises.",
