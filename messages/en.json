@@ -765,7 +765,9 @@
       "phoneLabel": "Phone number",
       "phoneOptional": "(optional)",
       "phonePlaceholder": "Include your country code, e.g. +44",
-      "phoneHint": "For WhatsApp delivery of your ticket, and so you do not have to type it again at payment."
+      "phoneHint": "For WhatsApp delivery of your ticket, and so you do not have to type it again at payment.",
+      "chooseTitle": "How would you like to pay?",
+      "chooseHint": "Pay with your PayPal account, or with any debit or credit card — no PayPal account needed."
     },
     "confirmation": {
       "packTitle": "Your Complete Visitor Pack",

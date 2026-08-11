@@ -767,7 +767,9 @@
       "phoneLabel": "Telefonnummer",
       "phoneOptional": "(optional)",
       "phonePlaceholder": "Mit Ländervorwahl, z. B. +49",
-      "phoneHint": "Für den Ticketversand per WhatsApp – und damit Sie sie beim Bezahlen nicht erneut eingeben müssen."
+      "phoneHint": "Für den Ticketversand per WhatsApp – und damit Sie sie beim Bezahlen nicht erneut eingeben müssen.",
+      "chooseTitle": "Wie möchten Sie bezahlen?",
+      "chooseHint": "Zahlen Sie mit Ihrem PayPal-Konto oder mit einer beliebigen Debit- oder Kreditkarte – ein PayPal-Konto ist nicht nötig."
     },
     "confirmation": {
       "packTitle": "Your Complete Visitor Pack",

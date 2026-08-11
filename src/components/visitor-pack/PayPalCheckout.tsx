@@ -69,6 +69,8 @@ export interface PayPalCheckoutProps {
     processing: string;
     error: string;
     orPayPal: string;
+    chooseTitle: string;
+    chooseHint: string;
   };
 }
 
@@ -454,6 +456,22 @@ export function PayPalCheckout({
          * `min-h` reserves room before the iframe arrives, so the page does
          * not jump under the pointer at the moment someone reaches to click.
          */}
+        {/*
+         * Says what the two buttons are, before they are pressed.
+         *
+         * A yellow PayPal button next to a black one is not self-explanatory:
+         * the most common reading is "you need a PayPal account", and someone
+         * who does not have one leaves rather than press either. Naming the
+         * card option and saying plainly that no account is needed is the
+         * whole point of showing the second button at all.
+         */}
+        {!cardEligible && (
+          <div className="mb-3">
+            <p className="text-sm font-semibold text-[#F5E8CC]">{labels.chooseTitle}</p>
+            <p className="mt-1 text-xs leading-relaxed text-[#C4A882]">{labels.chooseHint}</p>
+          </div>
+        )}
+
         {/*
          * A light panel under PayPal's own UI, on purpose.
          *

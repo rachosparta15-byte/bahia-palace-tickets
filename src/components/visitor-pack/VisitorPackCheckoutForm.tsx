@@ -325,6 +325,8 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
             processing: t('submitting'),
             error: t('errors.generic'),
             orPayPal: t('orPayPal'),
+            chooseTitle: t('chooseTitle'),
+            chooseHint: t('chooseHint'),
           }}
         />
       </div>

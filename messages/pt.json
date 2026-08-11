@@ -204,7 +204,9 @@
       "phoneLabel": "Número de telefone",
       "phoneOptional": "(opcional)",
       "phonePlaceholder": "Com o indicativo do país, ex. +351",
-      "phoneHint": "Para receber o bilhete por WhatsApp e para não ter de o escrever outra vez no pagamento."
+      "phoneHint": "Para receber o bilhete por WhatsApp e para não ter de o escrever outra vez no pagamento.",
+      "chooseTitle": "Como prefere pagar?",
+      "chooseHint": "Pague com a sua conta PayPal ou com qualquer cartão de débito ou crédito — não é preciso conta PayPal."
     },
     "testMode": {
       "badge": "MODO DE TESTE",

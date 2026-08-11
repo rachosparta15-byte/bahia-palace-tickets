@@ -767,7 +767,9 @@
       "phoneLabel": "Número de teléfono",
       "phoneOptional": "(opcional)",
       "phonePlaceholder": "Incluye el prefijo del país, p. ej. +34",
-      "phoneHint": "Para enviarte la entrada por WhatsApp y para no tener que escribirlo otra vez al pagar."
+      "phoneHint": "Para enviarte la entrada por WhatsApp y para no tener que escribirlo otra vez al pagar.",
+      "chooseTitle": "¿Cómo quieres pagar?",
+      "chooseHint": "Paga con tu cuenta de PayPal o con cualquier tarjeta de débito o crédito: no hace falta cuenta de PayPal."
     },
     "confirmation": {
       "packTitle": "Your Complete Visitor Pack",
