@@ -194,6 +194,19 @@ export function PayPalCheckout({
     if (mountedRef.current) return;
     mountedRef.current = true;
 
+    /*
+     * Bring the payment step into view.
+     *
+     * The details form is replaced by this one in place, so someone who
+     * submitted from halfway down a long page stays exactly where they were —
+     * looking at whatever now occupies that scroll position rather than at
+     * the card form that just appeared above or below it.
+     */
+    document.getElementById('checkout')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+
     let cancelled = false;
 
     loadSdk(clientId, locale)
@@ -429,8 +442,22 @@ export function PayPalCheckout({
             spinner. The card button renders only when the merchant has no
             embedded card fields — with those on the page it would be a
             second, worse route to the same thing. */}
+        {/*
+         * `isolate` and a stacking context of our own.
+         *
+         * PayPal's card form expands to full height inside this container and
+         * paints with its own z-indexes. Without a stacking context here those
+         * competed with the page's — the sticky header and the section behind
+         * the checkout showed through the middle of the form, so the customer
+         * saw "Bahia in Video" running across their card fields.
+         *
+         * `min-h` reserves room before the iframe arrives, so the page does
+         * not jump under the pointer at the moment someone reaches to click.
+         */}
         <div
-          className={`space-y-2.5 ${busy ? 'pointer-events-none opacity-50' : ''}`}
+          className={`relative isolate z-10 min-h-[100px] space-y-2.5 ${
+            busy ? 'pointer-events-none opacity-50' : ''
+          }`}
         >
           <div ref={buttonsRef} />
           {!cardEligible && <div ref={cardButtonRef} />}

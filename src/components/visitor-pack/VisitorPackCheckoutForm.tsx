@@ -265,7 +265,20 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
    */
   if (paypal) {
     return (
-      <div className="bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-6 sm:p-7" id="checkout">
+      /*
+       * `relative isolate` — the payment step sits above the page, not in it.
+       *
+       * PayPal's card form is a tall iframe that paints with its own
+       * z-indexes. Without a stacking context on the card that contains it,
+       * sections further down the page bled through the middle of the form.
+       * `overflow-hidden` keeps the iframe's corners inside the rounded card.
+       */
+      <div
+        // scroll-mt-24 clears the fixed header, which is z-50 and would
+        // otherwise cover the top of this card when it is scrolled into view.
+        className="relative isolate z-10 scroll-mt-24 overflow-hidden bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-6 sm:p-7"
+        id="checkout"
+      >
         <h2
           className="font-bold text-[#F5E8CC] mb-2"
           style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem' }}
