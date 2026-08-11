@@ -18,6 +18,32 @@
 export const BOOKING_LEAD_DAYS = 2;
 
 /**
+ * The monument's own timezone.
+ *
+ * The window is a promise about Marrakech: "we need two days to collect your
+ * ticket from the palace" is two of the palace's days, not the server's. Vercel
+ * runs in UTC, so between midnight and 01:00 Moroccan time the server still
+ * believed it was yesterday and sold a visit date one day inside the window —
+ * every single night, for an hour.
+ */
+const MONUMENT_TZ = 'Africa/Casablanca';
+
+/**
+ * Today's calendar date in Marrakech, as YYYY-MM-DD.
+ *
+ * `en-CA` because its short date format is already YYYY-MM-DD, which avoids
+ * reassembling parts by hand and getting the order wrong.
+ */
+function todayInMorocco(now: Date): string {
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: MONUMENT_TZ,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(now);
+}
+
+/**
  * Local calendar date as YYYY-MM-DD.
  *
  * Deliberately not `toISOString().slice(0, 10)`, which converts to UTC first:
@@ -39,9 +65,13 @@ export function toISODate(d: Date): string {
  * cells: the calendar is a courtesy, the API route is the rule.
  */
 export function earliestVisitDate(now: Date = new Date()): string {
-  const d = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  d.setDate(d.getDate() + BOOKING_LEAD_DAYS);
-  return toISODate(d);
+  // Anchored to Marrakech's calendar day, then walked forward. Built from the
+  // Y/M/D parts at UTC noon so the arithmetic cannot drift across a boundary
+  // on the way back out.
+  const [y, m, d] = todayInMorocco(now).split('-').map(Number);
+  const anchor = new Date(Date.UTC(y, m - 1, d, 12));
+  anchor.setUTCDate(anchor.getUTCDate() + BOOKING_LEAD_DAYS);
+  return anchor.toISOString().slice(0, 10);
 }
 
 /** True when `iso` (YYYY-MM-DD) falls inside the closed window. */
