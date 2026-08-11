@@ -769,7 +769,8 @@
       "phonePlaceholder": "Con il prefisso internazionale, es. +39",
       "phoneHint": "Per ricevere il biglietto su WhatsApp e per non doverlo riscrivere al pagamento.",
       "chooseTitle": "Come preferisci pagare?",
-      "chooseHint": "Paga con il tuo account PayPal oppure con qualsiasi carta di debito o credito: non serve un account PayPal."
+      "chooseHint": "Paga con il tuo account PayPal oppure con qualsiasi carta di debito o credito: non serve un account PayPal.",
+      "paymentMethods": "Pagamento sicuro — accettiamo PayPal e le principali carte"
     },
     "confirmation": {
       "packTitle": "Your Complete Visitor Pack",

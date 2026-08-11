@@ -11,6 +11,8 @@ import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 import { TestModeBanner } from '@/components/visitor-pack/TestModeBanner';
 import { ValuePoints } from '@/components/visitor-pack/ValuePoints';
 import { VisitorPackCheckoutForm } from '@/components/visitor-pack/VisitorPackCheckoutForm';
+import { PaymentMethods } from '@/components/ui/PaymentMethods';
+import { earliestVisitDate } from '@/config/booking-window';
 import { CheckoutDisclosure } from '@/components/visitor-pack/CheckoutDisclosure';
 import {
   VISITOR_PACK_PRICE_EUR_CENTS,
@@ -127,6 +129,21 @@ export default async function VisitorPackPage({ params }: Props) {
         ? 'https://schema.org/InStock'
         : 'https://schema.org/PreOrder',
       url: `${BASE}/${locale}/visitor-pack`,
+      /*
+       * What we actually take. A factual property of the offer, not a ranking
+       * trick — Google does not rank a page higher for listing payment
+       * methods. It is here so the structured data matches the checkout: a
+       * shopping surface that reads this and shows a card icon is telling the
+       * truth about what happens when someone arrives.
+       */
+      acceptedPaymentMethod: [
+        { '@type': 'PaymentMethod', name: 'PayPal' },
+        { '@type': 'PaymentMethod', name: 'Credit Card' },
+        { '@type': 'PaymentMethod', name: 'Debit Card' },
+      ],
+      // The window the calendar enforces, so no rich result can advertise a
+      // same-day booking the checkout refuses.
+      availabilityStarts: earliestVisitDate(),
     },
   };
 
@@ -341,6 +358,13 @@ export default async function VisitorPackPage({ params }: Props) {
             paymentsEnabled={paymentsEnabled}
             testMode={testMode}
           />
+          {/* Below the form, not above it. The question "can I pay with my
+              card?" is asked while filling the form in, and answering it here
+              costs nothing; putting logos above the fields would push the
+              thing the visitor came to do further down the page. */}
+          {paymentsEnabled && (
+            <PaymentMethods className="mt-6" label={t('form.paymentMethods')} />
+          )}
         </div>
       </section>
 
