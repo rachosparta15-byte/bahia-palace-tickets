@@ -123,6 +123,57 @@ export async function confirmBookingPaid(
     console.error('[confirm] order-confirmation email failed (non-fatal):', err);
   }
 
+  /*
+   * Tell the owner there is a ticket to buy.
+   *
+   * Tickets are sourced by hand, and nothing else announced a sale: a booking
+   * placed overnight sat unseen until somebody opened the dashboard, and the
+   * first sign of trouble would have been a visitor at the gate holding a
+   * reference and no ticket. The two-day window exists to give time to act,
+   * and it is worth nothing if the clock only starts when the owner looks.
+   *
+   * Non-fatal, like the customer's own confirmation: the payment is real and
+   * the booking stands whether or not this alert is delivered. A missing
+   * ADMIN_ALERT_EMAIL is logged loudly rather than passed over — silence here
+   * is indistinguishable from "no sales".
+   */
+  try {
+    const alertTo = process.env.ADMIN_ALERT_EMAIL;
+    if (!alertTo) {
+      console.error(
+        `[confirm] ADMIN_ALERT_EMAIL is not set — nobody was told about ${booking.reference}, ` +
+          `which needs an official ticket sourced by hand.`
+      );
+    } else {
+      const site = (
+        process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com'
+      ).replace(/\/$/, '');
+      // Floored whole days: "in 2 days" must not round up from 1.6 and make
+      // the deadline look further away than it is.
+      const daysUntilVisit = Math.max(
+        0,
+        Math.floor((booking.visitDate.getTime() - Date.now()) / 86_400_000)
+      );
+
+      await email.sendAdminBookingAlert({
+        to: alertTo,
+        reference: booking.reference,
+        bookingId: booking.id,
+        customerName: booking.customerName,
+        customerEmail: booking.customerEmail,
+        visitDate,
+        daysUntilVisit,
+        adults: booking.adults,
+        children: booking.children,
+        totalAmount: booking.totalAmount,
+        currency: booking.currency,
+        adminUrl: `${site}/admin/bookings/${booking.id}`,
+      });
+    }
+  } catch (err) {
+    console.error('[confirm] admin alert failed (non-fatal):', err);
+  }
+
   // Mark the originating lead paid — downstream of a verified payment.
   if (booking.leadId) {
     await prisma.lead

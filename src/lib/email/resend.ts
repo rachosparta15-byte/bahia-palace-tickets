@@ -2,7 +2,13 @@
 // npm install resend
 // Set EMAIL_PROVIDER=resend and RESEND_API_KEY in .env.
 
-import type { BookingEmailParams, RefundEmailParams, ContactEmailParams, TicketDeliveryEmailParams } from './mock';
+import type {
+  BookingEmailParams,
+  RefundEmailParams,
+  ContactEmailParams,
+  TicketDeliveryEmailParams,
+  AdminBookingAlertParams,
+} from './mock';
 import { crossSellSites } from '@/config/network-sites';
 
 const FROM = process.env.EMAIL_FROM ?? 'tickets@visitbahiapalace.com';
@@ -160,6 +166,73 @@ function buildTicketHtml(p: TicketDeliveryEmailParams): string {
     </body>
     </html>
   `;
+}
+
+/**
+ * Tells the owner a ticket has been sold and must now be bought by hand.
+ *
+ * This is an operations alert, not a customer email: no branding, no
+ * reassurance, everything above the fold. The subject line carries the
+ * deadline, because on a phone the subject is often all that gets read —
+ * "ACTION: BHA-686PJN — visit in 2 days" says what to do without opening it.
+ *
+ * Sent last in confirmBookingPaid and wrapped in its own try/catch there: a
+ * booking is paid and confirmed whether or not this alert goes out.
+ */
+export async function sendAdminBookingAlert(params: AdminBookingAlertParams): Promise<void> {
+  // @ts-ignore — installed in Phase B: npm install resend
+  const { Resend } = await import('resend');
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
+  const guests = params.adults + params.children;
+  // Under two days is the window closing: at that point the ticket has to be
+  // sourced today, so the subject says so instead of counting.
+  const urgency =
+    params.daysUntilVisit <= 1 ? 'TODAY' : `in ${params.daysUntilVisit} days`;
+
+  await resend.emails.send({
+    from: process.env.EMAIL_FROM ?? 'tickets@visitbahiapalace.com',
+    to: params.to,
+    subject: `ACTION: ${params.reference} — visit ${urgency} (${guests} guest${guests === 1 ? '' : 's'})`,
+    html: `
+      <!DOCTYPE html>
+      <html>
+      <head><meta charset="utf-8"/></head>
+      <body style="font-family:sans-serif;background:#fff;padding:24px">
+        <div style="max-width:560px;margin:0 auto">
+          <p style="margin:0 0 4px;font-size:12px;font-weight:bold;color:#C4452D;letter-spacing:1px">
+            BUY THE OFFICIAL TICKET, THEN SEND IT
+          </p>
+          <h1 style="margin:0 0 16px;font-size:22px;color:#111">${esc(params.reference)}</h1>
+
+          <table style="width:100%;border-collapse:collapse;font-size:14px">
+            <tr><td style="padding:7px 0;color:#666;width:130px">Visit date</td>
+                <td style="padding:7px 0;font-weight:bold">${esc(params.visitDate)} — ${urgency}</td></tr>
+            <tr><td style="padding:7px 0;color:#666">Guests</td>
+                <td style="padding:7px 0">${params.adults} adult(s)${params.children ? `, ${params.children} child(ren)` : ''}</td></tr>
+            <tr><td style="padding:7px 0;color:#666">Paid</td>
+                <td style="padding:7px 0;font-weight:bold">${params.totalAmount} ${esc(params.currency)}</td></tr>
+            <tr><td style="padding:7px 0;color:#666">Customer</td>
+                <td style="padding:7px 0">${esc(params.customerName)}<br/><a href="mailto:${esc(params.customerEmail)}">${esc(params.customerEmail)}</a></td></tr>
+          </table>
+
+          <p style="margin:22px 0 0">
+            <a href="${esc(params.adminUrl)}"
+               style="display:inline-block;background:#C4452D;color:#fff;text-decoration:none;padding:12px 22px;border-radius:8px;font-weight:bold;font-size:14px">
+              Open booking and send the ticket
+            </a>
+          </p>
+
+          <p style="margin:20px 0 0;color:#666;font-size:13px;line-height:1.55">
+            The customer has an order confirmation and their booking reference.
+            They do <strong>not</strong> have an entry ticket or the audio-guide
+            link yet — both go out together when you send the QR from the admin.
+          </p>
+        </div>
+      </body>
+      </html>
+    `,
+  });
 }
 
 export async function sendContactNotification(params: ContactEmailParams): Promise<void> {

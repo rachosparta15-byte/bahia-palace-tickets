@@ -94,6 +94,43 @@ export async function sendTicketDelivery(params: TicketDeliveryEmailParams): Pro
   console.log('========================================\n');
 }
 
+/**
+ * A paid booking that someone now has to act on.
+ *
+ * Every ticket is sourced by hand, and nothing else tells the owner a sale
+ * happened. Without this a booking placed at 03:00 sits unseen until somebody
+ * thinks to open the dashboard, and the first sign of trouble is a visitor at
+ * the gate holding a reference and no ticket.
+ */
+export interface AdminBookingAlertParams {
+  to: string;
+  reference: string;
+  bookingId: string;
+  customerName: string;
+  customerEmail: string;
+  /** YYYY-MM-DD. */
+  visitDate: string;
+  /** Days from now until the visit — how long there is to act. */
+  daysUntilVisit: number;
+  adults: number;
+  children: number;
+  totalAmount: number;
+  currency: string;
+  /** Deep link straight to this booking in the admin. */
+  adminUrl: string;
+}
+
+export async function sendAdminBookingAlert(params: AdminBookingAlertParams): Promise<void> {
+  console.log('\n========================================');
+  console.log('[EMAIL WOULD BE SENT] ACTION NEEDED — new paid booking');
+  console.log('  Ref:      ', params.reference);
+  console.log('  Visit:    ', params.visitDate, `(in ${params.daysUntilVisit} day(s))`);
+  console.log('  Guests:   ', params.adults + params.children);
+  console.log('  Paid:     ', params.totalAmount, params.currency);
+  console.log('  Admin:    ', params.adminUrl);
+  console.log('========================================\n');
+}
+
 export interface ContactEmailParams {
   from: string;
   name: string;
