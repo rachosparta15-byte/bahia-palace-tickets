@@ -1,5 +1,10 @@
+import { preload } from 'react-dom';
 import { getTranslations } from 'next-intl/server';
 import { ArrowRight, Sun, Landmark } from 'lucide-react';
+
+/** The hero's own srcset, declared once and used by both the preload and the img. */
+const HERO_SRCSET =
+  '/images/hero-bg-640.webp 640w, /images/hero-bg-1024.webp 1024w, /images/hero-bg-1600.webp 1600w';
 
 async function getTemp(): Promise<number | null> {
   try {
@@ -24,6 +29,28 @@ export async function Hero() {
    * it obvious.
    */
   const t = await getTranslations('heroBanner');
+  /*
+   * Tell the browser about the hero before it has read the page.
+   *
+   * Lighthouse split this image's 7.0s LCP into TTFB 0.8s, load delay 2.1s,
+   * download 1.4s and render delay 2.8s. The load delay is the whole reason
+   * the earlier size reduction did not help: the file was already small, but
+   * its download did not start for two seconds while gtag.js and the fonts
+   * held the connection. Making it smaller does not help something that has
+   * not begun.
+   *
+   * React hoists this into <head>, so it is discovered in the first bytes of
+   * the document rather than after the parser reaches the <img>. imageSrcSet
+   * and imageSizes must match the tag exactly — a preload that disagrees
+   * fetches a second, different file and makes things worse.
+   */
+  preload('/images/hero-bg-1024.webp', {
+    as: 'image',
+    fetchPriority: 'high',
+    imageSrcSet: HERO_SRCSET,
+    imageSizes: '100vw',
+  });
+
   const temp = await getTemp();
   return (
     <section className="relative flex flex-col overflow-hidden min-h-[260px] sm:min-h-0 bg-[#160D06]">
@@ -48,7 +75,7 @@ export async function Hero() {
           */}
           <img
             src="/images/hero-bg-1024.webp"
-            srcSet="/images/hero-bg-640.webp 640w, /images/hero-bg-1024.webp 1024w, /images/hero-bg-1600.webp 1600w"
+            srcSet={HERO_SRCSET}
             sizes="100vw"
             width={1600}
             height={900}
