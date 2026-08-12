@@ -476,68 +476,52 @@ function humanDate(iso: string): string {
   }).format(d);
 }
 
+/**
+ * The order confirmation.
+ *
+ * DELIBERATELY SHORT. An earlier version explained the fulfilment process in
+ * two numbered steps, repeated the cancellation policy in full, and listed
+ * three other monuments with a paragraph each. Every piece was true, and the
+ * whole thing read like a brochure — the one fact the customer opens it for,
+ * "when does my ticket arrive?", was four scrolls down.
+ *
+ * So: you paid, here is what you bought, your ticket and guide arrive on this
+ * date, thank you. Everything else has a page of its own.
+ *
+ * It still must not claim to be a ticket. An earlier version said "Show this
+ * email at the entrance or use your QR code" while containing neither, which
+ * could have sent someone to the palace to be turned away at the gate.
+ */
 function buildBookingHtml(p: BookingEmailParams): string {
+  // The ticket goes out about 24 hours ahead, so name that day rather than
+  // saying "24 hours before" and leaving the customer to do the arithmetic on
+  // a date they are already unsure about.
+  const deliveryDay = (() => {
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(p.visitDate);
+    if (!m) return null;
+    const d = new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3])));
+    d.setUTCDate(d.getUTCDate() - 1);
+    return humanDate(d.toISOString().slice(0, 10));
+  })();
+
   return `
     <!DOCTYPE html>
     <html>
     <head><meta charset="utf-8"/></head>
     <body style="font-family:sans-serif;background:#FAF3E7;padding:40px 20px">
-      <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
-        <div style="background:#C4452D;padding:32px;text-align:center">
-          <h1 style="color:#fff;margin:0;font-size:24px">Bahia Palace Tickets</h1>
-          <p style="color:rgba(255,255,255,0.9);margin:8px 0 0;font-size:15px">
-            Payment received &middot; your place is reserved
-          </p>
+      <div style="max-width:560px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden">
+        <div style="background:#C4452D;padding:26px;text-align:center">
+          <h1 style="color:#fff;margin:0;font-size:21px">Bahia Palace Tickets</h1>
+          <p style="color:rgba(255,255,255,0.9);margin:6px 0 0;font-size:14px">Booking confirmed</p>
         </div>
-        <div style="padding:32px">
-          <p style="margin:0 0 6px">Hi <strong>${esc(p.customerName)}</strong>,</p>
-          <p style="margin:0 0 22px;color:#444;line-height:1.6">
-            We have your payment and your visit is booked for
-            <strong>${esc(humanDate(p.visitDate))}</strong>. Your entry ticket is not
-            in this email &mdash; here is exactly what happens next.
+
+        <div style="padding:28px">
+          <p style="margin:0 0 20px;color:#444;line-height:1.6">
+            Hi <strong>${esc(p.customerName)}</strong>, thank you — your payment is in
+            and your visit is booked.
           </p>
 
-          <!--
-            THE STEP THE OLD EMAIL WAS MISSING.
-
-            It said "Show this email at the entrance or use your QR code" on an
-            email that contains neither. Someone could have travelled to the
-            gate on the strength of that sentence and been turned away with a
-            booking reference the palace has never heard of.
-
-            The ticket really is bought by hand after payment, so the honest
-            thing is to say so, say when it arrives, and say what to do if it
-            does not. Two numbered steps, above everything else.
-          -->
-          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"
-                 style="margin:0 0 24px;border:1px solid #E8D5B7;border-radius:10px">
-            <tr>
-              <td style="padding:18px 18px 6px">
-                <p style="margin:0 0 14px;font-size:12px;font-weight:bold;color:#C4452D;letter-spacing:0.6px">
-                  WHAT HAPPENS NEXT
-                </p>
-
-                <p style="margin:0 0 4px;font-weight:bold;color:#3D2817;font-size:15px">
-                  1. We buy your official ticket
-                </p>
-                <p style="margin:0 0 16px;color:#666;font-size:14px;line-height:1.55">
-                  We purchase your entry ticket from the palace in your name. Nothing
-                  for you to do.
-                </p>
-
-                <p style="margin:0 0 4px;font-weight:bold;color:#3D2817;font-size:15px">
-                  2. Your ticket arrives about 24 hours before your visit
-                </p>
-                <p style="margin:0 0 16px;color:#666;font-size:14px;line-height:1.55">
-                  One more email, with your <strong>QR code</strong> and your
-                  <strong>audio guide link</strong> together. That is the email you
-                  show at the entrance &mdash; not this one.
-                </p>
-              </td>
-            </tr>
-          </table>
-
-          <table style="width:100%;border-collapse:collapse;margin:0 0 24px">
+          <table style="width:100%;border-collapse:collapse;margin:0 0 22px;font-size:14px">
             <tr><td style="padding:8px;color:#666">Reference</td><td style="padding:8px;font-weight:bold">${esc(p.reference)}</td></tr>
             <tr style="background:#FAF3E7"><td style="padding:8px;color:#666">Booking</td><td style="padding:8px">${esc(productName(p.ticketType))}</td></tr>
             <tr><td style="padding:8px;color:#666">Visit date</td><td style="padding:8px;font-weight:bold">${esc(humanDate(p.visitDate))}</td></tr>
@@ -545,17 +529,23 @@ function buildBookingHtml(p: BookingEmailParams): string {
             <tr><td style="padding:8px;color:#666">Paid</td><td style="padding:8px;font-weight:bold;color:#C4452D">${p.totalAmount} ${esc(p.currency)}</td></tr>
           </table>
 
-          <p style="margin:0 0 22px;padding:12px 14px;background:#FAF3E7;border-radius:8px;color:#666;font-size:13px;line-height:1.55">
-            <strong style="color:#3D2817">Not yet a ticket.</strong> This email confirms your
-            payment and your booking. It does not admit you to the palace on its own &mdash;
-            wait for the one with your QR code.
-          </p>
-          ${buildAudioGuideBlock(p.audioGuideUrls)}
+          <div style="padding:16px 18px;background:#FAF3E7;border-radius:9px">
+            <p style="margin:0 0 6px;font-weight:bold;color:#3D2817;font-size:15px">
+              Your ticket arrives ${deliveryDay ? `on ${esc(deliveryDay)}` : 'the day before your visit'}
+            </p>
+            <p style="margin:0;color:#666;font-size:14px;line-height:1.55">
+              One email with your QR code and your audio guide link. That is the one you
+              show at the entrance — this one is your receipt.
+            </p>
+          </div>
+
           ${buildSupportBlock(p.whatsapp ?? null)}
-          ${buildNetworkBlock()}
         </div>
-        <div style="background:#3D2817;padding:20px;text-align:center">
-          <p style="color:#E8D5B7;margin:0;font-size:13px">© ${new Date().getFullYear()} Bahia Palace Tickets • Marrakech, Morocco</p>
+
+        <div style="background:#3D2817;padding:16px;text-align:center">
+          <p style="color:#E8D5B7;margin:0;font-size:12px">
+            &copy; ${new Date().getFullYear()} Bahia Palace Tickets &bull; Marrakech, Morocco
+          </p>
         </div>
       </div>
     </body>
