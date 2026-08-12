@@ -426,6 +426,56 @@ function buildNetworkBlock(): string {
     </div>`;
 }
 
+/**
+ * A visit date a person can read: "Thursday 13 August 2026".
+ *
+ * The raw YYYY-MM-DD went straight into the email, and 2026-08-13 is a
+ * database value, not a date anybody checks against their own plans. The
+ * weekday earns its place here: travellers remember "we land Wednesday", not
+ * the number, and the visit date is the one field where being wrong costs a
+ * non-refundable ticket.
+ *
+ * Always en-GB, matching the rest of these emails, which are English-only by
+ * the owner's decision. Falls back to the raw string rather than throwing —
+ * an email that fails to send over a date format helps nobody.
+ */
+/**
+ * The product's name as it was sold, not its database slug.
+ *
+ * "Your booking for visitor-pack is confirmed" told the customer nothing and
+ * read like a leaked internal identifier in the one email that has to look
+ * trustworthy. Unknown slugs are title-cased rather than passed through raw,
+ * so a product added later degrades to "Guided Tour" and never to
+ * "guided-tour".
+ */
+function productName(slug: string): string {
+  const known: Record<string, string> = {
+    'visitor-pack': 'Complete Visitor Pack',
+  };
+  return (
+    known[slug] ??
+    slug
+      .split(/[-_]/)
+      .filter(Boolean)
+      .map((w) => w[0].toUpperCase() + w.slice(1))
+      .join(' ')
+  );
+}
+
+function humanDate(iso: string): string {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return iso;
+  const d = new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3])));
+  if (Number.isNaN(d.getTime())) return iso;
+  return new Intl.DateTimeFormat('en-GB', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(d);
+}
+
 function buildBookingHtml(p: BookingEmailParams): string {
   return `
     <!DOCTYPE html>
@@ -435,19 +485,71 @@ function buildBookingHtml(p: BookingEmailParams): string {
       <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08)">
         <div style="background:#C4452D;padding:32px;text-align:center">
           <h1 style="color:#fff;margin:0;font-size:24px">Bahia Palace Tickets</h1>
-          <p style="color:rgba(255,255,255,0.85);margin:8px 0 0">Your booking is confirmed!</p>
+          <p style="color:rgba(255,255,255,0.9);margin:8px 0 0;font-size:15px">
+            Payment received &middot; your place is reserved
+          </p>
         </div>
         <div style="padding:32px">
-          <p>Hi <strong>${p.customerName}</strong>,</p>
-          <p>Your booking for <strong>${p.ticketType}</strong> is confirmed.</p>
-          <table style="width:100%;border-collapse:collapse;margin:24px 0">
-            <tr><td style="padding:8px;color:#666">Reference</td><td style="padding:8px;font-weight:bold">${p.reference}</td></tr>
-            <tr style="background:#FAF3E7"><td style="padding:8px;color:#666">Visit Date</td><td style="padding:8px">${p.visitDate}</td></tr>
-            <tr><td style="padding:8px;color:#666">Adults</td><td style="padding:8px">${p.adults}</td></tr>
-            ${p.children > 0 ? `<tr style="background:#FAF3E7"><td style="padding:8px;color:#666">Children</td><td style="padding:8px">${p.children}</td></tr>` : ''}
-            <tr><td style="padding:8px;color:#666">Total</td><td style="padding:8px;font-weight:bold;color:#C4452D">${p.totalAmount} ${p.currency}</td></tr>
+          <p style="margin:0 0 6px">Hi <strong>${esc(p.customerName)}</strong>,</p>
+          <p style="margin:0 0 22px;color:#444;line-height:1.6">
+            We have your payment and your visit is booked for
+            <strong>${esc(humanDate(p.visitDate))}</strong>. Your entry ticket is not
+            in this email &mdash; here is exactly what happens next.
+          </p>
+
+          <!--
+            THE STEP THE OLD EMAIL WAS MISSING.
+
+            It said "Show this email at the entrance or use your QR code" on an
+            email that contains neither. Someone could have travelled to the
+            gate on the strength of that sentence and been turned away with a
+            booking reference the palace has never heard of.
+
+            The ticket really is bought by hand after payment, so the honest
+            thing is to say so, say when it arrives, and say what to do if it
+            does not. Two numbered steps, above everything else.
+          -->
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"
+                 style="margin:0 0 24px;border:1px solid #E8D5B7;border-radius:10px">
+            <tr>
+              <td style="padding:18px 18px 6px">
+                <p style="margin:0 0 14px;font-size:12px;font-weight:bold;color:#C4452D;letter-spacing:0.6px">
+                  WHAT HAPPENS NEXT
+                </p>
+
+                <p style="margin:0 0 4px;font-weight:bold;color:#3D2817;font-size:15px">
+                  1. We buy your official ticket
+                </p>
+                <p style="margin:0 0 16px;color:#666;font-size:14px;line-height:1.55">
+                  We purchase your entry ticket from the palace in your name. Nothing
+                  for you to do.
+                </p>
+
+                <p style="margin:0 0 4px;font-weight:bold;color:#3D2817;font-size:15px">
+                  2. Your ticket arrives about 24 hours before your visit
+                </p>
+                <p style="margin:0 0 16px;color:#666;font-size:14px;line-height:1.55">
+                  One more email, with your <strong>QR code</strong> and your
+                  <strong>audio guide link</strong> together. That is the email you
+                  show at the entrance &mdash; not this one.
+                </p>
+              </td>
+            </tr>
           </table>
-          <p style="color:#666;font-size:14px">Show this email at the entrance or use your QR code.</p>
+
+          <table style="width:100%;border-collapse:collapse;margin:0 0 24px">
+            <tr><td style="padding:8px;color:#666">Reference</td><td style="padding:8px;font-weight:bold">${esc(p.reference)}</td></tr>
+            <tr style="background:#FAF3E7"><td style="padding:8px;color:#666">Booking</td><td style="padding:8px">${esc(productName(p.ticketType))}</td></tr>
+            <tr><td style="padding:8px;color:#666">Visit date</td><td style="padding:8px;font-weight:bold">${esc(humanDate(p.visitDate))}</td></tr>
+            <tr style="background:#FAF3E7"><td style="padding:8px;color:#666">Visitors</td><td style="padding:8px">${p.adults} adult${p.adults === 1 ? '' : 's'}${p.children > 0 ? `, ${p.children} child${p.children === 1 ? '' : 'ren'}` : ''}</td></tr>
+            <tr><td style="padding:8px;color:#666">Paid</td><td style="padding:8px;font-weight:bold;color:#C4452D">${p.totalAmount} ${esc(p.currency)}</td></tr>
+          </table>
+
+          <p style="margin:0 0 22px;padding:12px 14px;background:#FAF3E7;border-radius:8px;color:#666;font-size:13px;line-height:1.55">
+            <strong style="color:#3D2817">Not yet a ticket.</strong> This email confirms your
+            payment and your booking. It does not admit you to the palace on its own &mdash;
+            wait for the one with your QR code.
+          </p>
           ${buildAudioGuideBlock(p.audioGuideUrls)}
           ${buildSupportBlock(p.whatsapp ?? null)}
           ${buildNetworkBlock()}
