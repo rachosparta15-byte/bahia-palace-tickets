@@ -14,9 +14,11 @@ const playfair = Playfair_Display({
   display: 'swap',
 });
 
+// Weight 300 dropped: `font-light` appears nowhere in the codebase, and each
+// weight here is two files once italic is counted.
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: ['300', '400', '600'],
+  weight: ['400', '600'],
   style: ['normal', 'italic'],
   variable: '--font-cormorant',
   display: 'swap',
@@ -28,11 +30,24 @@ const dmSans = DM_Sans({
   display: 'swap',
 });
 
+/*
+ * Arabic only, so it must not be preloaded on the other six locales.
+ *
+ * next/font preloads by default, which put an Arabic face in the critical
+ * path of every English, French, Spanish, Italian, German and Portuguese
+ * page — competing for bandwidth with the hero image that is the LCP element,
+ * for a font those pages never render a glyph from.
+ *
+ * With preload off it is still declared and still applies instantly on the
+ * Arabic pages; the browser simply fetches it when the CSS actually calls for
+ * it, which on /ar is immediately and everywhere else is never.
+ */
 const amiri = Amiri({
   subsets: ['arabic', 'latin'],
   weight: ['400', '700'],
   variable: '--font-amiri',
   display: 'swap',
+  preload: false,
 });
 
 export const viewport: Viewport = {
