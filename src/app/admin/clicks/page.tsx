@@ -70,7 +70,34 @@ function ago(d: Date): string {
 export default async function AdminClicksPage({ searchParams }: Props) {
   const { w } = await searchParams;
   const windowKey: WindowKey = (w && w in WINDOWS ? w : '7d') as WindowKey;
-  const gte = since(WINDOWS[windowKey]);
+  const requested = since(WINDOWS[windowKey]);
+
+  /*
+   * Never compare a step against a window it did not exist for.
+   *
+   * ticket_cta_click has been recorded for months; the checkout steps were
+   * added later. For the first day after that deploy, a 24h window held 13
+   * clicks and 3 checkout views and read "10 lost here (77%)" — a
+   * catastrophic-looking routing fault that was nothing but the ten clicks
+   * which happened before pack_view existed to record them.
+   *
+   * That number would have sent someone hunting a bug that was not there, so
+   * the window is clamped to the moment the newest step started recording.
+   * The figures are then always comparing like with like, and the banner below
+   * says when the clamp happened rather than quietly showing a shorter period
+   * than the tab claims.
+   */
+  const firstPackView = await prisma.event.findFirst({
+    where: { name: 'pack_view' },
+    orderBy: { createdAt: 'asc' },
+    select: { createdAt: true },
+  });
+  const instrumentedFrom = firstPackView?.createdAt;
+
+  const clamped =
+    instrumentedFrom !== undefined &&
+    (requested === undefined || instrumentedFrom > requested);
+  const gte = clamped ? instrumentedFrom : requested;
 
   /*
    * One query, then all the arithmetic in memory.
@@ -209,6 +236,21 @@ export default async function AdminClicksPage({ searchParams }: Props) {
           </a>
         ))}
       </nav>
+
+      {clamped && instrumentedFrom && (
+        <div className="mb-6 rounded-xl border border-[#E8A33D]/40 bg-[#2A2110] p-4">
+          <p className="text-sm font-semibold text-[#F5E8CC]">
+            Showing from {instrumentedFrom.toLocaleString('en-GB')}, not the full {windowKey}
+          </p>
+          <p className="mt-1.5 text-xs leading-relaxed text-[#C4A882] max-w-2xl">
+            That is when the checkout steps started recording. Ticket clicks have been recorded for
+            far longer, so counting a full {windowKey} of clicks against a few hours of checkout
+            views would invent a drop-off that never happened — it would have read as most of your
+            traffic vanishing between the button and the page. Every number below covers the same
+            period.
+          </p>
+        </div>
+      )}
 
       {events.length === 0 ? (
         <div className="rounded-xl border border-dashed border-[rgba(232,163,61,0.3)] p-10 text-center">
