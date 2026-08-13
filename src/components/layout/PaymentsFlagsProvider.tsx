@@ -17,7 +17,7 @@ import { createContext, useContext } from 'react';
 interface PaymentsFlags {
   /** True when PAYMENTS_ENABLED=true AND usable keys are configured. */
   enabled: boolean;
-  /** True when no live Stripe keys are present. */
+  /** True when the ACTIVE provider cannot take money — see isTestMode(). */
   testMode: boolean;
 }
 

@@ -57,7 +57,7 @@
       },
       null,
       {
-        "desc": "Wenn Sie Ihre E-Mail angeben, wird sie nur für Besuchstipps verwendet — niemals verkauft. Ihre Buchung wird sicher bei uns abgeschlossen; Kartenzahlungen werden von Stripe abgewickelt und wir speichern Ihre Kartendaten nie."
+        "desc": "Wenn Sie Ihre E-Mail angeben, wird sie nur für Besuchstipps verwendet — niemals verkauft. Ihre Buchung wird sicher bei uns abgeschlossen; Kartenzahlungen werden von PayPal abgewickelt und wir speichern Ihre Kartendaten nie."
       }
     ]
   },

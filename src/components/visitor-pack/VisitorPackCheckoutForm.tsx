@@ -70,7 +70,7 @@ type FormData = z.infer<typeof schema>;
 
 interface Props {
   locale: string;
-  /** Server-evaluated: true when no live Stripe keys are configured. */
+  /** Server-evaluated: true when the ACTIVE provider cannot take money. */
   testMode: boolean;
   /**
    * Server-evaluated PAYMENTS_ENABLED status. When false the submit button is

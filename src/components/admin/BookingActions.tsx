@@ -49,8 +49,11 @@ export function BookingActions({ bookingId, status, qrDelivered }: Props) {
             ? data.alreadyRefunded
               ? `Booking cancelled. ${amount} had already been refunded${ref}.`
               : `Booking cancelled and ${amount} refunded automatically${ref}.`
-            : // Fallback wording for the no-session / manual case.
-              `Booking cancelled. Refund ${amount} manually in Stripe — this did NOT happen automatically.`
+            : // Fallback wording for the no-session / manual case. Names PayPal
+              // because that is where the money is: sending whoever reads this
+              // to a Stripe dashboard that holds none of these payments is how
+              // a refund we promised a customer quietly never happens.
+              `Booking cancelled. Refund ${amount} manually in PayPal — this did NOT happen automatically.`
         );
         router.refresh();
       } else {

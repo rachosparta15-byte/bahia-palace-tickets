@@ -67,7 +67,7 @@ export async function POST(_req: NextRequest, { params }: { params: Promise<{ id
       {
         error: 'no_payment_session',
         message:
-          'This booking has no payment session on file. Refund it manually in Stripe, then cancel.',
+          'This booking has no payment session on file. Refund it manually in PayPal, then cancel.',
       },
       { status: 409 }
     );
@@ -84,7 +84,7 @@ export async function POST(_req: NextRequest, { params }: { params: Promise<{ id
         error: 'refund_failed',
         message:
           'The refund could not be processed. The booking has NOT been cancelled. ' +
-          'Try again, or refund manually in Stripe.',
+          'Try again, or refund manually in PayPal.',
       },
       { status: 502 }
     );

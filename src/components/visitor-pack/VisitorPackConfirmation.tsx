@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { isStripeTestMode } from '@/lib/payments/guard';
+import { isTestMode } from '@/lib/payments/guard';
 import { Ticket, Headphones, Clock, FlaskConical, ArrowUpRight, Smartphone } from 'lucide-react';
 
 /**
@@ -49,7 +49,19 @@ export async function VisitorPackConfirmation({
   bookingId: string;
 }) {
   const t = await getTranslations({ locale, namespace: 'visitorPack.confirmation' });
-  const testMode = isStripeTestMode();
+  /*
+   * The provider-aware check, not isStripeTestMode().
+   *
+   * That one reads a Stripe publishable key, and this site pays through
+   * PayPal — the key here is a placeholder, so it returned true no matter what
+   * PayPal was doing. On the day PAYPAL_ENVIRONMENT goes live, a customer who
+   * had genuinely been charged would have read "No payment was taken and no
+   * real ticket has been issued" on their own confirmation.
+   *
+   * isTestMode() reads the environment of whichever provider is active, which
+   * is the only thing that decides whether money can actually move.
+   */
+  const testMode = isTestMode();
 
   return (
     <section className="mt-8 rounded-2xl border border-[rgba(232,163,61,0.20)] bg-[#251A0F] p-6 sm:p-8">

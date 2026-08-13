@@ -57,7 +57,7 @@
       },
       null,
       {
-        "desc": "If you share your email, it's only used to send visit tips — never sold. Your booking is completed securely with us; card payments are handled by Stripe and we never store your card details."
+        "desc": "If you share your email, it's only used to send visit tips — never sold. Your booking is completed securely with us; card payments are handled by PayPal and we never store your card details."
       }
     ]
   },
