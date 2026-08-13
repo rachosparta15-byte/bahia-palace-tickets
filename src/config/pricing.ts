@@ -52,16 +52,16 @@ export function rateCheckedOnLabel(locale: string): string {
 // Money formatting
 // ─────────────────────────────────────────────────────────────────────
 // Prices are held as integer cents, never as floats. In binary floating
-// point `9.36 + 4.63 === 13.99` is false, so a breakdown that visibly sums
+// point `9.36 + 2.63 === 11.99` is false, so a breakdown that visibly sums
 // correctly on screen would still fail its own assertion.
-// Integers make the sum exact: 936 + 463 === 1399.
+// Integers make the sum exact: 936 + 263 === 1199.
 
-/** Integer cents → a "13.99"-style string. Always two decimals. */
+/** Integer cents → a "11.99"-style string. Always two decimals. */
 export function formatEURAmount(cents: number): string {
   return (cents / 100).toFixed(2);
 }
 
-/** Integer cents → "€13.99". */
+/** Integer cents → "€11.99". */
 export function formatEUR(cents: number): string {
   return `€${formatEURAmount(cents)}`;
 }
@@ -92,7 +92,7 @@ export type TicketSlug =
  * prices in different currencies. It covers the official ticket, the
  * multilingual audio guide, support and WhatsApp.
  */
-export const ENTRY_PRICE_EUR_CENTS = 1399;
+export const ENTRY_PRICE_EUR_CENTS = 1199;
 
 /** @deprecated Use ENTRY_PRICE_EUR_CENTS. Kept so nothing silently reads a stale USD number. */
 export const SKIP_THE_LINE_PRICE_EUR = ENTRY_PRICE_EUR_CENTS / 100;
@@ -120,17 +120,19 @@ export const SKIP_THE_LINE_PRICE_EUR = ENTRY_PRICE_EUR_CENTS / 100;
  * below.
  *
  * NOTE: prices must never be written into messages/*.json. They were, and the
- * page went on showing EUR 13.99 long after this constant changed.
+ * page went on showing the old figure long after this constant changed. They
+ * still are, in about forty strings across fourteen files — changing this
+ * number means sweeping those too, which is the whole reason for the warning.
  */
 export const VISITOR_PACK_PRICE_EUR_CENTS = ENTRY_PRICE_EUR_CENTS;
 
 /**
  * The transparent cost breakdown shown on the price card AND at checkout.
  *
- * LEGAL/ETHICAL: this exists so we never present €13.99 as if it were the
+ * LEGAL/ETHICAL: this exists so we never present €11.99 as if it were the
  * official entry price. The official ticket is 100 MAD, set by Morocco's
  * Ministry of Culture; the remainder is our own service. Any UI that shows
- * the €13.99 total must also show this breakdown.
+ * the €11.99 total must also show this breakdown.
  *
  * The official line is DERIVED from the 100 MAD price at the pinned rate,
  * and the service fee is whatever is left over — never the other way round.

@@ -330,7 +330,7 @@ function buildAudioGuideBlock(urls: readonly string[] | null | undefined): strin
 /**
  * Support and cancellation, in the email rather than only on the website.
  *
- * These two are not footer decoration — they are half of what the €13.99 buys.
+ * These two are not footer decoration — they are half of what the €11.99 buys.
  * The customer has just paid for a service whose visible parts are a ticket and
  * an audio guide; the human on WhatsApp and the free cancellation are the parts
  * that only exist if we say so, at the moment they are wondering what they got.

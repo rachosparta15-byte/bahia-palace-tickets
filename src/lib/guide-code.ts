@@ -110,7 +110,7 @@ export function buildGuideCodeUrl(base: string, code: string): string {
  * How many codes a booking gets: one per person who was charged.
  *
  * That is adults plus children, because children aged 7 to 13 pay the same
- * €13.99 — the ministry charges 50 MAD for them at the gate and the pack is a
+ * €11.99 — the ministry charges 50 MAD for them at the gate and the pack is a
  * flat per-person price. Children under 7 enter free and are never entered on
  * the form, so they never reach this function.
  *

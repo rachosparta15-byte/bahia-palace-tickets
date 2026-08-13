@@ -211,7 +211,7 @@ export async function Hero() {
              *
              * The price is gated on the payments flag for the reason set out in
              * TicketCards: with payments off every CTA hands the visitor to the
-             * ministry portal, where they pay 100 MAD. Printing €13.99 beside a
+             * ministry portal, where they pay 100 MAD. Printing €11.99 beside a
              * button that goes there would advertise a price we do not charge.
              *
              * The id is what StickyMobileCTA watches: it had been looking for

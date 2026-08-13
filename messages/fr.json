@@ -205,7 +205,7 @@
     "title": "Vous avez tout lu. Il est temps d'entrer.",
     "subtitle": "Réservez votre billet coupe-file et entrez sans attendre.",
     "button": "Réserver mes billets Palais Bahia",
-    "stickyMobile": "Sans file — 13,99 €"
+    "stickyMobile": "Sans file — 11,99 €"
   },
   "footer": {
     "tagline": "La façon la plus simple de visiter le Palais Bahia.",
@@ -327,7 +327,7 @@
       },
       {
         "question": "Combien coûte l'entrée du Palais Bahia ?",
-        "answer": "Le tarif officiel est de 100 MAD (environ 9,90 €). Les enfants de moins de 7 ans entrent gratuitement, et les étudiants munis d'une carte valide paient 50 MAD. Réservé en ligne chez nous, c'est 13,99 € par personne — le billet officiel, un audioguide multilingue et l'assistance — et vous évitez la file de la billetterie, qui peut atteindre 1 à 2 heures en haute saison."
+        "answer": "Le tarif officiel est de 100 MAD (environ 9,90 €). Les enfants de moins de 7 ans entrent gratuitement, et les étudiants munis d'une carte valide paient 50 MAD. Réservé en ligne chez nous, c'est 11,99 € par personne — le billet officiel, un audioguide multilingue et l'assistance — et vous évitez la file de la billetterie, qui peut atteindre 1 à 2 heures en haute saison."
       },
       {
         "question": "Combien de temps faut-il prévoir au Palais Bahia ?",
@@ -659,7 +659,7 @@
       "ctaDisabledHint": "Nous n’acceptons pas encore les paiements. Revenez très bientôt."
     },
     "price": {
-      "amount": "13,99 €",
+      "amount": "11,99 €",
       "perPerson": "par personne",
       "freeAlternative": "Vous ne voulez que le billet officiel ? Voici comment",
       "includes": "Billet d’entrée officiel + audioguide numérique",
@@ -724,10 +724,10 @@
       "items": {
         "official": {
           "q": "S’agit-il du billet officiel du palais de la Bahia ?",
-          "a": "Oui. Le billet d’entrée inclus dans la formule est le billet officiel à 100 MAD fixé par le ministère marocain de la Culture, acheté en votre nom. Les 13,99 € couvrent aussi l’audioguide numérique, le plan du visiteur, l’assistance WhatsApp et l’annulation gratuite jusqu’à l’envoi."
+          "a": "Oui. Le billet d’entrée inclus dans la formule est le billet officiel à 100 MAD fixé par le ministère marocain de la Culture, acheté en votre nom. Les 11,99 € couvrent aussi l’audioguide numérique, le plan du visiteur, l’assistance WhatsApp et l’annulation gratuite jusqu’à l’envoi."
         },
         "cheaper": {
-          "q": "Que couvrent les 13,99 € ?",
+          "q": "Que couvrent les 11,99 € ?",
           "a": "L’entrée seule coûte 100 MAD au guichet. Notre prix comprend ce billet acheté en votre nom, l’audioguide en cinq langues, le plan du visiteur, l’assistance WhatsApp avant et pendant votre visite, et l’annulation gratuite jusqu’à l’envoi de votre QR code. Le ministère vend aussi l’entrée directement sur son portail si c’est tout ce dont vous avez besoin."
         },
         "refund": {
@@ -829,7 +829,7 @@
         "body": "Les visites se réservent au moins deux jours à l’avance. Nous envoyons votre billet environ 24 heures avant la date de visite, pour qu’il soit bien présent sur votre téléphone le jour venu."
       },
       "price": {
-        "title": "13,99 € par personne, toutes taxes comprises.",
+        "title": "11,99 € par personne, toutes taxes comprises.",
         "body": "Le billet d’entrée officiel du ministère de la Culture acheté en votre nom, l’audioguide numérique en cinq langues, et une vraie personne sur WhatsApp avant et pendant votre visite. Rien n’est ajouté au paiement."
       },
       "independence": "visitbahiapalace.com est un service de réservation indépendant, tenu par des spécialistes des monuments de Marrakech. Nous ne sommes ni le ministère de la Culture ni l’administration du palais. Détails complets dans nos <terms>conditions de vente</terms>."

@@ -175,7 +175,7 @@ export default async function EntranceFeePage({ params }: Props) {
                     This opened with "No — we add no booking fee", which the
                     go-live checklist lists for removal and which does not
                     survive the arithmetic underneath it. The gate ticket is
-                    100 MAD and we charge €13.99; the difference is what pays
+                    100 MAD and we charge €11.99; the difference is what pays
                     for buying the ticket, the audio guide and the support. That
                     is a service being sold, and calling it "no fee" is a claim
                     a regulator would read as misleading no matter how carefully

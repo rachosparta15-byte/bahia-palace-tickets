@@ -20,7 +20,7 @@ interface Props {
  * description pointed at somebody else's checkout.
  *
  * And "no booking fees" stopped being true the moment the pack went on sale.
- * The €13.99 is a service price covering the ticket, the audio guide and
+ * The €11.99 is a service price covering the ticket, the audio guide and
  * support — not a ticket with a fee bolted on. Describing that as "no fees"
  * while charging more than the gate price is the kind of phrasing that is
  * technically arguable and indefensible in front of a regulator, which is why

@@ -230,7 +230,7 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
                       This page used to be reached only after a successful
                       payment. PayPal's cancel_url now lands the customer here
                       too, on a booking where nothing was charged — and the
-                      label told them they had paid €13.99. Someone who
+                      label told them they had paid €11.99. Someone who
                       abandoned at PayPal would leave believing they were
                       charged, and either dispute it or turn up at the gate. */}
                   <p className="text-xs text-[#C4A882] uppercase tracking-wide mb-1">
