@@ -194,12 +194,63 @@ export async function verifyCheckoutSession(sessionId: string): Promise<{ paid: 
 
   const capture = await fetch(`${apiBase()}/v2/checkout/orders/${sessionId}/capture`, {
     method: 'POST',
-    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+      /*
+       * Idempotency on the capture, not only on the create.
+       *
+       * The create call has carried PayPal-Request-Id since it was written;
+       * this one never did. It is reached from the browser (the card fields
+       * and the button both post to /api/checkout/capture) and from the
+       * webhook, so two captures for one order genuinely race — a double tap
+       * on a slow connection is enough. ORDER_ALREADY_CAPTURED below catches
+       * the ones that arrive after the first finished; this catches the ones
+       * that arrive while it is still running, which that check cannot see.
+       */
+      'PayPal-Request-Id': `capture-${sessionId}`,
+    },
   });
 
   if (capture.ok) {
     const body = await capture.json().catch(() => ({}));
-    return { paid: body.status === 'COMPLETED' };
+    if (body.status !== 'COMPLETED') return { paid: false };
+
+    /*
+     * A card capture that completed is not automatically a card payment we
+     * should keep.
+     *
+     * When the card path is used, PayPal returns the 3-D Secure outcome on the
+     * payment source. `liability_shift: NO` means the issuer did not
+     * authenticate the cardholder and the chargeback liability stays with us —
+     * which, on a EUR checkout selling to European cardholders under PSD2, is
+     * the shape of a stolen card going through.
+     *
+     * This is read, judged and logged rather than ignored. It does not refuse
+     * the payment on its own: PayPal has already taken the money by this
+     * point, so refusing here would leave a charged customer with no booking —
+     * strictly worse than a booking we can refund. What it does is make the
+     * case visible instead of silent, which is the difference between finding
+     * out now and finding out from a chargeback in six weeks.
+     *
+     * Nothing here is card data: an enrolment status and a yes/no. The card
+     * number never reaches this process.
+     */
+    const source = body.payment_source?.card;
+    if (source) {
+      const auth = source.authentication_result ?? {};
+      const shift = auth.liability_shift;
+      const tds = auth.three_d_secure ?? {};
+      if (shift && shift !== 'POSSIBLE' && shift !== 'YES') {
+        console.warn(
+          `[paypal] card capture ${sessionId} completed WITHOUT liability shift ` +
+            `(liability_shift=${shift}, enrollment=${tds.enrollment_status ?? 'n/a'}, ` +
+            `authentication=${tds.authentication_status ?? 'n/a'}). Chargeback risk sits with us.`,
+        );
+      }
+    }
+
+    return { paid: true };
   }
 
   const detail = await capture.text().catch(() => '');
