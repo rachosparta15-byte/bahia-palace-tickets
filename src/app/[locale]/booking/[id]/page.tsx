@@ -11,6 +11,8 @@ import { qrIsDelivered, BOOKING_STATUS } from '@/lib/booking-lifecycle';
 import { AUDIO_GUIDE_URL } from '@/lib/booking';
 import { issueGuideCodes } from '@/lib/guide-access';
 import { buildGuideCodeUrl } from '@/lib/guide-code';
+import { productName } from '@/lib/email/resend';
+import { PurchaseAnalytics } from '@/components/analytics/PurchaseAnalytics';
 import { VisitorPackConfirmation } from '@/components/visitor-pack/VisitorPackConfirmation';
 import { CancellationNotice } from '@/components/booking/CancellationNotice';
 import { NetworkCrossSell } from '@/components/booking/NetworkCrossSell';
@@ -129,6 +131,23 @@ export default async function BookingConfirmPage({ params, searchParams }: Props
   return (
     <div className="min-h-screen py-16 px-6 bg-[#1C1108]">
       <div className="max-w-2xl mx-auto">
+
+        {/* GA4 revenue.
+            Gated on isConfirmed because PayPal's cancel_url lands an ABANDONED
+            checkout on this same page — reporting that as a sale would put
+            money in the analytics that was never taken.
+
+            The amount is the booking's own total, not the headline price: the
+            pack is sold per visitor, so a four-person order is 55.96. */}
+        {isConfirmed && (
+          <PurchaseAnalytics
+            transactionId={booking.paymentSessionId ?? booking.reference}
+            value={booking.totalAmount}
+            currency={booking.currency}
+            itemName={productName(booking.ticketType)}
+            quantity={booking.adults}
+          />
+        )}
 
         {/* Status banner */}
         {isConfirmed ? (

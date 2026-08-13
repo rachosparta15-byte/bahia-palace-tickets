@@ -447,8 +447,12 @@ function buildNetworkBlock(): string {
  * trustworthy. Unknown slugs are title-cased rather than passed through raw,
  * so a product added later degrades to "Guided Tour" and never to
  * "guided-tour".
+ *
+ * Exported so the GA4 purchase event names the product exactly as the receipt
+ * does. Two spellings of one product cannot be reconciled against each other
+ * later, and this is the name the customer will quote.
  */
-function productName(slug: string): string {
+export function productName(slug: string): string {
   const known: Record<string, string> = {
     'visitor-pack': 'Complete Visitor Pack',
   };
