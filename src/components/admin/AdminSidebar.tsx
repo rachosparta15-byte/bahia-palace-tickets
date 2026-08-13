@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import {
   LayoutDashboard, Ticket, FileText, ShieldAlert,
   LogOut, Settings, Star, BookOpen, Images, Mail, BarChart2, MessageSquare,
+  MousePointerClick,
 } from 'lucide-react';
 import { LogoMark } from '@/components/ui/LogoMark';
 
@@ -24,6 +25,10 @@ const NAV_GROUPS = [
     label: 'Operations',
     items: [
       { href: '/admin/bookings',   label: 'Bookings',  icon: BookOpen,  style: 'normal' },
+      // Above Leads deliberately: since payments went live the ticket CTAs
+      // route straight to the checkout and no Lead row is created, so Leads
+      // is empty by design and this is where the answer actually is.
+      { href: '/admin/clicks',    label: 'Clicks',    icon: MousePointerClick, style: 'normal' },
       { href: '/admin/leads',     label: 'Leads',     icon: Mail,          style: 'normal' },
       { href: '/admin/messages',  label: 'Messages',  icon: MessageSquare, style: 'normal' },
       { href: '/admin/analytics', label: 'Analytics', icon: BarChart2,     style: 'normal' },

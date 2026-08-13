@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Lock, CreditCard } from 'lucide-react';
+import { trackEvent } from '@/lib/analytics';
 
 /**
  * PayPal checkout, embedded in this page.
@@ -183,12 +184,24 @@ export function PayPalCheckout({
       if (!res.ok || !payload.paid) {
         setStatus('error');
         setMessage(labels.error);
+        /*
+         * Approved and then NOT captured. The rarest and worst square of the
+         * funnel: the customer authorised, may well have been charged, and was
+         * shown an error. Without this it is indistinguishable in the admin
+         * from someone who closed the tab at the card form.
+         */
+        trackEvent('pack_pay_failed', {
+          reason: payload?.error ?? `http_${res.status}`,
+          bookingId,
+        });
         return;
       }
+      trackEvent('pack_paid', { bookingId });
       window.location.href = confirmationUrl;
     } catch {
       setStatus('error');
       setMessage(labels.error);
+      trackEvent('pack_pay_failed', { reason: 'network', bookingId });
     }
   }
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useForm, useWatch, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -11,6 +11,7 @@ import { PackInclusions } from './PackInclusions';
 import { SharedPaymentElement } from './SharedPaymentElement';
 import { PayPalCheckout } from './PayPalCheckout';
 import { DatePicker, toISODate } from '@/components/ui/DatePicker';
+import { trackEvent } from '@/lib/analytics';
 import { CreditCard, Calendar, Users, Lock, FlaskConical } from 'lucide-react';
 import {
   VISITOR_PACK_PRICE_EUR_CENTS,
@@ -124,6 +125,42 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
     },
   });
 
+  /*
+   * The checkout was reached.
+   *
+   * Nothing on this page was instrumented, so the funnel ended at
+   * ticket_cta_click and everything after it was invisible: a click that never
+   * arrived here, a form nobody started, and a payment that failed all looked
+   * identical from the admin — like a click that produced nothing.
+   *
+   * This is the event that separates "the site is losing them on the way" from
+   * "they get here and the page loses them", which are not the same problem
+   * and do not have the same fix.
+   */
+  useEffect(() => {
+    trackEvent('pack_view', { paymentsEnabled, testMode, locale });
+    // Once per mount. paymentsEnabled and locale do not change under a mounted
+    // form, and re-firing on any future prop change would inflate the top of
+    // the funnel against a click count that cannot move.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  /*
+   * And the first time they actually touch it.
+   *
+   * A page view says they arrived; this says they engaged. Someone who lands
+   * and leaves without typing is being lost by the page — the price, the
+   * layout, the load — and someone who starts and stops is being lost by the
+   * form itself. Fired once, on the first field touched, never on every
+   * keystroke.
+   */
+  const startedRef = useRef(false);
+  function noteFormStart() {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    trackEvent('pack_form_start', { locale });
+  }
+
   /**
    * Prefill from the lead modal, when the visitor arrived by completing it.
    *
@@ -182,8 +219,16 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
   async function onSubmit(data: FormData) {
     setServerError(null);
 
+    /*
+     * Passed the client-side schema — the person filled the form correctly and
+     * pressed the button. Everything before this point is measured by
+     * pack_view and pack_form_start; everything after is the server's answer.
+     */
+    trackEvent('pack_submit', { partySize: data.visitors, locale });
+
     if (!paymentsEnabled) {
       setServerError(t('errors.disabled'));
+      trackEvent('pack_blocked', { reason: 'payments_disabled', locale });
       return;
     }
 
@@ -238,6 +283,15 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
           payment_setup_failed: t('errors.disabled'),
         };
         setServerError(messages[payload?.error] ?? t('errors.generic'));
+        /*
+         * The code, not the sentence. "We could not start the payment" is one
+         * message covering five different faults, and knowing which one is the
+         * difference between fixing a date rule and fixing a credential.
+         */
+        trackEvent('pack_blocked', {
+          reason: payload?.error ?? `http_${res.status}`,
+          locale,
+        });
         return;
       }
 
@@ -250,6 +304,10 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
        * back to PayPal's hosted page if the SDK cannot load at all.
        */
       if (payload.paypalOrderId) {
+        // An order exists and the card fields are about to mount. Anyone who
+        // reaches here and never reaches pack_paid dropped out AT the payment,
+        // which is a different problem from dropping out at the form.
+        trackEvent('pack_payment_ready', { provider: 'paypal', locale });
         setPaypal({
           orderId: payload.paypalOrderId,
           bookingId: payload.bookingId,
@@ -264,9 +322,13 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
       // Stripe: the card form replaces this one; nothing is charged until the
       // customer submits it, and the order stays cancellable until the code is
       // sent.
+      trackEvent('pack_payment_ready', { provider: 'stripe', locale });
       setPayment({ clientSecret: payload.clientSecret, orderId: payload.orderId });
     } catch {
       setServerError(t('errors.generic'));
+      // The request never completed — offline, blocked, DNS. Distinct from a
+      // server that answered with a refusal, and it needs a different fix.
+      trackEvent('pack_blocked', { reason: 'network', locale });
     }
   }
 
@@ -358,6 +420,14 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
+      /*
+       * One listener on the form rather than an onFocus on every field.
+       * Capturing focus at this level catches the date picker and the party
+       * size select as well as the text inputs, and it cannot be forgotten the
+       * next time a field is added — which is how instrumentation quietly
+       * stops measuring what it claims to.
+       */
+      onFocusCapture={noteFormStart}
       className="bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-6 sm:p-7"
       id="checkout"
     >
