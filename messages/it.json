@@ -488,6 +488,16 @@
         "title": "Menu Diverso al Ristorante",
         "desc": "Il menu fuori ha prezzi bassi, ma dentro tutto costa di più.",
         "avoid": "Controlla il menu prima di sederti e conferma i prezzi prima di ordinare."
+      },
+      {
+        "title": "Biglietti falsi o contraffatti",
+        "desc": "Biglietti venduti da qualcuno appostato vicino all’ingresso, o acquistati su un sito che imita l’aspetto di uno ufficiale. Costano poco, sembrano autentici, e all’ingresso vengono rifiutati — di solito dopo che hai già fatto la fila.",
+        "avoid": "Acquista prima di arrivare, dal portale del ministero o da un venditore che indica l’azienda dietro la vendita. Nessuno di ufficiale vende biglietti per strada davanti al Palazzo Bahia."
+      },
+      {
+        "title": "Il «regalo» gratuito",
+        "desc": "Qualcuno ti mette in mano un rametto di rosmarino, un braccialetto o un piccolo oggetto e lo chiama regalo. Appena lo tieni, ti viene chiesto un pagamento — ad alta voce, e spesso con un capannello di persone intorno.",
+        "avoid": "Tieni le mani abbassate e di’ «la, shukran» senza fermarti. Se lo stai già tenendo, restituiscilo subito e prosegui. Nulla di ciò che viene regalato nella medina va pagato dopo."
       }
     ],
     "tips": [
@@ -523,7 +533,12 @@
         "value": "+212 524 38 46 01",
         "note": "Brigade Touristique — per incidenti legati al turismo."
       }
-    ]
+    ],
+    "theScam": "La truffa",
+    "reassurance": "La zona del Palazzo Bahia è in genere molto sicura di giorno. Quasi tutto ciò che segue è vendita insistente, non pericolo.",
+    "trustStrip": "Scritto da residenti a Marrakech · Aggiornato {month} {year} · {count} truffe trattate",
+    "ctaScamTicket": "Evita il rischio: il biglietto ufficiale e l’audioguida, acquistati a tuo nome.",
+    "faqQuestion": "{title} — è una vera truffa a Marrakech, e come la evito?"
   },
   "breadcrumb": {
     "home": "Home",

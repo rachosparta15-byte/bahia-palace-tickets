@@ -488,6 +488,16 @@
         "title": "Restaurantmenü-Wechsel",
         "desc": "Draußen günstiges Menü, drinnen alles viel teurer.",
         "avoid": "Prüfen Sie die Karte vor dem Hinsetzen und bestätigen Sie Preise vor der Bestellung."
+      },
+      {
+        "title": "Gefälschte Tickets",
+        "desc": "Tickets, die jemand direkt am Eingang verkauft, oder von einer Seite, die das Aussehen einer offiziellen nachahmt. Sie sind billig, sie sehen echt aus, und am Eingang werden sie abgelehnt — meist erst, nachdem Sie angestanden haben.",
+        "avoid": "Kaufen Sie vor der Anreise, über das Portal des Ministeriums oder bei einem Anbieter, der die Firma hinter dem Verkauf nennt. Niemand Offizielles verkauft Tickets auf der Straße vor dem Bahia-Palast."
+      },
+      {
+        "title": "Das „kostenlose“ Geschenk",
+        "desc": "Jemand drückt Ihnen einen Rosmarinzweig, ein Armband oder eine Kleinigkeit in die Hand und nennt es ein Geschenk. Sobald Sie es halten, wird Geld verlangt — lautstark, und oft sammelt sich eine kleine Menge.",
+        "avoid": "Lassen Sie die Hände unten und sagen Sie „la, schukran“, ohne stehen zu bleiben. Halten Sie es bereits, geben Sie es sofort zurück und gehen Sie weiter. Nichts, was in der Medina verschenkt wird, muss später bezahlt werden."
       }
     ],
     "tips": [
@@ -523,7 +533,12 @@
         "value": "+212 524 38 46 01",
         "note": "Brigade Touristique — für touristenbezogene Vorfälle."
       }
-    ]
+    ],
+    "theScam": "Die Masche",
+    "reassurance": "Das Viertel um den Bahia-Palast ist tagsüber im Allgemeinen sehr sicher. Das meiste hier ist aufdringlicher Verkauf, keine Gefahr.",
+    "trustStrip": "Von Einheimischen in Marrakesch geschrieben · Aktualisiert {month} {year} · {count} Maschen behandelt",
+    "ctaScamTicket": "Kein Risiko — das offizielle Ticket und der Audioguide, auf Ihren Namen gekauft.",
+    "faqQuestion": "{title} — ist das in Marrakesch eine echte Masche, und wie vermeide ich sie?"
   },
   "breadcrumb": {
     "home": "Startseite",

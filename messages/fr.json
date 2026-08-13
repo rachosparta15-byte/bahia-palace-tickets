@@ -488,6 +488,16 @@
         "title": "Menu Différent au Restaurant",
         "desc": "Le menu à l'extérieur affiche des prix bas, mais à l'intérieur tout coûte plus cher.",
         "avoid": "Vérifiez le menu avant de vous asseoir et confirmez les prix avant de commander."
+      },
+      {
+        "title": "Faux billets ou billets contrefaits",
+        "desc": "Des billets vendus par quelqu’un posté près de l’entrée, ou achetés sur un site qui imite l’apparence d’un site officiel. Ils sont bon marché, ils ont l’air vrais, et le guichet les refuse — en général après que vous avez fait la queue.",
+        "avoid": "Achetez avant d’arriver, sur le portail du ministère ou auprès d’un vendeur qui indique le nom de la société derrière la vente. Personne d’officiel ne vend de billets dans la rue devant le Palais Bahia."
+      },
+      {
+        "title": "Le « cadeau » gratuit",
+        "desc": "Quelqu’un vous glisse dans la main un brin de romarin, un bracelet ou un petit objet en le présentant comme un cadeau. Une fois que vous le tenez, on exige un paiement — bruyamment, et souvent avec un petit attroupement.",
+        "avoid": "Gardez les mains baissées et dites « la, choukran » sans vous arrêter. Si vous le tenez déjà, rendez-le immédiatement et continuez votre chemin. Rien de ce qui est offert dans la médina ne se paie ensuite."
       }
     ],
     "tips": [
@@ -523,7 +533,12 @@
         "value": "+212 524 38 46 01",
         "note": "Brigade Touristique — pour les incidents liés au tourisme."
       }
-    ]
+    ],
+    "theScam": "L’arnaque",
+    "reassurance": "Le quartier du Palais Bahia est généralement très sûr en journée. La plupart de ce qui suit relève de la vente insistante, pas du danger.",
+    "trustStrip": "Écrit par des habitants de Marrakech · Mis à jour en {month} {year} · {count} arnaques couvertes",
+    "ctaScamTicket": "Évitez le risque — le billet officiel et l’audioguide, achetés à votre nom.",
+    "faqQuestion": "{title} — est-ce une véritable arnaque à Marrakech, et comment l’éviter ?"
   },
   "breadcrumb": {
     "home": "Accueil",

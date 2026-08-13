@@ -399,6 +399,16 @@
         "title": "Restaurant Menu Switcheroo",
         "desc": "You're shown a menu with low prices outside, then given a different menu inside, or charged far more than agreed.",
         "avoid": "Check the menu carefully before sitting down. Ask to confirm prices before ordering. Pay by card if possible."
+      },
+      {
+        "title": "Fake or Counterfeit Tickets",
+        "desc": "Tickets sold by someone standing near the entrance, or bought from a site that copies the look of an official one. They are cheap, they look real, and the gate refuses them — usually after you have queued.",
+        "avoid": "Buy before you arrive, from the Ministry portal or from a seller who names the company behind the sale. Nobody official sells tickets on the street outside Bahia Palace."
+      },
+      {
+        "title": "The \"Free\" Gift",
+        "desc": "Someone presses a sprig of rosemary, a bracelet or a small trinket into your hand and calls it a gift. Once you are holding it, payment is demanded — loudly, and often with a small crowd gathering.",
+        "avoid": "Keep your hands down and say \"la, shukran\" without stopping. If you are already holding it, hand it straight back and keep walking. Nothing given away in the medina needs paying for later."
       }
     ],
     "tips": [
@@ -434,7 +444,12 @@
         "value": "+212 524 38 46 01",
         "note": "Brigade Touristique — for tourist-related incidents."
       }
-    ]
+    ],
+    "theScam": "The scam",
+    "reassurance": "The Bahia Palace area is generally very safe during the day. Most of what follows is pushy selling, not danger.",
+    "trustStrip": "Written by locals in Marrakech · Updated {month} {year} · {count} scams covered",
+    "ctaScamTicket": "Skip the risk — the official ticket and the audio guide, bought in your name.",
+    "faqQuestion": "{title} — is this a real scam in Marrakech, and how do I avoid it?"
   },
   "breadcrumb": {
     "home": "Home",

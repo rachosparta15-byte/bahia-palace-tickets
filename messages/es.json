@@ -400,6 +400,16 @@
         "title": "El Cambiazo en el Restaurante",
         "desc": "Te muestran un menú con precios bajos fuera, luego te dan un menú diferente dentro, o te cobran mucho más de lo acordado.",
         "avoid": "Revisa el menú con cuidado antes de sentarte. Pide confirmar los precios antes de pedir. Paga con tarjeta si es posible."
+      },
+      {
+        "title": "Entradas falsas o falsificadas",
+        "desc": "Entradas vendidas por alguien apostado junto a la entrada, o compradas en una web que imita el aspecto de una oficial. Son baratas, parecen auténticas, y en la puerta las rechazan — normalmente después de que hayas hecho cola.",
+        "avoid": "Compra antes de llegar, en el portal del ministerio o a un vendedor que indique la empresa que hay detrás de la venta. Nadie oficial vende entradas en la calle frente al Palacio de la Bahía."
+      },
+      {
+        "title": "El «regalo» gratis",
+        "desc": "Alguien te pone en la mano una ramita de romero, una pulsera o un pequeño objeto y lo llama regalo. En cuanto lo tienes, te exigen el pago — a voces, y a menudo con un pequeño corrillo alrededor.",
+        "avoid": "Mantén las manos bajadas y di «la, shukran» sin detenerte. Si ya lo tienes en la mano, devuélvelo al instante y sigue caminando. Nada de lo que se regala en la medina se paga después."
       }
     ],
     "tips": [
@@ -435,7 +445,12 @@
         "value": "+212 524 38 46 01",
         "note": "Brigade Touristique — para incidentes relacionados con el turismo."
       }
-    ]
+    ],
+    "theScam": "La estafa",
+    "reassurance": "La zona del Palacio de la Bahía es en general muy segura de día. Casi todo lo que sigue es venta insistente, no peligro.",
+    "trustStrip": "Escrito por vecinos de Marrakech · Actualizado en {month} {year} · {count} estafas cubiertas",
+    "ctaScamTicket": "Evita el riesgo: la entrada oficial y la audioguía, compradas a tu nombre.",
+    "faqQuestion": "{title}: ¿es una estafa real en Marrakech y cómo la evito?"
   },
   "breadcrumb": {
     "home": "Inicio",
