@@ -1,0 +1,31 @@
+# Line endings are decided here, not by whoever happens to clone the repo.
+#
+# core.autocrlf is true on the machine this is developed on, so every commit
+# printed a "LF will be replaced by CRLF" warning and the working copy and the
+# repository disagreed about every text file. That is harmless until someone
+# on Linux — or a CI runner, or Vercel's build container — touches the same
+# file and rewrites every line, turning a one-line change into a diff the size
+# of the file with the real edit buried in it.
+#
+# LF in the repository, whatever the checkout looks like locally.
+* text=auto eol=lf
+
+# Binary: never normalised, never diffed as text.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.webp  binary
+*.gif   binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary
+*.mp3   binary
+*.mp4   binary
+*.pdf   binary
+*.zip   binary
+*.db    binary
+
+# Generated. Collapsed in reviews and excluded from language stats — nobody
+# reads a lockfile diff, and letting it count as source skews the repo's
+# reported language breakdown.
+package-lock.json linguist-generated=true
