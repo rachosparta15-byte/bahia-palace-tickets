@@ -504,24 +504,24 @@
     ],
     "emergency": [
       {
-        "label": "Polizia Turistica",
-        "value": "+212 524 38 46 01",
-        "note": "Per incidenti legati al turismo"
+        "label": "Polizia",
+        "value": "19",
+        "note": "Sûreté Nationale, in città. 24 ore su 24."
       },
       {
-        "label": "Polizia Generale",
-        "value": "190",
-        "note": "Disponibile 24h/24"
-      },
-      {
-        "label": "SAMU (Emergenze Mediche)",
-        "value": "150",
-        "note": ""
-      },
-      {
-        "label": "Vigili del Fuoco / Emergenze",
+        "label": "Ambulanza e vigili del fuoco",
         "value": "15",
-        "note": ""
+        "note": "Protection Civile."
+      },
+      {
+        "label": "Qualsiasi emergenza, da cellulare",
+        "value": "112",
+        "note": "Ti mette in contatto con il servizio giusto."
+      },
+      {
+        "label": "Polizia turistica, Marrakech",
+        "value": "+212 524 38 46 01",
+        "note": "Brigade Touristique — per incidenti legati al turismo."
       }
     ]
   },
