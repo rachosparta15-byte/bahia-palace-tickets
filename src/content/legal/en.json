@@ -65,7 +65,6 @@
         "id": "delivery",
         "heading": "6. Delivery",
         "paragraphs": [
-          "Visits must be booked at least two clear days in advance; earlier dates cannot be selected. We do not hold a stock of tickets — each one is obtained from the monument for you after your payment clears — and two days is the shortest period in which we can do that reliably across a weekend or a public holiday. If we are ever unable to obtain your ticket, we cancel the booking and refund you in full.",
           "After payment we obtain your ticket and send you one delivery containing everything: the QR code, the link to your digital audio guide and your support number, by email and, where you have given us a number, by WhatsApp. Nothing is sent separately or later.",
           "Delivery of the QR code is the point at which our service is performed. It is also the point at which your right to cancel ends — see the Refund and Cancellation Policy.",
           "It is your responsibility to give us a working email address and to check your spam folder. If you have not received your QR code 48 hours before your visit, contact us immediately at support@marrakechlocal.com or by WhatsApp on +212 607-223008; we will resend it."
@@ -327,7 +326,7 @@
         "id": "who-processes",
         "heading": "1. Who processes your payment",
         "paragraphs": [
-          "All payments on this site are processed by PayPal (Europe) S.à r.l. et Cie, S.C.A., a credit institution licensed in Luxembourg and supervised by the Commission de Surveillance du Secteur Financier. You may pay with a PayPal balance or with a debit or credit card through PayPal; a PayPal account is not required to pay by card. PayPal is named in our Privacy Policy as a processor.",
+          "Card payments are processed by Stripe. Where offered and where you choose it, PayPal payments are processed by PayPal. Both are regulated payment institutions and both are named in our Privacy Policy as processors.",
           "You pay on the site you are already on. We do not redirect you to a different brand or a different domain to take your money, because being bounced to an unfamiliar site at the moment of payment is exactly when people abandon a booking — and rightly so."
         ]
       },
@@ -335,8 +334,8 @@
         "id": "card-data",
         "heading": "2. What we never see",
         "paragraphs": [
-          "You are taken to PayPal’s own website to pay. Your card number, expiry date and security code are entered there, on paypal.com, and are transmitted to PayPal. They do not pass through our servers and are never stored in our systems. We could not retrieve your card number if you asked us to.",
-          "PayPal is certified to PCI DSS Level 1, the highest level defined by the card schemes. Because the entire payment step happens on their site, no card data ever enters our environment.",
+          "Your card number, expiry date and security code are entered directly into a payment form hosted by Stripe and are transmitted to Stripe. They do not pass through our servers and are never stored in our systems. We could not retrieve your card number if you asked us to.",
+          "Stripe is certified to PCI DSS Level 1, the highest level defined by the card schemes. Our own use of it is designed so that the card data environment stays entirely on their side.",
           "What we do hold is listed in the Privacy Policy: your name, email, phone number if you gave one, the monument you booked and the visit date you gave us, the amount, and a payment reference from the processor."
         ]
       },
@@ -344,8 +343,8 @@
         "id": "statement",
         "heading": "3. What appears on your statement",
         "paragraphs": [
-          "Because payment is taken through PayPal, the line on your statement begins with PAYPAL followed by our trading name. If your bank shows only the PayPal part, the full detail — our name, the amount and the date — is in your PayPal account activity and in the receipt PayPal emails you.",
-          "This matters more than it sounds. Most card disputes are not fraud; they are someone failing to recognise a line on a statement weeks later. If you cannot place a charge from us, email support@marrakechlocal.com with the amount and date and we will identify it for you the same day."
+          "The charge is shown with a descriptor identifying the site you booked on, so the line on your statement matches the brand you remember buying from. The exact descriptor for your booking is shown to you before you pay and repeated in your confirmation email.",
+          "This is deliberate. Most card disputes are not fraud; they are someone failing to recognise a line on a statement weeks later. If you cannot place a charge from us, email support@marrakechlocal.com with the amount and date and we will identify it for you the same day."
         ]
       },
       {
@@ -368,7 +367,7 @@
         "id": "fraud",
         "heading": "6. Fraud prevention",
         "paragraphs": [
-          "PayPal runs fraud checks on payments made through this site, which involves it processing technical information about the device and the transaction. This is necessary to take payment safely and runs on the basis of our legitimate interest in preventing fraud; it is described in our Privacy and Cookie Policies.",
+          "Stripe and PayPal run fraud checks on payments made through this site, which involves them processing technical information about the device and the transaction. This is necessary to take payment safely and runs on the basis of our legitimate interest in preventing fraud; it is described in our Privacy and Cookie Policies.",
           "We may decline or cancel and refund a booking where a payment is flagged as high risk. Where we do, we refund in full to the original payment method."
         ]
       },
@@ -377,7 +376,7 @@
         "heading": "7. Disputes and chargebacks",
         "paragraphs": [
           "If something is wrong with a booking, contact us before contacting your bank. Where a refund is due we pay it quickly, and a chargeback takes considerably longer to resolve than an email does.",
-          "Where a booking was delivered as described and our terms were accepted at checkout, we will contest a dispute and provide PayPal with the record of exactly what was shown and agreed at the time of purchase, including the price comparison and the refund policy as they appeared on screen. You may also raise a case in PayPal’s Resolution Centre; contacting us first is usually faster."
+          "Where a booking was delivered as described and our terms were accepted at checkout, we will contest a chargeback and provide the processor with the record of exactly what was shown and agreed at the time of purchase, including the price comparison and the refund policy as they appeared on screen."
         ]
       }
     ]
@@ -443,9 +442,9 @@
             ],
             [
               "Payment data",
-              "To take payment. Payment is completed on PayPal’s site and card details never reach our servers",
+              "To take payment. Card details are entered directly into Stripe and never reach our servers",
               "Contract",
-              "Held by PayPal under its own policy"
+              "Held by Stripe under its own policy"
             ],
             [
               "Analytics data (pages viewed, approximate location, device)",
@@ -488,7 +487,7 @@
           "We do not sell personal data and we never will. We share it only with the service providers we need to run the business, each of which processes it on our instructions under a written agreement:"
         ],
         "list": [
-          "PayPal (Europe) S.à r.l. et Cie, S.C.A. — payment processing, fraud prevention, dispute handling (Luxembourg / United States; basis: Contract; Standard Contractual Clauses for transfers); Vercel Inc. — website hosting, CDN, server logs (United States (edge nodes worldwide); basis: Contract; Standard Contractual Clauses for transfers); Resend, Inc. — transactional email — order confirmations and ticket delivery (United States; basis: Contract; Standard Contractual Clauses for transfers); WhatsApp Ireland Ltd (Meta) — optional ticket delivery and customer support messaging (Ireland / United States; basis: Contract; Standard Contractual Clauses for transfers); Google Ireland Ltd — analytics and, once enabled, advertising — consent-gated (Ireland / United States; basis: Consent; Standard Contractual Clauses for transfers)",
+          "Stripe, Inc. — payment processing, fraud prevention, chargeback handling (United States / Ireland; basis: Contract; Standard Contractual Clauses for transfers); PayPal (Europe) S.à r.l. et Cie, S.C.A. — optional alternative payment method (Luxembourg / United States; basis: Contract; Standard Contractual Clauses for transfers); Vercel Inc. — website hosting, CDN, server logs (United States (edge nodes worldwide); basis: Contract; Standard Contractual Clauses for transfers); Resend, Inc. — transactional email — order confirmations and ticket delivery (United States; basis: Contract; Standard Contractual Clauses for transfers); WhatsApp Ireland Ltd (Meta) — optional ticket delivery and customer support messaging (Ireland / United States; basis: Contract; Standard Contractual Clauses for transfers); Google Ireland Ltd — analytics and, once enabled, advertising — consent-gated (Ireland / United States; basis: Consent; Standard Contractual Clauses for transfers)",
           "The official ticketing channel, which receives the visitor details required to issue your ticket.",
           "Professional advisers, and public authorities where we are legally required to disclose."
         ]
@@ -521,7 +520,7 @@
         "id": "exercising",
         "heading": "7. How to exercise them",
         "paragraphs": [
-          "Email privacy@marrakechlocal.com. We will respond within one month. We may ask you to confirm your identity, but only to the extent necessary — we will not demand a passport scan to answer a question about a €13.99 booking.",
+          "Email privacy@marrakechlocal.com. We will respond within one month. We may ask you to confirm your identity, but only to the extent necessary — we will not demand a passport scan to answer a question about a €11.99 booking.",
           "Note that we cannot erase data we are required to keep for accounting purposes, or a consent record and evidence snapshot relating to a payment while a dispute window remains open. We will tell you if that applies and when the data will be deleted."
         ]
       },
@@ -529,7 +528,7 @@
         "id": "security",
         "heading": "8. Security",
         "paragraphs": [
-          "All traffic is encrypted in transit. Payment is completed on PayPal’s own site, so card details are never transmitted to or stored on our servers and we hold no card numbers. Access to order data is limited to the people who need it to provide support.",
+          "All traffic is encrypted in transit. Card details are entered directly into Stripe's hosted payment fields and are never transmitted to or stored on our servers, so we hold no card numbers. Access to order data is limited to the people who need it to provide support.",
           "If a breach occurs that is likely to result in a risk to your rights, we will notify the relevant supervisory authority within 72 hours and, where the risk is high, tell you directly."
         ]
       },
@@ -570,8 +569,7 @@
         "id": "necessary",
         "heading": "2. Strictly necessary cookies",
         "paragraphs": [
-          "These are required for the site and the checkout to function, and are set without consent because the service cannot be provided without them.",
-          "We set no payment cookies. Because you pay on paypal.com rather than here, any cookies PayPal uses to secure that payment are set on their domain and governed by PayPal’s own cookie policy, not this one."
+          "These are required for the site and the checkout to function, and are set without consent because the service cannot be provided without them."
         ],
         "table": {
           "head": [
@@ -592,6 +590,12 @@
               "visitbahiapalace.com",
               "Stores your cookie choices and when you made them",
               "6 months"
+            ],
+            [
+              "__stripe_mid, __stripe_sid",
+              "Stripe",
+              "Fraud prevention on the payment form. Required to take payment securely",
+              "1 year / 30 minutes"
             ]
           ]
         }
@@ -684,7 +688,7 @@
         "list": [
           "The audio guides do not yet have full text transcripts in every language we offer audio in. Where a transcript exists it is published beside the player; where it does not, the guide is text-only rather than silent audio.",
           "Some photographs carry descriptive alt text written from verified metadata only. Where we could not confirm what a photograph shows, the alt text describes what is visible instead of naming the building.",
-          "The payment step is PayPal’s own website, not a page we control. We have no control over its markup and rely on PayPal’s own conformance.",
+          "Third-party payment fields are rendered by Stripe and PayPal inside their own frames. We have no control over their internal markup and rely on their own conformance.",
           "This site has not yet been audited by an independent accessibility specialist. That is scheduled before launch, and this statement will be updated with the findings and the date."
         ]
       },
@@ -717,7 +721,6 @@
           "Registered office: 30 N Gould St, Ste R, Sheridan, WY 82801, United States",
           "Registered agent: Registered Agents Inc, 30 N Gould St Ste R, Sheridan, WY 82801, United States",
           "Company registration number: 2026-002047078",
-          "US Employer Identification Number (EIN): 98-1960250",
           "Represented by: Abdellah Amejal",
           "Email: legal@marrakechlocal.com",
           "Customer support: support@marrakechlocal.com · WhatsApp +212 607-223008 · 09:00–21:00 (GMT+1), 7 days a week"

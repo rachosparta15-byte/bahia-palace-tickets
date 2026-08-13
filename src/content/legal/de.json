@@ -65,7 +65,6 @@
         "id": "delivery",
         "heading": "6. Lieferung",
         "paragraphs": [
-          "Besuche müssen mindestens zwei volle Tage im Voraus gebucht werden; frühere Termine lassen sich nicht auswählen. Wir halten keinen Ticketbestand — jedes Ticket wird nach Zahlungseingang für Sie am Monument besorgt — und zwei Tage sind der kürzeste Zeitraum, in dem uns das zuverlässig gelingt, auch über ein Wochenende oder einen Feiertag hinweg. Sollten wir Ihr Ticket einmal nicht beschaffen können, stornieren wir die Buchung und erstatten Ihnen den vollen Betrag.",
           "Nach der Zahlung besorgen wir Ihr Ticket und senden Ihnen einen QR-Code sowie einen Link zu Ihrem digitalen Audioguide per E-Mail und, sofern Sie uns eine Nummer gegeben haben, per WhatsApp. Die Lieferung erfolgt vor Ihrem Besuchstag.",
           "Die Zustellung des QR-Codes ist der Zeitpunkt, zu dem unsere Leistung erbracht ist. Es ist zugleich der Zeitpunkt, zu dem Ihr Stornorecht endet — siehe die Rückerstattungs- und Stornierungsrichtlinie.",
           "Es liegt in Ihrer Verantwortung, uns eine funktionierende E-Mail-Adresse zu nennen und Ihren Spam-Ordner zu prüfen. Haben Sie 48 Stunden vor Ihrem Besuch keinen QR-Code erhalten, melden Sie sich sofort unter support@marrakechlocal.com oder per WhatsApp unter +212 607-223008; wir senden ihn erneut."
@@ -327,7 +326,7 @@
         "id": "who-processes",
         "heading": "1. Wer Ihre Zahlung abwickelt",
         "paragraphs": [
-          "Alle Zahlungen auf dieser Website werden von PayPal (Europe) S.à r.l. et Cie, S.C.A. abgewickelt, einem in Luxemburg zugelassenen und von der Commission de Surveillance du Secteur Financier beaufsichtigten Kreditinstitut. Sie können mit PayPal-Guthaben oder per Debit- bzw. Kreditkarte über PayPal zahlen; für die Kartenzahlung ist kein PayPal-Konto erforderlich. PayPal ist in unserer Datenschutzerklärung als Auftragsverarbeiter benannt.",
+          "Kartenzahlungen werden von Stripe abgewickelt. Wo angeboten und von Ihnen gewählt, werden PayPal-Zahlungen von PayPal abgewickelt. Beide sind regulierte Zahlungsinstitute und beide sind in unserer Datenschutzerklärung als Auftragsverarbeiter benannt.",
           "Sie zahlen auf der Seite, auf der Sie bereits sind. Wir leiten Sie nicht zu einer anderen Marke oder Domain weiter, um Ihr Geld entgegenzunehmen — im Moment der Zahlung auf einer unbekannten Seite zu landen ist genau der Punkt, an dem Buchungen abgebrochen werden, und das zu Recht."
         ]
       },
@@ -335,8 +334,8 @@
         "id": "card-data",
         "heading": "2. Was wir nie sehen",
         "paragraphs": [
-          "Zum Bezahlen werden Sie auf die Website von PayPal geleitet. Ihre Kartennummer, das Ablaufdatum und die Prüfziffer werden dort auf paypal.com eingegeben und an PayPal übermittelt. Sie laufen nicht über unsere Server und werden nie in unseren Systemen gespeichert. Wir könnten Ihre Kartennummer nicht abrufen, selbst wenn Sie uns darum bäten.",
-          "PayPal ist nach PCI DSS Level 1 zertifiziert, der höchsten von den Kartenorganisationen definierten Stufe. Da der gesamte Zahlungsschritt auf deren Website stattfindet, gelangen keinerlei Kartendaten in unsere Umgebung.",
+          "Ihre Kartennummer, das Ablaufdatum und die Prüfziffer werden direkt in ein von Stripe gehostetes Formular eingegeben und an Stripe übermittelt. Sie laufen nicht über unsere Server und werden nie in unseren Systemen gespeichert. Wir könnten Ihre Kartennummer nicht abrufen, selbst wenn Sie uns darum bäten.",
+          "Stripe ist nach PCI DSS Level 1 zertifiziert, der höchsten von den Kartensystemen definierten Stufe. Unsere Anbindung ist so ausgelegt, dass die Karteninhaberdaten-Umgebung vollständig auf deren Seite bleibt.",
           "Was wir vorhalten, steht in der Datenschutzerklärung: Ihr Name, Ihre E-Mail-Adresse, gegebenenfalls Ihre Telefonnummer, das gebuchte Monument und Datum, der Betrag und eine Zahlungsreferenz des Anbieters."
         ]
       },
@@ -344,8 +343,8 @@
         "id": "statement",
         "heading": "3. Was auf Ihrem Kontoauszug erscheint",
         "paragraphs": [
-          "Da die Zahlung über PayPal eingezogen wird, beginnt die Buchungszeile auf Ihrem Kontoauszug mit PAYPAL, gefolgt von unserem Handelsnamen. Zeigt Ihre Bank nur den PayPal-Teil, finden Sie die vollständigen Angaben — unser Name, Betrag und Datum — in Ihrer PayPal-Kontoaktivität und in der Quittung, die PayPal Ihnen per E-Mail sendet.",
-          "Das ist wichtiger, als es klingt. Die meisten Kartenreklamationen sind kein Betrug, sondern Menschen, die Wochen später eine Zeile auf dem Auszug nicht wiedererkennen. Wenn Sie eine Belastung von uns nicht zuordnen können, schreiben Sie an support@marrakechlocal.com mit Betrag und Datum — wir klären das noch am selben Tag."
+          "Die Belastung trägt einen Verwendungszweck, der die Seite ausweist, auf der Sie gebucht haben, damit die Zeile auf Ihrem Auszug zu der Marke passt, bei der Sie sich erinnern gekauft zu haben. Der genaue Text für Ihre Buchung wird Ihnen vor der Zahlung angezeigt und in der Bestätigungs-E-Mail wiederholt.",
+          "Das ist Absicht. Die meisten Kartenreklamationen sind kein Betrug; es sind Menschen, die Wochen später eine Zeile auf einem Auszug nicht wiedererkennen. Können Sie eine Belastung von uns nicht zuordnen, schreiben Sie mit Betrag und Datum an support@marrakechlocal.com — wir klären sie noch am selben Tag."
         ]
       },
       {
@@ -368,7 +367,7 @@
         "id": "fraud",
         "heading": "6. Betrugsprävention",
         "paragraphs": [
-          "PayPal führt Betrugsprüfungen für Zahlungen über diese Website durch und verarbeitet dabei technische Informationen zum Gerät und zur Transaktion. Das ist für eine sichere Zahlungsabwicklung erforderlich und stützt sich auf unser berechtigtes Interesse an der Betrugsprävention; es ist in unserer Datenschutz- und Cookie-Erklärung beschrieben.",
+          "Stripe und PayPal führen bei Zahlungen über diese Seite Betrugsprüfungen durch; dabei verarbeiten sie technische Informationen über das Gerät und die Transaktion. Das ist erforderlich, um Zahlungen sicher entgegenzunehmen, und stützt sich auf unser berechtigtes Interesse an der Betrugsprävention; es ist in unserer Datenschutz- und Cookie-Erklärung beschrieben.",
           "Wir können eine Buchung ablehnen oder stornieren und erstatten, wenn eine Zahlung als hochriskant eingestuft wird. Tun wir das, erstatten wir vollständig auf das ursprüngliche Zahlungsmittel."
         ]
       },
@@ -377,7 +376,7 @@
         "heading": "7. Reklamationen und Rückbuchungen",
         "paragraphs": [
           "Stimmt etwas mit einer Buchung nicht, wenden Sie sich an uns, bevor Sie Ihre Bank einschalten. Steht eine Erstattung zu, zahlen wir sie zügig, und eine Rückbuchung dauert erheblich länger als eine E-Mail.",
-          "Wurde eine Buchung wie beschrieben geliefert und wurden unsere Bedingungen beim Bezahlen akzeptiert, widersprechen wir dem Fall und legen PayPal den genauen Nachweis dessen vor, was zum Kaufzeitpunkt angezeigt und akzeptiert wurde, einschließlich Preisvergleich und Rückerstattungsrichtlinie in der Fassung, wie sie auf dem Bildschirm standen. Sie können auch im PayPal-Konfliktlösungscenter einen Fall eröffnen; uns zuerst zu kontaktieren geht in der Regel schneller."
+          "Wurde eine Buchung wie beschrieben geliefert und wurden unsere Bedingungen beim Kauf akzeptiert, widersprechen wir der Rückbuchung und legen dem Zahlungsdienstleister den Nachweis vor, was zum Kaufzeitpunkt genau angezeigt und akzeptiert wurde — einschließlich des Preisvergleichs und der Rückerstattungsrichtlinie, wie sie auf dem Bildschirm zu sehen waren."
         ]
       }
     ]
@@ -443,9 +442,9 @@
             ],
             [
               "Zahlungsdaten",
-              "Zahlungseinzug. Die Zahlung wird auf der Website von PayPal abgeschlossen; Kartendaten erreichen unsere Server nie",
+              "Zahlungseinzug. Kartendaten werden direkt bei Stripe eingegeben und erreichen unsere Server nie",
               "Vertrag",
-              "Von PayPal nach dessen eigener Richtlinie aufbewahrt"
+              "Bei Stripe nach dessen eigener Richtlinie"
             ],
             [
               "Analysedaten (aufgerufene Seiten, ungefährer Standort, Gerät)",
@@ -488,7 +487,7 @@
           "Wir verkaufen keine personenbezogenen Daten und werden das nie tun. Wir geben sie nur an die Dienstleister weiter, die wir zum Betrieb benötigen; jeder verarbeitet sie auf unsere Weisung auf Grundlage eines schriftlichen Vertrags:"
         ],
         "list": [
-          "PayPal (Europe) S.à r.l. et Cie, S.C.A. — Zahlungsabwicklung, Betrugsprävention, Fallbearbeitung (Luxemburg / USA; Grundlage: Vertrag; Standardvertragsklauseln für Übermittlungen); Vercel Inc. — website hosting, CDN, server logs (United States (edge nodes worldwide); basis: Contract; Standard Contractual Clauses for transfers); Resend, Inc. — transactional email — order confirmations and ticket delivery (United States; basis: Contract; Standard Contractual Clauses for transfers); WhatsApp Ireland Ltd (Meta) — optional ticket delivery and customer support messaging (Ireland / United States; basis: Contract; Standard Contractual Clauses for transfers); Google Ireland Ltd — analytics and, once enabled, advertising — consent-gated (Ireland / United States; basis: Consent; Standard Contractual Clauses for transfers)",
+          "Stripe, Inc. — payment processing, fraud prevention, chargeback handling (United States / Ireland; basis: Contract; Standard Contractual Clauses for transfers); PayPal (Europe) S.à r.l. et Cie, S.C.A. — optional alternative payment method (Luxembourg / United States; basis: Contract; Standard Contractual Clauses for transfers); Vercel Inc. — website hosting, CDN, server logs (United States (edge nodes worldwide); basis: Contract; Standard Contractual Clauses for transfers); Resend, Inc. — transactional email — order confirmations and ticket delivery (United States; basis: Contract; Standard Contractual Clauses for transfers); WhatsApp Ireland Ltd (Meta) — optional ticket delivery and customer support messaging (Ireland / United States; basis: Contract; Standard Contractual Clauses for transfers); Google Ireland Ltd — analytics and, once enabled, advertising — consent-gated (Ireland / United States; basis: Consent; Standard Contractual Clauses for transfers)",
           "Den offiziellen Ticketkanal, der die zur Ausstellung Ihres Tickets erforderlichen Besucherdaten erhält.",
           "Unsere Berufsträger sowie Behörden, soweit wir gesetzlich zur Auskunft verpflichtet sind."
         ]
@@ -521,7 +520,7 @@
         "id": "exercising",
         "heading": "7. Wie Sie diese Rechte ausüben",
         "paragraphs": [
-          "Schreiben Sie an privacy@marrakechlocal.com. Wir antworten innerhalb eines Monats. Wir können Sie um eine Identitätsbestätigung bitten, aber nur im erforderlichen Umfang — für eine Frage zu einer Buchung über 13,99 € verlangen wir keinen Ausweisscan.",
+          "Schreiben Sie an privacy@marrakechlocal.com. Wir antworten innerhalb eines Monats. Wir können Sie um eine Identitätsbestätigung bitten, aber nur im erforderlichen Umfang — für eine Frage zu einer Buchung über 11.99 € verlangen wir keinen Ausweisscan.",
           "Daten, die wir aus handels- oder steuerrechtlichen Gründen aufbewahren müssen, können wir ebenso wenig löschen wie einen Einwilligungsnachweis und einen Beweis-Snapshot zu einer Zahlung, solange eine Anfechtungsfrist läuft. Wir sagen Ihnen in diesem Fall, wann die Löschung erfolgt."
         ]
       },
@@ -529,7 +528,7 @@
         "id": "security",
         "heading": "8. Sicherheit",
         "paragraphs": [
-          "Der gesamte Datenverkehr ist während der Übertragung verschlüsselt. Die Zahlung wird auf der Website von PayPal abgeschlossen, daher werden Kartendaten nie an unsere Server übermittelt oder dort gespeichert, und wir halten keine Kartennummern. Der Zugriff auf Bestelldaten ist auf die Personen beschränkt, die ihn für den Support benötigen.",
+          "Der gesamte Datenverkehr ist auf dem Transportweg verschlüsselt. Kartendaten werden direkt in die von Stripe gehosteten Zahlungsfelder eingegeben und nie an unsere Server übertragen oder dort gespeichert — wir halten keine Kartennummern. Der Zugriff auf Bestelldaten ist auf die Personen beschränkt, die ihn für den Support benötigen.",
           "Kommt es zu einer Verletzung, die voraussichtlich ein Risiko für Ihre Rechte bedeutet, melden wir sie der zuständigen Aufsichtsbehörde binnen 72 Stunden und benachrichtigen Sie bei hohem Risiko unmittelbar."
         ]
       },
@@ -570,8 +569,7 @@
         "id": "necessary",
         "heading": "2. Unbedingt erforderliche Cookies",
         "paragraphs": [
-          "Sie sind für den Betrieb der Seite und des Bezahlvorgangs notwendig und werden ohne Einwilligung gesetzt, weil der Dienst ohne sie nicht erbracht werden kann.",
-          "Wir setzen keine Zahlungs-Cookies. Da Sie auf paypal.com bezahlen und nicht hier, werden Cookies, die PayPal zur Absicherung dieser Zahlung verwendet, auf deren Domain gesetzt und richten sich nach der Cookie-Richtlinie von PayPal, nicht nach dieser."
+          "Sie sind für den Betrieb der Seite und des Bezahlvorgangs notwendig und werden ohne Einwilligung gesetzt, weil der Dienst ohne sie nicht erbracht werden kann."
         ],
         "table": {
           "head": [
@@ -592,6 +590,12 @@
               "visitbahiapalace.com",
               "Speichert Ihre Cookie-Auswahl und wann Sie sie getroffen haben",
               "6 Monate"
+            ],
+            [
+              "__stripe_mid, __stripe_sid",
+              "Stripe",
+              "Betrugsprävention im Zahlungsformular. Für einen sicheren Zahlungseinzug erforderlich",
+              "1 Jahr / 30 Minuten"
             ]
           ]
         }
@@ -684,7 +688,7 @@
         "list": [
           "Die Audioguides haben noch nicht in jeder Sprache mit Ton eine vollständige Transkription. Wo eine existiert, steht sie neben dem Player; wo nicht, wird der Guide als Text angeboten statt als stummes Audio.",
           "Einige Fotografien tragen Alternativtexte, die ausschließlich aus geprüften Metadaten stammen. Ließ sich nicht bestätigen, was ein Bild zeigt, beschreibt der Alternativtext das Sichtbare, statt das Gebäude zu benennen.",
-          "Der Zahlungsschritt ist die Website von PayPal, keine von uns kontrollierte Seite. Wir haben keinen Einfluss auf deren Markup und verlassen uns auf die Konformitätserklärung von PayPal.",
+          "Zahlungsfelder Dritter werden von Stripe und PayPal in deren eigenen Frames gerendert. Auf deren internes Markup haben wir keinen Einfluss und verlassen uns auf deren eigene Konformität.",
           "Diese Website wurde noch nicht von einer unabhängigen Fachstelle für Barrierefreiheit geprüft. Die Prüfung ist vor dem Start vorgesehen; diese Erklärung wird dann mit Ergebnis und Datum aktualisiert."
         ]
       },
@@ -717,7 +721,6 @@
           "Sitz: 30 N Gould St, Ste R, Sheridan, WY 82801, United States",
           "Registered Agent: Registered Agents Inc, 30 N Gould St Ste R, Sheridan, WY 82801, United States",
           "Registernummer: 2026-002047078",
-          "US-Steuernummer (EIN): 98-1960250",
           "Vertreten durch: Abdellah Amejal",
           "E-Mail: legal@marrakechlocal.com",
           "Kundenbetreuung: support@marrakechlocal.com · WhatsApp +212 607-223008 · 09:00–21:00 (GMT+1), 7 days a week"
