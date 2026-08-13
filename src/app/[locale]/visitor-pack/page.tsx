@@ -44,12 +44,88 @@ interface Props {
  */
 export const dynamic = 'force-dynamic';
 
+/**
+ * Search and social copy for this page, per locale.
+ *
+ * It was one hardcoded English pair serving all seven, so a German result in
+ * Google carried an English description under an hreflang that promised
+ * German — and the same string went out as the og:description on every share.
+ * The page body was already translated; only the part search engines read was
+ * not.
+ *
+ * A record in the page file rather than a messages key, matching HOME_META and
+ * the ticket pages: generateMetadata runs before the page does, and the rest of
+ * the metadata layer here does not load the i18n catalogue.
+ *
+ * {price}, {mad}, {eur} and {date} are filled from the pricing config, so no
+ * figure is written out inside a translation and none can drift from checkout.
+ */
+const META: Record<string, { title: string; description: string; schema: string }> = {
+  en: {
+    title: 'Complete Visitor Pack — Bahia Palace Ticket + Audio Guide (€{price})',
+    description:
+      'Official Bahia Palace entry ticket ({mad} MAD, purchased for you) plus an audio guide, visitor map and support — €{price} per person.',
+    schema:
+      'Official Bahia Palace entry ticket ({mad} MAD ≈ €{eur} at the rate of {date}, purchased on the visitor’s behalf) bundled with an audio guide, visitor map and support.',
+  },
+  fr: {
+    title: 'Pack Visiteur Complet — billet du Palais Bahia + audioguide (€{price})',
+    description:
+      'Billet d’entrée officiel du Palais Bahia ({mad} MAD, acheté pour vous), audioguide, plan de visite et assistance — €{price} par personne.',
+    schema:
+      'Billet d’entrée officiel du Palais Bahia ({mad} MAD ≈ €{eur} au taux du {date}, acheté pour le visiteur), accompagné d’un audioguide, d’un plan de visite et d’une assistance.',
+  },
+  de: {
+    title: 'Komplettes Besucherpaket — Bahia-Palast Ticket + Audioguide (€{price})',
+    description:
+      'Offizielles Eintrittsticket für den Bahia-Palast ({mad} MAD, für Sie gekauft), dazu Audioguide, Lageplan und Support — €{price} pro Person.',
+    schema:
+      'Offizielles Eintrittsticket für den Bahia-Palast ({mad} MAD ≈ €{eur} zum Kurs vom {date}, im Namen des Besuchers gekauft), zusammen mit Audioguide, Lageplan und Support.',
+  },
+  es: {
+    title: 'Pack Completo del Visitante — entrada Palacio de la Bahía + audioguía (€{price})',
+    description:
+      'Entrada oficial al Palacio de la Bahía ({mad} MAD, comprada a tu nombre), con audioguía, plano de visita y atención — €{price} por persona.',
+    schema:
+      'Entrada oficial al Palacio de la Bahía ({mad} MAD ≈ €{eur} al cambio del {date}, comprada en nombre del visitante), junto con audioguía, plano de visita y atención.',
+  },
+  it: {
+    title: 'Pacchetto Visitatore Completo — biglietto Palazzo Bahia + audioguida (€{price})',
+    description:
+      'Biglietto d’ingresso ufficiale per il Palazzo Bahia ({mad} MAD, acquistato per te), con audioguida, mappa della visita e assistenza — €{price} a persona.',
+    schema:
+      'Biglietto d’ingresso ufficiale per il Palazzo Bahia ({mad} MAD ≈ €{eur} al cambio del {date}, acquistato per conto del visitatore), insieme ad audioguida, mappa della visita e assistenza.',
+  },
+  ar: {
+    title: 'باقة الزائر الكاملة — تذكرة قصر الباهية + دليل صوتي (€{price})',
+    description:
+      'تذكرة الدخول الرسمية لقصر الباهية ({mad} درهم، مشتراة باسمك)، مع دليل صوتي وخريطة للزيارة ودعم — €{price} للشخص.',
+    schema:
+      'تذكرة الدخول الرسمية لقصر الباهية ({mad} درهم ≈ €{eur} بسعر صرف {date}، مشتراة نيابة عن الزائر)، مع دليل صوتي وخريطة للزيارة ودعم.',
+  },
+  pt: {
+    title: 'Pack Completo do Visitante — bilhete Palácio da Bahia + audioguia (€{price})',
+    description:
+      'Bilhete de entrada oficial do Palácio da Bahia ({mad} MAD, comprado em seu nome), com audioguia, mapa de visita e apoio — €{price} por pessoa.',
+    schema:
+      'Bilhete de entrada oficial do Palácio da Bahia ({mad} MAD ≈ €{eur} ao câmbio de {date}, comprado em nome do visitante), acompanhado de audioguia, mapa de visita e apoio.',
+  },
+};
+
+/** Substitutes the pricing config into a META template. */
+function fillMeta(template: string): string {
+  return template
+    .replaceAll('{price}', formatEURAmount(VISITOR_PACK_PRICE_EUR_CENTS))
+    .replaceAll('{mad}', String(OFFICIAL_DOOR_PRICE_MAD))
+    .replaceAll('{eur}', formatEURAmount(OFFICIAL_DOOR_PRICE_EUR_CENTS))
+    .replaceAll('{date}', MAD_TO_EUR_RATE_CHECKED_ON);
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const title = `Complete Visitor Pack — Bahia Palace Ticket + Audio Guide (€${formatEURAmount(VISITOR_PACK_PRICE_EUR_CENTS)})`;
-  const description =
-    `Official Bahia Palace entry ticket (${OFFICIAL_DOOR_PRICE_MAD} MAD, purchased for you) ` +
-    `plus a premium audio guide, visitor map and support — €${formatEURAmount(VISITOR_PACK_PRICE_EUR_CENTS)} per person.`;
+  const meta = META[locale] ?? META.en;
+  const title = fillMeta(meta.title);
+  const description = fillMeta(meta.description);
 
   const { enabled: paymentsEnabled } = getPublicPaymentsFlags();
 
@@ -115,10 +191,10 @@ export default async function VisitorPackPage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: 'Bahia Palace — Complete Visitor Pack',
-    description:
-      `Official Bahia Palace entry ticket (${OFFICIAL_DOOR_PRICE_MAD} MAD ≈ €${formatEURAmount(OFFICIAL_DOOR_PRICE_EUR_CENTS)} ` +
-      `at the rate of ${MAD_TO_EUR_RATE_CHECKED_ON}, purchased on the visitor's behalf) ` +
-      `bundled with a premium audio guide, visitor map and support.`,
+    // Localised for the same reason as the meta description above: this is the
+    // page's own description of itself, and it was asserting English on a page
+    // whose every visible word is not.
+    description: fillMeta((META[locale] ?? META.en).schema),
     url: `${BASE}/${locale}/visitor-pack`,
     image: `${BASE}/og-image.jpg`,
     offers: {

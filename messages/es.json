@@ -111,15 +111,15 @@
     },
     "visitorPack": {
       "_needsTranslation": true,
-      "name": "Complete Visitor Pack",
-      "tagline": "Official entry ticket + digital audio guide",
-      "duration": "Self-guided • ~1–2 hours",
+      "name": "Pack Completo del Visitante",
+      "tagline": "Entrada oficial + audioguía digital",
+      "duration": "Por libre • ~1–2 horas",
       "whyOnline": "En taquilla hay que hacer cola y pagar en efectivo, en dírhams, y nadie le da una audioguía. Aquí es un solo pago con tarjeta, una audioguía en su idioma, asistencia por WhatsApp y cancelación gratuita hasta que enviemos su código.",
       "includes": [
-        "Official entry ticket (100 MAD, purchased for you)",
-        "Premium audio guide",
-        "Visitor map",
-        "Human support"
+        "Entrada oficial (100 MAD, comprada a tu nombre)",
+        "Audioguía premium",
+        "Plano de visita",
+        "Atención humana"
       ]
     }
   },
@@ -632,80 +632,80 @@
   "visitorPack": {
     "_needsTranslation": true,
     "testMode": {
-      "badge": "TEST MODE",
-      "message": "This is a test environment — no real payment is possible."
+      "badge": "MODO DE PRUEBA",
+      "message": "Este es un entorno de pruebas: no se puede realizar ningún pago real."
     },
     "hero": {
-      "eyebrow": "Complete Visitor Pack",
-      "title": "Everything you need for Bahia Palace, in one pack",
-      "subtitle": "Your official entry ticket, purchased for you, plus our premium audio guide, visitor map and real human support.",
-      "ctaPrimary": "Get My Visitor Pack",
-      "ctaDisabled": "Booking opens soon",
-      "ctaDisabledHint": "We are not taking payments yet. Check back shortly."
+      "eyebrow": "Pack Completo del Visitante",
+      "title": "Todo lo que necesitas para el Palacio de la Bahía, en un solo pack",
+      "subtitle": "Tu entrada oficial, comprada a tu nombre, con una audioguía en tu idioma, un plano de visita y atención por WhatsApp antes y durante tu visita.",
+      "ctaPrimary": "Consigue tu Pack del Visitante",
+      "ctaDisabled": "Las reservas abren pronto",
+      "ctaDisabledHint": "Todavía no aceptamos pagos. Vuelve dentro de poco."
     },
     "price": {
       "amount": "13,99 €",
-      "perPerson": "per person",
-      "freeAlternative": "Just want the official ticket? Here’s how",
-      "includes": "Official entry ticket + digital audio guide",
-      "taxesIncluded": "Taxes and fees included",
-      "officialLine": "Official entry ticket ({mad})",
-      "serviceLine": "Audio guide, map & support",
-      "convertedNote": "The official ticket price is set in Moroccan dirhams. The euro figure is converted at the rate of {date} and is shown for guidance."
+      "perPerson": "por persona",
+      "freeAlternative": "¿Solo quieres la entrada oficial? Te contamos cómo",
+      "includes": "Entrada oficial + audioguía digital",
+      "taxesIncluded": "Impuestos y tasas incluidos",
+      "officialLine": "Entrada oficial ({mad})",
+      "serviceLine": "Audioguía, plano y atención",
+      "convertedNote": "El precio de la entrada oficial está fijado en dírhams marroquíes. El importe en euros está convertido al cambio del {date} y se muestra solo a título orientativo."
     },
     "included": {
-      "title": "Everything Included",
-      "subtitle": "One pack, no surprises at the gate.",
+      "title": "Todo incluido",
+      "subtitle": "Un solo pack, sin sorpresas en la puerta.",
       "items": {
         "ticket": {
-          "title": "Official entry ticket",
+          "title": "Entrada oficial",
           "desc": "La entrada real del Ministerio de Cultura de 100 MAD, comprada a su nombre. No es una reventa, y el precio que ve es el precio que paga."
         },
         "audio": {
-          "title": "Premium audio guide",
-          "desc": "Room-by-room narration covering the harem, the courtyards and the painted ceilings most visitors walk straight past."
+          "title": "Audioguía premium",
+          "desc": "Narración sala por sala: el harén, los patios y los techos pintados por delante de los que pasa casi todo el mundo."
         },
         "map": {
-          "title": "Visitor map",
-          "desc": "A clear route through the palace with the photo spots and the quiet corners marked."
+          "title": "Plano de visita",
+          "desc": "Un recorrido claro por el palacio, con los mejores puntos para fotos y los rincones tranquilos señalados."
         },
         "support": {
-          "title": "Support for anything",
-          "desc": "Message us with any question before or during your visit — tickets, how to get there, opening times, or what else is worth seeing in Marrakech. A real person answers."
+          "title": "Atención para lo que necesites",
+          "desc": "Escríbenos con cualquier duda antes o durante tu visita: entradas, cómo llegar, horarios o qué más merece la pena ver en Marrakech. Te responde una persona real."
         },
         "language": {
-          "title": "Five languages",
-          "desc": "Audio guide and map available in English, French, Spanish, German and Italian."
+          "title": "Cinco idiomas",
+          "desc": "Audioguía y plano disponibles en inglés, francés, español, alemán e italiano."
         },
         "offline": {
-          "title": "Works offline",
-          "desc": "Download before you go — no roaming data needed inside the palace."
+          "title": "Funciona sin conexión",
+          "desc": "Descárgala antes de ir: no necesitas datos móviles dentro del palacio."
         }
       }
     },
     "howItWorks": {
-      "title": "How It Works",
+      "title": "Cómo funciona",
       "steps": {
         "one": {
-          "title": "Choose your date",
-          "desc": "Pick the day you want to visit and how many people are coming."
+          "title": "Elige tu fecha",
+          "desc": "Indica el día de tu visita y el número de personas."
         },
         "two": {
-          "title": "Pay securely",
-          "desc": "One payment covers the official ticket and everything we add to it."
+          "title": "Paga con seguridad",
+          "desc": "Un solo pago cubre la entrada oficial y todo lo que añadimos."
         },
         "three": {
-          "title": "We arrange your ticket",
-          "desc": "We buy your official entry ticket and send it to you before your visit."
+          "title": "Gestionamos tu entrada",
+          "desc": "Compramos tu entrada oficial y te la enviamos antes de tu visita."
         },
         "four": {
-          "title": "Visit the palace",
-          "desc": "Show your ticket, open the audio guide, and take your time."
+          "title": "Visita el palacio",
+          "desc": "Muestra tu entrada, abre la audioguía y tómate tu tiempo."
         }
       }
     },
     "faq": {
-      "title": "Frequently asked questions",
+      "title": "Preguntas frecuentes",
       "items": {
         "official": {
           "q": "¿Es esta la entrada oficial del Palacio de la Bahía?",
@@ -716,43 +716,43 @@
           "a": "La entrada sola cuesta 100 MAD en taquilla. Nuestro precio incluye esa entrada comprada a su nombre, la audioguía en cinco idiomas, el mapa del visitante, la asistencia por WhatsApp antes y durante su visita, y la cancelación gratuita hasta que enviemos su código QR. El Ministerio también vende la entrada directamente en su portal si es lo único que necesita."
         },
         "refund": {
-          "q": "Can I get a refund?",
-          "a": "See our refund policy for the current terms. If your visit date changes, contact us and we will do what we can."
+          "q": "¿Puedo pedir un reembolso?",
+          "a": "Consulta nuestra política de reembolsos para conocer las condiciones vigentes. Si cambia la fecha de tu visita, escríbenos y haremos lo posible."
         },
         "delivery": {
           "q": "¿Cuándo recibo mi entrada?",
           "a": "Las visitas se reservan con al menos dos días de antelación: es el tiempo que necesitamos para conseguir tu entrada oficial en el palacio. Te la enviamos unas 24 horas antes del día que nos indicaste. Tu código no incluye franja horaria, así que puedes llegar cuando prefieras ese día."
         },
         "group": {
-          "q": "Can I book for a group?",
-          "a": "Yes — choose the number of visitors at checkout. Each visitor gets their own official entry ticket."
+          "q": "¿Puedo reservar para un grupo?",
+          "a": "Sí: elige el número de visitantes al pagar. Cada visitante recibe su propia entrada oficial."
         }
       }
     },
     "form": {
-      "title": "Choose your visit",
-      "dateLabel": "Visit date",
-      "visitorsLabel": "Number of visitors",
-      "nameLabel": "Full name",
-      "namePlaceholder": "As it should appear on your ticket",
-      "emailLabel": "Email address",
-      "emailPlaceholder": "Where we send your ticket and audio guide",
+      "title": "Elige tu visita",
+      "dateLabel": "Fecha de la visita",
+      "visitorsLabel": "Número de visitantes",
+      "nameLabel": "Nombre completo",
+      "namePlaceholder": "Tal como debe aparecer en tu entrada",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "Adonde te enviamos la entrada y la audioguía",
       "totalLabel": "Total",
-      "submit": "Continue to secure payment",
-      "submitting": "Starting checkout…",
-      "legalNotice": "By continuing you agree to our <terms>Terms</terms> and <refund>Refund Policy</refund>.",
+      "submit": "Continuar al pago seguro",
+      "submitting": "Abriendo el pago…",
+      "legalNotice": "Al continuar aceptas nuestros <terms>Términos</terms> y nuestra <refund>Política de Reembolsos</refund>.",
       "errors": {
-        "generic": "Something went wrong starting checkout. Please try again.",
-        "disabled": "Booking opens soon — no payment can be taken yet.",
-        "pastDate": "Please choose a date that is not in the past.",
-        "name": "Please enter your full name.",
-        "email": "Please enter a valid email address.",
+        "generic": "Algo ha fallado al iniciar el pago. Inténtalo de nuevo.",
+        "disabled": "Las reservas abren pronto: todavía no se puede aceptar ningún pago.",
+        "pastDate": "Elige una fecha que no sea anterior a hoy.",
+        "name": "Introduce tu nombre completo.",
+        "email": "Introduce una dirección de correo válida.",
         "visitors": "Introduce un número entre 1 y {max}.",
         "consent": "Confirme esto antes de continuar: es necesario para completar su reserva.",
         "tooSoon": "Elige una fecha con al menos {days} días de antelación."
       },
-      "summaryTitle": "Order summary",
-      "productName": "Bahia Palace — Complete Visitor Pack",
+      "summaryTitle": "Resumen del pedido",
+      "productName": "Palacio de la Bahía — Pack Completo del Visitante",
       "acceptCombined": "Puedo cancelar gratis hasta que se envíe mi código QR. Entiendo que ese envío completa mi pedido, por lo que a partir de ese momento el derecho de desistimiento de 14 días deja de aplicarse, y acepto las <terms>Condiciones de venta</terms> y la <refund>política de cancelación</refund>.",
       "securePayment": "<b>Pago seguro.</b> Pagas en PayPal. Los datos de tu tarjeta van directamente a PayPal y nunca llegan a nuestros servidores.",
       "visitorsHint": "Cuente a todas las personas que necesitan entrada, incluidos los niños a partir de 7 años. Los menores de 7 años entran gratis y no se cuentan.",
@@ -773,23 +773,23 @@
       "paymentMethods": "Pago seguro: aceptamos PayPal y las principales tarjetas"
     },
     "confirmation": {
-      "packTitle": "Your Complete Visitor Pack",
-      "ticketPending": "Official entry ticket",
-      "ticketPendingDesc": "We are arranging your official entry ticket. It will be emailed to you before your visit date.",
-      "audioTitle": "Audio guide access",
-      "audioPendingDesc": "Your audio guide is being prepared. Access details will arrive with your ticket.",
-      "mockNotice": "This is a test-mode order. No payment was taken and no real ticket has been issued.",
-      "audioReadyBadge": "Ready",
-      "audioReadyDesc": "Your audio guide is ready. Open it on your phone and download it before you go — it works offline inside the palace.",
-      "audioOpen": "Open your audio guide",
-      "ticketReady": "Your official entry ticket",
-      "ticketReadyBadge": "Ready",
-      "ticketReadyDesc": "Your official Bahia Palace entry ticket has been purchased and sent to you. Show it at the entrance — on your phone is fine, no printing needed.",
-      "ticketView": "View your ticket",
-      "ticketCodeLabel": "Ticket code",
-      "ticketPendingRefundable": "Your ticket has not been sent yet, so you can still cancel for a full refund. Once we send it, the booking becomes non-refundable (Terms of Sale, §5).",
-      "audioOfflineTip": "Open it the morning of your visit, while you have wifi. It downloads once (about 47 MB), then plays with no signal at all inside the palace. When your phone offers “Add to Home Screen”, choose it — that stops the audio being cleared later.",
-      "audioLinkPendingDesc": "Your access link is being prepared and will arrive by email shortly. If it has not reached you within a few minutes, contact us with your booking reference."
+      "packTitle": "Tu Pack Completo del Visitante",
+      "ticketPending": "Entrada oficial",
+      "ticketPendingDesc": "Estamos gestionando tu entrada oficial. Te la enviaremos por correo antes de la fecha de tu visita.",
+      "audioTitle": "Acceso a la audioguía",
+      "audioPendingDesc": "Tu audioguía se está preparando. Los datos de acceso llegarán junto con tu entrada.",
+      "mockNotice": "Este es un pedido en modo de prueba. No se ha cobrado nada ni se ha emitido ninguna entrada real.",
+      "audioReadyBadge": "Lista",
+      "audioReadyDesc": "Tu audioguía está lista. Ábrela en el móvil y descárgala antes de ir: funciona sin conexión dentro del palacio.",
+      "audioOpen": "Abrir tu audioguía",
+      "ticketReady": "Tu entrada oficial",
+      "ticketReadyBadge": "Lista",
+      "ticketReadyDesc": "Tu entrada oficial al Palacio de la Bahía ya está comprada y enviada. Muéstrala en la entrada: en el móvil vale, no hace falta imprimirla.",
+      "ticketView": "Ver tu entrada",
+      "ticketCodeLabel": "Código de la entrada",
+      "ticketPendingRefundable": "Tu entrada aún no se ha enviado, así que todavía puedes cancelar con reembolso completo. Una vez la enviemos, la reserva deja de ser reembolsable (Términos de Venta, §5).",
+      "audioOfflineTip": "Ábrela la mañana de tu visita, mientras tengas wifi. Se descarga una sola vez (unos 47 MB) y luego funciona sin cobertura dentro del palacio. Si el móvil te ofrece «Añadir a pantalla de inicio», acéptalo: así el audio no se borrará más adelante.",
+      "audioLinkPendingDesc": "Tu enlace de acceso se está preparando y te llegará por correo en breve. Si no lo recibes en unos minutos, escríbenos con tu referencia de reserva."
     },
     "valuePoints": {
       "cancellation": "Cancelación gratuita hasta que enviemos tu entrada",
