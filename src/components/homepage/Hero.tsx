@@ -1,9 +1,18 @@
 import { preload } from 'react-dom';
 import { getTranslations } from 'next-intl/server';
-import { ArrowRight, Sun, Landmark, Ticket } from 'lucide-react';
+import { ArrowRight, Sun, Landmark, Ticket, Check } from 'lucide-react';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 import { formatEUR, VISITOR_PACK_PRICE_EUR_CENTS } from '@/config/pricing';
+
+/**
+ * The three inclusions listed under the hero price.
+ *
+ * Deliberately not the ticket itself: the price line already says what is
+ * being bought, and repeating it here would spend one of only three lines
+ * saying nothing new.
+ */
+const INCLUSION_KEYS = ['audio', 'whatsapp', 'cancellation'] as const;
 
 /** The hero's own srcset, declared once and used by both the preload and the img. */
 const HERO_SRCSET =
@@ -33,6 +42,7 @@ export async function Hero() {
    */
   const t = await getTranslations('heroBanner');
   const tt = await getTranslations('tickets');
+  const ti = await getTranslations('visitorPack.inclusions');
   const { enabled: paymentsEnabled } = getPublicPaymentsFlags();
   /*
    * Tell the browser about the hero before it has read the page.
@@ -208,7 +218,7 @@ export async function Hero() {
              * #ticket-book-btn, finding nothing, and so showing the mobile bar
              * permanently — including while a ticket button was on screen.
              */}
-            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
+            <div className="mt-6 sm:mt-8 flex flex-wrap items-start gap-x-5 gap-y-4">
               <LeadButton
                 ticketType="visitor-pack"
                 ctaLocation="hero"
@@ -220,20 +230,47 @@ export async function Hero() {
               </LeadButton>
 
               {paymentsEnabled && (
-                <p
-                  className="font-bold text-[#F5C96A] tabular-nums lining-nums"
-                  style={{
-                    fontSize: '1.5rem',
-                    lineHeight: 1,
-                    fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif',
-                    fontVariantNumeric: 'lining-nums tabular-nums',
-                  }}
-                >
-                  {formatEUR(VISITOR_PACK_PRICE_EUR_CENTS)}
-                  <span className="ms-1.5 text-xs font-normal text-[#C4A882]">
-                    {tt('perPerson')}
-                  </span>
-                </p>
+                <div>
+                  <p
+                    className="font-bold text-[#F5C96A] tabular-nums lining-nums"
+                    style={{
+                      fontSize: '1.5rem',
+                      lineHeight: 1,
+                      fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif',
+                      fontVariantNumeric: 'lining-nums tabular-nums',
+                    }}
+                  >
+                    {formatEUR(VISITOR_PACK_PRICE_EUR_CENTS)}
+                    <span className="ms-1.5 text-xs font-normal text-[#C4A882]">
+                      {tt('perPerson')}
+                    </span>
+                  </p>
+
+                  {/*
+                   * What the price buys, under the price.
+                   *
+                   * Read from visitorPack.inclusions rather than written here:
+                   * that set already exists in all seven languages, so this
+                   * cannot become the next block of English sitting on a
+                   * French page. The longer valuePoints wording is the
+                   * visitor-pack page's job — three short lines are as much
+                   * as a hero can carry without competing with the headline.
+                   */}
+                  <ul className="mt-2.5 space-y-1">
+                    {INCLUSION_KEYS.map((key) => (
+                      <li key={key} className="flex items-start gap-1.5">
+                        <Check
+                          size={12}
+                          className="mt-[3px] shrink-0 text-[#8FA63C]"
+                          aria-hidden="true"
+                        />
+                        <span className="text-xs leading-snug text-[#C4A882]">
+                          {ti(key)}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
             </div>
           </div>
