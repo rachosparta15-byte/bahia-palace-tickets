@@ -88,6 +88,7 @@ export default async function AdminClicksPage({ searchParams }: Props) {
           ...STEPS.map((s) => s.key),
           'pack_blocked',
           'pack_pay_failed',
+          'pack_card_fields',
           // The old lead-modal flow. Still counted so that if payments are
           // ever switched off, this page keeps telling the truth instead of
           // showing an empty funnel.
@@ -169,6 +170,20 @@ export default async function AdminClicksPage({ searchParams }: Props) {
   const paid = countOf('pack_paid');
   const clicked = countOf('ticket_cta_click');
 
+  /*
+   * Whether card payers can type their card here, or are handed to PayPal.
+   *
+   * PayPal only lets the fields be embedded when Advanced (Expanded) Checkout
+   * is switched on for the account. When it is not, the black "Debit or Credit
+   * Card" button opens PayPal's own hosted page instead — the customer leaves
+   * the site at the moment they decided to buy, which the checkout is built
+   * from top to bottom to avoid. It is an account setting, not code, so this
+   * says which of the two is happening rather than trying to fix it.
+   */
+  const cardFieldsEvents = events.filter((e) => e.name === 'pack_card_fields');
+  const cardFieldsOff = cardFieldsEvents.some((e) => readMeta(e.metadata).eligible === false);
+  const cardFieldsOn = cardFieldsEvents.some((e) => readMeta(e.metadata).eligible === true);
+
   return (
     <div className="p-6 sm:p-8 max-w-6xl">
       <header className="mb-6">
@@ -237,6 +252,32 @@ export default async function AdminClicksPage({ searchParams }: Props) {
                 : `${paid} of ${clicked} who pressed a ticket button paid.`}
             </p>
           </section>
+
+          {cardFieldsOff && !cardFieldsOn && (
+            <section className="mb-8">
+              <div className="rounded-xl border border-[#C4452D]/50 bg-[#2A1710] p-4">
+                <h2 className="flex items-center gap-2 text-sm font-semibold text-[#F5E8CC]">
+                  <AlertTriangle className="w-4 h-4 text-[#C4452D]" /> Card payers are being sent to
+                  PayPal
+                </h2>
+                <p className="mt-2 text-xs leading-relaxed text-[#C4A882] max-w-2xl">
+                  PayPal reported that embedded card fields are not available on this account, so
+                  the checkout falls back to the black “Debit or Credit Card” button — which opens
+                  PayPal’s own hosted page. Anyone paying by card leaves the site at the moment they
+                  decided to buy, and the ones without a PayPal account have to find the card option
+                  on someone else’s screen.
+                </p>
+                <p className="mt-2 text-xs leading-relaxed text-[#C4A882] max-w-2xl">
+                  This is an account setting, not code: switch on{' '}
+                  <strong className="text-[#F5E8CC]">
+                    Advanced (Expanded) Credit and Debit Card Payments
+                  </strong>{' '}
+                  in the PayPal business account. The fields appear here by themselves once it is
+                  on.
+                </p>
+              </div>
+            </section>
+          )}
 
           {blocked.length > 0 && (
             <section className="mb-8">

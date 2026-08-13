@@ -746,6 +746,7 @@
     },
     "form": {
       "title": "Choisissez votre visite",
+      "payTitle": "Finalisez votre paiement",
       "dateLabel": "Date de visite",
       "visitorsLabel": "Nombre de visiteurs",
       "nameLabel": "Nom complet",

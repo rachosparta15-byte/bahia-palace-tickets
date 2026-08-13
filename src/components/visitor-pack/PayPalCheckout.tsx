@@ -296,6 +296,7 @@ export function PayPalCheckout({
           cardFieldsRef.current = fields;
           if (!cancelled) setCardEligible(true);
           if (!cancelled) setDiagnostic('card fields: eligible');
+          trackEvent('pack_card_fields', { eligible: true });
         } else {
           console.info('[paypal] card fields not available on this account — button only');
           if (!cancelled) {
@@ -303,6 +304,17 @@ export function PayPalCheckout({
               'card fields: NOT eligible — Advanced (Expanded) Checkout is off for this PayPal account',
             );
           }
+          /*
+           * Recorded, not just logged.
+           *
+           * A console line is seen by whoever happens to have devtools open on
+           * the right page; this decides whether every card payer on the site
+           * is handed to PayPal's own hosted page instead of typing their card
+           * here, and that belongs in the funnel next to the drop-off it
+           * causes. It was a console.info while conversion was being
+           * investigated from the outside.
+           */
+          trackEvent('pack_card_fields', { eligible: false });
         }
 
         if (!cancelled) setStatus('ready');

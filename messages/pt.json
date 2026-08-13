@@ -180,6 +180,7 @@
         "tooSoon": "Escolha uma data com pelo menos {days} dias de antecedência."
       },
       "title": "Escolha a sua visita",
+      "payTitle": "Conclua o seu pagamento",
       "dateLabel": "Data da visita",
       "visitorsLabel": "Número de visitantes",
       "nameLabel": "Nome completo",

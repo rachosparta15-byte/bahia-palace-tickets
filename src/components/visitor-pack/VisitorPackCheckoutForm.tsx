@@ -358,11 +358,15 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
         className="relative isolate z-10 scroll-mt-24 overflow-hidden bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-6 sm:p-7"
         id="checkout"
       >
+        {/* The visit is already chosen by the time this renders. "Choose your
+            visit" was on all three steps, so the heading stopped describing
+            the screen at the exact moment the screen started asking for
+            money. */}
         <h2
           className="font-bold text-[#F5E8CC] mb-2"
           style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem' }}
         >
-          {t('title')}
+          {t('payTitle')}
         </h2>
         <p className="mb-5 text-sm text-[#C4A882]">
           {formatEUR(totalCents)} — {visitors} {visitors === 1 ? 'visitor' : 'visitors'} ·{' '}
@@ -402,7 +406,7 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
           className="font-bold text-[#F5E8CC] mb-2"
           style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem' }}
         >
-          {t('title')}
+          {t('payTitle')}
         </h2>
         <p className="mb-5 text-sm text-[#C4A882]">
           {formatEUR(totalCents)} — {visitors} {visitors === 1 ? 'visitor' : 'visitors'} · {payment.orderId}

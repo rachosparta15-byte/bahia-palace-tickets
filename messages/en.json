@@ -744,6 +744,7 @@
     },
     "form": {
       "title": "Choose your visit",
+      "payTitle": "Complete your payment",
       "dateLabel": "Visit date",
       "visitorsLabel": "Number of visitors",
       "nameLabel": "Full name",
