@@ -20,13 +20,24 @@ export function StorySection() {
           <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#E8A33D]/50" />
         </div>
 
+        {/*
+         * Upright, not italic.
+         *
+         * A full paragraph of italic display serif is what made this hard to
+         * read — not its colour, which measured 8.18:1 against this background
+         * and already passed AAA. Italic is for the pull-quote this looks like,
+         * not for the only piece of narrative on the page.
+         *
+         * fontWeight 300 went with it because it was never real: layout.tsx
+         * loads Cormorant at 400 and 600 only, so the browser has been
+         * rendering 400 here regardless.
+         */}
         <p
-          className="text-[#C4A882] leading-relaxed"
+          className="text-ivory leading-relaxed max-w-[65ch] mx-auto"
           style={{
             fontFamily: 'var(--font-display)',
             fontSize: 'clamp(1.15rem, 2.5vw, 1.5rem)',
-            fontStyle: 'italic',
-            fontWeight: 300,
+            fontWeight: 400,
             lineHeight: 1.75,
           }}
         >

@@ -1,6 +1,9 @@
 import { preload } from 'react-dom';
 import { getTranslations } from 'next-intl/server';
-import { ArrowRight, Sun, Landmark } from 'lucide-react';
+import { ArrowRight, Sun, Landmark, Ticket } from 'lucide-react';
+import { LeadButton } from '@/components/layout/LeadButton';
+import { getPublicPaymentsFlags } from '@/lib/payments/guard';
+import { formatEUR, VISITOR_PACK_PRICE_EUR_CENTS } from '@/config/pricing';
 
 /** The hero's own srcset, declared once and used by both the preload and the img. */
 const HERO_SRCSET =
@@ -29,6 +32,8 @@ export async function Hero() {
    * it obvious.
    */
   const t = await getTranslations('heroBanner');
+  const tt = await getTranslations('tickets');
+  const { enabled: paymentsEnabled } = getPublicPaymentsFlags();
   /*
    * Tell the browser about the hero before it has read the page.
    *
@@ -135,7 +140,21 @@ export async function Hero() {
       </div>
 
       {/* CENTER — main content */}
-      <div className="relative z-10 px-6 pt-4 sm:pt-8 pb-8 sm:pb-10">
+      {/*
+       * z-20 and a bottom padding that clears the arch wave.
+       *
+       * The wave below is also z-10 and comes later in the DOM, so it painted
+       * over anything this block put near its own bottom edge — and its path
+       * carries a -20 control point, which lifts the dark shape well ABOVE the
+       * 40/60px band it appears to occupy, highest at around a quarter of the
+       * viewport width. That is exactly where the CTA sits, so the button was
+       * being sliced diagonally by a decoration.
+       *
+       * Nothing noticed before because the headline used to end above the wave.
+       * Both fixes are here on purpose: the padding keeps content out of the
+       * wave's reach, the z-index means a decoration can never win again.
+       */}
+      <div className="relative z-20 px-6 pt-4 sm:pt-8 pb-14 sm:pb-20">
         <div className="max-w-6xl mx-auto w-full">
           <div className="max-w-2xl">
             <h1 className="hero-title mb-4 sm:mb-6 leading-none">
@@ -171,6 +190,52 @@ export async function Hero() {
                 {t.rich('subtitle', { em: (c) => <em>{c}</em> })}
               </span>
             </h1>
+
+            {/*
+             * The price and the buy action, in the hero.
+             *
+             * Both used to be a scroll away, below the story and the stat strip.
+             * This is the SAME LeadButton the ticket card renders — same
+             * ticket_cta_click event, same visitor-pack destination — placed a
+             * second time, not a second control.
+             *
+             * The price is gated on the payments flag for the reason set out in
+             * TicketCards: with payments off every CTA hands the visitor to the
+             * ministry portal, where they pay 100 MAD. Printing €13.99 beside a
+             * button that goes there would advertise a price we do not charge.
+             *
+             * The id is what StickyMobileCTA watches: it had been looking for
+             * #ticket-book-btn, finding nothing, and so showing the mobile bar
+             * permanently — including while a ticket button was on screen.
+             */}
+            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
+              <LeadButton
+                ticketType="visitor-pack"
+                ctaLocation="hero"
+                id="ticket-book-btn"
+                className="btn-primary min-h-[48px] text-sm sm:text-base"
+              >
+                <Ticket size={18} aria-hidden="true" />
+                {tt('bookNow')}
+              </LeadButton>
+
+              {paymentsEnabled && (
+                <p
+                  className="font-bold text-[#F5C96A] tabular-nums lining-nums"
+                  style={{
+                    fontSize: '1.5rem',
+                    lineHeight: 1,
+                    fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif',
+                    fontVariantNumeric: 'lining-nums tabular-nums',
+                  }}
+                >
+                  {formatEUR(VISITOR_PACK_PRICE_EUR_CENTS)}
+                  <span className="ms-1.5 text-xs font-normal text-[#C4A882]">
+                    {tt('perPerson')}
+                  </span>
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </div>

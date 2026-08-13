@@ -12,6 +12,12 @@ interface Props {
   ticketType?: string;
   /** Where on the page this CTA lives — sent as cta_location in GA4. */
   ctaLocation?: string;
+  /**
+   * DOM id on the rendered button. Not analytics: StickyMobileCTA observes
+   * #ticket-book-btn to decide whether the mobile bar is needed, and had been
+   * finding nothing on the page, so the bar showed permanently.
+   */
+  id?: string;
   className?: string;
   children: React.ReactNode;
 }
@@ -38,6 +44,7 @@ interface Props {
 export function LeadButton({
   ticketType = 'general',
   ctaLocation = 'unknown',
+  id,
   className,
   children,
 }: Props) {
@@ -77,7 +84,7 @@ export function LeadButton({
 
   return (
     <>
-      <button type="button" onClick={handleClick} className={className}>
+      <button type="button" id={id} onClick={handleClick} className={className}>
         {children}
       </button>
 

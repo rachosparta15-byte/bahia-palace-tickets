@@ -101,18 +101,52 @@ export function TicketCards({ overrides = {} }: Props) {
   const isSingle = liveKeys.length === 1;
 
   return (
-    <section className="pt-10 pb-16">
-      <div className="max-w-6xl mx-auto px-6">
+    /*
+     * The one light band on an otherwise dark page.
+     *
+     * Everything above and below this block sits on #251A0F, so the eye gets no
+     * rest between the header and the footer. Putting the ground under the price
+     * makes the offer read as the destination of the page rather than one more
+     * dark panel in a stack of them.
+     *
+     * The cards stay dark on purpose: a dark card on cream is what makes the
+     * price pop here, and it leaves the card internals — ribbon, checks, price,
+     * CTA — untouched.
+     */
+    <section className="relative bg-cream pt-16 pb-20">
+      {/*
+       * Fades into the dark sections either side so the change of ground reads
+       * as deliberate rather than as a cut. #251A0F is the exact background of
+       * TrustStrip above and WhyBookUs below — both ends of each gradient are
+       * named, because fading to `transparent` interpolates through transparent
+       * *black* and leaves a grey bruise across the cream.
+       */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[#251A0F] to-[#FAF3E7]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#251A0F] to-[#FAF3E7]"
+      />
 
-        {/* Heading */}
-        <div className="text-center mb-10 section-head">
+      <div className="relative max-w-6xl mx-auto px-6">
+
+        {/* Heading.
+            No `section-head` here, unlike every other section on the page.
+            That class paints a near-opaque #1C1108 radial scrim so a heading
+            stays legible over the zellige pattern on the dark body — and with
+            cream behind it instead, the scrim has no pattern to hide and
+            renders as a brown smudge across the title with the subtitle
+            washing out under its falloff. */}
+        <div className="text-center mb-10">
           <h2
-            className="text-[#F5E8CC] mb-2"
+            className="text-deep-brown mb-2"
             style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
           >
             {t('title')}
           </h2>
-          <p className="text-[#C4A882] max-w-2xl mx-auto leading-relaxed text-sm">{t('subtitle')}</p>
+          <p className="text-brown-mid max-w-2xl mx-auto leading-relaxed text-sm">{t('subtitle')}</p>
         </div>
 
         {/* Cards */}
