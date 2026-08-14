@@ -73,9 +73,18 @@ export function LeadButton({
     track();
 
     if (paymentsEnabled) {
-      // next-intl's router prepends the active locale, so a French visitor
-      // goes to /fr/visitor-pack without us assembling the path by hand.
-      router.push('/visitor-pack');
+      /*
+       * next-intl's router prepends the active locale, so a French visitor
+       * goes to /fr/visitor-pack without us assembling the path by hand.
+       *
+       * #checkout, not the top of the page. Someone who has just pressed "Get
+       * Tickets" has decided; landing them on the pack's hero shows them the
+       * price they have already seen, the inclusions they have already read,
+       * and a second button asking for the same decision again. Every extra
+       * press is a place to change their mind. The form carries that id and a
+       * scroll-mt that clears the fixed header.
+       */
+      router.push('/visitor-pack#checkout');
       return;
     }
 

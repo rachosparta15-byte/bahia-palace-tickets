@@ -401,7 +401,10 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
 
   if (payment) {
     return (
-      <div className="bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-6 sm:p-7" id="checkout">
+      <div
+        className="scroll-mt-24 bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-6 sm:p-7"
+        id="checkout"
+      >
         <h2
           className="font-bold text-[#F5E8CC] mb-2"
           style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem' }}
@@ -432,7 +435,10 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
        * stops measuring what it claims to.
        */
       onFocusCapture={noteFormStart}
-      className="bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-6 sm:p-7"
+      // scroll-mt-24 clears the fixed header. The ticket CTAs now navigate
+      // straight to #checkout, and without this the heading of the form they
+      // were sent to sits underneath it.
+      className="scroll-mt-24 bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-6 sm:p-7"
       id="checkout"
     >
       {/* Carries the step-1 Lead id through to the API. Not sensitive: an
