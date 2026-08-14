@@ -9,26 +9,39 @@ interface Props {
   params: Promise<{ locale: string }>;
 }
 
+/*
+ * These said "book directly on the official portal — no booking fees".
+ *
+ * The same line was corrected on /tickets and missed here, which is why
+ * this page still told searchers to buy from somebody else — on the one
+ * page whose whole subject is buying a ticket, and the page Search Console
+ * shows ranking for "bahia palace tickets".
+ *
+ * "No booking fees" also stopped being true the day the pack went on sale.
+ * The EUR 11.99 is a service price covering the ticket, the audio guide and
+ * support, not a ticket with a fee bolted on; calling that "no fees" while
+ * charging above the gate price is indefensible in front of a regulator.
+ */
 const META: Record<string, { title: string; description: string }> = {
   en: {
     title: `Bahia Palace Skip-the-Line Tickets 2026 | Skip the Queue`,
-    description: `Compare Bahia Palace skip-the-line ticket options and book directly on the official portal — no queuing, no booking fees.`,
+    description: `Skip the ticket queue at Bahia Palace. Entry ticket, digital audio guide and WhatsApp support for EUR 11.99 per person, with free cancellation.`,
   },
   fr: {
     title: `Billet Coupe-File Palais Bahia 2026 | Évitez la file`,
-    description: `Comparez les options de billet coupe-file pour le Palais Bahia et réservez directement sur le portail officiel — sans file d'attente, sans frais.`,
+    description: `Évitez la file au Palais Bahia. Billet d'entrée, audioguide numérique et assistance WhatsApp pour 11,99 € par personne, annulation gratuite.`,
   },
   de: {
     title: `Bahia Palast Skip-the-Line Ticket 2026 | Ohne Anstehen`,
-    description: `Vergleichen Sie Skip-the-Line-Optionen für den Bahia Palast und buchen Sie direkt über das offizielle Portal — keine Warteschlange, keine Gebühren.`,
+    description: `Ohne Anstehen in den Bahia Palast. Eintrittsticket, digitaler Audioguide und WhatsApp-Support für 11,99 € pro Person, kostenlose Stornierung.`,
   },
   it: {
     title: `Biglietto Salta-Fila Palazzo Bahia 2026 | Niente coda`,
-    description: `Confronta le opzioni salta-fila per il Palazzo Bahia e prenota direttamente sul portale ufficiale — niente coda, nessuna commissione.`,
+    description: `Salta la fila al Palazzo Bahia. Biglietto d'ingresso, audioguida digitale e assistenza WhatsApp a 11,99 € a persona, cancellazione gratuita.`,
   },
   es: {
     title: `Entrada Sin Cola Palacio Bahía 2026 | Evita la cola`,
-    description: `Compara las opciones sin cola para el Palacio Bahía y reserva directamente en el portal oficial — sin colas, sin comisiones.`,
+    description: `Evita la cola en el Palacio Bahía. Entrada, audioguía digital y asistencia por WhatsApp por 11,99 € por persona, con cancelación gratuita.`,
   },
 };
 

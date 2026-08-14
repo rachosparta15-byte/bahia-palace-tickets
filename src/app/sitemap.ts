@@ -39,6 +39,21 @@ const REDIRECTED_BLOG_SLUGS = new Set([
 
 const STATIC: { path: string; priority: number; freq: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
   { path: '',                priority: 1.0,  freq: 'weekly'  },
+  /*
+   * The page that actually sells, and it was not in this list.
+   *
+   * /visitor-pack is index,follow and its own title reads "Bahia Palace Ticket
+   * + Audio Guide (€11.99)" — nothing was blocking it. It was simply never
+   * submitted, which left Google to find the one commercial page on the site
+   * by crawling links to it and nothing else.
+   *
+   * Search Console shows six pages competing for "bahia palace tickets" —
+   * /entrance-fee, the English home page, the SPANISH home page, skip-the-line
+   * — and this one appearing for none of them. Being listed here does not win
+   * that fight on its own, but being absent from it is not a position to fight
+   * from.
+   */
+  { path: '/visitor-pack',   priority: 0.98, freq: 'weekly'  },
   { path: '/tickets',        priority: 0.95, freq: 'weekly'  },
   { path: '/entrance-fee',   priority: 0.92, freq: 'monthly' },
   { path: '/opening-hours',  priority: 0.90, freq: 'monthly' },
