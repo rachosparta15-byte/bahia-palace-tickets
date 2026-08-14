@@ -98,6 +98,15 @@ const COLUMNS: readonly string[] = [
   // naively could class them as neither, hiding them from both views.
   `ALTER TABLE "Lead" ADD COLUMN "status" TEXT NOT NULL DEFAULT 'lead'`,
   `ALTER TABLE "Lead" ADD COLUMN "bookingId" TEXT`,
+  /*
+   * Device class on every tracked event, so the funnel can be split by phone
+   * and desktop. Nullable with no default on purpose: rows written before this
+   * existed genuinely have no answer, and defaulting them to 'desktop' or even
+   * 'unknown' would present a guess as a reading. /admin/clicks counts them
+   * separately and says how many there are.
+   */
+  `ALTER TABLE "Event" ADD COLUMN "device" TEXT`,
+  `ALTER TABLE "Event" ADD COLUMN "os" TEXT`,
   `ALTER TABLE "Booking" ADD COLUMN "leadId" TEXT`,
   `ALTER TABLE "Booking" ADD COLUMN "termsAcceptedAt" DATETIME`,
   // QR delivery (manual fulfilment). `qrSentAt` decides whether a booking

@@ -1,5 +1,5 @@
 import prisma from '@/lib/db';
-import { MousePointerClick, Eye, PenLine, Send, CreditCard, CheckCircle2, AlertTriangle } from 'lucide-react';
+import { MousePointerClick, Eye, PenLine, Send, CreditCard, CheckCircle2, AlertTriangle, Smartphone } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
@@ -124,7 +124,14 @@ export default async function AdminClicksPage({ searchParams }: Props) {
         ],
       },
     },
-    select: { name: true, visitorId: true, metadata: true, createdAt: true },
+    select: {
+      name: true,
+      visitorId: true,
+      metadata: true,
+      createdAt: true,
+      device: true,
+      os: true,
+    },
     orderBy: { createdAt: 'desc' },
     // A ceiling so a busy month cannot make the admin time out. Ordered
     // newest-first, so hitting it loses the oldest rows in the window rather
@@ -207,6 +214,56 @@ export default async function AdminClicksPage({ searchParams }: Props) {
    * from top to bottom to avoid. It is an account setting, not code, so this
    * says which of the two is happening rather than trying to fix it.
    */
+  /*
+   * The same funnel again, split by what they were holding.
+   *
+   * "Phones convert worse than desktops" is the single most common shape in
+   * travel checkouts and the most expensive one to be wrong about, and the
+   * aggregate above cannot show it. A visitor is filed under the device their
+   * FIRST event came from — someone who presses a CTA on a phone and pays on a
+   * laptop is one journey, and counting them in both columns would make every
+   * row add up to more than the total.
+   *
+   * Bots get their own row rather than being dropped: Googlebot fetching a
+   * page is not a visitor who failed to buy, and quietly folding it into
+   * "desktop" deflates every desktop rate — most when real traffic is
+   * smallest, which is now.
+   */
+  const deviceOfVisitor = new Map<string, string>();
+  for (const e of [...events].reverse()) {
+    if (!deviceOfVisitor.has(e.visitorId)) {
+      deviceOfVisitor.set(e.visitorId, e.device ?? 'unknown');
+    }
+  }
+
+  const deviceOrder = ['phone', 'tablet', 'desktop', 'bot', 'unknown'];
+  const deviceRows = deviceOrder
+    .map((kind) => {
+      const theirs = new Set(
+        [...deviceOfVisitor.entries()].filter(([, d]) => d === kind).map(([v]) => v),
+      );
+      const step = (name: string) =>
+        [...(visitorsByStep.get(name) ?? [])].filter((v) => theirs.has(v)).length;
+      return {
+        kind,
+        clicked: step('ticket_cta_click'),
+        reached: step('pack_view'),
+        paid: step('pack_paid'),
+        total: theirs.size,
+      };
+    })
+    .filter((r) => r.total > 0);
+
+  /* Which phone, for the rows that are phones. iPhone and Android checkouts
+     fail differently, so "mobile is bad" is not yet an actionable sentence. */
+  const osOfVisitor = new Map<string, string>();
+  for (const e of [...events].reverse()) {
+    if (!osOfVisitor.has(e.visitorId)) osOfVisitor.set(e.visitorId, e.os ?? 'unknown');
+  }
+  const osRows = [...osOfVisitor.values()]
+    .reduce((acc, os) => acc.set(os, (acc.get(os) ?? 0) + 1), new Map<string, number>());
+  const osList = [...osRows.entries()].sort((a, b) => b[1] - a[1]);
+
   const cardFieldsEvents = events.filter((e) => e.name === 'pack_card_fields');
   const cardFieldsOff = cardFieldsEvents.some((e) => readMeta(e.metadata).eligible === false);
   const cardFieldsOn = cardFieldsEvents.some((e) => readMeta(e.metadata).eligible === true);
@@ -338,6 +395,66 @@ export default async function AdminClicksPage({ searchParams }: Props) {
                   </li>
                 ))}
               </ul>
+            </section>
+          )}
+
+          {deviceRows.length > 0 && (
+            <section className="mb-8">
+              <h2 className="mb-1 flex items-center gap-2 text-sm font-semibold text-[#F5E8CC]">
+                <Smartphone className="w-4 h-4 text-[#E8A33D]" /> Phone or desktop
+              </h2>
+              <p className="mb-3 text-xs text-[#C4A882] max-w-2xl leading-relaxed">
+                Each person counted once, under the device their first event came from — someone
+                who presses a CTA on a phone and pays on a laptop is one journey, not two.
+              </p>
+              <div className="overflow-x-auto rounded-xl border border-[rgba(232,163,61,0.15)] bg-[#251A0F]">
+                <table className="w-full min-w-[26rem] text-sm">
+                  <thead>
+                    <tr className="text-xs uppercase tracking-wide text-[#8C7A63]">
+                      <th className="px-4 py-2.5 text-left font-semibold">Device</th>
+                      <th className="px-4 py-2.5 text-right font-semibold">Clicked</th>
+                      <th className="px-4 py-2.5 text-right font-semibold">Reached checkout</th>
+                      <th className="px-4 py-2.5 text-right font-semibold">Paid</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-[rgba(232,163,61,0.1)]">
+                    {deviceRows.map((r) => (
+                      <tr key={r.kind}>
+                        <td className="px-4 py-2.5 capitalize text-[#F5E8CC]">
+                          {r.kind}
+                          {r.kind === 'bot' && (
+                            <span className="ml-2 text-[11px] text-[#8C7A63]">not a customer</span>
+                          )}
+                          {r.kind === 'unknown' && (
+                            <span className="ml-2 text-[11px] text-[#8C7A63]">
+                              recorded before this existed
+                            </span>
+                          )}
+                        </td>
+                        <td className="px-4 py-2.5 text-right tabular-nums text-[#C4A882]">{r.clicked}</td>
+                        <td className="px-4 py-2.5 text-right tabular-nums text-[#C4A882]">{r.reached}</td>
+                        <td className="px-4 py-2.5 text-right tabular-nums text-[#F5E8CC]">{r.paid}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {osList.length > 0 && (
+                <p className="mt-3 text-xs text-[#C4A882]">
+                  Operating systems:{' '}
+                  {osList.map(([os, n], i) => (
+                    <span key={os}>
+                      {i > 0 && ' · '}
+                      <span className="text-[#F5E8CC]">{os}</span> {n}
+                    </span>
+                  ))}
+                </p>
+              )}
+              <p className="mt-2 text-[11px] leading-relaxed text-[#8C7A63] max-w-2xl">
+                One known blind spot: an iPad reports itself as a Mac, so recent iPads are counted
+                as desktop. Telling them apart needs a check in the browser, which this does not do
+                — said plainly rather than guessed at.
+              </p>
             </section>
           )}
 

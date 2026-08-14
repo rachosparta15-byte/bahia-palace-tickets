@@ -98,11 +98,18 @@ model Event {
   visitorId String
   name      String
   metadata  String?
+  /// Coarse device class, filled in server-side by /api/track/event so every
+  /// event carries it: phone | tablet | desktop | bot | unknown. Derived from
+  /// the User-Agent rather than sent by the browser — see lib/user-agent.ts.
+  device    String?
+  /// iOS | Android | Windows | macOS | Linux | other | unknown.
+  os        String?
   createdAt DateTime @default(now())
 
   @@index([name])
   @@index([createdAt])
   @@index([visitorId])
+  @@index([device])
 }
 
 model Faq {
