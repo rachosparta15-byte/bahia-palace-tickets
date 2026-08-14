@@ -2,6 +2,19 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { email } from '@/lib/email';
 import prisma from '@/lib/db';
+import { isSubmissionLimited, recordSubmission } from '@/lib/rate-limit';
+
+/**
+ * Five messages an hour from one address.
+ *
+ * Generous for anyone with something to say, useless to a loop. This endpoint
+ * writes a row AND sends an email, and had no ceiling of any kind — a script
+ * pointed at it fills the database and burns the sending quota, and a domain
+ * that emits a burst of identical mail gets filtered, which would take the
+ * booking confirmations down with it.
+ */
+const MAX_PER_WINDOW = 5;
+const WINDOW_MS = 60 * 60 * 1000;
 
 const schema = z.object({
   name:    z.string().trim().min(1).max(120),
@@ -39,12 +52,26 @@ export async function POST(req: NextRequest) {
       req.headers.get('x-real-ip') ??
       null;
 
+    if (ip && (await isSubmissionLimited('contact', ip, MAX_PER_WINDOW, WINDOW_MS))) {
+      // 429 and a plain sentence, not a silent success. Someone genuinely on
+      // their fifth message deserves to know it did not send, rather than
+      // believing it did.
+      return NextResponse.json(
+        { error: 'Too many messages from this connection. Please try again later.' },
+        { status: 429 },
+      );
+    }
+
     // Save to DB first so the message shows up in the admin dashboard
     // even if the email notification fails.
     await ensureContactMessageTable();
     await prisma.contactMessage.create({
       data: { name, email: from, subject, message, locale: locale || null, ipAddress: ip },
     });
+
+    // Counted once the message is genuinely stored, so a failed validation or
+    // a database error never spends someone's allowance.
+    if (ip) await recordSubmission('contact', ip);
 
     try {
       await email.sendContactNotification({ from, name, subject, message });

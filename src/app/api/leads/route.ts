@@ -1,6 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/db';
 import { ensureColumns } from '@/lib/db/ensure-columns';
+import { isSubmissionLimited, recordSubmission } from '@/lib/rate-limit';
+
+/*
+ * Twenty an hour from one address.
+ *
+ * Higher than the contact form's five because this fires from the ticket
+ * modal, and a family comparing dates can legitimately submit several times.
+ * It writes no email, so the cost of abuse is rows rather than reputation —
+ * but an unbounded public insert is still an unbounded public insert, and the
+ * Leads page is the thing it would bury.
+ */
+const MAX_PER_WINDOW = 20;
+const WINDOW_MS = 60 * 60 * 1000;
 
 export async function POST(req: NextRequest) {
   try {
@@ -64,6 +77,10 @@ export async function POST(req: NextRequest) {
     // cuid and grants nothing on its own: the checkout route only ever uses
     // it to overwrite the visitor's own name/qty/date, and the fields that
     // matter for trust (status, bookingId, ipAddress) are server-set.
+    // Counted only once the row exists, so a rejected body never spends
+    // someone's allowance.
+    if (ip) await recordSubmission('leads', ip);
+
     return NextResponse.json({ ok: true, id: lead.id });
   } catch (err) {
     console.error('[leads] save error:', err);
