@@ -1,4 +1,5 @@
 import prisma from '@/lib/db';
+import { ensureColumns } from '@/lib/db/ensure-columns';
 import { MousePointerClick, Eye, PenLine, Send, CreditCard, CheckCircle2, AlertTriangle, Smartphone } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -68,6 +69,20 @@ function ago(d: Date): string {
 }
 
 export default async function AdminClicksPage({ searchParams }: Props) {
+  /*
+   * Before the first query, because this page reads Event.device and
+   * Event.os and this schema has no migrations — columns are patched in on
+   * demand, and every page that reads a patched column calls this first (see
+   * /admin/leads).
+   *
+   * This page did not, and shipped a 500: "no such column: main.Event.device".
+   * The tracking route calls ensureColumns, but that route swallows every
+   * error and answers 200 regardless, so nothing about it reaching production
+   * proved the ALTER had run — and the admin page was the first thing to read
+   * the column for real.
+   */
+  await ensureColumns();
+
   const { w } = await searchParams;
   const windowKey: WindowKey = (w && w in WINDOWS ? w : '7d') as WindowKey;
   const requested = since(WINDOWS[windowKey]);
