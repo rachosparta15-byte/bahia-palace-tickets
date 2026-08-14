@@ -29,11 +29,26 @@ interface Props {
  * What replaces it says what the page is for and what the price includes.
  */
 const TICKETS_META: Record<string, { title: string; description: string }> = {
-  en: { title: `Bahia Palace Tickets 2026 — Skip-the-Line, Guided & Private`, description: `Compare Bahia Palace ticket options: skip-the-line, guided and private tours. Prices, what each includes, and how to book.` },
-  fr: { title: `Billets Palais Bahia 2026 — Coupe-File, Guidées & Privées`, description: `Comparez les billets pour le Palais Bahia : coupe-file, visites guidées et privées. Tarifs, contenu de chaque offre et modalités de réservation.` },
-  es: { title: `Entradas Palacio Bahía 2026 — Sin Cola, Guiadas y Privadas`, description: `Compara las entradas del Palacio Bahía: sin cola, visitas guiadas y privadas. Precios, qué incluye cada una y cómo reservar.` },
-  de: { title: `Bahia Palast Tickets 2026 — Skip-the-Line, Touren & Privat`, description: `Vergleichen Sie Bahia Palast Tickets: Skip-the-Line, Führungen und Privattouren. Preise, Leistungen und wie Sie buchen.` },
-  it: { title: `Biglietti Palazzo Bahia 2026 — Salta-Fila, Guidate e Private`, description: `Confronta i biglietti per il Palazzo Bahia: salta-fila, visite guidate e private. Prezzi, che cosa include ciascuno e come prenotare.` },
+  /*
+   * The titles used to end "— Skip-the-Line, Guided & Private" and the
+   * descriptions offered to compare all three. Two of the three do not exist:
+   * guided-tour and private-tour are 307s to skip-the-line, along with
+   * combo-saadian-tombs (COMING_SOON_SLUGS in next.config.mjs).
+   *
+   * That is worse in the title than in the description, because the title IS
+   * the link. Someone searching for a private tour of the Bahia Palace was
+   * being invited to click a result naming one, and landing on a page selling a
+   * single product. The click is spent, the visitor leaves, and Google reads
+   * the bounce as this page failing the query it was ranked for.
+   *
+   * Now: one product, its price, what it includes — under 155 characters so
+   * none of it is cut off.
+   */
+  en: { title: `Bahia Palace Tickets 2026 — Price & How to Book`, description: `Bahia Palace entry ticket, audio guide and WhatsApp support for €11.99 per person. Free cancellation until we send it. Open daily 9:00–17:00.` },
+  fr: { title: `Billets Palais Bahia 2026 — Tarif & Réservation`, description: `Billet d'entrée Palais Bahia, audioguide et assistance WhatsApp pour 11,99 € par personne. Annulation gratuite. Ouvert tous les jours 9h–17h.` },
+  es: { title: `Entradas Palacio Bahía 2026 — Precio y Reserva`, description: `Entrada al Palacio Bahía, audioguía y ayuda por WhatsApp por 11,99 € por persona. Cancelación gratuita. Abierto todos los días 9:00–17:00.` },
+  de: { title: `Bahia Palast Tickets 2026 — Preis & Buchung`, description: `Bahia-Palast Eintrittsticket, Audioguide und WhatsApp-Support für 11,99 € pro Person. Kostenlose Stornierung. Täglich 9–17 Uhr geöffnet.` },
+  it: { title: `Biglietti Palazzo Bahia 2026 — Prezzo e Prenotazione`, description: `Biglietto d'ingresso Palazzo Bahia, audioguida e assistenza WhatsApp a 11,99 € a persona. Cancellazione gratuita. Aperto ogni giorno 9:00–17:00.` },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

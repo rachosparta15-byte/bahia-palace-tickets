@@ -30,22 +30,46 @@ interface Props {
   params: Promise<{ locale: string }>;
 }
 
+/*
+ * These descriptions are what a searcher reads before deciding to click, so
+ * they are held to three rules the old ones broke:
+ *
+ * 1. UNDER ~155 CHARACTERS. Google truncates around 160 and the cut lands
+ *    mid-word. The English one ran to 179, the German to 209 — the German
+ *    result ended on "Öffnungszeiten und Pr…", so the last thing a searcher
+ *    saw was a broken word instead of a reason to click.
+ *
+ * 2. NO PRODUCTS THAT DO NOT EXIST. Every one of these promised a comparison
+ *    of "skip-the-line, guided and private tour tickets". guided-tour,
+ *    private-tour and combo-saadian-tombs are all 307s to skip-the-line (see
+ *    COMING_SOON_SLUGS in next.config.mjs) — there is one product and nothing
+ *    to compare. That is the expensive kind of wrong: the click is paid for,
+ *    the visitor finds a different page from the one advertised, and Google
+ *    learns the page does not answer the query.
+ *
+ * 3. THE PRICE IS IN IT. On a ticket result the price is the strongest reason
+ *    to click, and leaving it out means competing on adjectives. It stays
+ *    €11.99 — the amount actually charged — even while the page advertises the
+ *    teaser: a search result is a promise made to someone who has not seen the
+ *    page yet, and it also has to agree with the JSON-LD offer and the card
+ *    statement.
+ */
 const HOME_META: Record<string, { title: string; description: string }> = {
   en: {
     title: `Bahia Palace Marrakech 2026 | Tickets, Hours & Guide`,
-    description: `Visit Bahia Palace Marrakech in 2026. Compare skip-the-line, guided and private tour tickets, check opening hours and entrance fees, and discover the 19th-century Moroccan palace.`,
+    description: `Bahia Palace tickets from €11.99: official entry bought in your name, audio guide and WhatsApp support. Free cancellation. Open daily 9:00–17:00.`,
   },
   fr: {
     title: `Palais Bahia Marrakech 2026 | Billets, Horaires & Guide`,
-    description: `Visitez le Palais Bahia de Marrakech en 2026. Comparez les billets coupe-file, visites guidées et privées, consultez les horaires et tarifs, et découvrez ce joyau de l'architecture marocaine.`,
+    description: `Billets Palais Bahia dès 11,99 € : entrée officielle achetée à votre nom, audioguide et assistance WhatsApp. Annulation gratuite. Ouvert 9h–17h.`,
   },
   es: {
     title: `Palacio Bahía Marrakech 2026 | Entradas, Horarios y Guía`,
-    description: `Visita el Palacio Bahía de Marrakech en 2026. Compara entradas sin cola, visitas guiadas y privadas, consulta horarios y precios, y descubre este palacio marroquí del siglo XIX.`,
+    description: `Entradas al Palacio Bahía desde 11,99 €: entrada oficial a tu nombre, audioguía y ayuda por WhatsApp. Cancelación gratuita. Abierto 9:00–17:00.`,
   },
   de: {
     title: `Bahia Palast Marrakesch 2026 | Tickets, Zeiten & Guide`,
-    description: `Besuchen Sie den Bahia Palast in Marrakesch 2026. Vergleichen Sie Skip-the-Line-, Führungs- und Privattouren-Tickets, prüfen Sie Öffnungszeiten und Preise, und entdecken Sie den Palast aus dem 19. Jahrhundert.`,
+    description: `Bahia-Palast Tickets ab 11,99 €: offizielles Ticket auf Ihren Namen, Audioguide und WhatsApp-Support. Kostenlose Stornierung. Täglich 9–17 Uhr.`,
   },
   ar: {
     title: `قصر الباهية مراكش 2026 | التذاكر والمواعيد ودليل الزيارة`,
@@ -57,7 +81,7 @@ const HOME_META: Record<string, { title: string; description: string }> = {
   },
   it: {
     title: `Palazzo Bahia Marrakech 2026 | Biglietti, Orari e Guida`,
-    description: `Visita il Palazzo Bahia di Marrakech nel 2026. Confronta biglietti salta-fila, visite guidate e private, controlla orari e prezzi, e scopri lo storico palazzo marocchino del XIX secolo.`,
+    description: `Biglietti Palazzo Bahia da 11,99 €: ingresso ufficiale a tuo nome, audioguida e assistenza WhatsApp. Cancellazione gratuita. Aperto 9:00–17:00.`,
   },
 };
 
