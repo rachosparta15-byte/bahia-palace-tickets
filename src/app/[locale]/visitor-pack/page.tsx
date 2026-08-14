@@ -19,6 +19,7 @@ import {
   OFFICIAL_DOOR_PRICE_MAD,
   OFFICIAL_DOOR_PRICE_EUR_CENTS,
   MAD_TO_EUR_RATE_CHECKED_ON,
+  buyingPathPriceLabel,
   formatEURAmount,
 } from '@/config/pricing';
 import {
@@ -309,7 +310,7 @@ export default async function VisitorPackPage({ params }: Props) {
                       lineHeight: 1,
                     }}
                   >
-                    {t('price.amount')}
+                    {buyingPathPriceLabel()}
                   </span>
                   <span className="text-[#C4A882] text-sm">{t('price.perPerson')}</span>
                 </div>

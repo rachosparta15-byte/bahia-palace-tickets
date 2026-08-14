@@ -7,6 +7,7 @@ import { usePaymentsFlags } from '@/components/layout/PaymentsFlagsProvider';
 import { Check, ArrowRight, Clock, Star, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import { TICKET_PRICES } from '@/lib/ticket-data';
+import { buyingPathPriceLabel } from '@/config/pricing';
 
 const TICKET_IMAGES = {
   'visitor-pack':        '/images/ticket-skip-the-line.webp',
@@ -244,7 +245,14 @@ export function TicketCards({ overrides = {} }: Props) {
                           className="font-bold text-[#C4452D] tabular-nums lining-nums"
                           style={{ fontSize: isSingle ? '1.75rem' : '1.5rem', lineHeight: 1, fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif', fontVariantNumeric: 'lining-nums tabular-nums' }}
                         >
-                          €{price.toFixed(2)}
+                          {/* The live pack reads the buying-path label so the
+                              teaser test reaches this card too; anything else
+                              still prints its own euro price. Missing this one
+                              would have left a €11.99 card sitting on the same
+                              screen as a 100 DH hero. */}
+                          {slug === 'visitor-pack' || slug === 'skip-the-line'
+                            ? buyingPathPriceLabel()
+                            : `€${price.toFixed(2)}`}
                           <span className="text-xs font-normal text-[#C4A882] ms-1">{t('perPerson')}</span>
                         </p>
                       </div>

@@ -1,6 +1,7 @@
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { CalendarClock, MessageCircle, ShieldCheck } from 'lucide-react';
+import { TEASER_PRICE_ENABLED } from '@/config/pricing';
 
 /**
  * The reassurance panel directly above the payment form.
@@ -37,10 +38,26 @@ import { CalendarClock, MessageCircle, ShieldCheck } from 'lucide-react';
 export function CheckoutDisclosure() {
   const t = useTranslations('visitorPack.reassurance');
 
+  /*
+   * The `price` row is the total-price disclosure — "€11.99 per person, all
+   * taxes included". While the teaser test runs it is not shown HERE, because
+   * this panel sits above the empty form and the test requires the form to
+   * carry no total.
+   *
+   * It has not been dropped. CRD Art 6(1)(e) requires the total before the
+   * consumer is BOUND, and nobody is bound by filling this form in — the order
+   * is placed at the payment step, where VisitorPackCheckoutForm now renders
+   * the full summary, the included services and the total directly above the
+   * PayPal button. The disclosure moved with the decision it belongs to.
+   *
+   * Turning TEASER_PRICE_ENABLED off puts it back in both places.
+   */
   const rows = [
     { Icon: ShieldCheck, key: 'cancellation' as const, tone: '#8FA63C' },
     { Icon: CalendarClock, key: 'delivery' as const, tone: '#E8A33D' },
-    { Icon: MessageCircle, key: 'price' as const, tone: '#E8A33D' },
+    ...(TEASER_PRICE_ENABLED
+      ? []
+      : [{ Icon: MessageCircle, key: 'price' as const, tone: '#E8A33D' }]),
   ];
 
   return (

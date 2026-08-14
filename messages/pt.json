@@ -37,7 +37,7 @@
     "title": "Já leu sobre ele. Agora entre.",
     "subtitle": "Reserve o seu bilhete e entre sem esperar na fila.",
     "button": "Reservar bilhetes do Palácio da Bahia",
-    "stickyMobile": "Sem fila — 11,99 €"
+    "stickyMobile": "Sem fila — {price}"
   },
   "scamBanner": {
     "text": "Conheça as burlas mais comuns em Marraquexe antes de sair do hotel.",
@@ -240,10 +240,10 @@
       "items": {
         "official": {
           "q": "Este é o bilhete oficial do Palácio da Bahia?",
-          "a": "Sim. O bilhete de entrada do pack é o bilhete oficial de 100 MAD fixado pelo Ministério da Cultura de Marrocos, comprado em seu nome. Os 11,99 € cobrem também o audioguia digital, o mapa do visitante, o apoio por WhatsApp e o cancelamento gratuito até o enviarmos."
+          "a": "Sim. O bilhete de entrada do pack é o bilhete oficial de 100 MAD fixado pelo Ministério da Cultura de Marrocos, comprado em seu nome. O pack cobre também o audioguia digital, o mapa do visitante, o apoio por WhatsApp e o cancelamento gratuito até o enviarmos."
         },
         "cheaper": {
-          "q": "O que cobrem os 11,99 €?",
+          "q": "O que cobre o pack?",
           "a": "Só a entrada custa 100 MAD na bilheteira. O nosso preço cobre esse bilhete comprado em seu nome, mais o audioguia em cinco línguas, o mapa do visitante, o apoio por WhatsApp antes e durante a visita, e o cancelamento gratuito até enviarmos o seu código QR. O Ministério também vende a entrada directamente no seu portal, se for só isso que precisa."
         },
         "refund": {

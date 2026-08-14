@@ -239,7 +239,7 @@
       },
       {
         "question": "¿Cuánto cuesta la entrada al Palacio Bahia?",
-        "answer": "El precio oficial en taquilla es de 100 MAD (aproximadamente 9,90 €). Los niños menores de 7 años entran gratis, y los estudiantes con DNI válido pagan 50 MAD. Reservado online con nosotros son 11,99 € por persona — la entrada oficial, una audioguía multilingüe y asistencia — y te ahorras la cola de la taquilla, que puede durar 1-2 horas en temporada alta."
+        "answer": "El precio oficial en taquilla es de 100 MAD (aproximadamente 9,90 €). Los niños menores de 7 años entran gratis, y los estudiantes con DNI válido pagan 50 MAD. Reservado online con nosotros obtiene — la entrada oficial, una audioguía multilingüe y asistencia — y te ahorras la cola de la taquilla, que puede durar 1-2 horas en temporada alta."
       },
       {
         "question": "¿Cuánto tiempo se necesita en el Palacio Bahia?",
@@ -517,7 +517,7 @@
     "title": "Ya lo has leído. Ahora entra.",
     "subtitle": "Reserva tu entrada sin colas y accede directamente al palacio.",
     "button": "Reservar entradas Palacio Bahia",
-    "stickyMobile": "Sin cola — 11,99 €"
+    "stickyMobile": "Sin cola — {price}"
   },
   "footer": {
     "tagline": "La forma más fácil de visitar el Palacio Bahia.",
@@ -724,10 +724,10 @@
       "items": {
         "official": {
           "q": "¿Es esta la entrada oficial del Palacio de la Bahía?",
-          "a": "Sí. La entrada del pack es la oficial de 100 MAD fijada por el Ministerio de Cultura de Marruecos, comprada a su nombre. Los 11,99 € cubren además la audioguía digital, el mapa del visitante, la asistencia por WhatsApp y la cancelación gratuita hasta que la enviemos."
+          "a": "Sí. La entrada del pack es la oficial de 100 MAD fijada por el Ministerio de Cultura de Marruecos, comprada a su nombre. El pack cubre además la audioguía digital, el mapa del visitante, la asistencia por WhatsApp y la cancelación gratuita hasta que la enviemos."
         },
         "cheaper": {
-          "q": "¿Qué cubren los 11,99 €?",
+          "q": "¿Qué cubre el pack?",
           "a": "La entrada sola cuesta 100 MAD en taquilla. Nuestro precio incluye esa entrada comprada a su nombre, la audioguía en cinco idiomas, el mapa del visitante, la asistencia por WhatsApp antes y durante su visita, y la cancelación gratuita hasta que enviemos su código QR. El Ministerio también vende la entrada directamente en su portal si es lo único que necesita."
         },
         "refund": {

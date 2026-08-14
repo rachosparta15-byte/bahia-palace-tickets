@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { Ticket } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { LeadButton } from './LeadButton';
+import { buyingPathPriceLabel } from '@/config/pricing';
 
 export function StickyMobileCTA() {
   const t = useTranslations('cta');
@@ -36,7 +37,11 @@ export function StickyMobileCTA() {
         className="btn-primary w-full justify-center gap-2 min-h-[48px]"
       >
         <Ticket size={18} />
-        {t('stickyMobile')}
+        {/* The figure comes from pricing.ts, not from the message file. It used
+            to be typed into all seven translations, which is exactly what
+            pricing.ts warns against: the constant changes and the bar goes on
+            advertising last month's price in six languages. */}
+        {t('stickyMobile', { price: buyingPathPriceLabel() })}
       </LeadButton>
     </div>
   );

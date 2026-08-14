@@ -3,7 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { ArrowRight, Sun, Landmark, Ticket, Check } from 'lucide-react';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
-import { formatEUR, VISITOR_PACK_PRICE_EUR_CENTS } from '@/config/pricing';
+import { buyingPathPriceLabel } from '@/config/pricing';
 
 /**
  * The three inclusions listed under the hero price.
@@ -240,7 +240,7 @@ export async function Hero() {
                       fontVariantNumeric: 'lining-nums tabular-nums',
                     }}
                   >
-                    {formatEUR(VISITOR_PACK_PRICE_EUR_CENTS)}
+                    {buyingPathPriceLabel()}
                     <span className="ms-1.5 text-xs font-normal text-[#C4A882]">
                       {tt('perPerson')}
                     </span>

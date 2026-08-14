@@ -16,6 +16,7 @@ import { CreditCard, Calendar, Users, Lock, FlaskConical } from 'lucide-react';
 import {
   VISITOR_PACK_PRICE_EUR_CENTS,
   VISITOR_PACK_MAX_VISITORS,
+  TEASER_PRICE_ENABLED,
   formatEURAmount,
   formatEUR,
 } from '@/config/pricing';
@@ -368,10 +369,59 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
         >
           {t('payTitle')}
         </h2>
-        <p className="mb-5 text-sm text-[#C4A882]">
-          {formatEUR(totalCents)} — {visitors} {visitors === 1 ? 'visitor' : 'visitors'} ·{' '}
-          {paypal.reference}
-        </p>
+        {/* THE REVEAL.
+
+            While the teaser test runs this is the first and only place the
+            visitor sees what they are actually being asked to pay. They came in
+            from a button labelled 100 DH and filled a form with no total on it,
+            so a one-line "€11.99 — 1 visitor" would land as a correction rather
+            than an explanation. The whole order summary moves here instead:
+            what the product is, which day, how many people, everything included
+            — and then the total, in that order, so the number arrives after the
+            reasons for it rather than before.
+
+            This is also the disclosure the sale depends on. Whatever the page
+            advertised earlier, nobody reaches PayPal without the real total on
+            screen above the button. */}
+        {TEASER_PRICE_ENABLED ? (
+          <div className="mb-5 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12]/50 p-5">
+            <p className="text-xs uppercase tracking-wider text-[#C4A882] font-semibold">
+              {t('summaryTitle')}
+            </p>
+
+            <p className="mt-3 font-semibold text-[#F5E8CC] leading-snug">{t('productName')}</p>
+
+            <div className="mt-3 space-y-1.5 text-sm text-[#C4A882]">
+              <p className="flex items-center gap-2">
+                <Calendar size={13} className="shrink-0 text-[#E8A33D]" aria-hidden="true" />
+                {formattedDate || '—'}
+              </p>
+              <p className="flex items-center gap-2">
+                <Users size={13} className="shrink-0 text-[#E8A33D]" aria-hidden="true" />
+                {visitors} × €{formatEURAmount(VISITOR_PACK_PRICE_EUR_CENTS)}
+              </p>
+            </div>
+
+            <PackInclusions className="mt-4 pt-4 border-t border-[rgba(232,163,61,0.20)]" />
+
+            <div className="flex items-baseline justify-between mt-4 pt-4 border-t border-[rgba(232,163,61,0.20)]">
+              <span className="font-bold text-[#F5E8CC]">{t('totalLabel')}</span>
+              <span
+                className="font-bold text-2xl text-[#E8A33D] tabular-nums"
+                style={{ fontFamily: 'var(--font-heading)' }}
+              >
+                €{formatEURAmount(totalCents)}
+              </span>
+            </div>
+
+            <p className="mt-3 text-xs text-[#C4A882]/70">{paypal.reference}</p>
+          </div>
+        ) : (
+          <p className="mb-5 text-sm text-[#C4A882]">
+            {formatEUR(totalCents)} — {visitors} {visitors === 1 ? 'visitor' : 'visitors'} ·{' '}
+            {paypal.reference}
+          </p>
+        )}
         <PayPalCheckout
           bookingId={paypal.bookingId}
           paypalOrderId={paypal.orderId}
@@ -580,7 +630,15 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
       {/* Order summary — OTA-style: product, when, who, what's included,
           one total. The itemised cost split that used to sit here was
           removed on the owner's instruction; see PackInclusions for where
-          the §3.2 official-price disclosure lives now. */}
+          the §3.2 official-price disclosure lives now.
+
+          Hidden for the duration of the price teaser test, and moved whole to
+          the payment step (see the paypal branch above). The form must carry no
+          total while the test runs: the visitor arrived from a button labelled
+          100 DH, and this panel is the one thing on the page that would do the
+          multiplication for them. Set TEASER_PRICE_ENABLED to false and it
+          comes straight back here, where it belongs. */}
+      {!TEASER_PRICE_ENABLED && (
       <div className="mt-7 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12]/50 p-5">
         <p className="text-xs uppercase tracking-wider text-[#C4A882] font-semibold">
           {t('summaryTitle')}
@@ -612,6 +670,7 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
           </span>
         </div>
       </div>
+      )}
 
       {/* Test-mode warning at the point of payment, where confusing test for
           live would actually matter. Mirrors the page-level banner. */}

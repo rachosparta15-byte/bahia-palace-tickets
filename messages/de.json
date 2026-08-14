@@ -205,7 +205,7 @@
     "title": "Sie haben gelesen. Jetzt eintreten.",
     "subtitle": "Buchen Sie Ihr Ticket ohne Warteschlange und treten Sie direkt ein.",
     "button": "Bahia Palast Tickets buchen",
-    "stickyMobile": "Ohne Warteschlange — 11,99 €"
+    "stickyMobile": "Ohne Warteschlange — {price}"
   },
   "footer": {
     "tagline": "Der einfachste Weg, den Bahia Palast zu besuchen.",
@@ -327,7 +327,7 @@
       },
       {
         "question": "Wie viel kostet der Eintritt in den Bahia Palast?",
-        "answer": "Der offizielle Eintrittspreis beträgt 100 MAD (ca. 9,90 €). Kinder unter 7 Jahren haben freien Eintritt, Studierende mit gültigem Ausweis zahlen 50 MAD. Bei uns online gebucht kostet es 11,99 € pro Person — das offizielle Ticket, ein mehrsprachiger Audioguide und Support — und Sie sparen sich die Schlange am Ticketschalter."
+        "answer": "Der offizielle Eintrittspreis beträgt 100 MAD (ca. 9,90 €). Kinder unter 7 Jahren haben freien Eintritt, Studierende mit gültigem Ausweis zahlen 50 MAD. Bei uns online gebucht erhalten Sie — das offizielle Ticket, ein mehrsprachiger Audioguide und Support — und Sie sparen sich die Schlange am Ticketschalter."
       },
       {
         "question": "Wie lange benötigt man für den Bahia Palast?",
@@ -724,10 +724,10 @@
       "items": {
         "official": {
           "q": "Ist das das offizielle Ticket für den Bahia-Palast?",
-          "a": "Ja. Das Eintrittsticket im Paket ist das offizielle 100-MAD-Ticket des marokkanischen Kulturministeriums, in Ihrem Namen gekauft. Die 11,99 € decken zusätzlich den digitalen Audioguide, die Besucherkarte, den WhatsApp-Support und die kostenlose Stornierung bis zum Versand ab."
+          "a": "Ja. Das Eintrittsticket im Paket ist das offizielle 100-MAD-Ticket des marokkanischen Kulturministeriums, in Ihrem Namen gekauft. Das Paket deckt zusätzlich den digitalen Audioguide, die Besucherkarte, den WhatsApp-Support und die kostenlose Stornierung bis zum Versand ab."
         },
         "cheaper": {
-          "q": "Was decken die 11,99 € ab?",
+          "q": "Was deckt das Paket ab?",
           "a": "Der reine Eintritt kostet an der Kasse 100 MAD. Unser Preis umfasst dieses Ticket in Ihrem Namen, den Audioguide in fünf Sprachen, die Besucherkarte, den WhatsApp-Support vor und während Ihres Besuchs sowie die kostenlose Stornierung bis zum Versand Ihres QR-Codes. Das Ministerium verkauft den Eintritt auch direkt über sein Portal, wenn Sie nur das benötigen."
         },
         "refund": {

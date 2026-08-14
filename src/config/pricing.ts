@@ -170,6 +170,59 @@ export function visitorPackBreakdownIsValid(): boolean {
   );
 }
 
+// ─────────────────────────────────────────────────────────────────────
+// PRICE TEASER TEST — temporary, owner-directed, revert with one line
+// ─────────────────────────────────────────────────────────────────────
+/**
+ * While this is true, the buying path advertises the official door price
+ * (100 DH) and the real total (€11.99) is not shown until the payment step.
+ *
+ * WHAT THIS IS. The owner wants to know whether the price is what stops people
+ * buying. The design they asked for: show 100 DH beside the button, take the
+ * click straight into the form, keep every total off the form, and reveal
+ * €11.99 with the included services only at the payment step.
+ *
+ * WHAT IT IS NOT. It is not a price change. `VISITOR_PACK_PRICE_EUR_CENTS` is
+ * untouched, the breakdown guard above still runs, and nobody is charged a cent
+ * they have not seen and agreed to on the payment step. Only the ADVERTISED
+ * figure moves.
+ *
+ * WHAT I TOLD THE OWNER, recorded here because the code should be honest about
+ * itself even while the page is not:
+ *
+ *   1. It will not answer the question. Someone who leaves at the payment step
+ *      after seeing 100 DH turn into €11.99 tells you people leave when a price
+ *      changes under them — which would happen at any price. Nobody in this
+ *      test ever decides about €11.99 on its merits, so "is €11.99 too much"
+ *      comes back unanswered. An A/B of two honest totals answers it directly.
+ *   2. 100 DH is not our price to advertise. It is the Ministry of Culture's
+ *      door price, which is why OFFICIAL_DOOR_PRICE_MAD exists and why the
+ *      breakdown above is written the way it is.
+ *   3. Advertising a total lower than the one charged is drip pricing, and the
+ *      buyers here are EU consumers (en/fr/de/es/it): the Consumer Rights
+ *      Directive requires the total payable up front.
+ *
+ * The owner read all three and chose to run it. Their call, their business.
+ *
+ * TO END THE TEST: set this to false. Every display goes back to the true
+ * total, because every one of them reads it through the helper below rather
+ * than deciding for itself.
+ */
+export const TEASER_PRICE_ENABLED = true;
+
+/**
+ * What a price display in the BUYING PATH should say — hero, ticket cards,
+ * sticky bar, pack landing page.
+ *
+ * Never call this on the payment step or in the confirmation: those must show
+ * the amount actually being charged, and they call formatEUR directly.
+ */
+export function buyingPathPriceLabel(): string {
+  return TEASER_PRICE_ENABLED
+    ? `${OFFICIAL_DOOR_PRICE_MAD} DH`
+    : formatEUR(VISITOR_PACK_PRICE_EUR_CENTS);
+}
+
 /** Max visitors per single Visitor Pack order. */
 export const VISITOR_PACK_MAX_VISITORS = 20;
 

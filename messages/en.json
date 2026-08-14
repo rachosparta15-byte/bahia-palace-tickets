@@ -238,7 +238,7 @@
       },
       {
         "question": "How much does Bahia Palace cost to enter?",
-        "answer": "The official gate entrance fee is 100 MAD (about €9.90). Children under 7 enter free, and children aged 7–13 pay 50 MAD. Booked online with us it is €11.99 per person — the official ticket, a multilingual audio guide and support — and it means you skip the ticket-office queue, which can reach 1–2 hours in peak season."
+        "answer": "The official gate entrance fee is 100 MAD (about €9.90). Children under 7 enter free, and children aged 7–13 pay 50 MAD. Booked online with us you get — the official ticket, a multilingual audio guide and support — and it means you skip the ticket-office queue, which can reach 1–2 hours in peak season."
       },
       {
         "question": "How long do you need at Bahia Palace?",
@@ -516,7 +516,7 @@
     "title": "You've read about it. Now walk through it.",
     "subtitle": "Book your skip-the-line ticket and step inside without the queue.",
     "button": "Book Bahia Palace Tickets",
-    "stickyMobile": "Skip the queue — €11.99"
+    "stickyMobile": "Skip the queue — {price}"
   },
   "footer": {
     "tagline": "The easiest way to visit Bahia Palace.",
@@ -722,10 +722,10 @@
       "items": {
         "official": {
           "q": "Is this the official Bahia Palace ticket?",
-          "a": "Yes. The entry ticket in the pack is the official 100 MAD ticket set by Morocco’s Ministry of Culture, bought in your name. The €11.99 also covers the digital audio guide, the visitor map, WhatsApp support and free cancellation until we send it."
+          "a": "Yes. The entry ticket in the pack is the official 100 MAD ticket set by Morocco’s Ministry of Culture, bought in your name. The pack also covers the digital audio guide, the visitor map, WhatsApp support and free cancellation until we send it."
         },
         "cheaper": {
-          "q": "What does the €11.99 cover?",
+          "q": "What does the pack cover?",
           "a": "Entry alone is 100 MAD at the gate. Our price covers that ticket bought in your name, plus the audio guide in five languages, the visitor map, WhatsApp support before and during your visit, and free cancellation right up until we send your QR code. The Ministry also sells entry directly on its own portal if that is all you need."
         },
         "refund": {

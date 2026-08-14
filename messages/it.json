@@ -205,7 +205,7 @@
     "title": "Avete letto tutto. Ora entrate.",
     "subtitle": "Prenota il tuo biglietto salta-fila ed entra senza code.",
     "button": "Prenota biglietti Palazzo Bahia",
-    "stickyMobile": "Salta la fila — 11,99 €"
+    "stickyMobile": "Salta la fila — {price}"
   },
   "footer": {
     "tagline": "Il modo più semplice per visitare il Palazzo Bahia.",
@@ -327,7 +327,7 @@
       },
       {
         "question": "Quanto costa l'ingresso al Palazzo Bahia?",
-        "answer": "Il prezzo ufficiale è 100 MAD (circa 9,90 €). I bambini sotto i 7 anni entrano gratis, e gli studenti con documento valido pagano 50 MAD. Prenotato online con noi costa 11,99 € a persona — il biglietto ufficiale, un'audioguida multilingue e l'assistenza — e ti risparmi la fila della biglietteria, che in alta stagione può durare 1-2 ore."
+        "answer": "Il prezzo ufficiale è 100 MAD (circa 9,90 €). I bambini sotto i 7 anni entrano gratis, e gli studenti con documento valido pagano 50 MAD. Prenotato online con noi ottieni — il biglietto ufficiale, un'audioguida multilingue e l'assistenza — e ti risparmi la fila della biglietteria, che in alta stagione può durare 1-2 ore."
       },
       {
         "question": "Quanto tempo è necessario al Palazzo Bahia?",
@@ -724,10 +724,10 @@
       "items": {
         "official": {
           "q": "È il biglietto ufficiale del Palazzo della Bahia?",
-          "a": "Sì. Il biglietto d’ingresso nel pacchetto è quello ufficiale da 100 MAD stabilito dal Ministero della Cultura marocchino, acquistato a tuo nome. I 11,99 € coprono anche l’audioguida digitale, la mappa del visitatore, il supporto WhatsApp e la cancellazione gratuita fino all’invio."
+          "a": "Sì. Il biglietto d’ingresso nel pacchetto è quello ufficiale da 100 MAD stabilito dal Ministero della Cultura marocchino, acquistato a tuo nome. Il pacchetto copre anche l’audioguida digitale, la mappa del visitatore, il supporto WhatsApp e la cancellazione gratuita fino all’invio."
         },
         "cheaper": {
-          "q": "Che cosa coprono i 11,99 €?",
+          "q": "Che cosa copre il pacchetto?",
           "a": "Il solo ingresso costa 100 MAD alla biglietteria. Il nostro prezzo comprende quel biglietto acquistato a tuo nome, l’audioguida in cinque lingue, la mappa del visitatore, il supporto WhatsApp prima e durante la visita e la cancellazione gratuita fino all’invio del codice QR. Il Ministero vende l’ingresso anche direttamente sul proprio portale, se è tutto ciò che ti serve."
         },
         "refund": {

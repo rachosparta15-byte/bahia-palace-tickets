@@ -205,7 +205,7 @@
     "title": "Vous avez tout lu. Il est temps d'entrer.",
     "subtitle": "Réservez votre billet coupe-file et entrez sans attendre.",
     "button": "Réserver mes billets Palais Bahia",
-    "stickyMobile": "Sans file — 11,99 €"
+    "stickyMobile": "Sans file — {price}"
   },
   "footer": {
     "tagline": "La façon la plus simple de visiter le Palais Bahia.",
@@ -327,7 +327,7 @@
       },
       {
         "question": "Combien coûte l'entrée du Palais Bahia ?",
-        "answer": "Le tarif officiel est de 100 MAD (environ 9,90 €). Les enfants de moins de 7 ans entrent gratuitement, et les étudiants munis d'une carte valide paient 50 MAD. Réservé en ligne chez nous, c'est 11,99 € par personne — le billet officiel, un audioguide multilingue et l'assistance — et vous évitez la file de la billetterie, qui peut atteindre 1 à 2 heures en haute saison."
+        "answer": "Le tarif officiel est de 100 MAD (environ 9,90 €). Les enfants de moins de 7 ans entrent gratuitement, et les étudiants munis d'une carte valide paient 50 MAD. Réservé en ligne chez nous, vous obtenez — le billet officiel, un audioguide multilingue et l'assistance — et vous évitez la file de la billetterie, qui peut atteindre 1 à 2 heures en haute saison."
       },
       {
         "question": "Combien de temps faut-il prévoir au Palais Bahia ?",
@@ -724,10 +724,10 @@
       "items": {
         "official": {
           "q": "S’agit-il du billet officiel du palais de la Bahia ?",
-          "a": "Oui. Le billet d’entrée inclus dans la formule est le billet officiel à 100 MAD fixé par le ministère marocain de la Culture, acheté en votre nom. Les 11,99 € couvrent aussi l’audioguide numérique, le plan du visiteur, l’assistance WhatsApp et l’annulation gratuite jusqu’à l’envoi."
+          "a": "Oui. Le billet d’entrée inclus dans la formule est le billet officiel à 100 MAD fixé par le ministère marocain de la Culture, acheté en votre nom. La formule couvre aussi l’audioguide numérique, le plan du visiteur, l’assistance WhatsApp et l’annulation gratuite jusqu’à l’envoi."
         },
         "cheaper": {
-          "q": "Que couvrent les 11,99 € ?",
+          "q": "Que couvre la formule ?",
           "a": "L’entrée seule coûte 100 MAD au guichet. Notre prix comprend ce billet acheté en votre nom, l’audioguide en cinq langues, le plan du visiteur, l’assistance WhatsApp avant et pendant votre visite, et l’annulation gratuite jusqu’à l’envoi de votre QR code. Le ministère vend aussi l’entrée directement sur son portail si c’est tout ce dont vous avez besoin."
         },
         "refund": {

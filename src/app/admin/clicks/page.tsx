@@ -1,5 +1,7 @@
+import Link from 'next/link';
 import prisma from '@/lib/db';
 import { ensureColumns } from '@/lib/db/ensure-columns';
+import { TEASER_PRICE_ENABLED } from '@/config/pricing';
 import { MousePointerClick, Eye, PenLine, Send, CreditCard, CheckCircle2, AlertTriangle, Smartphone } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -38,7 +40,24 @@ const STEPS = [
   { key: 'pack_view', label: 'Reached the checkout', icon: Eye, hint: '/visitor-pack actually loaded for them' },
   { key: 'pack_form_start', label: 'Started filling it', icon: PenLine, hint: 'Touched a field' },
   { key: 'pack_submit', label: 'Submitted the form', icon: Send, hint: 'Passed validation and pressed the button' },
-  { key: 'pack_payment_ready', label: 'Reached payment', icon: CreditCard, hint: 'Card fields mounted' },
+  {
+    key: 'pack_payment_ready',
+    label: 'Reached payment',
+    icon: CreditCard,
+    /*
+     * No new event was added for the price teaser test, because this one
+     * already is the moment being tested. It fires when the order is opened and
+     * the payment step renders — which, while the test runs, is the first and
+     * only time the visitor sees €11.99 instead of the 100 DH they clicked on.
+     *
+     * So the gap between THIS row and "Paid" is the whole experiment: those are
+     * the people who saw the real total and left. Every row above it is
+     * unaffected by the test and means what it has always meant.
+     */
+    hint: TEASER_PRICE_ENABLED
+      ? 'Card fields mounted — and, during the price test, the first sight of €11.99'
+      : 'Card fields mounted',
+  },
   { key: 'pack_paid', label: 'Paid', icon: CheckCircle2, hint: 'Server confirmed the capture' },
 ] as const;
 
@@ -361,6 +380,34 @@ export default async function AdminClicksPage({ searchParams }: Props) {
             views would invent a drop-off that never happened — it would have read as most of your
             traffic vanishing between the button and the page. Every number below covers the same
             period.
+          </p>
+        </div>
+      )}
+
+      {/* The price teaser test changes what these numbers mean, so the page has
+          to say so. A funnel that reads the same before and during an
+          experiment is a funnel that will be misread. */}
+      {TEASER_PRICE_ENABLED && (
+        <div className="mb-6 rounded-xl border border-[#C4452D]/50 bg-[#2A1410] p-4">
+          <p className="text-sm font-semibold text-[#F5E8CC]">
+            Price teaser test is running — read “Reached payment” as “saw €11.99”
+          </p>
+          <p className="mt-1.5 max-w-2xl text-xs leading-relaxed text-[#C4A882]">
+            The site is advertising <strong className="text-[#F5E8CC]">100 DH</strong> and the form
+            carries no total, so the real price appears for the first time at the payment step. The
+            drop between <strong className="text-[#F5E8CC]">Reached payment</strong> and{' '}
+            <strong className="text-[#F5E8CC]">Paid</strong> is the only part of this funnel the
+            test is measuring.
+          </p>
+          <p className="mt-2 max-w-2xl text-xs leading-relaxed text-[#C4A882]/80">
+            It tells you how many people leave when the price changes under them. It does not tell
+            you whether €11.99 is too expensive — nobody in this test ever saw €11.99 and decided
+            about it on its own terms. For that, both halves have to be shown one honest price and
+            compared. Names and emails of everyone who filled the form and did not pay are under{' '}
+            <Link href="/admin/bookings?status=pending" className="text-[#E8A33D] underline underline-offset-2">
+              Bookings → pending
+            </Link>
+            .
           </p>
         </div>
       )}
