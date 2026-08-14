@@ -47,11 +47,20 @@ export default async function BookingsPage({ searchParams }: Props) {
   return (
     <div className="p-8">
       <h1
-        className="text-2xl font-bold text-[#3D2817] mb-8"
+        className="text-2xl font-bold text-[#3D2817] mb-1"
         style={{ fontFamily: 'var(--font-heading)' }}
       >
-        Bookings
+        After-Payment
       </h1>
+      {/* The subtitle is here because the tab labels alone do not say it: a
+          "pending" row is not a half-finished booking, it is a person who filled
+          the form, gave their name and email, saw the price and did not pay.
+          During the price test that list is the whole point of the page. */}
+      <p className="mb-8 max-w-2xl text-sm leading-relaxed text-[#7A5C3D]">
+        Everyone who filled the form and got as far as the payment step.{' '}
+        <strong className="text-[#3D2817]">Pending</strong> means they gave their details and did
+        not pay; <strong className="text-[#3D2817]">confirmed</strong> means the card went through.
+      </p>
 
       <div className="bg-white rounded-2xl border border-[#E8D5B7]">
         <div className="px-6 py-4 border-b border-[#E8D5B7] flex items-center gap-4 flex-wrap">

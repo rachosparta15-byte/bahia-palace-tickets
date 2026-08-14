@@ -24,7 +24,12 @@ const NAV_GROUPS = [
   {
     label: 'Operations',
     items: [
-      { href: '/admin/bookings',   label: 'Bookings',  icon: BookOpen,  style: 'normal' },
+      // "After-Payment", not "Bookings": the page holds everyone who filled the
+      // form and reached the payment step, and the ones who did NOT pay are
+      // pending rows sitting right beside the confirmed ones. Under a heading
+      // that says "Bookings" nobody goes looking for the people who did not
+      // book — which, during the price test, is exactly who to look for.
+      { href: '/admin/bookings',   label: 'After-Payment',  icon: BookOpen,  style: 'normal' },
       // Above Leads deliberately: since payments went live the ticket CTAs
       // route straight to the checkout and no Lead row is created, so Leads
       // is empty by design and this is where the answer actually is.
