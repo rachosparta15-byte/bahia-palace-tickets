@@ -104,6 +104,14 @@ model Event {
   device    String?
   /// iOS | Android | Windows | macOS | Linux | other | unknown.
   os        String?
+  /// SHA-256 of the caller's IP, first 16 hex chars — same treatment PageView
+  /// already gives it. Never the address itself.
+  ///
+  /// The funnel counts people by this rather than by visitorId, because
+  /// visitorId lives in localStorage and a returning visitor in a private
+  /// window, a cleared browser or a second browser arrives as a brand new
+  /// person. See /admin/clicks for the trade-off that buys and costs.
+  ipHash    String?
   createdAt DateTime @default(now())
 
   @@index([name])

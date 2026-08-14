@@ -24,9 +24,9 @@ export const dynamic = 'force-dynamic';
  *   submitted-> payable   our API refusing them, with the reason
  *   payable  -> paid      the card step
  *
- * Counted by DISTINCT VISITOR, never by event. One person pressing three CTAs
- * is one person deciding to buy, and counting the presses would show a funnel
- * losing 66% of its traffic at the first step for no reason.
+ * Counted by DISTINCT PERSON — hashed IP, falling back to the browser id —
+ * never by event. One person pressing three CTAs is one person deciding to
+ * buy, and someone returning in a private window is still that same person.
  */
 
 const WINDOWS = { '24h': 1, '7d': 7, '30d': 30, all: 0 } as const;
@@ -142,6 +142,7 @@ export default async function AdminClicksPage({ searchParams }: Props) {
     select: {
       name: true,
       visitorId: true,
+      ipHash: true,
       metadata: true,
       createdAt: true,
       device: true,
@@ -154,18 +155,57 @@ export default async function AdminClicksPage({ searchParams }: Props) {
     take: 20000,
   });
 
+  /*
+   * One person = one IP, falling back to the browser id.
+   *
+   * visitorId is a nanoid in localStorage, so the same human returning in a
+   * private window, on a second browser, or after clearing site data arrives
+   * as a brand new person and inflates every count. The hashed IP survives all
+   * three.
+   *
+   * THE COST, stated because it is real: hotel wifi, an office and a mobile
+   * carrier's NAT all put many genuinely different people behind one address,
+   * and those now collapse into one. For a site whose visitors are tourists in
+   * Marrakech that will happen. It is the right trade at this size — the
+   * counts are small enough that one person counted five times distorts them
+   * far more than five people counted once — and it is the wrong trade at ten
+   * times the traffic, at which point this should go back to visitorId.
+   *
+   * Rows written before ipHash existed keep using visitorId, so nothing
+   * historical silently changes shape.
+   */
+  const personOf = (e: { ipHash: string | null; visitorId: string }) => e.ipHash ?? e.visitorId;
+
   const visitorsByStep = new Map<string, Set<string>>();
   for (const e of events) {
     if (!visitorsByStep.has(e.name)) visitorsByStep.set(e.name, new Set());
-    visitorsByStep.get(e.name)!.add(e.visitorId);
+    visitorsByStep.get(e.name)!.add(personOf(e));
   }
   const countOf = (name: string) => visitorsByStep.get(name)?.size ?? 0;
 
   const funnel = STEPS.map((step, i) => {
     const n = countOf(step.key);
     const prev = i === 0 ? n : countOf(STEPS[i - 1].key);
+    /*
+     * More people at a step than the one before it is not a bug and not a
+     * drop-off of -60%.
+     *
+     * /visitor-pack is a URL. It can be opened from a bookmark, a link someone
+     * was sent, or the browser's history, none of which press a CTA first — so
+     * "reached the checkout" can legitimately exceed "pressed Get tickets".
+     * The old arithmetic clamped the loss at zero and said nothing, which left
+     * a funnel that visibly widened with no explanation for why.
+     */
+    const gained = Math.max(0, n - prev);
     const lost = Math.max(0, prev - n);
-    return { ...step, n, lost, lostPct: prev > 0 ? Math.round((lost / prev) * 100) : 0, first: i === 0 };
+    return {
+      ...step,
+      n,
+      lost,
+      gained,
+      lostPct: prev > 0 ? Math.round((lost / prev) * 100) : 0,
+      first: i === 0,
+    };
   });
 
   /* Why people were stopped, in our own words. This is the actionable list:
@@ -187,7 +227,7 @@ export default async function AdminClicksPage({ searchParams }: Props) {
     if (e.name !== 'ticket_cta_click') continue;
     const loc = String(readMeta(e.metadata).cta_location ?? 'unknown');
     if (!byLocation.has(loc)) byLocation.set(loc, new Set());
-    byLocation.get(loc)!.add(e.visitorId);
+    byLocation.get(loc)!.add(personOf(e));
   }
   const locations = [...byLocation.entries()]
     .map(([loc, set]) => ({ loc, n: set.size }))
@@ -203,13 +243,14 @@ export default async function AdminClicksPage({ searchParams }: Props) {
   const journeys: { visitorId: string; at: Date; steps: string[] }[] = [];
   const seen = new Set<string>();
   for (const e of events) {
-    if (seen.has(e.visitorId)) continue;
-    seen.add(e.visitorId);
+    const person = personOf(e);
+    if (seen.has(person)) continue;
+    seen.add(person);
     const theirs = events
-      .filter((x) => x.visitorId === e.visitorId)
+      .filter((x) => personOf(x) === person)
       .sort((a, b) => a.createdAt.getTime() - b.createdAt.getTime());
     journeys.push({
-      visitorId: e.visitorId,
+      visitorId: person,
       at: theirs[theirs.length - 1].createdAt,
       steps: theirs.map((x) => x.name),
     });
@@ -246,8 +287,8 @@ export default async function AdminClicksPage({ searchParams }: Props) {
    */
   const deviceOfVisitor = new Map<string, string>();
   for (const e of [...events].reverse()) {
-    if (!deviceOfVisitor.has(e.visitorId)) {
-      deviceOfVisitor.set(e.visitorId, e.device ?? 'unknown');
+    if (!deviceOfVisitor.has(personOf(e))) {
+      deviceOfVisitor.set(personOf(e), e.device ?? 'unknown');
     }
   }
 
@@ -273,7 +314,7 @@ export default async function AdminClicksPage({ searchParams }: Props) {
      fail differently, so "mobile is bad" is not yet an actionable sentence. */
   const osOfVisitor = new Map<string, string>();
   for (const e of [...events].reverse()) {
-    if (!osOfVisitor.has(e.visitorId)) osOfVisitor.set(e.visitorId, e.os ?? 'unknown');
+    if (!osOfVisitor.has(personOf(e))) osOfVisitor.set(personOf(e), e.os ?? 'unknown');
   }
   const osRows = [...osOfVisitor.values()]
     .reduce((acc, os) => acc.set(os, (acc.get(os) ?? 0) + 1), new Map<string, number>());
@@ -354,6 +395,13 @@ export default async function AdminClicksPage({ searchParams }: Props) {
                       {s.hint}
                       {!s.first && s.lost > 0 && (
                         <span className="text-[#C4452D]"> · {s.lost} lost here ({s.lostPct}%)</span>
+                      )}
+                      {!s.first && s.gained > 0 && (
+                        <span className="text-[#C4A882]">
+                          {' '}
+                          · {s.gained} arrived without pressing a CTA — a bookmark, a shared link
+                          or history
+                        </span>
                       )}
                     </p>
                   </li>

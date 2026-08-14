@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { createHash } from 'crypto';
 import prisma from '@/lib/db';
 import { ensureColumns } from '@/lib/db/ensure-columns';
 import { summariseUserAgent } from '@/lib/user-agent';
@@ -23,6 +24,17 @@ export async function POST(req: NextRequest) {
      */
     const { device, os } = summariseUserAgent(req.headers.get('user-agent'));
 
+    /*
+     * Hashed, never stored raw — the same treatment /api/track/pageview has
+     * always given it. Sixteen hex characters is enough to tell two callers
+     * apart and not enough to be a useful list of addresses if the table
+     * leaked.
+     *
+     * The leftmost x-forwarded-for entry is the client as Vercel saw it.
+     */
+    const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? '';
+    const ipHash = ip ? createHash('sha256').update(ip).digest('hex').slice(0, 16) : null;
+
     // Patched in rather than migrated, like the rest of this schema. Cheap:
     // it runs once per process, not once per event.
     await ensureColumns();
@@ -35,6 +47,7 @@ export async function POST(req: NextRequest) {
         metadata:  body.metadata ?? null,
         device,
         os,
+        ipHash,
       },
     });
 

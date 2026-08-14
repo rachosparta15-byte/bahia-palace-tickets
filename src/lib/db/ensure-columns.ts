@@ -107,6 +107,9 @@ const COLUMNS: readonly string[] = [
    */
   `ALTER TABLE "Event" ADD COLUMN "device" TEXT`,
   `ALTER TABLE "Event" ADD COLUMN "os" TEXT`,
+  // Hashed caller IP, so the funnel can count one returning person once even
+  // when their localStorage visitorId has been thrown away.
+  `ALTER TABLE "Event" ADD COLUMN "ipHash" TEXT`,
   `ALTER TABLE "Booking" ADD COLUMN "leadId" TEXT`,
   `ALTER TABLE "Booking" ADD COLUMN "termsAcceptedAt" DATETIME`,
   // QR delivery (manual fulfilment). `qrSentAt` decides whether a booking
