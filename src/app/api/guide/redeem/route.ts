@@ -33,6 +33,7 @@ import { z } from 'zod';
 import prisma from '@/lib/db';
 import { ensureColumns } from '@/lib/db/ensure-columns';
 import { redeemGuideCode } from '@/lib/guide-access';
+import { normaliseGuideCode } from '@/lib/guide-code';
 import { BOOKING_STATUS } from '@/lib/booking-lifecycle';
 
 // Nothing here may be cached, and Prisma needs Node.
@@ -116,6 +117,7 @@ type RedeemError =
   | 'not_found'
   | 'not_paid'
   | 'revoked'
+  | 'too_many_attempts'
   | 'server_error';
 
 function fail(error: RedeemError, status: number, cors: Record<string, string>) {
@@ -160,6 +162,42 @@ async function tooManyFailures(ip: string): Promise<boolean> {
   }
 }
 
+/**
+ * Does this device already hold a redeemed code?
+ *
+ * The exemption that keeps a throttled hotel or coach party from locking out
+ * the customers sitting behind the same address. An attacker cannot invent a
+ * deviceId that owns a row, so this cannot be used to bypass the limit.
+ */
+async function deviceHoldsAnyCode(deviceId: string): Promise<boolean> {
+  try {
+    const rows = await prisma.$queryRawUnsafe<{ n: number | bigint }[]>(
+      `SELECT COUNT(*) AS n FROM GuideCode WHERE deviceId = ?`,
+      deviceId,
+    );
+    return Number(rows?.[0]?.n ?? 0) > 0;
+  } catch (error) {
+    // Same rule as the limiter itself: a query that cannot run must not be the
+    // reason a paying visitor is refused.
+    console.error('[guide/redeem] device lookup failed; not exempting', error);
+    return false;
+  }
+}
+
+/**
+ * Compares without leaking how much of the string matched.
+ *
+ * `===` returns at the first differing character, so its timing measures how
+ * many leading characters were right — enough, over many attempts, to recover
+ * a secret one character at a time.
+ */
+function constantTimeEquals(a: string, b: string): boolean {
+  if (a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i += 1) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return diff === 0;
+}
+
 async function recordFailure(ip: string): Promise<void> {
   await attemptsTable();
   const now = new Date();
@@ -188,6 +226,59 @@ export async function POST(req: NextRequest) {
     await ensureColumns();
 
     /*
+     * 0. Has this address been guessing?
+     *
+     * tooManyFailures and recordFailure were written for this endpoint and
+     * then never called from it — twenty lines of throttle, a table, a
+     * cleanup query, and nothing reaching any of it. An eight-character code
+     * is only safe because of a limit on guesses, and there was no limit.
+     *
+     * The exemption matches the hub's, for the reason production taught it
+     * there: hotel wifi and coach parties put dozens of visitors behind one
+     * address, so twenty wrong guesses by a stranger would otherwise lock out
+     * everyone sharing it — the exact failure this exists to prevent. A device
+     * that already holds a code is not guessing.
+     */
+    const ip =
+      req.headers.get('cf-connecting-ip') ??
+      req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
+      '';
+    if (ip && (await tooManyFailures(ip)) && !(await deviceHoldsAnyCode(deviceId))) {
+      return fail('too_many_attempts', 429, cors);
+    }
+
+    /*
+     * 0b. The owner's own key.
+     *
+     * Customer codes bind to the first device that redeems them and stay there
+     * forever, which leaves the person who has to check these guides on a
+     * laptop, a phone and a borrowed tablet with one look per device. This one
+     * claims no device, is never spent, and belongs to no booking.
+     *
+     * Same value as the hub's, so one key opens all three guides — Bahia's
+     * runs on its own endpoint because its guide predates the shared backend,
+     * and a key that worked on two of the three would be a key nobody trusts.
+     *
+     * Shaped like a real code and normalised the same way, because the guide's
+     * input is built for XXXX-XXXX: a forty-character version of this was
+     * rejected by the page before it ever reached a server. Checked after the
+     * throttle above, which is what protects eight characters from being
+     * ground down.
+     */
+    const master = normaliseGuideCode(process.env.MASTER_GUIDE_CODE);
+    const offered = normaliseGuideCode(code);
+    if (master && offered && constantTimeEquals(offered, master)) {
+      console.info(
+        `[guide/redeem] MASTER key used from ${ip || 'unknown ip'} ` +
+          `(device ${deviceId.slice(0, 12)}…)`,
+      );
+      return NextResponse.json(
+        { ok: true, state: 'returning', reference: 'OWNER-ACCESS', seat: 1 },
+        { headers: cors },
+      );
+    }
+
+    /*
      * 1. Does this code admit this device?
      *
      * Deliberately first. A wrong code and a stranger's device are both
@@ -196,6 +287,12 @@ export async function POST(req: NextRequest) {
      */
     const verdict = await redeemGuideCode(code, deviceId);
     if (!verdict.ok) {
+      // Only wrong guesses count against the limit above. A returning device
+      // being refused for any other reason must not spend someone else's
+      // allowance on a shared address.
+      if (ip && verdict.reason === 'unknown_code') {
+        await recordFailure(ip).catch(() => {});
+      }
       return fail(verdict.reason, verdict.reason === 'unknown_code' ? 404 : 403, cors);
     }
 
