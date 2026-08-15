@@ -32,6 +32,47 @@ export const BOOKING_LEAD_DAYS = 0;
 const MONUMENT_TZ = 'Africa/Casablanca';
 
 /**
+ * When the palace stops letting people in, and how much of that day we need.
+ *
+ * Same-day booking is only honest while there is time left to do the work: the
+ * payment has to clear, the ticket has to be collected at the palace, and the
+ * QR has to reach the customer's phone before they walk up to the gate. An
+ * order at 16:45 for a palace that closes at 17:00 is a refund with extra
+ * steps.
+ *
+ * So today comes off sale three hours before closing — 14:00 in Marrakech —
+ * and tomorrow becomes the earliest date. This is the operational half of
+ * BOOKING_LEAD_DAYS = 0: the day is open, but not the last hours of it.
+ */
+const CLOSING_HOUR = 17;
+const HOURS_NEEDED_BEFORE_CLOSING = 3;
+const SAME_DAY_CUTOFF_HOUR = CLOSING_HOUR - HOURS_NEEDED_BEFORE_CLOSING;
+
+/**
+ * The hour of the day in Marrakech, 0–23.
+ *
+ * `hourCycle: 'h23'` because the default for en-GB gives "24" at midnight,
+ * which parses as 24 and pushes every midnight order into tomorrow.
+ */
+function hourInMorocco(now: Date): number {
+  return Number(
+    new Intl.DateTimeFormat('en-GB', {
+      timeZone: MONUMENT_TZ,
+      hour: '2-digit',
+      hourCycle: 'h23',
+    }).format(now),
+  );
+}
+
+/** True once today is too late to be sourced and delivered. */
+export function sameDayClosed(now: Date = new Date()): boolean {
+  return hourInMorocco(now) >= SAME_DAY_CUTOFF_HOUR;
+}
+
+/** The cutoff as "14:00", for the copy that has to state it. */
+export const SAME_DAY_CUTOFF_LABEL = `${String(SAME_DAY_CUTOFF_HOUR).padStart(2, '0')}:00`;
+
+/**
  * Today's calendar date in Marrakech, as YYYY-MM-DD.
  *
  * `en-CA` because its short date format is already YYYY-MM-DD, which avoids
@@ -73,7 +114,11 @@ export function earliestVisitDate(now: Date = new Date()): string {
   // on the way back out.
   const [y, m, d] = todayInMorocco(now).split('-').map(Number);
   const anchor = new Date(Date.UTC(y, m - 1, d, 12));
-  anchor.setUTCDate(anchor.getUTCDate() + BOOKING_LEAD_DAYS);
+  // The lead in days, plus one more if today is already too late to fulfil.
+  // Only relevant while the lead is zero; with a lead of 1 or more, today was
+  // never on sale and the cutoff has nothing left to close.
+  const skipToday = BOOKING_LEAD_DAYS === 0 && sameDayClosed(now) ? 1 : 0;
+  anchor.setUTCDate(anchor.getUTCDate() + BOOKING_LEAD_DAYS + skipToday);
   return anchor.toISOString().slice(0, 10);
 }
 

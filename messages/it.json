@@ -765,14 +765,14 @@
         "email": "Inserisci un indirizzo e-mail valido.",
         "visitors": "Inserisci un numero compreso tra 1 e {max}.",
         "consent": "Conferma prima di continuare: è necessario per completare la prenotazione.",
-        "tooSoon": "Scegli oggi o una data successiva."
+        "tooSoon": "Le prenotazioni per la giornata in corso chiudono alle {time}, ora di Marrakech, così possiamo ritirare il biglietto prima della chiusura del palazzo. Scegli la prima data disponibile."
       },
       "summaryTitle": "Riepilogo dell’ordine",
       "productName": "Palazzo Bahia — Pacchetto Visitatore Completo",
       "acceptCombined": "Posso annullare gratuitamente fino all’invio del mio codice QR. Comprendo che l’invio completa il mio ordine e che da quel momento il diritto di recesso di 14 giorni non si applica più, e accetto le <terms>Condizioni di vendita</terms> e la <refund>politica di cancellazione</refund>.",
       "securePayment": "<b>Pagamento sicuro.</b> Paghi su PayPal. I dati della tua carta vanno direttamente a PayPal e non raggiungono mai i nostri server.",
       "visitorsHint": "Conta tutte le persone che hanno bisogno di un biglietto, bambini dai 7 anni compresi. I bambini sotto i 7 anni entrano gratis e non vanno contati.",
-      "dateHint": "Ritiriamo il tuo biglietto al palazzo e te lo inviamo via e-mail. Puoi prenotare anche per oggi: prima lo fai, meglio è.",
+      "dateHint": "Ritiriamo il tuo biglietto al palazzo e te lo inviamo via e-mail. Puoi prenotare per oggi fino alle {time}, ora di Marrakech; dopo, la prima data disponibile è domani.",
       "payWithCard": "Paga con carta",
       "cardNumber": "Numero della carta",
       "expiry": "Scadenza",

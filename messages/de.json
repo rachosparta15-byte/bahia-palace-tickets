@@ -765,14 +765,14 @@
         "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
         "visitors": "Bitte geben Sie eine Zahl zwischen 1 und {max} ein.",
         "consent": "Bitte bestätigen Sie dies, bevor Sie fortfahren — es ist für die Buchung erforderlich.",
-        "tooSoon": "Bitte wählen Sie heute oder ein späteres Datum."
+        "tooSoon": "Buchungen für denselben Tag schließen um {time} Uhr Marrakesch-Zeit, damit wir Ihr Ticket vor Schließung des Palasts abholen können. Bitte wählen Sie den nächsten verfügbaren Termin."
       },
       "summaryTitle": "Bestellübersicht",
       "productName": "Bahia-Palast — Komplettes Besucherpaket",
       "acceptCombined": "Ich kann bis zum Versand meines QR-Codes kostenlos stornieren. Mir ist bewusst, dass der Versand meine Bestellung vollständig erfüllt und das 14-tägige Widerrufsrecht ab diesem Moment nicht mehr gilt, und ich akzeptiere die <terms>Verkaufsbedingungen</terms> und die <refund>Stornierungsrichtlinie</refund>.",
       "securePayment": "<b>Sichere Zahlung.</b> Sie zahlen über PayPal. Ihre Kartendaten gehen direkt an PayPal und erreichen unsere Server nie.",
       "visitorsHint": "Zählen Sie alle mit, die ein Ticket brauchen, Kinder ab 7 Jahren eingeschlossen. Kinder unter 7 haben freien Eintritt und zählen nicht mit.",
-      "dateHint": "Wir holen Ihr Ticket im Palast ab und senden es Ihnen per E-Mail. Auch der heutige Tag ist buchbar — je früher am Tag, desto besser.",
+      "dateHint": "Wir holen Ihr Ticket im Palast ab und senden es Ihnen per E-Mail. Der heutige Tag ist bis {time} Uhr Marrakesch-Zeit buchbar — danach ist der früheste Termin morgen.",
       "payWithCard": "Mit Karte zahlen",
       "cardNumber": "Kartennummer",
       "expiry": "Gültig bis",

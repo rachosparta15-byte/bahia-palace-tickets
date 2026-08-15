@@ -177,7 +177,7 @@
         "name": "Introduza o seu nome completo.",
         "email": "Introduza um endereço de e-mail válido.",
         "visitors": "Introduza um número entre 1 e {max}.",
-        "tooSoon": "Escolha hoje ou uma data posterior."
+        "tooSoon": "As reservas para o próprio dia fecham às {time}, hora de Marraquexe, para podermos levantar o seu bilhete antes de o palácio fechar. Escolha a data seguinte disponível."
       },
       "title": "Escolha a sua visita",
       "payTitle": "Conclua o seu pagamento",
@@ -194,7 +194,7 @@
       "summaryTitle": "Resumo da encomenda",
       "productName": "Palácio da Bahia — Pack completo do visitante",
       "visitorsHint": "Conte todas as pessoas que precisam de bilhete, incluindo crianças a partir dos 7 anos. As crianças com menos de 7 anos entram gratuitamente e não devem ser contadas.",
-      "dateHint": "Levantamos o seu bilhete no palácio e enviamo-lo por e-mail. Pode reservar para hoje — quanto mais cedo, melhor.",
+      "dateHint": "Levantamos o seu bilhete no palácio e enviamo-lo por e-mail. Pode reservar para hoje até às {time}, hora de Marraquexe; depois disso, a primeira data disponível é amanhã.",
       "payWithCard": "Pagar com cartão",
       "cardNumber": "Número do cartão",
       "expiry": "Data de validade",

@@ -21,7 +21,7 @@ import {
   formatEUR,
 } from '@/config/pricing';
 import { consumeLeadPrefill } from '@/lib/lead-handoff';
-import { earliestVisitDate } from '@/config/booking-window';
+import { earliestVisitDate, SAME_DAY_CUTOFF_LABEL } from '@/config/booking-window';
 
 /**
  * The first date on sale, YYYY-MM-DD — today plus the lead time.
@@ -277,7 +277,7 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
          */
         const messages: Record<string, string> = {
           consent_required: t('errors.consent'),
-          visit_date_too_soon: t('errors.tooSoon'),
+          visit_date_too_soon: t('errors.tooSoon', { time: SAME_DAY_CUTOFF_LABEL }),
           visit_date_in_past: t('errors.pastDate'),
           booking_not_open: t('errors.disabled'),
           checkout_unavailable: t('errors.disabled'),
@@ -537,7 +537,7 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
               field raises — where the ticket comes from, and why booking
               early in the day matters when the visit is today. */}
           <p className="mt-1.5 text-xs leading-relaxed text-[#C4A882]/80">
-            {t('dateHint')}
+            {t('dateHint', { time: SAME_DAY_CUTOFF_LABEL })}
           </p>
           {errors.date && <p className={errCls}>{t('errors.pastDate')}</p>}
         </div>

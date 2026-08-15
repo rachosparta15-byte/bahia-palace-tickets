@@ -765,14 +765,14 @@
         "email": "Veuillez saisir une adresse e-mail valide.",
         "visitors": "Veuillez saisir un nombre entre 1 et {max}.",
         "consent": "Merci de confirmer avant de continuer — c’est requis pour finaliser votre réservation.",
-        "tooSoon": "Veuillez choisir aujourd'hui ou une date ultérieure."
+        "tooSoon": "La réservation pour le jour même ferme à {time}, heure de Marrakech, afin que nous puissions retirer votre billet avant la fermeture du palais. Veuillez choisir la date suivante."
       },
       "summaryTitle": "Récapitulatif de la commande",
       "productName": "Palais Bahia — Pack Visiteur Complet",
       "acceptCombined": "Je peux annuler gratuitement jusqu’à l’envoi de mon QR code. Je comprends que cet envoi exécute intégralement ma commande et que le droit de rétractation de 14 jours ne s’applique donc plus à partir de ce moment, et j’accepte les <terms>conditions de vente</terms> et la <refund>politique d’annulation</refund>.",
       "securePayment": "<b>Paiement sécurisé.</b> Vous payez sur PayPal. Vos données bancaires vont directement à PayPal et n’atteignent jamais nos serveurs.",
       "visitorsHint": "Comptez toutes les personnes qui ont besoin d’un billet, enfants de 7 ans et plus inclus. Les enfants de moins de 7 ans entrent gratuitement et ne sont pas à compter.",
-      "dateHint": "Nous retirons votre billet au palais et vous l'envoyons par e-mail. La date du jour est réservable — plus vous réservez tôt dans la journée, mieux c'est.",
+      "dateHint": "Nous retirons votre billet au palais et vous l'envoyons par e-mail. La date du jour est réservable jusqu'à {time}, heure de Marrakech — ensuite, la première date possible est demain.",
       "payWithCard": "Payer par carte",
       "cardNumber": "Numéro de carte",
       "expiry": "Date d’expiration",

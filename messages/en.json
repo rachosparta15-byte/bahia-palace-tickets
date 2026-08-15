@@ -763,14 +763,14 @@
         "email": "Please enter a valid email address.",
         "visitors": "Please enter a number between 1 and {max}.",
         "consent": "Please confirm this before continuing — it is required to complete your booking.",
-        "tooSoon": "Please choose today or a later date."
+        "tooSoon": "Same-day booking closes at {time} Marrakech time, so we can collect your ticket before the palace shuts. Please choose the next available date."
       },
       "summaryTitle": "Order summary",
       "productName": "Bahia Palace — Complete Visitor Pack",
       "acceptCombined": "I can cancel free of charge until my QR code is sent. I understand that sending it completes my order, so the 14-day cooling-off right no longer applies from that moment, and I accept the <terms>Terms of Sale</terms> and the <refund>cancellation policy</refund>.",
       "securePayment": "<b>Secure payment.</b> You pay on PayPal. Your card details go straight to PayPal and never reach our servers.",
       "visitorsHint": "Count everyone who needs a ticket, including children aged 7 and over. Children under 7 enter free and should not be counted.",
-      "dateHint": "We collect your ticket from the palace and email it to you. Today's date is bookable — the earlier in the day you book, the better.",
+      "dateHint": "We collect your ticket from the palace and email it to you. Today is bookable until {time} Marrakech time — after that the earliest date is tomorrow.",
       "payWithCard": "Pay by card",
       "cardNumber": "Card number",
       "expiry": "Expiry date",
