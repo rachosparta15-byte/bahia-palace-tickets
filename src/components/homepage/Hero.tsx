@@ -14,6 +14,31 @@ import { buyingPathPriceLabel, TEASER_PRICE_ENABLED } from '@/config/pricing';
  */
 const INCLUSION_KEYS = ['audio', 'whatsapp', 'cancellation'] as const;
 
+/**
+ * What the hero says under the price WHILE THE TEASER TEST RUNS.
+ *
+ * The three above name the pack's contents, and under "100 DH per person" that
+ * reads as what 100 DH buys — which it does not; 100 DH is the Ministry's entry
+ * ticket. But leaving the space empty gives a price and a button and no reason
+ * to press it, which is a worse hero than either.
+ *
+ * These three are reasons to book rather than a list of what is in the pack,
+ * and each is true at 100 DH:
+ *
+ *   Official entry ticket   is exactly what the gate price buys
+ *   Skip the ticket queue   is true of booking ahead at any price
+ *   Free cancellation       is true of every booking here
+ *
+ * Every key already exists in all seven languages, so this cannot become a
+ * block of English sitting on a French page — the reason the original set was
+ * read from visitorPack.inclusions in the first place.
+ */
+const TEASER_POINT_KEYS = [
+  'visitorPack.included.items.ticket.title',
+  'visitorPack.valuePoints.skipLine',
+  'visitorPack.inclusions.cancellation',
+] as const;
+
 /** The hero's own srcset, declared once and used by both the preload and the img. */
 const HERO_SRCSET =
   '/images/hero-bg-640.webp 640w, /images/hero-bg-1024.webp 1024w, /images/hero-bg-1600.webp 1600w';
@@ -43,6 +68,9 @@ export async function Hero() {
   const t = await getTranslations('heroBanner');
   const tt = await getTranslations('tickets');
   const ti = await getTranslations('visitorPack.inclusions');
+  // Un-namespaced, because the three teaser lines are pulled from different
+  // parts of the catalogue rather than from one block.
+  const tRoot = await getTranslations();
   const { enabled: paymentsEnabled } = getPublicPaymentsFlags();
   /*
    * Tell the browser about the hero before it has read the page.
@@ -267,22 +295,21 @@ export async function Hero() {
                       The pack's contents now appear once, at the payment step,
                       beside the real total, which is the only place they can
                       explain the number rather than misdescribe it. */}
-                  {!TEASER_PRICE_ENABLED && (
                   <ul className="mt-2.5 space-y-1">
-                    {INCLUSION_KEYS.map((key) => (
-                      <li key={key} className="flex items-start gap-1.5">
+                    {(TEASER_PRICE_ENABLED
+                      ? TEASER_POINT_KEYS.map((k) => tRoot(k))
+                      : INCLUSION_KEYS.map((k) => ti(k))
+                    ).map((line) => (
+                      <li key={line} className="flex items-start gap-1.5">
                         <Check
                           size={12}
                           className="mt-[3px] shrink-0 text-[#8FA63C]"
                           aria-hidden="true"
                         />
-                        <span className="text-xs leading-snug text-[#C4A882]">
-                          {ti(key)}
-                        </span>
+                        <span className="text-xs leading-snug text-[#C4A882]">{line}</span>
                       </li>
                     ))}
                   </ul>
-                  )}
                 </div>
               )}
             </div>
