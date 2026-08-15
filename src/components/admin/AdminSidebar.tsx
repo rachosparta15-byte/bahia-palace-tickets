@@ -24,12 +24,16 @@ const NAV_GROUPS = [
   {
     label: 'Operations',
     items: [
-      // "After-Payment", not "Bookings": the page holds everyone who filled the
-      // form and reached the payment step, and the ones who did NOT pay are
-      // pending rows sitting right beside the confirmed ones. Under a heading
-      // that says "Bookings" nobody goes looking for the people who did not
-      // book — which, during the price test, is exactly who to look for.
-      { href: '/admin/bookings',   label: 'After-Payment',  icon: BookOpen,  style: 'normal' },
+      // "Before-Payment", not "Bookings" and not "After-Payment".
+      //
+      // "Bookings" named only the half that succeeded, so nobody went looking
+      // here for the people who did not book. "After-Payment" was worse in the
+      // other direction: it says the payment already happened, and most rows on
+      // this page are people who filled the form and never got that far. During
+      // the price test they are the majority and the whole point of the page.
+      //
+      // Named for where the visitor stopped, not for what we hoped they did.
+      { href: '/admin/bookings',   label: 'Before-Payment',  icon: BookOpen,  style: 'normal' },
       // Above Leads deliberately: since payments went live the ticket CTAs
       // route straight to the checkout and no Lead row is created, so Leads
       // is empty by design and this is where the answer actually is.

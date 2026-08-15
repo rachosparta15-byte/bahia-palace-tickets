@@ -50,7 +50,7 @@ export default async function BookingsPage({ searchParams }: Props) {
         className="text-2xl font-bold text-[#3D2817] mb-1"
         style={{ fontFamily: 'var(--font-heading)' }}
       >
-        After-Payment
+        Before-Payment
       </h1>
       {/* The subtitle is here because the tab labels alone do not say it: a
           "pending" row is not a half-finished booking, it is a person who filled
