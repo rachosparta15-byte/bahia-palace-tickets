@@ -221,6 +221,18 @@ export default async function VisitorPackPage({ params }: Props) {
       // The window the calendar enforces, so no rich result can advertise a
       // same-day booking the checkout refuses.
       availabilityStarts: earliestVisitDate(),
+      /*
+       * Required for a product rich result, and it was missing — the offer here
+       * had price, currency and availability but not this, which is enough for
+       * Google to decline to show the price at all. The three sister sites were
+       * checked at the same time and all now carry it.
+       *
+       * Computed, not written as a literal: a hardcoded date expires quietly
+       * and the rich result disappears with nothing in the diff to explain it.
+       */
+      priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
+        .toISOString()
+        .slice(0, 10),
     },
   };
 
