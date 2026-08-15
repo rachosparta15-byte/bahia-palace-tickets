@@ -63,49 +63,49 @@ export const dynamic = 'force-dynamic';
  */
 const META: Record<string, { title: string; description: string; schema: string }> = {
   en: {
-    title: 'Complete Visitor Pack — Bahia Palace Ticket + Audio Guide (€{price})',
+    title: 'Book Bahia Palace Tickets — €{price} with Audio Guide',
     description:
       'Official Bahia Palace entry ticket ({mad} MAD, purchased for you) plus an audio guide, visitor map and support — €{price} per person.',
     schema:
       'Official Bahia Palace entry ticket ({mad} MAD ≈ €{eur} at the rate of {date}, purchased on the visitor’s behalf) bundled with an audio guide, visitor map and support.',
   },
   fr: {
-    title: 'Pack Visiteur Complet — billet du Palais Bahia + audioguide (€{price})',
+    title: 'Billets Palais Bahia — €{price} avec audioguide',
     description:
       'Billet d’entrée officiel du Palais Bahia ({mad} MAD, acheté pour vous), audioguide, plan de visite et assistance — €{price} par personne.',
     schema:
       'Billet d’entrée officiel du Palais Bahia ({mad} MAD ≈ €{eur} au taux du {date}, acheté pour le visiteur), accompagné d’un audioguide, d’un plan de visite et d’une assistance.',
   },
   de: {
-    title: 'Komplettes Besucherpaket — Bahia-Palast Ticket + Audioguide (€{price})',
+    title: 'Bahia-Palast Tickets buchen — €{price} mit Audioguide',
     description:
       'Offizielles Eintrittsticket für den Bahia-Palast ({mad} MAD, für Sie gekauft), dazu Audioguide, Lageplan und Support — €{price} pro Person.',
     schema:
       'Offizielles Eintrittsticket für den Bahia-Palast ({mad} MAD ≈ €{eur} zum Kurs vom {date}, im Namen des Besuchers gekauft), zusammen mit Audioguide, Lageplan und Support.',
   },
   es: {
-    title: 'Pack Completo del Visitante — entrada Palacio de la Bahía + audioguía (€{price})',
+    title: 'Entradas Palacio Bahía — €{price} con audioguía',
     description:
       'Entrada oficial al Palacio de la Bahía ({mad} MAD, comprada a tu nombre), con audioguía, plano de visita y atención — €{price} por persona.',
     schema:
       'Entrada oficial al Palacio de la Bahía ({mad} MAD ≈ €{eur} al cambio del {date}, comprada en nombre del visitante), junto con audioguía, plano de visita y atención.',
   },
   it: {
-    title: 'Pacchetto Visitatore Completo — biglietto Palazzo Bahia + audioguida (€{price})',
+    title: 'Biglietti Palazzo Bahia — €{price} con audioguida',
     description:
       'Biglietto d’ingresso ufficiale per il Palazzo Bahia ({mad} MAD, acquistato per te), con audioguida, mappa della visita e assistenza — €{price} a persona.',
     schema:
       'Biglietto d’ingresso ufficiale per il Palazzo Bahia ({mad} MAD ≈ €{eur} al cambio del {date}, acquistato per conto del visitatore), insieme ad audioguida, mappa della visita e assistenza.',
   },
   ar: {
-    title: 'باقة الزائر الكاملة — تذكرة قصر الباهية + دليل صوتي (€{price})',
+    title: 'حجز تذاكر قصر الباهية — €{price} مع دليل صوتي',
     description:
       'تذكرة الدخول الرسمية لقصر الباهية ({mad} درهم، مشتراة باسمك)، مع دليل صوتي وخريطة للزيارة ودعم — €{price} للشخص.',
     schema:
       'تذكرة الدخول الرسمية لقصر الباهية ({mad} درهم ≈ €{eur} بسعر صرف {date}، مشتراة نيابة عن الزائر)، مع دليل صوتي وخريطة للزيارة ودعم.',
   },
   pt: {
-    title: 'Pack Completo do Visitante — bilhete Palácio da Bahia + audioguia (€{price})',
+    title: 'Bilhetes Palácio da Bahia — €{price} com audioguia',
     description:
       'Bilhete de entrada oficial do Palácio da Bahia ({mad} MAD, comprado em seu nome), com audioguia, mapa de visita e apoio — €{price} por pessoa.',
     schema:

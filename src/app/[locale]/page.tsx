@@ -56,19 +56,19 @@ interface Props {
  */
 const HOME_META: Record<string, { title: string; description: string }> = {
   en: {
-    title: `Bahia Palace Marrakech 2026 | Tickets, Hours & Guide`,
+    title: `Bahia Palace Marrakech 2026 — Hours, Prices & Visitor Guide`,
     description: `Bahia Palace tickets from €11.99: official entry bought in your name, audio guide and WhatsApp support. Free cancellation. Open daily 9:00–17:00.`,
   },
   fr: {
-    title: `Palais Bahia Marrakech 2026 | Billets, Horaires & Guide`,
+    title: `Palais Bahia Marrakech 2026 — Horaires, tarifs et visite`,
     description: `Billets Palais Bahia dès 11,99 € : entrée officielle achetée à votre nom, audioguide et assistance WhatsApp. Annulation gratuite. Ouvert 9h–17h.`,
   },
   es: {
-    title: `Palacio Bahía Marrakech 2026 | Entradas, Horarios y Guía`,
+    title: `Palacio Bahía Marrakech 2026 — Horarios, precios y visita`,
     description: `Entradas al Palacio Bahía desde 11,99 €: entrada oficial a tu nombre, audioguía y ayuda por WhatsApp. Cancelación gratuita. Abierto 9:00–17:00.`,
   },
   de: {
-    title: `Bahia Palast Marrakesch 2026 | Tickets, Zeiten & Guide`,
+    title: `Bahia Palast Marrakesch 2026 — Öffnungszeiten & Besuch`,
     description: `Bahia-Palast Tickets ab 11,99 €: offizielles Ticket auf Ihren Namen, Audioguide und WhatsApp-Support. Kostenlose Stornierung. Täglich 9–17 Uhr.`,
   },
   ar: {
@@ -80,7 +80,7 @@ const HOME_META: Record<string, { title: string; description: string }> = {
     description: `Tudo para visitar o Palácio da Bahia em Marraquexe: entrada oficial de 100 MAD, aberto todos os dias das 9:00 às 17:00, e como evitar a fila da bilheteira.`,
   },
   it: {
-    title: `Palazzo Bahia Marrakech 2026 | Biglietti, Orari e Guida`,
+    title: `Palazzo Bahia Marrakech 2026 — Orari, prezzi e visita`,
     description: `Biglietti Palazzo Bahia da 11,99 €: ingresso ufficiale a tuo nome, audioguida e assistenza WhatsApp. Cancellazione gratuita. Aperto 9:00–17:00.`,
   },
 };

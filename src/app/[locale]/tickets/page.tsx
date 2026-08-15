@@ -44,11 +44,28 @@ const TICKETS_META: Record<string, { title: string; description: string }> = {
    * Now: one product, its price, what it includes — under 155 characters so
    * none of it is cut off.
    */
-  en: { title: `Bahia Palace Tickets 2026 — Price & How to Book`, description: `Bahia Palace entry ticket, audio guide and WhatsApp support for €11.99 per person. Free cancellation until we send it. Open daily 9:00–17:00.` },
-  fr: { title: `Billets Palais Bahia 2026 — Tarif & Réservation`, description: `Billet d'entrée Palais Bahia, audioguide et assistance WhatsApp pour 11,99 € par personne. Annulation gratuite. Ouvert tous les jours 9h–17h.` },
-  es: { title: `Entradas Palacio Bahía 2026 — Precio y Reserva`, description: `Entrada al Palacio Bahía, audioguía y ayuda por WhatsApp por 11,99 € por persona. Cancelación gratuita. Abierto todos los días 9:00–17:00.` },
-  de: { title: `Bahia Palast Tickets 2026 — Preis & Buchung`, description: `Bahia-Palast Eintrittsticket, Audioguide und WhatsApp-Support für 11,99 € pro Person. Kostenlose Stornierung. Täglich 9–17 Uhr geöffnet.` },
-  it: { title: `Biglietti Palazzo Bahia 2026 — Prezzo e Prenotazione`, description: `Biglietto d'ingresso Palazzo Bahia, audioguida e assistenza WhatsApp a 11,99 € a persona. Cancellazione gratuita. Aperto ogni giorno 9:00–17:00.` },
+  /*
+   * THIS PAGE HAS NO CHECKOUT. /visitor-pack does, and it is the only page on
+   * the site that does. So the two must not chase the same words: three pages
+   * here — home, this one and /visitor-pack — all opened on "Bahia Palace
+   * Tickets", which leaves Google to pick one and rank the other two below it.
+   *
+   * The split, by what the searcher is trying to do:
+   *   /visitor-pack  buying    "book Bahia Palace tickets"  — has the checkout
+   *   /tickets       comparing "Bahia Palace ticket prices" — this page
+   *   /[locale]      visiting  "Bahia Palace hours, guide"  — the home page
+   *
+   * Giving the buy-intent words to the page that can actually take the money is
+   * the defensible default. Which page deserves the bare phrase "Bahia Palace
+   * tickets" is a question the Search Console query list would settle, and it
+   * has not been read yet — this removes the overlap rather than guessing at
+   * the ranking.
+   */
+  en: { title: `Bahia Palace Ticket Prices 2026 — Fees & What's Included`, description: `Bahia Palace entry ticket, audio guide and WhatsApp support for €11.99 per person. Free cancellation until we send it. Open daily 9:00–17:00.` },
+  fr: { title: `Tarifs billets Palais Bahia 2026 — Prix et contenu`, description: `Billet d'entrée Palais Bahia, audioguide et assistance WhatsApp pour 11,99 € par personne. Annulation gratuite. Ouvert tous les jours 9h–17h.` },
+  es: { title: `Precios entradas Palacio Bahía 2026 — Tarifas incluidas`, description: `Entrada al Palacio Bahía, audioguía y ayuda por WhatsApp por 11,99 € por persona. Cancelación gratuita. Abierto todos los días 9:00–17:00.` },
+  de: { title: `Bahia Palast Ticketpreise 2026 — Preise & Leistungen`, description: `Bahia-Palast Eintrittsticket, Audioguide und WhatsApp-Support für 11,99 € pro Person. Kostenlose Stornierung. Täglich 9–17 Uhr geöffnet.` },
+  it: { title: `Prezzi biglietti Palazzo Bahia 2026 — Tariffe e servizi`, description: `Biglietto d'ingresso Palazzo Bahia, audioguida e assistenza WhatsApp a 11,99 € a persona. Cancellazione gratuita. Aperto ogni giorno 9:00–17:00.` },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
