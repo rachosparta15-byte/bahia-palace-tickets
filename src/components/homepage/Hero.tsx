@@ -3,7 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { ArrowRight, Sun, Landmark, Ticket, Check } from 'lucide-react';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
-import { buyingPathPriceLabel } from '@/config/pricing';
+import { buyingPathPriceLabel, TEASER_PRICE_ENABLED } from '@/config/pricing';
 
 /**
  * The three inclusions listed under the hero price.
@@ -256,6 +256,18 @@ export async function Hero() {
                    * visitor-pack page's job — three short lines are as much
                    * as a hero can carry without competing with the headline.
                    */}
+                  {/* Held back to the payment step while the teaser test runs.
+
+                      This is the third place the same mistake was made and the
+                      most visible: it is the home page hero, directly under
+                      "100 DH per person", where "Digital audio guide with the
+                      palace's history" reads as what 100 DH buys. It does not —
+                      100 DH is the Ministry's entry ticket.
+
+                      The pack's contents now appear once, at the payment step,
+                      beside the real total, which is the only place they can
+                      explain the number rather than misdescribe it. */}
+                  {!TEASER_PRICE_ENABLED && (
                   <ul className="mt-2.5 space-y-1">
                     {INCLUSION_KEYS.map((key) => (
                       <li key={key} className="flex items-start gap-1.5">
@@ -270,6 +282,7 @@ export async function Hero() {
                       </li>
                     ))}
                   </ul>
+                  )}
                 </div>
               )}
             </div>

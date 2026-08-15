@@ -7,7 +7,7 @@ import { usePaymentsFlags } from '@/components/layout/PaymentsFlagsProvider';
 import { Check, ArrowRight, Clock, Star, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import { TICKET_PRICES } from '@/lib/ticket-data';
-import { buyingPathPriceLabel } from '@/config/pricing';
+import { buyingPathPriceLabel, TEASER_PRICE_ENABLED } from '@/config/pricing';
 
 const TICKET_IMAGES = {
   'visitor-pack':        '/images/ticket-skip-the-line.webp',
@@ -207,31 +207,57 @@ export function TicketCards({ overrides = {} }: Props) {
                   >
                     {name}
                   </h3>
-                  <p className="text-[#C4A882] text-sm mb-3 leading-snug">{tagline}</p>
+                  {/* The tagline is "Official entry ticket + digital audio
+                      guide" and it sits four lines above the price, so during
+                      the teaser test it itemises the pack directly over
+                      "100 DH per person" — the same thing the ticked list below
+                      was doing.
+
+                      Hidden rather than reworded: every alternative would need
+                      seven new translations, and the card still carries the
+                      product's NAME, which is what identifies it. What the pack
+                      contains is stated once, at the payment step, beside the
+                      real total. */}
+                  {!TEASER_PRICE_ENABLED && (
+                    <p className="text-[#C4A882] text-sm mb-3 leading-snug">{tagline}</p>
+                  )}
 
                   <div className="flex items-center gap-1.5 text-xs text-[#8FA63C] mb-4">
                     <Clock size={12} />
                     <span>{duration}</span>
                   </div>
 
-                  {isSingle ? (
-                    <ul className="hidden sm:grid grid-cols-2 gap-x-4 gap-y-2 mb-5 flex-1">
-                      {includes.map((item: string, j: number) => (
-                        <li key={j} className="flex items-start gap-1.5 text-xs text-[#C4A882]">
-                          <Check size={12} className="text-[#8FA63C] mt-0.5 shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+                  {/* The ticked list is held back to the payment step during
+                      the teaser test — the price sits directly beneath it in
+                      this card, so "Premium audio guide" reads as what 100 DH
+                      buys, and 100 DH is the Ministry's entry ticket.
+
+                      flex-1 moves onto the spacer so the cards keep equal
+                      heights and the CTA stays pinned to the bottom; without it
+                      a card with no list collapses and the buttons stop lining
+                      up across the row. */}
+                  {!TEASER_PRICE_ENABLED ? (
+                    isSingle ? (
+                      <ul className="hidden sm:grid grid-cols-2 gap-x-4 gap-y-2 mb-5 flex-1">
+                        {includes.map((item: string, j: number) => (
+                          <li key={j} className="flex items-start gap-1.5 text-xs text-[#C4A882]">
+                            <Check size={12} className="text-[#8FA63C] mt-0.5 shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <ul className="space-y-2 mb-5 flex-1">
+                        {includes.map((item: string, j: number) => (
+                          <li key={j} className="flex items-start gap-1.5 text-xs text-[#C4A882]">
+                            <Check size={12} className="text-[#8FA63C] mt-0.5 shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    )
                   ) : (
-                    <ul className="space-y-2 mb-5 flex-1">
-                      {includes.map((item: string, j: number) => (
-                        <li key={j} className="flex items-start gap-1.5 text-xs text-[#C4A882]">
-                          <Check size={12} className="text-[#8FA63C] mt-0.5 shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="flex-1" aria-hidden="true" />
                   )}
 
                   {/* Price + CTA */}
