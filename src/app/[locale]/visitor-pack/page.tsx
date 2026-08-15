@@ -20,6 +20,7 @@ import {
   OFFICIAL_DOOR_PRICE_EUR_CENTS,
   MAD_TO_EUR_RATE_CHECKED_ON,
   buyingPathPriceLabel,
+  TEASER_PRICE_ENABLED,
   formatEURAmount,
 } from '@/config/pricing';
 import {
@@ -327,7 +328,20 @@ export default async function VisitorPackPage({ params }: Props) {
                   <span className="text-[#C4A882] text-sm">{t('price.perPerson')}</span>
                 </div>
 
-                <ValuePoints locale={locale} />
+                {/* What the pack includes, held back to the payment step while
+                    the teaser test runs.
+
+                    Sitting directly under "100 DH par personne", "Audioguide
+                    numérique avec l'histoire du palais" reads as what 100 DH
+                    buys — and 100 DH is the Ministry's entry ticket, which buys
+                    none of it. The total then rises at checkout with nothing new
+                    on screen to explain why. These lines are the explanation, so
+                    they belong at the moment the number changes.
+
+                    Moved, not deleted: VisitorPackCheckoutForm renders
+                    PackInclusions inside the payment step, beside the real
+                    total. Flip TEASER_PRICE_ENABLED and this comes back. */}
+                {!TEASER_PRICE_ENABLED && <ValuePoints locale={locale} />}
 
                 <a
                   href="#checkout"
