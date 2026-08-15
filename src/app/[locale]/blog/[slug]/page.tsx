@@ -155,12 +155,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPost(locale, slug);
   if (!post) return {};
 
-  const rawTitle    = post.seoTitle ?? post.title;
+  /*
+   * The site's own title, not Google's truncation.
+   *
+   * This reserved 15 characters for " | Bahia Palace" and then cut the article
+   * title at 44 — mid-word, with an ellipsis. 124 of 139 posts were affected,
+   * so most of this blog appeared in search as things like
+   *
+   *     "10 Hidden Details in Bahia Palace Most Touri… | Bahia Palace"
+   *
+   * A searcher reads that and learns nothing about the tenth word; the branding
+   * suffix survived and the sentence did not. It is the wrong thing to protect.
+   * Google renders roughly 60 characters and cuts at a word boundary itself, so
+   * a title left whole is cut better by Google than by us.
+   *
+   * The rule now: append the suffix only when the whole thing still fits.
+   * Otherwise ship the article's own title, untouched. Nothing is ever cut
+   * mid-word here again, and a long title loses the branding rather than its
+   * meaning.
+   *
+   * Titles that begin with a stray quote — nine of them do, e.g. 'La Guida
+   * Umana… — are cleaned too: that character is a data artefact from the
+   * source, and in a search result it reads as a typo.
+   */
   const SUFFIX      = ' | Bahia Palace';
-  const MAX_RAW     = 60 - SUFFIX.length; // 44 chars for the title part
-  const title       = rawTitle.length > MAX_RAW
-    ? rawTitle.slice(0, MAX_RAW - 1) + '…' + SUFFIX
-    : rawTitle + SUFFIX;
+  const MAX_TITLE   = 60;
+  const rawTitle    = (post.seoTitle ?? post.title).trim().replace(/^["'‘’“”]+/, '').trim();
+  const title       = rawTitle.length + SUFFIX.length <= MAX_TITLE
+    ? rawTitle + SUFFIX
+    : rawTitle;
   const descFallback = `${rawTitle} — expert guide to visiting Bahia Palace Marrakech. Tips, hours & skip-the-line tickets for 2026.`.slice(0, 160);
   const description = post.seoDesc ?? post.excerpt ?? descFallback;
   const ogImg       = post.ogImage  ?? post.coverImage ?? CATEGORY_IMAGES[post.category];
