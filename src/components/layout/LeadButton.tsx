@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { LeadModal } from './LeadModal';
 import { LeadToast } from './LeadToast';
 import { usePaymentsFlags } from './PaymentsFlagsProvider';
-import { useRouter } from '@/i18n/navigation';
+import { Link } from '@/i18n/navigation';
 import { trackEvent } from '@/lib/analytics';
 
 interface Props {
@@ -51,7 +51,6 @@ export function LeadButton({
   const [modalOpen, setModalOpen] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const { enabled: paymentsEnabled } = usePaymentsFlags();
-  const router = useRouter();
 
   const track = () => {
     try {
@@ -69,27 +68,48 @@ export function LeadButton({
     setShowToast(true);
   };
 
+  /*
+   * Only reached when payments are off, because the selling path returns an <a>
+   * before this is ever attached. The navigation that used to live here is now
+   * the Link's href — see the comment at the return.
+   */
   const handleClick = () => {
     track();
-
-    if (paymentsEnabled) {
-      /*
-       * next-intl's router prepends the active locale, so a French visitor
-       * goes to /fr/visitor-pack without us assembling the path by hand.
-       *
-       * #checkout, not the top of the page. Someone who has just pressed "Get
-       * Tickets" has decided; landing them on the pack's hero shows them the
-       * price they have already seen, the inclusions they have already read,
-       * and a second button asking for the same decision again. Every extra
-       * press is a place to change their mind. The form carries that id and a
-       * scroll-mt that clears the fixed header.
-       */
-      router.push('/visitor-pack#checkout');
-      return;
-    }
-
     setModalOpen(true);
   };
+
+  /*
+   * A REAL LINK WHEN IT NAVIGATES, A BUTTON WHEN IT DOES NOT.
+   *
+   * This was a <button> with router.push in its onClick, everywhere on the
+   * site. A crawler cannot follow an onClick, so Google saw no link from any
+   * ticket CTA to the page that takes the money. Crawling eight pages found
+   * ONE internal link to /visitor-pack — against fourteen to /tickets, twelve
+   * to /blog and twelve to /contact. The site was telling Google that the
+   * contact page matters twelve times more than the checkout.
+   *
+   * That shows up exactly where you would expect it in Search Console: over 28
+   * days this site sits at position 4.8 for "bahia palace photos" and 10.0 for
+   * "bahia palace tickets". It is being read as an information site, because in
+   * link terms it is one.
+   *
+   * As an <a href> the same CTAs become a dozen internal links carrying
+   * commercial anchor text ("Get Tickets", "Book Now") straight to the
+   * checkout. Nothing else changes: next-intl's Link prepends the locale the
+   * same way router.push did, onClick still fires so tracking is untouched, and
+   * navigation is still client-side. It also fixes things a <button> silently
+   * broke — middle-click, open in new tab, and "copy link address".
+   *
+   * The modal branch stays a <button>, because opening a dialog is genuinely
+   * not a navigation and should not be announced as one.
+   */
+  if (paymentsEnabled) {
+    return (
+      <Link href="/visitor-pack#checkout" id={id} onClick={track} className={className}>
+        {children}
+      </Link>
+    );
+  }
 
   return (
     <>
