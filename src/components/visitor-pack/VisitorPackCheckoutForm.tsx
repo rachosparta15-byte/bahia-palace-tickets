@@ -21,7 +21,7 @@ import {
   formatEUR,
 } from '@/config/pricing';
 import { consumeLeadPrefill } from '@/lib/lead-handoff';
-import { earliestVisitDate, BOOKING_LEAD_DAYS } from '@/config/booking-window';
+import { earliestVisitDate } from '@/config/booking-window';
 
 /**
  * The first date on sale, YYYY-MM-DD — today plus the lead time.
@@ -277,7 +277,7 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
          */
         const messages: Record<string, string> = {
           consent_required: t('errors.consent'),
-          visit_date_too_soon: t('errors.tooSoon', { days: BOOKING_LEAD_DAYS }),
+          visit_date_too_soon: t('errors.tooSoon'),
           visit_date_in_past: t('errors.pastDate'),
           booking_not_open: t('errors.disabled'),
           checkout_unavailable: t('errors.disabled'),
@@ -532,12 +532,12 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
               />
             )}
           />
-          {/* Why the first two days are greyed out, said before the customer
-              hunts for them. A disabled cell with no explanation reads as a
-              broken calendar; this turns it into a stated policy, and it is
-              the same reason the Terms give for the lead time. */}
+          {/* Same-day is on sale, so nothing is greyed out except the past.
+              The line stays because it still answers the question the date
+              field raises — where the ticket comes from, and why booking
+              early in the day matters when the visit is today. */}
           <p className="mt-1.5 text-xs leading-relaxed text-[#C4A882]/80">
-            {t('dateHint', { days: BOOKING_LEAD_DAYS })}
+            {t('dateHint')}
           </p>
           {errors.date && <p className={errCls}>{t('errors.pastDate')}</p>}
         </div>

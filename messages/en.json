@@ -734,7 +734,7 @@
         },
         "delivery": {
           "q": "When do I receive my ticket?",
-          "a": "Visits are booked at least two days in advance, which is the time we need to obtain your official ticket from the palace. We send it about 24 hours before the day you told us you are visiting. Your code carries no time slot, so you can arrive whenever suits you on that date."
+          "a": "We obtain your official ticket from the palace after your payment clears, then email it to you. Book for a future date and it arrives about 24 hours before your visit; book for today and we send it as soon as we have it. Your code carries no time slot, so you can arrive whenever suits you on that date."
         },
         "group": {
           "q": "Can I book for a group?",
@@ -763,14 +763,14 @@
         "email": "Please enter a valid email address.",
         "visitors": "Please enter a number between 1 and {max}.",
         "consent": "Please confirm this before continuing — it is required to complete your booking.",
-        "tooSoon": "Please choose a date at least {days} days from today."
+        "tooSoon": "Please choose today or a later date."
       },
       "summaryTitle": "Order summary",
       "productName": "Bahia Palace — Complete Visitor Pack",
       "acceptCombined": "I can cancel free of charge until my QR code is sent. I understand that sending it completes my order, so the 14-day cooling-off right no longer applies from that moment, and I accept the <terms>Terms of Sale</terms> and the <refund>cancellation policy</refund>.",
       "securePayment": "<b>Secure payment.</b> You pay on PayPal. Your card details go straight to PayPal and never reach our servers.",
       "visitorsHint": "Count everyone who needs a ticket, including children aged 7 and over. Children under 7 enter free and should not be counted.",
-      "dateHint": "We collect your ticket from the monument, so the earliest visit date is {days} days from today.",
+      "dateHint": "We collect your ticket from the palace and email it to you. Today's date is bookable — the earlier in the day you book, the better.",
       "payWithCard": "Pay by card",
       "cardNumber": "Card number",
       "expiry": "Expiry date",
@@ -825,7 +825,7 @@
       },
       "delivery": {
         "title": "Your ticket arrives before you need it.",
-        "body": "Visits are booked at least two days ahead. We send your ticket about 24 hours before your visit date, so it is fresh on your phone when you go."
+        "body": "We collect your ticket from the palace after payment and email it to you — about 24 hours before a future visit, or as soon as we have it if you are going today."
       },
       "price": {
         "title": "€11.99 per person, all taxes included.",

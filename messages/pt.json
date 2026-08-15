@@ -124,7 +124,7 @@
       },
       "delivery": {
         "title": "O bilhete chega antes de precisar dele.",
-        "body": "As visitas reservam-se com pelo menos dois dias de antecedência. Enviamos o seu bilhete cerca de 24 horas antes da data da visita, para o ter à mão no telemóvel nesse dia."
+        "body": "Levantamos o seu bilhete no palácio após o pagamento e enviamo-lo por e-mail: cerca de 24 horas antes de uma visita futura, ou assim que o tivermos se for hoje."
       },
       "price": {
         "title": "11,99 € por pessoa, impostos incluídos.",
@@ -177,7 +177,7 @@
         "name": "Introduza o seu nome completo.",
         "email": "Introduza um endereço de e-mail válido.",
         "visitors": "Introduza um número entre 1 e {max}.",
-        "tooSoon": "Escolha uma data com pelo menos {days} dias de antecedência."
+        "tooSoon": "Escolha hoje ou uma data posterior."
       },
       "title": "Escolha a sua visita",
       "payTitle": "Conclua o seu pagamento",
@@ -194,7 +194,7 @@
       "summaryTitle": "Resumo da encomenda",
       "productName": "Palácio da Bahia — Pack completo do visitante",
       "visitorsHint": "Conte todas as pessoas que precisam de bilhete, incluindo crianças a partir dos 7 anos. As crianças com menos de 7 anos entram gratuitamente e não devem ser contadas.",
-      "dateHint": "Levantamos o seu bilhete no monumento, por isso a primeira data de visita disponível é daqui a {days} dias.",
+      "dateHint": "Levantamos o seu bilhete no palácio e enviamo-lo por e-mail. Pode reservar para hoje — quanto mais cedo, melhor.",
       "payWithCard": "Pagar com cartão",
       "cardNumber": "Número do cartão",
       "expiry": "Data de validade",
@@ -252,7 +252,7 @@
         },
         "delivery": {
           "q": "Quando recebo o meu bilhete?",
-          "a": "As visitas reservam-se com pelo menos dois dias de antecedência: é o tempo de que precisamos para obter o seu bilhete oficial no palácio. Enviamo-lo cerca de 24 horas antes do dia que nos indicou. O seu código não tem hora marcada, por isso pode chegar quando preferir nesse dia."
+          "a": "Obtemos o seu bilhete oficial no palácio depois de o pagamento ser confirmado e enviamo-lo por e-mail. Para uma data futura, chega cerca de 24 horas antes da visita; se reservar para hoje, enviamos assim que o tivermos. O seu código não tem horário marcado, por isso pode chegar à hora que preferir nesse dia."
         },
         "group": {
           "q": "Posso reservar para um grupo?",

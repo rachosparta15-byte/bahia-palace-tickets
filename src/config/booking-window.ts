@@ -1,21 +1,24 @@
 /**
- * How far ahead a visit must be booked.
+ * How far ahead a visit must be booked. Zero means today is on sale.
  *
- * We do not hold a stock of official tickets. Every booking is sourced by hand
- * from the monument after the payment clears, and the QR is then delivered to
- * the customer. That takes a working day or two, so selling a visit for today
- * or tomorrow sells something we cannot reliably hand over — and a ticket that
- * arrives after the visit date is a full refund plus a ruined morning for a
- * family that has already planned around it.
+ * This was 2, and the reason is worth keeping written down: we hold no stock
+ * of official tickets. Every booking is sourced by hand from the monument
+ * after the payment clears, and the QR is then delivered to the customer.
+ * Two clear days was the shortest window that survived a Sunday, a public
+ * holiday, or a payment that settled overnight.
  *
- * Two clear days is the shortest window that survives a Sunday, a public
- * holiday, or a payment that settles overnight.
+ * Opened to same-day on the owner's instruction, 15 August 2026. It is a
+ * commercial decision, not a technical one, and it moves a real risk onto the
+ * operation rather than removing it: an order placed at 16:00 for a visit at
+ * 16:30 has to be collected and emailed inside half an hour, and a ticket that
+ * arrives after the visit is a refund plus a ruined afternoon. The customer
+ * cannot see that constraint, so the copy no longer promises delivery "24
+ * hours before" for a same-day order — see visitorPack.faq.items.delivery.
  *
- * LOWERING THIS IS A COMMERCIAL DECISION, NOT A TECHNICAL ONE. It only becomes
- * safe once tickets are held in stock and assigned automatically; until then,
- * shrinking it moves the risk onto the customer.
+ * Raising it back is one number here; the four sentences in messages/*.json
+ * that describe the window would need to move with it.
  */
-export const BOOKING_LEAD_DAYS = 2;
+export const BOOKING_LEAD_DAYS = 0;
 
 /**
  * The monument's own timezone.

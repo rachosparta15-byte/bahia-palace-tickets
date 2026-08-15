@@ -736,7 +736,7 @@
         },
         "delivery": {
           "q": "Quando ricevo il biglietto?",
-          "a": "Le visite si prenotano con almeno due giorni di anticipo: è il tempo che ci serve per ottenere il tuo biglietto ufficiale dal palazzo. Te lo inviamo circa 24 ore prima del giorno che ci hai indicato. Il codice non ha una fascia oraria, quindi puoi arrivare quando preferisci in quella data."
+          "a": "Otteniamo il tuo biglietto ufficiale dal palazzo dopo la conferma del pagamento e te lo inviamo via e-mail. Per una data futura arriva circa 24 ore prima della visita; se prenoti per oggi, lo inviamo appena lo abbiamo. Il tuo codice non ha una fascia oraria: puoi arrivare quando preferisci in quella giornata."
         },
         "group": {
           "q": "Posso prenotare per un gruppo?",
@@ -765,14 +765,14 @@
         "email": "Inserisci un indirizzo e-mail valido.",
         "visitors": "Inserisci un numero compreso tra 1 e {max}.",
         "consent": "Conferma prima di continuare: è necessario per completare la prenotazione.",
-        "tooSoon": "Scegli una data ad almeno {days} giorni da oggi."
+        "tooSoon": "Scegli oggi o una data successiva."
       },
       "summaryTitle": "Riepilogo dell’ordine",
       "productName": "Palazzo Bahia — Pacchetto Visitatore Completo",
       "acceptCombined": "Posso annullare gratuitamente fino all’invio del mio codice QR. Comprendo che l’invio completa il mio ordine e che da quel momento il diritto di recesso di 14 giorni non si applica più, e accetto le <terms>Condizioni di vendita</terms> e la <refund>politica di cancellazione</refund>.",
       "securePayment": "<b>Pagamento sicuro.</b> Paghi su PayPal. I dati della tua carta vanno direttamente a PayPal e non raggiungono mai i nostri server.",
       "visitorsHint": "Conta tutte le persone che hanno bisogno di un biglietto, bambini dai 7 anni compresi. I bambini sotto i 7 anni entrano gratis e non vanno contati.",
-      "dateHint": "Ritiriamo il tuo biglietto al monumento, quindi la prima data di visita disponibile è tra {days} giorni.",
+      "dateHint": "Ritiriamo il tuo biglietto al palazzo e te lo inviamo via e-mail. Puoi prenotare anche per oggi: prima lo fai, meglio è.",
       "payWithCard": "Paga con carta",
       "cardNumber": "Numero della carta",
       "expiry": "Scadenza",
@@ -827,7 +827,7 @@
       },
       "delivery": {
         "title": "Il tuo biglietto arriva prima che ti serva.",
-        "body": "Le visite si prenotano con almeno due giorni di anticipo. Inviamo il biglietto circa 24 ore prima della data della visita, così è pronto sul telefono quando parti."
+        "body": "Ritiriamo il tuo biglietto al palazzo dopo il pagamento e te lo inviamo via e-mail: circa 24 ore prima di una visita futura, o appena lo abbiamo se vai oggi."
       },
       "price": {
         "title": "11,99 € a persona, tasse incluse.",
