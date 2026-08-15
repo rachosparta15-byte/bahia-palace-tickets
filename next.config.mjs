@@ -77,16 +77,19 @@ const nextConfig = {
     '/*': ['./prisma/dev.db'],
   },
   async redirects() {
-    const TEST_SLUGS = ['z', 'xdxxxxxxxx', 'test'];
     const LOCALES    = ['en', 'fr', 'it', 'de', 'es'];
 
-    const testRedirects = TEST_SLUGS.flatMap(slug =>
-      LOCALES.map(locale => ({
-        source:      `/${locale}/blog/${slug}`,
-        destination: `/${locale}/blog`,
-        permanent:   true,
-      }))
-    );
+    /*
+     * The junk slugs /blog/z, /blog/test and /blog/xdxxxxxxxx were redirected
+     * here, 308 to the blog index. proxy.ts already answers 410 Gone for the
+     * same three, which is the right signal: they were never pages, so there
+     * is nothing to send a reader to, and 410 is what makes Google drop a URL
+     * rather than keep it as a redirect target.
+     *
+     * These redirects ran first and shadowed it — /en/blog/z answered 308
+     * while /blog/z answered 410, the same junk treated two ways depending on
+     * the prefix. Removed, so the 410 applies to all fifteen.
+     */
     const COMING_SOON_SLUGS = ['guided-tour', 'private-tour', 'combo-saadian-tombs'];
     const comingSoonRedirects = COMING_SOON_SLUGS.flatMap(slug =>
       LOCALES.map(locale => ({
@@ -212,7 +215,6 @@ const nextConfig = {
     );
 
     return [
-      ...testRedirects,
       ...comingSoonRedirects,
       ...blogMergeAllLocales,
       ...blogMergeEnOnly,
