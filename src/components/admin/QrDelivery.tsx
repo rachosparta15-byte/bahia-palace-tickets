@@ -78,6 +78,19 @@ export function QrDelivery({
         body,
       });
       if (res.ok) {
+        const data = (await res.json().catch(() => ({}))) as {
+          emailSent?: boolean;
+          fileStored?: boolean;
+        };
+        // Marked delivered and the customer holding it are two different
+        // facts. Say so when they disagree, instead of refreshing into a
+        // green badge that means neither.
+        if (data.emailSent === false) {
+          setError(
+            'Marked delivered, but the email did NOT go out. Send the ticket by ' +
+              'WhatsApp now, then check the mail provider.',
+          );
+        }
         router.refresh();
       } else {
         const data = (await res.json().catch(() => ({}))) as { message?: string; error?: string };

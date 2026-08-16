@@ -50,6 +50,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
   let qrFileRef: string | null = null;
   // Held past the save so the delivery email can carry the ticket itself.
   let fileBuffer: Buffer | null = null;
+  let qrFileExt: string | null = null;
 
   if (contentType.includes('multipart/form-data')) {
     const form = await req.formData();
@@ -71,8 +72,26 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
           { status: 400 }
         );
       }
-      qrFileRef = await saveQrFile(id, buffer, detected.ext);
       fileBuffer = buffer;
+      qrFileExt = detected.ext;
+      /*
+       * Storing the file must not be able to stop the delivery.
+       *
+       * qr-storage writes under process.cwd(), and Vercel's filesystem is
+       * read-only outside /tmp — so this throws in production, the route
+       * answered 500, and the admin saw "Could not mark as delivered" with a
+       * paid customer waiting on the day of their visit. The file is nice to
+       * have (it backs the booking page); the email is the delivery, and the
+       * email carries these same bytes as an attachment a few lines below.
+       *
+       * The proper fix is the Blob swap qr-storage asks for in its header.
+       * Until then this degrades instead of failing.
+       */
+      try {
+        qrFileRef = await saveQrFile(id, buffer, detected.ext);
+      } catch (err) {
+        console.error(`[qr] could not store the file for ${id}; delivering by email only`, err);
+      }
     }
 
     if (typeof code === 'string' && code.trim()) qrCode = code.trim().slice(0, 200);
@@ -86,7 +105,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
   // Refuse to mark delivered with nothing recorded. An empty "delivered"
   // would take away the refund right while leaving no evidence of what the
   // customer actually received.
-  if (!qrCode && !qrFileRef) {
+  if (!qrCode && !fileBuffer) {
     return NextResponse.json(
       {
         error: 'nothing_to_deliver',
@@ -125,10 +144,10 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
       whatsapp: getWhatsAppNumber(),
       // The uploaded bytes are still in memory here. Attaching them means the
       // customer holds the ticket, not a link to storage that forgets.
-      ...(fileBuffer && qrFileRef
+      ...(fileBuffer
         ? {
             attachment: {
-              filename: `bahia-palace-ticket-${updated.reference}.${qrFileRef.split('.').pop()}`,
+              filename: `bahia-palace-ticket-${updated.reference}.${qrFileExt ?? 'pdf'}`,
               content: fileBuffer.toString('base64'),
             },
           }
