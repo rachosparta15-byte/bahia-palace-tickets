@@ -46,6 +46,7 @@ export function QrDelivery({
   const [error, setError] = useState('');
   const [previewing, setPreviewing] = useState(false);
   const [previewed, setPreviewed] = useState('');
+  const [previewAttached, setPreviewAttached] = useState(false);
 
   const delivered = Boolean(qrSentAt) || status === 'qr_sent';
   const payable = status === 'confirmed';
@@ -189,10 +190,19 @@ export function QrDelivery({
     setError('');
     setPreviewed('');
     try {
-      const res = await fetch(`/api/admin/bookings/${bookingId}/preview`, { method: 'POST' });
+      // The same payload the real button sends, so the preview is the email
+      // that would actually go out — with the file, not a description of it.
+      const body = new FormData();
+      if (file) body.append('file', file);
+      if (code.trim()) body.append('code', code.trim());
+      const res = await fetch(`/api/admin/bookings/${bookingId}/preview`, {
+        method: 'POST',
+        body,
+      });
       const data = await res.json();
       if (!res.ok) throw new Error(data?.error ?? `HTTP ${res.status}`);
       setPreviewed(data.to);
+      setPreviewAttached(Boolean(data.attached));
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Could not send the preview.');
     } finally {
@@ -268,7 +278,9 @@ export function QrDelivery({
       </button>
       {previewed && (
         <p className="mt-1.5 text-xs text-[#6B7F5E]">
-          Preview sent to {previewed}. The booking was not touched.
+          Preview sent to {previewed}
+          {previewAttached ? ' with the ticket attached' : ' — no file staged, so no attachment'}. The
+          booking was not touched.
         </p>
       )}
     </div>
