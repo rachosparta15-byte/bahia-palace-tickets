@@ -30,6 +30,7 @@ import { verifyAdminToken, ADMIN_COOKIE } from '@/lib/auth';
 import { email } from '@/lib/email';
 import { AUDIO_GUIDE_URL } from '@/lib/booking';
 import { getWhatsAppNumber } from '@/lib/whatsapp';
+import { buildGuideCodeUrl } from '@/lib/guide-code';
 import { detectQrType, MAX_QR_MB } from '@/lib/qr-storage';
 
 export async function POST(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -97,11 +98,20 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
       visitDate: booking.visitDate.toISOString().split('T')[0],
       whatsapp: getWhatsAppNumber(),
       ...(attachment ? { attachment } : {}),
-      // Placeholders. Real codes are single-device and would be spent by the
-      // first tap in this inbox.
-      audioGuideUrls: Array.from(
-        { length: seats },
-        (_, i) => `${AUDIO_GUIDE_URL}/?k=PREVIEW-SEAT-${i + 1}`,
+      /*
+       * Placeholder codes, real link shape.
+       *
+       * Built through buildGuideCodeUrl like the delivery does, rather than by
+       * pasting a query string onto the base — AUDIO_GUIDE_URL already ends in
+       * a slash, so the hand-built version produced guide.visitbahiapalace.com//?k=
+       * and looked broken in the preview.
+       *
+       * The CODES stay fake on purpose: a real one binds to the first device
+       * that opens it, so previewing the customer's would spend the seat they
+       * paid for, from this inbox.
+       */
+      audioGuideUrls: Array.from({ length: seats }, (_, i) =>
+        buildGuideCodeUrl(AUDIO_GUIDE_URL, `PREVIEW${i + 1}`),
       ),
     });
   } catch (err) {
