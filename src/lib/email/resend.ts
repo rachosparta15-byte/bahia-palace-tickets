@@ -501,15 +501,44 @@ function humanDate(iso: string): string {
  * could have sent someone to the palace to be turned away at the gate.
  */
 function buildBookingHtml(p: BookingEmailParams): string {
-  // The ticket goes out about 24 hours ahead, so name that day rather than
-  // saying "24 hours before" and leaving the customer to do the arithmetic on
-  // a date they are already unsure about.
-  const deliveryDay = (() => {
+  /*
+   * When the ticket arrives, said as a day rather than as "24 hours before" —
+   * the customer should not have to do arithmetic on a date they are already
+   * unsure about.
+   *
+   * Subtracting a day unconditionally was fine while nothing could be booked
+   * inside a two-day window. Same-day booking is open now, so a visit today
+   * produced "your ticket arrives on Saturday, 15 August" — yesterday — in the
+   * confirmation of a customer who is going this afternoon.
+   *
+   * Three cases, and the near ones are not dates at all:
+   *   visiting today     → today, as soon as we have it
+   *   visiting tomorrow  → today
+   *   later              → the day before, by name
+   */
+  const deliveryLine = (() => {
     const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(p.visitDate);
-    if (!m) return null;
-    const d = new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3])));
-    d.setUTCDate(d.getUTCDate() - 1);
-    return humanDate(d.toISOString().slice(0, 10));
+    if (!m) return 'the day before your visit';
+
+    // Both sides in Marrakech's calendar day: the palace's timezone is what
+    // "today" means here, not the server's and not the customer's.
+    const today = new Intl.DateTimeFormat('en-CA', {
+      timeZone: 'Africa/Casablanca',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    }).format(new Date());
+
+    const visit = new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3])));
+    const daysAway = Math.round(
+      (visit.getTime() - new Date(`${today}T00:00:00Z`).getTime()) / 86_400_000,
+    );
+
+    if (daysAway <= 0) return 'today, as soon as we have it';
+    if (daysAway === 1) return 'today';
+
+    visit.setUTCDate(visit.getUTCDate() - 1);
+    return `on ${humanDate(visit.toISOString().slice(0, 10))}`;
   })();
 
   return `
@@ -539,7 +568,7 @@ function buildBookingHtml(p: BookingEmailParams): string {
 
           <div style="padding:16px 18px;background:#FAF3E7;border-radius:9px">
             <p style="margin:0 0 6px;font-weight:bold;color:#3D2817;font-size:15px">
-              Your ticket arrives ${deliveryDay ? `on ${esc(deliveryDay)}` : 'the day before your visit'}
+              Your ticket arrives ${esc(deliveryLine)}
             </p>
             <p style="margin:0;color:#666;font-size:14px;line-height:1.55">
               One email with your QR code and your audio guide link. That is the one you
