@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { QrCode, Upload, Loader2, CheckCircle2, AlertTriangle, ExternalLink } from 'lucide-react';
+import { QrCode, Upload, Loader2, CheckCircle2, AlertTriangle, ExternalLink, Mail } from 'lucide-react';
 
 interface Props {
   bookingId: string;
@@ -44,6 +44,8 @@ export function QrDelivery({
   const [code, setCode] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
+  const [previewing, setPreviewing] = useState(false);
+  const [previewed, setPreviewed] = useState('');
 
   const delivered = Boolean(qrSentAt) || status === 'qr_sent';
   const payable = status === 'confirmed';
@@ -174,6 +176,30 @@ export function QrDelivery({
   }
 
   // ── Ready to deliver ─────────────────────────────────────────────────
+  /*
+   * Read the email before a customer does.
+   *
+   * Attaching the QR is irreversible — it ends the refund right and mails the
+   * customer — so there was no safe way to see what that email looks like.
+   * This sends the same template to whoever is signed in and changes nothing
+   * about the booking.
+   */
+  async function handlePreview() {
+    setPreviewing(true);
+    setError('');
+    setPreviewed('');
+    try {
+      const res = await fetch(`/api/admin/bookings/${bookingId}/preview`, { method: 'POST' });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.error ?? `HTTP ${res.status}`);
+      setPreviewed(data.to);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Could not send the preview.');
+    } finally {
+      setPreviewing(false);
+    }
+  }
+
   return (
     <div className="rounded-lg border border-[#D4BC96] bg-white p-4">
       <div className="flex items-center gap-2">
@@ -229,6 +255,22 @@ export function QrDelivery({
         {busy ? <Loader2 size={15} className="animate-spin" /> : <Upload size={15} />}
         Attach &amp; mark as sent
       </button>
+
+      {/* Below the real button and visibly quieter: this one is safe to press,
+          which is exactly why it must not be mistaken for the one that is not. */}
+      <button
+        onClick={handlePreview}
+        disabled={previewing}
+        className="mt-2 flex w-full items-center justify-center gap-2 rounded-lg border border-[#D4BC96] px-4 py-2 text-xs font-medium text-[#8B6344] transition-colors hover:bg-[#F7EFE3] disabled:cursor-not-allowed disabled:opacity-40"
+      >
+        {previewing ? <Loader2 size={13} className="animate-spin" /> : <Mail size={13} />}
+        Send a preview to me
+      </button>
+      {previewed && (
+        <p className="mt-1.5 text-xs text-[#6B7F5E]">
+          Preview sent to {previewed}. The booking was not touched.
+        </p>
+      )}
     </div>
   );
 }
