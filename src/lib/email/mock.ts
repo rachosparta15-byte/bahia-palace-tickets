@@ -68,6 +68,16 @@ export interface TicketDeliveryEmailParams {
   /** Absolute URL to the booking page where the ticket can be viewed. */
   bookingUrl?: string;
   /**
+   * The official ticket, attached to the message.
+   *
+   * A link is not enough. The file behind it is written to the serverless
+   * filesystem, which is wiped between requests — see the header of
+   * lib/qr-storage — so the link can 404 while the booking still reads as
+   * delivered. An attachment stays in the inbox and needs no network at the
+   * gate. `content` is base64.
+   */
+  attachment?: { filename: string; content: string };
+  /**
    * The audio guide links belong HERE, not in the confirmation.
    *
    * The published delivery policy says so in as many words: "A payment

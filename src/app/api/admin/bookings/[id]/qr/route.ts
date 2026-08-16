@@ -48,6 +48,8 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
   const contentType = req.headers.get('content-type') ?? '';
   let qrCode: string | null = null;
   let qrFileRef: string | null = null;
+  // Held past the save so the delivery email can carry the ticket itself.
+  let fileBuffer: Buffer | null = null;
 
   if (contentType.includes('multipart/form-data')) {
     const form = await req.formData();
@@ -70,6 +72,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
         );
       }
       qrFileRef = await saveQrFile(id, buffer, detected.ext);
+      fileBuffer = buffer;
     }
 
     if (typeof code === 'string' && code.trim()) qrCode = code.trim().slice(0, 200);
@@ -120,6 +123,16 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
       bookingUrl: base ? `${base}/${updated.locale}/booking/${updated.id}` : undefined,
       visitDate: updated.visitDate.toISOString().split('T')[0],
       whatsapp: getWhatsAppNumber(),
+      // The uploaded bytes are still in memory here. Attaching them means the
+      // customer holds the ticket, not a link to storage that forgets.
+      ...(fileBuffer && qrFileRef
+        ? {
+            attachment: {
+              filename: `bahia-palace-ticket-${updated.reference}.${qrFileRef.split('.').pop()}`,
+              content: fileBuffer.toString('base64'),
+            },
+          }
+        : {}),
       /*
        * The guide links ride along with the ticket, which is what the published
        * delivery policy promises: one delivery containing everything, nothing

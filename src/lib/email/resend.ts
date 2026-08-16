@@ -80,6 +80,10 @@ export async function sendTicketDelivery(params: TicketDeliveryEmailParams): Pro
     replyTo: REPLY_TO,
     subject: `Your Bahia Palace entry ticket — ${params.reference}`,
     html: buildTicketHtml(params),
+    // The ticket itself, not a link to it — see the field comment in mock.ts.
+    ...(params.attachment
+      ? { attachments: [{ filename: params.attachment.filename, content: params.attachment.content }] }
+      : {}),
   });
 }
 
