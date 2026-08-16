@@ -234,18 +234,32 @@ export function PayPalCheckout({
         const shared = {
           createOrder: () => Promise.resolve(paypalOrderId),
           onApprove: () => captureOnServer(),
-          onError: () => {
+          onError: (err?: unknown) => {
             setStatus('error');
             setMessage(labels.error);
+            // What PayPal said, capped. Without this a decline and an SDK
+            // failure are the same pending row a week later.
+            trackEvent('pay_error', {
+              bookingId,
+              message: String((err as { message?: string })?.message ?? err ?? '').slice(0, 200),
+            });
           },
           // Not an error: the customer closed PayPal's popup. Leave the form
           // exactly as it was so they can try again or switch to a card.
-          onCancel: () => setStatus('ready'),
+          onCancel: () => {
+            setStatus('ready');
+            // Not a failure — but "opened PayPal and backed out" is a different
+            // customer from "never pressed anything", and both are pending.
+            trackEvent('pay_cancel', { bookingId });
+          },
         };
 
         await window.paypal
           .Buttons({
             ...shared,
+            onClick: () => {
+              trackEvent('pay_click', { bookingId, source: 'paypal' });
+            },
             style: { layout: 'horizontal', color: 'gold', shape: 'rect', height: 45, tagline: false },
           })
           .render(buttonsRef.current!)
@@ -272,6 +286,9 @@ export function PayPalCheckout({
          */
         const cardButton = window.paypal.Buttons({
           ...shared,
+            onClick: () => {
+              trackEvent('pay_click', { bookingId, source: 'card' });
+            },
           fundingSource: 'card',
           style: { layout: 'horizontal', color: 'black', shape: 'rect', height: 45, tagline: false },
         });
@@ -372,12 +389,20 @@ export function PayPalCheckout({
     if (!cardFieldsRef.current) return;
     setStatus('paying');
     setMessage(null);
+    trackEvent('pay_card_submit', { bookingId });
     try {
       // Resolves once PayPal has the card; onApprove then does the capture.
       await cardFieldsRef.current.submit();
-    } catch {
+    } catch (err) {
       setStatus('error');
       setMessage(labels.error);
+      // The decline itself, which is the whole point of this instrumentation:
+      // a card path that fails here looks identical to an abandoned checkout
+      // in the bookings table.
+      trackEvent('pay_card_error', {
+        bookingId,
+        message: String((err as { message?: string })?.message ?? err ?? '').slice(0, 200),
+      });
     }
   }
 
