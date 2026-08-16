@@ -493,7 +493,7 @@ export function PayPalCheckout({
         {!cardEligible && (
           <div className="mb-3">
             <p className="text-sm font-semibold text-[#F5E8CC]">{labels.chooseTitle}</p>
-            <p className="mt-1 text-xs leading-relaxed text-[#C4A882]">{labels.chooseHint}</p>
+            <p className="mt-1 text-sm leading-relaxed text-[#E4D2B0]">{labels.chooseHint}</p>
           </div>
         )}
 

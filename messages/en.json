@@ -767,7 +767,7 @@
       },
       "summaryTitle": "Order summary",
       "productName": "Bahia Palace — Complete Visitor Pack",
-      "acceptCombined": "I can cancel free of charge until my QR code is sent. I understand that sending it completes my order, so the 14-day cooling-off right no longer applies from that moment, and I accept the <terms>Terms of Sale</terms> and the <refund>cancellation policy</refund>.",
+      "acceptCombined": "I accept the <terms>Terms of Sale</terms> and the <refund>cancellation policy</refund>, and I understand that my free cancellation ends when my QR code is sent.",
       "securePayment": "<b>Secure payment.</b> You pay on PayPal. Your card details go straight to PayPal and never reach our servers.",
       "visitorsHint": "Count everyone who needs a ticket, including children aged 7 and over. Children under 7 enter free and should not be counted.",
       "dateHint": "We collect your ticket from the palace and email it to you. Today is bookable until {time} Marrakech time — after that the earliest date is tomorrow.",
@@ -783,7 +783,7 @@
       "phonePlaceholder": "Include your country code, e.g. +44",
       "phoneHint": "For WhatsApp delivery of your ticket, and so you do not have to type it again at payment.",
       "chooseTitle": "How would you like to pay?",
-      "chooseHint": "Pay with your PayPal account, or with any debit or credit card — no PayPal account needed.",
+      "chooseHint": "Pay by debit or credit card — no PayPal account needed. Or use your PayPal account if you have one.",
       "paymentMethods": "Secure payment — we accept PayPal and all major cards"
     },
     "confirmation": {

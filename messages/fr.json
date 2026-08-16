@@ -769,7 +769,7 @@
       },
       "summaryTitle": "Récapitulatif de la commande",
       "productName": "Palais Bahia — Pack Visiteur Complet",
-      "acceptCombined": "Je peux annuler gratuitement jusqu’à l’envoi de mon QR code. Je comprends que cet envoi exécute intégralement ma commande et que le droit de rétractation de 14 jours ne s’applique donc plus à partir de ce moment, et j’accepte les <terms>conditions de vente</terms> et la <refund>politique d’annulation</refund>.",
+      "acceptCombined": "J’accepte les <terms>conditions de vente</terms> et la <refund>politique d’annulation</refund>, et je comprends que mon annulation gratuite prend fin à l’envoi de mon QR code.",
       "securePayment": "<b>Paiement sécurisé.</b> Vous payez sur PayPal. Vos données bancaires vont directement à PayPal et n’atteignent jamais nos serveurs.",
       "visitorsHint": "Comptez toutes les personnes qui ont besoin d’un billet, enfants de 7 ans et plus inclus. Les enfants de moins de 7 ans entrent gratuitement et ne sont pas à compter.",
       "dateHint": "Nous retirons votre billet au palais et vous l'envoyons par e-mail. La date du jour est réservable jusqu'à {time}, heure de Marrakech — ensuite, la première date possible est demain.",
@@ -785,7 +785,7 @@
       "phonePlaceholder": "Avec l’indicatif du pays, par ex. +33",
       "phoneHint": "Pour recevoir votre billet sur WhatsApp, et pour ne pas avoir à le ressaisir au paiement.",
       "chooseTitle": "Comment souhaitez-vous payer ?",
-      "chooseHint": "Payez avec votre compte PayPal, ou par carte bancaire — aucun compte PayPal n’est nécessaire.",
+      "chooseHint": "Payez par carte bancaire — aucun compte PayPal n’est nécessaire. Ou utilisez votre compte PayPal si vous en avez un.",
       "paymentMethods": "Paiement sécurisé — nous acceptons PayPal et les principales cartes"
     },
     "confirmation": {

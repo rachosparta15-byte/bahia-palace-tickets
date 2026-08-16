@@ -167,7 +167,7 @@
       }
     },
     "form": {
-      "acceptCombined": "Posso cancelar gratuitamente até o meu código QR ser enviado. Compreendo que esse envio conclui integralmente a minha encomenda e que, a partir desse momento, o direito de livre resolução de 14 dias deixa de se aplicar, e aceito as <terms>condições de venda</terms> e a <refund>política de cancelamento</refund>.",
+      "acceptCombined": "Aceito as <terms>condições de venda</terms> e a <refund>política de cancelamento</refund> e compreendo que o meu cancelamento gratuito termina quando o meu código QR é enviado.",
       "securePayment": "<b>Pagamento seguro.</b> Paga no PayPal. Os dados do seu cartão vão diretamente para o PayPal e nunca chegam aos nossos servidores.",
       "errors": {
         "consent": "Confirme antes de continuar — é necessário para concluir a reserva.",
@@ -207,7 +207,7 @@
       "phonePlaceholder": "Com o indicativo do país, ex. +351",
       "phoneHint": "Para receber o bilhete por WhatsApp e para não ter de o escrever outra vez no pagamento.",
       "chooseTitle": "Como prefere pagar?",
-      "chooseHint": "Pague com a sua conta PayPal ou com qualquer cartão de débito ou crédito — não é preciso conta PayPal.",
+      "chooseHint": "Pague com cartão de débito ou crédito — não é preciso conta PayPal. Ou use a sua conta PayPal, se tiver uma.",
       "paymentMethods": "Pagamento seguro — aceitamos PayPal e os principais cartões"
     },
     "testMode": {

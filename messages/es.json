@@ -769,7 +769,7 @@
       },
       "summaryTitle": "Resumen del pedido",
       "productName": "Palacio de la Bahía — Pack Completo del Visitante",
-      "acceptCombined": "Puedo cancelar gratis hasta que se envíe mi código QR. Entiendo que ese envío completa mi pedido, por lo que a partir de ese momento el derecho de desistimiento de 14 días deja de aplicarse, y acepto las <terms>Condiciones de venta</terms> y la <refund>política de cancelación</refund>.",
+      "acceptCombined": "Acepto las <terms>Condiciones de venta</terms> y la <refund>política de cancelación</refund>, y entiendo que mi cancelación gratuita termina cuando se envía mi código QR.",
       "securePayment": "<b>Pago seguro.</b> Pagas en PayPal. Los datos de tu tarjeta van directamente a PayPal y nunca llegan a nuestros servidores.",
       "visitorsHint": "Cuente a todas las personas que necesitan entrada, incluidos los niños a partir de 7 años. Los menores de 7 años entran gratis y no se cuentan.",
       "dateHint": "Recogemos tu entrada en el palacio y te la enviamos por correo. Puedes reservar para hoy hasta las {time}, hora de Marrakech; después, la primera fecha disponible es mañana.",
@@ -785,7 +785,7 @@
       "phonePlaceholder": "Incluye el prefijo del país, p. ej. +34",
       "phoneHint": "Para enviarte la entrada por WhatsApp y para no tener que escribirlo otra vez al pagar.",
       "chooseTitle": "¿Cómo quieres pagar?",
-      "chooseHint": "Paga con tu cuenta de PayPal o con cualquier tarjeta de débito o crédito: no hace falta cuenta de PayPal.",
+      "chooseHint": "Paga con tarjeta de débito o crédito: no hace falta ninguna cuenta de PayPal. O usa tu cuenta de PayPal si tienes una.",
       "paymentMethods": "Pago seguro: aceptamos PayPal y las principales tarjetas"
     },
     "confirmation": {
