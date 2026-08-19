@@ -1,6 +1,6 @@
 import prisma from '@/lib/db';
 import { BOOKING_STATUS } from '@/lib/booking-lifecycle';
-import { ADULT_PRICE_EUR_CENTS, CHILD_PRICE_EUR_CENTS } from '@/config/pricing';
+import { ADULT_PRICE_EUR_CENTS, CHILD_PRICE_EUR_CENTS, packTotalCents } from '@/config/pricing';
 
 /**
  * Who is eligible for a follow-up email, and the token that lets them stop.
@@ -126,6 +126,27 @@ export const FOLLOW_UP_PRICES = {
   adult: ADULT_PRICE_EUR_CENTS / 100,
   child: CHILD_PRICE_EUR_CENTS / 100,
 };
+
+/**
+ * What this party costs TODAY, not what it cost when they walked away.
+ *
+ * `booking.totalAmount` is the figure quoted at the time, and for an unpaid
+ * booking it is a quote that has expired. The adult price moved from 11.99 to
+ * 12.99 on 19/08/2026, which put "1 adult × €12.99" above "Total €11.99" in
+ * the same table — two different prices in one email, neither of them safe to
+ * act on.
+ *
+ * The direction matters more than the mismatch. Whoever clicks through is
+ * re-priced by the checkout and charged the current rate, so the stale total
+ * advertised LESS than we would take. That is drip pricing, and these are EU
+ * consumers who are owed the total payable up front.
+ *
+ * So the email quotes what the button will charge. It is the only number that
+ * can still be true by the time they read it.
+ */
+export function currentTotalEur(booking: { adults: number; children: number }): number {
+  return packTotalCents(booking.adults, booking.children) / 100;
+}
 
 export function resumeUrl(locale: string): string {
   return `${SITE_URL}/${locale || 'en'}/visitor-pack#checkout`;

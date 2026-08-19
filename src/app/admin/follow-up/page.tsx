@@ -1,4 +1,9 @@
-import { abandonedCandidates, crossSellCandidates, ABANDONED_AFTER_HOURS } from '@/lib/follow-up';
+import {
+  abandonedCandidates,
+  crossSellCandidates,
+  currentTotalEur,
+  ABANDONED_AFTER_HOURS,
+} from '@/lib/follow-up';
 import { FollowUpList, type Candidate } from './FollowUpList';
 
 export const dynamic = 'force-dynamic';
@@ -30,7 +35,10 @@ function toCandidate(b: {
     party:
       `${b.adults} adult${b.adults === 1 ? '' : 's'}` +
       (b.children > 0 ? ` + ${b.children} child${b.children === 1 ? '' : 'ren'}` : ''),
-    total: b.totalAmount,
+    // The price today, matching the email — not `totalAmount`, which is the
+    // quote from the day they walked away and can be a price we no longer
+    // charge. The operator and the customer must be reading the same number.
+    total: currentTotalEur(b),
   };
 }
 
