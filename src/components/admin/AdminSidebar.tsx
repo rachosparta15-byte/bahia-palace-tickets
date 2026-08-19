@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import {
   LayoutDashboard, Ticket, FileText, ShieldAlert,
   LogOut, Settings, Star, BookOpen, Images, Mail, BarChart2, MessageSquare,
-  MousePointerClick,
+  MousePointerClick, Send,
 } from 'lucide-react';
 import { LogoMark } from '@/components/ui/LogoMark';
 
@@ -37,6 +37,9 @@ const NAV_GROUPS = [
       // Above Leads deliberately: since payments went live the ticket CTAs
       // route straight to the checkout and no Lead row is created, so Leads
       // is empty by design and this is where the answer actually is.
+      // Between the two lists it draws from: the people on it come from
+      // Before-Payment (never paid) and from delivered bookings.
+      { href: '/admin/follow-up', label: 'Follow-up', icon: Send,          style: 'normal' },
       { href: '/admin/clicks',    label: 'Clicks',    icon: MousePointerClick, style: 'normal' },
       { href: '/admin/leads',     label: 'Leads',     icon: Mail,          style: 'normal' },
       { href: '/admin/messages',  label: 'Messages',  icon: MessageSquare, style: 'normal' },

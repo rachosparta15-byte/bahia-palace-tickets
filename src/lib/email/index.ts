@@ -9,4 +9,4 @@ export const email =
     ? await import('./resend')
     : await import('./mock');
 
-export type { BookingEmailParams, RefundEmailParams, ContactEmailParams, TicketDeliveryEmailParams } from './mock';
+export type { BookingEmailParams, RefundEmailParams, ContactEmailParams, TicketDeliveryEmailParams, FollowUpEmailParams } from './mock';

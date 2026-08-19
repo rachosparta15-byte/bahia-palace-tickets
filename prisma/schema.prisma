@@ -40,6 +40,21 @@ model Booking {
   // never silently grant or deny a refund the terms don't allow.
   /// When the QR was marked delivered. Null = still refundable.
   qrSentAt         DateTime?
+
+  // ── Follow-up email (operator-triggered, never automatic) ─────────
+  /// When the abandoned-checkout reminder was sent for this booking. Null
+  /// means never. The column IS the "send it once" rule: a second reminder to
+  /// somebody who already ignored the first is the message that gets a domain
+  /// reported, and a NULL check is cheaper to reason about than a date window.
+  reminderSentAt   DateTime?
+  /// When the other-monuments email was sent. Same rule, separate column —
+  /// the two are different messages to different people and one must not
+  /// suppress the other.
+  crossSellSentAt  DateTime?
+  /// Set by the unsubscribe link. Checked before any follow-up, and
+  /// deliberately NOT checked before transactional mail: someone who opts out
+  /// of suggestions has not opted out of the ticket they paid for.
+  emailOptOut      Boolean  @default(false)
   /// The ticket code, when delivery is a code string rather than a file.
   qrCode           String?
   /// Storage reference for an uploaded QR image/PDF. See src/lib/qr-storage.

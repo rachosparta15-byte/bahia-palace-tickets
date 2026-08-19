@@ -157,3 +157,36 @@ export async function sendContactNotification(params: ContactEmailParams): Promi
   console.log('  Message: ', params.message);
   console.log('========================================\n');
 }
+
+/**
+ * Follow-up mail — the two messages that are not transactional.
+ *
+ * Kept in the same shape as everything else here so the provider swap stays a
+ * one-line env change, and so a developer running EMAIL_PROVIDER=mock sees in
+ * the console exactly who would have been written to.
+ */
+export interface FollowUpEmailParams {
+  to: string;
+  customerName: string;
+  reference: string;
+  visitDate: string;
+  adults: number;
+  children: number;
+  totalAmount: number;
+  currency: string;
+  adultPrice: number;
+  childPrice: number;
+  resumeUrl: string;
+  unsubscribeUrl: string;
+  whatsapp?: string | null;
+}
+
+export async function sendAbandonedCheckoutReminder(params: FollowUpEmailParams): Promise<void> {
+  console.log(`[email:mock] abandoned-checkout reminder → ${params.to} (${params.reference})`);
+}
+
+export async function sendMonumentCrossSell(
+  params: Pick<FollowUpEmailParams, 'to' | 'customerName' | 'visitDate' | 'unsubscribeUrl' | 'whatsapp'>,
+): Promise<void> {
+  console.log(`[email:mock] other-monuments email → ${params.to}`);
+}

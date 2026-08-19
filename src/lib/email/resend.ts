@@ -3,6 +3,7 @@
 // Set EMAIL_PROVIDER=resend and RESEND_API_KEY in .env.
 
 import type {
+  FollowUpEmailParams,
   BookingEmailParams,
   RefundEmailParams,
   ContactEmailParams,
@@ -807,4 +808,49 @@ export function buildMonumentCrossSellHtml(p: {
     </body>
     </html>
   `;
+}
+
+export async function sendAbandonedCheckoutReminder(params: FollowUpEmailParams): Promise<void> {
+  // @ts-ignore — installed in Phase B: npm install resend
+  const { Resend } = await import('resend');
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
+  await resend.emails.send({
+    from: `Bahia Palace Tickets <${FROM}>`,
+    to: params.to,
+    replyTo: REPLY_TO,
+    subject: `Your Bahia Palace booking for ${humanDate(params.visitDate)} is still open`,
+    html: buildAbandonedCheckoutHtml(params),
+    /*
+     * One-click unsubscribe, in the headers as well as the footer.
+     *
+     * Gmail and Yahoo require it on bulk mail, and a message they class as
+     * bulk without it lands in spam — taking the transactional mail from the
+     * same domain down with it, which on this domain is the ticket itself.
+     */
+    headers: {
+      'List-Unsubscribe': `<${params.unsubscribeUrl}>`,
+      'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+    },
+  });
+}
+
+export async function sendMonumentCrossSell(
+  params: Pick<FollowUpEmailParams, 'to' | 'customerName' | 'visitDate' | 'unsubscribeUrl' | 'whatsapp'>,
+): Promise<void> {
+  // @ts-ignore — installed in Phase B: npm install resend
+  const { Resend } = await import('resend');
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
+  await resend.emails.send({
+    from: `Bahia Palace Tickets <${FROM}>`,
+    to: params.to,
+    replyTo: REPLY_TO,
+    subject: `You're at Bahia on ${humanDate(params.visitDate)} — El Badi is 8 minutes away`,
+    html: buildMonumentCrossSellHtml(params),
+    headers: {
+      'List-Unsubscribe': `<${params.unsubscribeUrl}>`,
+      'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+    },
+  });
 }
