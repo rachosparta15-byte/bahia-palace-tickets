@@ -25,23 +25,23 @@ interface Props {
 const META: Record<string, { title: string; description: string }> = {
   en: {
     title: `Bahia Palace Skip-the-Line Tickets 2026 | Skip the Queue`,
-    description: `Skip the ticket queue at Bahia Palace. Entry ticket, digital audio guide and WhatsApp support for EUR 11.99 per person, with free cancellation.`,
+    description: `Skip the ticket queue at Bahia Palace. Entry ticket, digital audio guide and WhatsApp support, with free cancellation until we send it.`,
   },
   fr: {
     title: `Billet Coupe-File Palais Bahia 2026 | Évitez la file`,
-    description: `Évitez la file au Palais Bahia. Billet d'entrée, audioguide numérique et assistance WhatsApp pour 11,99 € par personne, annulation gratuite.`,
+    description: `Évitez la file au Palais Bahia. Billet d'entrée, audioguide numérique et assistance WhatsApp, annulation gratuite jusqu'à l'envoi.`,
   },
   de: {
     title: `Bahia Palast Skip-the-Line Ticket 2026 | Ohne Anstehen`,
-    description: `Ohne Anstehen in den Bahia Palast. Eintrittsticket, digitaler Audioguide und WhatsApp-Support für 11,99 € pro Person, kostenlose Stornierung.`,
+    description: `Umgehen Sie die Warteschlange am Bahia-Palast. Eintrittsticket, digitaler Audioguide und WhatsApp-Support, kostenlos stornierbar bis zum Versand.`,
   },
   it: {
     title: `Biglietto Salta-Fila Palazzo Bahia 2026 | Niente coda`,
-    description: `Salta la fila al Palazzo Bahia. Biglietto d'ingresso, audioguida digitale e assistenza WhatsApp a 11,99 € a persona, cancellazione gratuita.`,
+    description: `Salta la fila al Palazzo Bahia. Biglietto, audioguida digitale e assistenza WhatsApp, cancellazione gratuita fino all’invio.`,
   },
   es: {
     title: `Entrada Sin Cola Palacio Bahía 2026 | Evita la cola`,
-    description: `Evita la cola en el Palacio Bahía. Entrada, audioguía digital y asistencia por WhatsApp por 11,99 € por persona, con cancelación gratuita.`,
+    description: `Evita la cola en el Palacio Bahía. Entrada, audioguía digital y ayuda por WhatsApp, con cancelación gratuita hasta que la enviemos.`,
   },
 };
 

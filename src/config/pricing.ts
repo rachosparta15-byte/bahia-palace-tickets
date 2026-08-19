@@ -106,12 +106,11 @@ export const OFFICIAL_DOOR_PRICE_LABEL = {
  * Covers the official 100 MAD ticket bought in their name, the multilingual
  * audio guide, the visitor map and support.
  *
- * 11.99 HERE, 12.99 ON EL BADI AND SAADIAN. That is deliberate, not drift: the
- * network moved to 12.99 on 19/08/2026 and the owner pulled Bahia back the
- * same day. Do not "restore consistency" without asking — the sister sites
- * charge what their own config says, and this one is the exception on purpose.
+ * 12.99 across the whole network, and the same figure in the hub's own config
+ * — the brief exception on 19/08/2026, when this site alone sat at 11.99, was
+ * closed the same day so that every document and every site quotes one price.
  */
-export const ADULT_PRICE_EUR_CENTS = 1199;
+export const ADULT_PRICE_EUR_CENTS = 1299;
 
 /**
  * What we charge per child aged 7 to 13, in EUR cents.
