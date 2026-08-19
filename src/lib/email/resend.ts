@@ -589,3 +589,222 @@ function buildBookingHtml(p: BookingEmailParams): string {
     </html>
   `;
 }
+
+/**
+ * The abandoned-checkout reminder.
+ *
+ * Sent to someone who filled in the form, reached PayPal and never paid. We
+ * hold their name, their email, their visit date and their party size, so this
+ * can be a specific message about their booking rather than an advert.
+ *
+ * WHAT IS DELIBERATELY NOT IN IT:
+ *
+ *   - Scarcity. We do not hold ticket stock, so "only 2 left" would be a lie
+ *     and the kind that a EU consumer authority treats as an unfair practice.
+ *     The only real urgency here is their own visit date, and it says that.
+ *   - A discount. The price is the price, and a first-time buyer who learns
+ *     that waiting produces a coupon has learned the wrong lesson.
+ *   - Any suggestion that a payment failed or is owed. Nothing was charged;
+ *     the first line says so, because "your booking is incomplete" reads to
+ *     some people as a debt.
+ *
+ * One message per booking, and the footer carries an opt-out — these are EU
+ * consumers, and an email they cannot stop is a complaint waiting to happen.
+ */
+export function buildAbandonedCheckoutHtml(p: {
+  customerName: string;
+  reference: string;
+  visitDate: string;
+  adults: number;
+  children: number;
+  totalAmount: number;
+  currency: string;
+  adultPrice: number;
+  childPrice: number;
+  resumeUrl: string;
+  unsubscribeUrl: string;
+  whatsapp?: string | null;
+}): string {
+  /*
+   * Priced line by line, not as one total.
+   *
+   * The whole point of this email is that someone hesitated over a number. A
+   * bare "33.97 EUR" makes them re-derive where it came from; the two rates
+   * shown separately answer it before they ask, and the child rate is the
+   * cheaper half of the answer.
+   */
+  const lines = [
+    `${p.adults} adult${p.adults === 1 ? '' : 's'} &times; &euro;${p.adultPrice.toFixed(2)}`,
+    ...(p.children > 0
+      ? [`${p.children} child${p.children === 1 ? '' : 'ren'} &times; &euro;${p.childPrice.toFixed(2)}`]
+      : []),
+  ].join('<br/>');
+
+  return `
+    <!DOCTYPE html>
+    <html>
+    <head><meta charset="utf-8"/></head>
+    <body style="font-family:sans-serif;background:#FAF3E7;padding:40px 20px">
+      <div style="max-width:560px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden">
+        <div style="background:#C4452D;padding:26px;text-align:center">
+          <h1 style="color:#fff;margin:0;font-size:21px">Bahia Palace Tickets</h1>
+          <p style="color:rgba(255,255,255,0.9);margin:6px 0 0;font-size:14px">Your booking is still open</p>
+        </div>
+
+        <div style="padding:28px">
+          <p style="margin:0 0 18px;color:#444;line-height:1.6">
+            Hi <strong>${esc(p.customerName)}</strong>, you started booking Bahia Palace for
+            <strong>${esc(humanDate(p.visitDate))}</strong> and the payment was not completed.
+            <strong>Nothing was charged.</strong> Your details are still here, so you can pick up
+            where you left off.
+          </p>
+
+          <table style="width:100%;border-collapse:collapse;margin:0 0 22px;font-size:14px">
+            <tr><td style="padding:8px;color:#666">Visit date</td><td style="padding:8px;font-weight:bold">${esc(humanDate(p.visitDate))}</td></tr>
+            <tr style="background:#FAF3E7"><td style="padding:8px;color:#666">Visitors</td><td style="padding:8px;line-height:1.7">${lines}</td></tr>
+            <tr><td style="padding:8px;color:#666">Total</td><td style="padding:8px;font-weight:bold;color:#C4452D">&euro;${p.totalAmount.toFixed(2)}</td></tr>
+          </table>
+
+          <p style="margin:0 0 22px;text-align:center">
+            <a href="${esc(p.resumeUrl)}" style="display:inline-block;background:#C4452D;color:#fff;text-decoration:none;font-weight:bold;font-size:15px;padding:13px 28px;border-radius:8px">
+              Finish my booking
+            </a>
+          </p>
+
+          <div style="padding:16px 18px;background:#FAF3E7;border-radius:9px">
+            <p style="margin:0 0 12px;font-weight:bold;color:#3D2817;font-size:15px">Why book it here</p>
+
+            <p style="margin:0 0 11px;color:#666;font-size:14px;line-height:1.55">
+              <strong style="color:#3D2817">An audio guide, so you need no guide.</strong><br/>
+              Room by room, in your own language, on your own phone. Download it before you go and
+              it plays with no signal inside the palace — nobody to hire at the gate, nobody
+              hurrying you along.
+            </p>
+
+            <p style="margin:0 0 11px;color:#666;font-size:14px;line-height:1.55">
+              <strong style="color:#3D2817">Your ticket has no date on it.</strong><br/>
+              Go on ${esc(humanDate(p.visitDate))}, or don't. The code carries no date and no name,
+              so if your plans move — or that day comes and goes — it still admits you whenever you
+              next come. You are not buying one morning; you are buying entry.
+            </p>
+
+            <p style="margin:0;color:#666;font-size:14px;line-height:1.55">
+              <strong style="color:#3D2817">We stay on WhatsApp with you.</strong><br/>
+              Not only about the palace, and not only on the day. Where to eat, how to cross the
+              medina, what is worth your afternoon and what is not — ask us anything about
+              Marrakech while you are here.
+            </p>
+          </div>
+
+          ${buildSupportBlock(p.whatsapp ?? null)}
+        </div>
+
+        <div style="background:#3D2817;padding:16px;text-align:center">
+          <p style="color:#E8D5B7;margin:0 0 6px;font-size:12px">
+            &copy; ${new Date().getFullYear()} Bahia Palace Tickets &bull; Marrakech, Morocco
+          </p>
+          <p style="color:#B39B7C;margin:0;font-size:11px">
+            You are receiving this once because you started a booking with us.
+            <a href="${esc(p.unsubscribeUrl)}" style="color:#E8D5B7">Don't send me reminders</a>.
+          </p>
+        </div>
+      </div>
+    </body>
+    </html>
+  `;
+}
+
+/**
+ * The cross-sell to a customer who has already bought.
+ *
+ * Not a broadcast. This goes to someone who paid us, so it can assume the one
+ * thing an advert cannot: they already know how this works and it worked. That
+ * is the whole asset, and it is why the message leads with their own booking
+ * rather than with a monument.
+ *
+ * MARRAKECH ONLY. The Caves of Hercules are in Tangier, nine hours away — in
+ * an email whose premise is "you are already here", a third card that is not
+ * here weakens the two that are. `buildNetworkBlock` still lists everything;
+ * this one is deliberately narrower.
+ *
+ * Anything not selling today is dropped rather than teased. A card the reader
+ * cannot act on is a card that trains them to skim the next one.
+ */
+export function buildMonumentCrossSellHtml(p: {
+  customerName: string;
+  visitDate: string;
+  unsubscribeUrl: string;
+  whatsapp?: string | null;
+}): string {
+  const sites = crossSellSites().filter(
+    (s) => s.ticketsOpen && s.priceEUR !== null && s.location.startsWith('Marrakech'),
+  );
+
+  const cards = sites
+    .map(
+      (s) => `
+      <div style="margin:0 0 14px;padding:16px 18px;background:#FAF3E7;border-radius:10px">
+        <p style="margin:0 0 2px">
+          <a href="${esc(s.url)}" style="color:#C4452D;font-weight:bold;font-size:16px;text-decoration:none">${esc(s.name)}</a>
+        </p>
+        <p style="margin:0 0 8px;color:#999;font-size:12px">${esc(s.location)}</p>
+        <p style="margin:0 0 12px;color:#666;font-size:14px;line-height:1.55">${esc(s.blurb)}</p>
+        <a href="${esc(s.url)}" style="display:inline-block;background:#C4452D;color:#fff;text-decoration:none;font-weight:bold;font-size:14px;padding:10px 20px;border-radius:7px">
+          Book from &euro;${s.priceEUR!.toFixed(2)}
+        </a>
+      </div>`,
+    )
+    .join('');
+
+  return `
+    <!DOCTYPE html>
+    <html>
+    <head><meta charset="utf-8"/></head>
+    <body style="font-family:sans-serif;background:#FAF3E7;padding:40px 20px">
+      <div style="max-width:560px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden">
+        <div style="background:#C4452D;padding:26px;text-align:center">
+          <h1 style="color:#fff;margin:0;font-size:21px">Bahia Palace Tickets</h1>
+          <p style="color:rgba(255,255,255,0.9);margin:6px 0 0;font-size:14px">Two more, a short walk away</p>
+        </div>
+
+        <div style="padding:28px">
+          <p style="margin:0 0 20px;color:#444;line-height:1.6">
+            Hi <strong>${esc(p.customerName)}</strong>, your Bahia Palace ticket is booked for
+            <strong>${esc(humanDate(p.visitDate))}</strong>. Bahia takes most people about an hour,
+            and the two monuments below are within a ten-minute walk of it — so if you have an
+            afternoon in the medina, this is how to spend the rest of it.
+          </p>
+
+          ${cards}
+
+          <div style="margin:22px 0 0;padding:16px 18px;border:1px solid #EFE4D2;border-radius:10px">
+            <p style="margin:0 0 10px;font-weight:bold;color:#3D2817;font-size:15px">Exactly like your Bahia booking</p>
+            <p style="margin:0 0 9px;color:#666;font-size:14px;line-height:1.55">
+              Same team, same way it works. Your own audio guide, room by room, downloaded before
+              you go and playing with no signal inside.
+            </p>
+            <p style="margin:0 0 9px;color:#666;font-size:14px;line-height:1.55">
+              The code carries no date and no name, so you decide the morning you use it — not now.
+            </p>
+            <p style="margin:0;color:#666;font-size:14px;line-height:1.55">
+              Free cancellation until we send it, and the same WhatsApp number you already have.
+            </p>
+          </div>
+
+          ${buildSupportBlock(p.whatsapp ?? null)}
+        </div>
+
+        <div style="background:#3D2817;padding:16px;text-align:center">
+          <p style="color:#E8D5B7;margin:0 0 6px;font-size:12px">
+            &copy; ${new Date().getFullYear()} Bahia Palace Tickets &bull; Marrakech, Morocco
+          </p>
+          <p style="color:#B39B7C;margin:0;font-size:11px">
+            Sent because you booked with us.
+            <a href="${esc(p.unsubscribeUrl)}" style="color:#E8D5B7">No more suggestions</a>.
+          </p>
+        </div>
+      </div>
+    </body>
+    </html>
+  `;
+}

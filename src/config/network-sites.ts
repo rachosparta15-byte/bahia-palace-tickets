@@ -42,8 +42,21 @@ export const NETWORK_SITES: NetworkSite[] = [
     url: 'https://badi-palace.com',
     blurb:
       'The ruined sixteenth-century palace of Ahmad al-Mansur, and the storks that now nest on its walls.',
-    priceEUR: 13.99,
-    ticketsOpen: false,
+    /*
+     * OPEN, and this file said otherwise.
+     *
+     * El Badi has been selling for some time — order BDP-TTREEW was paid at
+     * EUR23.98 for two on 19/08/2026 — while `ticketsOpen: false` here made
+     * every Bahia confirmation email tell the customer that tickets were not
+     * on sale and offer them a visitor guide instead. The one moment a buyer
+     * has just decided we are worth paying, spent on a "we can't sell you
+     * this" that was not true.
+     *
+     * The price is the hub's `allInclusivePriceEur`, which is what actually
+     * gets charged — 13.99 here was a figure nothing on that site quotes.
+     */
+    priceEUR: 11.99,
+    ticketsOpen: true,
   },
   {
     name: 'Saadian Tombs',
@@ -51,8 +64,10 @@ export const NETWORK_SITES: NetworkSite[] = [
     url: 'https://saadian-tombs.com',
     blurb:
       'Sealed for two centuries and reopened in 1917. The Hall of Twelve Columns is the finest room in the city.',
-    priceEUR: 13.99,
-    ticketsOpen: false,
+    // Also open: saadian-tombs.com carries a live "Book Now" into
+    // /tickets/#checkout, and the hub prices it at 11.99 like El Badi.
+    priceEUR: 11.99,
+    ticketsOpen: true,
   },
   {
     name: 'Caves of Hercules',
@@ -60,6 +75,9 @@ export const NETWORK_SITES: NetworkSite[] = [
     url: 'https://herculescaves.com',
     blurb:
       'A sea cave whose opening onto the Atlantic is shaped, from the inside, like the map of Africa.',
+    // Left closed deliberately: this one was NOT verified as selling, and the
+    // rule in this file is that `ticketsOpen` flips when payments go live on
+    // that site, not when somebody assumes they have.
     priceEUR: 11.99,
     ticketsOpen: false,
   },
