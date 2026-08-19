@@ -66,51 +66,51 @@ export const dynamic = 'force-dynamic';
  */
 const META: Record<string, { title: string; description: string; schema: string }> = {
   en: {
-    title: 'Book Bahia Palace Tickets — €{price} with Audio Guide',
+    title: 'Book Bahia Palace Tickets 2026 — Skip the Queue with Audio Guide',
     description:
-      'Official Bahia Palace entry ticket ({mad} MAD, purchased for you) plus an audio guide, visitor map and support — €{price} per person.',
+      'Official Bahia Palace entry ticket ({mad} MAD at the gate, purchased in your name) plus an audio guide, visitor map and WhatsApp support. Free cancellation.',
     schema:
       'Official Bahia Palace entry ticket ({mad} MAD ≈ €{eur} at the rate of {date}, purchased on the visitor’s behalf) bundled with an audio guide, visitor map and support.',
   },
   fr: {
-    title: 'Billets Palais Bahia — €{price} avec audioguide',
+    title: 'Billets Palais Bahia 2026 — Coupe-file avec audioguide',
     description:
-      'Billet d’entrée officiel du Palais Bahia ({mad} MAD, acheté pour vous), audioguide, plan de visite et assistance — €{price} par personne.',
+      'Billet d’entrée officiel du Palais Bahia ({mad} MAD sur place, acheté à votre nom), audioguide, plan de visite et assistance WhatsApp. Annulation gratuite.',
     schema:
       'Billet d’entrée officiel du Palais Bahia ({mad} MAD ≈ €{eur} au taux du {date}, acheté pour le visiteur), accompagné d’un audioguide, d’un plan de visite et d’une assistance.',
   },
   de: {
-    title: 'Bahia-Palast Tickets buchen — €{price} mit Audioguide',
+    title: 'Bahia-Palast Tickets 2026 — Ohne Anstehen, mit Audioguide',
     description:
-      'Offizielles Eintrittsticket für den Bahia-Palast ({mad} MAD, für Sie gekauft), dazu Audioguide, Lageplan und Support — €{price} pro Person.',
+      'Offizielles Eintrittsticket für den Bahia-Palast ({mad} MAD vor Ort, auf Ihren Namen gekauft), dazu Audioguide, Lageplan und WhatsApp-Support. Kostenlos stornierbar.',
     schema:
       'Offizielles Eintrittsticket für den Bahia-Palast ({mad} MAD ≈ €{eur} zum Kurs vom {date}, im Namen des Besuchers gekauft), zusammen mit Audioguide, Lageplan und Support.',
   },
   es: {
-    title: 'Entradas Palacio Bahía — €{price} con audioguía',
+    title: 'Entradas Palacio Bahía 2026 — Sin colas, con audioguía',
     description:
-      'Entrada oficial al Palacio de la Bahía ({mad} MAD, comprada a tu nombre), con audioguía, plano de visita y atención — €{price} por persona.',
+      'Entrada oficial al Palacio Bahía ({mad} MAD en taquilla, comprada a tu nombre), audioguía, plano de visita y ayuda por WhatsApp. Cancelación gratuita.',
     schema:
       'Entrada oficial al Palacio de la Bahía ({mad} MAD ≈ €{eur} al cambio del {date}, comprada en nombre del visitante), junto con audioguía, plano de visita y atención.',
   },
   it: {
-    title: 'Biglietti Palazzo Bahia — €{price} con audioguida',
+    title: 'Biglietti Palazzo Bahia 2026 — Salta la fila, con audioguida',
     description:
-      'Biglietto d’ingresso ufficiale per il Palazzo Bahia ({mad} MAD, acquistato per te), con audioguida, mappa della visita e assistenza — €{price} a persona.',
+      'Biglietto d’ingresso ufficiale del Palazzo Bahia ({mad} MAD in loco, acquistato a tuo nome), audioguida, mappa e assistenza WhatsApp. Cancellazione gratuita.',
     schema:
       'Biglietto d’ingresso ufficiale per il Palazzo Bahia ({mad} MAD ≈ €{eur} al cambio del {date}, acquistato per conto del visitatore), insieme ad audioguida, mappa della visita e assistenza.',
   },
   ar: {
-    title: 'حجز تذاكر قصر الباهية — €{price} مع دليل صوتي',
+    title: 'حجز تذاكر قصر الباهية 2026 — بدون طابور، مع دليل صوتي',
     description:
-      'تذكرة الدخول الرسمية لقصر الباهية ({mad} درهم، مشتراة باسمك)، مع دليل صوتي وخريطة للزيارة ودعم — €{price} للشخص.',
+      'تذكرة الدخول الرسمية لقصر الباهية ({mad} درهم عند الباب، مشتراة باسمك)، مع دليل صوتي وخريطة الزيارة ودعم واتساب. إلغاء مجاني.',
     schema:
       'تذكرة الدخول الرسمية لقصر الباهية ({mad} درهم ≈ €{eur} بسعر صرف {date}، مشتراة نيابة عن الزائر)، مع دليل صوتي وخريطة للزيارة ودعم.',
   },
   pt: {
-    title: 'Bilhetes Palácio da Bahia — €{price} com audioguia',
+    title: 'Bilhetes Palácio da Bahia 2026 — Sem filas, com audioguia',
     description:
-      'Bilhete de entrada oficial do Palácio da Bahia ({mad} MAD, comprado em seu nome), com audioguia, mapa de visita e apoio — €{price} por pessoa.',
+      'Bilhete de entrada oficial do Palácio da Bahia ({mad} MAD na bilheteira, comprado em seu nome), audioguia, mapa e apoio WhatsApp. Cancelamento gratuito.',
     schema:
       'Bilhete de entrada oficial do Palácio da Bahia ({mad} MAD ≈ €{eur} ao câmbio de {date}, comprado em nome do visitante), acompanhado de audioguia, mapa de visita e apoio.',
   },
