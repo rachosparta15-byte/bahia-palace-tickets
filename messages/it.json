@@ -659,7 +659,7 @@
       "ctaDisabledHint": "Non accettiamo ancora pagamenti. Torna a trovarci tra poco."
     },
     "price": {
-      "amount": "12,99 €",
+      "amount": "11,99 €",
       "perPerson": "a persona",
       "freeAlternative": "Vuoi solo il biglietto ufficiale? Ecco come",
       "includes": "Biglietto d’ingresso ufficiale + audioguida digitale",
@@ -839,7 +839,7 @@
         "body": "Ritiriamo il tuo biglietto al palazzo dopo il pagamento e te lo inviamo via e-mail: circa 24 ore prima di una visita futura, o appena lo abbiamo se vai oggi."
       },
       "price": {
-        "title": "12,99 € a persona adulta, 7,99 € per bambino dai 7 ai 13 anni. Tasse incluse.",
+        "title": "11,99 € a persona adulta, 7,99 € per bambino dai 7 ai 13 anni. Tasse incluse.",
         "body": "All’ingresso si fa la fila, si paga in dirham in contanti e si entra senza guida. Qui il biglietto ufficiale è acquistato a suo nome e inviato per e-mail prima della partenza, l’audioguida la accompagna sala per sala nella sua lingua, una persona risponde su WhatsApp mentre lei è davanti all’ingresso, e può annullare con rimborso totale finché il biglietto non è stato inviato. Il portale del Ministero è in fondo, se le basta il solo ingresso."
       },
       "independence": "visitbahiapalace.com è un servizio di prenotazione indipendente, gestito da specialisti dei monumenti di Marrakech. Non siamo il Ministero della Cultura né l’amministrazione del palazzo. Tutti i dettagli nelle nostre <terms>Condizioni di vendita</terms>."

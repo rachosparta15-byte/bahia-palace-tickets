@@ -657,7 +657,7 @@
       "ctaDisabledHint": "We are not taking payments yet. Check back shortly."
     },
     "price": {
-      "amount": "€12.99",
+      "amount": "€11.99",
       "perPerson": "per person",
       "freeAlternative": "Just want the official ticket? Here’s how",
       "includes": "Official entry ticket + digital audio guide",
@@ -837,7 +837,7 @@
         "body": "We collect your ticket from the palace after payment and email it to you — about 24 hours before a future visit, or as soon as we have it if you are going today."
       },
       "price": {
-        "title": "€12.99 per adult, €7.99 per child aged 7–13. All taxes included.",
+        "title": "€11.99 per adult, €7.99 per child aged 7–13. All taxes included.",
         "body": "At the gate you queue, pay cash in dirhams, and walk in with no guide. Here your official ticket is bought in your name and emailed before you travel, the audio guide plays room by room in your own language, a person answers on WhatsApp while you are standing outside, and you can cancel for every cent back until the ticket is sent. The Ministry’s own portal is linked below if entry alone is all you want."
       },
       "independence": "visitbahiapalace.com is an independent booking service run by specialists in Marrakech’s monuments. We are not the Ministry of Culture or the palace administration. Full details in our <terms>Terms of Sale</terms>."
