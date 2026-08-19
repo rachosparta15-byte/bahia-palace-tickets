@@ -61,11 +61,11 @@ const TICKETS_META: Record<string, { title: string; description: string }> = {
    * has not been read yet — this removes the overlap rather than guessing at
    * the ranking.
    */
-  en: { title: `Bahia Palace Ticket Prices 2026 — Fees & What's Included`, description: `Bahia Palace entry ticket, audio guide and WhatsApp support for €11.99 per person. Free cancellation until we send it. Open daily 9:00–17:00.` },
-  fr: { title: `Tarifs billets Palais Bahia 2026 — Prix et contenu`, description: `Billet d'entrée Palais Bahia, audioguide et assistance WhatsApp pour 11,99 € par personne. Annulation gratuite. Ouvert tous les jours 9h–17h.` },
-  es: { title: `Precios entradas Palacio Bahía 2026 — Tarifas incluidas`, description: `Entrada al Palacio Bahía, audioguía y ayuda por WhatsApp por 11,99 € por persona. Cancelación gratuita. Abierto todos los días 9:00–17:00.` },
-  de: { title: `Bahia Palast Ticketpreise 2026 — Preise & Leistungen`, description: `Bahia-Palast Eintrittsticket, Audioguide und WhatsApp-Support für 11,99 € pro Person. Kostenlose Stornierung. Täglich 9–17 Uhr geöffnet.` },
-  it: { title: `Prezzi biglietti Palazzo Bahia 2026 — Tariffe e servizi`, description: `Biglietto d'ingresso Palazzo Bahia, audioguida e assistenza WhatsApp a 11,99 € a persona. Cancellazione gratuita. Aperto ogni giorno 9:00–17:00.` },
+  en: { title: `Bahia Palace Ticket Prices 2026 — Fees & What's Included`, description: `Bahia Palace entry ticket, audio guide and WhatsApp support for €12.99 per person. Free cancellation until we send it. Open daily 9:00–17:00.` },
+  fr: { title: `Tarifs billets Palais Bahia 2026 — Prix et contenu`, description: `Billet d'entrée Palais Bahia, audioguide et assistance WhatsApp pour 12,99 € par personne. Annulation gratuite. Ouvert tous les jours 9h–17h.` },
+  es: { title: `Precios entradas Palacio Bahía 2026 — Tarifas incluidas`, description: `Entrada al Palacio Bahía, audioguía y ayuda por WhatsApp por 12,99 € por persona. Cancelación gratuita. Abierto todos los días 9:00–17:00.` },
+  de: { title: `Bahia Palast Ticketpreise 2026 — Preise & Leistungen`, description: `Bahia-Palast Eintrittsticket, Audioguide und WhatsApp-Support für 12,99 € pro Person. Kostenlose Stornierung. Täglich 9–17 Uhr geöffnet.` },
+  it: { title: `Prezzi biglietti Palazzo Bahia 2026 — Tariffe e servizi`, description: `Biglietto d'ingresso Palazzo Bahia, audioguida e assistenza WhatsApp a 12,99 € a persona. Cancellazione gratuita. Aperto ogni giorno 9:00–17:00.` },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

@@ -659,7 +659,7 @@
       "ctaDisabledHint": "Non accettiamo ancora pagamenti. Torna a trovarci tra poco."
     },
     "price": {
-      "amount": "11,99 €",
+      "amount": "12,99 €",
       "perPerson": "a persona",
       "freeAlternative": "Vuoi solo il biglietto ufficiale? Ecco come",
       "includes": "Biglietto d’ingresso ufficiale + audioguida digitale",
@@ -765,7 +765,8 @@
         "email": "Inserisci un indirizzo e-mail valido.",
         "visitors": "Inserisci un numero compreso tra 1 e {max}.",
         "consent": "Conferma prima di continuare: è necessario per completare la prenotazione.",
-        "tooSoon": "Le prenotazioni per la giornata in corso chiudono alle {time}, ora di Marrakech, così possiamo ritirare il biglietto prima della chiusura del palazzo. Scegli la prima data disponibile."
+        "tooSoon": "Le prenotazioni per la giornata in corso chiudono alle {time}, ora di Marrakech, così possiamo ritirare il biglietto prima della chiusura del palazzo. Scegli la prima data disponibile.",
+        "party": "Inserisci almeno un adulto e non più di {max} persone in totale."
       },
       "summaryTitle": "Riepilogo dell’ordine",
       "productName": "Palazzo Bahia — Pacchetto Visitatore Completo",
@@ -786,7 +787,14 @@
       "phoneHint": "Per ricevere il biglietto su WhatsApp e per non doverlo riscrivere al pagamento.",
       "chooseTitle": "Come preferisci pagare?",
       "chooseHint": "Paga con carta di debito o credito: non serve alcun account PayPal. Oppure usa il tuo account PayPal, se ne hai uno.",
-      "paymentMethods": "Pagamento sicuro — accettiamo PayPal e le principali carte"
+      "paymentMethods": "Pagamento sicuro — accettiamo PayPal e le principali carte",
+      "adultsLabel": "Adulti",
+      "adultsSubLabel": "Dai 14 anni",
+      "childrenLabel": "Bambini",
+      "childrenSubLabel": "Da {min} a {max} anni",
+      "underAgeFree": "I bambini sotto i {min} anni entrano gratis — non serve contarli qui.",
+      "adultsLine": "Adulti: {count} × {price} €",
+      "childrenLine": "Bambini {min}–{max}: {count} × {price} €"
     },
     "confirmation": {
       "packTitle": "Il tuo Pacchetto Visitatore Completo",
@@ -818,7 +826,8 @@
       "ticket": "Biglietto d’ingresso ufficiale del Palazzo della Bahia",
       "audio": "Audioguida digitale con la storia del palazzo",
       "whatsapp": "Assistenza WhatsApp prima e durante la visita",
-      "cancellation": "Cancellazione gratuita"
+      "cancellation": "Cancellazione gratuita",
+      "audioAdultsOnly": "Per ogni adulto della prenotazione. Il biglietto bambino comprende solo l’ingresso."
     },
     "reassurance": {
       "cancellation": {
@@ -830,8 +839,8 @@
         "body": "Ritiriamo il tuo biglietto al palazzo dopo il pagamento e te lo inviamo via e-mail: circa 24 ore prima di una visita futura, o appena lo abbiamo se vai oggi."
       },
       "price": {
-        "title": "11,99 € a persona, tasse incluse.",
-        "body": "Il biglietto d’ingresso ufficiale del Ministero della Cultura acquistato a tuo nome, l’audioguida digitale in cinque lingue e una persona vera su WhatsApp prima e durante la visita. Al pagamento non si aggiunge nulla."
+        "title": "12,99 € a persona adulta, 7,99 € per bambino dai 7 ai 13 anni. Tasse incluse.",
+        "body": "All’ingresso si fa la fila, si paga in dirham in contanti e si entra senza guida. Qui il biglietto ufficiale è acquistato a suo nome e inviato per e-mail prima della partenza, l’audioguida la accompagna sala per sala nella sua lingua, una persona risponde su WhatsApp mentre lei è davanti all’ingresso, e può annullare con rimborso totale finché il biglietto non è stato inviato. Il portale del Ministero è in fondo, se le basta il solo ingresso."
       },
       "independence": "visitbahiapalace.com è un servizio di prenotazione indipendente, gestito da specialisti dei monumenti di Marrakech. Non siamo il Ministero della Cultura né l’amministrazione del palazzo. Tutti i dettagli nelle nostre <terms>Condizioni di vendita</terms>."
     }

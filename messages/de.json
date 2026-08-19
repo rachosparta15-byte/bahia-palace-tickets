@@ -659,7 +659,7 @@
       "ctaDisabledHint": "Wir nehmen noch keine Zahlungen an. Schauen Sie in Kürze wieder vorbei."
     },
     "price": {
-      "amount": "11,99 €",
+      "amount": "12,99 €",
       "perPerson": "pro Person",
       "freeAlternative": "Sie möchten nur das offizielle Ticket? So geht es",
       "includes": "Offizielles Eintrittsticket + digitaler Audioguide",
@@ -765,7 +765,8 @@
         "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
         "visitors": "Bitte geben Sie eine Zahl zwischen 1 und {max} ein.",
         "consent": "Bitte bestätigen Sie dies, bevor Sie fortfahren — es ist für die Buchung erforderlich.",
-        "tooSoon": "Buchungen für denselben Tag schließen um {time} Uhr Marrakesch-Zeit, damit wir Ihr Ticket vor Schließung des Palasts abholen können. Bitte wählen Sie den nächsten verfügbaren Termin."
+        "tooSoon": "Buchungen für denselben Tag schließen um {time} Uhr Marrakesch-Zeit, damit wir Ihr Ticket vor Schließung des Palasts abholen können. Bitte wählen Sie den nächsten verfügbaren Termin.",
+        "party": "Bitte mindestens einen Erwachsenen angeben, insgesamt höchstens {max} Personen."
       },
       "summaryTitle": "Bestellübersicht",
       "productName": "Bahia-Palast — Komplettes Besucherpaket",
@@ -786,7 +787,14 @@
       "phoneHint": "Für den Ticketversand per WhatsApp – und damit Sie sie beim Bezahlen nicht erneut eingeben müssen.",
       "chooseTitle": "Wie möchten Sie bezahlen?",
       "chooseHint": "Zahlen Sie mit Debit- oder Kreditkarte – ein PayPal-Konto ist nicht nötig. Oder nutzen Sie Ihr PayPal-Konto, falls Sie eines haben.",
-      "paymentMethods": "Sichere Zahlung – wir akzeptieren PayPal und alle gängigen Karten"
+      "paymentMethods": "Sichere Zahlung – wir akzeptieren PayPal und alle gängigen Karten",
+      "adultsLabel": "Erwachsene",
+      "adultsSubLabel": "Ab 14 Jahren",
+      "childrenLabel": "Kinder",
+      "childrenSubLabel": "{min}–{max} Jahre",
+      "underAgeFree": "Kinder unter {min} Jahren haben freien Eintritt — sie müssen hier nicht mitgezählt werden.",
+      "adultsLine": "Erwachsene: {count} × {price} €",
+      "childrenLine": "Kinder {min}–{max}: {count} × {price} €"
     },
     "confirmation": {
       "packTitle": "Ihr komplettes Besucherpaket",
@@ -818,7 +826,8 @@
       "ticket": "Offizielles Eintrittsticket für den Bahia-Palast",
       "audio": "Digitaler Audioguide mit der Geschichte des Palastes",
       "whatsapp": "WhatsApp-Support vor und während Ihres Besuchs",
-      "cancellation": "Kostenlose Stornierung"
+      "cancellation": "Kostenlose Stornierung",
+      "audioAdultsOnly": "Für jeden Erwachsenen der Buchung. Das Kinderticket umfasst nur den Eintritt."
     },
     "reassurance": {
       "cancellation": {
@@ -830,8 +839,8 @@
         "body": "Wir holen Ihr Ticket nach der Zahlung im Palast ab und senden es per E-Mail — etwa 24 Stunden vor einem späteren Besuch, oder sofort, wenn Sie heute gehen."
       },
       "price": {
-        "title": "11,99 € pro Person, inklusive aller Steuern.",
-        "body": "Das offizielle Eintrittsticket des Kulturministeriums, in Ihrem Namen gekauft, der digitale Audioguide in fünf Sprachen und ein echter Mensch auf WhatsApp vor und während Ihres Besuchs. Beim Bezahlen kommt nichts hinzu."
+        "title": "12,99 € pro Erwachsenem, 7,99 € pro Kind von 7 bis 13 Jahren. Inklusive aller Steuern.",
+        "body": "Am Eingang stehen Sie an, zahlen bar in Dirham und gehen ohne Guide hinein. Hier wird Ihr offizielles Ticket auf Ihren Namen gekauft und vor der Reise per E-Mail geschickt, der Audioguide führt Sie Raum für Raum in Ihrer Sprache, ein Mensch antwortet auf WhatsApp, während Sie vor dem Tor stehen, und Sie können bis zum Versand des Tickets kostenlos stornieren. Das Portal des Ministeriums ist unten verlinkt, wenn Ihnen der Eintritt allein genügt."
       },
       "independence": "visitbahiapalace.com ist ein unabhängiger Buchungsservice, geführt von Spezialisten für die Monumente von Marrakesch. Wir sind weder das Kulturministerium noch die Palastverwaltung. Alle Einzelheiten in unseren <terms>Verkaufsbedingungen</terms>."
     }

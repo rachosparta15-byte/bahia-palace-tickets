@@ -657,7 +657,7 @@
       "ctaDisabledHint": "We are not taking payments yet. Check back shortly."
     },
     "price": {
-      "amount": "€11.99",
+      "amount": "€12.99",
       "perPerson": "per person",
       "freeAlternative": "Just want the official ticket? Here’s how",
       "includes": "Official entry ticket + digital audio guide",
@@ -763,7 +763,8 @@
         "email": "Please enter a valid email address.",
         "visitors": "Please enter a number between 1 and {max}.",
         "consent": "Please confirm this before continuing — it is required to complete your booking.",
-        "tooSoon": "Same-day booking closes at {time} Marrakech time, so we can collect your ticket before the palace shuts. Please choose the next available date."
+        "tooSoon": "Same-day booking closes at {time} Marrakech time, so we can collect your ticket before the palace shuts. Please choose the next available date.",
+        "party": "Please enter at least one adult, and no more than {max} people in total."
       },
       "summaryTitle": "Order summary",
       "productName": "Bahia Palace — Complete Visitor Pack",
@@ -784,7 +785,14 @@
       "phoneHint": "For WhatsApp delivery of your ticket, and so you do not have to type it again at payment.",
       "chooseTitle": "How would you like to pay?",
       "chooseHint": "Pay by debit or credit card — no PayPal account needed. Or use your PayPal account if you have one.",
-      "paymentMethods": "Secure payment — we accept PayPal and all major cards"
+      "paymentMethods": "Secure payment — we accept PayPal and all major cards",
+      "adultsLabel": "Adults",
+      "adultsSubLabel": "Age 14 and over",
+      "childrenLabel": "Children",
+      "childrenSubLabel": "Ages {min}–{max}",
+      "underAgeFree": "Children under {min} enter free — you do not need to count them here.",
+      "adultsLine": "Adults: {count} × €{price}",
+      "childrenLine": "Children {min}–{max}: {count} × €{price}"
     },
     "confirmation": {
       "packTitle": "Your Complete Visitor Pack",
@@ -816,7 +824,8 @@
       "ticket": "Official Bahia Palace entry ticket",
       "audio": "Digital audio guide with the palace’s history",
       "whatsapp": "WhatsApp support before and during your visit",
-      "cancellation": "Free cancellation"
+      "cancellation": "Free cancellation",
+      "audioAdultsOnly": "For each adult on the booking. A child ticket is entry only."
     },
     "reassurance": {
       "cancellation": {
@@ -828,8 +837,8 @@
         "body": "We collect your ticket from the palace after payment and email it to you — about 24 hours before a future visit, or as soon as we have it if you are going today."
       },
       "price": {
-        "title": "€11.99 per person, all taxes included.",
-        "body": "The official Ministry of Culture entry ticket bought in your name, the digital audio guide in five languages, and a real person on WhatsApp before and during your visit. Nothing is added at checkout."
+        "title": "€12.99 per adult, €7.99 per child aged 7–13. All taxes included.",
+        "body": "At the gate you queue, pay cash in dirhams, and walk in with no guide. Here your official ticket is bought in your name and emailed before you travel, the audio guide plays room by room in your own language, a person answers on WhatsApp while you are standing outside, and you can cancel for every cent back until the ticket is sent. The Ministry’s own portal is linked below if entry alone is all you want."
       },
       "independence": "visitbahiapalace.com is an independent booking service run by specialists in Marrakech’s monuments. We are not the Ministry of Culture or the palace administration. Full details in our <terms>Terms of Sale</terms>."
     }

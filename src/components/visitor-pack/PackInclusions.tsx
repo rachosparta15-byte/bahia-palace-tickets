@@ -35,7 +35,22 @@ import { cn } from '@/lib/utils';
  * §3.2 is breached — put a disclosure back in this block rather than leave
  * the booking page without one.
  */
-export function PackInclusions({ className }: { className?: string }) {
+/**
+ * @param childCount How many child tickets are on this order.
+ *
+ * Not cosmetic. The child pack is entry alone — the ministry's half-price
+ * ticket and nothing else — so a list that says "audio guide included" beside
+ * a party with children on it is selling something we do not deliver. The
+ * qualifier only appears when there is a child to qualify, because on an
+ * all-adult order it is noise.
+ */
+export function PackInclusions({
+  className,
+  childCount = 0,
+}: {
+  className?: string;
+  childCount?: number;
+}) {
   const t = useTranslations('visitorPack.inclusions');
 
   const items = [
@@ -51,7 +66,12 @@ export function PackInclusions({ className }: { className?: string }) {
         {items.map(({ icon: Icon, key }) => (
           <li key={key} className="flex items-start gap-2.5">
             <Icon size={14} className="mt-0.5 shrink-0 text-[#8FA63C]" aria-hidden="true" />
-            <span className="text-sm leading-snug text-[#F5E8CC]">{t(key)}</span>
+            <span className="text-sm leading-snug text-[#F5E8CC]">
+              {t(key)}
+              {key === 'audio' && childCount > 0 && (
+                <span className="block text-xs text-[#C4A882]">{t('audioAdultsOnly')}</span>
+              )}
+            </span>
           </li>
         ))}
       </ul>

@@ -29,6 +29,15 @@ export interface CheckoutParams {
   customerEmail: string;
   locale: string;
   quantity?: number;
+  /**
+   * What the buyer is actually buying, in words, for the statement line.
+   *
+   * The default reads "N visitor(s)", which stops being true the moment a
+   * party has two rates in it: three visitors at a total that is not three
+   * times any advertised price reads as an error on a statement, and an
+   * unexplained amount is the usual first step toward a chargeback.
+   */
+  lineDescription?: string;
   /** Split name, so PayPal's guest form opens already filled in. */
   customerFirstName?: string;
   customerLastName?: string;
@@ -121,7 +130,9 @@ export async function createCheckoutSession(params: CheckoutParams): Promise<Che
           reference_id: params.reference,
           // What appears on the buyer's PayPal statement. An unrecognisable
           // line here is the most common first step toward a dispute.
-          description: `${params.ticketName} — ${quantity} visitor(s)`,
+          description: params.lineDescription
+            ? `${params.ticketName} — ${params.lineDescription}`
+            : `${params.ticketName} — ${quantity} visitor(s)`,
           custom_id: params.bookingId,
           amount: { currency_code: params.currency.toUpperCase(), value: total },
         },

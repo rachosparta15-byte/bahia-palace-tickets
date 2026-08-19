@@ -659,7 +659,7 @@
       "ctaDisabledHint": "Nous n’acceptons pas encore les paiements. Revenez très bientôt."
     },
     "price": {
-      "amount": "11,99 €",
+      "amount": "12,99 €",
       "perPerson": "par personne",
       "freeAlternative": "Vous ne voulez que le billet officiel ? Voici comment",
       "includes": "Billet d’entrée officiel + audioguide numérique",
@@ -765,7 +765,8 @@
         "email": "Veuillez saisir une adresse e-mail valide.",
         "visitors": "Veuillez saisir un nombre entre 1 et {max}.",
         "consent": "Merci de confirmer avant de continuer — c’est requis pour finaliser votre réservation.",
-        "tooSoon": "La réservation pour le jour même ferme à {time}, heure de Marrakech, afin que nous puissions retirer votre billet avant la fermeture du palais. Veuillez choisir la date suivante."
+        "tooSoon": "La réservation pour le jour même ferme à {time}, heure de Marrakech, afin que nous puissions retirer votre billet avant la fermeture du palais. Veuillez choisir la date suivante.",
+        "party": "Veuillez indiquer au moins un adulte, et {max} personnes au maximum."
       },
       "summaryTitle": "Récapitulatif de la commande",
       "productName": "Palais Bahia — Pack Visiteur Complet",
@@ -786,7 +787,14 @@
       "phoneHint": "Pour recevoir votre billet sur WhatsApp, et pour ne pas avoir à le ressaisir au paiement.",
       "chooseTitle": "Comment souhaitez-vous payer ?",
       "chooseHint": "Payez par carte bancaire — aucun compte PayPal n’est nécessaire. Ou utilisez votre compte PayPal si vous en avez un.",
-      "paymentMethods": "Paiement sécurisé — nous acceptons PayPal et les principales cartes"
+      "paymentMethods": "Paiement sécurisé — nous acceptons PayPal et les principales cartes",
+      "adultsLabel": "Adultes",
+      "adultsSubLabel": "14 ans et plus",
+      "childrenLabel": "Enfants",
+      "childrenSubLabel": "De {min} à {max} ans",
+      "underAgeFree": "Les enfants de moins de {min} ans entrent gratuitement — inutile de les compter ici.",
+      "adultsLine": "Adultes : {count} × {price} €",
+      "childrenLine": "Enfants {min}–{max} : {count} × {price} €"
     },
     "confirmation": {
       "packTitle": "Votre Pack Visiteur Complet",
@@ -818,7 +826,8 @@
       "ticket": "Billet d’entrée officiel du palais de la Bahia",
       "audio": "Audioguide numérique avec l’histoire du palais",
       "whatsapp": "Assistance WhatsApp avant et pendant votre visite",
-      "cancellation": "Annulation gratuite"
+      "cancellation": "Annulation gratuite",
+      "audioAdultsOnly": "Pour chaque adulte de la réservation. Le billet enfant donne accès à l’entrée seule."
     },
     "reassurance": {
       "cancellation": {
@@ -830,8 +839,8 @@
         "body": "Nous retirons votre billet au palais après paiement et vous l'envoyons par e-mail : environ 24 heures avant une visite future, ou dès que nous l'avons si vous y allez aujourd'hui."
       },
       "price": {
-        "title": "11,99 € par personne, toutes taxes comprises.",
-        "body": "Le billet d’entrée officiel du ministère de la Culture acheté en votre nom, l’audioguide numérique en cinq langues, et une vraie personne sur WhatsApp avant et pendant votre visite. Rien n’est ajouté au paiement."
+        "title": "12,99 € par adulte, 7,99 € par enfant de 7 à 13 ans. Toutes taxes comprises.",
+        "body": "À l’entrée, vous faites la queue, vous payez en dirhams espèces et vous entrez sans guide. Ici, votre billet officiel est acheté à votre nom et envoyé par e-mail avant votre départ, le guide audio vous accompagne salle par salle dans votre langue, une personne répond sur WhatsApp pendant que vous êtes devant la porte, et vous pouvez annuler et être remboursé intégralement jusqu’à l’envoi du billet. Le portail du Ministère est en lien ci-dessous si l’entrée seule vous suffit."
       },
       "independence": "visitbahiapalace.com est un service de réservation indépendant, tenu par des spécialistes des monuments de Marrakech. Nous ne sommes ni le ministère de la Culture ni l’administration du palais. Détails complets dans nos <terms>conditions de vente</terms>."
     }

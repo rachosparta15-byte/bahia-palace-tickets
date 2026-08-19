@@ -4,6 +4,25 @@
 
 /** Official Bahia Palace door price, set by Morocco's Ministry of Culture. */
 export const OFFICIAL_DOOR_PRICE_MAD = 100;
+
+/**
+ * The ministry's second rate: a foreign child aged 7 to 13 pays half.
+ *
+ * Read off the ministry portal on 2026-08-19, where "Foreigner Adult" and
+ * "Foreigner Child between 7 and 13" are two separate rows with their own
+ * counters. We charged one price for both and absorbed the difference, which
+ * meant a family of four was quoted as four adults.
+ *
+ * The band is the ministry's, not ours, and the labels on the form repeat it
+ * word for word — a child of 6 and a child of 14 are both priced by somebody
+ * else's rule, and paraphrasing it is how a family arrives holding the wrong
+ * ticket.
+ */
+export const OFFICIAL_CHILD_DOOR_PRICE_MAD = 50;
+
+/** The ministry's band for the child rate, stated exactly as the portal does. */
+export const CHILD_AGE_MIN = 7;
+export const CHILD_AGE_MAX = 13;
 // Removed: the site quotes MAD and EUR only. A USD figure beside a EUR
 // charge is a third number the customer has to reconcile.
 
@@ -71,10 +90,34 @@ export const OFFICIAL_DOOR_PRICE_EUR_CENTS = Math.round(
   OFFICIAL_DOOR_PRICE_MAD * MAD_TO_EUR_RATE * 100
 );
 
+/** Official child door price (50 MAD) in EUR cents, at the same pinned rate. */
+export const OFFICIAL_CHILD_DOOR_PRICE_EUR_CENTS = Math.round(
+  OFFICIAL_CHILD_DOOR_PRICE_MAD * MAD_TO_EUR_RATE * 100
+);
+
 export const OFFICIAL_DOOR_PRICE_LABEL = {
   mad: `${OFFICIAL_DOOR_PRICE_MAD} MAD`,
   eur: `≈ ${formatEUR(OFFICIAL_DOOR_PRICE_EUR_CENTS)}`,
 } as const;
+
+/**
+ * What we charge per adult, in EUR cents.
+ *
+ * Covers the official 100 MAD ticket bought in their name, the multilingual
+ * audio guide, the visitor map and support.
+ */
+export const ADULT_PRICE_EUR_CENTS = 1299;
+
+/**
+ * What we charge per child aged 7 to 13, in EUR cents.
+ *
+ * The official half-price ticket, bought in their name. NO AUDIO GUIDE — that
+ * is the whole reason this is not simply half of the adult price, and every
+ * surface that lists what the pack includes has to say so. A child priced at
+ * 7.99 who arrives expecting a guide has been mis-sold, however small the
+ * amount.
+ */
+export const CHILD_PRICE_EUR_CENTS = 799;
 
 export type TicketSlug =
   | 'skip-the-line'
@@ -92,7 +135,7 @@ export type TicketSlug =
  * prices in different currencies. It covers the official ticket, the
  * multilingual audio guide, support and WhatsApp.
  */
-export const ENTRY_PRICE_EUR_CENTS = 1199;
+export const ENTRY_PRICE_EUR_CENTS = ADULT_PRICE_EUR_CENTS;
 
 /** @deprecated Use ENTRY_PRICE_EUR_CENTS. Kept so nothing silently reads a stale USD number. */
 export const SKIP_THE_LINE_PRICE_EUR = ENTRY_PRICE_EUR_CENTS / 100;
@@ -163,11 +206,45 @@ export const VISITOR_PACK_BREAKDOWN_EUR_CENTS = {
  * one. Refusing to sell is the correct failure; the caller returns a 500 and
  * nobody is charged.
  */
+/**
+ * The same breakdown for a child, derived the same way round.
+ *
+ * The official line is the ministry's 50 MAD at the pinned rate; our service is
+ * the residual. It is a smaller service than an adult's because it is a smaller
+ * service — the ticket is bought and delivered the same way, and there is no
+ * audio guide.
+ */
+export const CHILD_BREAKDOWN_EUR_CENTS = {
+  officialTicket: OFFICIAL_CHILD_DOOR_PRICE_EUR_CENTS,
+  service: CHILD_PRICE_EUR_CENTS - OFFICIAL_CHILD_DOOR_PRICE_EUR_CENTS,
+  total: CHILD_PRICE_EUR_CENTS,
+} as const;
+
 export function visitorPackBreakdownIsValid(): boolean {
   const { officialTicket, service, total } = VISITOR_PACK_BREAKDOWN_EUR_CENTS;
+  const child = CHILD_BREAKDOWN_EUR_CENTS;
   return (
-    officialTicket > 0 && service > 0 && officialTicket + service === total
+    officialTicket > 0 &&
+    service > 0 &&
+    officialTicket + service === total &&
+    // The child tier gets the same guard, and for the same reason: if the rate
+    // ever drifts far enough that 50 MAD costs what we charge for the child
+    // pack, "official ticket plus our service" has stopped being true of it.
+    child.officialTicket > 0 &&
+    child.service > 0 &&
+    child.officialTicket + child.service === child.total
   );
+}
+
+/**
+ * What a party costs, in integer cents. The one place this arithmetic lives.
+ *
+ * The form displays it, the checkout route charges it and PayPal is handed the
+ * result. Three copies of `adults * X + children * Y` is three chances for the
+ * screen and the card statement to disagree by a cent.
+ */
+export function packTotalCents(adults: number, children: number): number {
+  return adults * ADULT_PRICE_EUR_CENTS + children * CHILD_PRICE_EUR_CENTS;
 }
 
 // ─────────────────────────────────────────────────────────────────────

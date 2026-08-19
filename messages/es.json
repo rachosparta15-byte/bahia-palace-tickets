@@ -659,7 +659,7 @@
       "ctaDisabledHint": "Todavía no aceptamos pagos. Vuelve dentro de poco."
     },
     "price": {
-      "amount": "11,99 €",
+      "amount": "12,99 €",
       "perPerson": "por persona",
       "freeAlternative": "¿Solo quieres la entrada oficial? Te contamos cómo",
       "includes": "Entrada oficial + audioguía digital",
@@ -765,7 +765,8 @@
         "email": "Introduce una dirección de correo válida.",
         "visitors": "Introduce un número entre 1 y {max}.",
         "consent": "Confirme esto antes de continuar: es necesario para completar su reserva.",
-        "tooSoon": "La reserva para hoy mismo cierra a las {time}, hora de Marrakech, para que podamos recoger tu entrada antes de que cierre el palacio. Elige la siguiente fecha disponible."
+        "tooSoon": "La reserva para hoy mismo cierra a las {time}, hora de Marrakech, para que podamos recoger tu entrada antes de que cierre el palacio. Elige la siguiente fecha disponible.",
+        "party": "Indique al menos un adulto y un máximo de {max} personas en total."
       },
       "summaryTitle": "Resumen del pedido",
       "productName": "Palacio de la Bahía — Pack Completo del Visitante",
@@ -786,7 +787,14 @@
       "phoneHint": "Para enviarte la entrada por WhatsApp y para no tener que escribirlo otra vez al pagar.",
       "chooseTitle": "¿Cómo quieres pagar?",
       "chooseHint": "Paga con tarjeta de débito o crédito: no hace falta ninguna cuenta de PayPal. O usa tu cuenta de PayPal si tienes una.",
-      "paymentMethods": "Pago seguro: aceptamos PayPal y las principales tarjetas"
+      "paymentMethods": "Pago seguro: aceptamos PayPal y las principales tarjetas",
+      "adultsLabel": "Adultos",
+      "adultsSubLabel": "14 años o más",
+      "childrenLabel": "Niños",
+      "childrenSubLabel": "De {min} a {max} años",
+      "underAgeFree": "Los menores de {min} años entran gratis — no hace falta contarlos aquí.",
+      "adultsLine": "Adultos: {count} × {price} €",
+      "childrenLine": "Niños {min}–{max}: {count} × {price} €"
     },
     "confirmation": {
       "packTitle": "Tu Pack Completo del Visitante",
@@ -818,7 +826,8 @@
       "ticket": "Entrada oficial del Palacio de la Bahía",
       "audio": "Audioguía digital con la historia del palacio",
       "whatsapp": "Soporte por WhatsApp antes y durante tu visita",
-      "cancellation": "Cancelación gratuita"
+      "cancellation": "Cancelación gratuita",
+      "audioAdultsOnly": "Para cada adulto de la reserva. La entrada infantil cubre solo el acceso."
     },
     "reassurance": {
       "cancellation": {
@@ -830,8 +839,8 @@
         "body": "Recogemos tu entrada en el palacio tras el pago y te la enviamos por correo: unas 24 horas antes de una visita futura, o en cuanto la tenemos si vas hoy."
       },
       "price": {
-        "title": "11,99 € por persona, impuestos incluidos.",
-        "body": "La entrada oficial del Ministerio de Cultura comprada a su nombre, la audioguía digital en cinco idiomas y una persona real por WhatsApp antes y durante su visita. No se añade nada al pagar."
+        "title": "12,99 € por adulto, 7,99 € por niño de 7 a 13 años. Impuestos incluidos.",
+        "body": "En la puerta hay cola, se paga en dirhams en efectivo y se entra sin guía. Aquí su entrada oficial se compra a su nombre y se envía por correo antes de viajar, la audioguía le acompaña sala por sala en su idioma, una persona responde por WhatsApp mientras usted está en la puerta, y puede cancelar con reembolso completo hasta que enviemos la entrada. Abajo tiene el enlace al portal del Ministerio si solo quiere la entrada."
       },
       "independence": "visitbahiapalace.com es un servicio de reservas independiente, gestionado por especialistas en los monumentos de Marrakech. No somos el Ministerio de Cultura ni la administración del palacio. Todos los detalles en nuestras <terms>Condiciones de venta</terms>."
     }

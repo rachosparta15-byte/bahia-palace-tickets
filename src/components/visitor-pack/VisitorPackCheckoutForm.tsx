@@ -14,11 +14,15 @@ import { DatePicker, toISODate } from '@/components/ui/DatePicker';
 import { trackEvent } from '@/lib/analytics';
 import { CreditCard, Calendar, Users, Lock, FlaskConical } from 'lucide-react';
 import {
-  VISITOR_PACK_PRICE_EUR_CENTS,
+  ADULT_PRICE_EUR_CENTS,
+  CHILD_PRICE_EUR_CENTS,
+  CHILD_AGE_MAX,
+  CHILD_AGE_MIN,
   VISITOR_PACK_MAX_VISITORS,
   TEASER_PRICE_ENABLED,
   formatEURAmount,
   formatEUR,
+  packTotalCents,
 } from '@/config/pricing';
 import { consumeLeadPrefill } from '@/lib/lead-handoff';
 import { earliestVisitDate, SAME_DAY_CUTOFF_LABEL } from '@/config/booking-window';
@@ -34,12 +38,17 @@ function firstBookableISO(): string {
   return earliestVisitDate();
 }
 
-// `visitors` is a plain number here, not z.coerce — the select registers with
-// valueAsNumber, so react-hook-form hands us a number and the resolver's input
+// The counts are plain numbers here, not z.coerce — the inputs register with
+// valueAsNumber, so react-hook-form hands us numbers and the resolver's input
 // and output types stay identical.
 const schema = z.object({
   date: z.string().min(1),
-  visitors: z.number().int().min(1).max(VISITOR_PACK_MAX_VISITORS),
+  /*
+   * Two counts, because the ministry charges two prices. Adults start at one:
+   * the site cannot honestly sell a party with nobody over 13 on it.
+   */
+  adults: z.number().int().min(1).max(VISITOR_PACK_MAX_VISITORS),
+  children: z.number().int().min(0).max(VISITOR_PACK_MAX_VISITORS),
   customerName: z.string().min(2),
   customerEmail: z.string().email(),
   /*
@@ -113,7 +122,8 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
-      visitors: 1,
+      adults: 1,
+      children: 0,
       // Default to the first bookable day so the field is never an empty
       // "mm/dd/yyyy" and never holds a date the server will refuse. The order
       // summary echoes the full date back in the visitor's language, and the
@@ -188,10 +198,15 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
         prefill.visitDate && prefill.visitDate >= firstBookableISO()
           ? prefill.visitDate
           : firstBookableISO(),
-      visitors:
+      // The lead form asks for a party size, not a breakdown, so everyone it
+      // hands over is counted as an adult until the visitor says otherwise.
+      // Guessing that some of them are children would put a lower price on
+      // screen than the one we can source.
+      adults:
         prefill.visitors && prefill.visitors >= 1 && prefill.visitors <= VISITOR_PACK_MAX_VISITORS
           ? prefill.visitors
           : 1,
+      children: 0,
       customerName: prefill.name ?? '',
       customerEmail: prefill.email ?? '',
       // Never carried over from step 1 — consent is given on this page, next
@@ -202,8 +217,13 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
 
   // useWatch rather than watch(): the latter is not memoization-safe and the
   // React compiler lint rejects it.
-  const watchedVisitors = useWatch({ control, name: 'visitors' });
-  const visitors = Number(watchedVisitors) || 1;
+  const watchedAdults = useWatch({ control, name: 'adults' });
+  const watchedChildren = useWatch({ control, name: 'children' });
+  const adults = Number(watchedAdults) || 0;
+  // Not `|| 0` on a falsy guard alone: an empty box reads NaN, and NaN would
+  // propagate into the total and render "€NaN" beside a pay button.
+  const children = Number.isFinite(Number(watchedChildren)) ? Number(watchedChildren) : 0;
+  const visitors = adults + children;
 
   // Echo the chosen date back in the summary, in the visitor's own language.
   const watchedDate = useWatch({ control, name: 'date' });
@@ -215,7 +235,7 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
     : '';
   // Integer cents throughout, formatted only at the point of display — the
   // same arithmetic the server does, so the two totals cannot disagree.
-  const totalCents = VISITOR_PACK_PRICE_EUR_CENTS * visitors;
+  const totalCents = packTotalCents(adults, children);
 
   async function onSubmit(data: FormData) {
     setServerError(null);
@@ -225,7 +245,12 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
      * pressed the button. Everything before this point is measured by
      * pack_view and pack_form_start; everything after is the server's answer.
      */
-    trackEvent('pack_submit', { partySize: data.visitors, locale });
+    trackEvent('pack_submit', {
+      partySize: data.adults + data.children,
+      adults: data.adults,
+      children: data.children,
+      locale,
+    });
 
     if (!paymentsEnabled) {
       setServerError(t('errors.disabled'));
@@ -248,7 +273,8 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           visitDate: data.date,
-          quantity: data.visitors,
+          adults: data.adults,
+          children: data.children,
           locale,
           customer: {
             firstName,
@@ -396,13 +422,10 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
                 <Calendar size={13} className="shrink-0 text-[#E8A33D]" aria-hidden="true" />
                 {formattedDate || '—'}
               </p>
-              <p className="flex items-center gap-2">
-                <Users size={13} className="shrink-0 text-[#E8A33D]" aria-hidden="true" />
-                {visitors} × €{formatEURAmount(VISITOR_PACK_PRICE_EUR_CENTS)}
-              </p>
+              <PartyLines adults={adults} children={children} t={t} />
             </div>
 
-            <PackInclusions className="mt-4 pt-4 border-t border-[rgba(232,163,61,0.20)]" />
+            <PackInclusions className="mt-4 pt-4 border-t border-[rgba(232,163,61,0.20)]" childCount={children} />
 
             <div className="flex items-baseline justify-between mt-4 pt-4 border-t border-[rgba(232,163,61,0.20)]">
               <span className="font-bold text-[#F5E8CC]">{t('totalLabel')}</span>
@@ -532,52 +555,88 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
               />
             )}
           />
-          {/* Same-day is on sale, so nothing is greyed out except the past.
-              The line stays because it still answers the question the date
-              field raises — where the ticket comes from, and why booking
-              early in the day matters when the visit is today. */}
-          <p className="mt-1.5 text-xs leading-relaxed text-[#C4A882]/80">
-            {t('dateHint', { time: SAME_DAY_CUTOFF_LABEL })}
-          </p>
+          {/* The hint under this field is gone (owner's call, 19/08/2026).
+              Nothing enforcing has changed: the picker still refuses a past
+              day, `isTooSoon` still refuses a same-day booking made after the
+              cutoff, and `errors.tooSoon` still explains the cutoff in full
+              at the moment it applies. What went is the standing paragraph,
+              not the rule. */}
           {errors.date && <p className={errCls}>{t('errors.pastDate')}</p>}
         </div>
 
-        <div>
-          <label htmlFor="vp-visitors" className={labelCls}>
-            <Users size={13} className="inline me-1.5 -mt-0.5 text-[#E8A33D]" />
-            {t('visitorsLabel')} <span className="text-[#C4452D]">*</span>
-          </label>
-          {/* Typed, not a dropdown: a 20-option select is a long scroll on a
-              phone for a number most people already know. `type="number"`
-              still offers steppers on desktop, and inputMode="numeric" brings
-              up the digit keypad on mobile rather than the full keyboard. */}
-          <input
-            id="vp-visitors"
-            {...register('visitors', { valueAsNumber: true })}
-            type="number"
-            inputMode="numeric"
-            min={1}
-            max={VISITOR_PACK_MAX_VISITORS}
-            step={1}
-            // react-hook-form applies its defaultValue on hydration, which
-            // left this box visibly empty on first paint (the old <select>
-            // showed "1" straight away because a select falls back to its
-            // first option). Rendering the same 1 server-side removes the
-            // flash; RHF still owns the value from mount onward.
-            defaultValue={1}
-            aria-describedby={errors.visitors ? 'vp-visitors-error' : undefined}
-            className={`${inputCls} ${errors.visitors ? 'border-[#C4452D]' : ''}`}
-          />
-          {/* `min`/`max` on the element are a hint, not a guarantee — the
-              value can still be typed or pasted out of range, so the same
-              bounds are enforced by the zod schema here and again by the
-              API route. */}
-          {errors.visitors && (
-            <p id="vp-visitors-error" role="alert" className={errCls}>
-              {t('errors.visitors', { max: VISITOR_PACK_MAX_VISITORS })}
+        {/*
+          Two boxes, because the ministry has two rates and the old single
+          "Number of visitors" quietly priced a seven-year-old as an adult.
+
+          Side by side rather than stacked: they are one question — who is
+          coming — and separating them down the page invites someone to fill
+          the first and scroll past the second.
+
+          Typed, not dropdowns: a 20-option select is a long scroll on a phone
+          for a number most people already know. `type="number"` still offers
+          steppers on desktop, and inputMode="numeric" brings up the digit
+          keypad on mobile rather than the full keyboard.
+        */}
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <label htmlFor="vp-adults" className={labelCls}>
+              <Users size={13} className="inline me-1.5 -mt-0.5 text-[#E8A33D]" />
+              {t('adultsLabel')} <span className="text-[#C4452D]">*</span>
+            </label>
+            <input
+              id="vp-adults"
+              {...register('adults', { valueAsNumber: true })}
+              type="number"
+              inputMode="numeric"
+              min={1}
+              max={VISITOR_PACK_MAX_VISITORS}
+              step={1}
+              // react-hook-form applies its defaultValue on hydration, which
+              // left this box visibly empty on first paint. Rendering the same
+              // 1 server-side removes the flash; RHF owns it from mount onward.
+              defaultValue={1}
+              aria-describedby="vp-party-error"
+              className={`${inputCls} ${errors.adults ? 'border-[#C4452D]' : ''}`}
+            />
+            <p className="mt-1 text-[11px] text-[#C4A882]/70">{t('adultsSubLabel')}</p>
+          </div>
+
+          <div>
+            <label htmlFor="vp-children" className={labelCls}>
+              <Users size={13} className="inline me-1.5 -mt-0.5 text-[#E8A33D]" />
+              {t('childrenLabel')}
+            </label>
+            <input
+              id="vp-children"
+              {...register('children', { valueAsNumber: true })}
+              type="number"
+              inputMode="numeric"
+              min={0}
+              max={VISITOR_PACK_MAX_VISITORS}
+              step={1}
+              defaultValue={0}
+              aria-describedby="vp-party-error"
+              className={`${inputCls} ${errors.children ? 'border-[#C4452D]' : ''}`}
+            />
+            <p className="mt-1 text-[11px] text-[#C4A882]/70">
+              {t('childrenSubLabel', { min: CHILD_AGE_MIN, max: CHILD_AGE_MAX })}
             </p>
-          )}
+          </div>
         </div>
+
+        {/* `min`/`max` on the elements are a hint, not a guarantee — a value
+            can still be typed or pasted out of range, so the same bounds are
+            enforced by the zod schema here and again by the API route. */}
+        {(errors.adults || errors.children) && (
+          <p id="vp-party-error" role="alert" className={errCls}>
+            {t('errors.party', { max: VISITOR_PACK_MAX_VISITORS })}
+          </p>
+        )}
+
+        {/* The under-7 line that sat here is gone (owner's call, 19/08/2026).
+            The fact itself is still on the site — the FAQ page states it three
+            times and the ticket detail page carries `childrenNote` — so the
+            form is quieter without the site becoming silent about it. */}
 
         <div>
           <label htmlFor="vp-name" className={labelCls}>
@@ -651,14 +710,11 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
             <Calendar size={13} className="shrink-0 text-[#E8A33D]" aria-hidden="true" />
             {formattedDate || '—'}
           </p>
-          <p className="flex items-center gap-2">
-            <Users size={13} className="shrink-0 text-[#E8A33D]" aria-hidden="true" />
-            {visitors} × €{formatEURAmount(VISITOR_PACK_PRICE_EUR_CENTS)}
-          </p>
+          <PartyLines adults={adults} children={children} t={t} />
         </div>
 
         {/* What's included, with the cost split collapsed inside it. */}
-        <PackInclusions className="mt-4 pt-4 border-t border-[rgba(232,163,61,0.20)]" />
+        <PackInclusions className="mt-4 pt-4 border-t border-[rgba(232,163,61,0.20)]" childCount={children} />
 
         <div className="flex items-baseline justify-between mt-4 pt-4 border-t border-[rgba(232,163,61,0.20)]">
           <span className="font-bold text-[#F5E8CC]">{t('totalLabel')}</span>
@@ -790,5 +846,46 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
         </p>
       </div>
     </form>
+  );
+}
+
+/**
+ * The party, priced line by line, in the order summary.
+ *
+ * One component for both summaries — the form's and the payment step's. They
+ * were duplicated markup before, and a party that reads "3 x EUR12.99" beside a
+ * total of EUR33.97 is the kind of arithmetic a buyer checks and then abandons.
+ *
+ * The child line names the age band every time it appears. It is the ministry's
+ * rule, not ours, and it is the one number on this screen a customer can get
+ * wrong by accident.
+ */
+function PartyLines({
+  adults,
+  children,
+  t,
+}: {
+  adults: number;
+  children: number;
+  t: (key: string, values?: Record<string, string | number>) => string;
+}) {
+  return (
+    <>
+      <p className="flex items-center gap-2">
+        <Users size={13} className="shrink-0 text-[#E8A33D]" aria-hidden="true" />
+        {t('adultsLine', { count: adults, price: formatEURAmount(ADULT_PRICE_EUR_CENTS) })}
+      </p>
+      {children > 0 && (
+        <p className="flex items-center gap-2">
+          <Users size={13} className="shrink-0 text-[#E8A33D]" aria-hidden="true" />
+          {t('childrenLine', {
+            count: children,
+            price: formatEURAmount(CHILD_PRICE_EUR_CENTS),
+            min: CHILD_AGE_MIN,
+            max: CHILD_AGE_MAX,
+          })}
+        </p>
+      )}
+    </>
   );
 }

@@ -15,6 +15,8 @@ import { PaymentMethods } from '@/components/ui/PaymentMethods';
 import { earliestVisitDate } from '@/config/booking-window';
 import { CheckoutDisclosure } from '@/components/visitor-pack/CheckoutDisclosure';
 import {
+  ADULT_PRICE_EUR_CENTS,
+  CHILD_PRICE_EUR_CENTS,
   VISITOR_PACK_PRICE_EUR_CENTS,
   OFFICIAL_DOOR_PRICE_MAD,
   OFFICIAL_DOOR_PRICE_EUR_CENTS,
@@ -201,8 +203,11 @@ export default async function VisitorPackPage({ params }: Props) {
     image: `${BASE}/og-image.jpg`,
     brand: { '@type': 'Brand', name: 'Bahia Palace Tickets' },
     offers: {
-      '@type': 'Offer',
-      price: formatEURAmount(VISITOR_PACK_PRICE_EUR_CENTS),
+      '@type': 'AggregateOffer',
+      offerCount: 2,
+      lowPrice: formatEURAmount(CHILD_PRICE_EUR_CENTS),
+      highPrice: formatEURAmount(ADULT_PRICE_EUR_CENTS),
+      price: formatEURAmount(ADULT_PRICE_EUR_CENTS),
       priceCurrency: 'EUR',
       availability: paymentsEnabled
         ? 'https://schema.org/InStock'

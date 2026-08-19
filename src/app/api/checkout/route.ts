@@ -4,7 +4,12 @@ import { z } from 'zod';
 import { CHECKOUT_ORIGIN, MONUMENT_ID, SITE_ID, SITE_ORIGIN } from '@/config/network';
 import { activeProvider, getPaymentsStatus } from '@/lib/payments/guard';
 import { earliestVisitDate, isTooSoon } from '@/config/booking-window';
-import { VISITOR_PACK_PRICE_EUR_CENTS } from '@/config/pricing';
+import {
+  CHILD_AGE_MAX,
+  CHILD_AGE_MIN,
+  VISITOR_PACK_MAX_VISITORS,
+  packTotalCents,
+} from '@/config/pricing';
 import { generateReference } from '@/lib/utils';
 import { payments } from '@/lib/payments';
 import prisma from '@/lib/db';
@@ -34,20 +39,38 @@ export const dynamic = 'force-dynamic';
  * amount would be a body a customer could edit.
  */
 
-const schema = z.object({
-  visitDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Invalid date'),
-  quantity: z.coerce.number().int().min(1).max(20),
-  locale: z.string().min(2).max(5).default('en'),
-  customer: z.object({
-    firstName: z.string().min(1).max(100),
-    lastName: z.string().min(1).max(100),
-    email: z.string().email().max(254),
-    phone: z.string().max(32).optional(),
-  }),
-  consent: z.object({
-    waiverAndTerms: z.literal(true),
-  }),
-});
+const schema = z
+  .object({
+    visitDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Invalid date'),
+    /*
+     * Two counts, because the ministry charges two prices: 100 MAD for a
+     * foreign adult and 50 MAD for a child aged 7 to 13.
+     *
+     * `adults` is at least one. A party with nobody over 13 on it is not a
+     * booking this site can honestly sell, and it is the same question the
+     * gate would ask.
+     */
+    adults: z.coerce.number().int().min(1).max(VISITOR_PACK_MAX_VISITORS),
+    children: z.coerce.number().int().min(0).max(VISITOR_PACK_MAX_VISITORS).default(0),
+    locale: z.string().min(2).max(5).default('en'),
+    customer: z.object({
+      firstName: z.string().min(1).max(100),
+      lastName: z.string().min(1).max(100),
+      email: z.string().email().max(254),
+      phone: z.string().max(32).optional(),
+    }),
+    consent: z.object({
+      waiverAndTerms: z.literal(true),
+    }),
+  })
+  /*
+   * The cap belongs to the party, not to either count on its own. Twenty and
+   * twenty pass two `max(20)` checks and add up to a forty-person booking
+   * against a limit that says twenty.
+   */
+  .refine((v) => v.adults + v.children <= VISITOR_PACK_MAX_VISITORS, {
+    path: ['adults'],
+  });
 
 export async function POST(request: NextRequest) {
   let parsed;
@@ -98,6 +121,14 @@ export async function POST(request: NextRequest) {
     return createPayPalCheckout(body);
   }
 
+  if (body.children > 0) {
+    // Never a silent overcharge. The Stripe path is not live on this site
+    // (PAYMENT_PROVIDER=paypal), and if it is ever switched on this refuses
+    // instead of billing a child at the adult rate.
+    console.error('[checkout] child tier is not supported on the shared checkout path');
+    return NextResponse.json({ error: 'child_tier_unavailable' }, { status: 503 });
+  }
+
   let upstream: Response;
   try {
     upstream = await fetch(`${CHECKOUT_ORIGIN}/api/checkout`, {
@@ -113,7 +144,13 @@ export async function POST(request: NextRequest) {
         siteId: SITE_ID,
         monumentId: MONUMENT_ID,
         visitDate: body.visitDate,
-        quantity: body.quantity,
+        /*
+         * The hub prices `allInclusivePriceEur * quantity` and has one rate.
+         * Until it learns the child tier, this path would silently charge a
+         * child as an adult — so it only ever sees a party it can price
+         * correctly, and refuses the rest rather than overcharging.
+         */
+        quantity: body.adults + body.children,
         locale: body.locale,
         customer: body.customer,
         consent: body.consent,
@@ -158,13 +195,19 @@ export async function POST(request: NextRequest) {
  */
 async function createPayPalCheckout(body: {
   visitDate: string;
-  quantity: number;
+  adults: number;
+  children: number;
   locale: string;
   customer: { firstName: string; lastName: string; email: string; phone?: string };
 }) {
-  // Cents in, euros out, once — the same arithmetic the form displays, so the
-  // total on screen and the total at PayPal cannot drift apart.
-  const unitEUR = VISITOR_PACK_PRICE_EUR_CENTS / 100;
+  /*
+   * Priced here, from the counts, by the same helper the form calls — so the
+   * total on screen and the total at PayPal cannot drift apart. The body
+   * carries no amount, and never should: a body that carried one would be a
+   * body the customer could edit.
+   */
+  const totalCents = packTotalCents(body.adults, body.children);
+  const totalEUR = totalCents / 100;
   const reference = generateReference();
 
   let booking;
@@ -176,9 +219,9 @@ async function createPayPalCheckout(body: {
         // Midnight UTC: the visit date is a calendar day, not an instant, and
         // storing it with a local offset would shift it for half the world.
         visitDate: new Date(`${body.visitDate}T00:00:00.000Z`),
-        adults: body.quantity,
-        children: 0,
-        totalAmount: unitEUR * body.quantity,
+        adults: body.adults,
+        children: body.children,
+        totalAmount: totalEUR,
         currency: 'EUR',
         customerName: `${body.customer.firstName} ${body.customer.lastName}`.trim(),
         customerEmail: body.customer.email,
@@ -199,11 +242,17 @@ async function createPayPalCheckout(body: {
       bookingId: booking.id,
       reference: booking.reference,
       ticketName: 'Complete Visitor Pack',
-      amount: unitEUR,
+      /*
+       * The party total, not a unit price times a count — two rates cannot be
+       * expressed that way. `quantity` stays for the description PayPal shows
+       * the buyer, and the amount is already the whole thing.
+       */
+      amount: totalEUR,
       currency: 'EUR',
       customerEmail: body.customer.email,
       locale: body.locale,
-      quantity: body.quantity,
+      quantity: 1,
+      lineDescription: describeParty(body.adults, body.children),
       // Prefills PayPal's guest form with what they already typed here.
       customerFirstName: body.customer.firstName,
       customerLastName: body.customer.lastName,
@@ -239,11 +288,28 @@ async function createPayPalCheckout(body: {
      */
     paypalOrderId: session.id,
     redirectUrl: session.url,
-    amount: Math.round(unitEUR * body.quantity * 100),
+    amount: totalCents,
     currency: 'EUR',
+    adults: body.adults,
+    children: body.children,
     // Safe to expose: the client id is public by design, it is in every PayPal
     // SDK script tag on the internet. The secret never leaves the server.
     paypalClientId: process.env.PAYPAL_CLIENT_ID ?? '',
     paypalEnvironment: process.env.PAYPAL_ENVIRONMENT === 'live' ? 'live' : 'sandbox',
   });
+}
+
+/**
+ * "2 adults + 1 child (7-13)" — what the buyer sees on their PayPal statement.
+ *
+ * The line has to name the child rate. A statement that reads "3 visitors" for
+ * an amount that is not three times any price on the site is the sort of
+ * mismatch that starts a chargeback.
+ */
+function describeParty(adults: number, children: number): string {
+  const parts = [`${adults} adult${adults === 1 ? '' : 's'}`];
+  if (children > 0) {
+    parts.push(`${children} child${children === 1 ? '' : 'ren'} (${CHILD_AGE_MIN}-${CHILD_AGE_MAX})`);
+  }
+  return parts.join(' + ');
 }
