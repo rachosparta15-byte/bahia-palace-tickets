@@ -6,7 +6,7 @@ import { Accordion } from '@/components/ui/Accordion';
 import { OrnamentDivider } from '@/components/ui/ZelligePattern';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE } from '@/lib/seo';
+import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 import { TestModeBanner } from '@/components/visitor-pack/TestModeBanner';
 import { ValuePoints } from '@/components/visitor-pack/ValuePoints';
@@ -199,6 +199,7 @@ export default async function VisitorPackPage({ params }: Props) {
     description: fillMeta((META[locale] ?? META.en).schema),
     url: `${BASE}/${locale}/visitor-pack`,
     image: `${BASE}/og-image.jpg`,
+    brand: { '@type': 'Brand', name: 'Bahia Palace Tickets' },
     offers: {
       '@type': 'Offer',
       price: formatEURAmount(VISITOR_PACK_PRICE_EUR_CENTS),
@@ -234,6 +235,13 @@ export default async function VisitorPackPage({ params }: Props) {
       priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
         .toISOString()
         .slice(0, 10),
+      /*
+       * Delivery and returns. The pack is emailed, so the shipping node is
+       * zero cost and zero days — stating that is what stops Search Console
+       * treating the offer as an incomplete merchant listing, and it is also
+       * simply true. The return policy is the network-wide one.
+       */
+      ...DIGITAL_TICKET_OFFER_EXTRAS,
     },
   };
 

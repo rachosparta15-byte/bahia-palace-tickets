@@ -3,7 +3,7 @@ import { TicketSection } from '@/components/homepage/TicketSection';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { JsonLd } from '@/components/seo/JsonLd';
 import type { Metadata } from 'next';
-import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE } from '@/lib/seo';
+import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
 import { SKIP_THE_LINE_PRICE_EUR } from '@/config/pricing';
 
 export const revalidate = 86400;
@@ -106,12 +106,17 @@ export default async function TicketsPage({ params }: Props) {
           name: 'Bahia Palace Skip-the-Line Ticket',
           url: `${BASE}/${locale}/tickets/skip-the-line`,
           image: `${BASE}/og-image.jpg`,
+          // A merchant listing with no identifier at all is the weakest form of
+          // the markup. There is no GTIN for a ticket we issue ourselves, so
+          // the brand is the identifier — the same one the detail page carries.
+          brand: { '@type': 'Brand', name: 'Bahia Palace Tickets' },
           offers: {
             '@type': 'Offer',
             price: SKIP_THE_LINE_PRICE_EUR.toFixed(2),
             priceCurrency: 'EUR',
             availability: 'https://schema.org/InStock',
             url: `${BASE}/${locale}/tickets/skip-the-line`,
+            ...DIGITAL_TICKET_OFFER_EXTRAS,
           },
         },
       },

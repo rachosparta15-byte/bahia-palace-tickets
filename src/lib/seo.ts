@@ -25,12 +25,25 @@ export const DIGITAL_TICKET_OFFER_EXTRAS = {
       transitTime:  { '@type': 'QuantitativeValue', minValue: 0, maxValue: 0, unitCode: 'DAY' },
     },
   },
+  /*
+   * This said "free return, 1-day window", which is not the policy. What
+   * legal/refunds actually promises is a full refund at any time *before* we
+   * send the QR code, and none after — the service is performed the moment the
+   * code lands, and a delivered code cannot be taken back.
+   *
+   * Those are not the same offer. "One day from purchase" and "until delivery"
+   * diverge in both directions, and the divergence pointed the wrong way: a
+   * buyer who read the rich result had a free-return claim to wave at a refund
+   * request our own terms decline.
+   *
+   * NotPermitted is the honest category for the delivered product. The
+   * pre-delivery cancellation right is not a return — it is a cancellation,
+   * and it stays documented on the page merchantReturnLink points at.
+   */
   hasMerchantReturnPolicy: {
     '@type': 'MerchantReturnPolicy',
     applicableCountry: 'MA',
-    returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
-    merchantReturnDays: 1,
-    returnFees: 'https://schema.org/FreeReturn',
+    returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
     merchantReturnLink: `${BASE}/en/refund-policy`,
   },
 };
