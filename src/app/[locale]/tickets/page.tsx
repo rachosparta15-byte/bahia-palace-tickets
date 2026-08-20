@@ -104,6 +104,25 @@ export default async function TicketsPage({ params }: Props) {
         item: {
           '@type': 'Product',
           name: 'Bahia Palace Skip-the-Line Ticket',
+          /*
+           * Search Console flagged this on 20/08/2026: "Champ description
+           * manquant" on the merchant listing. Non-critical, meaning the
+           * listing still shows — but description is what a merchant result
+           * has to say about the product, and without it Google is left to
+           * infer one from the page.
+           *
+           * The page's own meta description is the right text and not a
+           * paraphrase of it: it already says what is being sold — the
+           * official ticket in your name, an audio guide, WhatsApp support,
+           * free cancellation — and it is already translated. Writing a second
+           * description here would be one more string to keep in step with the
+           * first.
+           *
+           * The other two Product nodes on this site, /visitor-pack and the
+           * ticket detail page, both carried one. This was the only gap, and
+           * it was five pages wide: one per locale.
+           */
+          description: TICKETS_META[locale]?.description ?? TICKETS_META.en.description,
           url: `${BASE}/${locale}/tickets/skip-the-line`,
           image: `${BASE}/og-image.jpg`,
           // A merchant listing with no identifier at all is the weakest form of
