@@ -72,7 +72,7 @@ const { rows } = await c.execute({
   args: [],
 });
 
-let converted = 0, schemas = 0, skipped = 0;
+let converted = 0, skipped = 0;
 for (const row of rows) {
   const content = row.content ?? '';
 
@@ -102,25 +102,13 @@ for (const row of rows) {
   for (const [, q] of pairs) console.log(`    ${q.trim()}`);
   converted++;
 
-  // Schema only where there is none. A post that already declares FAQPage has
-  // its own list, and appending a second one would leave two competing
-  // descriptions of the same page.
-  if (!content.includes('"FAQPage"')) {
-    const ld = {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: pairs.map(([, q, a]) => ({
-        '@type': 'Question',
-        name: plain(q),
-        acceptedAnswer: { '@type': 'Answer', text: plain(a) },
-      })),
-    };
-    next = next.trimEnd() + '\n\n<script type="application/ld+json">\n' + JSON.stringify(ld, null, 2) + '\n</script>';
-    schemas++;
-    console.log(`    + FAQPage schema (${ld.mainEntity.length} entries)`);
-  } else {
-    console.log('    (already declares FAQPage — headings only)');
-  }
+  /*
+   * No schema is written here. The article template builds FAQPage from the
+   * rendered h3/p pairs, and an inline copy in the content would be a second
+   * block describing the same questions — which is exactly what this script
+   * did on its first run, and what blog-drop-inline-faq then had to undo.
+   * Converting the headings is the whole job; the markup follows on its own.
+   */
 
   if (apply) {
     await c.execute({
@@ -130,5 +118,5 @@ for (const row of rows) {
   }
 }
 
-console.log(`\n${apply ? 'APPLIED' : 'DRY RUN'}: ${converted} row(s) converted, ${schemas} schema(s) added, ${skipped} skipped`);
+console.log(`\n${apply ? 'APPLIED' : 'DRY RUN'}: ${converted} row(s) converted, ${skipped} skipped`);
 await c.close();
