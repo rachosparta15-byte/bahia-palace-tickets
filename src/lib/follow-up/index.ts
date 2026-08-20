@@ -151,9 +151,20 @@ export async function abandonedCandidates() {
  *
  * Two conditions, and both are about timing rather than eligibility.
  *
- * The ticket has to have been SENT. Before that we still owe them the thing
- * they paid for, and an email about a different palace while that is
- * outstanding reads exactly as badly as it sounds.
+ * PAID IS ENOUGH. This used to wait for the ticket to be SENT, on the reasoning
+ * that writing about a different palace while we still owe somebody theirs
+ * reads badly. The premise was wrong: tickets here are deliberately delivered
+ * close to the visit, and the confirmation email says so in as many words —
+ * "your ticket arrives the day before your visit". Nobody is waiting on
+ * something overdue. They are booked, and they know they are booked.
+ *
+ * Waiting cost real chances. Six paying customers sat outside this list with
+ * visits three weeks and four months out — the exact window in which somebody
+ * is still planning what else to see, and the exact moment the answer is worth
+ * having. By delivery day the itinerary is fixed.
+ *
+ * The message needs no rewording for it: it opens "your Bahia Palace ticket is
+ * booked for the 16th", which is true from the moment they pay.
  *
  * And the visit has to still be ahead of them. The message opens with "your
  * ticket is booked for the 16th, and these two are a ten-minute walk away" —
@@ -164,7 +175,7 @@ export async function abandonedCandidates() {
 export async function crossSellCandidates() {
   const rows = await prisma.booking.findMany({
     where: {
-      status: BOOKING_STATUS.qrSent,
+      status: { in: [BOOKING_STATUS.paidAwaitingQr, BOOKING_STATUS.qrSent] },
       visitDate: { gte: startOfToday() },
       crossSellSentAt: null,
       emailOptOut: false,
