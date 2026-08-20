@@ -3,39 +3,10 @@ import prisma from '@/lib/db';
 import { BASE } from '@/lib/seo';
 import { getAllSlugs, getBlogPost } from '@/lib/blog';
 import { HISTORY_HREFLANG, HISTORY_SLUGS } from '@/lib/blog-hreflang';
+import { REDIRECTED_BLOG_SLUGS } from '@/lib/blog-redirects';
 
 export const dynamic = 'force-dynamic';
 const LOCALES = ['en', 'fr', 'it', 'de', 'es'] as const;
-
-const REDIRECTED_BLOG_SLUGS = new Set([
-  // All-locale redirects
-  'how-to-get-to-bahia-palace',
-  'history-of-bahia-palace',
-  'marrakech-tourist-scams-guide',
-  'bahia-palace-who-built-it',
-  // EN-only duplicate slugs
-  'bahia-palace-history-marrakech',
-  'who-built-bahia-palace-history-ba-ahmed',
-  'bahia-palace-entrance-fee-2026-tickets-prices',
-  'how-to-get-to-bahia-palace-from-jemaa-el-fna',
-  'is-bahia-palace-worth-visiting-honest-review-2026',
-  'what-to-wear-bahia-palace-marrakech-dress-code',
-  'bahia-palace-photography-guide-best-spots-tips',
-  'what-to-see-inside-bahia-palace-room-by-room',
-  'bahia-palace-opening-hours-best-time-to-visit',
-  'best-time-to-visit-bahia-palace-marrakech-2026',
-  'bahia-palace-vs-badi-palace-which-to-visit',
-  'bahia-palace-vs-saadian-tombs-comparison',
-  'jardin-majorelle-vs-bahia-palace-marrakech',
-  'how-to-avoid-tourist-scams-marrakech-safety-guide-2026',
-  'how-to-avoid-scams-in-the-souks-of-marrakech-complete-guide-for-travelers',
-  '2-days-in-marrakech-perfect-weekend-itinerary-2026',
-  // Deleted / merged posts (301 redirects added)
-  'bahia-palace-skip-the-line-guide',
-  'marrakech-the-red-city-where-history-comes-alive',
-  'marrakech-la-ciudad-roja-donde-la-historia-cobra-vida',
-  'best-colors-to-wear-for-a-photoshoot-at-bahia-palace-marrakech',
-]);
 
 const STATIC: { path: string; priority: number; freq: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
   { path: '',                priority: 1.0,  freq: 'weekly'  },

@@ -10,6 +10,7 @@ import { getBlogPosts } from '@/lib/blog';
 import type { Metadata } from 'next';
 import { buildAlternates, buildOG, buildBreadcrumbSchema } from '@/lib/seo';
 import { livePostFilter } from '@/lib/blog-schedule';
+import { REDIRECTED_BLOG_SLUGS } from '@/lib/blog-redirects';
 
 export const revalidate = 3600;
 
@@ -90,12 +91,7 @@ export default async function BlogIndexPage({ params }: Props) {
         excerpt:   p.excerpt,
       }));
 
-  const REDIRECTED_SLUGS = new Set([
-    'how-to-get-to-bahia-palace',
-    'history-of-bahia-palace',
-    'marrakech-tourist-scams-guide',
-  ]);
-  const filteredPosts = posts.filter(p => !REDIRECTED_SLUGS.has(p.slug));
+  const filteredPosts = posts.filter(p => !REDIRECTED_BLOG_SLUGS.has(p.slug));
 
   return (
     <div className="min-h-screen bg-[#1C1108]">
