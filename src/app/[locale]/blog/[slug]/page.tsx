@@ -181,7 +181,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const SUFFIX      = ' | Bahia Palace';
   const MAX_TITLE   = 60;
   const rawTitle    = (post.seoTitle ?? post.title).trim().replace(/^["'‘’“”]+/, '').trim();
-  const title       = rawTitle.length + SUFFIX.length <= MAX_TITLE
+  /*
+   * The brand suffix, but only where the title does not already carry it.
+   *
+   * It fits inside 60 characters and so it was appended, which produced
+   * "Bahia Palace Accessibility Guide 2026 | Bahia Palace" and six more like
+   * it. The words are not free: they push the useful half of the title toward
+   * the truncation point and say nothing a reader of the first three words
+   * does not already know.
+   *
+   * Titles that never mention the palace — "What Is Zellige?", "Marrakech in
+   * One Day" — still take it, because for those the brand is the only thing
+   * placing the result.
+   */
+  const named       = /bahia\s+palace/i.test(rawTitle);
+  const title       = !named && rawTitle.length + SUFFIX.length <= MAX_TITLE
     ? rawTitle + SUFFIX
     : rawTitle;
   const descFallback = `${rawTitle} — expert guide to visiting Bahia Palace Marrakech. Tips, hours & skip-the-line tickets for 2026.`.slice(0, 160);
