@@ -27,11 +27,11 @@ const PRIVATE_TOUR_PLANNED_PRICE_EUR = TICKET_PRICES['private-tour'];
 export const revalidate = 86400;
 
 const META: Record<string, { title: string; description: string }> = {
-  en: { title: `Bahia Palace Entrance Fee 2026 — Read Before You Pay`, description: `What Bahia Palace entry costs at the gate, who gets in free, and the Moroccan national rate — plus opening hours and how long the ticket queue really runs.` },
-  fr: { title: `Tarifs Palais Bahia 2026 — À lire avant de payer`, description: `Ce que coûte l'entrée du Palais Bahia au guichet, qui entre gratuitement et le tarif pour les Marocains — avec les horaires et le temps d'attente réel à la billetterie.` },
-  es: { title: `Precio Entrada Palacio Bahía 2026 — Léelo antes de pagar`, description: `Lo que cuesta la entrada al Palacio Bahía en taquilla, quién entra gratis y la tarifa para marroquíes — además de horarios y cuánto dura realmente la cola.` },
-  de: { title: `Bahia Palast Eintrittspreis 2026 — Vor dem Zahlen lesen`, description: `Was der Eintritt in den Bahia-Palast an der Kasse kostet, wer frei hineinkommt und der Marokkaner-Tarif — plus Öffnungszeiten und echte Wartezeiten an der Schlange.` },
-  it: { title: `Prezzo Biglietto Palazzo Bahia 2026 — Leggi prima di pagare`, description: `Quanto costa l'ingresso al Palazzo Bahia in biglietteria, chi entra gratis e la tariffa per i marocchini — con orari e quanto dura davvero la coda all'ingresso.` },
+  en: { title: `Bahia Palace Entrance Fee 2026 — 100 MAD, Under 7 Free`, description: `Bahia Palace entry is 100 MAD for foreign adults, 50 MAD for children 7–13, free under 7, 30 MAD for Moroccans. Opening hours and the real queue.` },
+  fr: { title: `Tarif Palais Bahia 2026 — 100 MAD, gratuit avant 7 ans`, description: `L'entrée du Palais Bahia coûte 100 MAD pour les adultes étrangers, 50 MAD de 7 à 13 ans, gratuit avant 7 ans, 30 MAD pour les Marocains. Horaires inclus.` },
+  es: { title: `Precio Entrada Palacio Bahía 2026 — 100 MAD, gratis hasta 7`, description: `La entrada al Palacio Bahía cuesta 100 MAD para adultos extranjeros, 50 MAD de 7 a 13 años, gratis hasta los 7 y 30 MAD para marroquíes. Horarios y cola real.` },
+  de: { title: `Bahia Palast Eintritt 2026 — 100 MAD, unter 7 frei`, description: `Der Eintritt zum Bahia-Palast kostet 100 MAD für ausländische Erwachsene, 50 MAD von 7 bis 13, frei unter 7, 30 MAD für Marokkaner. Mit Öffnungszeiten.` },
+  it: { title: `Prezzo Palazzo Bahia 2026 — 100 MAD, gratis sotto i 7`, description: `L'ingresso al Palazzo Bahia costa 100 MAD per adulti stranieri, 50 MAD dai 7 ai 13 anni, gratis sotto i 7, 30 MAD per i marocchini. Con orari e coda.` },
 };
 
 interface Props { params: Promise<{ locale: string }> }
