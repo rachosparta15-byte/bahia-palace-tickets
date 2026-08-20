@@ -7,12 +7,30 @@ import type { Metadata } from 'next';
 
 export const revalidate = 86400;
 
+/*
+ * The site page and the blog post were competing for one query.
+ *
+ * "Bahia Palace Opening Hours 2026 | Times, Ramadan & Tips" here, and
+ * "Bahia Palace Opening Hours 2026: Full Schedule, Holidays & Ramadan" on
+ * /blog/bahia-palace-opening-hours-2026. Both say 2026, both say Ramadan, and
+ * the blog gets exactly as many internal links as this page does — so nothing
+ * on the site tells Google which of the two to rank, and it alternates.
+ *
+ * The split is by intent, not by keyword. This page answers "what time does it
+ * open" and adds the fact the snippet cannot: last entry is 4:30 PM, half an
+ * hour before closing, which is the detail that ruins a late afternoon. Ramadan
+ * and the holiday calendar move to the article, whose title already claims
+ * them.
+ *
+ * Ramadan is dropped from every title here for the same reason. Two pages
+ * cannot both be the Ramadan page.
+ */
 const META: Record<string, { title: string; description: string }> = {
-  en: { title: 'Bahia Palace Opening Hours 2026 | Times, Ramadan & Tips', description: 'Open daily 9:00 AM – 5:00 PM. Ramadan schedule, public holiday closures, and the exact arrival time to beat the midday crowds — all confirmed for 2026.' },
-  fr: { title: 'Horaires Palais Bahia 2026 | Ramadan & Meilleur Moment', description: 'Le Palais Bahia de Marrakech est ouvert tous les jours de 9h à 17h. Horaires 2026, calendrier Ramadan, jours fériés et meilleur moment pour éviter la foule.' },
-  es: { title: 'Horario Palacio Bahia 2026 | Ramadán & Mejor Momento', description: 'El Palacio Bahia de Marrakech abre todos los días de 9:00 a 17:00. Horario 2026, Ramadán, festivos y el mejor momento para evitar aglomeraciones en la entrada.' },
-  de: { title: 'Bahia Palast Öffnungszeiten 2026 | Ramadan & Beste Zeit', description: 'Öffnungszeiten Bahia Palast Marrakesch 2026: täglich 9:00 bis 17:00 Uhr. Ramadan-Zeiten, Feiertage und der beste Zeitpunkt für Ihren Besuch ohne Gedränge.' },
-  it: { title: 'Orari Palazzo Bahia 2026 | Ramadan & Miglior Momento', description: 'Il Palazzo Bahia di Marrakech è aperto tutti i giorni dalle 9:00 alle 17:00. Orari 2026, calendario Ramadan, chiusure e il momento migliore per evitare la folla.' },
+  en: { title: "Bahia Palace Opening Hours 2026 — Times & Last Entry", description: "Open daily 9:00 AM to 5:00 PM, but last entry is 4:30 PM. When to arrive to beat the midday crowds, and how long you need once you are inside." },
+  fr: { title: "Horaires Palais Bahia 2026 — Ouverture & Dernière Entrée", description: "Ouvert tous les jours de 9h à 17h, mais la dernière entrée est à 16h30. À quelle heure arriver pour éviter la foule de midi, et le temps à prévoir sur place." },
+  es: { title: "Horario Palacio Bahía 2026 — Apertura y Última Entrada", description: "Abre todos los días de 9:00 a 17:00, pero la última entrada es a las 16:30. A qué hora llegar para evitar la multitud del mediodía y cuánto tiempo necesitas." },
+  de: { title: "Bahia Palast Öffnungszeiten 2026 — Letzter Einlass", description: "Täglich 9:00 bis 17:00 Uhr geöffnet, letzter Einlass jedoch um 16:30 Uhr. Wann Sie kommen sollten, um dem Mittagsandrang zu entgehen, und wie lange Sie bleiben." },
+  it: { title: "Orari Palazzo Bahia 2026 — Apertura e Ultimo Ingresso", description: "Aperto tutti i giorni dalle 9:00 alle 17:00, ma l'ultimo ingresso è alle 16:30. A che ora arrivare per evitare la folla di mezzogiorno e quanto tempo serve." },
 };
 
 interface Props { params: Promise<{ locale: string }> }

@@ -9,12 +9,25 @@ import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 
 export const revalidate = 86400;
 
+/*
+ * This page stopped competing with /blog/bahia-palace-history.
+ *
+ * Both were titled "Bahia Palace History". The article wins that word and it
+ * is not close: twenty internal links point at it, none point here, and it
+ * runs to 2,600 words with Article and FAQ schema. The whole site was already
+ * voting for the article while this page kept its hand up for the same query.
+ *
+ * So this one takes the question the article's title does not ask. "Who was Ba
+ * Ahmed" is a person, not a building — a different search, with a different
+ * intent, answered by the same page content, which was always mostly about
+ * him. Nothing on the page changes; it stops claiming a word it was losing.
+ */
 const META: Record<string, { title: string; description: string }> = {
-  en: { title: 'Bahia Palace History | Ba Ahmed & Morocco\'s Royal Past', description: 'Explore the history of Bahia Palace, built 1866–1900 by Grand Vizier Ba Ahmed. Discover its architects, the legendary harem, and Morocco\'s royal heritage.' },
-  fr: { title: 'Histoire du Palais Bahia | Ba Ahmed & l\'Héritage Royal', description: 'Explorez l\'histoire du Palais Bahia de Marrakech, construit de 1866 à 1900 par le Grand Vizir Ba Ahmed. Architectes, harem légendaire et héritage royal du Maroc.' },
-  es: { title: 'Historia del Palacio Bahia | Ba Ahmed y el Pasado Real', description: 'Explora la historia del Palacio Bahia, construido de 1866 a 1900 por el Gran Visir Ba Ahmed. Arquitectos, harén legendario y patrimonio real marroquí.' },
-  de: { title: 'Geschichte des Bahia Palastes | Ba Ahmed & Marokkos Erbe', description: 'Erkunden Sie die Geschichte des Bahia Palastes, erbaut 1866–1900 vom Großwesir Ba Ahmed. Architekten, legendärer Harem und königliches Erbe Marokkos.' },
-  it: { title: 'Storia del Palazzo Bahia | Ba Ahmed e l\'Eredità Reale', description: 'Scopri la storia affascinante del Palazzo Bahia, costruito tra il 1866 e il 1900 dal Gran Visir Ba Ahmed. Architettura, harem e storia reale marocchina.' },
+  en: { title: "Who Was Ba Ahmed? The Vizier Who Built Bahia Palace", description: "A slave's son who ruled Morocco in all but name. Ba Ahmed built Bahia Palace between 1866 and 1900 — and it was stripped bare the week he died." },
+  fr: { title: "Qui était Ba Ahmed ? Le Vizir du Palais Bahia", description: "Fils d'esclave devenu maître du Maroc. Ba Ahmed fit bâtir le Palais Bahia entre 1866 et 1900 — et le palais fut pillé dans la semaine suivant sa mort." },
+  es: { title: "¿Quién fue Ba Ahmed? El Visir del Palacio Bahía", description: "Hijo de esclava que gobernó Marruecos en todo salvo el nombre. Ba Ahmed levantó el Palacio Bahía entre 1866 y 1900, saqueado la semana de su muerte." },
+  de: { title: "Wer war Ba Ahmed? Der Wesir hinter dem Bahia Palast", description: "Der Sohn einer Sklavin, der Marokko faktisch regierte. Ba Ahmed erbaute den Bahia Palast zwischen 1866 und 1900 — geplündert in der Woche seines Todes." },
+  it: { title: "Chi era Ba Ahmed? Il Visir del Palazzo Bahia", description: "Figlio di una schiava, governò il Marocco di fatto. Ba Ahmed costruì il Palazzo Bahia fra il 1866 e il 1900 — saccheggiato la settimana della sua morte." },
 };
 
 interface Props { params: Promise<{ locale: string }> }
