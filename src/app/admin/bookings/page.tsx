@@ -1,6 +1,7 @@
 ﻿import prisma from '@/lib/db';
 import Link from 'next/link';
 import { Search } from 'lucide-react';
+import { adminDate } from '@/lib/admin/when';
 
 export const dynamic = 'force-dynamic';
 
@@ -129,7 +130,7 @@ export default async function BookingsPage({ searchParams }: Props) {
                   <td className="px-4 py-3 text-[#3D2817] font-medium">{b.customerName}</td>
                   <td className="px-4 py-3 text-[#5C3D20] text-xs">{b.customerEmail}</td>
                   <td className="px-4 py-3 text-[#5C3D20] text-xs">{b.ticketType}</td>
-                  <td className="px-4 py-3 text-[#5C3D20] text-xs">{new Date(b.visitDate).toLocaleDateString()}</td>
+                  <td className="px-4 py-3 text-[#5C3D20] text-xs">{adminDate(b.visitDate)}</td>
                   <td className="px-4 py-3 text-[#5C3D20]">{b.adults}{b.children > 0 ? `+${b.children}` : ''}</td>
                   <td className="px-4 py-3 font-medium text-[#3D2817]">${b.totalAmount.toFixed(2)}</td>
                   <td className="px-4 py-3">

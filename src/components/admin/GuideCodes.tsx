@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Headphones, Loader2, Smartphone, Unlock, AlertTriangle } from 'lucide-react';
+import { adminDateTime } from '@/lib/admin/when';
 
 /**
  * The audio guide's support screen: who is holding which code, and the one
@@ -38,12 +39,7 @@ interface Props {
 
 function when(iso: string | null): string {
   if (!iso) return '—';
-  return new Date(iso).toLocaleString('en-GB', {
-    day: '2-digit',
-    month: 'short',
-    hour: '2-digit',
-    minute: '2-digit',
-  });
+  return adminDateTime(iso);
 }
 
 export function GuideCodes({ reference, codes }: Props) {

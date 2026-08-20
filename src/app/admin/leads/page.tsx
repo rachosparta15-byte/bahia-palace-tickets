@@ -1,5 +1,6 @@
 ﻿import prisma from '@/lib/db';
 import { ensureColumns } from '@/lib/db/ensure-columns';
+import { adminDate, adminDateTime } from '@/lib/admin/when';
 import { Search, Mail, User, Globe, Tag, Calendar, MapPin, Smartphone, Link2, Wifi, Users, CalendarCheck, MessageCircle, CircleDot } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -327,7 +328,7 @@ export default async function LeadsPage({ searchParams }: Props) {
                     <td className="px-4 py-3 text-xs whitespace-nowrap">
                       {l.visitDate
                         ? <span className="text-[#3D2817] font-medium">
-                            {new Date(l.visitDate + 'T00:00:00').toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
+                            {adminDate(l.visitDate + 'T00:00:00')}
                           </span>
                         : <span className="text-[#C4A882] italic">—</span>
                       }
@@ -373,10 +374,7 @@ export default async function LeadsPage({ searchParams }: Props) {
 
                     {/* Date */}
                     <td className="px-4 py-3 text-[#5C3D20] text-xs whitespace-nowrap">
-                      {new Date(lead.createdAt).toLocaleString('en-GB', {
-                        day: '2-digit', month: 'short', year: 'numeric',
-                        hour: '2-digit', minute: '2-digit',
-                      })}
+                      {adminDateTime(lead.createdAt)}
                     </td>
                   </tr>
                 );

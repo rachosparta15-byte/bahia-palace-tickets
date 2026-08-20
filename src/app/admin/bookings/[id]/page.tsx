@@ -9,6 +9,7 @@ import { GuideCodes, type GuideCodeRow } from '@/components/admin/GuideCodes';
 import { formatGuideCode } from '@/lib/guide-code';
 import { qrIsDelivered } from '@/lib/booking-lifecycle';
 import { getWhatsAppNumber } from '@/lib/whatsapp';
+import { adminDateLong, adminDateTime } from '@/lib/admin/when';
 
 export const dynamic = 'force-dynamic';
 
@@ -98,7 +99,7 @@ export default async function BookingDetailPage({ params }: Props) {
             <dl>
               <Row label="Reference"     value={<span className="font-mono">{booking.reference}</span>} />
               <Row label="Ticket"        value={booking.ticketType} />
-              <Row label="Visit Date"    value={new Date(booking.visitDate).toLocaleDateString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })} />
+              <Row label="Visit Date"    value={adminDateLong(booking.visitDate)} />
               <Row label="Adults"        value={booking.adults} />
               <Row label="Children"      value={booking.children} />
               <Row label="Total Amount"  value={<span className="font-semibold">${booking.totalAmount.toFixed(2)} {booking.currency}</span>} />
@@ -126,8 +127,8 @@ export default async function BookingDetailPage({ params }: Props) {
           <div className="bg-white rounded-2xl border border-[#E8D5B7] px-6 py-4">
             <h2 className="font-semibold text-[#3D2817] mb-4">Timestamps</h2>
             <dl>
-              <Row label="Created" value={new Date(booking.createdAt).toLocaleString()} />
-              <Row label="Updated" value={new Date(booking.updatedAt).toLocaleString()} />
+              <Row label="Created" value={adminDateTime(booking.createdAt)} />
+              <Row label="Updated" value={adminDateTime(booking.updatedAt)} />
             </dl>
           </div>
         </div>

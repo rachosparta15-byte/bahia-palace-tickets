@@ -2,6 +2,7 @@ import Link from 'next/link';
 import prisma from '@/lib/db';
 import { ensureColumns } from '@/lib/db/ensure-columns';
 import { TEASER_PRICE_ENABLED } from '@/config/pricing';
+import { adminDateTime } from '@/lib/admin/when';
 import { MousePointerClick, Eye, PenLine, Send, CreditCard, CheckCircle2, AlertTriangle, Smartphone } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -372,7 +373,7 @@ export default async function AdminClicksPage({ searchParams }: Props) {
       {clamped && instrumentedFrom && (
         <div className="mb-6 rounded-xl border border-[#E8A33D]/40 bg-[#2A2110] p-4">
           <p className="text-sm font-semibold text-[#F5E8CC]">
-            Showing from {instrumentedFrom.toLocaleString('en-GB')}, not the full {windowKey}
+            Showing from {adminDateTime(instrumentedFrom)}, not the full {windowKey}
           </p>
           <p className="mt-1.5 text-xs leading-relaxed text-[#C4A882] max-w-2xl">
             That is when the checkout steps started recording. Ticket clicks have been recorded for

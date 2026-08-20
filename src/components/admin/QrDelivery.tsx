@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { QrCode, Upload, Loader2, CheckCircle2, AlertTriangle, ExternalLink, Mail } from 'lucide-react';
+import { adminDateTime } from '@/lib/admin/when';
 
 interface Props {
   bookingId: string;
@@ -118,7 +119,7 @@ export function QrDelivery({
           <div>
             <dt className="inline font-semibold">Marked at: </dt>
             <dd className="inline">
-              {qrSentAt ? new Date(qrSentAt).toLocaleString('en-GB') : '—'}
+              {qrSentAt ? adminDateTime(qrSentAt) : '—'}
             </dd>
           </div>
           {qrDeliveredBy && (

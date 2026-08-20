@@ -1,6 +1,7 @@
 ﻿import prisma from '@/lib/db';
 import { Euro, Users, CalendarCheck, TrendingUp, Clock } from 'lucide-react';
 import { BOOKING_STATUS } from '@/lib/booking-lifecycle';
+import { adminDate } from '@/lib/admin/when';
 
 export const dynamic = 'force-dynamic';
 
@@ -186,7 +187,7 @@ export default async function AdminDashboard() {
                       </span>
                     </td>
                     <td className="px-4 py-3 text-[#5C3D20] text-xs whitespace-nowrap">
-                      {new Date(b.visitDate).toLocaleDateString()}
+                      {adminDate(b.visitDate)}
                     </td>
                     <td className="px-4 py-3">
                       <a href={`/admin/bookings/${b.id}`} className="font-mono text-xs text-[#2E4A7B] hover:underline">
@@ -242,7 +243,7 @@ export default async function AdminDashboard() {
                   </td>
                   <td className="px-4 py-3 text-[#3D2817]">{b.customerName}</td>
                   <td className="px-4 py-3 text-[#5C3D20] text-xs">{b.ticketType}</td>
-                  <td className="px-4 py-3 text-[#5C3D20] text-xs">{new Date(b.visitDate).toLocaleDateString()}</td>
+                  <td className="px-4 py-3 text-[#5C3D20] text-xs">{adminDate(b.visitDate)}</td>
                   <td className="px-4 py-3 text-[#5C3D20]">{b.adults + b.children}</td>
                   <td className="px-4 py-3 font-medium text-[#3D2817]">€{b.totalAmount.toFixed(2)}</td>
                   <td className="px-4 py-3">
@@ -251,7 +252,7 @@ export default async function AdminDashboard() {
                     </span>
                   </td>
                   <td className="px-4 py-3 text-xs text-[#8B6344]">
-                    {new Date(b.createdAt).toLocaleDateString()}
+                    {adminDate(b.createdAt)}
                   </td>
                 </tr>
               ))}

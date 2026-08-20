@@ -1,6 +1,7 @@
 ﻿import prisma from '@/lib/db';
 import Link from 'next/link';
 import { PlusCircle } from 'lucide-react';
+import { adminDate } from '@/lib/admin/when';
 
 export const dynamic = 'force-dynamic';
 
@@ -60,7 +61,7 @@ export default async function AdminSafetyPage() {
                       {tip.published ? 'Published' : 'Draft'}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-xs text-[#8B6344]">{new Date(tip.createdAt).toLocaleDateString()}</td>
+                  <td className="px-4 py-3 text-xs text-[#8B6344]">{adminDate(tip.createdAt)}</td>
                   <td className="px-4 py-3">
                     <Link href={`/admin/safety/${tip.id}`} className="text-xs text-[#2E4A7B] hover:underline font-medium">Edit</Link>
                   </td>

@@ -1,4 +1,5 @@
 import prisma from '@/lib/db';
+import { adminDateTime } from '@/lib/admin/when';
 import { Search, Mail, User, MessageSquare, Globe, Wifi, Calendar } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -133,10 +134,7 @@ export default async function MessagesPage({ searchParams }: Props) {
                   </div>
                   <p className="text-xs text-[#5C3D20] whitespace-nowrap flex items-center gap-1 shrink-0">
                     <Calendar size={11} />
-                    {new Date(m.createdAt).toLocaleString('en-GB', {
-                      day: '2-digit', month: 'short', year: 'numeric',
-                      hour: '2-digit', minute: '2-digit',
-                    })}
+                    {adminDateTime(m.createdAt)}
                   </p>
                 </div>
                 <p className="mt-3 text-sm text-[#5C3D20] leading-relaxed whitespace-pre-wrap bg-[#FAF3E7] rounded-xl px-4 py-3 border border-[#E8D5B7]/60">

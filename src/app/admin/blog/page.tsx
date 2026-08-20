@@ -1,6 +1,7 @@
 ﻿import prisma from '@/lib/db';
 import Link from 'next/link';
 import { PlusCircle } from 'lucide-react';
+import { adminDate } from '@/lib/admin/when';
 
 export const dynamic = 'force-dynamic';
 
@@ -83,7 +84,7 @@ export default async function AdminBlogPage() {
                     </span>
                   </td>
                   <td className="px-4 py-3 text-xs text-[#8B6344]">
-                    {new Date(p.createdAt).toLocaleDateString()}
+                    {adminDate(p.createdAt)}
                   </td>
                   <td className="px-4 py-3 flex items-center gap-3">
                     <Link href={`/admin/blog/${p.id}`} className="text-xs text-[#2E4A7B] hover:underline font-medium">
