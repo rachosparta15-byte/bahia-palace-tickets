@@ -11,6 +11,7 @@ import {
   FOLLOW_UP_PRICES,
   resumeUrl,
   unsubscribeUrl,
+  siblingIds,
 } from '@/lib/follow-up';
 
 export const runtime = 'nodejs';
@@ -205,9 +206,15 @@ export async function POST(req: NextRequest) {
        * Stamped only after the provider accepted it. Stamping first would
        * make a failed send look like a delivered one and quietly retire
        * somebody from the list without ever writing to them.
+       *
+       * Every booking on that address, not only the one the email quoted. The
+       * list shows one row per person now, but the database still holds the
+       * duplicates behind it — and a sibling left unstamped comes back
+       * tomorrow as a brand new candidate, which is the same person written to
+       * twice with extra steps.
        */
-      await prisma.booking.update({
-        where: { id: b.id },
+      await prisma.booking.updateMany({
+        where: { id: { in: siblingIds(eligible, b) } },
         data: kind === 'abandoned' ? { reminderSentAt: new Date() } : { crossSellSentAt: new Date() },
       });
       sent += 1;

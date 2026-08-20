@@ -98,9 +98,40 @@ function startOfToday(): Date {
  * (a reminder about a day gone by is worse than silence), never reminded
  * before, and not opted out.
  */
+/**
+ * One row per person, not one per abandoned attempt.
+ *
+ * Somebody who tried twice has two pending bookings, and the list treated them
+ * as two people: a real customer with two identical rows — same name, same
+ * address, same date, three adults — was about to receive the same email
+ * twice. From the reader's side that is not a reminder, it is a mailing list
+ * that has lost track of them.
+ *
+ * The newest attempt wins. It is the one they walked away from most recently,
+ * so it carries the date and party they last chose; an older row may quote a
+ * visit they have already changed their mind about.
+ *
+ * `emailsOf` returns every address in the group so the send can stamp all of
+ * them. Stamping only the row that was emailed would leave its siblings
+ * eligible, and they would surface as a fresh "new" candidate tomorrow.
+ */
+function newestPerEmail<T extends { customerEmail: string; createdAt: Date }>(rows: T[]): T[] {
+  const seen = new Set<string>();
+  const out: T[] = [];
+  // Sorted here rather than relied upon: the caller's ORDER BY is for display
+  // and could reasonably change without anybody thinking about this.
+  for (const row of [...rows].sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())) {
+    const key = row.customerEmail.trim().toLowerCase();
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    out.push(row);
+  }
+  return out;
+}
+
 export async function abandonedCandidates() {
   const cutoff = new Date(Date.now() - ABANDONED_AFTER_MINUTES * 60 * 1000);
-  return prisma.booking.findMany({
+  const rows = await prisma.booking.findMany({
     where: {
       status: BOOKING_STATUS.awaitingPayment,
       createdAt: { lt: cutoff },
@@ -112,6 +143,7 @@ export async function abandonedCandidates() {
     orderBy: { createdAt: 'desc' },
     take: 200,
   });
+  return newestPerEmail(rows);
 }
 
 /**
@@ -130,7 +162,7 @@ export async function abandonedCandidates() {
  * somewhere they cannot walk to.
  */
 export async function crossSellCandidates() {
-  return prisma.booking.findMany({
+  const rows = await prisma.booking.findMany({
     where: {
       status: BOOKING_STATUS.qrSent,
       visitDate: { gte: startOfToday() },
@@ -141,6 +173,22 @@ export async function crossSellCandidates() {
     orderBy: { visitDate: 'asc' },
     take: 200,
   });
+  // Same rule as the reminder: a family who bought twice is one household with
+  // one inbox, and "the other two monuments are a short walk away" does not
+  // become more true for being said again.
+  return newestPerEmail(rows);
+}
+
+/**
+ * Every eligible row sharing an address, so a send can stamp all of them.
+ *
+ * The list shows one row per person; the database still holds the others. If
+ * only the emailed row is marked, its siblings stay eligible and reappear as
+ * fresh candidates — the same person, offered up again tomorrow.
+ */
+export function siblingIds<T extends { id: string; customerEmail: string }>(rows: T[], chosen: T): string[] {
+  const key = chosen.customerEmail.trim().toLowerCase();
+  return rows.filter((r) => r.customerEmail.trim().toLowerCase() === key).map((r) => r.id);
 }
 
 /** The party prices, as the emails print them. */
