@@ -54,8 +54,13 @@ export const NETWORK_SITES: NetworkSite[] = [
      *
      * The price is the hub's `allInclusivePriceEur`, which is what actually
      * gets charged — 13.99 here was a figure nothing on that site quotes.
+     *
+     * It then went stale the other way: this said 11.99 while badi-palace.com
+     * charged 12.99, so the cross-sell email invited people to "Book from
+     * €11.99" and the checkout they landed on asked for a euro more. Verified
+     * against the live button: data-unit-cents="1299".
      */
-    priceEUR: 11.99,
+    priceEUR: 12.99,
     ticketsOpen: true,
   },
   {
@@ -65,8 +70,8 @@ export const NETWORK_SITES: NetworkSite[] = [
     blurb:
       'Sealed for two centuries and reopened in 1917. The Hall of Twelve Columns is the finest room in the city.',
     // Also open: saadian-tombs.com carries a live "Book Now" into
-    // /tickets/#checkout, and the hub prices it at 11.99 like El Badi.
-    priceEUR: 11.99,
+    // /tickets/#checkout. Verified against the live button: 1299.
+    priceEUR: 12.99,
     ticketsOpen: true,
   },
   {
@@ -78,7 +83,9 @@ export const NETWORK_SITES: NetworkSite[] = [
     // Left closed deliberately: this one was NOT verified as selling, and the
     // rule in this file is that `ticketsOpen` flips when payments go live on
     // that site, not when somebody assumes they have.
-    priceEUR: 11.99,
+    // 10.00, not 11.99: Cap Spartel is 80 MAD at the gate, not 100, and the
+    // pack is priced against it. Verified against the live button: 1000.
+    priceEUR: 10.0,
     ticketsOpen: false,
   },
 ];
