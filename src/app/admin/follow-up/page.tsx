@@ -2,7 +2,8 @@ import {
   abandonedCandidates,
   crossSellCandidates,
   currentTotalEur,
-  ABANDONED_AFTER_HOURS,
+  ABANDONED_AFTER_MINUTES,
+  STILL_PAYING_MINUTES,
 } from '@/lib/follow-up';
 import { FollowUpList, type Candidate } from './FollowUpList';
 
@@ -25,6 +26,7 @@ function toCandidate(b: {
   adults: number;
   children: number;
   totalAmount: number;
+  createdAt: Date;
 }): Candidate {
   return {
     id: b.id,
@@ -39,6 +41,7 @@ function toCandidate(b: {
     // quote from the day they walked away and can be a price we no longer
     // charge. The operator and the customer must be reading the same number.
     total: currentTotalEur(b),
+    createdAt: b.createdAt.toISOString(),
   };
 }
 
@@ -62,7 +65,7 @@ export default async function FollowUpPage() {
       <FollowUpList
         kind="abandoned"
         title="Did not finish paying"
-        note={`Reached the payment step, never paid, at least ${ABANDONED_AFTER_HOURS} hours ago, visit date still ahead, never reminded, not opted out.`}
+        note={`Reached the payment step, never paid, at least ${ABANDONED_AFTER_MINUTES} minutes ago, visit date still ahead, never reminded, not opted out. Anything under ${STILL_PAYING_MINUTES} minutes old is marked — a 3-D Secure challenge takes about that long, so those may still be at PayPal.`}
         rows={abandoned.map(toCandidate)}
       />
 

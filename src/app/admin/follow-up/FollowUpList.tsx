@@ -10,7 +10,28 @@ export type Candidate = {
   visitDate: string;
   party: string;
   total: number;
+  /** ISO instant the checkout was opened — drives the "Started" column. */
+  createdAt: string;
 };
+
+/**
+ * Below this, a row is as likely to be mid-payment as abandoned.
+ *
+ * The eligibility window is twenty minutes, which is also how long a 3-D
+ * Secure challenge can take: a phone leaves the browser for an SMS code and
+ * comes back. Nobody is excluded for being new — that would be the four-hour
+ * wait again under another name — but the operator is told, because "you did
+ * not finish" landing while someone is still paying is the one failure this
+ * screen can cause and cannot take back.
+ */
+const STILL_PAYING_MINUTES = 45;
+
+/** "12 min ago" / "3 h ago" — how long the checkout has been sitting. */
+function sinceLabel(iso: string): { text: string; fresh: boolean } {
+  const mins = Math.max(0, Math.round((Date.now() - new Date(iso).getTime()) / 60000));
+  const text = mins < 60 ? `${mins} min ago` : mins < 1440 ? `${Math.round(mins / 60)} h ago` : `${Math.round(mins / 1440)} d ago`;
+  return { text, fresh: mins < STILL_PAYING_MINUTES };
+}
 
 /**
  * One list, with the choice of who is on it.
@@ -148,7 +169,7 @@ export function FollowUpList({
                   className="h-4 w-4 accent-[#C4452D]"
                 />
               </th>
-              {['Reference', 'Name', 'Email', 'Visit date', 'Party', 'Total'].map((h) => (
+              {['Reference', 'Name', 'Email', 'Visit date', 'Party', 'Total', 'Started'].map((h) => (
                 <th
                   key={h}
                   className="px-4 py-3 text-start text-xs font-semibold text-[#8B6344] uppercase tracking-wide"
@@ -161,7 +182,7 @@ export function FollowUpList({
           <tbody>
             {rows.length === 0 && (
               <tr>
-                <td colSpan={7} className="px-4 py-8 text-center text-[#8B6344]">
+                <td colSpan={8} className="px-4 py-8 text-center text-[#8B6344]">
                   Nobody waiting
                 </td>
               </tr>
@@ -190,6 +211,21 @@ export function FollowUpList({
                   <td className="px-4 py-3 text-xs text-[#5C3D20]">{b.visitDate}</td>
                   <td className="px-4 py-3 text-xs text-[#5C3D20]">{b.party}</td>
                   <td className="px-4 py-3 font-medium text-[#3D2817]">&euro;{b.total.toFixed(2)}</td>
+                  <td className="px-4 py-3 text-xs whitespace-nowrap">
+                    {(() => {
+                      const { text, fresh } = sinceLabel(b.createdAt);
+                      return fresh ? (
+                        <span
+                          className="inline-flex items-center gap-1 rounded-full bg-[#F6E2C8] px-2 py-0.5 font-semibold text-[#8A5A16]"
+                          title={`Opened ${text}. A 3-D Secure challenge can take this long — they may still be at PayPal.`}
+                        >
+                          {text} &middot; may still be paying
+                        </span>
+                      ) : (
+                        <span className="text-[#5C3D20]">{text}</span>
+                      );
+                    })()}
+                  </td>
                 </tr>
               );
             })}

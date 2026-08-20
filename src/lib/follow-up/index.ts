@@ -13,13 +13,35 @@ import { ADULT_PRICE_EUR_CENTS, CHILD_PRICE_EUR_CENTS, packTotalCents } from '@/
 /**
  * How long after an abandoned checkout the reminder becomes fair.
  *
- * Not twenty minutes. PayPal's own flow legitimately takes that long — a 3-D
- * Secure challenge, a phone leaving the browser for an SMS code — and "you
- * didn't finish" arriving while someone is still paying reads as a scam and
- * loses the sale that was about to close. Four hours is past every honest
- * explanation and still the same day.
+ * Twenty minutes, and it was four hours. The owner's objection is the one that
+ * matters: somebody who could not finish here has an afternoon in which to buy
+ * the same ticket from somebody else, and a reminder that arrives after they
+ * already have one is not a reminder, it is an apology.
+ *
+ * The cost of the short window is real and is not pretended away. PayPal's own
+ * flow can legitimately take this long — a 3-D Secure challenge, a phone
+ * leaving the browser for an SMS code — so a row can appear here while its
+ * owner is still, genuinely, paying. Two things hold that in check:
+ *
+ *   NOTHING SENDS ON A SCHEDULE. An operator reads this list and presses a
+ *   button. The judgement that a machine could not make at twenty minutes is
+ *   made by a person who can see how long ago each row started.
+ *
+ *   Rows younger than STILL_PAYING_MINUTES are flagged, so "this one may still
+ *   be at PayPal" is on screen rather than in someone's memory.
+ *
+ * Anyone who does complete payment leaves this list on their own: the status
+ * stops being `pending` and the query no longer matches them.
  */
-export const ABANDONED_AFTER_HOURS = 4;
+export const ABANDONED_AFTER_MINUTES = 20;
+
+/**
+ * Below this age, a row is more likely mid-payment than abandoned.
+ *
+ * It does not exclude anybody — excluding would put the four-hour wait back by
+ * another name. It marks them, and the operator decides.
+ */
+export const STILL_PAYING_MINUTES = 45;
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.visitbahiapalace.com';
 
@@ -77,7 +99,7 @@ function startOfToday(): Date {
  * before, and not opted out.
  */
 export async function abandonedCandidates() {
-  const cutoff = new Date(Date.now() - ABANDONED_AFTER_HOURS * 60 * 60 * 1000);
+  const cutoff = new Date(Date.now() - ABANDONED_AFTER_MINUTES * 60 * 1000);
   return prisma.booking.findMany({
     where: {
       status: BOOKING_STATUS.awaitingPayment,
