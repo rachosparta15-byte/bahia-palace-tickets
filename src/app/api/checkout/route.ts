@@ -10,6 +10,7 @@ import {
   VISITOR_PACK_MAX_VISITORS,
   packTotalCents,
 } from '@/config/pricing';
+import { clientIp, isSubmissionLimited, recordSubmission } from '@/lib/rate-limit';
 import { generateReference } from '@/lib/utils';
 import { payments } from '@/lib/payments';
 import prisma from '@/lib/db';
@@ -72,7 +73,37 @@ const schema = z
     path: ['adults'],
   });
 
+
+/**
+ * A ceiling on checkout attempts from one address.
+ *
+ * Every POST here writes a booking row and, on the PayPal path, opens an order
+ * with a payment provider. Nothing stopped a script doing that in a loop, and
+ * the cost is not hypothetical: this site is carrying 62 pending bookings, and
+ * an admin list padded with fabricated ones is an admin list nobody reads.
+ *
+ * Ten an hour, not five. A real person retries a failed card, changes a date,
+ * or books a second monument from the same hotel wifi — the limit has to sit
+ * above anything a frustrated customer would do and well below anything a loop
+ * would. It never blocks a first attempt.
+ *
+ * `isSubmissionLimited` returns false when it cannot read its own table, so a
+ * limiter outage cannot become the reason nobody can buy.
+ */
+const CHECKOUT_MAX_PER_HOUR = 10;
+const CHECKOUT_WINDOW_MS = 60 * 60 * 1000;
+
 export async function POST(request: NextRequest) {
+  const ip = clientIp(request);
+  if (await isSubmissionLimited('checkout', ip, CHECKOUT_MAX_PER_HOUR, CHECKOUT_WINDOW_MS)) {
+    // 429 with a sentence, not a silent failure: somebody on their eleventh
+    // attempt needs to know why nothing happened.
+    return NextResponse.json(
+      { error: 'too_many_attempts', message: 'Too many checkout attempts from this connection. Please try again later.' },
+      { status: 429 },
+    );
+  }
+
   let parsed;
   try {
     parsed = schema.safeParse(await request.json());
@@ -116,6 +147,8 @@ export async function POST(request: NextRequest) {
   if (!status.enabled) {
     return NextResponse.json({ error: 'booking_not_open' }, { status: 503 });
   }
+
+  await recordSubmission('checkout', ip);
 
   if (activeProvider() === 'paypal') {
     return createPayPalCheckout(body);

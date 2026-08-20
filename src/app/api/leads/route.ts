@@ -38,6 +38,35 @@ export async function POST(req: NextRequest) {
       req.headers.get('x-real-ip') ??
       null;
 
+
+    /*
+
+     * The check the import was already there for.
+
+     *
+
+     * `recordSubmission` was being called on every saved lead and nothing ever
+
+     * read the count back, so the allowance was measured and never spent — a
+
+     * limiter that logs. Fifteen an hour: a lead is one modal submission, far
+
+     * cheaper than a checkout, so the ceiling sits higher than that route's.
+
+     */
+
+    if (ip && (await isSubmissionLimited('leads', ip, 15, 60 * 60 * 1000))) {
+
+      return NextResponse.json(
+
+        { error: 'Too many submissions from this connection. Please try again later.' },
+
+        { status: 429 },
+
+      );
+
+    }
+
     const partySize = Number.isInteger(body.partySize) && (body.partySize as number) > 0 && (body.partySize as number) < 100
       ? body.partySize as number
       : null;

@@ -49,6 +49,14 @@ next-env.d.ts
 
 # screenshots & temp files
 *.png
+
+# ...except the app icons, which layout.tsx links to by URL. They lived on one
+# laptop and were never committed, so /icon-192.png, /icon-512.png and
+# /apple-icon.png returned 404 on every crawl and no phone could add the site
+# to a home screen.
+!public/icon-192.png
+!public/icon-512.png
+!public/apple-icon.png
 *.jpg
 sc-*.png
 screenshot-*.png

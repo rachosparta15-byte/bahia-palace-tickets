@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { clientIp, isSubmissionLimited, recordSubmission } from '@/lib/rate-limit';
 import { z } from 'zod';
 import prisma from '@/lib/db';
 import { payments } from '@/lib/payments';
@@ -19,8 +20,25 @@ const schema = z.object({
   specialRequests: z.string().max(500).optional(),
 });
 
+/*
+ * Same ceiling as /api/checkout, and for the same reason: this route writes a
+ * booking row from anonymous input and had nothing stopping a loop. Ten an hour
+ * sits above anything a real person does — a retried card, a changed date — and
+ * well below anything a script does.
+ */
+const BOOKINGS_MAX_PER_HOUR = 10;
+const BOOKINGS_WINDOW_MS = 60 * 60 * 1000;
+
 export async function POST(req: NextRequest) {
   try {
+    const ip = clientIp(req);
+    if (await isSubmissionLimited('bookings', ip, BOOKINGS_MAX_PER_HOUR, BOOKINGS_WINDOW_MS)) {
+      return NextResponse.json(
+        { error: 'Too many booking attempts from this connection. Please try again later.' },
+        { status: 429 },
+      );
+    }
+
     const body  = await req.json();
     const input = schema.safeParse(body);
     if (!input.success) {
@@ -31,6 +49,8 @@ export async function POST(req: NextRequest) {
 
     // Rejects both unknown slugs and products that have moved to their own
     // gated checkout (e.g. visitor-pack) — see isLegacyBookableSlug.
+    await recordSubmission('bookings', ip);
+
     if (!isLegacyBookableSlug(ticket)) {
       return NextResponse.json({ error: 'Unknown ticket type' }, { status: 400 });
     }
