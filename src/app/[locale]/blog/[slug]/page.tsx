@@ -58,6 +58,26 @@ const CATEGORY_IMAGES: Record<string, string> = {
   'itineraries':  '/images/gallery/bahia-palace-aerial-view-marrakech-medina-drone.jpg',
 };
 
+/**
+ * FAQPage schema, built from the questions the page actually shows.
+ *
+ * This is the only place FAQPage is produced. Nineteen posts also carried a
+ * hand-written copy inside their content, so those pages emitted two blocks
+ * describing the same questions; the inline copies have been removed and the
+ * template is now the single source.
+ *
+ * The h3 has to BE a question. The pattern matched every h3 followed by a
+ * paragraph, so "Quick Overview of Each Site" and "Day 1 Morning" were
+ * published as Questions with the paragraph beneath them as the accepted
+ * Answer — markup asserting a Q&A that nobody asked. Worse, an unclosed h3 in
+ * four translations let the capture run to the next closing tag far below, and
+ * a whole article shipped as the text of one question.
+ *
+ * Hence the mark and the length cap: a question ends in "?" and a heading that
+ * long is not a heading, it is a parse that went wrong.
+ */
+const MAX_QUESTION = 200;
+
 function extractFaqSchema(html: string) {
   const pairs: { q: string; a: string }[] = [];
   const re = /<h3[^>]*>([\s\S]*?)<\/h3>\s*<p[^>]*>([\s\S]*?)<\/p>/gi;
@@ -65,6 +85,7 @@ function extractFaqSchema(html: string) {
   while ((m = re.exec(html)) !== null) {
     const q = m[1].replace(/<[^>]+>/g, '').trim();
     const a = m[2].replace(/<[^>]+>/g, '').trim();
+    if (!q.endsWith('?') || q.length > MAX_QUESTION) continue;
     if (q && a) pairs.push({ q, a });
   }
   if (pairs.length === 0) return null;
