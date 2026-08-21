@@ -6,13 +6,23 @@ import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 import { buyingPathPriceLabel, TEASER_PRICE_ENABLED } from '@/config/pricing';
 
 /**
- * The three inclusions listed under the hero price.
+ * The inclusions listed under the hero price.
  *
- * Deliberately not the ticket itself: the price line already says what is
- * being bought, and repeating it here would spend one of only three lines
- * saying nothing new.
+ * `ticket` is FIRST, and it was absent until 2026-08-21. The reason given for
+ * leaving it out was that "the price line already says what is being bought" —
+ * which held while the teaser test ran, because that line carried the
+ * Ministry's 100 DH and the entry ticket was the one thing it could refer to.
+ * Ending the test replaced it with a bare "€12.99 per person", which says
+ * nothing about a ticket, and the omission stopped being a saved line and
+ * became a hole: the hero offered an audio guide, WhatsApp support and free
+ * cancellation for €12.99 and never said the official entry ticket was part of
+ * it. A visitor could reasonably read that as still needing to buy entry
+ * separately — on the site whose entire product is buying it for them.
+ *
+ * Four lines rather than three, and worth the room. The one thing a buyer must
+ * never have to infer is what they are being let in with.
  */
-const INCLUSION_KEYS = ['audio', 'whatsapp', 'cancellation'] as const;
+const INCLUSION_KEYS = ['ticket', 'audio', 'whatsapp', 'cancellation'] as const;
 
 /**
  * What the hero says under the price WHILE THE TEASER TEST RUNS.
