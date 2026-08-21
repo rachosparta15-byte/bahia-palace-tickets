@@ -288,8 +288,19 @@ export function packTotalCents(adults: number, children: number): number {
  * TO END THE TEST: set this to false. Every display goes back to the true
  * total, because every one of them reads it through the helper below rather
  * than deciding for itself.
+ *
+ * ENDED 2026-08-21, on the owner's instruction, and point 3 above is why. The
+ * hero and the ticket cards read "100 DH per person" over buttons going to
+ * /visitor-pack#checkout, which charges €12.99 — a total advertised below the
+ * one payable, to EU consumers, which is what the Consumer Rights Directive
+ * calls drip pricing. Point 1 said the test could not answer its own question
+ * either, so nothing is being given up by stopping.
+ *
+ * The flag stays rather than being deleted. It is one line to run again, the
+ * branches it guards record exactly what the test changed, and the three
+ * arguments above are worth keeping next to it.
  */
-export const TEASER_PRICE_ENABLED = true;
+export const TEASER_PRICE_ENABLED = false;
 
 /**
  * What a price display in the BUYING PATH should say — hero, ticket cards,
