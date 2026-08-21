@@ -736,7 +736,7 @@
         },
         "delivery": {
           "q": "Quando ricevo il biglietto?",
-          "a": "Otteniamo il tuo biglietto ufficiale dal palazzo dopo la conferma del pagamento e te lo inviamo via e-mail. Per una data futura arriva circa 24 ore prima della visita; se prenoti per oggi, lo inviamo appena lo abbiamo. Il tuo codice non ha una fascia oraria: puoi arrivare quando preferisci in quella giornata."
+          "a": "Otteniamo il tuo biglietto ufficiale al palazzo dopo la conferma del pagamento e te lo inviamo per e-mail. Arriva circa 24 ore prima della visita. Il tuo codice non ha una fascia oraria, quindi puoi arrivare quando preferisci quel giorno."
         },
         "group": {
           "q": "Posso prenotare per un gruppo?",
@@ -765,7 +765,7 @@
         "email": "Inserisci un indirizzo e-mail valido.",
         "visitors": "Inserisci un numero compreso tra 1 e {max}.",
         "consent": "Conferma prima di continuare: è necessario per completare la prenotazione.",
-        "tooSoon": "Le prenotazioni per la giornata in corso chiudono alle {time}, ora di Marrakech, così possiamo ritirare il biglietto prima della chiusura del palazzo. Scegli la prima data disponibile.",
+        "tooSoon": "Ci servono alcuni giorni di preavviso per ritirare il tuo biglietto al palazzo. Scegli la prima data proposta dal calendario.",
         "party": "Inserisci almeno un adulto e non più di {max} persone in totale."
       },
       "summaryTitle": "Riepilogo dell’ordine",
@@ -836,7 +836,7 @@
       },
       "delivery": {
         "title": "Il tuo biglietto arriva prima che ti serva.",
-        "body": "Ritiriamo il tuo biglietto al palazzo dopo il pagamento e te lo inviamo via e-mail: circa 24 ore prima di una visita futura, o appena lo abbiamo se vai oggi."
+        "body": "Ritiriamo il tuo biglietto al palazzo dopo il pagamento e te lo inviamo per e-mail, circa 24 ore prima della visita."
       },
       "price": {
         "title": "12,99 € a persona adulta, 7,99 € per bambino dai 7 ai 13 anni. Tasse incluse.",

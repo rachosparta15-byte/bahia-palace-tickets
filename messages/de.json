@@ -736,7 +736,7 @@
         },
         "delivery": {
           "q": "Wann erhalte ich mein Ticket?",
-          "a": "Wir besorgen Ihr offizielles Ticket im Palast, sobald Ihre Zahlung bestätigt ist, und senden es Ihnen per E-Mail. Bei einem späteren Datum kommt es etwa 24 Stunden vor Ihrem Besuch an; buchen Sie für heute, senden wir es, sobald wir es haben. Ihr Code enthält kein Zeitfenster — Sie kommen an dem Tag, wann es Ihnen passt."
+          "a": "Wir besorgen Ihr offizielles Ticket im Palast, sobald Ihre Zahlung eingegangen ist, und senden es Ihnen per E-Mail. Es kommt etwa 24 Stunden vor Ihrem Besuch an. Ihr Code enthält kein Zeitfenster – Sie können an diesem Tag kommen, wann es Ihnen passt."
         },
         "group": {
           "q": "Kann ich für eine Gruppe buchen?",
@@ -765,7 +765,7 @@
         "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
         "visitors": "Bitte geben Sie eine Zahl zwischen 1 und {max} ein.",
         "consent": "Bitte bestätigen Sie dies, bevor Sie fortfahren — es ist für die Buchung erforderlich.",
-        "tooSoon": "Buchungen für denselben Tag schließen um {time} Uhr Marrakesch-Zeit, damit wir Ihr Ticket vor Schließung des Palasts abholen können. Bitte wählen Sie den nächsten verfügbaren Termin.",
+        "tooSoon": "Wir brauchen einige Tage Vorlauf, um Ihr Ticket im Palast abzuholen. Bitte wählen Sie das früheste Datum, das der Kalender anbietet.",
         "party": "Bitte mindestens einen Erwachsenen angeben, insgesamt höchstens {max} Personen."
       },
       "summaryTitle": "Bestellübersicht",
@@ -836,7 +836,7 @@
       },
       "delivery": {
         "title": "Ihr Ticket kommt, bevor Sie es brauchen.",
-        "body": "Wir holen Ihr Ticket nach der Zahlung im Palast ab und senden es per E-Mail — etwa 24 Stunden vor einem späteren Besuch, oder sofort, wenn Sie heute gehen."
+        "body": "Wir holen Ihr Ticket nach der Zahlung im Palast ab und senden es Ihnen per E-Mail, etwa 24 Stunden vor Ihrem Besuch."
       },
       "price": {
         "title": "12,99 € pro Erwachsenem, 7,99 € pro Kind von 7 bis 13 Jahren. Inklusive aller Steuern.",

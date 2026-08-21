@@ -736,7 +736,7 @@
         },
         "delivery": {
           "q": "Quand vais-je recevoir mon billet ?",
-          "a": "Nous obtenons votre billet officiel auprès du palais une fois votre paiement validé, puis nous vous l'envoyons par e-mail. Pour une date future, il arrive environ 24 heures avant votre visite ; pour aujourd'hui, nous l'envoyons dès que nous l'avons. Votre code ne comporte aucun créneau horaire : vous arrivez quand vous voulez ce jour-là."
+          "a": "Nous obtenons votre billet officiel au palais une fois votre paiement encaissé, puis nous vous l’envoyons par e-mail. Il arrive environ 24 heures avant votre visite. Votre code ne comporte aucun créneau horaire : vous arrivez à l’heure qui vous convient ce jour-là."
         },
         "group": {
           "q": "Puis-je réserver pour un groupe ?",
@@ -765,7 +765,7 @@
         "email": "Veuillez saisir une adresse e-mail valide.",
         "visitors": "Veuillez saisir un nombre entre 1 et {max}.",
         "consent": "Merci de confirmer avant de continuer — c’est requis pour finaliser votre réservation.",
-        "tooSoon": "La réservation pour le jour même ferme à {time}, heure de Marrakech, afin que nous puissions retirer votre billet avant la fermeture du palais. Veuillez choisir la date suivante.",
+        "tooSoon": "Nous avons besoin de quelques jours pour récupérer votre billet au palais. Choisissez la première date proposée par le calendrier.",
         "party": "Veuillez indiquer au moins un adulte, et {max} personnes au maximum."
       },
       "summaryTitle": "Récapitulatif de la commande",
@@ -836,7 +836,7 @@
       },
       "delivery": {
         "title": "Votre billet arrive avant que vous en ayez besoin.",
-        "body": "Nous retirons votre billet au palais après paiement et vous l'envoyons par e-mail : environ 24 heures avant une visite future, ou dès que nous l'avons si vous y allez aujourd'hui."
+        "body": "Nous récupérons votre billet au palais après le paiement et vous l’envoyons par e-mail, environ 24 heures avant votre visite."
       },
       "price": {
         "title": "12,99 € par adulte, 7,99 € par enfant de 7 à 13 ans. Toutes taxes comprises.",

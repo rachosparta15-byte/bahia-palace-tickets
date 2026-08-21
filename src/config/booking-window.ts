@@ -17,8 +17,28 @@
  *
  * Raising it back is one number here; the four sentences in messages/*.json
  * that describe the window would need to move with it.
+ *
+ * 2026-08-21: RAISED TO 5, TEMPORARILY, while PayPal reviews the account.
+ *
+ * Same reasoning as the paragraph above, pointed at a different risk. The
+ * exposure in same-day selling is that the work has to happen inside the hour;
+ * the exposure now is that the money might not be ours to work with. Funds can
+ * be held and the account can gain a limitation mid-week, and a ticket that
+ * cannot be bought is a customer at the gate with nothing — the same ruined
+ * afternoon, arriving by a different route. Five days means nothing sold today
+ * needs fulfilling before the review is expected to have resolved.
+ *
+ * PUT THIS BACK TO 0 once the review clears. The owner's same-day decision
+ * still stands; this suspends it, it does not reverse it. The copy that
+ * describes the window moved with it and has to move back — see the
+ * `sameDay`/`delivery` strings in messages/*.json.
  */
-export const BOOKING_LEAD_DAYS = 0;
+/* Annotated `number` rather than left to inference. Without it TypeScript
+   narrows this to the literal `5`, and `BOOKING_LEAD_DAYS === 0` in
+   earliestVisitDate() below becomes a compile error for comparing types with no
+   overlap — so the file would stop building on exactly the edit it is designed
+   to receive. The value is meant to change; its type is not. */
+export const BOOKING_LEAD_DAYS: number = 5;
 
 /**
  * The monument's own timezone.

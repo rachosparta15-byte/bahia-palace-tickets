@@ -736,7 +736,7 @@
         },
         "delivery": {
           "q": "¿Cuándo recibo mi entrada?",
-          "a": "Obtenemos tu entrada oficial en el palacio una vez confirmado el pago y te la enviamos por correo. Si reservas para una fecha futura, llega unas 24 horas antes de tu visita; si reservas para hoy, la enviamos en cuanto la tenemos. Tu código no lleva franja horaria, así que puedes llegar a la hora que prefieras ese día."
+          "a": "Obtenemos tu entrada oficial en el palacio una vez confirmado el pago y te la enviamos por correo electrónico. Llega unas 24 horas antes de tu visita. Tu código no tiene franja horaria, así que puedes llegar cuando prefieras ese día."
         },
         "group": {
           "q": "¿Puedo reservar para un grupo?",
@@ -765,7 +765,7 @@
         "email": "Introduce una dirección de correo válida.",
         "visitors": "Introduce un número entre 1 y {max}.",
         "consent": "Confirme esto antes de continuar: es necesario para completar su reserva.",
-        "tooSoon": "La reserva para hoy mismo cierra a las {time}, hora de Marrakech, para que podamos recoger tu entrada antes de que cierre el palacio. Elige la siguiente fecha disponible.",
+        "tooSoon": "Necesitamos unos días de antelación para recoger tu entrada en el palacio. Elige la primera fecha que ofrece el calendario.",
         "party": "Indique al menos un adulto y un máximo de {max} personas en total."
       },
       "summaryTitle": "Resumen del pedido",
@@ -836,7 +836,7 @@
       },
       "delivery": {
         "title": "Su entrada llega antes de que la necesite.",
-        "body": "Recogemos tu entrada en el palacio tras el pago y te la enviamos por correo: unas 24 horas antes de una visita futura, o en cuanto la tenemos si vas hoy."
+        "body": "Recogemos tu entrada en el palacio tras el pago y te la enviamos por correo electrónico, unas 24 horas antes de tu visita."
       },
       "price": {
         "title": "12,99 € por adulto, 7,99 € por niño de 7 a 13 años. Impuestos incluidos.",

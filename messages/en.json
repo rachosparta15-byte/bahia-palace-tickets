@@ -734,7 +734,7 @@
         },
         "delivery": {
           "q": "When do I receive my ticket?",
-          "a": "We obtain your official ticket from the palace after your payment clears, then email it to you. Book for a future date and it arrives about 24 hours before your visit; book for today and we send it as soon as we have it. Your code carries no time slot, so you can arrive whenever suits you on that date."
+          "a": "We obtain your official ticket from the palace after your payment clears, then email it to you. It arrives about 24 hours before your visit. Your code carries no time slot, so you can arrive whenever suits you on that date."
         },
         "group": {
           "q": "Can I book for a group?",
@@ -763,7 +763,7 @@
         "email": "Please enter a valid email address.",
         "visitors": "Please enter a number between 1 and {max}.",
         "consent": "Please confirm this before continuing — it is required to complete your booking.",
-        "tooSoon": "Same-day booking closes at {time} Marrakech time, so we can collect your ticket before the palace shuts. Please choose the next available date.",
+        "tooSoon": "We need a few days’ notice to collect your ticket from the palace. Please choose the earliest date the calendar offers.",
         "party": "Please enter at least one adult, and no more than {max} people in total."
       },
       "summaryTitle": "Order summary",
@@ -834,7 +834,7 @@
       },
       "delivery": {
         "title": "Your ticket arrives before you need it.",
-        "body": "We collect your ticket from the palace after payment and email it to you — about 24 hours before a future visit, or as soon as we have it if you are going today."
+        "body": "We collect your ticket from the palace after payment and email it to you, about 24 hours before your visit."
       },
       "price": {
         "title": "€12.99 per adult, €7.99 per child aged 7–13. All taxes included.",
