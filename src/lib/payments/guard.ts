@@ -32,8 +32,31 @@ export interface PaymentsStatus {
   testMode: boolean;
 }
 
+/**
+ * FORCED OFF 2026-08-22, above the environment variable.
+ *
+ * PayPal permanently deactivated the account that took every payment on this
+ * network — "there was information used to create this account that we cannot
+ * verify" — and may hold funds for up to 180 days. There is no processor
+ * behind this checkout now, so a live form would collect a name, an email, a
+ * date and a card and fail at the last step.
+ *
+ * Hardcoded rather than done by unsetting PAYMENTS_ENABLED in Vercel, because
+ * this must not depend on a dashboard someone can change without a review, or
+ * on remembering which environment holds which value. It is one line, it is in
+ * the diff, and it cannot be switched on by accident.
+ *
+ * TO RESTORE: delete the early return, then satisfy BOTH halves of the switch
+ * described above — the flag AND live credentials for whatever processor
+ * replaces PayPal. Read GO-LIVE.md first; several claims on the site ("no
+ * booking fees", "official tickets only", "free to use") have to be checked
+ * again against whatever the new processor charges.
+ */
+const PAYMENTS_HALTED = true;
+
 /** Only the exact lowercase string "true" counts. Everything else is off. */
 function flagEnabled(): boolean {
+  if (PAYMENTS_HALTED) return false;
   // ⚠️ Before setting this to true, complete GO-LIVE.md in the repo root.
   // Several claims on the site ("no booking fees", "official tickets only",
   // "free to use") become false once payments are enabled.
