@@ -4,6 +4,7 @@ import { dirFor } from '@/i18n/routing';
 import { BASE } from '@/lib/seo';
 import { Analytics } from '@vercel/analytics/next';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
+import Script from 'next/script';
 import { Playfair_Display, Cormorant_Garamond, DM_Sans, Amiri } from 'next/font/google';
 import './globals.css';
 
@@ -108,6 +109,17 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
+      <head>
+        {/* AdSense site-verification snippet — must load in <head> on every
+            page for Google to confirm site ownership. Client ID is public by
+            design (it identifies the publisher account, not a secret). */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1898580718776547"
+          crossOrigin="anonymous"
+          strategy="beforeInteractive"
+        />
+      </head>
       <body className={`${playfair.variable} ${cormorant.variable} ${dmSans.variable} ${amiri.variable}`}>
         <script
           type="application/ld+json"
