@@ -257,15 +257,30 @@ export async function Hero() {
              * permanently — including while a ticket button was on screen.
              */}
             <div className="mt-6 sm:mt-8 flex flex-wrap items-start gap-x-5 gap-y-4">
-              <LeadButton
-                ticketType="visitor-pack"
-                ctaLocation="hero"
-                id="ticket-book-btn"
-                className="btn-primary min-h-[48px] text-sm sm:text-base"
-              >
-                <Ticket size={18} aria-hidden="true" />
-                {tt('bookNow')}
-              </LeadButton>
+              {/* Payments off: send visitors to compare products in Ticket
+                  Options rather than straight into a generic lead modal for
+                  an unspecified product — the modal still runs, just one
+                  step later, from the card the visitor actually picked. */}
+              {paymentsEnabled ? (
+                <LeadButton
+                  ticketType="visitor-pack"
+                  ctaLocation="hero"
+                  id="ticket-book-btn"
+                  className="btn-primary min-h-[48px] text-sm sm:text-base"
+                >
+                  <Ticket size={18} aria-hidden="true" />
+                  {tt('bookNow')}
+                </LeadButton>
+              ) : (
+                <a
+                  href="#ticket-options"
+                  id="ticket-book-btn"
+                  className="btn-primary min-h-[48px] text-sm sm:text-base"
+                >
+                  <Ticket size={18} aria-hidden="true" />
+                  {tt('bookNow')}
+                </a>
+              )}
 
               {paymentsEnabled && (
                 <div>

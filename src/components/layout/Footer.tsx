@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { Mail } from 'lucide-react';
 
-import { getImprintLines, getLegalDocs } from '@/content/legal';
+import { getLegalDocs } from '@/content/legal';
 import { BOOKING_URL } from '@/lib/booking';
 
 export function Footer() {
@@ -13,17 +13,6 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   const legalDocs = getLegalDocs(locale);
-  /**
-   * Trader identification, taken from the publisher block of the Legal Notice.
-   *
-   * On the footer of every page rather than only on /legal because the EU
-   * Consumer Rights Directive and the German Telemediengesetz expect the trader
-   * to be identifiable without hunting, and because it is the first thing a card
-   * acquirer's reviewer looks for on the domain that takes the payment. Sourced
-   * from the same synced document as the legal pages, so the company details
-   * cannot say one thing here and another there.
-   */
-  const imprint = getImprintLines(locale);
 
   return (
     <footer className="bg-[#160D06] text-[#C4A882]">
@@ -153,15 +142,6 @@ export function Footer() {
             </ul>
           </div>
         </div>
-
-        {/* Trader identification */}
-        <address className="border-t border-[rgba(232,163,61,0.15)] pt-4 lg:pt-6 mb-4 not-italic text-[#C4A882]/70 text-xs leading-relaxed">
-          {imprint.map((line) => (
-            <span key={line} className="block">
-              {line}
-            </span>
-          ))}
-        </address>
 
         {/* Disclaimer */}
         <div className="border-t border-[rgba(232,163,61,0.15)] pt-4 lg:pt-6 mb-4 lg:mb-6">

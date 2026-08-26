@@ -90,7 +90,7 @@ const nextConfig = {
      * while /blog/z answered 410, the same junk treated two ways depending on
      * the prefix. Removed, so the 410 applies to all fifteen.
      */
-    const COMING_SOON_SLUGS = ['guided-tour', 'private-tour', 'combo-saadian-tombs'];
+    const COMING_SOON_SLUGS = ['guided-tour', 'private-tour', 'private-guide-only', 'combo-saadian-tombs'];
     const comingSoonRedirects = COMING_SOON_SLUGS.flatMap(slug =>
       LOCALES.map(locale => ({
         source:      `/${locale}/tickets/${slug}`,

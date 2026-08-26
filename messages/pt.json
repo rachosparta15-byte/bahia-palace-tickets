@@ -318,6 +318,9 @@
     "perPerson": "por pessoa",
     "bookNow": "Comprar bilhetes",
     "learnMore": "Saber mais",
+    "optionsTitle": "Opções de bilhetes",
+    "optionsSubtitle": "Escolha entre a nossa gama de tipos de bilhete a opção que melhor se adapta à sua visita",
+    "instantViator": "Ou reserve já através do nosso parceiro Viator",
     "skipTheLine": {
       "name": "Entrada sem fila",
       "tagline": "O bilhete oficial, mais o que a bilheteira não lhe dá",
@@ -375,6 +378,9 @@
       "meetingPoint": "Entrada principal do Palácio da Bahia — o seu guia privado estará à sua espera",
       "longDesc": "A melhor forma de conhecer o Palácio da Bahia. O seu guia certificado dedica a visita inteira a si e a quem o acompanha: anda ao seu ritmo, pergunta o que quiser e demora-se onde lhe apetecer. Ideal para famílias, casais e para quem quer ouvir a história do palácio contada só para si.",
       "whyOnline": "Na bilheteira espera na fila, paga em dirhams e ninguém lhe dá um guia. Aqui é um só pagamento com cartão, um audioguia na sua língua, apoio por WhatsApp e cancelamento gratuito até enviarmos o seu código."
+    },
+    "privateGuideOnly": {
+      "name": "Guia privado"
     },
     "combo": {
       "name": "Combinado: Bahia + Túmulos Saadianos",
@@ -564,7 +570,8 @@
     "contactCta": "Contacte-nos",
     "ctaTitle": "Tem alguma dúvida sobre a visita?",
     "ctaBody": "Dúvidas sobre visitar o Palácio da Bahia? Consulte as perguntas frequentes ou escreva-nos.",
-    "network": "Parte de uma rede independente de guias de monumentos de Marrocos."
+    "network": "Parte de uma rede independente de guias de monumentos de Marrocos.",
+    "companyTitle": "Dados da empresa"
   },
   "contactPage": {
     "title": "Contacte-nos",

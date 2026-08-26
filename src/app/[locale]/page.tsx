@@ -7,6 +7,7 @@ import { HighlightsSection } from '@/components/homepage/HighlightsSection';
 import { PracticalBar } from '@/components/homepage/PracticalBar';
 import { TrustStrip } from '@/components/homepage/TrustStrip';
 import { TicketSection } from '@/components/homepage/TicketSection';
+import { TicketOptions } from '@/components/homepage/TicketOptions';
 import { WhyBookUs } from '@/components/homepage/WhyBookUs';
 import { ReviewsCarousel } from '@/components/homepage/ReviewsCarousel';
 import { FaqSection } from '@/components/homepage/FaqSection';
@@ -222,6 +223,7 @@ export default async function HomePage({ params }: Props) {
       <PracticalBar />
       <TrustStrip />
       <TicketSection />
+      <TicketOptions />
       <WhyBookUs />
       <ReviewsCarousel />
       <ArticleTicker locale={locale} />

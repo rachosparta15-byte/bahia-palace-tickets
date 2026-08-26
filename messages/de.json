@@ -31,6 +31,9 @@
     "perPerson": "pro Person",
     "bookNow": "Tickets ansehen",
     "learnMore": "Mehr erfahren",
+    "optionsTitle": "Ticketoptionen",
+    "optionsSubtitle": "Wählen Sie aus unserer Auswahl an Tickettypen die Option, die am besten zu Ihrem Besuch passt",
+    "instantViator": "Oder sofort über unseren Partner Viator buchen",
     "skipTheLine": {
       "name": "Skip-the-Line Eintrittskarte",
       "tagline": "Das offizielle Ticket, plus das, was der Schalter nicht bietet",
@@ -88,6 +91,9 @@
       "meetingPoint": "Haupteingang des Bahia Palastes — Ihr privater Führer erwartet Sie dort",
       "longDesc": "Das ultimative Bahia Palast-Erlebnis. Ihr privater zertifizierter Führer widmet den gesamten Besuch Ihnen und Ihrer Gruppe. Gehen Sie in Ihrem eigenen Tempo, stellen Sie alle Fragen und erkunden Sie Bereiche nach Belieben. Perfekt für Familien, Paare und alle, die die Geschichte des Palastes exklusiv erzählt bekommen möchten.",
       "whyOnline": "Am Schalter stehen Sie an und zahlen bar in Dirham, und einen Guide bekommen Sie dort nicht. Hier ist es eine Kartenzahlung, ein Audioguide in Ihrer Sprache, WhatsApp-Support und kostenlose Stornierung bis zum Versand Ihres Codes."
+    },
+    "privateGuideOnly": {
+      "name": "Privater Guide"
     },
     "combo": {
       "name": "Kombi: Bahia + Saadier-Gräber",
@@ -280,7 +286,8 @@
     "contactCta": "Kontakt aufnehmen",
     "ctaTitle": "Fragen zu Ihrem Besuch?",
     "ctaBody": "Fragen zum Besuch des Bahia-Palastes? Besuchen Sie unsere FAQ oder senden Sie uns eine Nachricht.",
-    "network": "Teil eines unabhängigen Netzwerks von Reiseführern zu Marokkos Monumenten."
+    "network": "Teil eines unabhängigen Netzwerks von Reiseführern zu Marokkos Monumenten.",
+    "companyTitle": "Firmenangaben"
   },
   "contactPage": {
     "title": "Kontaktieren Sie Uns",

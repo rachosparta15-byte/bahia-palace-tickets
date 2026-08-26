@@ -8,6 +8,7 @@ export const TICKET_NAME_KEYS: Record<TicketSlug, string> = {
   'skip-the-line':        'skipTheLine',
   'guided-tour':          'guidedTour',
   'private-tour':         'privateTour',
+  'private-guide-only':   'privateGuideOnly',
   'combo-saadian-tombs':  'combo',
   'visitor-pack':         'visitorPack',
 };

@@ -31,6 +31,9 @@
     "perPerson": "por persona",
     "bookNow": "Ver entradas",
     "learnMore": "Saber más",
+    "optionsTitle": "Opciones de entradas",
+    "optionsSubtitle": "Elija entre nuestra gama de tipos de entradas la opción que mejor se adapte a su visita",
+    "instantViator": "O reserve al instante a través de nuestro socio Viator",
     "skipTheLine": {
       "name": "Entrada Sin Colas",
       "tagline": "La entrada oficial, más lo que la taquilla no le da",
@@ -88,6 +91,9 @@
       "meetingPoint": "Entrada principal del Palacio Bahia — tu guía privado te esperará allí",
       "longDesc": "La experiencia definitiva en el Palacio Bahia. Tu guía certificado privado dedica toda la visita a ti y a tu grupo. Marca tu propio ritmo, haz cualquier pregunta y explora las áreas a tu antojo. Perfecto para familias, parejas y cualquiera que quiera que la historia del palacio le sea contada exclusivamente para ellos.",
       "whyOnline": "En taquilla hay que hacer cola y pagar en efectivo, en dírhams, y nadie le da una audioguía. Aquí es un solo pago con tarjeta, una audioguía en su idioma, asistencia por WhatsApp y cancelación gratuita hasta que enviemos su código."
+    },
+    "privateGuideOnly": {
+      "name": "Guía privado"
     },
     "combo": {
       "name": "Combo: Bahia + Tumbas Saadíes",
@@ -192,7 +198,8 @@
     "contactCta": "Contáctanos",
     "ctaTitle": "¿Tienes Preguntas sobre tu Visita?",
     "ctaBody": "¿Preguntas sobre visitar el Palacio Bahia? Consulta nuestras FAQ o envíanos un mensaje.",
-    "network": "Forma parte de una red independiente de guías de monumentos de Marruecos."
+    "network": "Forma parte de una red independiente de guías de monumentos de Marruecos.",
+    "companyTitle": "Datos de la empresa"
   },
   "contactPage": {
     "title": "Contáctanos",

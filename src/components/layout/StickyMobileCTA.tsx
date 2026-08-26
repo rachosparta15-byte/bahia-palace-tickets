@@ -4,11 +4,13 @@ import { useTranslations } from 'next-intl';
 import { Ticket } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { LeadButton } from './LeadButton';
+import { usePaymentsFlags } from './PaymentsFlagsProvider';
 import { buyingPathPriceLabel } from '@/config/pricing';
 
 export function StickyMobileCTA() {
   const t = useTranslations('cta');
   const [show, setShow] = useState(false);
+  const { enabled: paymentsEnabled } = usePaymentsFlags();
 
   useEffect(() => {
     const anchor = document.getElementById('ticket-book-btn');
@@ -31,18 +33,28 @@ export function StickyMobileCTA() {
       }`}
       style={{ bottom: 'calc(56px + env(safe-area-inset-bottom, 0px))' }}
     >
-      <LeadButton
-        ticketType="skip-the-line"
-        ctaLocation="sticky_mobile"
-        className="btn-primary w-full justify-center gap-2 min-h-[48px]"
-      >
-        <Ticket size={18} />
-        {/* The figure comes from pricing.ts, not from the message file. It used
-            to be typed into all seven translations, which is exactly what
-            pricing.ts warns against: the constant changes and the bar goes on
-            advertising last month's price in six languages. */}
-        {t('stickyMobile', { price: buyingPathPriceLabel() })}
-      </LeadButton>
+      {/* Payments off: same redirect as the hero and header CTAs — send the
+          visitor to Ticket Options to pick a product rather than into a
+          generic lead modal. */}
+      {paymentsEnabled ? (
+        <LeadButton
+          ticketType="skip-the-line"
+          ctaLocation="sticky_mobile"
+          className="btn-primary w-full justify-center gap-2 min-h-[48px]"
+        >
+          <Ticket size={18} />
+          {/* The figure comes from pricing.ts, not from the message file. It used
+              to be typed into all seven translations, which is exactly what
+              pricing.ts warns against: the constant changes and the bar goes on
+              advertising last month's price in six languages. */}
+          {t('stickyMobile', { price: buyingPathPriceLabel() })}
+        </LeadButton>
+      ) : (
+        <a href="#ticket-options" className="btn-primary w-full justify-center gap-2 min-h-[48px]">
+          <Ticket size={18} />
+          {t('stickyMobile', { price: buyingPathPriceLabel() })}
+        </a>
+      )}
     </div>
   );
 }

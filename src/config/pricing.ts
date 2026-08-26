@@ -127,6 +127,7 @@ export type TicketSlug =
   | 'skip-the-line'
   | 'guided-tour'
   | 'private-tour'
+  | 'private-guide-only'
   | 'combo-saadian-tombs'
   | 'visitor-pack';
 
@@ -325,6 +326,9 @@ export const TICKET_PRICES_EUR: Record<TicketSlug, number> = {
   // and are converted at 0.88 pending the owner setting real euro prices.
   'guided-tour':         25,
   'private-tour':        66,
+  // Private Tour's price (66) minus the official ticket it bundles — this
+  // one does not, so the visitor arranges entry separately.
+  'private-guide-only':  55,
   'combo-saadian-tombs': 16,
   'visitor-pack':        ENTRY_PRICE_EUR_CENTS / 100,
 };

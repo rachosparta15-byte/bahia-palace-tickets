@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 import { locales, type Locale } from '@/i18n/routing';
 import { LogoMark } from '@/components/ui/LogoMark';
 import { LeadButton } from '@/components/layout/LeadButton';
+import { usePaymentsFlags } from '@/components/layout/PaymentsFlagsProvider';
 
 /**
  * Each language named in itself, never translated. Someone looking for Arabic
@@ -33,6 +34,7 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { enabled: paymentsEnabled } = usePaymentsFlags();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -154,13 +156,36 @@ export function Header() {
             )}
           </div>
 
-          {/* CTA button — always visible, compact on mobile */}
-          <LeadButton
-            ticketType="skip-the-line"
-            className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#A33824] text-white font-semibold px-3 py-2.5 rounded-lg transition-colors text-xs sm:text-sm sm:px-4 sm:py-2 border border-[#C4452D]/0 hover:border-[#E8A33D]/20"
-          >
-            {t('bookNow')}
-          </LeadButton>
+          {/* CTA button — always visible, compact on mobile.
+              Payments off: point at Ticket Options (on the homepage) instead
+              of the generic lead modal, so a visitor picks a product first.
+              On the homepage itself this must be a plain in-page anchor: the
+              app router only auto-scrolls a hash link when the pathname
+              actually changes, so a <Link> to "/#ticket-options" clicked
+              while already on "/" updates the URL but never scrolls. From
+              any other page a <Link> is correct and does navigate + scroll. */}
+          {paymentsEnabled ? (
+            <LeadButton
+              ticketType="skip-the-line"
+              className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#A33824] text-white font-semibold px-3 py-2.5 rounded-lg transition-colors text-xs sm:text-sm sm:px-4 sm:py-2 border border-[#C4452D]/0 hover:border-[#E8A33D]/20"
+            >
+              {t('bookNow')}
+            </LeadButton>
+          ) : pathname === '/' ? (
+            <a
+              href="#ticket-options"
+              className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#A33824] text-white font-semibold px-3 py-2.5 rounded-lg transition-colors text-xs sm:text-sm sm:px-4 sm:py-2 border border-[#C4452D]/0 hover:border-[#E8A33D]/20"
+            >
+              {t('bookNow')}
+            </a>
+          ) : (
+            <Link
+              href="/#ticket-options"
+              className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#A33824] text-white font-semibold px-3 py-2.5 rounded-lg transition-colors text-xs sm:text-sm sm:px-4 sm:py-2 border border-[#C4452D]/0 hover:border-[#E8A33D]/20"
+            >
+              {t('bookNow')}
+            </Link>
+          )}
 
           {/* Mobile hamburger */}
           <button

@@ -3,9 +3,10 @@ import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { Heart, Globe, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { Heart, Globe, AlertTriangle, CheckCircle2, Building2 } from 'lucide-react';
 import type { Metadata } from 'next';
 import { buildAlternates, buildOG, buildBreadcrumbSchema } from '@/lib/seo';
+import { getImprintLines } from '@/content/legal';
 
 export const revalidate = 86400;
 
@@ -32,6 +33,7 @@ export default async function AboutPage() {
   const locale = await getLocale();
 
   const provideItems = t('whyBody').split(' · ').filter(Boolean);
+  const imprint       = getImprintLines(locale);
 
   return (
     <div className="min-h-screen bg-[#1C1108]">
@@ -116,6 +118,25 @@ export default async function AboutPage() {
           </h2>
           <p className="text-[#C4A882] leading-relaxed text-lg">{t('teamBody')}</p>
           <p className="text-[#C4A882]/70 leading-relaxed text-sm mt-4">{t('network')}</p>
+        </section>
+
+        {/* Company details — the trader-identification block, moved here from
+            the footer of every page. It still reads from getImprintLines, the
+            same source the Legal Notice page uses, so this cannot drift from
+            that page; and the footer's "Legal Notice" link still gives every
+            page a one-click path to the same information. */}
+        <section className="bg-[#251A0F] rounded-2xl border border-[rgba(232,163,61,0.13)] p-8 md:p-10">
+          <div className="w-10 h-10 bg-[#8FA63C]/15 rounded-xl flex items-center justify-center mb-4">
+            <Building2 size={20} className="text-[#8FA63C]" />
+          </div>
+          <h2 style={{ fontFamily: 'Cormorant Garamond, serif' }} className="text-2xl font-bold text-[#F5E8CC] mb-4">
+            {t('companyTitle')}
+          </h2>
+          <address className="not-italic text-[#C4A882] leading-relaxed text-sm space-y-1">
+            {imprint.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
+          </address>
         </section>
 
         {/* CTA */}

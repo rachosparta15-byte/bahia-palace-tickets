@@ -31,6 +31,9 @@
     "perPerson": "per person",
     "bookNow": "Get Tickets",
     "learnMore": "Learn More",
+    "optionsTitle": "Ticket Options",
+    "optionsSubtitle": "Choose from our range of ticket types to find the option that best suits your visit",
+    "instantViator": "Or book instantly via our partner Viator",
     "skipTheLine": {
       "name": "Skip-the-Line Entry",
       "tagline": "The official ticket, plus what the ticket office does not give you",
@@ -88,6 +91,9 @@
       "meetingPoint": "Main entrance of Bahia Palace — your private guide will meet you there",
       "longDesc": "The ultimate Bahia Palace experience. Your private certified guide dedicates the entire visit to you and your group. Set your own pace, ask any question, and explore areas at your leisure. Perfect for families, couples, and anyone who wants the palace story told exclusively for them.",
       "whyOnline": "At the gate you queue and pay cash in dirhams, and nobody hands you a guide. Here it is one card payment, an audio guide in your own language, WhatsApp support, and free cancellation until we send your code."
+    },
+    "privateGuideOnly": {
+      "name": "Private Guide"
     },
     "combo": {
       "name": "Combo: Bahia + Saadian Tombs",
@@ -191,7 +197,8 @@
     "contactCta": "Contact Us",
     "ctaTitle": "Have a Question About Your Visit?",
     "ctaBody": "Questions about visiting Bahia Palace? Browse our FAQ or send us a message.",
-    "network": "Part of an independent network of Morocco monument guides."
+    "network": "Part of an independent network of Morocco monument guides.",
+    "companyTitle": "Company Details"
   },
   "contactPage": {
     "title": "Contact Us",

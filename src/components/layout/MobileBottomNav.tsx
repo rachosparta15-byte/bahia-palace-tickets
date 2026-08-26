@@ -116,11 +116,12 @@ export function MobileBottomNav() {
   const { enabled: paymentsEnabled } = usePaymentsFlags();
 
   // The Tickets tab is a buying entry point, so it follows the same rule as
-  // every other ticket CTA: the pack when it is purchasable, the official
-  // comparison page when it is not. See LeadButton for the full contract.
+  // every other ticket CTA: the pack when it is purchasable, Ticket Options
+  // (same redirect as the hero, header and sticky bar) when it is not. See
+  // LeadButton for the full contract.
   const navItems = NAV_ITEMS.map((item) =>
-    item.key === 'tickets' && paymentsEnabled
-      ? { ...item, href: '/visitor-pack' as const }
+    item.key === 'tickets'
+      ? { ...item, href: (paymentsEnabled ? '/visitor-pack' : '/#ticket-options') as const }
       : item
   );
 
@@ -140,13 +141,8 @@ export function MobileBottomNav() {
           const active = pathname === href || pathname.startsWith(href + '/');
           const iconColor = active ? '#FFFFFF' : '#F7E7D8';
 
-          return (
-            <Link
-              key={href}
-              href={href}
-              className="relative flex-1 flex flex-col items-center justify-center gap-[2px] select-none"
-              style={{ minHeight: 44 }}
-            >
+          const tabContent = (
+            <>
               {/* Active glow pill */}
               {active && (
                 <span
@@ -207,6 +203,25 @@ export function MobileBottomNav() {
                   />
                 )}
               </span>
+            </>
+          );
+
+          const tabClassName = 'relative flex-1 flex flex-col items-center justify-center gap-[2px] select-none';
+
+          // Same-page hash fix, as on the header CTA: the app router only
+          // auto-scrolls a hash link on an actual pathname change, so this
+          // tab needs a plain in-page anchor while already on "/".
+          if (href === '/#ticket-options' && pathname === '/') {
+            return (
+              <a key={href} href="#ticket-options" className={tabClassName} style={{ minHeight: 44 }}>
+                {tabContent}
+              </a>
+            );
+          }
+
+          return (
+            <Link key={href} href={href} className={tabClassName} style={{ minHeight: 44 }}>
+              {tabContent}
             </Link>
           );
         })}

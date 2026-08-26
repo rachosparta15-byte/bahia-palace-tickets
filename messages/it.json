@@ -31,6 +31,9 @@
     "perPerson": "per persona",
     "bookNow": "Vedi i biglietti",
     "learnMore": "Scopri di più",
+    "optionsTitle": "Opzioni dei biglietti",
+    "optionsSubtitle": "Scegli tra la nostra gamma di tipi di biglietto l'opzione più adatta alla tua visita",
+    "instantViator": "Oppure prenota subito tramite il nostro partner Viator",
     "skipTheLine": {
       "name": "Ingresso Salta Fila",
       "tagline": "Il biglietto ufficiale, più quello che la biglietteria non ti dà",
@@ -88,6 +91,9 @@
       "meetingPoint": "Ingresso principale del Palazzo Bahia — la tua guida privata ti aspetterà lì",
       "longDesc": "L'esperienza definitiva al Palazzo Bahia. La tua guida certificata privata dedica l'intera visita a te e al tuo gruppo. Vai al tuo ritmo, fai tutte le domande che vuoi ed esplora le aree a piacere. Perfetto per famiglie, coppie e chiunque voglia che la storia del palazzo venga raccontata esclusivamente per loro.",
       "whyOnline": "Alla biglietteria fai la fila e paghi in contanti, in dirham, e nessuno ti dà un’audioguida. Qui è un solo pagamento con carta, un’audioguida nella tua lingua, assistenza WhatsApp e cancellazione gratuita fino all’invio del codice."
+    },
+    "privateGuideOnly": {
+      "name": "Guida privata"
     },
     "combo": {
       "name": "Combo: Bahia + Tombe Saadiane",
@@ -280,7 +286,8 @@
     "contactCta": "Contattaci",
     "ctaTitle": "Hai Domande sulla Tua Visita?",
     "ctaBody": "Domande sulla visita al Palazzo Bahia? Consulta le nostre FAQ o inviaci un messaggio.",
-    "network": "Parte di una rete indipendente di guide ai monumenti del Marocco."
+    "network": "Parte di una rete indipendente di guide ai monumenti del Marocco.",
+    "companyTitle": "Dati societari"
   },
   "contactPage": {
     "title": "Contattaci",

@@ -31,6 +31,9 @@
     "perPerson": "par personne",
     "bookNow": "Voir les billets",
     "learnMore": "En savoir plus",
+    "optionsTitle": "Options de billets",
+    "optionsSubtitle": "Choisissez parmi notre gamme de types de billets l'option qui convient le mieux à votre visite",
+    "instantViator": "Ou réservez instantanément via notre partenaire Viator",
     "skipTheLine": {
       "name": "Entrée Coupe-File",
       "tagline": "Le billet officiel, plus ce que le guichet ne vous donne pas",
@@ -88,6 +91,9 @@
       "meetingPoint": "Entrée principale du Palais Bahia — votre guide privé vous y attendra",
       "longDesc": "L'expérience ultime au Palais Bahia. Votre guide certifié privé dédie toute la visite à vous et votre groupe. Allez à votre rythme, posez toutes vos questions, explorez à votre guise. Parfait pour les familles, les couples et tous ceux qui souhaitent vivre le palais en exclusivité.",
       "whyOnline": "Au guichet, il faut faire la queue et payer en espèces, en dirhams, et personne ne vous remet d’audioguide. Ici : un seul paiement par carte, un audioguide dans votre langue, l’assistance WhatsApp et l’annulation gratuite jusqu’à l’envoi de votre code."
+    },
+    "privateGuideOnly": {
+      "name": "Guide privé"
     },
     "combo": {
       "name": "Combo : Bahia + Tombeaux Saadiens",
@@ -280,7 +286,8 @@
     "contactCta": "Nous Contacter",
     "ctaTitle": "Une Question sur Votre Visite ?",
     "ctaBody": "Des questions sur la visite du Palais Bahia ? Consultez notre FAQ ou envoyez-nous un message.",
-    "network": "Membre d'un réseau indépendant de guides des monuments du Maroc."
+    "network": "Membre d'un réseau indépendant de guides des monuments du Maroc.",
+    "companyTitle": "Informations sur la société"
   },
   "contactPage": {
     "title": "Contactez-Nous",
