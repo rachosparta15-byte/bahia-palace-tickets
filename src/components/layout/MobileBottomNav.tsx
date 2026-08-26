@@ -121,7 +121,7 @@ export function MobileBottomNav() {
   // LeadButton for the full contract.
   const navItems = NAV_ITEMS.map((item) =>
     item.key === 'tickets'
-      ? { ...item, href: (paymentsEnabled ? '/visitor-pack' : '/#ticket-options') as const }
+      ? { ...item, href: paymentsEnabled ? ('/visitor-pack' as const) : ('/#ticket-options' as const) }
       : item
   );
 
