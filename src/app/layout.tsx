@@ -110,9 +110,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
       <head>
-        {/* AdSense site-verification snippet — must load in <head> on every
-            page for Google to confirm site ownership. Client ID is public by
-            design (it identifies the publisher account, not a secret). */}
+        {/* AdSense site-verification — two methods, both harmless to keep
+            together. The script-tag method's own crawler check failed on
+            first attempt, most likely because the root domain 302s to /en
+            and that checker may not follow redirects; the meta-tag method
+            is checked on whichever URL actually renders, redirect or not. */}
+        <meta name="google-adsense-account" content="ca-pub-1898580718776547" />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1898580718776547"
