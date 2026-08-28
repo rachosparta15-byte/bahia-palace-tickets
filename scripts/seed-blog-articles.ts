@@ -1,5 +1,5 @@
 /**
- * Reads blog-articles/{en,fr,de,it,es}/*.{html,md} and upserts them
+ * Reads blog-articles/{en,fr,de,it,es,ar}/*.{html,md} and upserts them
  * into prisma.blogPost as published articles.
  *
  * Safe to re-run — uses upsert. Existing records are updated, not duplicated.
@@ -22,7 +22,7 @@ const adapter = new PrismaLibSql({ url, ...(process.env.TURSO_AUTH_TOKEN ? { aut
 const prisma  = new PrismaClient({ adapter });
 
 const BLOG_DIR    = path.join(process.cwd(), 'blog-articles');
-const LOCALES     = ['en', 'fr', 'de', 'it', 'es'] as const;
+const LOCALES     = ['en', 'fr', 'de', 'it', 'es', 'ar'] as const;
 const PUBLISHED_AT = new Date('2026-01-15T00:00:00.000Z');
 
 // ─── Parsers ──────────────────────────────────────────────────────────────────

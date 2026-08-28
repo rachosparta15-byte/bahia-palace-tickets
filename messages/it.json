@@ -429,7 +429,8 @@
     "all": "Tutti gli articoli",
     "bookCta": "Pianifica la tua visita →",
     "relatedPosts": "Articoli correlati",
-    "share": "Condividi questo articolo"
+    "share": "Condividi questo articolo",
+    "empty": "Articoli in arrivo."
   },
   "safetyGuide": {
     "badge": "Sicurezza Viaggiatori",

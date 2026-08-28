@@ -24,6 +24,8 @@ const BLOG_TITLES: Record<string, string> = {
   it: 'Blog Palazzo Bahia | Guida Viaggio Marrakech 2026',
   de: 'Bahia Palast Blog | Marrakesch Reiseführer 2026',
   es: 'Blog Palacio Bahia | Guía Viaje Marrakech 2026',
+  ar: 'مدونة قصر الباهية | دليل السفر إلى مراكش 2026',
+  pt: 'Blog Palácio da Bahia | Guia de Viagem Marraquexe 2026',
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -114,7 +116,7 @@ export default async function BlogIndexPage({ params }: Props) {
 
       <div className="max-w-5xl mx-auto px-6 py-12">
         {filteredPosts.length === 0 ? (
-          <p className="text-[#C4A882] text-center py-16">Articles coming soon.</p>
+          <p className="text-[#C4A882] text-center py-16">{t('empty')}</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {filteredPosts.map((post) => {

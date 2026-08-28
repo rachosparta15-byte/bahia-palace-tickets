@@ -429,7 +429,8 @@
     "all": "Tous les articles",
     "bookCta": "Préparez votre visite →",
     "relatedPosts": "Articles connexes",
-    "share": "Partager cet article"
+    "share": "Partager cet article",
+    "empty": "Articles bientôt disponibles."
   },
   "safetyGuide": {
     "badge": "Sécurité Voyageur",

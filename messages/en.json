@@ -340,7 +340,8 @@
     "all": "All articles",
     "bookCta": "Plan your visit — skip the line →",
     "relatedPosts": "Related articles",
-    "share": "Share this article"
+    "share": "Share this article",
+    "empty": "Articles coming soon."
   },
   "safetyGuide": {
     "badge": "Traveller Safety",
