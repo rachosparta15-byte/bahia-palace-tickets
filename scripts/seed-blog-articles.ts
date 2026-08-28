@@ -22,7 +22,25 @@ const adapter = new PrismaLibSql({ url, ...(process.env.TURSO_AUTH_TOKEN ? { aut
 const prisma  = new PrismaClient({ adapter });
 
 const BLOG_DIR    = path.join(process.cwd(), 'blog-articles');
-const LOCALES     = ['en', 'fr', 'de', 'it', 'es', 'ar'] as const;
+const ALL_LOCALES = ['en', 'fr', 'de', 'it', 'es', 'ar'] as const;
+
+/*
+ * Optional locale filter: `--locale=ar` seeds only that folder.
+ *
+ * WHY: the upsert below forces published:true, resets publishedAt, and
+ * overwrites content from the file. Run across every locale it would flatten
+ * any edit made through the admin UI on the ~130 live articles. When you are
+ * only publishing one new language, seed only that language.
+ */
+const localeArg   = process.argv.find(a => a.startsWith('--locale='))?.split('=')[1];
+const LOCALES     = localeArg
+  ? ALL_LOCALES.filter(l => l === localeArg)
+  : ALL_LOCALES;
+if (localeArg && LOCALES.length === 0) {
+  console.error(`Unknown locale "${localeArg}". Expected one of: ${ALL_LOCALES.join(', ')}`);
+  process.exit(1);
+}
+console.log(localeArg ? `Seeding locale: ${localeArg}` : 'Seeding ALL locales');
 const PUBLISHED_AT = new Date('2026-01-15T00:00:00.000Z');
 
 // ─── Parsers ──────────────────────────────────────────────────────────────────
