@@ -97,7 +97,11 @@ export default async function QuickBookPage({ params }: Props) {
 
             <div className="space-y-3">
               {[
-                { icon: ShieldCheck, text: paymentsEnabled ? 'Free cancellation via WhatsApp' : 'Free to use — no booking fees' },
+                // "Free to use — no booking fees" stood here. That is a claim
+                // about the site, and the site sells packages above the gate
+                // price and carries paid partner links — so it was untrue of
+                // the site whatever this one page hands off to.
+                { icon: ShieldCheck, text: paymentsEnabled ? 'Free cancellation via WhatsApp' : 'We hand you to the Ministry portal' },
                 { icon: ShieldCheck, text: paymentsEnabled ? 'Official ticket included' : 'Official tickets only' },
                 { icon: ShieldCheck, text: 'Verified visitor information' },
                 { icon: ShieldCheck, text: 'Skip the queue — walk straight in' },

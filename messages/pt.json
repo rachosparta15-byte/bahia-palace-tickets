@@ -29,7 +29,7 @@
   },
   "trust": {
     "instant": "100% independentes",
-    "freeCancellation": "Sem taxas de reserva",
+    "freeCancellation": "Preço transparente",
     "mobile": "Informação verificada",
     "secure": "Só bilhetes oficiais"
   },
@@ -413,18 +413,20 @@
         "Mapa do visitante",
         "Apoio de uma pessoa real"
       ]
-    }
+    },
+    "priceNoteOwn": "Inclui o bilhete oficial de 100 MAD + o nosso serviço",
+    "priceNotePartner": "Reservado e cobrado pelo nosso parceiro Viator"
   },
   "whyUs": {
     "title": "Porquê reservar connosco?",
     "items": [
       {
-        "title": "Directamente à bilheteira verdadeira",
-        "desc": "Encaminhamo-lo directamente para o portal oficial de bilhetes do Ministério da Cultura de Marrocos — sem revendedores e sem margens."
+        "title": "O bilhete oficial, comprado por si",
+        "desc": "Compramos em seu nome o bilhete oficial de 100 MAD do Ministério da Cultura e enviamos-lhe o código antes de viajar. Também pode comprá-lo directamente no portal do Ministério pelo preço base."
       },
       {
-        "title": "Sem taxas de reserva",
-        "desc": "Este site é gratuito. Paga o preço normal directamente no portal oficial — não acrescentamos nada."
+        "title": "Preço transparente",
+        "desc": "O nosso preço cobre o bilhete oficial de 100 MAD, o audioguia, o apoio por WhatsApp e o cancelamento gratuito. Um só valor no pagamento, com a discriminação ao lado."
       },
       {
         "title": "Informação fiável",
@@ -432,7 +434,7 @@
       },
       {
         "title": "Os seus dados ficam connosco",
-        "desc": "Se partilhar o seu e-mail, é usado apenas para enviar sugestões de visita — nunca é vendido. A compra do bilhete é feita directamente no portal oficial, não connosco."
+        "desc": "Se partilhar o seu e-mail, é usado apenas para enviar sugestões de visita — nunca é vendido. Se concluir uma reserva no site de um parceiro, aplica-se a política de privacidade desse parceiro."
       }
     ]
   },
@@ -523,7 +525,7 @@
     "editorial": "Política editorial",
     "contact": "Contacto",
     "copyright": "© {year} Bahia Palace Tickets. Todos os direitos reservados.",
-    "paymentNote": "Utilização gratuita — apenas bilhetes oficiais",
+    "paymentNote": "Bilhetes oficiais · Preço tudo incluído",
     "network": "Parte de uma rede independente de guias de monumentos de Marrocos.",
     "disclaimer": "O visitbahiapalace.com é um serviço independente de informação e reservas. Não estamos associados ao Palácio da Bahia oficial nem ao Ministério da Cultura de Marrocos. Os bilhetes de entrada também podem ser comprados directamente ao Ministério em <portal>e-services.minculture.gov.ma</portal>."
   },
@@ -537,7 +539,7 @@
     "total": "Total",
     "proceedToCheckout": "Continuar para os bilhetes oficiais →",
     "instantConfirm": "Preço tudo incluído",
-    "freeCancelNote": "Compre directamente no portal oficial",
+    "freeCancelNote": "Bilhete oficial comprado em seu nome",
     "mobileTicket": "Sem conta e sem aplicação",
     "duration": "Duração",
     "groupSize": "Dimensão do grupo",
@@ -560,13 +562,13 @@
     "metaTitle": "visitbahiapalace.com — guia independente do Palácio da Bahia",
     "metaDesc": "O visitbahiapalace.com é um guia independente do Palácio da Bahia, em Marraquexe. Compare bilhetes, confirme horários e planeie a visita.",
     "hero": "Sobre o visitbahiapalace.com",
-    "heroSub": "Um site independente de informação para visitantes do Palácio da Bahia, um dos monumentos oitocentistas mais bonitos de Marrocos.",
+    "heroSub": "Um guia e serviço de reservas independente para o Palácio da Bahia, um dos mais belos monumentos marroquinos do século XIX.",
     "missionTitle": "A nossa missão",
-    "missionBody": "Ajudar quem viaja de fora a planear a visita ao Palácio da Bahia com informação exacta e útil — história, dicas práticas, orientações de segurança e ligações directas à compra de bilhetes oficiais.",
+    "missionBody": "Ajudar os viajantes internacionais a planear a visita ao Palácio da Bahia com informação fiável — história, conselhos práticos e segurança — e vender pacotes de bilhetes que lhes poupam a fila. Os bilhetes também podem ser comprados directamente ao Ministério em e-services.minculture.gov.ma.",
     "whyTitle": "O que oferecemos",
-    "whyBody": "Guias completos e contexto histórico · Dicas práticas sobre horários e preços de entrada · Informação de segurança para turistas · Respostas às perguntas mais comuns · Ligações directas à compra de bilhetes oficiais em e-services.minculture.gov.ma",
+    "whyBody": "Guias completos para visitantes e contexto histórico · Conselhos práticos sobre horários e preços · Informação de segurança para turistas · Respostas às perguntas frequentes · Pacotes de bilhetes que vendemos nós próprios, com o bilhete oficial comprado em seu nome · Ligações para o portal oficial do Ministério, e-services.minculture.gov.ma, onde o mesmo bilhete é vendido ao preço base",
     "teamTitle": "Aviso importante",
-    "teamBody": "O visitbahiapalace.com NÃO está associado à administração oficial do Palácio da Bahia nem ao Ministério da Cultura de Marrocos. Somos um site independente de informação para visitantes. Para bilhetes oficiais: e-services.minculture.gov.ma",
+    "teamBody": "visitbahiapalace.com NÃO está afiliado à administração oficial do Palácio da Bahia nem ao Ministério da Cultura de Marrocos. Somos um serviço de reservas comercial independente: vendemos pacotes de bilhetes sobre os quais obtemos uma margem, e algumas ligações deste site são ligações de afiliado. O mesmo bilhete pode ser comprado directamente ao Ministério pelo preço base: e-services.minculture.gov.ma",
     "contactCta": "Contacte-nos",
     "ctaTitle": "Tem alguma dúvida sobre a visita?",
     "ctaBody": "Dúvidas sobre visitar o Palácio da Bahia? Consulte as perguntas frequentes ou escreva-nos.",
@@ -614,5 +616,8 @@
     "relatedPosts": "Artigos relacionados",
     "share": "Partilhar este artigo",
     "empty": "Artigos em breve."
+  },
+  "affiliate": {
+    "disclosure": "Algumas ligações desta página são ligações de afiliado. Se reservar através delas podemos receber uma comissão, sem custo adicional para si."
   }
 }

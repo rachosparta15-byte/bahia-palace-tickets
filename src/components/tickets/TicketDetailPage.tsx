@@ -211,7 +211,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
               <ShieldCheck size={12} className="text-[#8FA63C]" />
               {paymentsEnabled
                 ? 'Official ticket included — free cancellation'
-                : 'Free to use — official tickets only'}
+                : 'Official tickets — we hand you to the Ministry portal'}
             </p>
           </div>
         </div>

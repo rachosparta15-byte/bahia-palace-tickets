@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { ArrowRight } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { LeadButton } from '@/components/layout/LeadButton';
+import { AffiliateDisclosure } from '@/components/ui/AffiliateDisclosure';
 import { TICKET_PRICES } from '@/lib/ticket-data';
 
 /**
@@ -93,8 +94,8 @@ export function TicketOptions() {
             const ctaHref    = viatorHref;
 
             return (
+              <div key={slug}>
               <div
-                key={slug}
                 className="flex overflow-hidden rounded-xl border border-dashed border-[rgba(196,168,130,0.45)] bg-[#FFFDF8]"
               >
                 {/* Price side — the product's own info page, unless this
@@ -156,9 +157,22 @@ export function TicketOptions() {
                   </LeadButton>
                 )}
               </div>
+
+              {/* What the number above actually buys. A price alone next to
+                  "Official tickets" reads as the gate price, which is what the
+                  old homepage copy encouraged and what AdSense refused the site
+                  over. Two variants because two different things are true: our
+                  own cards bundle the 100 MAD ticket with the service, and a
+                  Viator card is a booking we neither price nor charge. */}
+              <p className="mt-1.5 px-0.5 text-[10px] leading-snug text-brown-mid/80 sm:text-[11px]">
+                {viatorHref ? t('priceNotePartner') : t('priceNoteOwn')}
+              </p>
+              </div>
             );
           })}
         </div>
+
+        <AffiliateDisclosure className="mt-6 text-center" />
       </div>
     </section>
   );

@@ -20,7 +20,7 @@
   },
   "trust": {
     "instant": "100% Independiente",
-    "freeCancellation": "Sin Comisión de Reserva",
+    "freeCancellation": "Precio Transparente",
     "mobile": "Información Verificada",
     "secure": "Solo Entradas Oficiales"
   },
@@ -127,7 +127,9 @@
         "Plano de visita",
         "Atención humana"
       ]
-    }
+    },
+    "priceNoteOwn": "Incluye la entrada oficial de 100 MAD + nuestro servicio",
+    "priceNotePartner": "Reservado y cobrado por nuestro socio Viator"
   },
   "ticketDetail": {
     "includes": "Qué incluye",
@@ -139,7 +141,7 @@
     "total": "Total",
     "proceedToCheckout": "Continuar a las entradas oficiales →",
     "instantConfirm": "Precio todo incluido",
-    "freeCancelNote": "Compra directa en el portal oficial",
+    "freeCancelNote": "Entrada oficial comprada a tu nombre",
     "mobileTicket": "Sin cuenta ni app necesaria",
     "duration": "Duración",
     "groupSize": "Tamaño del grupo",
@@ -162,12 +164,12 @@
     "title": "¿Por Qué Reservar con Nosotros?",
     "items": [
       {
-        "title": "Directo a la Taquilla Real",
-        "desc": "Te dirigimos directamente al portal oficial del Ministerio de Cultura de Marruecos — sin revendedores, sin recargos."
+        "title": "La Entrada Oficial, Comprada por Ti",
+        "desc": "Compramos a tu nombre la entrada oficial de 100 MAD del Ministerio de Cultura y te enviamos el código antes de viajar. También puedes comprarla tú mismo en el portal del Ministerio al precio base."
       },
       {
-        "title": "Sin Comisión de Reserva",
-        "desc": "Este sitio es gratuito. Pagas el precio oficial directamente en el portal — nosotros no añadimos nada."
+        "title": "Precio Transparente",
+        "desc": "Nuestro precio cubre la entrada oficial de 100 MAD, la audioguía, el soporte por WhatsApp y la cancelación gratuita. Un solo importe al pagar, con el desglose al lado."
       },
       {
         "title": "Información Confiable",
@@ -175,7 +177,7 @@
       },
       {
         "title": "Tus Datos Se Quedan con Nosotros",
-        "desc": "Si compartes tu email, solo se usa para enviarte consejos de visita — nunca se vende. La compra de tu entrada se realiza directamente en el portal oficial, no con nosotros."
+        "desc": "Si compartes tu email, solo se usa para enviarte consejos de visita — nunca se vende. Si completas una reserva en el sitio de un socio, se aplica su propia política de privacidad."
       }
     ]
   },
@@ -188,13 +190,13 @@
     "metaTitle": "Visitbahiapalace.com — Guía Independiente del Palacio Bahia",
     "metaDesc": "Visitbahiapalace.com es una guía turística independiente para el Palacio Bahia en Marrakech. Compara entradas, consulta horarios y planifica tu visita.",
     "hero": "Sobre visitbahiapalace.com",
-    "heroSub": "Un sitio web de información turística independiente para el Palacio Bahia, uno de los monumentos marroquíes más hermosos del siglo XIX.",
+    "heroSub": "Una guía y servicio de reservas independiente para el Palacio Bahía, uno de los monumentos marroquíes más bellos del siglo XIX.",
     "missionTitle": "Nuestra Misión",
-    "missionBody": "Ayudar a los viajeros internacionales a planificar su visita al Palacio Bahia con información precisa y útil — historia, consejos prácticos, información de seguridad y enlaces directos a la venta oficial de entradas.",
+    "missionBody": "Ayudar a los viajeros internacionales a planificar su visita al Palacio Bahía con información fiable — historia, consejos prácticos y seguridad — y ofrecerles paquetes de entradas que les ahorran la cola. Las entradas también pueden comprarse directamente en el Ministerio en e-services.minculture.gov.ma.",
     "whyTitle": "Lo que Ofrecemos",
-    "whyBody": "Guías turísticas completas y contexto histórico · Consejos prácticos sobre horarios y precios · Información de seguridad para turistas · Respuestas a preguntas frecuentes · Enlaces directos a la venta oficial de entradas en e-services.minculture.gov.ma",
+    "whyBody": "Guías completas para visitantes y contexto histórico · Consejos prácticos sobre horarios y precios · Información de seguridad para turistas · Respuestas a las preguntas frecuentes · Paquetes de entradas que vendemos nosotros mismos, con la entrada oficial comprada a tu nombre · Enlaces al portal oficial del Ministerio, e-services.minculture.gov.ma, donde la misma entrada se vende al precio base",
     "teamTitle": "Aviso Importante",
-    "teamBody": "visitbahiapalace.com NO está afiliado a la administración oficial del Palacio Bahia ni al Ministerio de Cultura de Marruecos. Somos un sitio web de información independiente. Para entradas oficiales, visita: e-services.minculture.gov.ma",
+    "teamBody": "visitbahiapalace.com NO está afiliado a la administración oficial del Palacio Bahía ni al Ministerio de Cultura de Marruecos. Somos un servicio de reservas comercial independiente: vendemos paquetes de entradas sobre los que obtenemos un margen, y algunos enlaces de este sitio son enlaces de afiliado. La misma entrada puede comprarse directamente en el Ministerio al precio base: e-services.minculture.gov.ma",
     "contactCta": "Contáctanos",
     "ctaTitle": "¿Tienes Preguntas sobre tu Visita?",
     "ctaBody": "¿Preguntas sobre visitar el Palacio Bahia? Consulta nuestras FAQ o envíanos un mensaje.",
@@ -236,7 +238,7 @@
     "whatsappUs": "Escríbenos por WhatsApp para ayuda inmediata →",
     "ctaSkip": "Evita la cola de 2 horas",
     "ctaTitle": "Planifica tu visita al Palacio Bahia",
-    "ctaBody": "Gratis · Solo entradas oficiales · Sin comisión de reserva",
+    "ctaBody": "Entradas oficiales · Audioguía incluida · Cancelación gratuita hasta que enviemos tu código",
     "ctaBtn": "Ver Todas las Opciones de Entradas",
     "teamAvail": "Respondemos con rapidez a todas las consultas de reserva.",
     "items": [
@@ -549,7 +551,7 @@
     "editorial": "Editorial",
     "contact": "Contacto",
     "copyright": "© {year} Bahia Palace Tickets. Todos los derechos reservados.",
-    "paymentNote": "Gratis — solo entradas oficiales",
+    "paymentNote": "Entradas oficiales · Precio todo incluido",
     "disclaimer": "visitbahiapalace.com es un servicio independiente de información y reservas. No estamos afiliados al Palacio de la Bahía ni al Ministerio de Cultura de Marruecos. Las entradas también pueden comprarse directamente al Ministerio en <portal>e-services.minculture.gov.ma</portal>.",
     "network": "Forma parte de una red independiente de guías de monumentos de Marruecos."
   },
@@ -883,5 +885,8 @@
     "freeCancel": "Cancelación gratuita",
     "mobileTicket": "Entrada en el móvil",
     "secureBooking": "Pago seguro"
+  },
+  "affiliate": {
+    "disclosure": "Algunos enlaces de esta página son enlaces de afiliado. Si reservas a través de ellos podemos recibir una comisión, sin coste adicional para ti."
   }
 }

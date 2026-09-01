@@ -20,7 +20,7 @@
   },
   "trust": {
     "instant": "100% Indipendente",
-    "freeCancellation": "Nessuna Commissione",
+    "freeCancellation": "Prezzo Trasparente",
     "mobile": "Informazioni Verificate",
     "secure": "Solo Biglietti Ufficiali"
   },
@@ -127,18 +127,20 @@
         "Mappa della visita",
         "Assistenza umana"
       ]
-    }
+    },
+    "priceNoteOwn": "Include il biglietto ufficiale da 100 MAD + il nostro servizio",
+    "priceNotePartner": "Prenotato e addebitato dal nostro partner Viator"
   },
   "whyUs": {
     "title": "Perché Prenotare con Noi?",
     "items": [
       {
-        "title": "Dritti alla Vera Biglietteria",
-        "desc": "Ti indirizziamo direttamente al portale ufficiale del Ministero della Cultura marocchino — nessun rivenditore, nessun sovrapprezzo."
+        "title": "Il Biglietto Ufficiale, Acquistato per Te",
+        "desc": "Acquistiamo a tuo nome il biglietto ufficiale da 100 MAD del Ministero della Cultura e ti inviamo il codice prima della partenza. Puoi anche acquistarlo da solo sul portale del Ministero al prezzo base."
       },
       {
-        "title": "Nessuna Commissione",
-        "desc": "Questo sito è gratuito. Paghi il prezzo ufficiale direttamente sul portale — noi non aggiungiamo nulla."
+        "title": "Prezzo Trasparente",
+        "desc": "Il nostro prezzo copre il biglietto ufficiale da 100 MAD, l'audioguida, l'assistenza WhatsApp e la cancellazione gratuita. Un solo importo al pagamento, con il dettaglio accanto."
       },
       {
         "title": "Informazioni Affidabili",
@@ -146,7 +148,7 @@
       },
       {
         "title": "I Tuoi Dati Restano con Noi",
-        "desc": "Se condividi la tua email, viene usata solo per inviarti consigli di viaggio — mai venduta. L'acquisto del biglietto avviene direttamente sul portale ufficiale, non con noi."
+        "desc": "Se condividi la tua email, viene usata solo per inviarti consigli di viaggio — mai venduta. Se completi una prenotazione sul sito di un partner, si applica la sua informativa sulla privacy."
       }
     ]
   },
@@ -235,7 +237,7 @@
     "editorial": "Redazione",
     "contact": "Contatti",
     "copyright": "© {year} Bahia Palace Tickets. Tutti i diritti riservati.",
-    "paymentNote": "Gratis — solo biglietti ufficiali",
+    "paymentNote": "Biglietti ufficiali · Prezzo tutto compreso",
     "disclaimer": "visitbahiapalace.com è un servizio indipendente di informazione e prenotazione. Non siamo affiliati al Palazzo della Bahia né al Ministero della Cultura marocchino. I biglietti d’ingresso possono essere acquistati anche direttamente dal Ministero su <portal>e-services.minculture.gov.ma</portal>.",
     "network": "Parte di una rete indipendente di guide ai monumenti del Marocco."
   },
@@ -253,7 +255,7 @@
     "total": "Totale",
     "proceedToCheckout": "Continua per i biglietti ufficiali →",
     "instantConfirm": "Prezzo tutto compreso",
-    "freeCancelNote": "Acquisto diretto sul portale ufficiale",
+    "freeCancelNote": "Biglietto ufficiale acquistato a tuo nome",
     "mobileTicket": "Nessun account o app richiesti",
     "duration": "Durata",
     "groupSize": "Dimensione del gruppo",
@@ -276,13 +278,13 @@
     "metaTitle": "Visitbahiapalace.com — Guida Indipendente al Palazzo Bahia",
     "metaDesc": "Visitbahiapalace.com è una guida turistica indipendente per il Palazzo Bahia a Marrakech. Confronta i biglietti, controlla gli orari e pianifica la tua visita.",
     "hero": "Chi siamo — visitbahiapalace.com",
-    "heroSub": "Un sito di informazioni turistiche indipendente per il Palazzo Bahia, uno dei più bei monumenti marocchini del XIX secolo.",
+    "heroSub": "Una guida e un servizio di prenotazione indipendenti per il Palazzo Bahia, uno dei più bei monumenti marocchini dell'Ottocento.",
     "missionTitle": "La Nostra Missione",
-    "missionBody": "Aiutare i viaggiatori internazionali a pianificare la loro visita al Palazzo Bahia con informazioni accurate e utili — storia, consigli pratici, informazioni di sicurezza e link alla biglietteria ufficiale.",
+    "missionBody": "Aiutare i viaggiatori internazionali a pianificare la visita al Palazzo Bahia con informazioni affidabili — storia, consigli pratici e sicurezza — e offrire pacchetti di biglietti che fanno evitare la fila. I biglietti possono anche essere acquistati direttamente dal Ministero su e-services.minculture.gov.ma.",
     "whyTitle": "Cosa Offriamo",
-    "whyBody": "Guide turistiche complete e contesto storico · Consigli pratici su orari e prezzi · Informazioni di sicurezza per i turisti · Risposte alle domande frequenti · Link diretti alla biglietteria ufficiale su e-services.minculture.gov.ma",
+    "whyBody": "Guide complete per i visitatori e contesto storico · Consigli pratici su orari e prezzi · Informazioni di sicurezza per i turisti · Risposte alle domande frequenti · Pacchetti di biglietti che vendiamo noi stessi, con il biglietto ufficiale acquistato a tuo nome · Link al portale ufficiale del Ministero, e-services.minculture.gov.ma, dove lo stesso biglietto è venduto al prezzo base",
     "teamTitle": "Avviso Importante",
-    "teamBody": "visitbahiapalace.com NON è affiliato all'amministrazione ufficiale del Palazzo Bahia né al Ministero della Cultura del Marocco. Siamo un sito di informazioni indipendente. Per i biglietti ufficiali, visita: e-services.minculture.gov.ma",
+    "teamBody": "visitbahiapalace.com NON è affiliato all’amministrazione ufficiale del Palazzo Bahia né al Ministero della Cultura marocchino. Siamo un servizio di prenotazione commerciale indipendente: vendiamo pacchetti di biglietti su cui otteniamo un margine, e alcuni link di questo sito sono link di affiliazione. Lo stesso biglietto può essere acquistato direttamente dal Ministero al prezzo base: e-services.minculture.gov.ma",
     "contactCta": "Contattaci",
     "ctaTitle": "Hai Domande sulla Tua Visita?",
     "ctaBody": "Domande sulla visita al Palazzo Bahia? Consulta le nostre FAQ o inviaci un messaggio.",
@@ -324,7 +326,7 @@
     "whatsappUs": "Scrivici su WhatsApp per aiuto immediato →",
     "ctaSkip": "Evita la coda di 2 ore",
     "ctaTitle": "Pianifica la tua visita al Palazzo Bahia",
-    "ctaBody": "Gratis · Solo biglietti ufficiali · Nessuna commissione",
+    "ctaBody": "Biglietti ufficiali · Audioguida inclusa · Cancellazione gratuita fino all'invio del codice",
     "ctaBtn": "Vedi Tutte le Opzioni Biglietti",
     "teamAvail": "Rispondiamo prontamente a tutte le richieste di prenotazione.",
     "items": [
@@ -883,5 +885,8 @@
     "freeCancel": "Cancellazione gratuita",
     "mobileTicket": "Biglietto sul telefono",
     "secureBooking": "Pagamento sicuro"
+  },
+  "affiliate": {
+    "disclosure": "Alcuni link di questa pagina sono link di affiliazione. Se prenoti tramite questi link potremmo ricevere una commissione, senza costi aggiuntivi per te."
   }
 }

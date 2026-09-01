@@ -294,18 +294,23 @@ export function TicketCards({ overrides = {} }: Props) {
                       </div>
                     </div>
 
-                    {/* Payments OFF → the non-pack cards hand off to the free
-                        official portal, so "Free to use" is true of them.
-                        Payments ON → every CTA leads to the paid pack, so that
-                        claim would be false; show the included-ticket line
-                        instead. Gated on the same flag as the funnel. */}
+                    {/* This said "Free to use — official tickets only" while
+                        payments were off, reasoning that these cards hand off
+                        to the free Ministry portal. That stopped being the
+                        whole truth once TicketOptions began sending the same
+                        named products to paid Viator links from the same
+                        homepage: one page cannot carry "Skip-the-Line Entry —
+                        free to use" above and "Skip-the-Line Entry — $13.00"
+                        below it. AdSense refused the site over that pair.
+                        Both branches now describe the ticket instead of
+                        asserting a price of zero for the site as a whole. */}
                     <div className={`flex items-center gap-1.5 mt-3 text-[11px] text-[#C4A882] ${isSingle ? 'hidden sm:flex' : ''}`}>
                       <ShieldCheck size={12} className="text-[#8FA63C]" />
                       {slug === 'visitor-pack'
                         ? 'Official entry ticket included — no queue at the booth'
                         : paymentsEnabled
                           ? 'Official ticket included — free cancellation'
-                          : 'Free to use — official tickets only'}
+                          : 'Official tickets — we hand you to the Ministry portal'}
                     </div>
                   </div>
                 </div>

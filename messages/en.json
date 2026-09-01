@@ -20,7 +20,7 @@
   },
   "trust": {
     "instant": "100% Independent",
-    "freeCancellation": "No Booking Fees",
+    "freeCancellation": "Transparent Pricing",
     "mobile": "Verified Info",
     "secure": "Official Tickets Only"
   },
@@ -126,7 +126,9 @@
         "Visitor map",
         "Human support"
       ]
-    }
+    },
+    "priceNoteOwn": "Includes the official 100 MAD entry ticket + our service",
+    "priceNotePartner": "Booked and charged by our partner Viator"
   },
   "ticketDetail": {
     "includes": "What's included",
@@ -138,7 +140,7 @@
     "total": "Total",
     "proceedToCheckout": "Continue to official tickets →",
     "instantConfirm": "All-inclusive price",
-    "freeCancelNote": "Buy directly on the official portal",
+    "freeCancelNote": "Official ticket bought in your name",
     "mobileTicket": "No account or app needed",
     "duration": "Duration",
     "groupSize": "Group size",
@@ -161,12 +163,12 @@
     "title": "Why Book With Us?",
     "items": [
       {
-        "title": "Straight to the Real Ticket Office",
-        "desc": "We point you directly to Morocco's official Ministry of Culture ticket portal — no resellers, no markups."
+        "title": "The Official Ticket, Bought For You",
+        "desc": "We buy the Ministry of Culture's official 100 MAD ticket in your name and send you the code before you travel. You can also buy it yourself on the Ministry portal at the base price."
       },
       {
-        "title": "No Booking Fees",
-        "desc": "This site is free to use. You pay the standard price directly on the official portal — we add nothing on top."
+        "title": "Transparent Pricing",
+        "desc": "Our price covers the official 100 MAD ticket plus the audio guide, WhatsApp support and free cancellation. One figure at checkout, with the breakdown shown next to it."
       },
       {
         "title": "Reliable Information",
@@ -174,7 +176,7 @@
       },
       {
         "title": "Your Data Stays With Us",
-        "desc": "If you share your email, it's only used to send visit tips — never sold. Your ticket purchase happens directly on the official portal, not with us."
+        "desc": "If you share your email, it's only used to send visit tips — never sold. Where you complete a booking on a partner's site, that partner's own privacy policy applies."
       }
     ]
   },
@@ -187,13 +189,13 @@
     "metaTitle": "Visitbahiapalace.com — Independent Bahia Palace Guide",
     "metaDesc": "Visitbahiapalace.com is an independent guide for Bahia Palace in Marrakech. Compare tickets, check opening hours, and plan your perfect visit.",
     "hero": "About visitbahiapalace.com",
-    "heroSub": "An independent visitor information website for Bahia Palace, one of Morocco's most beautiful 19th-century monuments.",
+    "heroSub": "An independent guide and booking service for Bahia Palace, one of Morocco's most beautiful 19th-century monuments.",
     "missionTitle": "Our Mission",
-    "missionBody": "To help international travelers plan their visit to Bahia Palace with accurate, helpful information — including history, practical tips, safety guidance, and direct links to official ticket booking.",
+    "missionBody": "To help international travellers plan their visit to Bahia Palace with accurate, helpful information — history, practical tips and safety guidance — and to sell ticket packages that save them the queue. Tickets can also be bought directly from the Ministry at e-services.minculture.gov.ma.",
     "whyTitle": "What We Provide",
-    "whyBody": "Comprehensive visitor guides and historical context · Practical tips on opening hours and entrance fees · Safety information for tourists · Answers to frequently asked questions · Direct links to official ticket booking at e-services.minculture.gov.ma",
+    "whyBody": "Comprehensive visitor guides and historical context · Practical tips on opening hours and entrance fees · Safety information for tourists · Answers to frequently asked questions · Ticket packages we sell ourselves, which include the official entry ticket bought in your name · Links to the official Ministry portal at e-services.minculture.gov.ma, where the same entry ticket is sold at the base price",
     "teamTitle": "Important Notice",
-    "teamBody": "visitbahiapalace.com is NOT affiliated with the official Bahia Palace administration or the Moroccan Ministry of Culture. We are an independent visitor information website. For official tickets, visit: e-services.minculture.gov.ma",
+    "teamBody": "visitbahiapalace.com is NOT affiliated with the official Bahia Palace administration or the Moroccan Ministry of Culture. We are an independent commercial booking service: we sell ticket packages and earn a margin on them, and some links on this site are affiliate links. The same entry ticket can be bought directly from the Ministry at the base price: e-services.minculture.gov.ma",
     "contactCta": "Contact Us",
     "ctaTitle": "Have a Question About Your Visit?",
     "ctaBody": "Questions about visiting Bahia Palace? Browse our FAQ or send us a message.",
@@ -235,7 +237,7 @@
     "whatsappUs": "WhatsApp us for instant help →",
     "ctaSkip": "Skip the 2-hour queue",
     "ctaTitle": "Plan Your Bahia Palace Visit",
-    "ctaBody": "Free to use · Official tickets only · No booking fees",
+    "ctaBody": "Official tickets · Audio guide included · Free cancellation until we send your code",
     "ctaBtn": "See All Ticket Options",
     "teamAvail": "We respond to all booking enquiries promptly.",
     "items": [
@@ -548,7 +550,7 @@
     "editorial": "Editorial",
     "contact": "Contact",
     "copyright": "© {year} Bahia Palace Tickets. All rights reserved.",
-    "paymentNote": "Free to use — official tickets only",
+    "paymentNote": "Official tickets · All-inclusive price",
     "disclaimer": "visitbahiapalace.com is an independent visitor information and booking service. We are not affiliated with the official Bahia Palace or the Moroccan Ministry of Culture. Entry tickets can also be bought directly from the Ministry at <portal>e-services.minculture.gov.ma</portal>.",
     "network": "Part of an independent network of Morocco monument guides."
   },
@@ -881,5 +883,8 @@
     "freeCancel": "Free cancel",
     "mobileTicket": "Mobile ticket",
     "secureBooking": "Secure booking"
+  },
+  "affiliate": {
+    "disclosure": "Some links on this page are affiliate links. If you book through them we may earn a commission, at no extra cost to you."
   }
 }

@@ -16,9 +16,13 @@ interface BookingWidgetProps {
 export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
   const t  = useTranslations('ticketDetail');
   const tt = useTranslations('tickets');
-  // OFF → free portal hand-off, so "no fee / same as gate / free to use" is
-  // true. ON → the paid pack, where those claims are false. One flag, shared
-  // with the funnel.
+  // OFF → portal hand-off, so the gate-price breakdown below is the honest
+  // thing to show. ON → the paid pack, where a zero-margin breakdown would be
+  // false. One flag, shared with the funnel.
+  //
+  // Note the flag no longer licenses "free to use" in the off branch: the same
+  // site sells packages above the gate price and carries paid partner links, so
+  // that claim is untrue of the site regardless of what this page hands off to.
   const { enabled: paymentsEnabled } = usePaymentsFlags();
 
   const whatsappNumber = getWhatsAppNumber();
@@ -82,10 +86,13 @@ export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
           {t('proceedToCheckout')}
         </LeadButton>
 
+        {/* "Free to use" used to sit here, directly under a panel headed
+            "What you're paying for" that opens "We charge more than the gate".
+            One of those two had to go, and it was not the honest one. */}
         <p className="text-center text-xs text-[#C4A882] mb-5">
           {paymentsEnabled
             ? '🔒 Official ticket included · free cancellation'
-            : '🔒 Free to use — official tickets only'}
+            : '🔒 Official tickets — we hand you to the Ministry portal'}
         </p>
 
         {/* Trust badges */}
