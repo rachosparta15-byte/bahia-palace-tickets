@@ -17,10 +17,24 @@ const playfair = Playfair_Display({
 
 // Weight 300 dropped: `font-light` appears nowhere in the codebase, and each
 // weight here is two files once italic is counted.
+//
+// Italic dropped 2026-09-01, which halves this face from four files to two.
+// next/font preloads every declared file, and Lighthouse showed four woff2
+// requests totalling ~151 KB opening at 482 ms at High priority — the same
+// priority and the same instant as the hero image, which is the LCP element.
+// On a throttled connection the image waits behind them; that queue was most
+// of a 1901 ms LCP load delay.
+//
+// Nothing on the public site renders italic Cormorant. Every `italic` in the
+// codebase is either an /admin page (system-font UI) or `.tiptap blockquote`
+// in blog content, where a synthesised oblique is indistinguishable at that
+// size. Cormorant is used in the hero itself, so `preload: false` is not an
+// option here the way it was for Amiri — the fix has to be fewer files, not
+// later ones.
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
   weight: ['400', '600'],
-  style: ['normal', 'italic'],
+  style: ['normal'],
   variable: '--font-cormorant',
   display: 'swap',
 });

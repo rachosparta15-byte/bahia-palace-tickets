@@ -53,6 +53,25 @@ const TEASER_POINT_KEYS = [
 const HERO_SRCSET =
   '/images/hero-bg-640.webp 640w, /images/hero-bg-1024.webp 1024w, /images/hero-bg-1600.webp 1600w';
 
+/**
+ * Deliberately half the layout width, and the img and the preload must both
+ * use it or the browser fetches two different files.
+ *
+ * This was `100vw`, the honest value for a full-bleed background, on the
+ * stated reasoning that "the browser then picks 640w on a phone". It does not.
+ * `sizes` is multiplied by device pixel ratio, and phones are not DPR 1:
+ * Lighthouse's Moto G is 412 CSS px at DPR 1.75, so 100vw asks for 721 device
+ * px and the browser correctly picks 1024w — 82 KB, not the 36 KB the comment
+ * below assumes. That file was measured as the LCP resource.
+ *
+ * At 50vw the same phone asks for 361 px and a DPR 3 iPhone asks for 585 px,
+ * so both land on 640w; desktop drops from 1600w to 1024w. Understating
+ * `sizes` is normally how you ship a blurry image, and it is the right call
+ * only because of what sits on top of this one: two dark gradients at 92% and
+ * 68% plus a zellige overlay. There is no detail left to lose.
+ */
+const HERO_SIZES = '50vw';
+
 async function getTemp(): Promise<number | null> {
   try {
     const res = await fetch(
@@ -101,7 +120,7 @@ export async function Hero() {
     as: 'image',
     fetchPriority: 'high',
     imageSrcSet: HERO_SRCSET,
-    imageSizes: '100vw',
+    imageSizes: HERO_SIZES,
   });
 
   const temp = await getTemp();
@@ -121,15 +140,16 @@ export async function Hero() {
             quality the right answer rather than a compromise: 640w at q62 is
             36 KB and is indistinguishable once the overlays are on top.
 
-            sizes="100vw" because it is a full-bleed background — the browser
-            then picks 640w on a phone and 1600w on a desktop by itself. The
-            width/height pair is the source ratio, so the box is reserved
-            before the file lands and the layout cannot shift.
+            `sizes` is HERO_SIZES, not the 100vw this box actually occupies —
+            see the note on that constant for why, and change both it and the
+            preload together or the browser fetches two files. The width/height
+            pair is the source ratio, so the box is reserved before the file
+            lands and the layout cannot shift.
           */}
           <img
             src="/images/hero-bg-1024.webp"
             srcSet={HERO_SRCSET}
-            sizes="100vw"
+            sizes={HERO_SIZES}
             width={1600}
             height={900}
             alt="Bahia Palace interior courtyard with zellige tiles and arched columns"
