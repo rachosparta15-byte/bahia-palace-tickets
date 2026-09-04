@@ -4,9 +4,23 @@ import { BASE } from '@/lib/seo';
 import { getAllSlugs, getBlogPost } from '@/lib/blog';
 import { HISTORY_HREFLANG, HISTORY_SLUGS } from '@/lib/blog-hreflang';
 import { REDIRECTED_BLOG_SLUGS } from '@/lib/blog-redirects';
+import { locales } from '@/i18n/routing';
 
 export const dynamic = 'force-dynamic';
-const LOCALES = ['en', 'fr', 'it', 'de', 'es'] as const;
+/*
+ * Taken from the routing config, not written out again here.
+ *
+ * This line used to be a hand-kept list of five, and the site has had seven
+ * locales since Arabic and Portuguese were added. Every /ar and /pt page —
+ * sixteen static paths each, all returning 200 and all index,follow — was
+ * therefore live, canonical to itself, and absent from the file that tells
+ * search engines it exists. Bing's report flagged one URL, /pt, because it
+ * samples; the real number was thirty-two pages plus their ticket detail.
+ *
+ * Deriving it means the next locale is in the sitemap the moment it is in the
+ * router, which is the only version of this that stays correct.
+ */
+const LOCALES = locales;
 
 const STATIC: { path: string; priority: number; freq: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
   { path: '',                priority: 1.0,  freq: 'weekly'  },
