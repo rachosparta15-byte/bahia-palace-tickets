@@ -5,6 +5,7 @@ import { getAllSlugs, getBlogPost } from '@/lib/blog';
 import { HISTORY_HREFLANG, HISTORY_SLUGS } from '@/lib/blog-hreflang';
 import { REDIRECTED_BLOG_SLUGS } from '@/lib/blog-redirects';
 import { locales } from '@/i18n/routing';
+import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 
 export const dynamic = 'force-dynamic';
 /*
@@ -63,8 +64,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [];
   const now = new Date();
 
+  /*
+   * Pages that go noindex when payments are off must leave the sitemap with
+   * them.
+   *
+   * /visitor-pack is listed above at priority 0.98 — the highest on the site
+   * after the home page — and its generateMetadata returns `noindex, nofollow`
+   * and the title "Not Found" whenever payments are halted, which they have
+   * been since PayPal closed the account. So seven URLs were being submitted as
+   * the most important pages here while each of them told the crawler to go
+   * away, and Bing duly reported them as having no usable description, because
+   * a noindex page never gets one.
+   *
+   * Submitting a URL and then refusing it is worse than doing neither: it
+   * spends crawl budget and it is the kind of contradiction that makes the rest
+   * of the file less trusted. The flag that hides the page now hides its
+   * sitemap entry too, from one source, so the two cannot drift apart again.
+   */
+  const { enabled: paymentsEnabled } = getPublicPaymentsFlags();
+  const PAYMENT_GATED = new Set(['/visitor-pack']);
+  const staticPages = STATIC.filter(
+    ({ path }) => paymentsEnabled || !PAYMENT_GATED.has(path),
+  );
+
   // Static pages × locales
-  for (const { path, priority, freq } of STATIC) {
+  for (const { path, priority, freq } of staticPages) {
     for (const locale of LOCALES) {
       entries.push({
         url: `${BASE}/${locale}${path}`,
