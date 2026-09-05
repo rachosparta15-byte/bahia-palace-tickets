@@ -1,10 +1,11 @@
 'use client';
 
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { ArrowRight } from 'lucide-react';
-import { Link } from '@/i18n/navigation';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { AffiliateDisclosure } from '@/components/ui/AffiliateDisclosure';
+import { OrnamentDivider } from '@/components/ui/ZelligePattern';
 import { TICKET_PRICES } from '@/lib/ticket-data';
 
 /**
@@ -21,6 +22,24 @@ const OPTION_NAME_KEYS: Record<(typeof OPTION_SLUGS)[number], string> = {
   'guided-tour':        'guidedTour',
   'private-guide-only': 'privateGuideOnly',
   'private-tour':       'privateTour',
+};
+
+/**
+ * One photograph per product, from our own gallery.
+ *
+ * Chosen for what the product is rather than for prettiness alone: the
+ * entrance arch for the ticket that gets you through it, visitors following a
+ * guide under an archway for the guided tour, the painted hall ceiling for the
+ * private guide who has the time to stop and explain it, and the grand
+ * courtyard for the private tour. Every one is the Bahia Palace — this section
+ * sells admission to one building, so there is nothing else it could honestly
+ * show.
+ */
+const OPTION_IMAGES: Record<(typeof OPTION_SLUGS)[number], string> = {
+  'skip-the-line':      '/images/tickets/skip-the-line.webp',
+  'guided-tour':        '/images/tickets/guided-tour.webp',
+  'private-guide-only': '/images/tickets/private-guide-only.webp',
+  'private-tour':       '/images/tickets/private-tour.webp',
 };
 
 /**
@@ -61,9 +80,24 @@ export function TicketOptions() {
   const t = useTranslations('tickets');
 
   return (
-    <section id="ticket-options" className="scroll-mt-24 bg-cream py-16">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-10">
+    <section id="ticket-options" className="scroll-mt-24 relative overflow-hidden bg-cream py-16">
+      {/* The eight-point star tile the rest of the site already uses.
+          --zellige-tile bakes opacity 0.07 into the SVG itself, so dimming it
+          again in CSS made it mathematically invisible; the accent tile at
+          0.22 is the one that survives being masked. Faded out at the edges so
+          it reads as worked plaster behind the cards rather than as wallpaper
+          competing with them. */}
+      <div
+        aria-hidden
+        className="zellige-accent pointer-events-none absolute inset-0 opacity-[0.55]"
+        style={{
+          maskImage: 'radial-gradient(ellipse 78% 68% at 50% 45%, black 30%, transparent 85%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 78% 68% at 50% 45%, black 30%, transparent 85%)',
+        }}
+      />
+
+      <div className="relative max-w-5xl mx-auto px-6">
+        <div className="text-center">
           <h2
             className="text-deep-brown mb-2"
             style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
@@ -73,11 +107,12 @@ export function TicketOptions() {
           <p className="text-brown-mid max-w-2xl mx-auto leading-relaxed text-sm">{t('optionsSubtitle')}</p>
         </div>
 
-        {/* Always two columns, even on a narrow phone — matching the
-            reference layout rather than stacking to one column. Every size
-            below has a compact mobile value and a roomier sm: one so the
-            price + CTA split still fits inside half a small screen. */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-5">
+        <OrnamentDivider />
+
+        {/* Two across on a phone, four from md up. A photograph needs width to
+            be worth including, and at four-across on a laptop each card still
+            holds a readable 16:10 image. */}
+        <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
           {OPTION_SLUGS.map((slug) => {
             const nameKey = OPTION_NAME_KEYS[slug];
             const name    = t(`${nameKey}.name` as any);
@@ -88,85 +123,83 @@ export function TicketOptions() {
             // Two different providers cannot show two different prices on
             // the same card — where a Viator match exists, the whole card
             // (price included) reflects what Viator actually charges, in
-            // Viator's own currency, and both halves lead there.
+            // Viator's own currency.
             const priceLabel = viatorPrice ?? `€${TICKET_PRICES[slug].toFixed(2)}`;
-            const priceHref  = viatorHref ?? (`/tickets/${slug}` as any);
-            const ctaHref    = viatorHref;
+
+            const media = (
+              <div className="relative aspect-[16/10] w-full overflow-hidden">
+                <Image
+                  src={OPTION_IMAGES[slug]}
+                  alt={name}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+                />
+                {/* The price sits on the photograph over a scrim that darkens
+                    only the bottom strip — a separate price panel beside the
+                    image would take the width the image needs. */}
+                <div
+                  aria-hidden
+                  className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#160D06] via-[#160D06]/55 to-transparent"
+                />
+                <span
+                  className="absolute bottom-2 left-2.5 text-base font-bold tabular-nums text-[#F5E8CC] sm:bottom-3 sm:left-3.5 sm:text-xl"
+                  style={{ fontFamily: 'var(--font-heading)' }}
+                >
+                  {priceLabel}
+                  <span className="ms-1.5 align-middle text-[9px] font-normal text-[#E8C48A] sm:text-[10px]">
+                    {t('perPerson')}
+                  </span>
+                </span>
+              </div>
+            );
+
+            const body = (
+              <div className="flex flex-1 flex-col justify-between gap-2 bg-[#251A0F] px-3 py-3 transition-colors group-hover:bg-[#2E1F12] sm:px-4 sm:py-4">
+                <span
+                  className="text-left text-[12.5px] font-semibold leading-snug text-[#F5E8CC] sm:text-[15px]"
+                  style={{ fontFamily: 'var(--font-heading)' }}
+                >
+                  {name}
+                </span>
+                <span className="flex items-center gap-1 whitespace-nowrap text-[10px] font-semibold text-[#E8A33D] sm:text-xs">
+                  {t('bookNow')}
+                  <ArrowRight size={12} className="shrink-0 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </div>
+            );
+
+            const shell =
+              'group flex h-full w-full flex-col overflow-hidden rounded-xl border border-[rgba(196,168,130,0.45)] bg-[#251A0F] shadow-[0_2px_10px_rgba(61,40,23,0.10)] transition-shadow hover:shadow-[0_10px_28px_rgba(61,40,23,0.20)]';
 
             return (
-              <div key={slug}>
-              <div
-                className="flex overflow-hidden rounded-xl border border-dashed border-[rgba(196,168,130,0.45)] bg-[#FFFDF8]"
-              >
-                {/* Price side — the product's own info page, unless this
-                    card now points at Viator, in which case both halves do. */}
-                <Link
-                  href={priceHref}
-                  {...(viatorHref ? { target: '_blank', rel: 'noopener noreferrer sponsored' } : {})}
-                  className="flex w-[76px] shrink-0 flex-col items-center justify-center px-2 py-3 text-center transition-colors hover:bg-[#F5EBD8] sm:w-32 sm:px-3 sm:py-4"
-                >
-                  <span
-                    className="text-sm font-bold tabular-nums text-[#7A5A32] sm:text-xl"
-                    style={{ fontFamily: 'var(--font-heading)' }}
-                  >
-                    {priceLabel}
-                  </span>
-                  <span className="mt-0.5 text-[8px] text-brown-mid sm:text-[10px]">{t('perPerson')}</span>
-                </Link>
-
-                {/* CTA side. With a Viator match: a direct external link,
-                    Viator's own commission-earning booking flow (see
-                    VIATOR_LINKS). Otherwise: the ordinary lead-capture /
-                    checkout behaviour every other ticket button uses. */}
-                {ctaHref ? (
+              <div key={slug} className="flex flex-col">
+                {viatorHref ? (
                   <a
-                    href={ctaHref}
+                    href={viatorHref}
                     target="_blank"
                     rel="noopener noreferrer sponsored"
-                    className="flex flex-1 flex-col items-start justify-center gap-1.5 bg-[#251A0F] px-2.5 py-3 text-left transition-colors hover:bg-[#2E1F12] sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:px-5 sm:py-4"
+                    className={shell}
                   >
-                    <span
-                      className="text-[12px] font-semibold leading-snug text-[#F5E8CC] sm:text-base"
-                      style={{ fontFamily: 'var(--font-heading)' }}
-                    >
-                      {name}
-                    </span>
-                    <span className="flex shrink-0 items-center gap-1 whitespace-nowrap text-[10px] font-semibold text-[#E8A33D] sm:text-xs">
-                      {t('bookNow')}
-                      <ArrowRight size={11} className="shrink-0 sm:hidden" />
-                      <ArrowRight size={13} className="hidden shrink-0 sm:block" />
-                    </span>
+                    {media}
+                    {body}
                   </a>
                 ) : (
-                  <LeadButton
-                    ticketType={slug}
-                    ctaLocation="ticket_options"
-                    className="flex flex-1 flex-col items-start justify-center gap-1.5 bg-[#251A0F] px-2.5 py-3 text-left transition-colors hover:bg-[#2E1F12] sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:px-5 sm:py-4"
-                  >
-                    <span
-                      className="text-[12px] font-semibold leading-snug text-[#F5E8CC] sm:text-base"
-                      style={{ fontFamily: 'var(--font-heading)' }}
-                    >
-                      {name}
-                    </span>
-                    <span className="flex shrink-0 items-center gap-1 whitespace-nowrap text-[10px] font-semibold text-[#E8A33D] sm:text-xs">
-                      {t('bookNow')}
-                      <ArrowRight size={11} className="shrink-0 sm:hidden" />
-                      <ArrowRight size={13} className="hidden shrink-0 sm:block" />
-                    </span>
+                  <LeadButton ticketType={slug} ctaLocation="ticket_options" className={shell}>
+                    {media}
+                    {body}
                   </LeadButton>
                 )}
-              </div>
 
-              {/* What the number above actually buys. A price alone next to
-                  "Official tickets" reads as the gate price, which is what the
-                  old homepage copy encouraged and what AdSense refused the site
-                  over. Two variants because two different things are true: our
-                  own cards bundle the 100 MAD ticket with the service, and a
-                  Viator card is a booking we neither price nor charge. */}
-              <p className="mt-1.5 px-0.5 text-[10px] leading-snug text-brown-mid/80 sm:text-[11px]">
-                {viatorHref ? t('priceNotePartner') : t('priceNoteOwn')}
-              </p>
+                {/* What the number above actually buys. A price alone next to
+                    "Official tickets" reads as the gate price, which is what the
+                    old homepage copy encouraged and what AdSense refused the site
+                    over. Two variants because two different things are true: our
+                    own cards bundle the 100 MAD ticket with the service, and a
+                    Viator card is a booking we neither price nor charge. */}
+                <p className="mt-1.5 px-0.5 text-[10px] leading-snug text-brown-mid/80 sm:text-[11px]">
+                  {viatorHref ? t('priceNotePartner') : t('priceNoteOwn')}
+                </p>
               </div>
             );
           })}
