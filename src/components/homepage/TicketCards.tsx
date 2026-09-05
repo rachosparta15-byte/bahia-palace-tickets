@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { ZelligeGround } from '@/components/ui/ZelligeField';
 import { useRouter } from '@/i18n/navigation';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { usePaymentsFlags } from '@/components/layout/PaymentsFlagsProvider';
@@ -114,7 +115,10 @@ export function TicketCards({ overrides = {} }: Props) {
      * price pop here, and it leaves the card internals — ribbon, checks, price,
      * CTA — untouched.
      */
-    <section className="relative bg-cream pt-16 pb-20">
+    <section className="relative overflow-hidden bg-cream pt-16 pb-20">
+      {/* Shared with TicketOptions below: see ZelligeGround. Visual only —
+          nothing about the pack, the teaser or the pricing below changes. */}
+      <ZelligeGround fade="bottom" />
       {/*
        * Fades into the dark sections either side so the change of ground reads
        * as deliberate rather than as a cut. #251A0F is the exact background of
@@ -126,10 +130,10 @@ export function TicketCards({ overrides = {} }: Props) {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[#251A0F] to-[#FAF3E7]"
       />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#251A0F] to-[#FAF3E7]"
-      />
+      {/* No bottom fade: TicketOptions follows and it is cream, so fading to
+          #251A0F here painted a dark band through the middle of what is now a
+          single continuous cream block. The comment above still holds for the
+          top edge, where TrustStrip really is dark. */}
 
       <div className="relative max-w-6xl mx-auto px-6">
 

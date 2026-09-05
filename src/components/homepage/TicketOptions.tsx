@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { AffiliateDisclosure } from '@/components/ui/AffiliateDisclosure';
 import { OrnamentDivider } from '@/components/ui/ZelligePattern';
-import { ZelligeField } from '@/components/ui/ZelligeField';
+import { ZelligeGround } from '@/components/ui/ZelligeField';
 import { TICKET_PRICES } from '@/lib/ticket-data';
 
 /**
@@ -82,28 +82,11 @@ export function TicketOptions() {
 
   return (
     <section id="ticket-options" className="scroll-mt-24 relative overflow-hidden bg-cream py-16">
-      {/* The palace's own wall: an interlacing eight-point star field, drawn
-          large and at a strength you can actually see. The site's stock
-          .zellige tile bakes opacity 0.07 into its SVG at 60px, which vanishes
-          into the cream — twice the scale and real colour is what makes it
-          read as tilework instead of as a screen tone.
-
-          It is dimmed slightly behind the cards so the photographs stay the
-          brightest thing in the section, and nowhere else. */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#FDF8EF] via-[#F5EBD8] to-[#FDF8EF]" />
-      <ZelligeField
-        className="pointer-events-none absolute inset-0"
-        size={132}
-        opacity={0.9}
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(ellipse 62% 46% at 50% 62%, rgba(253,248,239,0.82) 0%, rgba(253,248,239,0.35) 55%, transparent 78%)',
-        }}
-      />
+      {/* The ground is shared with TicketCards directly above — the two cream
+          sections are one ticketing block, and decorating only this one made
+          them look like different sites. Faded at the top so the tile restart
+          at the seam is not visible. */}
+      <ZelligeGround fade="top" />
 
       <div className="relative max-w-5xl mx-auto px-6">
         <div className="text-center">

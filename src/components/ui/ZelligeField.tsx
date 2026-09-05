@@ -84,3 +84,49 @@ export function ZelligeField({
     </svg>
   );
 }
+
+/**
+ * The complete ground: warm gradient, zellige field, and a soft wash through
+ * the middle so content stays the brightest thing on it.
+ *
+ * Exists because the two cream sections of the homepage sit directly against
+ * each other — the experience chooser and the ticket options — and decorating
+ * one of them alone made them look like they came from different sites. One
+ * component, used in both, so the whole ticketing block reads as one ground.
+ *
+ * `fade` softens the tile restart at the seam between two stacked sections.
+ */
+export function ZelligeGround({ fade = 'none' }: { fade?: 'none' | 'top' | 'bottom' | 'both' }) {
+  const mask =
+    fade === 'both'
+      ? 'linear-gradient(to bottom, transparent, black 12%, black 88%, transparent)'
+      : fade === 'top'
+        ? 'linear-gradient(to bottom, transparent, black 14%)'
+        : fade === 'bottom'
+          ? 'linear-gradient(to bottom, black 86%, transparent)'
+          : undefined;
+
+  return (
+    <>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#FAF3E7] via-[#F3E9D6] to-[#FAF3E7]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={mask ? { maskImage: mask, WebkitMaskImage: mask } : undefined}
+      >
+        <ZelligeField className="h-full w-full" size={132} opacity={0.9} />
+      </div>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(ellipse 62% 46% at 50% 55%, rgba(250,243,231,0.80) 0%, rgba(250,243,231,0.32) 55%, transparent 78%)',
+        }}
+      />
+    </>
+  );
+}
