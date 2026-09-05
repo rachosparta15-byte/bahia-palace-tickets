@@ -886,5 +886,22 @@
   },
   "affiliate": {
     "disclosure": "Some links on this page are affiliate links. If you book through them we may earn a commission, at no extra cost to you."
+  },
+  "whyBook": {
+    "badge": "Before you book",
+    "title": "Two ways through that door",
+    "lead": "Both of them work. One of them costs you an hour of your morning.",
+    "imageAlt": "The main entrance of the Bahia Palace in Marrakech, with its carved cedar doors and hanging lanterns",
+    "gateTitle": "At the window",
+    "gate1": "One ticket window for the whole palace, and it takes cash in dirhams only.",
+    "gate2": "Thirty to forty-five minutes in the queue by mid-morning, in full sun.",
+    "gate3": "Nothing to cancel and nobody to ask if your plans change.",
+    "aheadTitle": "Booked before you arrive",
+    "ahead1": "Paid by card in your own currency, with the confirmation on your phone — no cash changes hands in the street.",
+    "ahead2": "Free cancellation up to 24 hours before on most tickets, and a refund if the tour does not run.",
+    "ahead3": "Every review is written by someone who booked and went, so the rating means something.",
+    "closing": "We earn a commission when you book through these links. It never changes the price you pay or which tickets appear here. The gate works perfectly well if you have the time and the cash — booking ahead is how you buy the hour back.",
+    "safetyLink": "Read the full guide to Marrakech scams",
+    "cta": "See the ticket options"
   }
 }

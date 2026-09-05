@@ -888,5 +888,22 @@
   },
   "affiliate": {
     "disclosure": "Certains liens de cette page sont des liens d'affiliation. Si vous réservez via ces liens, nous pouvons percevoir une commission, sans coût supplémentaire pour vous."
+  },
+  "whyBook": {
+    "badge": "Avant de réserver",
+    "title": "Deux façons de franchir cette porte",
+    "lead": "Les deux fonctionnent. L’une vous coûte une heure de votre matinée.",
+    "imageAlt": "L’entrée principale du Palais Bahia à Marrakech, ses portes en cèdre sculpté et ses lanternes",
+    "gateTitle": "Au guichet",
+    "gate1": "Un seul guichet pour tout le palais, et il n’accepte que les espèces en dirhams.",
+    "gate2": "Trente à quarante-cinq minutes de file en milieu de matinée, en plein soleil.",
+    "gate3": "Rien à annuler et personne à qui s’adresser si vos plans changent.",
+    "aheadTitle": "Réservé avant d’arriver",
+    "ahead1": "Payé par carte dans votre monnaie, confirmation sur votre téléphone — aucun argent liquide ne change de main dans la rue.",
+    "ahead2": "Annulation gratuite jusqu’à 24 h avant sur la plupart des billets, et remboursement si la visite n’a pas lieu.",
+    "ahead3": "Chaque avis est écrit par quelqu’un qui a réservé et qui y est allé : la note veut donc dire quelque chose.",
+    "closing": "Nous percevons une commission si vous réservez via ces liens. Cela ne change jamais le prix que vous payez ni les billets affichés ici. Le guichet fonctionne très bien si vous avez le temps et les espèces — réserver à l’avance, c’est racheter cette heure.",
+    "safetyLink": "Lire le guide complet des arnaques à Marrakech",
+    "cta": "Voir les options de billets"
   }
 }

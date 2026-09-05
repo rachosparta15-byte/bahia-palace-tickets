@@ -888,5 +888,22 @@
   },
   "affiliate": {
     "disclosure": "Algunos enlaces de esta página son enlaces de afiliado. Si reservas a través de ellos podemos recibir una comisión, sin coste adicional para ti."
+  },
+  "whyBook": {
+    "badge": "Antes de reservar",
+    "title": "Dos formas de cruzar esa puerta",
+    "lead": "Las dos funcionan. Una te cuesta una hora de tu mañana.",
+    "imageAlt": "La entrada principal del Palacio de la Bahía en Marrakech, con sus puertas de cedro tallado y sus faroles",
+    "gateTitle": "En la taquilla",
+    "gate1": "Una sola taquilla para todo el palacio, y solo acepta efectivo en dírhams.",
+    "gate2": "De treinta a cuarenta y cinco minutos de cola a media mañana, a pleno sol.",
+    "gate3": "Nada que cancelar y nadie a quien preguntar si cambian tus planes.",
+    "aheadTitle": "Reservado antes de llegar",
+    "ahead1": "Pagado con tarjeta en tu propia moneda, con la confirmación en el móvil: no cambia dinero en efectivo en la calle.",
+    "ahead2": "Cancelación gratuita hasta 24 horas antes en la mayoría de las entradas, y reembolso si la visita no se realiza.",
+    "ahead3": "Cada reseña la escribe alguien que reservó y fue, así que la valoración significa algo.",
+    "closing": "Ganamos una comisión si reservas por estos enlaces. Nunca cambia el precio que pagas ni las entradas que aparecen aquí. La taquilla funciona perfectamente si tienes tiempo y efectivo: reservar antes es cómo recuperas esa hora.",
+    "safetyLink": "Leer la guía completa de estafas en Marrakech",
+    "cta": "Ver las opciones de entradas"
   }
 }

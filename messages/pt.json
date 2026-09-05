@@ -619,5 +619,22 @@
   },
   "affiliate": {
     "disclosure": "Algumas ligações desta página são ligações de afiliado. Se reservar através delas podemos receber uma comissão, sem custo adicional para si."
+  },
+  "whyBook": {
+    "badge": "Antes de reservar",
+    "title": "Duas maneiras de atravessar aquela porta",
+    "lead": "As duas funcionam. Uma custa-lhe uma hora da sua manhã.",
+    "imageAlt": "A entrada principal do Palácio da Bahia em Marraquexe, com as portas de cedro esculpido e as lanternas",
+    "gateTitle": "Na bilheteira",
+    "gate1": "Uma única bilheteira para todo o palácio, e só aceita dinheiro em dirhams.",
+    "gate2": "Trinta a quarenta e cinco minutos de fila a meio da manhã, em pleno sol.",
+    "gate3": "Nada para cancelar e ninguém a quem perguntar se os seus planos mudarem.",
+    "aheadTitle": "Reservado antes de chegar",
+    "ahead1": "Pago com cartão na sua própria moeda, com a confirmação no telemóvel — não passa dinheiro de mão em mão na rua.",
+    "ahead2": "Cancelamento gratuito até 24 horas antes na maioria dos bilhetes, e reembolso se a visita não se realizar.",
+    "ahead3": "Cada avaliação é escrita por alguém que reservou e foi, por isso a nota significa alguma coisa.",
+    "closing": "Recebemos uma comissão se reservar através destes links. Isso nunca altera o preço que paga nem os bilhetes que aparecem aqui. A bilheteira funciona perfeitamente se tiver tempo e dinheiro — reservar com antecedência é como recupera essa hora.",
+    "safetyLink": "Ler o guia completo das burlas em Marraquexe",
+    "cta": "Ver as opções de bilhetes"
   }
 }

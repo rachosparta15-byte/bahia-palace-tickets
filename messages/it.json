@@ -888,5 +888,22 @@
   },
   "affiliate": {
     "disclosure": "Alcuni link di questa pagina sono link di affiliazione. Se prenoti tramite questi link potremmo ricevere una commissione, senza costi aggiuntivi per te."
+  },
+  "whyBook": {
+    "badge": "Prima di prenotare",
+    "title": "Due modi per varcare quella porta",
+    "lead": "Funzionano entrambi. Uno ti costa un’ora della mattinata.",
+    "imageAlt": "L’ingresso principale del Palazzo della Bahia a Marrakech, con le porte in cedro intagliato e le lanterne",
+    "gateTitle": "Alla biglietteria",
+    "gate1": "Una sola biglietteria per tutto il palazzo, e accetta solo contanti in dirham.",
+    "gate2": "Dai trenta ai quarantacinque minuti di fila a metà mattina, in pieno sole.",
+    "gate3": "Niente da annullare e nessuno a cui rivolgersi se i programmi cambiano.",
+    "aheadTitle": "Prenotato prima di arrivare",
+    "ahead1": "Pagato con carta nella tua valuta, con la conferma sul telefono: nessun contante passa di mano per strada.",
+    "ahead2": "Cancellazione gratuita fino a 24 ore prima sulla maggior parte dei biglietti, e rimborso se il tour non si svolge.",
+    "ahead3": "Ogni recensione è scritta da chi ha prenotato ed è andato, quindi il voto significa qualcosa.",
+    "closing": "Riceviamo una commissione se prenoti tramite questi link. Non cambia mai il prezzo che paghi né i biglietti che compaiono qui. La biglietteria funziona benissimo se hai tempo e contanti: prenotare in anticipo è il modo di riprenderti quell’ora.",
+    "safetyLink": "Leggi la guida completa alle truffe a Marrakech",
+    "cta": "Vedi le opzioni dei biglietti"
   }
 }

@@ -888,5 +888,22 @@
   },
   "affiliate": {
     "disclosure": "Einige Links auf dieser Seite sind Affiliate-Links. Wenn Sie darüber buchen, erhalten wir möglicherweise eine Provision — ohne Mehrkosten für Sie."
+  },
+  "whyBook": {
+    "badge": "Bevor Sie buchen",
+    "title": "Zwei Wege durch dieses Tor",
+    "lead": "Beide funktionieren. Einer kostet Sie eine Stunde Ihres Vormittags.",
+    "imageAlt": "Der Haupteingang des Bahia-Palasts in Marrakesch mit geschnitzten Zedernholztüren und Laternen",
+    "gateTitle": "Am Schalter",
+    "gate1": "Ein einziger Ticketschalter für den ganzen Palast, und er nimmt nur Bargeld in Dirham.",
+    "gate2": "Dreißig bis fünfundvierzig Minuten Schlange am späten Vormittag, in praller Sonne.",
+    "gate3": "Nichts zu stornieren und niemand, den man fragen kann, wenn sich die Pläne ändern.",
+    "aheadTitle": "Vor der Ankunft gebucht",
+    "ahead1": "Mit Karte in Ihrer eigenen Währung bezahlt, die Bestätigung auf dem Handy — kein Bargeld wechselt auf der Straße den Besitzer.",
+    "ahead2": "Kostenlose Stornierung bis 24 Stunden vorher bei den meisten Tickets, und Erstattung, falls die Tour ausfällt.",
+    "ahead3": "Jede Bewertung stammt von jemandem, der gebucht hat und da war — die Note bedeutet also etwas.",
+    "closing": "Wir erhalten eine Provision, wenn Sie über diese Links buchen. Das ändert nie den Preis, den Sie zahlen, oder welche Tickets hier stehen. Der Schalter funktioniert einwandfrei, wenn Sie Zeit und Bargeld haben — vorab zu buchen heißt, sich diese Stunde zurückzukaufen.",
+    "safetyLink": "Den vollständigen Leitfaden zu Betrugsmaschen in Marrakesch lesen",
+    "cta": "Ticketoptionen ansehen"
   }
 }
