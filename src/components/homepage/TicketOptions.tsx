@@ -96,7 +96,9 @@ export function TicketOptions() {
           >
             {t('optionsTitle')}
           </h2>
-          <p className="text-brown-mid max-w-2xl mx-auto leading-relaxed text-sm">{t('optionsSubtitle')}</p>
+          <p className="mx-auto max-w-3xl text-[0.98rem] leading-relaxed text-[#5C3D20] sm:text-[1.08rem]">
+            {t('optionsSubtitle')}
+          </p>
         </div>
 
         <OrnamentDivider />
@@ -149,12 +151,12 @@ export function TicketOptions() {
             const body = (
               <div className="flex flex-1 flex-col justify-between gap-2 bg-[#251A0F] px-3 py-3 transition-colors group-hover:bg-[#2E1F12] sm:px-4 sm:py-4">
                 <span
-                  className="text-left text-[12.5px] font-semibold leading-snug text-[#F5E8CC] sm:text-[15px]"
+                  className="text-left text-[13.5px] font-semibold leading-snug text-[#F5E8CC] sm:text-[16.5px]"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {name}
                 </span>
-                <span className="flex items-center gap-1 whitespace-nowrap text-[10px] font-semibold text-[#E8A33D] sm:text-xs">
+                <span className="flex items-center gap-1 whitespace-nowrap text-[11px] font-semibold text-[#E8A33D] sm:text-[13px]">
                   {t('bookNow')}
                   <ArrowRight size={12} className="shrink-0 transition-transform group-hover:translate-x-0.5" />
                 </span>
@@ -189,7 +191,7 @@ export function TicketOptions() {
                     over. Two variants because two different things are true: our
                     own cards bundle the 100 MAD ticket with the service, and a
                     Viator card is a booking we neither price nor charge. */}
-                <p className="mt-1.5 min-h-[2.6em] px-0.5 text-[10px] leading-snug text-brown-mid/80 sm:min-h-[2.4em] sm:text-[11px]">
+                <p className="mt-2 min-h-[2.6em] px-0.5 text-[11px] leading-snug text-[#5C3D20] sm:min-h-[2.4em] sm:text-[12px]">
                   {viatorHref ? t('priceNotePartner') : t('priceNoteOwn')}
                 </p>
               </div>
