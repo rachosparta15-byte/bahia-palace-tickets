@@ -232,7 +232,7 @@ most back per change:
 |---|---|---|
 | 1 | Every dark section background → `#251A0F` | ~11 components |
 | 2 | `rounded-lg` and `rounded-2xl` → `rounded-xl` | 186 uses |
-| 3 | Delete the blues (`#2E4A7B`, `#F0F7FF`) | 35 uses |
+| 3 | Delete the blues (`#2E4A7B`, `#F0F7FF`, majorelle) | 42 uses |
 | 4 | Shadows on dark grounds → `--surface` or hairline | audit needed |
 | 5 | Collapse the 16 light tones to `--ground-cream` + `--surface` | ~30 uses |
 | 6 | Restrict `--cta` terracotta to paid actions | audit needed |
