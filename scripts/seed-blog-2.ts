@@ -27,7 +27,7 @@ const posts = [
 <h3>Midday: Lunch in the Mellah (12:30 – 14:00)</h3>
 <p>The <strong>Mellah</strong>, Marrakech's old Jewish quarter, is directly beside Bahia Palace. Its covered food market sells fresh olives, preserved lemons, pastilla, and local street food at honest prices. Eat here — it's far better value than the tourist restaurants near Jemaa el-Fna.</p>
 <h3>Afternoon: El Badi Palace + Jemaa el-Fna Approach (14:00 – 17:30)</h3>
-<p>Walk 10 minutes to the ruins of <strong>El Badi Palace</strong> — the once-magnificent 16th-century palace now reduced to atmospheric earthen walls and nesting storks. Entry is 70 MAD. Rarely crowded. Budget 45 minutes.</p>
+<p>Walk 10 minutes to the ruins of <strong>El Badi Palace</strong> — the once-magnificent 16th-century palace now reduced to atmospheric earthen walls and nesting storks. Entry is 100 MAD. Rarely crowded. Budget 45 minutes.</p>
 <p>From El Badi, work your way through the souks toward Jemaa el-Fna. The route takes you past the spice market at Rahba Kedima, the dyers' souk, and the leather workers' quarter. Don't follow anyone who offers to guide you — just walk and explore.</p>
 <h3>Evening: Jemaa el-Fna at Sunset (17:30 – 20:00)</h3>
 <p>Arrive at <strong>Jemaa el-Fna</strong> at dusk, when the square is at its most spectacular. The food stalls open, the acrobats perform, and the sound of Gnawa music fills the air. Eat dinner from the stalls — grilled meats, harira soup, and fresh orange juice.</p>
@@ -74,7 +74,7 @@ const posts = [
 <p>A 10-minute walk from Bahia Palace, the <strong>Saadian Tombs</strong> are the sealed royal mausoleum of the Saadian dynasty. The Hall of Twelve Columns, with its Italian marble columns and intricate stucco honeycomb ceiling, is genuinely stunning. 40 minutes is enough to see everything carefully.</p>
 
 <h3>11:15 — Quick Look at El Badi Palace (optional, 30 minutes)</h3>
-<p>If your pace allows, the atmospheric ruins of <strong>El Badi Palace</strong> are 5 minutes on foot. The vast empty grounds — once the most magnificent palace in the Muslim world — take only 30 minutes to walk and are rarely crowded. Entry 70 MAD.</p>
+<p>If your pace allows, the atmospheric ruins of <strong>El Badi Palace</strong> are 5 minutes on foot. The vast empty grounds — once the most magnificent palace in the Muslim world — take only 30 minutes to walk and are rarely crowded. Entry 100 MAD.</p>
 
 <h3>12:00 — Lunch at the Mellah Market</h3>
 <p>The covered market in the <strong>Mellah</strong> (old Jewish quarter) is two minutes from Bahia Palace and serves the best-value food in this part of the medina. Pastilla, harira soup, kefta sandwiches, and fresh juice. Budget 50–80 MAD per person.</p>
@@ -515,8 +515,8 @@ If you have <strong>a full day</strong> → Visit both. They're different enough
   <tr><th>Monument</th><th>Price</th></tr>
   <tr><td>Bahia Palace (standard)</td><td>100 MAD</td></tr>
   <tr><td>Bahia Palace (skip-the-line, online)</td><td>From 80 MAD</td></tr>
-  <tr><td>Saadian Tombs</td><td>70 MAD</td></tr>
-  <tr><td>El Badi Palace</td><td>70 MAD</td></tr>
+  <tr><td>Saadian Tombs</td><td>100 MAD</td></tr>
+  <tr><td>El Badi Palace</td><td>100 MAD</td></tr>
   <tr><td>Jardin Majorelle</td><td>150 MAD</td></tr>
   <tr><td>Ben Youssef Madrasa</td><td>70 MAD</td></tr>
 </table>

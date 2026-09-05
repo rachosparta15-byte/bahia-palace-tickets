@@ -35,7 +35,7 @@ excerpt: Biglietto d'ingresso Bahia Palace 2026: prezzo ufficiale 100 MAD, scont
 <h3>Bambini</h3>
 <p>I bambini sotto i 7 anni entrano gratuitamente. I bambini stranieri di 7–13 anni pagano 50 MAD (metà della tariffa adulta). I bambini marocchini pagano 10 MAD indipendentemente dall'età. Una famiglia di due adulti stranieri e due bambini di 7–13 anni spende 300 MAD in totale — molto conveniente.</p>
 <h3>Locali e visitatori stranieri</h3>
-<p>Il Marocco applica un doppio sistema di tariffe in molti siti culturali statali. Bahia Palace non fa eccezione: i cittadini marocchini pagano 10 MAD contro i 100 MAD dei visitatori stranieri. Questa è una pratica standard in tutto il paese.</p>
+<p>Il Marocco applica un doppio sistema di tariffe in molti siti culturali statali. Bahia Palace non fa eccezione: gli adulti marocchini pagano 30 MAD e i bambini 10 MAD, contro i 100 MAD dei visitatori stranieri. Questa è una pratica standard in tutto il paese.</p>
 <h3>Sconti di gruppo</h3>
 <p>Non esiste uno sconto di gruppo formale allo sportello standard per i visitatori stranieri. I gruppi organizzati negoziano tariffe separatamente tramite operatori turistici abilitati. Se viaggiate in modo indipendente, aspettatevi di pagare 100 MAD per adulto indipendentemente dalla dimensione del gruppo.</p>
 
@@ -65,7 +65,7 @@ excerpt: Biglietto d'ingresso Bahia Palace 2026: prezzo ufficiale 100 MAD, scont
 
 <h2>Domande frequenti</h2>
 <h3>Quanto costa entrare a Bahia Palace?</h3>
-<p>La tariffa d'ingresso standard è di 100 MAD per i visitatori stranieri (circa 10 $ / 9 € nel 2026). I cittadini marocchini pagano 10 MAD. I bambini sotto i 7 anni entrano gratuitamente. Il pagamento alla biglietteria è solo in contanti.</p>
+<p>La tariffa d'ingresso standard è di 100 MAD per i visitatori stranieri (circa 10 $ / 9 € nel 2026). Gli adulti marocchini pagano 30 MAD; i bambini marocchini 10 MAD. I bambini sotto i 7 anni entrano gratuitamente. Il pagamento alla biglietteria è solo in contanti.</p>
 <h3>Posso ottenere uno sconto a Bahia Palace con una tessera studenti?</h3>
 <p>Le tessere studenti internazionali come l'ISIC non sono accettate in modo affidabile allo sportello di Bahia Palace. Gli studenti marocchini con tessera nazionale valida possono ottenere una tariffa ridotta, ma i visitatori stranieri devono aspettarsi di pagare il prezzo adulto intero di 100 MAD.</p>
 <h3>È più conveniente comprare i biglietti alla porta o online?</h3>

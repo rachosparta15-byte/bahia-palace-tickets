@@ -42,7 +42,7 @@ excerpt: Eine ehrliche Bewertung von Bahia Palace im Jahr 2026: was wirklich bee
     <tr><td>Ben Youssef Madrasa</td><td>Islamische Architektur, zellige, Hof</td><td>45 Min.</td><td>50 MAD</td></tr>
   </tbody>
 </table>
-<p>Zu 100 MAD ist Bahia Palace teurer als die Saadischen Gräber und El Badi Palace (beide 100 MAD), bietet aber deutlich mehr Inhalt. Verglichen mit dem Majorelle-Garten (150 MAD) bietet er mehr Substanz pro Dirham für Besucher, die primär am kulturellen Erbe interessiert sind.</p>
+<p>Zu 100 MAD kostet Bahia Palace so viel wie die Saadischen Gräber und El Badi Palace, bietet aber deutlich mehr Inhalt. Verglichen mit dem Majorelle-Garten (150 MAD) bietet er mehr Substanz pro Dirham für Besucher, die primär am kulturellen Erbe interessiert sind.</p>
 
 <h2>Für wen es perfekt ist</h2>
 <ul>

@@ -42,7 +42,7 @@ excerpt: Un avis honnête sur Bahia Palace en 2026 : ce qui impressionne vraimen
     <tr><td>Medersa Ben Youssef</td><td>Architecture islamique, zellige, cour</td><td>45 min</td><td>50 MAD</td></tr>
   </tbody>
 </table>
-<p>À 100 MAD, Bahia Palace est plus cher que les Tombeaux Saadiens et El Badi Palace (tous les deux 100 MAD) mais offre nettement plus de contenu. Comparé au Jardin Majorelle (150 MAD), il offre plus de substance par dirham pour les visiteurs principalement intéressés par le patrimoine culturel.</p>
+<p>À 100 MAD, Bahia Palace coûte autant que les Tombeaux Saadiens et El Badi Palace mais offre nettement plus de contenu. Comparé au Jardin Majorelle (150 MAD), il offre plus de substance par dirham pour les visiteurs principalement intéressés par le patrimoine culturel.</p>
 
 <h2>Pour qui c'est parfait</h2>
 <ul>

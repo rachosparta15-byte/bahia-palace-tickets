@@ -93,8 +93,8 @@ const posts = [
 
 <h2>Day 2: Palaces, Ruins & Gardens</h2>
 <h3>Morning: Saadian Tombs & El Badi Palace</h3>
-<p>Begin with the <strong>Saadian Tombs</strong>, the royal necropolis of the Saadian dynasty, hidden and sealed for centuries until rediscovered in 1917. They open at 09:00 — arrive at the door to beat the tour groups. Entrance is 70 MAD.</p>
-<p>A 10-minute walk away, the ruins of <strong>El Badi Palace</strong> offer a completely different experience: vast open grounds where storks nest on crumbling walls. Entry is 70 MAD and rarely crowded.</p>
+<p>Begin with the <strong>Saadian Tombs</strong>, the royal necropolis of the Saadian dynasty, hidden and sealed for centuries until rediscovered in 1917. They open at 09:00 — arrive at the door to beat the tour groups. Entrance is 100 MAD.</p>
+<p>A 10-minute walk away, the ruins of <strong>El Badi Palace</strong> offer a completely different experience: vast open grounds where storks nest on crumbling walls. Entry is 100 MAD and rarely crowded.</p>
 <h3>Afternoon: Jardin Majorelle</h3>
 <p><strong>Jardin Majorelle</strong> is one of the most photographed places in Morocco — a cobalt-blue villa surrounded by a botanical garden filled with cacti, bamboo, and lotus ponds. It was owned by Yves Saint Laurent and Pierre Bergé for decades. Entry is 150 MAD. Go in the early afternoon when tour groups have left.</p>
 <h3>Evening: Dinner in Gueliz</h3>

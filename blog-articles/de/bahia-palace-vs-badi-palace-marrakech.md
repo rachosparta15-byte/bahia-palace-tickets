@@ -68,7 +68,7 @@ excerpt: Bahia Palace und El Badi Palace sind beide ikonische Wahrzeichen von Ma
 
 <h2>Vergleich der Ticketpreise</h2>
 <p><strong>Bahia Palace:</strong> 100 MAD (~10€) für ausländische Erwachsene. Kinder unter 7 Jahren kostenlos. Marokkanische Staatsangehörige zahlen 30 MAD. skip-the-line-Tickets online umgehen die Schlange vollständig.</p>
-<p><strong>El Badi Palace:</strong> 100 MAD (~7€) für ausländische Erwachsene. Marokkanische Staatsangehörige zahlen 10 MAD.</p>
+<p><strong>El Badi Palace:</strong> 100 MAD (~7€) für ausländische Erwachsene. Marokkanische Staatsangehörige zahlen 30 MAD.</p>
 <p>Wenn Sie planen, beide am selben Tag zu besuchen, budgetieren Sie ca. 200 MAD (~17€) pro Person für den Eintritt zu beiden Sehenswürdigkeiten — ausgezeichnetes Preis-Leistungs-Verhältnis für das kombinierte historische Erlebnis.</p>
 
 <h2>Welchen Palast sollten Sie besuchen?</h2>

@@ -78,8 +78,8 @@ const post = {
 
 <h2>Ticket Prices Comparison</h2>
 <p><strong>Bahia Palace:</strong> 100 MAD (~$10 USD) for foreign adult visitors. Children under 7 free. Moroccan nationals pay 30 MAD. Online skip-the-line tickets avoid the queue entirely.</p>
-<p><strong>El Badi Palace:</strong> 70 MAD (~$7 USD) for foreign adult visitors. Moroccan nationals pay 10 MAD.</p>
-<p>If you plan to visit both on the same day, budget approximately 170 MAD (~$17) per person for entry to both sites — excellent value for the combined historical experience.</p>
+<p><strong>El Badi Palace:</strong> 100 MAD (~$7 USD) for foreign adult visitors. Moroccan nationals pay 30 MAD.</p>
+<p>If you plan to visit both on the same day, budget approximately 200 MAD (~$17) per person for entry to both sites — excellent value for the combined historical experience.</p>
 
 <h2>Which Palace Should You Visit?</h2>
 <p>There is no wrong answer — the two palaces complement each other beautifully:</p>

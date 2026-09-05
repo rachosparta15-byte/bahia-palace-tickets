@@ -141,7 +141,7 @@ const ARTICLES = [
 <p>Bahia gets significantly more visitors and is better known internationally. Tour groups pass through on a fixed circuit. Badi is quieter — not empty, but rarely packed. If solitude matters to you, Badi wins.</p>
 
 <h2>Entrance Fees</h2>
-<p>Bahia Palace: 100 MAD. Badi Palace: 70 MAD. You can visit both for 170 MAD total, which is around €15 — genuinely excellent value for a half-day of world-class history.</p>
+<p>Bahia Palace: 100 MAD. Badi Palace: 100 MAD. You can visit both for 200 MAD total, which is around €15 — genuinely excellent value for a half-day of world-class history.</p>
 <p>There's also a <a href="/tickets/combo-saadian-tombs">Bahia + Saadian Tombs combo</a> available through this site — the Saadian Tombs are actually closer to Bahia than Badi is, so that's another option if you're prioritizing burial monuments.</p>
 
 <h2>Which One First?</h2>

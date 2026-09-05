@@ -77,8 +77,8 @@ const posts = [
 <h2>What's Nearby</h2>
 <p>Bahia Palace is well-placed for a half-day or full-day medina loop:</p>
 <ul>
-  <li><strong>Saadian Tombs</strong> — 8-minute walk south. The Saadian dynasty's royal mausoleum, sealed for centuries. One of the finest pieces of Islamic architecture in Morocco. Entry 70 MAD.</li>
-  <li><strong>El Badi Palace</strong> — 12-minute walk west. Atmospheric 16th-century ruins on a massive scale. Storks nest on the walls. Entry 70 MAD.</li>
+  <li><strong>Saadian Tombs</strong> — 8-minute walk south. The Saadian dynasty's royal mausoleum, sealed for centuries. One of the finest pieces of Islamic architecture in Morocco. Entry 100 MAD.</li>
+  <li><strong>El Badi Palace</strong> — 12-minute walk west. Atmospheric 16th-century ruins on a massive scale. Storks nest on the walls. Entry 100 MAD.</li>
   <li><strong>The Mellah</strong> — directly adjacent. Marrakech's old Jewish quarter, with a covered food market, the Lazama Synagogue, and a very different pace from the main souks.</li>
   <li><strong>Place des Ferblantiers</strong> — 3 minutes west. The lantern-makers' square, best in the early evening when everything lights up.</li>
 </ul>
@@ -527,7 +527,7 @@ const posts = [
     <tr><td><strong>09:00</strong></td><td>Enter. Start with the Grand Riad, work through the reception rooms, harem quarters, and gardens.</td></tr>
     <tr><td><strong>10:30</strong></td><td>Exit Bahia Palace. Walk south 7 minutes to Saadian Tombs.</td></tr>
     <tr><td><strong>10:40</strong></td><td>Enter Saadian Tombs. See the Hall of Twelve Columns, the middle chamber, and the garden.</td></tr>
-    <tr><td><strong>11:20</strong></td><td>Exit Saadian Tombs. Option: walk 10 minutes west to El Badi Palace ruins (70 MAD) for a third site.</td></tr>
+    <tr><td><strong>11:20</strong></td><td>Exit Saadian Tombs. Option: walk 10 minutes west to El Badi Palace ruins (100 MAD) for a third site.</td></tr>
     <tr><td><strong>12:00</strong></td><td>Lunch. Head back through the medina or toward Jemaa el-Fna.</td></tr>
   </tbody>
 </table>
@@ -538,7 +538,7 @@ const posts = [
   <thead><tr><th>Site</th><th>Adult (foreign)</th><th>Moroccan national</th><th>Children under 7</th></tr></thead>
   <tbody>
     <tr><td>Bahia Palace</td><td>100 MAD (~€9)</td><td>30 MAD</td><td>Free</td></tr>
-    <tr><td>Saadian Tombs</td><td>70 MAD (~€7)</td><td>10 MAD</td><td>Free</td></tr>
+    <tr><td>Saadian Tombs</td><td>100 MAD (~€7)</td><td>10 MAD</td><td>Free</td></tr>
     <tr><td><strong>Total</strong></td><td><strong>170 MAD (~€15)</strong></td><td>40 MAD</td><td>Free</td></tr>
   </tbody>
 </table>
@@ -553,7 +553,7 @@ const posts = [
 </ul>
 
 <h2>Add El Badi Palace for a Full Morning</h2>
-<p>If you have until 13:00, El Badi Palace is 10 minutes west of the Saadian Tombs. Entry is 70 MAD. The ruins are atmospheric — vast roofless halls, nesting storks, and a very different scale from the intimate tombs. It adds about 45 minutes and rounds out the southern medina's three major monuments in a single morning.</p>
+<p>If you have until 13:00, El Badi Palace is 10 minutes west of the Saadian Tombs. Entry is 100 MAD. The ruins are atmospheric — vast roofless halls, nesting storks, and a very different scale from the intimate tombs. It adds about 45 minutes and rounds out the southern medina's three major monuments in a single morning.</p>
 
 <h2>Book Your Bahia Palace Ticket</h2>
 <p>The queue at Bahia Palace's door is the single biggest threat to this itinerary. A 40-minute queue means you're arriving at the Saadian Tombs at 11:30, just as the crowds peak. <a href="/en/tickets/skip-the-line">Book a skip-the-line ticket for Bahia Palace</a> in advance. The Saadian Tombs don't currently offer online booking — arrive early and the queue moves quickly.</p>
@@ -564,7 +564,7 @@ const posts = [
 <h3>Which is better — the Saadian Tombs or Bahia Palace?</h3>
 <p>They're not really comparable — they offer different things. The Saadian Tombs are smaller, more concentrated, and intensely detailed in a small space. Bahia Palace is vast, varied, and architectural in scope. If you only have time for one, Bahia Palace offers more variety and a longer, richer experience. If you have 2–3 hours, do both — they complement each other perfectly.</p>
 <h3>Do I need to book tickets for the Saadian Tombs in advance?</h3>
-<p>There is no official advance booking system for the Saadian Tombs — tickets are purchased at the entrance (70 MAD cash). The queue is usually shorter than Bahia Palace's and moves faster, as the site is smaller. Arriving before 10:00 AM keeps the wait minimal. For Bahia Palace, an advance <a href="/en/tickets/skip-the-line">skip-the-line ticket</a> is strongly recommended in high season.</p>`,
+<p>There is no official advance booking system for the Saadian Tombs — tickets are purchased at the entrance (100 MAD cash). The queue is usually shorter than Bahia Palace's and moves faster, as the site is smaller. Arriving before 10:00 AM keeps the wait minimal. For Bahia Palace, an advance <a href="/en/tickets/skip-the-line">skip-the-line ticket</a> is strongly recommended in high season.</p>`,
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -605,13 +605,13 @@ const posts = [
   <thead><tr><th>Site</th><th>What it offers</th><th>Time needed</th><th>Entry fee</th></tr></thead>
   <tbody>
     <tr><td>Bahia Palace</td><td>Architecture, scale, history, gardens</td><td>75–90 min</td><td>100 MAD</td></tr>
-    <tr><td>Saadian Tombs</td><td>Concentrated ornate detail, history</td><td>30–40 min</td><td>70 MAD</td></tr>
-    <tr><td>El Badi Palace</td><td>Atmospheric ruins, scale, storks</td><td>45 min</td><td>70 MAD</td></tr>
+    <tr><td>Saadian Tombs</td><td>Concentrated ornate detail, history</td><td>30–40 min</td><td>100 MAD</td></tr>
+    <tr><td>El Badi Palace</td><td>Atmospheric ruins, scale, storks</td><td>45 min</td><td>100 MAD</td></tr>
     <tr><td>Majorelle Garden</td><td>Botanical, colour, design heritage</td><td>45–60 min</td><td>150 MAD</td></tr>
     <tr><td>Ben Youssef Madrasa</td><td>Islamic architecture, zellige, courtyard</td><td>45 min</td><td>70 MAD</td></tr>
   </tbody>
 </table>
-<p>At 100 MAD, Bahia Palace costs more than the Saadian Tombs and El Badi Palace (both 70 MAD) but offers significantly more content. Compared to Majorelle Garden (150 MAD), it offers more substance per dirham for visitors primarily interested in cultural heritage.</p>
+<p>At 100 MAD, Bahia Palace costs more than the Saadian Tombs and El Badi Palace (both 100 MAD) but offers significantly more content. Compared to Majorelle Garden (150 MAD), it offers more substance per dirham for visitors primarily interested in cultural heritage.</p>
 
 <h2>Who It's Perfect For</h2>
 <ul>
@@ -637,7 +637,7 @@ const posts = [
 <h3>Is Bahia Palace worth it for non-history lovers?</h3>
 <p>Yes. You don't need to be a history enthusiast to be impressed by Bahia Palace. The architectural quality and the scale of the Grand Riad are visually striking even without context. That said, knowing the story of Ba Ahmed — a slave who became the most powerful man in Morocco — makes the visit significantly richer. Five minutes of reading before you go is well worth the investment.</p>
 <h3>Is 100 MAD good value for Bahia Palace?</h3>
-<p>Yes. 100 MAD is approximately €9 or $10. For that price you get 8,000 square meters of exceptional Moroccan architecture, 90 minutes of exploration, and access to one of the country's most significant cultural heritage sites. It's more expensive than the Saadian Tombs (70 MAD) but still cheaper than Majorelle Garden (150 MAD), and offers more cultural heritage content.</p>
+<p>Yes. 100 MAD is approximately €9 or $10. For that price you get 8,000 square meters of exceptional Moroccan architecture, 90 minutes of exploration, and access to one of the country's most significant cultural heritage sites. It's more expensive than the Saadian Tombs (100 MAD) but still cheaper than Majorelle Garden (150 MAD), and offers more cultural heritage content.</p>
 <h3>What's the best way to prepare for a visit to Bahia Palace?</h3>
 <p>Read a brief account of Ba Ahmed ibn Moussa's story before you visit — this blog's <a href="/en/blog/bahia-palace-history">history article</a> covers it in full. Know that the rooms are intentionally empty (the reason is part of the story). Arrive at 9:00 AM for the best light and fewest crowds. Book your <a href="/en/tickets/skip-the-line">skip-the-line ticket</a> in advance so you're inside within minutes of arriving.</p>`,
   },
@@ -668,7 +668,7 @@ const posts = [
 <p><strong>Inside the tombs:</strong> Three chambers surround the burial plots of 66 members of the Saadian royal family. The Hall of Twelve Columns is the highlight — Italian marble columns, carved plaster at its most intricate, and an atmosphere that is genuinely different from Bahia Palace's grandeur. The site was sealed in the 17th century and not rediscovered until 1917. Budget 35–45 minutes. Entry: 70 MAD cash.</p>
 
 <h3>11:30 — Optional: El Badi Palace (10 min walk)</h3>
-<p>If you have the energy and time, El Badi Palace is worth 45 minutes. Head west from the Saadian Tombs toward Place des Ferblantiers. The ruins of this once-magnificent 16th-century palace are now open roofless grounds with nesting storks and an atmosphere unlike anything else in the medina. Entry: 70 MAD.</p>
+<p>If you have the energy and time, El Badi Palace is worth 45 minutes. Head west from the Saadian Tombs toward Place des Ferblantiers. The ruins of this once-magnificent 16th-century palace are now open roofless grounds with nesting storks and an atmosphere unlike anything else in the medina. Entry: 100 MAD.</p>
 
 <h2>Day 1 Afternoon: Medina Souks</h2>
 <h3>12:30 — Lunch</h3>
@@ -700,7 +700,7 @@ const posts = [
 <h3>12:00 — Lunch in Gueliz</h3>
 <p>The restaurant options in Gueliz are better value and less tourist-oriented than Jemaa el-Fna. A good local tagine restaurant in this area costs 80–130 MAD for a main. Ask your accommodation for a specific recommendation — the good ones are known locally.</p>
 <h3>14:00 — Ben Youssef Madrasa</h3>
-<p>A 14th-century Quranic school in the northern medina and one of the finest examples of Islamic architecture in Morocco. Three floors of carved stucco and zellige surround a central courtyard — more intimate than Bahia Palace, more accessible than the Saadian Tombs. Entry 70 MAD. Budget 45 minutes.</p>
+<p>A 14th-century Quranic school in the northern medina and one of the finest examples of Islamic architecture in Morocco. Three floors of carved stucco and zellige surround a central courtyard — more intimate than Bahia Palace, more accessible than the Saadian Tombs. Entry 100 MAD. Budget 45 minutes.</p>
 <h3>15:00 — Final Souk Pass or Rest</h3>
 <p>The area around Ben Youssef Madrasa has some of the better craft shops in Marrakech — less tourist-oriented than the main souk strip. Pottery, leather, and textile workshops in this area sell at more realistic prices with less pressure.</p>
 
@@ -712,7 +712,7 @@ const posts = [
 <h2>Practical Tips</h2>
 <ul>
   <li><strong>Transport:</strong> Most of this itinerary is walkable within the medina. Use petit taxis for the 3 km trip between the medina and Gueliz/Majorelle — agree on the fare before getting in (20–35 MAD is fair)</li>
-  <li><strong>Budget per person (excluding accommodation):</strong> Bahia Palace 100 MAD + Saadian Tombs 70 MAD + Majorelle 150 MAD + Ben Youssef 70 MAD + food 400–600 MAD per day = approximately 830–1,030 MAD (~€83–103) per person for 2 days of activities and meals</li>
+  <li><strong>Budget per person (excluding accommodation):</strong> Bahia Palace 100 MAD + Saadian Tombs 100 MAD + Majorelle 150 MAD + Ben Youssef 70 MAD + food 400–600 MAD per day = approximately 830–1,030 MAD (~€83–103) per person for 2 days of activities and meals</li>
   <li><strong>Cash:</strong> All monument ticket windows are cash only. Have dirhams available at all times — ATMs inside the medina are limited</li>
   <li><strong>Safety:</strong> Marrakech is safe for tourists. The main irritant is unsolicited "guides" near the monuments — a firm "no thank you" repeated once is enough. Don't follow anyone who approaches you unsolicited</li>
   <li><strong>Heat:</strong> In summer (June–September), schedule outdoor activities before 11:00 AM and after 17:00. The medina's covered lanes provide shade but the heat is real</li>

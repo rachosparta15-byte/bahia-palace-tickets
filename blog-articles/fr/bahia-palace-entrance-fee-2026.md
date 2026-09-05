@@ -35,7 +35,7 @@ excerpt: Tarif d'entrée Bahia Palace 2026 : prix officiel 100 MAD, remises, opt
 <h3>Enfants</h3>
 <p>Les enfants de moins de 7 ans entrent gratuitement. Les enfants étrangers de 7 à 13 ans paient 50 MAD (la moitié du tarif adulte). Les enfants marocains paient 10 MAD quel que soit leur âge. Une famille de deux adultes étrangers et deux enfants de 7 à 13 ans s'en tire pour 300 MAD au total — très abordable.</p>
 <h3>Nationaux et visiteurs étrangers</h3>
-<p>Le Maroc applique un double tarif dans de nombreux sites culturels gérés par l'État. Bahia Palace ne fait pas exception : les ressortissants marocains paient 10 MAD contre 100 MAD pour les visiteurs étrangers. C'est une pratique standard dans tout le pays.</p>
+<p>Le Maroc applique un double tarif dans de nombreux sites culturels gérés par l'État. Bahia Palace ne fait pas exception : les adultes marocains paient 30 MAD et les enfants 10 MAD, contre 100 MAD pour les visiteurs étrangers. C'est une pratique standard dans tout le pays.</p>
 <h3>Réductions de groupe</h3>
 <p>Il n'existe pas de réduction de groupe officielle au guichet standard pour les visiteurs étrangers. Les groupes organisés négocient des tarifs séparément avec des opérateurs touristiques agréés. Si vous voyagez de manière indépendante, attendez-vous à payer 100 MAD par adulte quelle que soit la taille du groupe.</p>
 
