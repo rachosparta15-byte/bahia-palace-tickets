@@ -81,19 +81,22 @@ export function TicketOptions() {
 
   return (
     <section id="ticket-options" className="scroll-mt-24 relative overflow-hidden bg-cream py-16">
-      {/* The eight-point star tile the rest of the site already uses.
-          --zellige-tile bakes opacity 0.07 into the SVG itself, so dimming it
-          again in CSS made it mathematically invisible; the accent tile at
-          0.22 is the one that survives being masked. Faded out at the edges so
-          it reads as worked plaster behind the cards rather than as wallpaper
-          competing with them. */}
+      {/* A field of pattern across the whole section read as wallpaper. The
+          ground is a soft warm gradient instead, and the ornament is held to
+          the two edges — a zellige band marking where the section starts and
+          ends, which is how this geometry is used on a real wall. */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#FDF8EF] via-[#F6EDDD] to-[#FDF8EF]" />
       <div
         aria-hidden
-        className="zellige-accent pointer-events-none absolute inset-0 opacity-[0.55]"
-        style={{
-          maskImage: 'radial-gradient(ellipse 78% 68% at 50% 45%, black 30%, transparent 85%)',
-          WebkitMaskImage: 'radial-gradient(ellipse 78% 68% at 50% 45%, black 30%, transparent 85%)',
-        }}
+        className="zellige-accent pointer-events-none absolute inset-x-0 top-0 h-14 opacity-70"
+        style={{ maskImage: 'linear-gradient(to bottom, black, transparent)',
+                 WebkitMaskImage: 'linear-gradient(to bottom, black, transparent)' }}
+      />
+      <div
+        aria-hidden
+        className="zellige-accent pointer-events-none absolute inset-x-0 bottom-0 h-14 opacity-70"
+        style={{ maskImage: 'linear-gradient(to top, black, transparent)',
+                 WebkitMaskImage: 'linear-gradient(to top, black, transparent)' }}
       />
 
       <div className="relative max-w-5xl mx-auto px-6">
@@ -173,7 +176,7 @@ export function TicketOptions() {
               'group flex h-full w-full flex-col overflow-hidden rounded-xl border border-[rgba(196,168,130,0.45)] bg-[#251A0F] shadow-[0_2px_10px_rgba(61,40,23,0.10)] transition-shadow hover:shadow-[0_10px_28px_rgba(61,40,23,0.20)]';
 
             return (
-              <div key={slug} className="flex flex-col">
+              <div key={slug} className="flex h-full flex-col">
                 {viatorHref ? (
                   <a
                     href={viatorHref}
@@ -197,7 +200,7 @@ export function TicketOptions() {
                     over. Two variants because two different things are true: our
                     own cards bundle the 100 MAD ticket with the service, and a
                     Viator card is a booking we neither price nor charge. */}
-                <p className="mt-1.5 px-0.5 text-[10px] leading-snug text-brown-mid/80 sm:text-[11px]">
+                <p className="mt-1.5 min-h-[2.6em] px-0.5 text-[10px] leading-snug text-brown-mid/80 sm:min-h-[2.4em] sm:text-[11px]">
                   {viatorHref ? t('priceNotePartner') : t('priceNoteOwn')}
                 </p>
               </div>
