@@ -31,7 +31,7 @@
     "perPerson": "per persona",
     "bookNow": "Vedi i biglietti",
     "learnMore": "Scopri di più",
-    "optionsTitle": "Quattro modi per entrare",
+    "optionsTitle": "Scegli come\nvivere la Bahia",
     "optionsSubtitle": "Prenota prima di arrivare, mostra il telefono all’ingresso e tieniti l’ora che avresti passato in fila.",
     "instantViator": "Oppure prenota subito tramite il nostro partner Viator",
     "skipTheLine": {
@@ -93,7 +93,9 @@
       "whyOnline": "Alla biglietteria fai la fila e paghi in contanti, in dirham, e nessuno ti dà un’audioguida. Qui è un solo pagamento con carta, un’audioguida nella tua lingua, assistenza WhatsApp e cancellazione gratuita fino all’invio del codice."
     },
     "privateGuideOnly": {
-      "name": "Guida privata"
+      "name": "Guida privata",
+      "tagline": "Il palazzo al tuo ritmo, con chi lo conosce",
+      "duration": "Privato • ~2 ore"
     },
     "combo": {
       "name": "Combo: Bahia + Tombe Saadiane",
@@ -130,7 +132,10 @@
     },
     "priceNoteOwn": "Include il biglietto ufficiale da 100 MAD + il nostro servizio",
     "priceNotePartner": "Prenotato e addebitato dal nostro partner Viator",
-    "optionsView": "Vedi"
+    "optionsView": "Vedi",
+    "optionsLabel": "Il palazzo",
+    "optionsFeatured": "È quella scelta dalla maggior parte dei visitatori",
+    "optionsBookThis": "Prenota questo ingresso"
   },
   "whyUs": {
     "title": "Perché Prenotare con Noi?",

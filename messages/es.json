@@ -31,7 +31,7 @@
     "perPerson": "por persona",
     "bookNow": "Ver entradas",
     "learnMore": "Saber más",
-    "optionsTitle": "Cuatro formas de entrar",
+    "optionsTitle": "Elige cómo\nvivir la Bahia",
     "optionsSubtitle": "Reserva antes de llegar, enseña el móvil en la entrada y quédate con la hora que habrías pasado en la cola.",
     "instantViator": "O reserve al instante a través de nuestro socio Viator",
     "skipTheLine": {
@@ -93,7 +93,9 @@
       "whyOnline": "En taquilla hay que hacer cola y pagar en efectivo, en dírhams, y nadie le da una audioguía. Aquí es un solo pago con tarjeta, una audioguía en su idioma, asistencia por WhatsApp y cancelación gratuita hasta que enviemos su código."
     },
     "privateGuideOnly": {
-      "name": "Guía privado"
+      "name": "Guía privado",
+      "tagline": "El palacio a tu ritmo, con alguien que lo conoce",
+      "duration": "Privado • ~2 horas"
     },
     "combo": {
       "name": "Combo: Bahia + Tumbas Saadíes",
@@ -130,7 +132,10 @@
     },
     "priceNoteOwn": "Incluye la entrada oficial de 100 MAD + nuestro servicio",
     "priceNotePartner": "Reservado y cobrado por nuestro socio Viator",
-    "optionsView": "Ver"
+    "optionsView": "Ver",
+    "optionsLabel": "El palacio",
+    "optionsFeatured": "Es la que elige la mayoría de los visitantes",
+    "optionsBookThis": "Reservar esta entrada"
   },
   "ticketDetail": {
     "includes": "Qué incluye",

@@ -31,7 +31,7 @@
     "perPerson": "per person",
     "bookNow": "Get Tickets",
     "learnMore": "Learn More",
-    "optionsTitle": "Four ways in",
+    "optionsTitle": "Choose how you\nexperience Bahia",
     "optionsSubtitle": "Book before you arrive, show your phone at the gate, and keep the hour you would have spent in the queue.",
     "instantViator": "Or book instantly via our partner Viator",
     "skipTheLine": {
@@ -93,7 +93,9 @@
       "whyOnline": "At the gate you queue and pay cash in dirhams, and nobody hands you a guide. Here it is one card payment, an audio guide in your own language, WhatsApp support, and free cancellation until we send your code."
     },
     "privateGuideOnly": {
-      "name": "Private Guide"
+      "name": "Private Guide",
+      "tagline": "The palace at your own pace, with someone who knows it",
+      "duration": "Private • ~2 hours"
     },
     "combo": {
       "name": "Combo: Bahia + Saadian Tombs",
@@ -129,7 +131,10 @@
     },
     "priceNoteOwn": "Includes the official 100 MAD entry ticket + our service",
     "priceNotePartner": "Booked and charged by our partner Viator",
-    "optionsView": "View"
+    "optionsView": "View",
+    "optionsLabel": "The palace",
+    "optionsFeatured": "Most visitors take this one",
+    "optionsBookThis": "Book this entry"
   },
   "ticketDetail": {
     "includes": "What's included",

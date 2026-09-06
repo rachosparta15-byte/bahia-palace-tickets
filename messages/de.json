@@ -31,7 +31,7 @@
     "perPerson": "pro Person",
     "bookNow": "Tickets ansehen",
     "learnMore": "Mehr erfahren",
-    "optionsTitle": "Vier Wege hinein",
+    "optionsTitle": "Wählen Sie, wie Sie\ndie Bahia erleben",
     "optionsSubtitle": "Buchen Sie vor der Ankunft, zeigen Sie Ihr Handy am Eingang und behalten Sie die Stunde, die Sie in der Schlange verbracht hätten.",
     "instantViator": "Oder sofort über unseren Partner Viator buchen",
     "skipTheLine": {
@@ -93,7 +93,9 @@
       "whyOnline": "Am Schalter stehen Sie an und zahlen bar in Dirham, und einen Guide bekommen Sie dort nicht. Hier ist es eine Kartenzahlung, ein Audioguide in Ihrer Sprache, WhatsApp-Support und kostenlose Stornierung bis zum Versand Ihres Codes."
     },
     "privateGuideOnly": {
-      "name": "Privater Guide"
+      "name": "Privater Guide",
+      "tagline": "Der Palast in Ihrem Tempo, mit jemandem, der ihn kennt",
+      "duration": "Privat • ~2 Stunden"
     },
     "combo": {
       "name": "Kombi: Bahia + Saadier-Gräber",
@@ -130,7 +132,10 @@
     },
     "priceNoteOwn": "Enthält das offizielle 100-MAD-Eintrittsticket + unseren Service",
     "priceNotePartner": "Gebucht und abgerechnet von unserem Partner Viator",
-    "optionsView": "Ansehen"
+    "optionsView": "Ansehen",
+    "optionsLabel": "Der Palast",
+    "optionsFeatured": "Die Wahl der meisten Besucher",
+    "optionsBookThis": "Diesen Eintritt buchen"
   },
   "whyUs": {
     "title": "Warum bei uns buchen?",

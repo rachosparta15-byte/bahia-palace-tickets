@@ -318,7 +318,7 @@
     "perPerson": "por pessoa",
     "bookNow": "Comprar bilhetes",
     "learnMore": "Saber mais",
-    "optionsTitle": "Quatro formas de entrar",
+    "optionsTitle": "Escolha como\nviver a Bahia",
     "optionsSubtitle": "Reserve antes de chegar, mostre o telemóvel à entrada e fique com a hora que teria passado na fila.",
     "instantViator": "Ou reserve já através do nosso parceiro Viator",
     "skipTheLine": {
@@ -380,7 +380,9 @@
       "whyOnline": "Na bilheteira espera na fila, paga em dirhams e ninguém lhe dá um guia. Aqui é um só pagamento com cartão, um audioguia na sua língua, apoio por WhatsApp e cancelamento gratuito até enviarmos o seu código."
     },
     "privateGuideOnly": {
-      "name": "Guia privado"
+      "name": "Guia privado",
+      "tagline": "O palácio ao seu ritmo, com quem o conhece",
+      "duration": "Privado • ~2 horas"
     },
     "combo": {
       "name": "Combinado: Bahia + Túmulos Saadianos",
@@ -416,7 +418,10 @@
     },
     "priceNoteOwn": "Inclui o bilhete oficial de 100 MAD + o nosso serviço",
     "priceNotePartner": "Reservado e cobrado pelo nosso parceiro Viator",
-    "optionsView": "Ver"
+    "optionsView": "Ver",
+    "optionsLabel": "O palácio",
+    "optionsFeatured": "É a escolha da maioria dos visitantes",
+    "optionsBookThis": "Reservar esta entrada"
   },
   "whyUs": {
     "title": "Porquê reservar connosco?",

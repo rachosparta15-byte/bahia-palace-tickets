@@ -31,7 +31,7 @@
     "perPerson": "par personne",
     "bookNow": "Voir les billets",
     "learnMore": "En savoir plus",
-    "optionsTitle": "Quatre façons d’entrer",
+    "optionsTitle": "Choisissez comment\nvivre la Bahia",
     "optionsSubtitle": "Réservez avant d’arriver, montrez votre téléphone à l’entrée, et gardez l’heure que vous auriez passée dans la file.",
     "instantViator": "Ou réservez instantanément via notre partenaire Viator",
     "skipTheLine": {
@@ -93,7 +93,9 @@
       "whyOnline": "Au guichet, il faut faire la queue et payer en espèces, en dirhams, et personne ne vous remet d’audioguide. Ici : un seul paiement par carte, un audioguide dans votre langue, l’assistance WhatsApp et l’annulation gratuite jusqu’à l’envoi de votre code."
     },
     "privateGuideOnly": {
-      "name": "Guide privé"
+      "name": "Guide privé",
+      "tagline": "Le palais à votre rythme, avec quelqu’un qui le connaît",
+      "duration": "Privé • ~2 heures"
     },
     "combo": {
       "name": "Combo : Bahia + Tombeaux Saadiens",
@@ -130,7 +132,10 @@
     },
     "priceNoteOwn": "Comprend le billet d'entrée officiel à 100 MAD + notre service",
     "priceNotePartner": "Réservé et facturé par notre partenaire Viator",
-    "optionsView": "Voir"
+    "optionsView": "Voir",
+    "optionsLabel": "Le palais",
+    "optionsFeatured": "C’est celle que prennent la plupart des visiteurs",
+    "optionsBookThis": "Réserver cette entrée"
   },
   "whyUs": {
     "title": "Pourquoi Réserver chez Nous ?",
