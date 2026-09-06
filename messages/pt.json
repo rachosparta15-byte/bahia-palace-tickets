@@ -318,7 +318,7 @@
     "perPerson": "por pessoa",
     "bookNow": "Comprar bilhetes",
     "learnMore": "Saber mais",
-    "optionsTitle": "Opções de bilhetes",
+    "optionsTitle": "Quatro formas de entrar",
     "optionsSubtitle": "Reserve antes de chegar, mostre o telemóvel à entrada e fique com a hora que teria passado na fila.",
     "instantViator": "Ou reserve já através do nosso parceiro Viator",
     "skipTheLine": {
@@ -415,7 +415,8 @@
       ]
     },
     "priceNoteOwn": "Inclui o bilhete oficial de 100 MAD + o nosso serviço",
-    "priceNotePartner": "Reservado e cobrado pelo nosso parceiro Viator"
+    "priceNotePartner": "Reservado e cobrado pelo nosso parceiro Viator",
+    "optionsView": "Ver"
   },
   "whyUs": {
     "title": "Porquê reservar connosco?",

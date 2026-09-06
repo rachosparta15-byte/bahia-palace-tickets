@@ -31,7 +31,7 @@
     "perPerson": "per persona",
     "bookNow": "Vedi i biglietti",
     "learnMore": "Scopri di più",
-    "optionsTitle": "Opzioni dei biglietti",
+    "optionsTitle": "Quattro modi per entrare",
     "optionsSubtitle": "Prenota prima di arrivare, mostra il telefono all’ingresso e tieniti l’ora che avresti passato in fila.",
     "instantViator": "Oppure prenota subito tramite il nostro partner Viator",
     "skipTheLine": {
@@ -129,7 +129,8 @@
       ]
     },
     "priceNoteOwn": "Include il biglietto ufficiale da 100 MAD + il nostro servizio",
-    "priceNotePartner": "Prenotato e addebitato dal nostro partner Viator"
+    "priceNotePartner": "Prenotato e addebitato dal nostro partner Viator",
+    "optionsView": "Vedi"
   },
   "whyUs": {
     "title": "Perché Prenotare con Noi?",

@@ -31,7 +31,7 @@
     "perPerson": "por persona",
     "bookNow": "Ver entradas",
     "learnMore": "Saber más",
-    "optionsTitle": "Opciones de entradas",
+    "optionsTitle": "Cuatro formas de entrar",
     "optionsSubtitle": "Reserva antes de llegar, enseña el móvil en la entrada y quédate con la hora que habrías pasado en la cola.",
     "instantViator": "O reserve al instante a través de nuestro socio Viator",
     "skipTheLine": {
@@ -129,7 +129,8 @@
       ]
     },
     "priceNoteOwn": "Incluye la entrada oficial de 100 MAD + nuestro servicio",
-    "priceNotePartner": "Reservado y cobrado por nuestro socio Viator"
+    "priceNotePartner": "Reservado y cobrado por nuestro socio Viator",
+    "optionsView": "Ver"
   },
   "ticketDetail": {
     "includes": "Qué incluye",

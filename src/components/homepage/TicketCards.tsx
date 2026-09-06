@@ -130,10 +130,13 @@ export function TicketCards({ overrides = {} }: Props) {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[#251A0F] to-[#FAF3E7]"
       />
-      {/* No bottom fade: TicketOptions follows and it is cream, so fading to
-          #251A0F here painted a dark band through the middle of what is now a
-          single continuous cream block. The comment above still holds for the
-          top edge, where TrustStrip really is dark. */}
+      {/* TicketOptions below is the dark wall of doors now, so the courtyard
+          fades into it. #160D06 is that section's exact ground — naming the
+          wrong dark here is what painted a band the last time. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-16 bg-gradient-to-t from-[#160D06] to-[#FAF3E7]"
+      />
 
       <div className="relative max-w-6xl mx-auto px-6">
 

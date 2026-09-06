@@ -31,7 +31,7 @@
     "perPerson": "per person",
     "bookNow": "Get Tickets",
     "learnMore": "Learn More",
-    "optionsTitle": "Ticket Options",
+    "optionsTitle": "Four ways in",
     "optionsSubtitle": "Book before you arrive, show your phone at the gate, and keep the hour you would have spent in the queue.",
     "instantViator": "Or book instantly via our partner Viator",
     "skipTheLine": {
@@ -128,7 +128,8 @@
       ]
     },
     "priceNoteOwn": "Includes the official 100 MAD entry ticket + our service",
-    "priceNotePartner": "Booked and charged by our partner Viator"
+    "priceNotePartner": "Booked and charged by our partner Viator",
+    "optionsView": "View"
   },
   "ticketDetail": {
     "includes": "What's included",

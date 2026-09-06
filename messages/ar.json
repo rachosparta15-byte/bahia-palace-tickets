@@ -318,7 +318,7 @@
     "perPerson": "للشخص الواحد",
     "bookNow": "احصل على التذاكر",
     "learnMore": "اعرف المزيد",
-    "optionsTitle": "خيارات التذاكر",
+    "optionsTitle": "أربع طرق للدخول",
     "optionsSubtitle": "احجز قبل أن تصل، أرِ هاتفك عند الباب، واحتفظ بالساعة التي كنت ستقضيها في الصف.",
     "instantViator": "أو احجز فورًا عبر شريكنا Viator",
     "skipTheLine": {
@@ -415,7 +415,8 @@
       ]
     },
     "priceNoteOwn": "يشمل تذكرة الدخول الرسمية بـ 100 درهم + خدمتنا",
-    "priceNotePartner": "الحجز والأداء لدى شريكنا Viator"
+    "priceNotePartner": "الحجز والأداء لدى شريكنا Viator",
+    "optionsView": "اعرض"
   },
   "whyUs": {
     "title": "لماذا تحجز معنا؟",
