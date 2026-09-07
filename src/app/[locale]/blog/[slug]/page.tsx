@@ -15,6 +15,28 @@ import { livePostFilter, isLive } from '@/lib/blog-schedule';
 
 const ALL_LOCALES = ['en', 'fr', 'it', 'de', 'es'];
 
+/**
+ * Turso connection blips are usually transient (a burst of crawler traffic
+ * hitting the DB concurrently is a common trigger). Retrying once before
+ * giving up avoids treating a one-off timeout the same as "this post doesn't
+ * exist" — which is what silently falling back to the tiny static list in
+ * blog.ts did before: a soft 404 (see notFound() below) that stuck around in
+ * SEO tools' reports long after the DB itself was fine again.
+ */
+async function dbQuery<T>(label: string, fn: () => Promise<T>): Promise<T | undefined> {
+  try {
+    return await fn();
+  } catch (err) {
+    console.error(`[blog:${label}] query failed, retrying once`, err);
+    try {
+      return await fn();
+    } catch (err2) {
+      console.error(`[blog:${label}] retry failed, falling back to static data`, err2);
+      return undefined;
+    }
+  }
+}
+
 // Builds hreflang alternates for a blog post. Slugs are only shared across
 // locales when the same slug is genuinely published in each — otherwise
 // (e.g. a post that exists only in one locale) buildAlternates()'s "same
@@ -29,11 +51,10 @@ async function buildBlogAlternates(locale: string, slug: string) {
     return { canonical: `${BASE}/${locale}/blog/${slug}`, languages };
   }
 
-  let presentLocales: string[] = [];
-  try {
-    const rows = await prisma.blogPost.findMany({ where: { slug, ...livePostFilter() }, select: { locale: true } });
-    presentLocales = rows.map((r) => r.locale);
-  } catch { /* db unavailable */ }
+  const rows = await dbQuery('alternates', () =>
+    prisma.blogPost.findMany({ where: { slug, ...livePostFilter() }, select: { locale: true } })
+  );
+  let presentLocales = rows?.map((r) => r.locale) ?? [];
   if (presentLocales.length === 0) {
     presentLocales = ALL_LOCALES.filter((l) => getBlogPost(l, slug));
   }
@@ -128,12 +149,12 @@ type NormalizedPost = {
 };
 
 async function getPost(locale: string, slug: string): Promise<NormalizedPost | null> {
-  try {
-    const db = await prisma.blogPost.findUnique({ where: { slug_locale: { slug, locale } } });
-    // isLive() rather than db.published: a post scheduled for a future date is
-    // published but must still 404 until its moment arrives.
-    if (db && isLive(db)) return db as unknown as NormalizedPost;
-  } catch { /* db unavailable */ }
+  const db = await dbQuery('post', () =>
+    prisma.blogPost.findUnique({ where: { slug_locale: { slug, locale } } })
+  );
+  // isLive() rather than db.published: a post scheduled for a future date is
+  // published but must still 404 until its moment arrives.
+  if (db && isLive(db)) return db as unknown as NormalizedPost;
 
   const s = getBlogPost(locale, slug);
   if (!s) return null;
@@ -271,15 +292,14 @@ export default async function BlogPostPage({ params }: Props) {
 
   const safeContent = post.content ?? '';
 
-  let related: NormalizedPost[] = [];
-  try {
-    const dbRelated = await prisma.blogPost.findMany({
+  const dbRelated = await dbQuery('related', () =>
+    prisma.blogPost.findMany({
       where: { locale, ...livePostFilter(), slug: { not: slug } },
       orderBy: { publishedAt: 'desc' },
       take: 2,
-    });
-    related = dbRelated as unknown as NormalizedPost[];
-  } catch { /* db unavailable */ }
+    })
+  );
+  let related: NormalizedPost[] = (dbRelated as unknown as NormalizedPost[]) ?? [];
   if (related.length === 0) {
     const { getBlogPosts } = await import('@/lib/blog');
     related = getBlogPosts(locale)
