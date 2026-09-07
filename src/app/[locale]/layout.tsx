@@ -63,8 +63,11 @@ export default async function LocaleLayout({ children, params }: Props) {
      <PaymentsFlagsProvider value={paymentsFlags}>
       <div className="flex flex-col min-h-screen">
         <Header />
-        <VideoPromoBar variant="C" />
-        <main className="flex-1 pt-[134px]">{children}</main>
+        {/* Just the gold/zellige strip now — the interactive "watch the
+            video" link moved into the Hero, next to Get Tickets, so this
+            is purely a decorative divider under the header. */}
+        <VideoPromoBar variant="C" decorative />
+        <main className="flex-1 pt-[96px]">{children}</main>
         <Footer />
         {/* Prevents fixed bottom nav from obscuring the footer on mobile */}
         <div

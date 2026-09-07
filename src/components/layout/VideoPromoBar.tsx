@@ -10,7 +10,13 @@ import { Link } from '@/i18n/navigation';
  * Default is "A" — no prop needed for variant A.
  */
 type Variant = 'A' | 'B' | 'C';
-interface Props { variant?: Variant }
+interface Props {
+  variant?: Variant;
+  /** Renders just the gold/zellige strip (no link, no play icon, no arch) —
+      the interactive "watch the video" CTA lives in the Hero instead, so this
+      is purely the decorative divider under the header now. */
+  decorative?: boolean;
+}
 
 const CONFIG = {
   A: {
@@ -33,9 +39,19 @@ const CONFIG = {
   },
 } as const;
 
-export async function VideoPromoBar({ variant = 'A' }: Props) {
-  const t = await getTranslations('videos');
+export async function VideoPromoBar({ variant = 'A', decorative = false }: Props) {
   const c = CONFIG[variant];
+
+  if (decorative) {
+    return (
+      <div
+        className={`${c.bar.replace('h-10', 'h-2')} pointer-events-none`}
+        aria-hidden="true"
+      />
+    );
+  }
+
+  const t = await getTranslations('videos');
   return (
     <div className={c.bar}>
       <Link href="/videos" className={c.link}>

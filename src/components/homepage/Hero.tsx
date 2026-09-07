@@ -1,6 +1,7 @@
 import { preload } from 'react-dom';
 import { getTranslations } from 'next-intl/server';
-import { ArrowRight, Sun, Landmark, Ticket, Check, QrCode } from 'lucide-react';
+import { ArrowRight, Sun, Landmark, Ticket, Check, QrCode, Play } from 'lucide-react';
+import { Link } from '@/i18n/navigation';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 import { buyingPathPriceLabel, TEASER_PRICE_ENABLED } from '@/config/pricing';
@@ -321,6 +322,21 @@ export async function Hero() {
                 >
                   {tt('audioGuideValueNote')}
                 </p>
+                {/* The video promo used to live in a persistent bar fixed
+                    under the header on every page; moved here, next to the
+                    button it's actually meant to support, and the top of
+                    the page keeps only the decorative gold/zellige strip
+                    (see VideoPromoBar's `decorative` prop). YouTube red and
+                    sized like Get Tickets — a video link reads as a button,
+                    not fine print, and the color says what kind before the
+                    label does. */}
+                <Link
+                  href="/videos"
+                  className="mt-3 inline-flex min-h-[48px] items-center gap-2 rounded-lg bg-[#C4452D] px-6 text-sm font-semibold text-white transition-colors hover:bg-[#A33824] sm:text-base"
+                >
+                  <Play size={18} className="fill-current shrink-0" />
+                  {tRoot('videos.promoBar')}
+                </Link>
               </div>
 
               {paymentsEnabled && (
