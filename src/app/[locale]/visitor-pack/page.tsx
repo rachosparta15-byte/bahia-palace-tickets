@@ -9,6 +9,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 import { TestModeBanner } from '@/components/visitor-pack/TestModeBanner';
+import { PriceBreakdown } from '@/components/visitor-pack/PriceBreakdown';
 import { ValuePoints } from '@/components/visitor-pack/ValuePoints';
 import { VisitorPackCheckoutForm } from '@/components/visitor-pack/VisitorPackCheckoutForm';
 import { PaymentMethods } from '@/components/ui/PaymentMethods';
@@ -355,6 +356,11 @@ export default async function VisitorPackPage({ params }: Props) {
                     PackInclusions inside the payment step, beside the real
                     total. Flip TEASER_PRICE_ENABLED and this comes back. */}
                 {!TEASER_PRICE_ENABLED && <ValuePoints locale={locale} />}
+
+                {/* And what that total is made of. Restored 2026-08-22 — see
+                    PriceBreakdown for why it is two lines and not three, and
+                    why there is no struck-through "was" price. */}
+                {!TEASER_PRICE_ENABLED && <PriceBreakdown locale={locale} />}
 
                 <a
                   href="#checkout"

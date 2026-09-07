@@ -32,7 +32,7 @@ export function WhyBookAhead() {
             reads ENTRÉE PRINCIPALE, which is the whole argument in one image. */}
         <div className="relative min-h-[260px] md:min-h-[520px]">
           <Image
-            src="/images/bahia-palace-main-gate-panel.webp"
+            src="/images/gallery/bahia-palace-main-entrance-sign-lantern-marrakech.jpg"
             alt={t('imageAlt')}
             fill
             sizes="(max-width: 768px) 100vw, 40vw"
@@ -42,10 +42,29 @@ export function WhyBookAhead() {
             aria-hidden
             className="absolute inset-0 bg-gradient-to-t from-[#251A0F] via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#251A0F] rtl:md:bg-gradient-to-l"
           />
+          {/* The source photo has a plain bright wall/sky strip at its very
+              top edge — object-cover was putting it right at the seam with
+              the dark section above. This fades it out regardless of crop. */}
+          <div
+            aria-hidden
+            className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#251A0F] to-transparent"
+          />
         </div>
 
-        <div className="px-6 py-12 sm:px-10 md:py-16 md:ps-12 lg:ps-16">
-          <div className="max-w-[46rem]">
+        <div className="relative overflow-hidden px-6 py-12 sm:px-10 md:py-16 md:ps-12 lg:ps-16">
+          {/* Zellige accent overlay, scoped to the text column only — the
+              photo column already carries its own texture. */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: 'var(--zellige-tile-accent)',
+              backgroundSize: 'var(--zellige-size)',
+              backgroundRepeat: 'repeat',
+              opacity: 0.18,
+            }}
+            aria-hidden="true"
+          />
+          <div className="relative max-w-[46rem]">
           <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[#E8A33D]">
             {t('badge')}
           </p>

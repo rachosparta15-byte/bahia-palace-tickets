@@ -98,17 +98,20 @@ export function Header() {
           </div>
         </Link>
 
-        {/* ── Safety Guide pill — hidden on mobile, visible sm+ ── */}
+        {/* ── Safety Guide pill — hidden on mobile, visible sm+ ──
+             Red, not gold: every other pill/button on the site is a
+             purchase CTA, and this one is a scam warning — it needs to
+             read as an alert, not as another "buy now". */}
         <Link
           href="/safety"
-          className="hidden sm:flex items-center gap-1.5 bg-[#E8A33D] rounded-full px-3 py-1.5 shrink-0 hover:bg-amber-400 transition-colors group shadow-[0_0_14px_rgba(232,163,61,0.45)]"
+          className="hidden sm:flex items-center gap-1.5 bg-[#C4452D] rounded-full px-3 py-1.5 shrink-0 hover:bg-[#A33824] transition-colors group shadow-[0_0_14px_rgba(196,69,45,0.45)]"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#C4452D] animate-pulse shrink-0" />
-          <AlertTriangle size={11} className="text-[#3D2817] shrink-0" />
-          <span className="text-[#3D2817] text-[11px] font-extrabold tracking-wide whitespace-nowrap">
+          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse shrink-0" />
+          <AlertTriangle size={11} className="text-white shrink-0" />
+          <span className="text-white text-[11px] font-extrabold tracking-wide whitespace-nowrap">
             Safety Guide
           </span>
-          <ArrowRight size={10} className="text-[#3D2817]/70 group-hover:translate-x-0.5 transition-transform" />
+          <ArrowRight size={10} className="text-white/70 group-hover:translate-x-0.5 transition-transform" />
         </Link>
 
         {/* ── Desktop nav ── */}
@@ -167,21 +170,21 @@ export function Header() {
           {paymentsEnabled ? (
             <LeadButton
               ticketType="skip-the-line"
-              className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#A33824] text-white font-semibold px-3 py-2.5 rounded-lg transition-colors text-xs sm:text-sm sm:px-4 sm:py-2 border border-[#C4452D]/0 hover:border-[#E8A33D]/20"
+              className="trust-badge-glow inline-flex items-center gap-2 bg-[#E8A33D] hover:bg-[#F0B84E] text-[#1C1108] font-semibold px-3 py-2.5 rounded-lg transition-colors text-xs sm:text-sm sm:px-4 sm:py-2"
             >
               {t('bookNow')}
             </LeadButton>
           ) : pathname === '/' ? (
             <a
               href="#ticket-options"
-              className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#A33824] text-white font-semibold px-3 py-2.5 rounded-lg transition-colors text-xs sm:text-sm sm:px-4 sm:py-2 border border-[#C4452D]/0 hover:border-[#E8A33D]/20"
+              className="trust-badge-glow inline-flex items-center gap-2 bg-[#E8A33D] hover:bg-[#F0B84E] text-[#1C1108] font-semibold px-3 py-2.5 rounded-lg transition-colors text-xs sm:text-sm sm:px-4 sm:py-2"
             >
               {t('bookNow')}
             </a>
           ) : (
             <Link
               href="/#ticket-options"
-              className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#A33824] text-white font-semibold px-3 py-2.5 rounded-lg transition-colors text-xs sm:text-sm sm:px-4 sm:py-2 border border-[#C4452D]/0 hover:border-[#E8A33D]/20"
+              className="trust-badge-glow inline-flex items-center gap-2 bg-[#E8A33D] hover:bg-[#F0B84E] text-[#1C1108] font-semibold px-3 py-2.5 rounded-lg transition-colors text-xs sm:text-sm sm:px-4 sm:py-2"
             >
               {t('bookNow')}
             </Link>

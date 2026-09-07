@@ -2,57 +2,26 @@
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { ArrowRight, Clock, ShieldCheck, CheckCircle2, RotateCcw, Award } from 'lucide-react';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { AffiliateDisclosure } from '@/components/ui/AffiliateDisclosure';
 import { TICKET_PRICES } from '@/lib/ticket-data';
 
 /**
- * CHOOSE HOW YOU EXPERIENCE BAHIA — see DESIGN-DIRECTION.md.
- *
- * Three movements, not a grid:
- *
- *   1. An overture. Full-bleed architecture with the editorial line set into
- *      its lower third. Nothing purchasable — the visitor arrives before they
- *      are asked anything.
- *   2. One experience plated. Asymmetric spread: the photograph bleeds off the
- *      leading edge, the text is held in a narrow column with a deep margin.
- *   3. Three experiences indexed. Full-width rows on hairlines, no photographs
- *      at all — an outlined numeral, the name, its tagline, and a price
- *      right-aligned so the three figures form a vertical line.
- *
- * The absence of photography on the other three IS the hierarchy. A museum
- * catalogue plates the highlighted work and indexes the rest; four photographs
- * of equal size is a pricing table whatever shape the corners are.
- *
- * The price never leads. On the featured spread it sits low in the block, below
- * the tagline and the duration; in the index it is a catalogue figure. What
- * leads is the experience.
- *
- * Unchanged from every previous version: the Viator links and their rel
- * attributes, the LeadButton path for the two products with no Viator match,
- * the price source, both price notes, and the affiliate disclosure.
+ * The other three products, browsable side by side — deliberately separate
+ * from TicketCards above, which carries the pack/skip-the-line mutual
+ * exclusivity and the price-teaser branching. Mixing that logic into a
+ * plain browse grid would make both harder to reason about; this component
+ * only reads prices and names, and leaves selling to LeadButton.
  */
 const OPTION_SLUGS = ['skip-the-line', 'guided-tour', 'private-guide-only', 'private-tour'] as const;
-type Slug = (typeof OPTION_SLUGS)[number];
 
-const OPTION_NAME_KEYS: Record<Slug, string> = {
+const OPTION_NAME_KEYS: Record<(typeof OPTION_SLUGS)[number], string> = {
   'skip-the-line':      'skipTheLine',
   'guided-tour':        'guidedTour',
   'private-guide-only': 'privateGuideOnly',
   'private-tour':       'privateTour',
 };
-
-/**
- * The plated experience.
- *
- * Skip-the-line, and deliberately not the most expensive one. It is what most
- * visitors actually take, it is a Viator link that earns, and the editorial
- * line is honest: the palace is the experience, this only opens the door.
- * Featuring a EUR 25 group tour as "luxury" would be a lie the photographs
- * would immediately contradict.
- */
-const FEATURED: Slug = 'skip-the-line';
-const INDEXED = OPTION_SLUGS.filter((s) => s !== FEATURED);
 
 /**
  * Viator affiliate links — the booking path while PAYMENTS_HALTED is true
@@ -70,7 +39,7 @@ const INDEXED = OPTION_SLUGS.filter((s) => s !== FEATURED);
  * 'private-guide-only' (a private guide with no ticket bundled is not a
  * product type sold on Viator). Both keep the ordinary LeadButton flow.
  */
-const VIATOR_LINKS: Partial<Record<Slug, string>> = {
+const VIATOR_LINKS: Partial<Record<(typeof OPTION_SLUGS)[number], string>> = {
   'skip-the-line':
     'https://www.viator.com/tours/Marrakech/Marrakech-Bahia-Palace-Skip-the-Line-Ticket-With-Audio-Guide/d5408-5670595P2?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-ticketoptions',
   'private-tour':
@@ -83,230 +52,205 @@ const VIATOR_LINKS: Partial<Record<Slug, string>> = {
  * currency the visitor isn't actually charged. Re-check against the live
  * Viator page occasionally; these are not wired to update automatically.
  */
-const VIATOR_PRICES: Partial<Record<Slug, string>> = {
+const VIATOR_PRICES: Partial<Record<(typeof OPTION_SLUGS)[number], string>> = {
   'skip-the-line': '$13.00',
   'private-tour':  '$65.38',
+};
+
+/**
+ * One photograph per product, reused from the same shoot as TicketCards
+ * and the gallery — no new imagery, so nothing here can go stale or 404.
+ * private-guide-only gets the empty reception room specifically because an
+ * empty room is the honest image for a *private* guide; the crowded
+ * courtyard shot (also in the gallery) would undercut the word "private".
+ */
+const IMAGE: Record<(typeof OPTION_SLUGS)[number], string> = {
+  'skip-the-line':      '/images/ticket-skip-the-line.webp',
+  'guided-tour':        '/images/gallery/bahia-palace-octagonal-cedar-ceiling-carved-wood.jpg',
+  'private-guide-only': '/images/gallery/bahia-palace-grand-reception-room.webp',
+  'private-tour':       '/images/gallery/bahia-palace-grand-courtyard-balcony-view-fountain.jpg',
 };
 
 export function TicketOptions() {
   const t = useTranslations('tickets');
 
-  const priceOf = (slug: Slug) => VIATOR_PRICES[slug] ?? `€${TICKET_PRICES[slug].toFixed(2)}`;
-  const nameOf  = (slug: Slug) => t(`${OPTION_NAME_KEYS[slug]}.name` as any);
-  const lineOf  = (slug: Slug) => t(`${OPTION_NAME_KEYS[slug]}.tagline` as any);
-  const timeOf  = (slug: Slug) => t(`${OPTION_NAME_KEYS[slug]}.duration` as any);
-
   return (
-    <section id="ticket-options" className="scroll-mt-24 bg-[#160D06]">
-      {/* ── 1 · OVERTURE ────────────────────────────────────────────────
-          A full screen of architecture with one line set into its lower
-          third. Nothing to buy. The visitor arrives first. */}
-      <div className="relative h-[46vh] max-h-[440px] min-h-[320px] w-full overflow-hidden md:h-[62vh] md:max-h-none md:min-h-[460px]">
-        <Image
-          src="/images/tickets/overture-aerial.webp"
-          alt=""
-          aria-hidden
-          fill
-          priority={false}
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-gradient-to-t from-[#160D06] from-[16%] via-[#160D06]/78 via-46% to-[#160D06]/20"
-        />
-        <div className="absolute inset-x-0 bottom-0">
-          <div className="mx-auto max-w-6xl px-6 pb-12 md:pb-16">
-            <p className="text-[0.62rem] font-medium uppercase tracking-[0.42em] text-[#C8882A]">
-              {t('optionsLabel')}
-            </p>
-            <h2
-              className="mt-5 whitespace-pre-line text-[#F5E8CC]"
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(2.5rem, 6.4vw, 5.4rem)',
-                lineHeight: 0.98,
-                fontWeight: 400,
-              }}
-            >
-              {t('optionsTitle')}
-            </h2>
+    <section id="ticket-options" className="relative overflow-hidden scroll-mt-24 bg-[#160D06] py-16">
+      {/* Zellige accent overlay — same treatment as WhyBookUs and TicketCards,
+          so the pattern reads as continuous down the page. */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'var(--zellige-tile-accent)',
+          backgroundSize: 'var(--zellige-size)',
+          backgroundRepeat: 'repeat',
+          opacity: 0.18,
+        }}
+        aria-hidden="true"
+      />
+      <div className="relative max-w-5xl mx-auto px-6">
+        <div className="text-center mb-10">
+          <h2
+            className="text-[#F5E8CC] mb-2"
+            style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.4rem, 2.8vw, 2.2rem)' }}
+          >
+            {t('optionsTitle')}
+          </h2>
+          <p className="text-[rgba(245,232,204,0.6)] max-w-2xl mx-auto leading-relaxed text-xs">{t('optionsSubtitle')}</p>
+
+          <div className="mt-6 grid grid-cols-2 gap-1.5 sm:flex sm:flex-wrap sm:justify-center sm:gap-2.5">
+            {[
+              { Icon: ShieldCheck,   key: 'trustSecurePayment' },
+              { Icon: CheckCircle2,  key: 'trustInstantConfirm' },
+              { Icon: RotateCcw,     key: 'trustFreeCancel' },
+              { Icon: Award,         key: 'trustViatorPartner' },
+            ].map(({ Icon, key }, i) => (
+              <span
+                key={key}
+                className="trust-badge-glow flex items-center justify-center gap-1 rounded-full bg-[#E8A33D] px-2 py-1.5 text-center text-[0.56rem] font-bold leading-tight text-[#1C1108] sm:justify-start sm:gap-1.5 sm:px-3 sm:text-[0.64rem]"
+                style={{ animationDelay: `${i * 0.3}s` }}
+              >
+                <Icon size={12} className="shrink-0 sm:size-[14px]" />
+                {t(key as any)}
+              </span>
+            ))}
           </div>
         </div>
-      </div>
 
-      {/* ── 2 · THE PLATED EXPERIENCE ───────────────────────────────────
-          Photograph bleeds off the leading edge; the text sits in a narrow
-          column with a deep margin. Nothing is centred. */}
-      {(() => {
-        const href  = VIATOR_LINKS[FEATURED];
-        const inner = (
-          <>
-            <h3
-              className="text-[#F5E8CC]"
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(2rem, 3.6vw, 3.4rem)',
-                lineHeight: 1.04,
-                fontWeight: 400,
-              }}
-            >
-              {nameOf(FEATURED)}
-            </h3>
-            <p className="mt-5 max-w-[34ch] text-[0.98rem] leading-[1.75] text-[rgba(245,232,204,0.7)]">
-              {lineOf(FEATURED)}
-            </p>
-            <p className="mt-7 text-[0.62rem] uppercase tracking-[0.24em] text-[rgba(245,232,204,0.42)]">
-              {timeOf(FEATURED)}
-            </p>
+        {/* Vertical cards — photo, then name/duration/note, then price + CTA
+            pinned to the bottom edge. Modelled on the Viator widget card
+            (image, title, duration, cancellation note, price, one button)
+            but in the site's own dark ground rather than Viator's white one.
+            No star rating: we have no review data of our own for these four
+            products, and inventing one is exactly the kind of unverifiable
+            trust signal that got the site flagged under AdSense's
+            Misrepresentation policy before — see AffiliateDisclosure. */}
+        <div className="grid auto-rows-fr grid-cols-2 gap-3 sm:gap-6">
+          {OPTION_SLUGS.map((slug) => {
+            const nameKey = OPTION_NAME_KEYS[slug];
+            // A regular "-" is a valid line-break point to a browser, so
+            // "Coupe-File" was splitting into "Coupe-" / "File" once the
+            // column narrowed. U+2011 reads identically but never breaks.
+            const name     = t(`${nameKey}.name` as any).replace(/-/g, '‑');
+            const duration = t(`${nameKey}.duration` as any);
 
-            <p className="mt-10 flex items-baseline gap-2.5">
-              <span
-                className="tabular-nums text-[#F5E8CC]"
-                style={{ fontFamily: 'var(--font-display)', fontSize: '1.65rem', fontWeight: 400 }}
-              >
-                {priceOf(FEATURED)}
-              </span>
-              <span className="text-[0.6rem] uppercase tracking-[0.2em] text-[rgba(245,232,204,0.45)]">
-                {t('perPerson')}
-              </span>
-            </p>
+            const viatorHref  = VIATOR_LINKS[slug];
+            const viatorPrice = VIATOR_PRICES[slug];
 
-            <span className="mt-6 inline-block border-b border-[#C8882A] pb-1.5 text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#C8882A] transition-colors group-hover:border-[#F5E8CC] group-hover:text-[#F5E8CC]">
-              {t('optionsBookThis')}
-            </span>
+            // Two different providers cannot show two different prices on
+            // the same card — where a Viator match exists, the whole card
+            // (price included) reflects what Viator actually charges, in
+            // Viator's own currency.
+            const priceLabel = viatorPrice ?? `€${TICKET_PRICES[slug].toFixed(2)}`;
 
-            <p className="mt-8 max-w-[36ch] text-[0.68rem] leading-relaxed text-[rgba(245,232,204,0.4)]">
-              {href ? t('priceNotePartner') : t('priceNoteOwn')}
-            </p>
-          </>
-        );
+            // skip-the-line's Viator listing is specifically "...Ticket With
+            // Audio Guide" and lists it under What's Included — a real
+            // inclusion worth naming. Not true of the private-tour Viator
+            // match (a general city tour), which keeps the plain partner
+            // note; own-sold products keep their own note.
+            const note = slug === 'skip-the-line' && viatorHref
+              ? t('priceNotePartnerAudio')
+              : viatorHref
+                ? t('priceNotePartner')
+                : t('priceNoteOwn');
 
-        return (
-          <div className="relative grid items-stretch md:grid-cols-[56fr_44fr]">
-            <div className="relative h-[46vh] max-h-[420px] min-h-[300px] md:h-auto md:max-h-none md:min-h-[640px]">
-              <Image
-                src="/images/tickets/featured.webp"
-                alt={nameOf(FEATURED)}
-                fill
-                sizes="(max-width: 768px) 100vw, 56vw"
-                className="object-cover"
-              />
-              {/* Only where the photograph meets the text, so the join is a
-                  shadow rather than a cut. */}
-              <div
-                aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-[#160D06]/70 to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#160D06] rtl:md:bg-gradient-to-l"
-              />
-              {/* The foot of the photograph dissolves into the index below it,
-                  so the band ends in shadow rather than in a straight edge. */}
-              <div
-                aria-hidden
-                className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#160D06] to-transparent"
-              />
-            </div>
+            const cardInner = (
+              <>
+                <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden">
+                  <Image
+                    src={IMAGE[slug]}
+                    alt={name}
+                    fill
+                    sizes="(max-width: 1023px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                  />
+                </div>
 
-            <div className="flex items-end px-6 py-14 md:items-center md:py-24 md:ps-[9%] md:pe-[12%]">
-              {/* The column shaft: the one architectural line in the section. */}
-              <div className="relative ps-7 md:ps-9">
-                <span
-                  aria-hidden
-                  className="absolute inset-y-0 start-0 w-px bg-gradient-to-b from-transparent via-[#C8882A] to-transparent opacity-60"
+                <div className="flex flex-1 flex-col p-2.5 lg:p-4">
+                  <h3
+                    className="text-[12px] font-semibold leading-snug text-[#F5E8CC] lg:text-base"
+                    style={{ fontFamily: 'var(--font-heading)' }}
+                  >
+                    {name}
+                  </h3>
+
+                  <span className="mt-1.5 flex items-center gap-1 text-[9px] text-[rgba(245,232,204,0.55)] lg:text-[11px]">
+                    <Clock size={11} className="shrink-0 text-[#E8A33D]" />
+                    {duration}
+                  </span>
+
+                  <p className="mt-1.5 text-[9px] leading-snug text-[rgba(245,232,204,0.45)] lg:text-[11px]">
+                    {note}
+                  </p>
+
+                  {/* Stacked on narrow cards: the price needs its full width
+                      to render ("$13.00" was getting squeezed under 40px next
+                      to a shrink-0 button and clipping to "$13." at the card's
+                      own overflow-hidden edge). Side by side only once sm:
+                      gives each card enough width for both at once. */}
+                  <div className="mt-auto flex flex-col gap-1.5 pt-2.5 border-t border-[rgba(232,163,61,0.18)] sm:flex-row sm:items-end sm:justify-between sm:gap-2 lg:pt-3">
+                    <div>
+                      <div className="text-[8px] uppercase tracking-wide text-[rgba(245,232,204,0.5)] lg:text-[9px]">
+                        {t('perPerson')}
+                      </div>
+                      <div
+                        className="text-[15px] font-bold tabular-nums text-[#E8A33D] lg:text-xl"
+                        style={{ fontFamily: 'var(--font-heading)' }}
+                      >
+                        {priceLabel}
+                      </div>
+                    </div>
+                    <span className="flex items-center justify-center gap-1 rounded-full bg-[#E8A33D] px-2 py-1.5 text-[9px] font-bold text-[#1C1108] sm:justify-start sm:py-1 lg:px-3 lg:py-1.5 lg:text-xs">
+                      {t('bookNow')}
+                      <ArrowRight size={11} className="shrink-0 lg:size-[13px]" />
+                    </span>
+                  </div>
+                </div>
+              </>
+            );
+
+            // w-full matters here specifically for the <button> branch below
+            // (LeadButton, when there's no Viator link): unlike <a> or <div>,
+            // a <button> is a form control and does NOT stretch to fill a
+            // block/flex parent's width by default, even at display:flex —
+            // it sizes to content. Without w-full the button sat ~35%
+            // narrower than its ring wrapper, leaving a gap that exposed the
+            // raw spinning gradient instead of the card's own background.
+            const cardClass =
+              'group relative flex h-full w-full flex-col overflow-hidden rounded-2xl bg-[#251A0F] transition-shadow hover:shadow-[0_8px_28px_rgba(232,163,61,0.25)]';
+
+            return (
+              // Same spinning conic-gradient ring as the weather pill in the
+              // hero (.hero-spin) — the 3px padding + overflow-hidden here is
+              // what turns a spinning square behind the card into a ring
+              // around it, exactly like that pill's border.
+              <div key={slug} className="relative h-full overflow-hidden rounded-2xl p-[3px]">
+                <div
+                  className="hero-spin"
+                  style={{
+                    background: 'conic-gradient(from 0deg, transparent 35%, #E8A33D 50%, #C4452D 60%, transparent 75%)',
+                  }}
                 />
-                <p className="mb-5 text-[0.6rem] uppercase tracking-[0.3em] text-[#C8882A]">
-                  {t('optionsFeatured')}
-                </p>
-                {href ? (
+                {viatorHref ? (
                   <a
-                    href={href}
+                    href={viatorHref}
                     target="_blank"
                     rel="noopener noreferrer sponsored"
-                    className="group block"
+                    className={cardClass}
                   >
-                    {inner}
+                    {cardInner}
                   </a>
                 ) : (
-                  <LeadButton
-                    ticketType={FEATURED}
-                    ctaLocation="ticket_options"
-                    className="group block w-full text-start"
-                  >
-                    {inner}
+                  <LeadButton ticketType={slug} ctaLocation="ticket_options" className={cardClass}>
+                    {cardInner}
                   </LeadButton>
                 )}
               </div>
-            </div>
-          </div>
-        );
-      })()}
-
-      {/* ── 3 · THE INDEX ───────────────────────────────────────────────
-          Three rows, hairlines, no photographs. The prices line up in a
-          column on the trailing edge, as in a catalogue. */}
-      <div className="mx-auto max-w-6xl px-6 pb-20 pt-10 md:pt-20">
-        {INDEXED.map((slug, i) => {
-          const href = VIATOR_LINKS[slug];
-          const row = (
-            <>
-              <span
-                aria-hidden
-                className="shrink-0 tabular-nums text-transparent"
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(1.6rem, 3vw, 2.6rem)',
-                  WebkitTextStroke: '1px rgba(200,136,42,0.55)',
-                }}
-              >
-                {String(i + 2).padStart(2, '0')}
-              </span>
-
-              <span className="min-w-0 flex-1">
-                <span
-                  className="block text-[#F5E8CC] transition-colors group-hover:text-white"
-                  style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: 'clamp(1.3rem, 2.1vw, 1.85rem)',
-                    lineHeight: 1.15,
-                    fontWeight: 400,
-                  }}
-                >
-                  {nameOf(slug)}
-                </span>
-                <span className="mt-1.5 block text-[0.78rem] leading-relaxed text-[rgba(245,232,204,0.5)]">
-                  {lineOf(slug)}
-                </span>
-              </span>
-
-              <span className="hidden shrink-0 text-[0.62rem] uppercase tracking-[0.2em] text-[rgba(245,232,204,0.38)] lg:block lg:w-44">
-                {timeOf(slug)}
-              </span>
-
-              <span
-                className="shrink-0 tabular-nums text-end text-[#F5E8CC] w-24 sm:w-28"
-                style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.15rem, 1.8vw, 1.55rem)', fontWeight: 400 }}
-              >
-                {priceOf(slug)}
-              </span>
-            </>
-          );
-
-          const cls =
-            'group flex w-full items-center gap-5 border-t border-[rgba(245,232,204,0.14)] py-8 text-start sm:gap-8 md:py-10';
-
-          return href ? (
-            <a key={slug} href={href} target="_blank" rel="noopener noreferrer sponsored" className={cls}>
-              {row}
-            </a>
-          ) : (
-            <LeadButton key={slug} ticketType={slug} ctaLocation="ticket_options" className={cls}>
-              {row}
-            </LeadButton>
-          );
-        })}
-
-        <div className="border-t border-[rgba(245,232,204,0.14)] pt-8">
-          <AffiliateDisclosure className="!text-[rgba(245,232,204,0.42)]" />
+            );
+          })}
         </div>
+
+        <AffiliateDisclosure className="mt-6 text-center !text-[rgba(245,232,204,0.42)]" />
       </div>
     </section>
   );

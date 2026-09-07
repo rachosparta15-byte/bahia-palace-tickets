@@ -21,7 +21,6 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { BASE, buildAlternates, buildOG, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
 import {
-  SKIP_THE_LINE_PRICE_EUR,
   VISITOR_PACK_PRICE_EUR_CENTS,
   formatEURAmount,
 } from '@/config/pricing';
@@ -167,13 +166,21 @@ export default async function HomePage({ params }: Props) {
             ...DIGITAL_TICKET_OFFER_EXTRAS,
           }
         : {
+            // Booked and charged by Viator, on the owner's instruction — see
+            // SKIP_THE_LINE_VIATOR_URL in TicketCards.tsx and its match in
+            // TicketOptions.tsx, both of which now send every skip-the-line
+            // click here instead of to /tickets/skip-the-line. Structured
+            // data has to name the actual seller and the actual price: this
+            // is a resold offer, not ours, so DIGITAL_TICKET_OFFER_EXTRAS
+            // (our own shipping/return terms) does not apply — Viator's
+            // do, and we don't control or state them here.
             '@type': 'Offer',
-            name: 'Skip-the-Line Entry',
-            price: SKIP_THE_LINE_PRICE_EUR.toFixed(2),
-            priceCurrency: 'EUR',
-            url: `${BASE}/${locale}/tickets/skip-the-line`,
+            name: 'Skip-the-Line Entry — with audio guide',
+            price: '13.00',
+            priceCurrency: 'USD',
+            url: 'https://www.viator.com/tours/Marrakech/Marrakech-Bahia-Palace-Skip-the-Line-Ticket-With-Audio-Guide/d5408-5670595P2?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-seo',
             availability: 'https://schema.org/InStock',
-            ...DIGITAL_TICKET_OFFER_EXTRAS,
+            seller: { '@type': 'Organization', name: 'Viator' },
           },
     ],
     touristType: ['History enthusiasts', 'Architecture lovers', 'Cultural tourists'],

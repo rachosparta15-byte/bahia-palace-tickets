@@ -45,11 +45,21 @@ export function NearbyMonuments() {
   ];
 
   return (
-    <section className="bg-[#1C1108] py-16 sm:py-20">
+    <section className="relative overflow-hidden bg-[#1C1108] py-16 sm:py-20">
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'var(--zellige-tile-accent)',
+          backgroundSize: 'var(--zellige-size)',
+          backgroundRepeat: 'repeat',
+          opacity: 0.18,
+        }}
+        aria-hidden="true"
+      />
       {/* Thin gold separator — matches HighlightsSection */}
-      <div className="h-px bg-gradient-to-r from-transparent via-[#E8A33D]/20 to-transparent mb-12 sm:mb-16" />
+      <div className="relative h-px bg-gradient-to-r from-transparent via-[#E8A33D]/20 to-transparent mb-12 sm:mb-16" />
 
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="relative max-w-5xl mx-auto px-6">
         <h2
           className="text-center text-[#F5E8CC] mb-3"
           style={{

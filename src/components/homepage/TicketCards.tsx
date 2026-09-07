@@ -1,11 +1,10 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { ZelligeGround } from '@/components/ui/ZelligeField';
 import { useRouter } from '@/i18n/navigation';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { usePaymentsFlags } from '@/components/layout/PaymentsFlagsProvider';
-import { Check, ArrowRight, Clock, Star, ShieldCheck } from 'lucide-react';
+import { Check, ArrowRight, Clock, Star, ShieldCheck, Headphones } from 'lucide-react';
 import Image from 'next/image';
 import { TICKET_PRICES } from '@/lib/ticket-data';
 import { buyingPathPriceLabel, TEASER_PRICE_ENABLED } from '@/config/pricing';
@@ -52,6 +51,16 @@ const TICKET_SLUGS: Record<TicketKey, string> = {
 const TICKET_HREF: Record<string, string> = {
   'visitor-pack': '/visitor-pack',
 };
+
+/**
+ * skip-the-line's booking path while PAYMENTS_HALTED is true, on the owner's
+ * instruction — this card now leads to the same Viator product, at the same
+ * price, as its match in TicketOptions (VIATOR_LINKS['skip-the-line'] there).
+ * Keep both URLs in sync if this one ever changes.
+ */
+const SKIP_THE_LINE_VIATOR_URL =
+  'https://www.viator.com/tours/Marrakech/Marrakech-Bahia-Palace-Skip-the-Line-Ticket-With-Audio-Guide/d5408-5670595P2?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-ticketcards';
+const SKIP_THE_LINE_VIATOR_PRICE = '$13.00';
 
 /**
  * NOTE on the admin panel: skip-the-line and visitor-pack liveness is decided
@@ -104,57 +113,36 @@ export function TicketCards({ overrides = {} }: Props) {
 
   return (
     /*
-     * The one light band on an otherwise dark page.
-     *
-     * Everything above and below this block sits on #251A0F, so the eye gets no
-     * rest between the header and the footer. Putting the ground under the price
-     * makes the offer read as the destination of the page rather than one more
-     * dark panel in a stack of them.
-     *
-     * The cards stay dark on purpose: a dark card on cream is what makes the
-     * price pop here, and it leaves the card internals — ribbon, checks, price,
-     * CTA — untouched.
+     * Kept on the same dark ground as every other section, so the courtyard
+     * and the ticket grid below it read as one homepage instead of a cream
+     * island between two dark walls. Was a light band on purpose once; that
+     * only worked while it sat between two OTHER cream sections, and it
+     * stopped being true when TicketOptions went dark.
      */
-    <section className="relative overflow-hidden bg-cream pt-16 pb-20">
-      {/* Shared with TicketOptions below: see ZelligeGround. Visual only —
-          nothing about the pack, the teaser or the pricing below changes. */}
-      <ZelligeGround fade="bottom" />
-      {/*
-       * Fades into the dark sections either side so the change of ground reads
-       * as deliberate rather than as a cut. #251A0F is the exact background of
-       * TrustStrip above and WhyBookUs below — both ends of each gradient are
-       * named, because fading to `transparent` interpolates through transparent
-       * *black* and leaves a grey bruise across the cream.
-       */}
+    <section className="relative overflow-hidden bg-[#251A0F] pt-16 pb-20">
+      {/* Zellige accent overlay — same treatment as WhyBookUs, so the pattern
+          reads as continuous rather than appearing only on some sections. */}
       <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'var(--zellige-tile-accent)',
+          backgroundSize: 'var(--zellige-size)',
+          backgroundRepeat: 'repeat',
+          opacity: 0.18,
+        }}
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[#251A0F] to-[#FAF3E7]"
-      />
-      {/* TicketOptions below is the dark wall of doors now, so the courtyard
-          fades into it. #160D06 is that section's exact ground — naming the
-          wrong dark here is what painted a band the last time. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-16 bg-gradient-to-t from-[#160D06] to-[#FAF3E7]"
       />
 
       <div className="relative max-w-6xl mx-auto px-6">
 
-        {/* Heading.
-            No `section-head` here, unlike every other section on the page.
-            That class paints a near-opaque #1C1108 radial scrim so a heading
-            stays legible over the zellige pattern on the dark body — and with
-            cream behind it instead, the scrim has no pattern to hide and
-            renders as a brown smudge across the title with the subtitle
-            washing out under its falloff. */}
         <div className="text-center mb-10">
           <h2
-            className="text-deep-brown mb-2"
+            className="text-[#F5E8CC] mb-2"
             style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
           >
             {t('title')}
           </h2>
-          <p className="text-brown-mid max-w-2xl mx-auto leading-relaxed text-sm">{t('subtitle')}</p>
+          <p className="text-[rgba(245,232,204,0.6)] max-w-2xl mx-auto leading-relaxed text-sm">{t('subtitle')}</p>
         </div>
 
         {/* Cards */}
@@ -174,14 +162,38 @@ export function TicketCards({ overrides = {} }: Props) {
             const tagline   = t(`${key}.tagline`   as any);
             const duration  = t(`${key}.duration`  as any);
             const includes  = (t.raw(`${key}.includes` as any) as string[]);
+            // Only badge it when the product's own includes list actually
+            // says so — never a claim independent of the real data.
+            const hasAudioGuide = includes.some((item) => /audio ?guide|audioguide/i.test(item));
+
+            const isSkipTheLineViator = slug === 'skip-the-line';
 
             return (
+              // Same spinning conic-gradient ring as the weather pill in the
+              // hero (.hero-spin) and its match in TicketOptions — the 3px
+              // padding + overflow-hidden turns the spinning square behind
+              // the card into a ring around it.
               <div
                 key={slug}
-                onClick={() => router.push((TICKET_HREF[slug] ?? `/tickets/${slug}`) as any)}
-                className={`relative flex overflow-hidden rounded-2xl border border-[rgba(232,163,61,0.22)] bg-[#251A0F] shadow-[0_0_28px_rgba(232,163,61,0.10),0_0_64px_rgba(232,163,61,0.07),0_16px_56px_rgba(0,0,0,0.50)] transition-all cursor-pointer hover:shadow-[0_0_36px_rgba(232,163,61,0.20),0_0_80px_rgba(232,163,61,0.12),0_20px_64px_rgba(0,0,0,0.55)] hover:border-[rgba(232,163,61,0.42)] motion-reduce:transition-none active:scale-[0.99]
+                className={`relative overflow-hidden rounded-2xl p-[3px] ${isSingle ? 'w-full max-w-2xl' : ''}`}
+              >
+                <div
+                  className="hero-spin"
+                  style={{
+                    background: 'conic-gradient(from 0deg, transparent 35%, #E8A33D 50%, #C4452D 60%, transparent 75%)',
+                  }}
+                />
+                <div
+                  onClick={() => {
+                    if (isSkipTheLineViator) {
+                      window.open(SKIP_THE_LINE_VIATOR_URL, '_blank', 'noopener,noreferrer');
+                      return;
+                    }
+                    router.push((TICKET_HREF[slug] ?? `/tickets/${slug}`) as any);
+                  }}
+                  className={`relative flex overflow-hidden rounded-2xl bg-[#251A0F] shadow-[0_0_28px_rgba(232,163,61,0.10),0_0_64px_rgba(232,163,61,0.07),0_16px_56px_rgba(0,0,0,0.50)] transition-all cursor-pointer hover:shadow-[0_0_36px_rgba(232,163,61,0.20),0_0_80px_rgba(232,163,61,0.12),0_20px_64px_rgba(0,0,0,0.55)] motion-reduce:transition-none active:scale-[0.99]
                   ${isSingle
-                    ? 'w-full max-w-2xl flex-col sm:flex-row'
+                    ? 'w-full flex-col sm:flex-row'
                     : 'flex-col'
                   }`}
               >
@@ -203,6 +215,15 @@ export function TicketCards({ overrides = {} }: Props) {
                   <div className="absolute top-4 left-0 bg-[#C4452D] text-white text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-e-full flex items-center gap-1.5 shadow-lg">
                     <Star size={9} className="fill-current" /> Available Now
                   </div>
+
+                  {/* Audio guide badge — only rendered when the product's own
+                      includes list names one (see hasAudioGuide above), so
+                      this can never claim it for a product that doesn't. */}
+                  {hasAudioGuide && (
+                    <div className="absolute bottom-3 left-3 bg-[#E8A33D] text-[#1C1108] text-[10px] font-bold uppercase tracking-wide px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
+                      <Headphones size={11} className="shrink-0" /> {t('audioGuideBadge')}
+                    </div>
+                  )}
                 </div>
 
                 {/* Content side */}
@@ -271,33 +292,63 @@ export function TicketCards({ overrides = {} }: Props) {
                   <div className="mt-auto pt-4 border-t border-[rgba(232,163,61,0.15)]">
                     <div className="flex items-center justify-between gap-4">
                       <div>
+                        {/* Label above, price below — matches the card
+                            layout in TicketOptions just below this section,
+                            so the two ticket blocks read as one system. */}
+                        <div className="text-[10px] font-semibold uppercase tracking-wide text-[rgba(245,232,204,0.5)]">
+                          {t('perPerson')}
+                        </div>
                         {/* No "From": there is one fixed price per person, so
                             the label would imply a cheaper option that does not
                             exist. */}
                         <p
-                          className="font-bold text-[#C4452D] tabular-nums lining-nums"
-                          style={{ fontSize: isSingle ? '1.75rem' : '1.5rem', lineHeight: 1, fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif', fontVariantNumeric: 'lining-nums tabular-nums' }}
+                          className="font-bold text-[#E8A33D] tabular-nums lining-nums"
+                          style={{ fontSize: isSingle ? '1.75rem' : '1.5rem', lineHeight: 1.2, fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif', fontVariantNumeric: 'lining-nums tabular-nums' }}
                         >
                           {/* The live pack reads the buying-path label so the
                               teaser test reaches this card too; anything else
                               still prints its own euro price. Missing this one
                               would have left a €11.99 card sitting on the same
-                              screen as a 100 DH hero. */}
-                          {slug === 'visitor-pack' || slug === 'skip-the-line'
-                            ? buyingPathPriceLabel()
-                            : `€${price.toFixed(2)}`}
-                          <span className="text-xs font-normal text-[#C4A882] ms-1">{t('perPerson')}</span>
+                              screen as a 100 DH hero. skip-the-line reads the
+                              Viator price it now actually charges — see
+                              SKIP_THE_LINE_VIATOR_URL above. */}
+                          {isSkipTheLineViator
+                            ? SKIP_THE_LINE_VIATOR_PRICE
+                            : slug === 'visitor-pack'
+                              ? buyingPathPriceLabel()
+                              : `€${price.toFixed(2)}`}
                         </p>
+                        {/* $13 reads as a markup over the 100 MAD gate price
+                            unless the reason is right under it — the audio
+                            guide is *why* no human guide is needed, which is
+                            the comparison a visitor is actually making. */}
+                        {isSkipTheLineViator && (
+                          <div className="mt-0.5 text-[10px] leading-snug text-[rgba(245,232,204,0.55)]">
+                            {t('audioGuideValueNote')}
+                          </div>
+                        )}
                       </div>
                       <div onClick={(e) => e.stopPropagation()}>
-                        <LeadButton
-                          ticketType={slug}
-                          ctaLocation="ticket_cards"
-                          className="flex items-center gap-2 bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold px-5 py-3 rounded-xl transition-all text-sm whitespace-nowrap shadow-md hover:shadow-lg"
-                        >
-                          {t('bookNow')}
-                          <ArrowRight size={14} />
-                        </LeadButton>
+                        {isSkipTheLineViator ? (
+                          <a
+                            href={SKIP_THE_LINE_VIATOR_URL}
+                            target="_blank"
+                            rel="noopener noreferrer sponsored"
+                            className="trust-badge-glow flex items-center gap-2 bg-[#E8A33D] hover:bg-[#F0B84E] text-[#1C1108] font-semibold px-5 py-3 rounded-xl transition-all text-sm whitespace-nowrap"
+                          >
+                            {t('bookNow')}
+                            <ArrowRight size={14} />
+                          </a>
+                        ) : (
+                          <LeadButton
+                            ticketType={slug}
+                            ctaLocation="ticket_cards"
+                            className="trust-badge-glow flex items-center gap-2 bg-[#E8A33D] hover:bg-[#F0B84E] text-[#1C1108] font-semibold px-5 py-3 rounded-xl transition-all text-sm whitespace-nowrap"
+                          >
+                            {t('bookNow')}
+                            <ArrowRight size={14} />
+                          </LeadButton>
+                        )}
                       </div>
                     </div>
 
@@ -310,16 +361,22 @@ export function TicketCards({ overrides = {} }: Props) {
                         free to use" above and "Skip-the-Line Entry — $13.00"
                         below it. AdSense refused the site over that pair.
                         Both branches now describe the ticket instead of
-                        asserting a price of zero for the site as a whole. */}
+                        asserting a price of zero for the site as a whole.
+
+                        skip-the-line no longer hands off to the Ministry
+                        portal at all — it books and charges through Viator,
+                        same as its match below in TicketOptions, so it reads
+                        the identical partner note instead. */}
                     <div className={`flex items-center gap-1.5 mt-3 text-[11px] text-[#C4A882] ${isSingle ? 'hidden sm:flex' : ''}`}>
                       <ShieldCheck size={12} className="text-[#8FA63C]" />
                       {slug === 'visitor-pack'
                         ? 'Official entry ticket included — no queue at the booth'
-                        : paymentsEnabled
-                          ? 'Official ticket included — free cancellation'
-                          : 'Official tickets — we hand you to the Ministry portal'}
+                        : isSkipTheLineViator
+                          ? t('priceNotePartnerAudio')
+                          : 'Official ticket included — free cancellation'}
                     </div>
                   </div>
+                </div>
                 </div>
               </div>
             );

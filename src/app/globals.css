@@ -192,8 +192,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: var(--color-terracotta);
-  color: #fff;
+  background-color: #E8A33D;
+  color: #1C1108;
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 1rem;
@@ -201,14 +201,17 @@
   border-radius: 0.5rem;
   cursor: pointer;
   transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
-  box-shadow: var(--shadow-cta);
+  box-shadow: 0 2px 10px rgba(232,163,61,0.35);
   border: none;
   text-decoration: none;
+  animation: trust-badge-glow 2.4s ease-in-out infinite;
 }
 .btn-primary:hover {
-  background-color: var(--color-terracotta-dark);
-  box-shadow: 0 6px 28px rgba(196, 69, 45, 0.50);
+  background-color: #F0B84E;
   transform: translateY(-1px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary { animation: none; }
 }
 .btn-primary:active {
   transform: translateY(0);
@@ -459,6 +462,38 @@
   .vpb-play            { animation: none; }
   .vpb-bar::after      { animation: none; display: none; }
   .vpb-b.vpb-bar::after { animation: none; display: none; }
+}
+
+/* The four trust badges above the ticket grid (TicketOptions) — a slow
+   breathing glow so the row reads as "live" instead of a static sticker. */
+@keyframes trust-badge-glow {
+  0%, 100% { box-shadow: 0 2px 10px rgba(232,163,61,0.35); }
+  50%      { box-shadow: 0 2px 22px rgba(232,163,61,0.85); }
+}
+.trust-badge-glow {
+  animation: trust-badge-glow 2.4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .trust-badge-glow { animation: none; }
+}
+
+/* A slow gold sweep through the text itself — for the one-line value notes
+   under a CTA (audio guide justifying the price) that need to catch the eye
+   without the weight of a badge. */
+@keyframes text-shine {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+.text-shine {
+  background: linear-gradient(90deg, #C4A882 0%, #C4A882 35%, #FBE7B8 50%, #C4A882 65%, #C4A882 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: text-shine 3.5s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .text-shine { animation: none; color: #C4A882; -webkit-background-clip: initial; background-clip: initial; background: none; }
 }
 
 .vpb-arch {

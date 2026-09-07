@@ -1,6 +1,6 @@
 import { preload } from 'react-dom';
 import { getTranslations } from 'next-intl/server';
-import { ArrowRight, Sun, Landmark, Ticket, Check } from 'lucide-react';
+import { ArrowRight, Sun, Landmark, Ticket, Check, QrCode } from 'lucide-react';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 import { buyingPathPriceLabel, TEASER_PRICE_ENABLED } from '@/config/pricing';
@@ -281,26 +281,52 @@ export async function Hero() {
                   Options rather than straight into a generic lead modal for
                   an unspecified product — the modal still runs, just one
                   step later, from the card the visitor actually picked. */}
-              {paymentsEnabled ? (
-                <LeadButton
-                  ticketType="visitor-pack"
-                  ctaLocation="hero"
-                  id="ticket-book-btn"
-                  className="btn-primary min-h-[48px] text-sm sm:text-base"
+              <div>
+                {/* Same spinning conic-gradient ring as the weather pill
+                    above and the ticket cards below — the 3px padding +
+                    overflow-hidden turns the spinning square behind the
+                    button into a ring around it. */}
+                <div className="relative inline-block overflow-hidden rounded-lg p-[3px]">
+                  <div
+                    className="hero-spin"
+                    style={{
+                      background: 'conic-gradient(from 0deg, transparent 35%, #E8A33D 50%, #C4452D 60%, transparent 75%)',
+                    }}
+                  />
+                  {paymentsEnabled ? (
+                    <LeadButton
+                      ticketType="visitor-pack"
+                      ctaLocation="hero"
+                      id="ticket-book-btn"
+                      className="btn-primary relative min-h-[48px] text-sm sm:text-base"
+                    >
+                      <Ticket size={18} aria-hidden="true" />
+                      {tt('bookNow')}
+                      <QrCode size={16} aria-hidden="true" className="opacity-80" />
+                    </LeadButton>
+                  ) : (
+                    <a
+                      href="#ticket-options"
+                      id="ticket-book-btn"
+                      className="btn-primary relative min-h-[48px] text-sm sm:text-base"
+                    >
+                      <Ticket size={18} aria-hidden="true" />
+                      {tt('bookNow')}
+                      <QrCode size={16} aria-hidden="true" className="opacity-80" />
+                    </a>
+                  )}
+                </div>
+                {/* Justifies the price the same way as its match on
+                    TicketCards — audio guide included is why no human guide
+                    is needed. Serif italic + text-shine so it reads as a
+                    quiet aside rather than fine print. */}
+                <p
+                  className="text-shine mt-2 text-sm italic"
+                  style={{ fontFamily: 'var(--font-display)' }}
                 >
-                  <Ticket size={18} aria-hidden="true" />
-                  {tt('bookNow')}
-                </LeadButton>
-              ) : (
-                <a
-                  href="#ticket-options"
-                  id="ticket-book-btn"
-                  className="btn-primary min-h-[48px] text-sm sm:text-base"
-                >
-                  <Ticket size={18} aria-hidden="true" />
-                  {tt('bookNow')}
-                </a>
-              )}
+                  {tt('audioGuideValueNote')}
+                </p>
+              </div>
 
               {paymentsEnabled && (
                 <div>

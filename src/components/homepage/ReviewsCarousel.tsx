@@ -21,8 +21,18 @@ export async function ReviewsCarousel() {
   // ── No verified reviews yet — show TripAdvisor CTA ──────────────
   if (reviews.length === 0) {
     return (
-      <section className="py-20 bg-[#1C1108]">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+      <section className="relative overflow-hidden py-20 bg-[#1C1108]">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'var(--zellige-tile-accent)',
+            backgroundSize: 'var(--zellige-size)',
+            backgroundRepeat: 'repeat',
+            opacity: 0.18,
+          }}
+          aria-hidden="true"
+        />
+        <div className="relative max-w-6xl mx-auto px-6 text-center">
           <OrnamentDivider label="" />
           <h2
             className="text-white mt-6 mb-4"
@@ -59,8 +69,18 @@ export async function ReviewsCarousel() {
 
   // ── Verified reviews from DB ─────────────────────────────────────
   return (
-    <section className="py-20 bg-[#1C1108] overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="relative py-20 bg-[#1C1108] overflow-hidden">
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'var(--zellige-tile-accent)',
+          backgroundSize: 'var(--zellige-size)',
+          backgroundRepeat: 'repeat',
+          opacity: 0.18,
+        }}
+        aria-hidden="true"
+      />
+      <div className="relative max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
           <OrnamentDivider label="" />
           <h2

@@ -686,47 +686,40 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
         </div>
       </div>
 
-      {/* Order summary — OTA-style: product, when, who, what's included,
-          one total. The itemised cost split that used to sit here was
-          removed on the owner's instruction; see PackInclusions for where
-          the §3.2 official-price disclosure lives now.
+      {/* The total, and only the total.
 
-          Hidden for the duration of the price teaser test, and moved whole to
-          the payment step (see the paypal branch above). The form must carry no
-          total while the test runs: the visitor arrived from a button labelled
-          100 DH, and this panel is the one thing on the page that would do the
-          multiplication for them. Set TEASER_PRICE_ENABLED to false and it
-          comes straight back here, where it belongs. */}
-      {!TEASER_PRICE_ENABLED && (
-      <div className="mt-7 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12]/50 p-5">
-        <p className="text-xs uppercase tracking-wider text-[#C4A882] font-semibold">
-          {t('summaryTitle')}
-        </p>
+          This was a full order-summary panel: product name, date, party, the
+          four inclusions, then the total — about ten lines above the pay
+          button. Two of those had stopped earning their place. The product
+          name repeats the page heading, and the inclusions now sit in the
+          price card at the top of the page, where ValuePoints and
+          PriceBreakdown were restored on 2026-08-22; a form that lists them
+          again is asking the reader to check the same four lines twice.
 
-        <p className="mt-3 font-semibold text-[#F5E8CC] leading-snug">{t('productName')}</p>
+          What does not go is the number. This is the only thing on the form
+          that multiplies the party size by the price — a visitor booking three
+          adults has otherwise never seen €38.97, and the button below says
+          "Continue to secure payment" without an amount. Removing the panel
+          whole would have left the form with no total anywhere on it, which is
+          the shape the price teaser had and the reason it was ended.
 
-        <div className="mt-3 space-y-1.5 text-sm text-[#C4A882]">
-          <p className="flex items-center gap-2">
-            <Calendar size={13} className="shrink-0 text-[#E8A33D]" aria-hidden="true" />
-            {formattedDate || '—'}
-          </p>
-          <PartyLines adults={adults} children={children} t={t} />
-        </div>
-
-        {/* What's included, with the cost split collapsed inside it. */}
-        <PackInclusions className="mt-4 pt-4 border-t border-[rgba(232,163,61,0.20)]" childCount={children} />
-
-        <div className="flex items-baseline justify-between mt-4 pt-4 border-t border-[rgba(232,163,61,0.20)]">
+          Date and party stay beside it, because a total with nothing to
+          explain it is a number to be double-checked, and they are one line. */}
+      <div className="mt-7 flex items-baseline justify-between gap-4 rounded-xl border border-[rgba(232,163,61,0.20)] bg-[#2E1F12]/50 px-5 py-4">
+        <div className="text-sm text-[#C4A882]">
           <span className="font-bold text-[#F5E8CC]">{t('totalLabel')}</span>
-          <span
-            className="font-bold text-2xl text-[#E8A33D] tabular-nums"
-            style={{ fontFamily: 'var(--font-heading)' }}
-          >
-            €{formatEURAmount(totalCents)}
+          <span className="mt-0.5 block text-xs leading-relaxed">
+            <PartyLines adults={adults} children={children} t={t} />
+            {formattedDate ? ` · ${formattedDate}` : ''}
           </span>
         </div>
+        <span
+          className="font-bold text-2xl text-[#E8A33D] tabular-nums"
+          style={{ fontFamily: 'var(--font-heading)' }}
+        >
+          €{formatEURAmount(totalCents)}
+        </span>
       </div>
-      )}
 
       {/* Test-mode warning at the point of payment, where confusing test for
           live would actually matter. Mirrors the page-level banner. */}
@@ -800,7 +793,12 @@ export function VisitorPackCheckoutForm({ locale, paymentsEnabled, testMode }: P
         {paymentsEnabled ? (
           <Button type="submit" variant="primary" size="lg" loading={isSubmitting} className="w-full">
             <CreditCard size={16} />
-            {isSubmitting ? t('submitting') : t('submit')}
+            {/* The amount on the button as well as above it. The label is
+                "Continue to secure payment" in every language and says nothing
+                about how much — and this is the last thing anyone reads before
+                leaving the form. No new string: the total is appended, which
+                reads correctly in all seven. */}
+            {isSubmitting ? t('submitting') : `${t('submit')} — ${formatEUR(totalCents)}`}
           </Button>
         ) : (
           /* PAYMENTS_ENABLED=false — the button renders but cannot start checkout. */

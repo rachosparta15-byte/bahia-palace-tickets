@@ -9,8 +9,18 @@ export function FaqSection() {
   const items = t.raw('items') as { question: string; answer: string }[];
 
   return (
-    <section className="py-20 bg-[#1C1108]">
-      <div className="max-w-3xl mx-auto px-6">
+    <section className="relative overflow-hidden py-20 bg-[#1C1108]">
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'var(--zellige-tile-accent)',
+          backgroundSize: 'var(--zellige-size)',
+          backgroundRepeat: 'repeat',
+          opacity: 0.18,
+        }}
+        aria-hidden="true"
+      />
+      <div className="relative max-w-3xl mx-auto px-6">
         <div className="text-center mb-12">
           <OrnamentDivider />
           <h2
