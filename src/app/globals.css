@@ -456,15 +456,23 @@
 }
 
 .vpb-c {
-  background: linear-gradient(90deg,
-    #8B5410  0%,
-    #C8821C 18%,
-    #E8A33D 36%,
-    #F7D87A 52%,
-    #EFBA48 68%,
-    #C8821C 82%,
-    #8B5410 100%
-  );
+  /* The zellige watermark this variant is named for — a stroke dark
+     enough to read as an etch on the gold, not another shade of gold
+     lost inside it (var(--zellige-tile) is gold-on-transparent, which
+     all but disappeared against this same gold gradient). */
+  background-image:
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><path fill='none' stroke='%235C3D20' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round' opacity='0.32' d='M20,0L7.7,3.2L14.1,14.1L3.2,7.7L0,20 M20,0L32.3,3.2L25.9,14.1L36.8,7.7L40,20 M0,20L3.2,32.3L14.1,25.9L7.7,36.8L20,40 M40,20L36.8,32.3L25.9,25.9L32.3,36.8L20,40 M14.1,14.1L25.9,14.1L25.9,25.9L14.1,25.9Z'/></svg>"),
+    linear-gradient(90deg,
+      #8B5410  0%,
+      #C8821C 18%,
+      #E8A33D 36%,
+      #F7D87A 52%,
+      #EFBA48 68%,
+      #C8821C 82%,
+      #8B5410 100%
+    );
+  background-size: 40px 40px, 100% 100%;
+  background-repeat: repeat, no-repeat;
   box-shadow: 0 1px 0 rgba(80,35,5,0.55), inset 0 1px 0 rgba(255,248,200,0.22);
 }
 
