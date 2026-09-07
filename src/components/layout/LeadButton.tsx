@@ -7,6 +7,16 @@ import { usePaymentsFlags } from './PaymentsFlagsProvider';
 import { Link } from '@/i18n/navigation';
 import { trackEvent } from '@/lib/analytics';
 
+/**
+ * Skip-the-line's real booking path while PAYMENTS_HALTED is true, on the
+ * owner's instruction — the same Viator product, at the same price, as its
+ * match in TicketCards (SKIP_THE_LINE_VIATOR_URL there) and TicketOptions
+ * (VIATOR_LINKS['skip-the-line'] there). Keep all three in sync if this URL
+ * ever changes.
+ */
+const SKIP_THE_LINE_VIATOR_URL =
+  'https://www.viator.com/tours/Marrakech/Marrakech-Bahia-Palace-Skip-the-Line-Ticket-With-Audio-Guide/d5408-5670595P2?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-cta';
+
 interface Props {
   /** Identifies which ticket/product triggered the CTA (for analytics). */
   ticketType?: string;
@@ -108,6 +118,25 @@ export function LeadButton({
       <Link href="/visitor-pack#checkout" id={id} onClick={track} className={className}>
         {children}
       </Link>
+    );
+  }
+
+  // Skip-the-line already has a real, owner-approved checkout via Viator (see
+  // TicketCards and TicketOptions) — send it there directly instead of behind
+  // the lead-capture modal, which exists only for products with no purchasable
+  // path yet.
+  if (ticketType === 'skip-the-line') {
+    return (
+      <a
+        href={SKIP_THE_LINE_VIATOR_URL}
+        target="_blank"
+        rel="noopener noreferrer sponsored"
+        id={id}
+        onClick={track}
+        className={className}
+      >
+        {children}
+      </a>
     );
   }
 
