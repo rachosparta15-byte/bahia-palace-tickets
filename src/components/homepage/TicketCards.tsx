@@ -169,20 +169,14 @@ export function TicketCards({ overrides = {} }: Props) {
             const isSkipTheLineViator = slug === 'skip-the-line';
 
             return (
-              // Same spinning conic-gradient ring as the weather pill in the
-              // hero (.hero-spin) and its match in TicketOptions — the 3px
-              // padding + overflow-hidden turns the spinning square behind
-              // the card into a ring around it.
+              // .spin-ring (globals.css) — see the long comment on this
+              // class for why: the .hero-spin (rotating clipped element)
+              // version intermittently leaked its raw gradient past the
+              // card on grid items like this one.
               <div
                 key={slug}
-                className={`relative overflow-hidden rounded-2xl p-[3px] ${isSingle ? 'w-full max-w-2xl' : ''}`}
+                className={`spin-ring rounded-2xl ${isSingle ? 'w-full max-w-2xl' : ''}`}
               >
-                <div
-                  className="hero-spin"
-                  style={{
-                    background: 'conic-gradient(from 0deg, transparent 35%, #E8A33D 50%, #C4452D 60%, transparent 75%)',
-                  }}
-                />
                 <div
                   onClick={() => {
                     if (isSkipTheLineViator) {

@@ -358,6 +358,51 @@
   inset: -100%;
   pointer-events: none;
 }
+
+/*
+ * Same spinning gold/red ring as .hero-spin, but for the ticket cards
+ * specifically (TicketOptions, TicketCards) — those sit in a CSS Grid with
+ * auto-rows-fr, where the row height depends on a sibling and can change as
+ * content/images settle. .hero-spin clips an oversized *rotating* square to
+ * an overflow:hidden box, and on these particular cards that combination
+ * intermittently painted the raw gradient past the card's own background —
+ * reproducible, and neither `contain: paint` nor `will-change: transform`
+ * on the wrapper changed it, so treat it as a real browser edge case rather
+ * than something worth chasing further.
+ *
+ * This animates the gradient's *angle* via a registered custom property
+ * instead of rotating an element, so there is no oversized child for
+ * overflow-hidden to (fail to) clip — the ring is a pseudo-element sized to
+ * exactly this box via the standard border-image mask trick, full stop.
+ */
+@property --spin-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes spin-ring-rotate {
+  to { --spin-angle: 360deg; }
+}
+.spin-ring {
+  position: relative;
+}
+.spin-ring::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  padding: 3px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--spin-angle), transparent 35%, #E8A33D 50%, #C4452D 60%, transparent 75%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: spin-ring-rotate 3.5s linear infinite;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .spin-ring::before { animation: none; }
+}
 .hero-title {
   animation: fadeSlideUp 0.6s ease 0.15s both;
 }

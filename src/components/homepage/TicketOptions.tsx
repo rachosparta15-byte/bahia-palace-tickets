@@ -14,7 +14,9 @@ import { TICKET_PRICES } from '@/lib/ticket-data';
  * plain browse grid would make both harder to reason about; this component
  * only reads prices and names, and leaves selling to LeadButton.
  */
-const OPTION_SLUGS = ['skip-the-line', 'guided-tour', 'private-guide-only', 'private-tour'] as const;
+// Cheapest to most expensive ($13 → $17.75 → $23.83 → $65.38) — see
+// VIATOR_PRICES below for the actual figures this ordering has to track.
+const OPTION_SLUGS = ['skip-the-line', 'private-guide-only', 'guided-tour', 'private-tour'] as const;
 
 const OPTION_NAME_KEYS: Record<(typeof OPTION_SLUGS)[number], string> = {
   'skip-the-line':      'skipTheLine',
@@ -31,17 +33,26 @@ const OPTION_NAME_KEYS: Record<(typeof OPTION_SLUGS)[number], string> = {
  *
  * Only populated for products BOTH matching in scope AND confirmed (on the
  * product's own Viator page) to include Bahia Palace admission — never on
- * price or title alone. Checked and rejected for 'guided-tour': every
- * shared/group Bahia Palace tour found on Viator excludes the entry ticket
- * ("Admission Ticket Not Included", paid in cash on site), which contradicts
- * "Skip-the-line access" as promised for that product on TicketCards and its
- * own /tickets/guided-tour page. No match exists at all for
- * 'private-guide-only' (a private guide with no ticket bundled is not a
- * product type sold on Viator). Both keep the ordinary LeadButton flow.
+ * price or title alone. Most shared/group "Bahia Palace" tours on Viator
+ * exclude the entry ticket ("Admission Ticket Not Included", paid in cash
+ * on site) — checked again 2026-09-07 while looking for 'guided-tour' and
+ * 'private-guide-only' matches and still true of most listings.
+ * 'guided-tour' matches "Marrakech: Saadian Tombs & Bahia Palace, Souk and
+ * Medina Tour" (d5408-467170P4): "What's Included" states "Entrance fees to
+ * monuments Bahia Palace (adult 100 MAD)" in so many words.
+ * 'private-guide-only' matches "Marrakech: Bahia palace, Saadian Tombs, Souk
+ * & Medina Tour" (d5408-199649P3): its own "What's Included" lists "Private
+ * or shared group walking tour (depending on option selected)" — the private
+ * option this product name promises — and "Entrance fee - Bahia palace
+ * €10.00 per person" as a separate, explicit line.
  */
 const VIATOR_LINKS: Partial<Record<(typeof OPTION_SLUGS)[number], string>> = {
   'skip-the-line':
     'https://www.viator.com/tours/Marrakech/Marrakech-Bahia-Palace-Skip-the-Line-Ticket-With-Audio-Guide/d5408-5670595P2?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-ticketoptions',
+  'guided-tour':
+    'https://www.viator.com/tours/Marrakech/Marrakech-Saadian-Tombs-Bahia-Palace-Medina-and-Souk-Tour/d5408-467170P4?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-ticketoptions',
+  'private-guide-only':
+    'https://www.viator.com/tours/Marrakech/Marrakech-local-guide-historical-tour/d5408-199649P3?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-ticketoptions',
   'private-tour':
     'https://www.viator.com/tours/Marrakech/Marrakech-Highlights-Private-4hr-City-Tour/d5408-326890P2?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-ticketoptions',
 };
@@ -53,8 +64,10 @@ const VIATOR_LINKS: Partial<Record<(typeof OPTION_SLUGS)[number], string>> = {
  * Viator page occasionally; these are not wired to update automatically.
  */
 const VIATOR_PRICES: Partial<Record<(typeof OPTION_SLUGS)[number], string>> = {
-  'skip-the-line': '$13.00',
-  'private-tour':  '$65.38',
+  'skip-the-line':       '$13.00',
+  'guided-tour':         '$23.83',
+  'private-guide-only':  '$17.75',
+  'private-tour':        '$65.38',
 };
 
 /**
@@ -220,17 +233,15 @@ export function TicketOptions() {
               'group relative flex h-full w-full flex-col overflow-hidden rounded-2xl bg-[#251A0F] transition-shadow hover:shadow-[0_8px_28px_rgba(232,163,61,0.25)]';
 
             return (
-              // Same spinning conic-gradient ring as the weather pill in the
-              // hero (.hero-spin) — the 3px padding + overflow-hidden here is
-              // what turns a spinning square behind the card into a ring
-              // around it, exactly like that pill's border.
-              <div key={slug} className="relative h-full overflow-hidden rounded-2xl p-[3px]">
-                <div
-                  className="hero-spin"
-                  style={{
-                    background: 'conic-gradient(from 0deg, transparent 35%, #E8A33D 50%, #C4452D 60%, transparent 75%)',
-                  }}
-                />
+              // .spin-ring (globals.css) — a gradient border animated via a
+              // registered custom property, not a rotating clipped element.
+              // The earlier .hero-spin-based version (oversized rotating
+              // square + overflow-hidden) intermittently painted the raw
+              // gradient past the card on these specific grid items —
+              // reproducible, survived contain:paint and will-change, so
+              // this card uses the technique that structurally can't have
+              // that failure mode instead of chasing the cause further.
+              <div key={slug} className="spin-ring h-full rounded-2xl">
                 {viatorHref ? (
                   <a
                     href={viatorHref}

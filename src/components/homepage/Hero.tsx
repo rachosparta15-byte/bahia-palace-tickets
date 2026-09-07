@@ -282,17 +282,12 @@ export async function Hero() {
                   an unspecified product — the modal still runs, just one
                   step later, from the card the visitor actually picked. */}
               <div>
-                {/* Same spinning conic-gradient ring as the weather pill
-                    above and the ticket cards below — the 3px padding +
-                    overflow-hidden turns the spinning square behind the
-                    button into a ring around it. */}
-                <div className="relative inline-block overflow-hidden rounded-lg p-[3px]">
-                  <div
-                    className="hero-spin"
-                    style={{
-                      background: 'conic-gradient(from 0deg, transparent 35%, #E8A33D 50%, #C4452D 60%, transparent 75%)',
-                    }}
-                  />
+                {/* .spin-ring (globals.css) — same gradient ring as the
+                    weather pill above, but via an animated custom-property
+                    angle rather than a rotating clipped element; see that
+                    class's comment for why the ticket cards needed this
+                    version specifically. */}
+                <div className="spin-ring inline-block rounded-lg">
                   {paymentsEnabled ? (
                     <LeadButton
                       ticketType="visitor-pack"
