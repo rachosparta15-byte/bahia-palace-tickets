@@ -1102,6 +1102,7 @@
     "s_gardens_n0": "Les quatre parterres suivent le schéma traditionnel du jardin islamique en quatre parties.",
     "s_gardens_n1": "Mars et avril : c’est là que le jasmin et les roses portent.",
     "s_gardens_n2": "Asseyez-vous un quart d’heure. Le bruit de la médina s’efface et le palais devient un autre bâtiment.",
-    "s_gardens_story": "Le palais proprement dit couvre près de {built} hectares. Les {total} hectares cités partout englobent l'agdal, le verger clos autour duquel le domaine a été bâti."
+    "s_gardens_story": "Le palais proprement dit couvre près de {built} hectares. Les {total} hectares cités partout englobent l'agdal, le verger clos autour duquel le domaine a été bâti.",
+    "heroCta": "Voir le plan du palais"
   }
 }

@@ -1102,6 +1102,7 @@
     "s_gardens_n0": "Die vier Beete folgen dem traditionellen vierteiligen Schema des islamischen Gartens.",
     "s_gardens_n1": "März und April sind die Monate, in denen Jasmin und Rosen tragen.",
     "s_gardens_n2": "Setzen Sie sich eine Viertelstunde. Der Lärm der Medina fällt ab, und der Palast wird ein anderes Gebäude.",
-    "s_gardens_story": "Der Palast selbst umfasst knapp {built} Hektar. Die überall zitierten {total} Hektar schließen den Agdal ein, den ummauerten Obstgarten, um den herum das Areal gebaut wurde."
+    "s_gardens_story": "Der Palast selbst umfasst knapp {built} Hektar. Die überall zitierten {total} Hektar schließen den Agdal ein, den ummauerten Obstgarten, um den herum das Areal gebaut wurde.",
+    "heroCta": "Den Palastplan ansehen"
   }
 }

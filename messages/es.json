@@ -1102,6 +1102,7 @@
     "s_gardens_n0": "Los cuatro parterres siguen el esquema tradicional del jardín islámico en cuatro partes.",
     "s_gardens_n1": "Marzo y abril son cuando el jazmín y las rosas llenan el aire.",
     "s_gardens_n2": "Siéntate un cuarto de hora. El ruido de la medina se apaga y el palacio se vuelve otro edificio.",
-    "s_gardens_story": "El palacio propiamente dicho ocupa casi {built} hectáreas. La cifra de {total} hectáreas que se cita por doquier incluye el agdal, el huerto amurallado en torno al cual se construyó la finca."
+    "s_gardens_story": "El palacio propiamente dicho ocupa casi {built} hectáreas. La cifra de {total} hectáreas que se cita por doquier incluye el agdal, el huerto amurallado en torno al cual se construyó la finca.",
+    "heroCta": "Ver el plano del palacio"
   }
 }

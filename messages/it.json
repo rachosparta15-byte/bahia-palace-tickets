@@ -1102,6 +1102,7 @@
     "s_gardens_n0": "Le quattro aiuole seguono lo schema tradizionale del giardino islamico in quattro parti.",
     "s_gardens_n1": "Marzo e aprile sono i mesi in cui gelsomino e rose portano.",
     "s_gardens_n2": "Siediti un quarto d’ora. Il rumore della medina svanisce e il palazzo diventa un altro edificio.",
-    "s_gardens_story": "Il palazzo propriamente detto copre quasi {built} ettari. La cifra di {total} ettari citata ovunque comprende l’agdal, il frutteto murato attorno al quale la proprietà fu costruita."
+    "s_gardens_story": "Il palazzo propriamente detto copre quasi {built} ettari. La cifra di {total} ettari citata ovunque comprende l’agdal, il frutteto murato attorno al quale la proprietà fu costruita.",
+    "heroCta": "Vedi la pianta del palazzo"
   }
 }

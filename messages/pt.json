@@ -833,6 +833,7 @@
     "s_gardens_n0": "Os quatro canteiros seguem o esquema tradicional do jardim islâmico em quatro partes.",
     "s_gardens_n1": "Março e abril são os meses em que o jasmim e as rosas enchem o ar.",
     "s_gardens_n2": "Sente-se um quarto de hora. O ruído da medina desvanece-se e o palácio torna-se outro edifício.",
-    "s_gardens_story": "O palácio propriamente dito ocupa quase {built} hectares. Os {total} hectares citados por toda a parte incluem o agdal, o pomar murado à volta do qual a propriedade foi construída."
+    "s_gardens_story": "O palácio propriamente dito ocupa quase {built} hectares. Os {total} hectares citados por toda a parte incluem o agdal, o pomar murado à volta do qual a propriedade foi construída.",
+    "heroCta": "Ver a planta do palácio"
   }
 }

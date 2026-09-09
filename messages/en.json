@@ -1100,6 +1100,7 @@
     "s_gardens_n0": "The four planting beds follow the traditional four-part Islamic garden scheme.",
     "s_gardens_n1": "March and April are when the jasmine and roses carry.",
     "s_gardens_n2": "Sit for a quarter of an hour. The medina noise drops away and the palace becomes a different building.",
-    "s_gardens_story": "The palace proper covers nearly {built} hectares. The {total}-hectare figure quoted everywhere includes the agdal, the walled orchard-garden that the grounds were built around."
+    "s_gardens_story": "The palace proper covers nearly {built} hectares. The {total}-hectare figure quoted everywhere includes the agdal, the walled orchard-garden that the grounds were built around.",
+    "heroCta": "See the palace plan"
   }
 }

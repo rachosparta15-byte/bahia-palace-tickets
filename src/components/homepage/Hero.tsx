@@ -1,6 +1,6 @@
 import { preload } from 'react-dom';
 import { getTranslations } from 'next-intl/server';
-import { ArrowRight, Sun, Landmark, Ticket, Check, QrCode, Play } from 'lucide-react';
+import { ArrowRight, Sun, Landmark, Ticket, Check, QrCode, Play, Route } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
@@ -336,6 +336,29 @@ export async function Hero() {
                 >
                   <Play size={18} className="fill-current shrink-0" />
                   {tRoot('videos.promoBar')}
+                </Link>
+                {/* The third hero action, and the only one that is neither a
+                    purchase nor a video: the plan of the circuit.
+
+                    Majorelle blue rather than a fourth shade of gold. It is
+                    already in the palette as --color-accent and was sitting
+                    unused, it is the blue Marrakech is known for, and it is the
+                    one hue here that cannot be mistaken for the ticket button
+                    beside it. Three actions in three colours read as three
+                    different kinds of thing, which is the point.
+
+                    The hex is the style guide's Majorelle (#2E4A7B), not the
+                    --color-majorelle token (#3B65C8). The two disagree in this
+                    codebase, and rendered side by side against the hero's warm
+                    ground the token reads as a generic web blue that competes
+                    with the two buttons above it, while the muted value sits
+                    back and reads as the third-tier action it is. */}
+                <Link
+                  href="/plan"
+                  className="mt-3 inline-flex min-h-[48px] items-center gap-2 rounded-lg bg-[#2E4A7B] px-6 text-sm font-semibold text-white transition-colors hover:bg-[#3A5C96] sm:text-base"
+                >
+                  <Route size={18} className="shrink-0" />
+                  {tRoot('palacePlan.heroCta')}
                 </Link>
               </div>
 
