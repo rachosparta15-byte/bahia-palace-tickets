@@ -1,3 +1,5 @@
+import { HISTORY_HREFLANG } from './blog-hreflang';
+
 /**
  * Slugs that no longer have a page of their own.
  *
@@ -45,3 +47,41 @@ export const REDIRECTED_BLOG_SLUGS = new Set([
   'marrakech-la-ciudad-roja-donde-la-historia-cobra-vida',
   'best-colors-to-wear-for-a-photoshoot-at-bahia-palace-marrakech',
 ]);
+
+/*
+ * Slugs that redirect in ENGLISH ONLY.
+ *
+ * REDIRECTED_BLOG_SLUGS above is locale-agnostic, which is right for slugs
+ * that exist in one language or redirect everywhere. It is wrong for a slug
+ * that is dead in English and alive somewhere else: putting one in that set
+ * pulls a perfectly good URL out of the sitemap.
+ *
+ * `the-and-solidary-guide-...` is exactly that case. It 308s in English (the
+ * old slug generator dropped the words around "&"), and it is the live,
+ * published Arabic URL. It was in neither list, so the sitemap kept handing
+ * Google the English URL that redirects.
+ */
+export const REDIRECTED_EN_ONLY = new Set([
+  'the-and-solidary-guide-understanding-mousawama-and-the-soul-of-marrakesh',
+]);
+
+/*
+ * Is this slug a redirect in this locale?
+ *
+ * The sitemap must list final URLs. Three different rules decide that and
+ * only one of them is locale-agnostic, so they are resolved in one place
+ * rather than re-derived at each call site.
+ *
+ * The history article is the subtle one: `bahia-palace-history` is the real
+ * English URL, and in French, German, Italian and Spanish it 308s to a
+ * natively translated slug. Arabic has no native slug, so the English one
+ * stays valid there. That is read straight off HISTORY_HREFLANG rather than
+ * duplicated, so adding a native slug for a new language updates both at once.
+ */
+export function isRedirectedInLocale(locale: string, slug: string): boolean {
+  if (REDIRECTED_BLOG_SLUGS.has(slug)) return true;
+  if (locale === 'en' && REDIRECTED_EN_ONLY.has(slug)) return true;
+  const native = HISTORY_HREFLANG[locale];
+  if (slug === HISTORY_HREFLANG.en && native && native !== slug) return true;
+  return false;
+}

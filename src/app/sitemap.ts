@@ -3,7 +3,7 @@ import prisma from '@/lib/db';
 import { BASE } from '@/lib/seo';
 import { getAllSlugs, getBlogPost } from '@/lib/blog';
 import { HISTORY_HREFLANG, HISTORY_SLUGS } from '@/lib/blog-hreflang';
-import { REDIRECTED_BLOG_SLUGS } from '@/lib/blog-redirects';
+import { isRedirectedInLocale } from '@/lib/blog-redirects';
 import { locales } from '@/i18n/routing';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 
@@ -145,7 +145,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (dbPosts.length > 0) {
     // DB path — preserve hreflang across only the locales that exist in the DB
     const bySlug = new Map<string, typeof dbPosts>();
-    for (const post of dbPosts.filter(p => !REDIRECTED_BLOG_SLUGS.has(p.slug))) {
+    /*
+     * Locale-aware, because a slug can be dead in one language and live in
+     * another. Filtering on the slug alone left five redirecting URLs in the
+     * sitemap: the four locales where the history article has a native slug,
+     * plus the English mousawama URL whose Arabic twin is still published.
+     */
+    for (const post of dbPosts.filter(p => !isRedirectedInLocale(p.locale, p.slug))) {
       const group = bySlug.get(post.slug) ?? [];
       group.push(post);
       bySlug.set(post.slug, group);
@@ -168,13 +174,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   } else {
     // Static fallback — all slugs defined in blog.ts, all 5 locales
     for (const slug of getAllSlugs()) {
-      if (REDIRECTED_BLOG_SLUGS.has(slug)) continue;
       const languages: Record<string, string> = {};
       for (const locale of LOCALES) {
-        if (getBlogPost(locale, slug)) languages[locale] = `${BASE}/${locale}/blog/${slug}`;
+        if (getBlogPost(locale, slug) && !isRedirectedInLocale(locale, slug)) {
+          languages[locale] = `${BASE}/${locale}/blog/${slug}`;
+        }
       }
       for (const locale of LOCALES) {
-        if (!getBlogPost(locale, slug)) continue;
+        if (!getBlogPost(locale, slug) || isRedirectedInLocale(locale, slug)) continue;
         entries.push({
           url: `${BASE}/${locale}/blog/${slug}`,
           lastModified: now,

@@ -29,13 +29,13 @@ export const revalidate = 86400;
  */
 
 const META: Record<string, { title: string; description: string }> = {
-  en: { title: "Who Was Ba Ahmed? The Vizier Who Built Bahia Palace", description: "Three generations from an enslaved grandfather to the man who ruled Morocco in all but name. Ba Ahmed turned his father's 1866 house into the Bahia between 1894 and 1900 — and it was stripped bare the week he died." },
-  fr: { title: "Qui était Ba Ahmed ? Le Vizir du Palais Bahia", description: "Petit-fils d'un esclave devenu maître du Maroc. Ba Ahmed transforma la maison paternelle de 1866 en palais Bahia entre 1894 et 1900 — pillé dans la semaine suivant sa mort." },
-  es: { title: "¿Quién fue Ba Ahmed? El Visir del Palacio Bahía", description: "Nieto de un esclavo que gobernó Marruecos en todo salvo el nombre. Ba Ahmed convirtió la casa paterna de 1866 en el Palacio Bahía entre 1894 y 1900, saqueado la semana de su muerte." },
-  de: { title: "Wer war Ba Ahmed? Der Wesir hinter dem Bahia Palast", description: "Enkel eines Sklaven, der Marokko faktisch regierte. Ba Ahmed baute das Haus seines Vaters von 1866 zwischen 1894 und 1900 zum Bahia Palast aus — geplündert in der Woche seines Todes." },
-  it: { title: "Chi era Ba Ahmed? Il Visir del Palazzo Bahia", description: "Nipote di uno schiavo, governò il Marocco di fatto. Ba Ahmed trasformò la casa paterna del 1866 nel Palazzo Bahia fra il 1894 e il 1900 — saccheggiato la settimana della sua morte." },
+  en: { title: "Who Was Ba Ahmed? The Vizier Who Built Bahia Palace", description: "Three generations from an enslaved grandfather to the man who ruled Morocco in all but name. Ba Ahmed built the Bahia 1894–1900, stripped bare the week he died." },
+  fr: { title: "Qui était Ba Ahmed ? Le Vizir du Palais Bahia", description: "Petit-fils d'un esclave devenu maître du Maroc. Ba Ahmed bâtit le palais Bahia entre 1894 et 1900 — pillé dans la semaine suivant sa mort." },
+  es: { title: "¿Quién fue Ba Ahmed? El Visir del Palacio Bahía", description: "Nieto de un esclavo que gobernó Marruecos en todo salvo el nombre. Ba Ahmed levantó el Palacio Bahía entre 1894 y 1900, saqueado la semana de su muerte." },
+  de: { title: "Wer war Ba Ahmed? Der Wesir hinter dem Bahia Palast", description: "Enkel eines Sklaven, der Marokko faktisch regierte. Ba Ahmed baute den Bahia Palast zwischen 1894 und 1900 — geplündert in der Woche seines Todes." },
+  it: { title: "Chi era Ba Ahmed? Il Visir del Palazzo Bahia", description: "Nipote di uno schiavo, governò il Marocco di fatto. Ba Ahmed costruì il Palazzo Bahia fra il 1894 e il 1900, saccheggiato la settimana della sua morte." },
   ar: { title: "من هو با أحمد؟ الوزير الذي بنى قصر الباهية", description: "حفيد عبد مُحرَّر حكم المغرب فعلياً دون لقب. حوَّل با أحمد دار أبيه المؤرخة بـ1866 إلى قصر الباهية بين 1894 و1900 — ونُهب القصر في الأسبوع الذي توفي فيه." },
-  pt: { title: "Quem Foi Ba Ahmed? O Vizir Que Construiu o Palácio da Bahia", description: "Neto de um escravo que governou Marrocos sem o título. Ba Ahmed transformou a casa paterna de 1866 no Palácio da Bahia entre 1894 e 1900 — saqueado na semana da sua morte." },
+  pt: { title: "Quem Foi Ba Ahmed? O Vizir Que Construiu o Palácio da Bahia", description: "Neto de um escravo que governou Marrocos sem o título. Ba Ahmed construiu o Palácio da Bahia entre 1894 e 1900, saqueado na semana da sua morte." },
 };
 
 interface Props { params: Promise<{ locale: string }> }

@@ -24,7 +24,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { ScamAccordion, type ScamItem } from '@/components/safety/ScamAccordion';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
-import { BASE } from '@/lib/seo';
+import { BASE, buildAlternates, buildOG } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 export const revalidate = 3600;
@@ -48,6 +48,8 @@ const META: Record<string, { title: string; description: string; subtitle: strin
   es: { title: "¿Es seguro Marrakech en 2026? Respuesta honesta", description: "Sí, con la precaución normal de cualquier gran ciudad. Qué les ocurre de verdad a los visitantes cerca del Palacio Bahía y cómo decir que no con cortesía.", subtitle: 'Consejos esenciales para estar seguro y evitar las trampas turísticas en Marrakech', inDepth: 'Guías de seguridad detalladas', readGuide: 'Leer guía', bottomNote: 'Permanece alerta y disfruta tu visita al Palacio Bahia. En caso de duda, consulta al personal oficial.' },
   de: { title: "Ist Marrakesch 2026 sicher? Eine ehrliche Antwort", description: "Ja, mit der üblichen Vorsicht jeder Großstadt. Was Besuchern in der Nähe des Bahia Palastes wirklich passiert und wie Sie Ansprachen höflich beenden.", subtitle: 'Wesentliche Tipps, um sicher zu bleiben und Touristenfallen in Marrakesch zu vermeiden', inDepth: 'Ausführliche Sicherheitsratgeber', readGuide: 'Ratgeber lesen', bottomNote: 'Bleiben Sie wachsam und genießen Sie Ihren Besuch im Bahia Palast. Im Zweifelsfall wenden Sie sich an das Personal.' },
   it: { title: "Marrakech è sicura nel 2026? Una risposta onesta", description: "Sì, con la prudenza che chiede ogni grande città. Cosa succede davvero ai visitatori vicino al Palazzo Bahia e come declinare con gentilezza gli approcci.", subtitle: 'Consigli essenziali per stare al sicuro ed evitare le trappole turistiche a Marrakech', inDepth: 'Guide sulla sicurezza approfondite', readGuide: 'Leggi la guida', bottomNote: "Rimani vigile e goditi la tua visita al Palazzo Bahia. In caso di dubbio, chiedi al personale ufficiale." },
+  ar: { title: "هل مراكش آمنة في 2026؟ إجابة صادقة للزوار", description: "نعم، مع الحذر المعتاد الذي تتطلبه أي مدينة كبرى. ما يحدث فعلاً للزوار قرب قصر الباهية، وكيف تنهي أي تحرش غير مرغوب فيه بأدب.", subtitle: 'نصائح أساسية للبقاء آمناً وتجنب فخاخ السياح الشائعة في مراكش', inDepth: 'أدلة سلامة مفصلة', readGuide: 'اقرأ الدليل', bottomNote: "ابق يقظاً واستمتع بزيارتك لقصر الباهية. عند الشك، اسأل الموظفين الرسميين داخل القصر." },
+  pt: { title: "Marraquexe é Segura em 2026? Uma Resposta Honesta", description: "Sim, com a cautela normal de qualquer grande cidade. O que realmente acontece aos visitantes perto do Palácio da Bahia, e como recusar uma abordagem indesejada com educação.", subtitle: 'Dicas essenciais para se manter seguro e evitar armadilhas turísticas comuns em Marraquexe', inDepth: 'Guias de segurança aprofundados', readGuide: 'Ler guia', bottomNote: "Mantenha-se atento e aproveite a sua visita ao Palácio da Bahia. Em caso de dúvida, pergunte ao pessoal oficial dentro do palácio." },
 };
 
 /**
@@ -101,11 +103,21 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: meta.title,
     description: meta.description,
-    alternates: {
-      canonical: `${BASE}/${locale}/safety`,
-      languages: { en: `${BASE}/en/safety`, fr: `${BASE}/fr/safety`, it: `${BASE}/it/safety`, de: `${BASE}/de/safety`, es: `${BASE}/es/safety`, 'x-default': `${BASE}/en/safety` },
-    },
-    openGraph: { title: meta.title, description: meta.description, url: `${BASE}/${locale}/safety`, type: 'article' },
+    /*
+     * Both of these were hand-rolled here and both were wrong.
+     *
+     * The alternates listed five locales. Arabic and Portuguese were added to
+     * the site later and never added to this literal, so /ar/safety and
+     * /pt/safety were not declared anywhere and the other five never pointed
+     * at them. buildAlternates derives the list from LOCALES, so a new
+     * language cannot be forgotten again.
+     *
+     * The openGraph object omitted `images`, so every /safety page shared to
+     * WhatsApp or Facebook previewed with no picture at all. buildOG attaches
+     * the site card.
+     */
+    alternates: buildAlternates(locale, '/safety'),
+    openGraph: { ...buildOG(meta.title, meta.description, locale, '/safety'), type: 'article' },
   };
 }
 
