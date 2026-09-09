@@ -14,7 +14,7 @@ excerpt: Le Palais Bahia a été commandité par le Grand Vizir Ba Ahmed ibn Mus
 <strong>Faits essentiels</strong>
 <ul style="margin:0.5rem 0 0;padding-left:1.25rem;">
 <li><strong>Constructeur principal :</strong> Grand Vizir Ba Ahmed ibn Musa (Ahmad ibn Musa al-Baghdadi)</li>
-<li><strong>Construction :</strong> 1894–1900 (palais principal) ; fondations antérieures par son père Si Musa vers 1859</li>
+<li><strong>Construction :</strong> 1894–1900 (palais principal) ; fondations antérieures par son père Si Musa vers 1866–67 (date portée par l’inscription des pavillons du jardin)</li>
 <li><strong>« Bahia »</strong> signifie « La Brillante » en arabe — un nom que Ba Ahmed a choisi lui-même</li>
 <li><strong>Superficie :</strong> 8 hectares, environ 150 pièces, 6 cours intérieures</li>
 <li><strong>Sort :</strong> Le contenu du palais saisi par le sultan quelques semaines après la mort de Ba Ahmed en 1900</li>
@@ -22,7 +22,7 @@ excerpt: Le Palais Bahia a été commandité par le Grand Vizir Ba Ahmed ibn Mus
 </div>
 
 <h2>Qui a construit le Palais Bahia ?</h2>
-<p>Le Palais Bahia a été construit par Ahmad ibn Musa, connu sous l'honorifique « Ba Ahmed », qui a servi comme Grand Vizir au Sultan Moulay Abd al-Aziz de 1894 jusqu'à sa mort en 1900. Le complexe principal a été bâti entre 1894 et 1900. Une résidence plus petite existait déjà sur le même terrain, commencée par le père de Ba Ahmed, Si Musa ibn Ahmad, vers 1859. Ce que les visiteurs voient aujourd'hui relève presque entièrement de l'expansion de Ba Ahmed : la grande salle de réception, l'aile du harem, les six cours intérieures et les jardins.</p>
+<p>Le Palais Bahia a été construit par Ahmad ibn Musa, connu sous l'honorifique « Ba Ahmed », qui a servi comme Grand Vizir au Sultan Moulay Abd al-Aziz de 1894 jusqu'à sa mort en 1900. Le complexe principal a été bâti entre 1894 et 1900. Une résidence plus petite existait déjà sur le même terrain, commencée par le père de Ba Ahmed, Si Musa ibn Ahmad, vers 1866–67 (date portée par l’inscription des pavillons du jardin). Ce que les visiteurs voient aujourd'hui relève presque entièrement de l'expansion de Ba Ahmed : la grande salle de réception, l'aile du harem, les six cours intérieures et les jardins.</p>
 
 <figure style="margin:2rem 0;">
 <img src="/images/gallery/bahia-palace-entrance-gate-stucco-arabesque-ba-ahmed.webp" alt="Portail d'entrée orné du Palais Bahia avec inscriptions arabes en stuc sculpté et motifs d'arabesques, photographié depuis le seuil en regardant vers le haut" loading="lazy" style="width:100%;border-radius:0.5rem;" />
@@ -32,12 +32,12 @@ excerpt: Le Palais Bahia a été commandité par le Grand Vizir Ba Ahmed ibn Mus
 <p>Le terrain n'était pas le premier choix de Ba Ahmed à proprement parler : c'était son héritage. Si Musa avait acheté le terrain et construit un modeste complexe administratif pendant son propre mandat de Grand Vizir. Ba Ahmed hérita à la fois du titre et de la propriété. Il démolit la majeure partie de la structure de son père et la rebâtit à une échelle sans précédent à Marrakech en dehors des palais royaux.</p>
 
 <h2>Qui était Ba Ahmed et comment est-il monté au pouvoir ?</h2>
-<p>Ba Ahmed est né vers 1850, fils de Si Musa ibn Ahmad al-Baghdadi, qui avait servi comme Grand Vizir au Sultan Muhammad IV. La position de son père lui donnait accès à la cour royale marocaine (le Makhzen), mais pas une autorité automatique. Ba Ahmed construisit sa propre influence sur vingt ans grâce à ses compétences administratives, au contrôle des finances royales et à un talent pour survivre aux transitions politiques qui éliminaient ceux qui l'entouraient.</p>
+<p>Ba Ahmed est né en 1841–42 à Marrakech, fils de Si Musa ibn Ahmad al-Baghdadi, qui fut hajib (chambellan) du Sultan Muhammad IV avant de devenir Grand Vizir sous Hassan Ier. La position de son père lui donnait accès à la cour royale marocaine (le Makhzen), mais pas une autorité automatique. Ba Ahmed construisit sa propre influence sur vingt ans grâce à ses compétences administratives, au contrôle des finances royales et à un talent pour survivre aux transitions politiques qui éliminaient ceux qui l'entouraient.</p>
 
 <p>Lorsque le Sultan Moulay Abd al-Aziz monta sur le trône en 1894 à l'âge d'environ huit ans, Ba Ahmed devint régent. Pendant six ans, il gouverna le Maroc de fait. Il contrôlait la correspondance étrangère, la fiscalité intérieure, les nominations militaires et judiciaires. Selon l'historienne Susan Gilson Miller dans <em>A History of Modern Morocco</em> (Cambridge University Press, 2013), Ba Ahmed était le dirigeant effectif du Maroc pendant cette période, accumulant une fortune personnelle qui rivalisait avec les biens combinés de cinq autres officiers de la cour.</p>
 
 <h2>Pourquoi Ba Ahmed a-t-il construit à une telle échelle ?</h2>
-<p>Ba Ahmed ne pouvait pas construire un palais dans la tradition royale — c'était réservé aux sultans. Mais la distinction entre une « résidence » et un palais peut se gérer par l'échelle et l'artisanat. Huit hectares, 150 pièces et six cours intérieures distinctes dépassaient ce que la plupart des dignitaires étrangers en visite avaient dans leur capitale d'origine. Le ministère marocain de la Culture indique que la construction du palais a nécessité le travail simultané de plus de 100 maîtres artisans au pic de l'activité (<a href="https://www.minculture.gov.ma" target="_blank" rel="noopener noreferrer">minculture.gov.ma</a>).</p>
+<p>Ba Ahmed ne pouvait pas construire un palais dans la tradition royale — c'était réservé aux sultans. Mais la distinction entre une « résidence » et un palais peut se gérer par l'échelle et l'artisanat. Huit hectares, 150 pièces et six cours intérieures distinctes dépassaient ce que la plupart des dignitaires étrangers en visite avaient dans leur capitale d'origine. Le ministère marocain de la Culture indique que la construction du palais a nécessité le travail simultané de plus de 100 maîtres artisans au pic de l'activité (<a href="https://e-services.minculture.gov.ma/en/tickets/palais-bahia" target="_blank" rel="noopener noreferrer">e-services.minculture.gov.ma</a>).</p>
 
 <figure style="margin:2rem 0;">
 <img src="/images/gallery/bahia-palace-grand-hall-painted-ceiling-chandelier.webp" alt="Spectaculaire plafond en bois peint de la grande salle de réception du Palais Bahia avec médaillons floraux or rouge et vert et lustres en laiton suspendus à un lanterneau octogonal central" loading="lazy" style="width:100%;border-radius:0.5rem;" />
@@ -70,10 +70,10 @@ excerpt: Le Palais Bahia a été commandité par le Grand Vizir Ba Ahmed ibn Mus
 <h2>Foire aux questions</h2>
 
 <h3>Qui a construit le Palais Bahia ?</h3>
-<p>Le Palais Bahia a été construit par le Grand Vizir Ahmad ibn Musa, connu sous le nom de Ba Ahmed, qui servit comme Premier ministre du Maroc sous le Sultan Moulay Abd al-Aziz. Il commanda le complexe principal entre 1894 et 1900. Son père, Si Musa ibn Ahmad, avait construit une résidence antérieure plus petite sur le même terrain à partir de 1859 environ.</p>
+<p>Le Palais Bahia a été construit par le Grand Vizir Ahmad ibn Musa, connu sous le nom de Ba Ahmed, qui servit comme Premier ministre du Maroc sous le Sultan Moulay Abd al-Aziz. Il commanda le complexe principal entre 1894 et 1900. Son père, Si Musa ibn Ahmad, avait construit une résidence antérieure plus petite sur le même terrain à partir de 1866–67 selon l’inscription.</p>
 
 <h3>Quand a été construit le Palais Bahia ?</h3>
-<p>Le palais principal visible aujourd'hui a été construit entre 1894 et 1900. Ba Ahmed commença à agrandir la résidence antérieure de son père lorsqu'il devint Grand Vizir en 1894. La construction se poursuivit jusqu'à sa mort en 1900, et certains historiens notent que l'aile finale n'était pas entièrement achevée à sa mort. Les fondations originales du site datent d'environ 1859.</p>
+<p>Le palais principal visible aujourd'hui a été construit entre 1894 et 1900. Ba Ahmed commença à agrandir la résidence antérieure de son père lorsqu'il devint Grand Vizir en 1894. La construction se poursuivit jusqu'à sa mort en 1900, et certains historiens notent que l'aile finale n'était pas entièrement achevée à sa mort. La date la plus ancienne attestée sur le site est 1866–67, portée par l’inscription des deux pavillons du jardin.</p>
 
 <h3>Que signifie « Bahia » en arabe ?</h3>
 <p>« Bahia » (الباهية) signifie « La Brillante » ou « La Radieuse » en arabe. La forme féminine applique la brillance au palais lui-même. Ba Ahmed a choisi ce nom lui-même pendant la construction, une pratique inhabituelle dans la nomenclature des palais marocains. Le nom était une déclaration directe sur la splendeur voulue du bâtiment.</p>
@@ -89,7 +89,7 @@ excerpt: Le Palais Bahia a été commandité par le Grand Vizir Ba Ahmed ibn Mus
 <ul style="margin:0;padding-left:1.25rem;color:#5a4a3a;font-size:0.9rem;line-height:1.8;">
 <li>Miller, Susan Gilson. <em>A History of Modern Morocco</em>. Cambridge University Press, 2013.</li>
 <li>Centre du patrimoine mondial de l'UNESCO. « Médina de Marrakech. » Liste du patrimoine mondial, inscription n° 331, 1985. <a href="https://whc.unesco.org/en/list/331" target="_blank" rel="noopener noreferrer">whc.unesco.org/en/list/331</a></li>
-<li>Ministère marocain de la Culture. « Palais Bahia, Marrakech. » <a href="https://www.minculture.gov.ma" target="_blank" rel="noopener noreferrer">minculture.gov.ma</a></li>
-<li>Encyclopaedia Britannica. « Ahmad ibn Musa. » <a href="https://www.britannica.com" target="_blank" rel="noopener noreferrer">britannica.com</a></li>
+<li>Ministère marocain de la Culture. « Palais Bahia, Marrakech. » <a href="https://e-services.minculture.gov.ma/en/tickets/palais-bahia" target="_blank" rel="noopener noreferrer">e-services.minculture.gov.ma</a></li>
+<li>Encyclopaedia Britannica. "Morocco: Decline of traditional government, 1830–1912." <a href="https://www.britannica.com/place/Morocco/Decline-of-traditional-government-1830-1912" target="_blank" rel="noopener noreferrer">britannica.com</a></li>
 </ul>
 </div>

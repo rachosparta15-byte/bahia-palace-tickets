@@ -235,7 +235,6 @@ author: Bahia Palace Team
 <li>الموقع الرسمي لرياض ملحون آند سبا. <a href="https://riad-melhoun-marrakech.com/" target="_blank" rel="noopener noreferrer">riad-melhoun-marrakech.com</a></li>
 <li>دليل ميشلان. "لي جاردان دو لا مدينة، مراكش." <a href="https://guide.michelin.com/en/hotels-stays/marrakech/les-jardins-de-la-medina-14988" target="_blank" rel="noopener noreferrer">guide.michelin.com</a></li>
 <li>رياض تاوركيت. "أسئلة شائعة: ولوج السيارات، وتسجيل الدخول، والأمتعة." <a href="https://www.riadtawargit.com/page/faq" target="_blank" rel="noopener noreferrer">riadtawargit.com</a></li>
-<li>The Moroccan Compass. "أفضل الرياضات في مدينة مراكش القديمة." <a href="https://themoroccancompass.com/best-riads-in-marrakech-medina/" target="_blank" rel="noopener noreferrer">themoroccancompass.com</a></li>
 </ul>
 </div>
 

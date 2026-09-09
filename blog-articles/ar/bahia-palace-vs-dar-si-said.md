@@ -231,9 +231,9 @@ author: Bahia Palace Team
 <ul style="margin:0;padding-right:1.25rem;color:#5a4a3a;font-size:0.9rem;line-height:1.8;">
   <li>المكتب الوطني المغربي للسياحة (ONMT). "التقرير السنوي للسياحة بالمغرب 2024." <a href="https://www.visitmorocco.com" rel="noopener noreferrer" target="_blank">visitmorocco.com</a></li>
   <li>مركز التراث العالمي لليونسكو. "المدينة العتيقة لمراكش." لائحة التراث العالمي، المُدرَج رقم 331، 1985. <a href="https://whc.unesco.org/en/list/331" rel="noopener noreferrer" target="_blank">whc.unesco.org/en/list/331</a></li>
-  <li>وزارة الثقافة المغربية. معلومات المعالم. <a href="https://www.minculture.gov.ma" rel="noopener noreferrer" target="_blank">minculture.gov.ma</a></li>
+  <li>وزارة الثقافة المغربية. معلومات المعالم. <a href="https://e-services.minculture.gov.ma/en/tickets/palais-bahia" rel="noopener noreferrer" target="_blank">e-services.minculture.gov.ma</a></li>
   <li>مساهمو ويكيبيديا. "متحف دار سي سعيد." ويكيبيديا، الموسوعة الحرة. <a href="https://en.wikipedia.org/wiki/Dar_Si_Said_Museum" rel="noopener noreferrer" target="_blank">en.wikipedia.org</a></li>
-  <li>Lonely Planet. "Dar Si Said." Lonely Planet Morocco. <a href="https://www.lonelyplanet.com/morocco/marrakesh/attractions/dar-si-said/a/poi-sig/1010050/361031" rel="noopener noreferrer" target="_blank">lonelyplanet.com</a></li>
+  <li>Fondation Nationale des Musées (Maroc). "Musée national du Tissage et du Tapis Dar Si Saïd." <a href="https://fnm.ma/museums/30" rel="noopener noreferrer" target="_blank">fnm.ma</a></li>
 </ul>
 </div>
 

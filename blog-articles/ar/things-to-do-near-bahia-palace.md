@@ -215,8 +215,8 @@ author: Bahia Palace Team
 <ul style="margin:0;padding-right:1.25rem;color:#5a4a3a;font-size:0.9rem;line-height:1.8;">
 <li>مركز التراث العالمي لليونسكو. "المدينة العتيقة لمراكش." لائحة التراث العالمي، المُدرَج رقم 331، 1985. <a href="https://whc.unesco.org/en/list/331" target="_blank" rel="noopener noreferrer">whc.unesco.org/en/list/331</a></li>
 <li>اليونسكو. "ساحة جامع الفنا." لائحة التراث الثقافي غير المادي، 2001. <a href="https://ich.unesco.org/en/RL/jemaa-el-fna-square-marrakesh-00014" target="_blank" rel="noopener noreferrer">ich.unesco.org</a></li>
-<li>وزارة الثقافة المغربية. "قصر الباهية، مراكش." <a href="https://www.minculture.gov.ma" target="_blank" rel="noopener noreferrer">minculture.gov.ma</a></li>
-<li>وزارة الثقافة المغربية. "قبور السعديين، مراكش." <a href="https://www.minculture.gov.ma" target="_blank" rel="noopener noreferrer">minculture.gov.ma</a></li>
+<li>وزارة الثقافة المغربية. "قصر الباهية، مراكش." <a href="https://e-services.minculture.gov.ma/en/tickets/palais-bahia" target="_blank" rel="noopener noreferrer">e-services.minculture.gov.ma</a></li>
+<li>وزارة الثقافة المغربية. "قبور السعديين، مراكش." <a href="https://e-services.minculture.gov.ma/en/tickets/palais-bahia" target="_blank" rel="noopener noreferrer">e-services.minculture.gov.ma</a></li>
 </ul>
 </div>
 

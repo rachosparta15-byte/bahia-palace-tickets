@@ -16,13 +16,13 @@ author: Bahia Palace Team
 
 <p><strong>أهم النقاط</strong></p>
 <ul>
-  <li>ثمن الدخول الرسمي الذي حددته وزارة الثقافة المغربية (<a href="https://www.minculture.gov.ma" rel="noopener noreferrer" target="_blank">minculture.gov.ma</a>) هو 100 درهم للزوار الأجانب البالغين. الأطفال دون السابعة يدخلون مجاناً.</li>
+  <li>ثمن الدخول الرسمي الذي حددته وزارة الثقافة المغربية (<a href="https://e-services.minculture.gov.ma/en/tickets/palais-bahia" rel="noopener noreferrer" target="_blank">e-services.minculture.gov.ma</a>) هو 100 درهم للزوار الأجانب البالغين. الأطفال دون السابعة يدخلون مجاناً.</li>
   <li>الأداء في الباب <strong>نقداً فقط</strong>. لا توجد آلات بطاقات في شباك التذاكر. احمل معك دراهم.</li>
   <li>الحجز عبر الإنترنت هو أنجع شيء يمكنك فعله لتحسين زيارتك. التذكرة المحجوزة مسبقاً تلغي مخاطرة الطابور بالكامل وتضمن لك وقت دخولك.</li>
 </ul>
 
 <h2>ما هو ثمن الدخول الرسمي لقصر الباهية في 2026؟</h2>
-<p>ابتداءً من 2026، ثمن الدخول القياسي تحدده وزارة الثقافة المغربية (<a href="https://www.minculture.gov.ma" rel="noopener noreferrer" target="_blank">minculture.gov.ma</a>). نظام التسعير المزدوج، حيث يؤدي المواطنون المغاربة ثمناً مخفّضاً، ممارسة معتمدة في كل المواقع الثقافية التي تديرها الدولة في المغرب.</p>
+<p>ابتداءً من 2026، ثمن الدخول القياسي تحدده وزارة الثقافة المغربية (<a href="https://e-services.minculture.gov.ma/en/tickets/palais-bahia" rel="noopener noreferrer" target="_blank">e-services.minculture.gov.ma</a>). نظام التسعير المزدوج، حيث يؤدي المواطنون المغاربة ثمناً مخفّضاً، ممارسة معتمدة في كل المواقع الثقافية التي تديرها الدولة في المغرب.</p>
 <table>
   <thead><tr><th>الفئة</th><th>الثمن</th></tr></thead>
   <tbody>

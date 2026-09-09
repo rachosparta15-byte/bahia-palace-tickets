@@ -43,7 +43,7 @@ author: Bahia Palace Team
 
 <h2>كم يؤدي الأطفال في قصر الباهية؟</h2>
 <ul>
-  <li><strong>الأطفال دون 7 سنوات:</strong> مجاناً (في شباك التذاكر الرسمي، الذي تديره وزارة الثقافة المغربية، <a href="https://www.minculture.gov.ma" rel="noopener noreferrer" target="_blank">minculture.gov.ma</a>)</li>
+  <li><strong>الأطفال دون 7 سنوات:</strong> مجاناً (في شباك التذاكر الرسمي، الذي تديره وزارة الثقافة المغربية، <a href="https://e-services.minculture.gov.ma/en/tickets/palais-bahia" rel="noopener noreferrer" target="_blank">e-services.minculture.gov.ma</a>)</li>
   <li><strong>الأطفال الأجانب (7–13):</strong> 50 درهماً</li>
   <li><strong>الأطفال المغاربة:</strong> 10 دراهم (أي سن)</li>
 </ul>

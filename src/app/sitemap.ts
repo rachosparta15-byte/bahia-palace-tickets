@@ -52,6 +52,9 @@ const STATIC: { path: string; priority: number; freq: MetadataRoute.Sitemap[numb
   { path: '/videos',         priority: 0.70, freq: 'weekly'  },
   { path: '/about',              priority: 0.60, freq: 'monthly' },
   { path: '/about/editorial',   priority: 0.55, freq: 'yearly'  },
+  // The bibliography and correction policy. Low priority to crawl, high value
+  // to cite: it is what a researcher checks before trusting anything else here.
+  { path: '/sources',        priority: 0.55, freq: 'yearly'  },
   { path: '/contact',        priority: 0.55, freq: 'monthly' },
 ];
 

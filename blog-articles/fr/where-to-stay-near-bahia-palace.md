@@ -234,7 +234,6 @@ excerpt: Les meilleurs riads et hôtels proches du palais Bahia : distances à p
 <li>Riad Melhoun &amp; Spa. <a href="https://riad-melhoun-marrakech.com/" target="_blank" rel="noopener noreferrer">riad-melhoun-marrakech.com</a></li>
 <li>Guide Michelin. « Les Jardins de la Medina, Marrakech. » <a href="https://guide.michelin.com/en/hotels-stays/marrakech/les-jardins-de-la-medina-14988" target="_blank" rel="noopener noreferrer">guide.michelin.com</a></li>
 <li>Riad Tawargit. « FAQ : accès voiture, arrivée et bagages. » <a href="https://www.riadtawargit.com/page/faq" target="_blank" rel="noopener noreferrer">riadtawargit.com</a></li>
-<li>The Moroccan Compass. « Best Riads in the Marrakech Medina — Tested Honestly. » <a href="https://themoroccancompass.com/best-riads-in-marrakech-medina/" target="_blank" rel="noopener noreferrer">themoroccancompass.com</a></li>
 </ul>
 </div>
 
