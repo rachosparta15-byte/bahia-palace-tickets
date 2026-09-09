@@ -206,9 +206,9 @@ export function PalacePlan({ spaces, chrome }: { spaces: SpaceCopy[]; chrome: Pl
         <div className="bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-6">
           <div className="flex items-baseline justify-between gap-4 mb-1">
             <span className="text-[#E8A33D] text-xs font-bold uppercase tracking-widest">
-              {chrome.stopOf(active.n, spaces.length)}
+              {active.stopLabel}
             </span>
-            <span className="text-xs text-[#C4A882]">{chrome.minutes(active.minutes[0], active.minutes[1])}</span>
+            <span className="text-xs text-[#C4A882]">{active.minutesLabel}</span>
           </div>
           <h3 className="text-[#F5E8CC] font-bold mb-3"
             style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem' }}>{active.name}</h3>
@@ -253,7 +253,7 @@ export function PalacePlan({ spaces, chrome }: { spaces: SpaceCopy[]; chrome: Pl
                   }`}>{s.n}</span>
                   <span className="text-sm flex-1">{s.name}</span>
                   {on && <span aria-hidden className="text-[#E8A33D] text-xs">●</span>}
-                  <span className="text-xs text-[#8C7355]">{chrome.minutesShort(s.minutes[0], s.minutes[1])}</span>
+                  <span className="text-xs text-[#8C7355]">{s.minutesShortLabel}</span>
                 </button>
               </li>
             );

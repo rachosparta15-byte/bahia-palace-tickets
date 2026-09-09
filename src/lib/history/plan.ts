@@ -111,16 +111,31 @@ export function totalMinutes(): [number, number] {
   );
 }
 
-/** Geometry plus the localised words, assembled on the server. */
+/*
+ * Geometry plus the localised words, assembled on the server.
+ *
+ * Every label here is a finished string, never a function that builds one.
+ * React serialises props across the server/client boundary and functions do
+ * not survive that: passing three formatter callbacks in `chrome` produced
+ * three serialisation errors and a blank page in the browser, while the
+ * server-rendered HTML still looked fine to a fetch. So the per-space labels
+ * are formatted server-side and travel as text.
+ */
 export interface SpaceCopy extends Space {
   name: string;
   summary: string;
   notice: string[];
   story?: string;
   source?: string;
+  /** "Stop 3 of 7", already localised and number-formatted. */
+  stopLabel: string;
+  /** "12–20 min" for the panel. */
+  minutesLabel: string;
+  /** "12–20m" for the list row. */
+  minutesShortLabel: string;
 }
 
-/** Strings the diagram itself needs, passed in rather than looked up. */
+/** Strings the diagram itself needs. Plain text only — see SpaceCopy. */
 export interface PlanChrome {
   diagramLabel: string;
   legendRoute: string;
@@ -131,8 +146,5 @@ export interface PlanChrome {
   noticeTitle: string;
   storyTitle: string;
   street: string;
-  stopOf: (n: number, total: number) => string;
-  minutes: (lo: number, hi: number) => string;
-  minutesShort: (lo: number, hi: number) => string;
   totalTime: string;
 }

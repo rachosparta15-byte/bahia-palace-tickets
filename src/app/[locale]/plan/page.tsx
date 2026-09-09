@@ -97,6 +97,9 @@ export default async function PlanPage({ params }: Props) {
       notice: [0, 1, 2].map(i => t(`s_${k}_n${i}` as 's_entrance_n0')),
       story: hasStory ? t(`s_${k}_story` as 's_smallriad_story', N) : undefined,
       source: hasStory ? storySrc[k] : undefined,
+      stopLabel: t('stopOf', { n: nf.format(s.n), total: nf.format(SPACES.length) }),
+      minutesLabel: t('minutes', { lo: nf.format(s.minutes[0]), hi: nf.format(s.minutes[1]) }),
+      minutesShortLabel: t('minutesShort', { lo: nf.format(s.minutes[0]), hi: nf.format(s.minutes[1]) }),
     };
   });
 
@@ -110,9 +113,6 @@ export default async function PlanPage({ params }: Props) {
     noticeTitle: t('noticeTitle'),
     storyTitle: t('storyTitle'),
     street: NAMES.street,
-    stopOf: (n, total) => t('stopOf', { n: nf.format(n), total: nf.format(total) }),
-    minutes: (a, b) => t('minutes', { lo: nf.format(a), hi: nf.format(b) }),
-    minutesShort: (a, b) => t('minutesShort', { lo: nf.format(a), hi: nf.format(b) }),
     totalTime: t('totalTime', { lo: nf.format(lo), hi: nf.format(hi) }),
   };
 
