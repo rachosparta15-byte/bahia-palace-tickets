@@ -25,11 +25,30 @@
 
 import type { SourceKey } from './facts';
 
+/*
+ * How a space is drawn. This is the part the first version got wrong.
+ *
+ * A Moroccan palace is not a row of solid blocks. It is a set of open
+ * courtyards with rooms wrapped around them: the riad IS the garden, and the
+ * building is its frame. Drawing every space as a filled rectangle inverted
+ * the architecture and produced a flowchart. So each space now declares what
+ * kind of space it is, and the drawing renders courtyards as voids with a
+ * gallery and a fountain, gardens with their four-part division, and rooms as
+ * solid mass.
+ */
+export type SpaceKind =
+  | 'gate'    // narrow entrance passage
+  | 'court'   // open courtyard ringed by a gallery
+  | 'garden'  // four-part planted garden
+  | 'rooms'   // solid built mass
+  | 'cells';  // cluster of small private apartments
+
 export interface Space {
   id: string;
   /** Position in the visitor circuit. */
   n: number;
   name: string;
+  kind: SpaceKind;
   /** Roughly how long to spend, for the time budget. */
   minutes: [number, number];
   /** One line: what this space is. */
@@ -42,6 +61,8 @@ export interface Space {
   ref?: SourceKey;
   /** Diagram geometry. Arbitrary units, not metres. */
   box: { x: number; y: number; w: number; h: number };
+  /** Where the caption sits, so it never lands on the route line. */
+  label: { x: number; y: number; anchor: 'start' | 'middle' | 'end' };
 }
 
 export const SPACES: Space[] = [
@@ -49,6 +70,7 @@ export const SPACES: Space[] = [
     id: 'entrance',
     n: 1,
     name: 'Main entrance',
+    kind: 'gate',
     minutes: [3, 5],
     summary:
       'Heavy studded doors on Rue Riad Zitoun el Jedid, opening into a narrow, dim corridor.',
@@ -57,12 +79,14 @@ export const SPACES: Space[] = [
       'The first painted ceiling panel is directly above you in the corridor.',
       'The darkness is deliberate. It makes the first courtyard feel larger than it is.',
     ],
-    box: { x: 60, y: 520, w: 200, h: 80 },
+    box: { x: 150, y: 520, w: 100, h: 84 },
+    label: { x: 264, y: 568, anchor: 'start' },
   },
   {
     id: 'small-riad',
     n: 2,
     name: 'The small riad',
+    kind: 'court',
     minutes: [8, 12],
     summary:
       'The older, quieter courtyard. This is the house before it became a palace.',
@@ -74,12 +98,14 @@ export const SPACES: Space[] = [
     story:
       'This is Si Moussa’s building. The two chambers flanking the garden carry an inscription dating them to 1866-67, the earliest firm date anywhere on the site. Everything grander was added by his son thirty years later.',
     ref: 'deverdun',
-    box: { x: 60, y: 330, w: 200, h: 150 },
+    box: { x: 70,  y: 356, w: 260, h: 150 },
+    label: { x: 200, y: 340, anchor: 'middle' },
   },
   {
     id: 'grand-riad',
     n: 3,
     name: 'The grand riad',
+    kind: 'court',
     minutes: [12, 20],
     summary:
       'The centrepiece: a wide courtyard garden ringed by a painted wooden gallery on columns.',
@@ -91,12 +117,14 @@ export const SPACES: Space[] = [
     story:
       'The marble courtyard carries its own inscription, dated 1896-97, in the middle of Ba Ahmed’s six years as the effective ruler of Morocco. He assembled the ground for all of this by absorbing the plots of some sixty neighbouring houses.',
     ref: 'deverdun',
-    box: { x: 290, y: 330, w: 280, h: 150 },
+    box: { x: 366, y: 356, w: 300, h: 150 },
+    label: { x: 516, y: 340, anchor: 'middle' },
   },
   {
     id: 'great-court',
     n: 4,
     name: 'The great court',
+    kind: 'rooms',
     minutes: [10, 15],
     summary:
       'The formal reception sequence, where petitioners and foreign envoys were received.',
@@ -108,12 +136,14 @@ export const SPACES: Space[] = [
     story:
       'Ba Ahmed held power from these rooms as grand vizier and regent between 1894 and 1900. Foreign governments dealt with him rather than with the young sultan in whose name he governed.',
     ref: 'deverdun',
-    box: { x: 290, y: 190, w: 280, h: 120 },
+    box: { x: 366, y: 190, w: 300, h: 132 },
+    label: { x: 516, y: 174, anchor: 'middle' },
   },
   {
     id: 'council',
     n: 5,
     name: 'The council room',
+    kind: 'rooms',
     minutes: [5, 10],
     summary: 'The most densely painted ceiling in the palace, above an empty floor.',
     notice: [
@@ -124,12 +154,14 @@ export const SPACES: Space[] = [
     story:
       'When Ba Ahmed died on 17 May 1900, Sultan Abdelaziz reportedly ordered the palace stripped of its valuables and the household turned out. The ceilings, floors and plaster survived for one reason: they could not be carried away.',
     ref: 'deverdun',
-    box: { x: 600, y: 190, w: 160, h: 120 },
+    box: { x: 700, y: 190, w: 156, h: 132 },
+    label: { x: 778, y: 174, anchor: 'middle' },
   },
   {
     id: 'harem',
     n: 6,
     name: 'The private apartments',
+    kind: 'cells',
     minutes: [12, 18],
     summary:
       'Living quarters arranged as a hierarchy, with rank measured in distance from the grand riad.',
@@ -140,12 +172,14 @@ export const SPACES: Space[] = [
     ],
     story:
       'Rooms nearest the grand riad were the most prestigious. The plan itself records who mattered, which makes this the one part of the palace where the architecture is legible as a social document.',
-    box: { x: 290, y: 60, w: 280, h: 110 },
+    box: { x: 366, y: 40,  w: 300, h: 102 },
+    label: { x: 516, y: 24,  anchor: 'middle' },
   },
   {
     id: 'gardens',
     n: 7,
     name: 'The gardens',
+    kind: 'garden',
     minutes: [10, 20],
     summary:
       'Orange, lemon, cypress, jasmine and rose, laid out on a central axis around water.',
@@ -157,21 +191,45 @@ export const SPACES: Space[] = [
     story:
       'The palace proper covers nearly two hectares. The eight-hectare figure quoted everywhere includes the agdal, the walled orchard-garden that the grounds were built around.',
     ref: 'minculture',
-    box: { x: 60, y: 60, w: 200, h: 250 },
+    box: { x: 70,  y: 40,  w: 260, h: 262 },
+    label: { x: 200, y: 24,  anchor: 'middle' },
   },
 ];
 
-/** Drawn between space centres, in circuit order. */
-export const CONNECTORS: [string, string][] = [
-  ['entrance', 'small-riad'],
-  ['small-riad', 'grand-riad'],
-  ['grand-riad', 'great-court'],
-  ['great-court', 'council'],
-  ['great-court', 'harem'],
-  ['harem', 'gardens'],
+/*
+ * The visitor route, drawn as orthogonal segments through doorways.
+ *
+ * The first version joined block centres with straight lines, so every
+ * connector cut diagonally across the rooms and the captions landed on top of
+ * them. A route through a building turns corners; it does not fly through
+ * walls. These are polylines in diagram units, and the council is a spur you
+ * walk into and back out of, which is what actually happens.
+ */
+export const ROUTE: [number, number][] = [
+  [200, 604], [200, 431], [516, 431], [516, 256], [516, 98], [330, 98], [200, 98], [200, 128],
 ];
 
-export const VIEWBOX = { w: 820, h: 620 };
+/** The council room is entered and left by the same door. */
+export const SPUR: [number, number][] = [[516, 256], [778, 256]];
+
+/** Where each numbered marker sits on the route. */
+/*
+ * Markers sit ON the route but OFF the fountain. In the first render the
+ * numbered disc for each courtyard landed exactly on the khatam at its centre
+ * and hid it, which threw away the one mark that says "this space is open to
+ * the sky". Each courtyard's marker is now nudged along its own route segment.
+ */
+export const STOPS: Record<string, [number, number]> = {
+  entrance: [200, 562],
+  'small-riad': [200, 470],
+  'grand-riad': [430, 431],
+  'great-court': [516, 256],
+  council: [778, 256],
+  harem: [516, 98],
+  gardens: [200, 128],
+};
+
+export const VIEWBOX = { w: 926, h: 656 };
 
 /** Total dwell time implied by the per-space ranges. */
 export function totalMinutes(): [number, number] {
