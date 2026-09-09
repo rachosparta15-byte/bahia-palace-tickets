@@ -37,6 +37,60 @@ export interface Sourced {
   contested?: string;
 }
 
+/*
+ * THE INVARIANTS.
+ *
+ * Everything here is a number or a proper name, and none of it is translated.
+ * The localised prose in messages/*.json interpolates these by key, so a
+ * translator working in Arabic or German is handed a sentence with a slot in
+ * it and never retypes "1866". That matters because a date retyped in seven
+ * languages drifts in seven directions, which is the failure this whole file
+ * exists to prevent — and translation is the single likeliest way to
+ * reintroduce it.
+ *
+ * Rule: if a claim contains a digit, the digit lives here and the sentence
+ * around it lives in the message catalogue.
+ */
+export const NUMBERS = {
+  foundedFrom: 1866,
+  foundedTo: 1867,
+  expansionFrom: 1894,
+  expansionTo: 1900,
+  marbleFrom: 1896,
+  marbleTo: 1897,
+  birthFrom: 1841,
+  birthTo: 1842,
+  /** ISO so each locale can format it in its own convention. */
+  death: '1900-05-17',
+  hajibFrom: 1879,
+  protectorate: 1912,
+  unescoYear: 1985,
+  unescoRef: 331,
+  areaBuiltHa: 2,
+  areaTotalHa: 8,
+  rooms: 150,
+  housesAbsorbed: 60,
+  gardensAcquired: 16,
+  architectBorn: 1857,
+  architectDied: 1926,
+  visitors: 410141,
+  visitorsYear: 2019,
+  sultanAge: 14,
+} as const;
+
+/** Proper names, spelled once. Transliteration varies; the site should not. */
+export const NAMES = {
+  architect: 'Muhammad ibn Makki al-Misfiwi',
+  architectFrom: 'Safi',
+  baAhmed: 'Ahmed ibn Moussa (Ba Ahmed)',
+  siMoussa: 'Si Moussa',
+  sultanYoung: 'Moulay Abdelaziz',
+  sultanHassan: 'Hassan I',
+  sultanMuhammad: 'Muhammad IV',
+  sultanSlimane: 'Moulay Slimane',
+  street: 'Rue Riad Zitoun el Jedid',
+} as const;
+
 export const SOURCES: Record<SourceKey, { citation: string; url?: string }> = {
   deverdun: {
     citation:
