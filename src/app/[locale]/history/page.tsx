@@ -260,6 +260,21 @@ export default async function HistoryPage({ params }: Props) {
           ))}
         </div>
 
+        {/* The history is a sequence of rooms as much as of years. */}
+        <div className="bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-6 flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h2 className="font-bold text-[#F5E8CC] mb-1" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem' }}>
+              See where all of this happened
+            </h2>
+            <p className="text-sm text-[#C4A882] max-w-md">
+              A schematic of the seven spaces in the order the visitor circuit takes you, with what happened in each.
+            </p>
+          </div>
+          <Link href="/plan" className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold px-6 py-3 rounded-xl transition-colors shrink-0">
+            Open the plan <ArrowRight size={16} />
+          </Link>
+        </div>
+
         {/* Status today, and the numbers people ask for */}
         <div>
           <h2 className="text-2xl font-bold text-[#F5E8CC] mb-4" style={{ fontFamily: 'Cormorant Garamond, serif' }}>

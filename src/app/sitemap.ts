@@ -45,6 +45,9 @@ const STATIC: { path: string; priority: number; freq: MetadataRoute.Sitemap[numb
   { path: '/opening-hours',  priority: 0.90, freq: 'monthly' },
   { path: '/location',       priority: 0.88, freq: 'monthly' },
   { path: '/history',        priority: 0.85, freq: 'monthly' },
+  // The circuit schematic. Ranks for orientation queries the articles cannot
+  // answer, because none of them contains a drawing.
+  { path: '/plan',           priority: 0.84, freq: 'monthly' },
   { path: '/safety',         priority: 0.82, freq: 'weekly'  },
   { path: '/blog',           priority: 0.78, freq: 'weekly'  },
   { path: '/faq',            priority: 0.75, freq: 'monthly' },
