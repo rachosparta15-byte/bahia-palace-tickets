@@ -314,7 +314,7 @@ export default async function HistoryPage({ params }: Props) {
           </ol>
           <p className="text-xs text-[#8C7355] mt-4">
             {t.rich('srcFooter', {
-              link: () => <Link href="/sources" className="underline hover:text-[#F5E8CC]">{t('srcLinkText')}</Link>,
+              link: chunks => <Link href="/sources" className="underline hover:text-[#F5E8CC]">{chunks}</Link>,
             })}
           </p>
         </div>
