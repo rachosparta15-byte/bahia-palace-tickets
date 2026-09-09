@@ -322,21 +322,30 @@ export async function Hero() {
                 >
                   {tt('audioGuideValueNote')}
                 </p>
-                {/* The video promo used to live in a persistent bar fixed
-                    under the header on every page; moved here, next to the
-                    button it's actually meant to support, and the top of
-                    the page keeps only the decorative gold/zellige strip
-                    (see VideoPromoBar's `decorative` prop). YouTube red and
-                    sized like Get Tickets — a video link reads as a button,
-                    not fine print, and the color says what kind before the
-                    label does. */}
-                <Link
-                  href="/videos"
-                  className="mt-3 inline-flex min-h-[48px] items-center gap-2 rounded-lg bg-[#C4452D] px-6 text-sm font-semibold text-white transition-colors hover:bg-[#A33824] sm:text-base"
-                >
-                  <Play size={18} className="fill-current shrink-0" />
-                  {tRoot('videos.promoBar')}
-                </Link>
+                {/*
+                  * Both secondary actions share one flex row.
+                  *
+                  * They were two loose inline-flex links with only a top
+                  * margin. Side by side that put them edge to edge with no gap
+                  * at all, and each carried its own mt-3, so when they did wrap
+                  * onto separate lines the spacing was inconsistent. One
+                  * wrapping row with a gap handles both cases, and the gap is
+                  * direction-agnostic so Arabic gets it too.
+                  */}
+                <div className="mt-3 flex flex-wrap items-center gap-3">
+                  {/* The video promo used to live in a persistent bar fixed
+                      under the header on every page; moved here, next to the
+                      button it's actually meant to support. Terracotta and
+                      sized like Get Tickets: a video link reads as a button,
+                      not fine print, and the colour says what kind before the
+                      label does. */}
+                  <Link
+                    href="/videos"
+                    className="inline-flex min-h-[48px] items-center gap-2 rounded-lg bg-[#C4452D] px-6 text-sm font-semibold text-white transition-colors hover:bg-[#A33824] sm:text-base"
+                  >
+                    <Play size={18} className="fill-current shrink-0" />
+                    {tRoot('videos.promoBar')}
+                  </Link>
                 {/* The third hero action, and the only one that is neither a
                     purchase nor a video: the plan of the circuit.
 
@@ -353,13 +362,14 @@ export async function Hero() {
                     ground the token reads as a generic web blue that competes
                     with the two buttons above it, while the muted value sits
                     back and reads as the third-tier action it is. */}
-                <Link
-                  href="/plan"
-                  className="mt-3 inline-flex min-h-[48px] items-center gap-2 rounded-lg bg-[#2E4A7B] px-6 text-sm font-semibold text-white transition-colors hover:bg-[#3A5C96] sm:text-base"
-                >
-                  <Route size={18} className="shrink-0" />
-                  {tRoot('palacePlan.heroCta')}
-                </Link>
+                  <Link
+                    href="/plan"
+                    className="inline-flex min-h-[48px] items-center gap-2 rounded-lg bg-[#2E4A7B] px-6 text-sm font-semibold text-white transition-colors hover:bg-[#3A5C96] sm:text-base"
+                  >
+                    <Route size={18} className="shrink-0" />
+                    {tRoot('palacePlan.heroCta')}
+                  </Link>
+                </div>
               </div>
 
               {paymentsEnabled && (
