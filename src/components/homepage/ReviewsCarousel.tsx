@@ -43,25 +43,6 @@ export async function ReviewsCarousel() {
           <p className="text-[#C4A882] mb-8 max-w-xl mx-auto">
             {t('tripAdvisorPrompt')}
           </p>
-          <div className="inline-flex flex-col items-center gap-4">
-            {/* TripAdvisor star row */}
-            <div className="flex items-center gap-1">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} size={22} className="text-[#34E0A1] fill-[#34E0A1]" />
-              ))}
-            </div>
-            <a
-              href={TRIPADVISOR_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#34E0A1] hover:bg-[#2bc98e] text-[#1a1a1a] font-semibold px-7 py-3 rounded-full transition-colors text-sm"
-            >
-              <span className="font-bold">●</span>
-              {t('tripAdvisorCta')}
-              <ExternalLink size={14} />
-            </a>
-            <p className="text-[#C4A882] text-xs">{t('tripAdvisorNote')}</p>
-          </div>
         </div>
       </section>
     );
