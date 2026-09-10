@@ -167,6 +167,14 @@ export function TicketCards({ overrides = {} }: Props) {
             const hasAudioGuide = includes.some((item) => /audio ?guide|audioguide/i.test(item));
 
             const isSkipTheLineViator = slug === 'skip-the-line';
+            // null in paid mode (messages/paid/<locale>.json explicitly
+            // overrides this to null — see mergeMessages.ts), since that
+            // mode already promises WhatsApp support inside includes[2].
+            // Every other card has no key here at all, so this is read
+            // only under isSkipTheLineViator below.
+            const whatsappNote = isSkipTheLineViator
+              ? (t.raw(`${key}.whatsappNote` as any) as string | null)
+              : null;
 
             return (
               // .spin-ring (globals.css) — see the long comment on this
@@ -280,6 +288,15 @@ export function TicketCards({ overrides = {} }: Props) {
                     )
                   ) : (
                     <div className="flex-1" aria-hidden="true" />
+                  )}
+
+                  {/* Same muted-note style as audioGuideValueNote below —
+                      plain text for now; the WhatsApp link inside it is
+                      added in Phase 2. */}
+                  {whatsappNote && (
+                    <p className="-mt-3 mb-5 text-[10px] leading-snug text-[rgba(245,232,204,0.55)]">
+                      {whatsappNote}
+                    </p>
                   )}
 
                   {/* Price + CTA */}

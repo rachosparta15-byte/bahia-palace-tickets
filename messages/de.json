@@ -41,8 +41,8 @@
       "includes": [
         "Offizielles Eintrittsticket für den Bahia-Palast",
         "Audioguide in Ihrer Sprache",
-        "WhatsApp-Support vor und während Ihres Besuchs",
-        "Kostenlose Stornierung bis zum Versand Ihres Codes"
+        "Bestätigung und Audioguide werden von Viator gesendet",
+        "Kostenlose Stornierung bis 24 Stunden vorher (Viator-Richtlinie)"
       ],
       "excludes": [
         "Führungskommentar",
@@ -51,7 +51,8 @@
       ],
       "meetingPoint": "Haupteingang des Bahia Palastes, Rue Riad Zitoun el Jedid, Medina von Marrakesch",
       "longDesc": "Wer online kauft, überspringt die Schlange am Ticketschalter vollständig: Ihr QR-Code ist bereits gültig, Sie gehen also direkt zum Eingang statt zum Schalter. Erkunden Sie in Ihrem Tempo — die meisten Besucher verbringen 1 bis 2 Stunden mit Zellij, geschnitzten Zederndecken und den Innengärten.",
-      "whyOnline": "Am Schalter stehen Sie an und zahlen bar in Dirham, und einen Guide bekommen Sie dort nicht. Hier ist es eine Kartenzahlung, ein Audioguide in Ihrer Sprache, WhatsApp-Support und kostenlose Stornierung bis zum Versand Ihres Codes."
+      "whyOnline": "Am Schalter stehen Sie an und zahlen bar in Dirham, und einen Guide bekommen Sie dort nicht. Hier ist es eine Kartenzahlung, ein Audioguide in Ihrer Sprache, WhatsApp-Support und kostenlose Stornierung bis zum Versand Ihres Codes.",
+      "whatsappNote": "Fragen vor der Buchung? Schreiben Sie uns auf WhatsApp — wir sind vor Ort, und es ist kostenlos."
     },
     "guidedTour": {
       "name": "Expertengeführte Tour",
@@ -138,30 +139,30 @@
     "trustSecurePayment": "Sichere Zahlung",
     "trustInstantConfirm": "Sofortige Bestätigung",
     "trustFreeCancel": "Kostenlose Stornierung",
-    "trustViatorPartner": "Offizieller Viator-Partner",
+    "trustViatorPartner": "Buchung über Viator abgewickelt",
     "optionsView": "Ansehen",
     "optionsLabel": "Der Palast",
     "optionsFeatured": "Die Wahl der meisten Besucher",
     "optionsBookThis": "Diesen Eintritt buchen"
   },
   "whyUs": {
-    "title": "Warum bei uns buchen?",
+    "title": "Was wir tun — und was wir nicht tun",
     "items": [
       {
-        "title": "Das offizielle Ticket, für Sie gekauft",
-        "desc": "Wir kaufen das offizielle 100-MAD-Ticket des Kulturministeriums in Ihrem Namen und senden Ihnen den Code vor der Reise. Sie können es auch selbst zum Grundpreis auf dem Ministeriumsportal kaufen."
+        "title": "Wir finden das Ticket, Viator verkauft es",
+        "desc": "Der Eintrittspreis von 100 MAD wird vom Kulturministerium festgelegt. Wir vergleichen das Angebot, wählen die Optionen aus, die Ihr Geld wert sind, und leiten Sie zur Buchung an Viator weiter. Zahlung, Bestätigung und Ticket erhalten Sie von Viator."
       },
       {
-        "title": "Transparente Preise",
-        "desc": "Unser Preis umfasst das offizielle 100-MAD-Ticket, den Audioguide, WhatsApp-Support und die kostenlose Stornierung. Ein Betrag an der Kasse, mit der Aufschlüsselung daneben."
+        "title": "Sie sehen den vollen Preis, bevor Sie klicken",
+        "desc": "Jeder Preis auf dieser Seite ist der, den Viator berechnet — kein Aufschlag von uns, keine Gebühren beim Checkout. Wir erhalten eine Provision von Viator, nicht von Ihnen."
       },
       {
         "title": "Zuverlässige Informationen",
         "desc": "Unabhängige Besucherinfos aus offiziellen und geprüften Quellen — keine Spekulation."
       },
       {
-        "title": "Ihre Daten bleiben bei uns",
-        "desc": "Falls Sie Ihre E-Mail angeben, wird sie nur für Besuchstipps verwendet — niemals verkauft. Wenn Sie eine Buchung auf der Seite eines Partners abschließen, gilt dessen eigene Datenschutzerklärung."
+        "title": "Wir beantworten Fragen, kostenlos",
+        "desc": "Schreiben Sie uns auf WhatsApp zu den Öffnungszeiten, dem Weg vom Jemaa el-Fna oder allem anderen. Wir sind in Marrakesch. Sie müssen dafür nichts buchen."
       }
     ]
   },

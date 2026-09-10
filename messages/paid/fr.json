@@ -10,7 +10,8 @@
         null,
         "Guide numérique & assistance inclus",
         "Billet officiel inclus"
-      ]
+      ],
+      "whatsappNote": null
     },
     "guidedTour": {
       "includes": [
@@ -57,6 +58,7 @@
       },
       null,
       {
+        "title": "Vos Données Restent Chez Nous",
         "desc": "Si vous partagez votre e-mail, il ne sert qu'à vous envoyer des conseils de visite — jamais vendu. Votre réservation est finalisée en toute sécurité chez nous ; les paiements par carte sont traités par PayPal et nous ne conservons jamais vos données de carte."
       }
     ]
