@@ -52,7 +52,7 @@
       "meetingPoint": "Main entrance of Bahia Palace, Rue Riad Zitoun el Jedid, Marrakech Medina",
       "longDesc": "Buy online and you skip the ticket-office queue entirely — your QR code is already valid, so you go straight to the entrance instead of the booth. Explore at your own pace: most visitors spend 1 to 2 hours discovering the intricate zellige tilework, carved cedar ceilings and lush inner gardens.",
       "whyOnline": "At the gate you queue and pay cash in dirhams, and nobody hands you a guide. Here it is one card payment, an audio guide in your own language, WhatsApp support, and free cancellation up to 24 hours before.",
-      "whatsappNote": "Questions before you book? Message us on WhatsApp — we're local and it's free."
+      "whatsappNote": "Questions before you book? <wa>Message us on WhatsApp</wa> — we're local and it's free."
     },
     "guidedTour": {
       "name": "Expert Guided Tour",
@@ -190,7 +190,7 @@
       },
       {
         "title": "We answer questions, free",
-        "desc": "Message us on WhatsApp about opening times, the walk from Jemaa el-Fna, or anything else. We're in Marrakech. We don't need you to book anything first."
+        "desc": "<wa>Message us on WhatsApp</wa> about opening times, the walk from Jemaa el-Fna, or anything else. We're in Marrakech. We don't need you to book anything first."
       }
     ]
   },

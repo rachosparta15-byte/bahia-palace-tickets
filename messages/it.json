@@ -52,7 +52,7 @@
       "meetingPoint": "Ingresso principale del Palazzo Bahia, Rue Riad Zitoun el Jedid, Medina di Marrakech",
       "longDesc": "Acquistando online salti completamente la fila della biglietteria: il tuo codice QR è già valido, quindi vai direttamente all’ingresso invece che allo sportello. Visita con i tuoi tempi: la maggior parte dei visitatori impiega 1 o 2 ore fra zellij, soffitti in cedro intagliato e giardini interni.",
       "whyOnline": "Alla biglietteria fai la fila e paghi in contanti, in dirham, e nessuno ti dà un’audioguida. Qui è un solo pagamento con carta, un’audioguida nella tua lingua, assistenza WhatsApp e cancellazione gratuita fino a 24 ore prima.",
-      "whatsappNote": "Domande prima di prenotare? Scrivici su WhatsApp — siamo del posto ed è gratis."
+      "whatsappNote": "Domande prima di prenotare? <wa>Scrivici su WhatsApp</wa> — siamo del posto ed è gratis."
     },
     "guidedTour": {
       "name": "Tour Guidato con Esperto",
@@ -162,7 +162,7 @@
       },
       {
         "title": "Rispondiamo alle domande, gratis",
-        "desc": "Scrivici su WhatsApp per gli orari di apertura, il percorso dalla Jemaa el-Fna, o qualsiasi altra cosa. Siamo a Marrakech. Non serve prenotare nulla prima."
+        "desc": "<wa>Scrivici su WhatsApp</wa> per gli orari di apertura, il percorso dalla Jemaa el-Fna, o qualsiasi altra cosa. Siamo a Marrakech. Non serve prenotare nulla prima."
       }
     ]
   },
