@@ -41,8 +41,8 @@
       "includes": [
         "Biglietto d’ingresso ufficiale del Palazzo della Bahia",
         "Audioguida nella tua lingua",
-        "Assistenza WhatsApp prima e durante la visita",
-        "Cancellazione gratuita fino all’invio del codice"
+        "Conferma e audioguida inviate da Viator",
+        "Cancellazione gratuita fino a 24 ore prima (politica Viator)"
       ],
       "excludes": [
         "Commento guidato",
@@ -51,7 +51,8 @@
       ],
       "meetingPoint": "Ingresso principale del Palazzo Bahia, Rue Riad Zitoun el Jedid, Medina di Marrakech",
       "longDesc": "Acquistando online salti completamente la fila della biglietteria: il tuo codice QR è già valido, quindi vai direttamente all’ingresso invece che allo sportello. Visita con i tuoi tempi: la maggior parte dei visitatori impiega 1 o 2 ore fra zellij, soffitti in cedro intagliato e giardini interni.",
-      "whyOnline": "Alla biglietteria fai la fila e paghi in contanti, in dirham, e nessuno ti dà un’audioguida. Qui è un solo pagamento con carta, un’audioguida nella tua lingua, assistenza WhatsApp e cancellazione gratuita fino all’invio del codice."
+      "whyOnline": "Alla biglietteria fai la fila e paghi in contanti, in dirham, e nessuno ti dà un’audioguida. Qui è un solo pagamento con carta, un’audioguida nella tua lingua, assistenza WhatsApp e cancellazione gratuita fino a 24 ore prima.",
+      "whatsappNote": "Domande prima di prenotare? <wa>Scrivici su WhatsApp</wa> — siamo del posto ed è gratis."
     },
     "guidedTour": {
       "name": "Tour Guidato con Esperto",
@@ -138,30 +139,30 @@
     "trustSecurePayment": "Pagamento sicuro",
     "trustInstantConfirm": "Conferma istantanea",
     "trustFreeCancel": "Cancellazione gratuita",
-    "trustViatorPartner": "Partner ufficiale Viator",
+    "trustViatorPartner": "Prenotazioni gestite da Viator",
     "optionsView": "Vedi",
     "optionsLabel": "Il palazzo",
     "optionsFeatured": "È quella scelta dalla maggior parte dei visitatori",
     "optionsBookThis": "Prenota questo ingresso"
   },
   "whyUs": {
-    "title": "Perché Prenotare con Noi?",
+    "title": "Cosa facciamo — e cosa non facciamo",
     "items": [
       {
-        "title": "Il Biglietto Ufficiale, Acquistato per Te",
-        "desc": "Acquistiamo a tuo nome il biglietto ufficiale da 100 MAD del Ministero della Cultura e ti inviamo il codice prima della partenza. Puoi anche acquistarlo da solo sul portale del Ministero al prezzo base."
+        "title": "Troviamo il biglietto, Viator lo vende",
+        "desc": "L'ingresso a 100 MAD è fissato dal Ministero della Cultura. Confrontiamo le opzioni disponibili, scegliamo quelle che valgono i tuoi soldi, e ti mandiamo su Viator per prenotare. Il pagamento, la conferma e il biglietto arrivano da loro."
       },
       {
-        "title": "Prezzo Trasparente",
-        "desc": "Il nostro prezzo copre il biglietto ufficiale da 100 MAD, l'audioguida, l'assistenza WhatsApp e la cancellazione gratuita. Un solo importo al pagamento, con il dettaglio accanto."
+        "title": "Vedi il prezzo completo prima di cliccare",
+        "desc": "Ogni prezzo in questa pagina è quello applicato da Viator — nessun sovrapprezzo da parte nostra, nessuna commissione aggiunta al checkout. Siamo pagati con una commissione da Viator, non da te."
       },
       {
         "title": "Informazioni Affidabili",
         "desc": "Info per visitatori indipendenti, tratte da fonti ufficiali e verificate."
       },
       {
-        "title": "I Tuoi Dati Restano con Noi",
-        "desc": "Se condividi la tua email, viene usata solo per inviarti consigli di viaggio — mai venduta. Se completi una prenotazione sul sito di un partner, si applica la sua informativa sulla privacy."
+        "title": "Rispondiamo alle domande, gratis",
+        "desc": "<wa>Scrivici su WhatsApp</wa> per gli orari di apertura, il percorso dalla Jemaa el-Fna, o qualsiasi altra cosa. Siamo a Marrakech. Non serve prenotare nulla prima."
       }
     ]
   },

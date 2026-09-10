@@ -10,7 +10,9 @@
         null,
         "Guía digital y asistencia incluidas",
         "Entrada oficial incluida"
-      ]
+      ],
+      "whatsappNote": null,
+      "whyOnline": "En taquilla hay que hacer cola y pagar en efectivo, en dírhams, y nadie le da una audioguía. Aquí es un solo pago con tarjeta, una audioguía en su idioma, asistencia por WhatsApp y cancelación gratuita hasta que enviemos su código."
     },
     "guidedTour": {
       "includes": [
@@ -38,7 +40,8 @@
         null,
         "Entrada oficial incluida"
       ]
-    }
+    },
+    "trustViatorPartner": "Socio oficial de Viator"
   },
   "ticketDetail": {
     "proceedToCheckout": "Continuar a la reserva →",
@@ -57,9 +60,11 @@
       },
       null,
       {
+        "title": "Tus Datos Se Quedan con Nosotros",
         "desc": "Si compartes tu correo, solo se usa para enviarte consejos de visita — nunca se vende. Tu reserva se completa de forma segura con nosotros; los pagos con tarjeta los procesa PayPal y nunca guardamos los datos de tu tarjeta."
       }
-    ]
+    ],
+    "title": "¿Por Qué Reservar con Nosotros?"
   },
   "faqPage": {
     "ctaBody": "Servicio de reservas independiente · Entrada oficial incluida · Cancelación gratuita",

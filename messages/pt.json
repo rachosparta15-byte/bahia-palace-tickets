@@ -328,8 +328,8 @@
       "includes": [
         "Bilhete de entrada oficial do Palácio da Bahia",
         "Audioguia na sua língua",
-        "Apoio por WhatsApp antes e durante a visita",
-        "Cancelamento gratuito até enviarmos o código"
+        "Confirmação e audioguia enviados pela Viator",
+        "Cancelamento gratuito até 24 horas antes (política da Viator)"
       ],
       "excludes": [
         "Guia acompanhante",
@@ -338,7 +338,8 @@
       ],
       "meetingPoint": "Entrada principal do Palácio da Bahia, Rue Riad Zitoun el Jedid, Medina de Marraquexe",
       "longDesc": "Comprando online evita por completo a fila da bilheteira — o seu código QR já está válido, por isso vai directamente para a entrada em vez do guichê. Visite ao seu ritmo: a maioria das pessoas demora 1 a 2 horas entre os azulejos zellige, os tectos de cedro esculpido e os jardins interiores.",
-      "whyOnline": "Na bilheteira espera na fila, paga em dirhams e ninguém lhe dá um guia. Aqui é um só pagamento com cartão, um audioguia na sua língua, apoio por WhatsApp e cancelamento gratuito até enviarmos o seu código."
+      "whyOnline": "Na bilheteira espera na fila, paga em dirhams e ninguém lhe dá um guia. Aqui é um só pagamento com cartão, um audioguia na sua língua, apoio por WhatsApp e cancelamento gratuito até 24 horas antes.",
+      "whatsappNote": "Dúvidas antes de reservar? <wa>Contacte-nos pelo WhatsApp</wa> — somos locais e é gratuito."
     },
     "guidedTour": {
       "name": "Visita guiada com especialista",
@@ -424,30 +425,30 @@
     "trustSecurePayment": "Pagamento seguro",
     "trustInstantConfirm": "Confirmação instantânea",
     "trustFreeCancel": "Cancelamento gratuito",
-    "trustViatorPartner": "Parceiro oficial Viator",
+    "trustViatorPartner": "Reservas geridas pela Viator",
     "optionsView": "Ver",
     "optionsLabel": "O palácio",
     "optionsFeatured": "É a escolha da maioria dos visitantes",
     "optionsBookThis": "Reservar esta entrada"
   },
   "whyUs": {
-    "title": "Porquê reservar connosco?",
+    "title": "O que fazemos — e o que não fazemos",
     "items": [
       {
-        "title": "O bilhete oficial, comprado por si",
-        "desc": "Compramos em seu nome o bilhete oficial de 100 MAD do Ministério da Cultura e enviamos-lhe o código antes de viajar. Também pode comprá-lo directamente no portal do Ministério pelo preço base."
+        "title": "Encontramos o bilhete, a Viator vende-o",
+        "desc": "A entrada de 100 MAD é fixada pelo Ministério da Cultura. Comparamos o que está disponível, escolhemos as opções que valem a pena, e enviamo-lo para a Viator para reservar. O seu pagamento, confirmação e bilhete vêm deles."
       },
       {
-        "title": "Preço transparente",
-        "desc": "O nosso preço cobre o bilhete oficial de 100 MAD, o audioguia, o apoio por WhatsApp e o cancelamento gratuito. Um só valor no pagamento, com a discriminação ao lado."
+        "title": "Vê o preço completo antes de clicar",
+        "desc": "Cada preço nesta página é o que a Viator cobra — sem margem da nossa parte, sem taxas acrescentadas no pagamento. Somos pagos por uma comissão da Viator, não por si."
       },
       {
         "title": "Informação fiável",
         "desc": "Informação independente para visitantes, recolhida de fontes oficiais e verificadas — nada de suposições."
       },
       {
-        "title": "Os seus dados ficam connosco",
-        "desc": "Se partilhar o seu e-mail, é usado apenas para enviar sugestões de visita — nunca é vendido. Se concluir uma reserva no site de um parceiro, aplica-se a política de privacidade desse parceiro."
+        "title": "Respondemos a perguntas, de graça",
+        "desc": "<wa>Contacte-nos pelo WhatsApp</wa> sobre os horários, o caminho a partir da Jemaa el-Fna, ou qualquer outra coisa. Estamos em Marraquexe. Não precisa de reservar nada primeiro."
       }
     ]
   },

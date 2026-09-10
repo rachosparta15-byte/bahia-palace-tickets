@@ -10,7 +10,9 @@
         null,
         "Digital guide & support included",
         "Official ticket included"
-      ]
+      ],
+      "whatsappNote": null,
+      "whyOnline": "At the gate you queue and pay cash in dirhams, and nobody hands you a guide. Here it is one card payment, an audio guide in your own language, WhatsApp support, and free cancellation until we send your code."
     },
     "guidedTour": {
       "includes": [
@@ -38,7 +40,8 @@
         null,
         "Official ticket included"
       ]
-    }
+    },
+    "trustViatorPartner": "Official Viator partner"
   },
   "ticketDetail": {
     "proceedToCheckout": "Continue to booking →",
@@ -57,9 +60,11 @@
       },
       null,
       {
+        "title": "Your Data Stays With Us",
         "desc": "If you share your email, it's only used to send visit tips — never sold. Your booking is completed securely with us; card payments are handled by PayPal and we never store your card details."
       }
-    ]
+    ],
+    "title": "Why Book With Us?"
   },
   "faqPage": {
     "ctaBody": "Independent booking service · Official ticket included · Free cancellation",

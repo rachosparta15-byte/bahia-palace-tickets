@@ -48,13 +48,13 @@ const OPTION_NAME_KEYS: Record<(typeof OPTION_SLUGS)[number], string> = {
  */
 const VIATOR_LINKS: Partial<Record<(typeof OPTION_SLUGS)[number], string>> = {
   'skip-the-line':
-    'https://www.viator.com/tours/Marrakech/Marrakech-Bahia-Palace-Skip-the-Line-Ticket-With-Audio-Guide/d5408-5670595P2?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-ticketoptions',
+    'https://www.viator.com/tours/Marrakech/Marrakech-Bahia-Palace-Skip-the-Line-Ticket-With-Audio-Guide/d5408-5670595P2?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-opt-skipline',
   'guided-tour':
-    'https://www.viator.com/tours/Marrakech/Marrakech-Saadian-Tombs-Bahia-Palace-Medina-and-Souk-Tour/d5408-467170P4?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-ticketoptions',
+    'https://www.viator.com/tours/Marrakech/Marrakech-Saadian-Tombs-Bahia-Palace-Medina-and-Souk-Tour/d5408-467170P4?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-opt-expert',
   'private-guide-only':
-    'https://www.viator.com/tours/Marrakech/Marrakech-local-guide-historical-tour/d5408-199649P3?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-ticketoptions',
+    'https://www.viator.com/tours/Marrakech/Marrakech-local-guide-historical-tour/d5408-199649P3?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-opt-privateguide',
   'private-tour':
-    'https://www.viator.com/tours/Marrakech/Marrakech-Highlights-Private-4hr-City-Tour/d5408-326890P2?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-ticketoptions',
+    'https://www.viator.com/tours/Marrakech/Marrakech-Highlights-Private-4hr-City-Tour/d5408-326890P2?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-opt-privatetour',
 };
 
 /**

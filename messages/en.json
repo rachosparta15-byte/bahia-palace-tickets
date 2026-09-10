@@ -41,8 +41,8 @@
       "includes": [
         "Official Bahia Palace entry ticket",
         "Audio guide in your own language",
-        "WhatsApp support before and during your visit",
-        "Free cancellation until we send your code"
+        "Confirmation and audio guide sent by Viator",
+        "Free cancellation up to 24 hours before (Viator policy)"
       ],
       "excludes": [
         "Guided commentary",
@@ -51,7 +51,8 @@
       ],
       "meetingPoint": "Main entrance of Bahia Palace, Rue Riad Zitoun el Jedid, Marrakech Medina",
       "longDesc": "Buy online and you skip the ticket-office queue entirely — your QR code is already valid, so you go straight to the entrance instead of the booth. Explore at your own pace: most visitors spend 1 to 2 hours discovering the intricate zellige tilework, carved cedar ceilings and lush inner gardens.",
-      "whyOnline": "At the gate you queue and pay cash in dirhams, and nobody hands you a guide. Here it is one card payment, an audio guide in your own language, WhatsApp support, and free cancellation until we send your code."
+      "whyOnline": "At the gate you queue and pay cash in dirhams, and nobody hands you a guide. Here it is one card payment, an audio guide in your own language, WhatsApp support, and free cancellation up to 24 hours before.",
+      "whatsappNote": "Questions before you book? <wa>Message us on WhatsApp</wa> — we're local and it's free."
     },
     "guidedTour": {
       "name": "Expert Guided Tour",
@@ -137,7 +138,7 @@
     "trustSecurePayment": "Secure payment",
     "trustInstantConfirm": "Instant confirmation",
     "trustFreeCancel": "Free cancellation",
-    "trustViatorPartner": "Official Viator partner",
+    "trustViatorPartner": "Bookings handled by Viator",
     "optionsView": "View",
     "optionsLabel": "The palace",
     "optionsFeatured": "Most visitors take this one",
@@ -173,23 +174,23 @@
     "childrenNote": "Under 7 enter free — do not include them."
   },
   "whyUs": {
-    "title": "Why Book With Us?",
+    "title": "What we do — and what we don’t",
     "items": [
       {
-        "title": "The Official Ticket, Bought For You",
-        "desc": "We buy the Ministry of Culture's official 100 MAD ticket in your name and send you the code before you travel. You can also buy it yourself on the Ministry portal at the base price."
+        "title": "We find the ticket, Viator sells it",
+        "desc": "The 100 MAD entry is set by the Ministry of Culture. We compare what's available, pick the options worth your money, and send you to Viator to book. Your payment, confirmation and ticket come from them."
       },
       {
-        "title": "Transparent Pricing",
-        "desc": "Our price covers the official 100 MAD ticket plus the audio guide, WhatsApp support and free cancellation. One figure at checkout, with the breakdown shown next to it."
+        "title": "You see the full price before you click",
+        "desc": "Every price on this page is what Viator charges — no markup from us, no fees added at checkout. We're paid a commission by Viator, not by you."
       },
       {
         "title": "Reliable Information",
         "desc": "Independent visitor info sourced from official and verified sources — no guesswork."
       },
       {
-        "title": "Your Data Stays With Us",
-        "desc": "If you share your email, it's only used to send visit tips — never sold. Where you complete a booking on a partner's site, that partner's own privacy policy applies."
+        "title": "We answer questions, free",
+        "desc": "<wa>Message us on WhatsApp</wa> about opening times, the walk from Jemaa el-Fna, or anything else. We're in Marrakech. We don't need you to book anything first."
       }
     ]
   },

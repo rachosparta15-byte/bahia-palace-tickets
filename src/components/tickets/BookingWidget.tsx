@@ -72,7 +72,7 @@ export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
               <span className="font-semibold text-[#8FA63C]">€{price.toFixed(2)}</span>
             </div>
             <p className="text-[11px] text-[#C4A882]/80 leading-relaxed border-t border-[rgba(232,163,61,0.12)] pt-2.5">
-              We charge more than the gate, and here is exactly what the difference buys: we queue and buy the ticket for you, you get an audio guide in your own language, WhatsApp support before and during the visit, and free cancellation until we send your code. You can always buy at the gate for {OFFICIAL_DOOR_PRICE_MAD} MAD instead — in cash, in dirhams, in the queue.
+              This is Viator&apos;s price, not ours — we don&apos;t add anything to it. It covers the official entry, an audio guide in your language, and free cancellation up to 24 hours before. You can also buy at the gate for {OFFICIAL_DOOR_PRICE_MAD} MAD, in cash, after the queue.
             </p>
           </div>
         )}

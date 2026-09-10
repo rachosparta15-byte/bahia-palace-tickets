@@ -41,8 +41,8 @@
       "includes": [
         "Billet d’entrée officiel du palais de la Bahia",
         "Audioguide dans votre langue",
-        "Assistance WhatsApp avant et pendant votre visite",
-        "Annulation gratuite jusqu’à l’envoi de votre code"
+        "Confirmation et audioguide envoyés par Viator",
+        "Annulation gratuite jusqu’à 24 heures avant (politique Viator)"
       ],
       "excludes": [
         "Commentaire guidé",
@@ -51,7 +51,8 @@
       ],
       "meetingPoint": "Entrée principale du Palais Bahia, Rue Riad Zitoun el Jedid, Médina de Marrakech",
       "longDesc": "En achetant en ligne, vous évitez entièrement la file de la billetterie : votre QR code est déjà valable, vous allez donc directement à l’entrée plutôt qu’au guichet. Visitez à votre rythme : la plupart des visiteurs passent 1 à 2 heures à découvrir les zelliges, les plafonds de cèdre sculpté et les jardins intérieurs.",
-      "whyOnline": "Au guichet, il faut faire la queue et payer en espèces, en dirhams, et personne ne vous remet d’audioguide. Ici : un seul paiement par carte, un audioguide dans votre langue, l’assistance WhatsApp et l’annulation gratuite jusqu’à l’envoi de votre code."
+      "whyOnline": "Au guichet, il faut faire la queue et payer en espèces, en dirhams, et personne ne vous remet d’audioguide. Ici : un seul paiement par carte, un audioguide dans votre langue, l’assistance WhatsApp et l’annulation gratuite jusqu’à 24 heures avant.",
+      "whatsappNote": "Des questions avant de réserver ? <wa>Contactez-nous sur WhatsApp</wa> — nous sommes sur place, et c’est gratuit."
     },
     "guidedTour": {
       "name": "Visite Guidée par un Expert",
@@ -138,30 +139,30 @@
     "trustSecurePayment": "Paiement sécurisé",
     "trustInstantConfirm": "Confirmation instantanée",
     "trustFreeCancel": "Annulation gratuite",
-    "trustViatorPartner": "Partenaire officiel Viator",
+    "trustViatorPartner": "Réservations gérées par Viator",
     "optionsView": "Voir",
     "optionsLabel": "Le palais",
     "optionsFeatured": "C’est celle que prennent la plupart des visiteurs",
     "optionsBookThis": "Réserver cette entrée"
   },
   "whyUs": {
-    "title": "Pourquoi Réserver chez Nous ?",
+    "title": "Ce que nous faisons — et ce que nous ne faisons pas",
     "items": [
       {
-        "title": "Le Billet Officiel, Acheté Pour Vous",
-        "desc": "Nous achetons en votre nom le billet officiel à 100 MAD du ministère de la Culture et vous envoyons le code avant votre voyage. Vous pouvez aussi l'acheter vous-même sur le portail du ministère au tarif de base."
+        "title": "Nous trouvons le billet, Viator le vend",
+        "desc": "Le tarif d'entrée de 100 MAD est fixé par le ministère de la Culture. Nous comparons ce qui est disponible, sélectionnons les options qui en valent la peine, et vous envoyons chez Viator pour réserver. Votre paiement, votre confirmation et votre billet viennent d'eux."
       },
       {
-        "title": "Prix Transparent",
-        "desc": "Notre prix couvre le billet officiel à 100 MAD, l'audioguide, l'assistance WhatsApp et l'annulation gratuite. Un seul montant au paiement, avec le détail affiché à côté."
+        "title": "Vous voyez le prix complet avant de cliquer",
+        "desc": "Chaque prix sur cette page est celui que facture Viator — aucune majoration de notre part, aucuns frais ajoutés au paiement. Nous sommes rémunérés par une commission de Viator, pas par vous."
       },
       {
         "title": "Information Fiable",
         "desc": "Informations visiteurs indépendantes, tirées de sources officielles et vérifiées."
       },
       {
-        "title": "Vos Données Restent Chez Nous",
-        "desc": "Si vous partagez votre e-mail, il sert uniquement à vous envoyer des conseils de visite — jamais revendu. Si vous finalisez une réservation sur le site d'un partenaire, c'est sa politique de confidentialité qui s'applique."
+        "title": "Nous répondons à vos questions, gratuitement",
+        "desc": "<wa>Contactez-nous sur WhatsApp</wa> pour les horaires, le trajet depuis la Jemaa el-Fna, ou toute autre question. Nous sommes à Marrakech. Vous n'avez pas besoin de réserver quoi que ce soit avant."
       }
     ]
   },

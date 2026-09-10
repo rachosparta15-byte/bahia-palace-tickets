@@ -41,8 +41,8 @@
       "includes": [
         "Entrada oficial al Palacio de la Bahía",
         "Audioguía en su idioma",
-        "Asistencia por WhatsApp antes y durante la visita",
-        "Cancelación gratuita hasta que enviemos su código"
+        "Confirmación y audioguía enviadas por Viator",
+        "Cancelación gratuita hasta 24 horas antes (política de Viator)"
       ],
       "excludes": [
         "Comentario guiado",
@@ -51,7 +51,8 @@
       ],
       "meetingPoint": "Entrada principal del Palacio Bahia, Calle Riad Zitoun el Jedid, Medina de Marrakech",
       "longDesc": "Comprando en línea se ahorra por completo la cola de la taquilla: su código QR ya es válido, así que va directamente a la entrada en vez de a la ventanilla. Visite a su ritmo: la mayoría dedica de 1 a 2 horas a los zellige, los techos de cedro tallado y los jardines interiores.",
-      "whyOnline": "En taquilla hay que hacer cola y pagar en efectivo, en dírhams, y nadie le da una audioguía. Aquí es un solo pago con tarjeta, una audioguía en su idioma, asistencia por WhatsApp y cancelación gratuita hasta que enviemos su código."
+      "whyOnline": "En taquilla hay que hacer cola y pagar en efectivo, en dírhams, y nadie le da una audioguía. Aquí es un solo pago con tarjeta, una audioguía en su idioma, asistencia por WhatsApp y cancelación gratuita hasta 24 horas antes.",
+      "whatsappNote": "¿Preguntas antes de reservar? <wa>Escríbenos por WhatsApp</wa> — somos locales y es gratis."
     },
     "guidedTour": {
       "name": "Tour Guiado por un Experto",
@@ -138,7 +139,7 @@
     "trustSecurePayment": "Pago seguro",
     "trustInstantConfirm": "Confirmación instantánea",
     "trustFreeCancel": "Cancelación gratuita",
-    "trustViatorPartner": "Socio oficial de Viator",
+    "trustViatorPartner": "Reservas gestionadas por Viator",
     "optionsView": "Ver",
     "optionsLabel": "El palacio",
     "optionsFeatured": "Es la que elige la mayoría de los visitantes",
@@ -174,23 +175,23 @@
     "childrenNote": "Menores de 7 años entran gratis: no los incluya."
   },
   "whyUs": {
-    "title": "¿Por Qué Reservar con Nosotros?",
+    "title": "Lo que hacemos — y lo que no hacemos",
     "items": [
       {
-        "title": "La Entrada Oficial, Comprada por Ti",
-        "desc": "Compramos a tu nombre la entrada oficial de 100 MAD del Ministerio de Cultura y te enviamos el código antes de viajar. También puedes comprarla tú mismo en el portal del Ministerio al precio base."
+        "title": "Encontramos el billete, Viator lo vende",
+        "desc": "La entrada de 100 MAD la fija el Ministerio de Cultura. Comparamos lo disponible, elegimos las opciones que valen la pena, y te enviamos a Viator para reservar. Tu pago, confirmación y billete llegan de ellos."
       },
       {
-        "title": "Precio Transparente",
-        "desc": "Nuestro precio cubre la entrada oficial de 100 MAD, la audioguía, el soporte por WhatsApp y la cancelación gratuita. Un solo importe al pagar, con el desglose al lado."
+        "title": "Ves el precio completo antes de hacer clic",
+        "desc": "Cada precio en esta página es el que cobra Viator — sin recargo por nuestra parte, sin comisiones añadidas al pagar. Nos paga una comisión Viator, no tú."
       },
       {
         "title": "Información Confiable",
         "desc": "Información independiente para visitantes, basada en fuentes oficiales y verificadas."
       },
       {
-        "title": "Tus Datos Se Quedan con Nosotros",
-        "desc": "Si compartes tu email, solo se usa para enviarte consejos de visita — nunca se vende. Si completas una reserva en el sitio de un socio, se aplica su propia política de privacidad."
+        "title": "Respondemos preguntas, gratis",
+        "desc": "<wa>Escríbenos por WhatsApp</wa> sobre horarios, el camino desde la Jemaa el-Fna, o cualquier otra cosa. Estamos en Marrakech. No hace falta que reserves nada antes."
       }
     ]
   },

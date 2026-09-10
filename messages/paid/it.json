@@ -10,7 +10,9 @@
         null,
         "Guida digitale e assistenza incluse",
         "Biglietto ufficiale incluso"
-      ]
+      ],
+      "whatsappNote": null,
+      "whyOnline": "Alla biglietteria fai la fila e paghi in contanti, in dirham, e nessuno ti dà un’audioguida. Qui è un solo pagamento con carta, un’audioguida nella tua lingua, assistenza WhatsApp e cancellazione gratuita fino all’invio del codice."
     },
     "guidedTour": {
       "includes": [
@@ -38,7 +40,8 @@
         null,
         "Biglietto ufficiale incluso"
       ]
-    }
+    },
+    "trustViatorPartner": "Partner ufficiale Viator"
   },
   "ticketDetail": {
     "proceedToCheckout": "Continua verso la prenotazione →",
@@ -57,9 +60,11 @@
       },
       null,
       {
+        "title": "I Tuoi Dati Restano con Noi",
         "desc": "Se condividi la tua email, la usiamo solo per inviarti consigli di visita — mai venduta. La tua prenotazione viene completata in sicurezza con noi; i pagamenti con carta sono gestiti da PayPal e non conserviamo mai i dati della carta."
       }
-    ]
+    ],
+    "title": "Perché Prenotare con Noi?"
   },
   "faqPage": {
     "ctaBody": "Servizio di prenotazione indipendente · Biglietto ufficiale incluso · Cancellazione gratuita",

@@ -2,10 +2,13 @@ import { SITE } from '@/config/site';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import { Mail } from 'lucide-react';
+import { Mail, MessageCircle } from 'lucide-react';
 
 import { getLegalDocs } from '@/content/legal';
 import { BOOKING_URL } from '@/lib/booking';
+import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
+
+const WHATSAPP_MESSAGE = 'Hi, I have a question about visiting Bahia Palace';
 
 export function Footer() {
   const t = useTranslations('footer');
@@ -13,6 +16,11 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   const legalDocs = getLegalDocs(locale);
+
+  // Same pattern as contact/page.tsx: hidden entirely until a real number
+  // is configured, rather than showing a line with nowhere to go.
+  const whatsappNumber = getWhatsAppNumber();
+  const whatsappUrl = whatsappNumber ? buildWhatsAppUrl(whatsappNumber, WHATSAPP_MESSAGE) : null;
 
   return (
     <footer className="bg-[#160D06] text-[#C4A882]">
@@ -44,6 +52,19 @@ export function Footer() {
                 <Mail size={14} className="text-[#E8A33D] shrink-0" />
                 <span>{SITE.supportEmail}</span>
               </div>
+              {whatsappUrl && (
+                <div className="flex items-center gap-2 mt-1.5">
+                  <MessageCircle size={14} className="text-[#E8A33D] shrink-0" />
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#E8A33D] transition-colors"
+                  >
+                    WhatsApp: +{whatsappNumber}
+                  </a>
+                </div>
+              )}
             </div>
 
             {/* Social media */}

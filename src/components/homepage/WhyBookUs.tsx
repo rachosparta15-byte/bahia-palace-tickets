@@ -1,12 +1,22 @@
 import { useTranslations } from 'next-intl';
 import { Zap, Shield, MapPin, Lock } from 'lucide-react';
 import { OrnamentDivider } from '@/components/ui/ZelligePattern';
+import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
 
 const ICONS = [Zap, Shield, MapPin, Lock];
+
+const WHATSAPP_MESSAGE = 'Hi, I have a question about visiting Bahia Palace';
 
 export function WhyBookUs() {
   const t = useTranslations('whyUs');
   const items = t.raw('items') as { title: string; desc: string }[];
+
+  // null when NEXT_PUBLIC_WHATSAPP_NUMBER is unset — items[3].desc still
+  // renders in full (it's approved Phase 1 copy, not WhatsApp-only), the
+  // <wa> markup inside it just falls back to plain, unlinked text instead
+  // of an <a> with nowhere to go.
+  const whatsappNumber = getWhatsAppNumber();
+  const whatsappUrl = whatsappNumber ? buildWhatsAppUrl(whatsappNumber, WHATSAPP_MESSAGE) : null;
 
   return (
     <section className="py-20 bg-[#251A0F] relative overflow-hidden">
@@ -50,7 +60,25 @@ export function WhyBookUs() {
                 >
                   {item.title}
                 </h3>
-                <p className="text-[#C4A882] text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-[#C4A882] text-sm leading-relaxed">
+                  {i === 3
+                    ? t.rich('items.3.desc', {
+                        wa: (chunks) =>
+                          whatsappUrl ? (
+                            <a
+                              href={whatsappUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="underline underline-offset-2 transition-colors hover:text-[#E8A33D]"
+                            >
+                              {chunks}
+                            </a>
+                          ) : (
+                            <>{chunks}</>
+                          ),
+                      })
+                    : item.desc}
+                </p>
               </div>
             );
           })}

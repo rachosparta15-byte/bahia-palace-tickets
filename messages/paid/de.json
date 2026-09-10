@@ -10,7 +10,9 @@
         null,
         "Digitaler Guide & Support inklusive",
         "Offizielles Ticket inklusive"
-      ]
+      ],
+      "whatsappNote": null,
+      "whyOnline": "Am Schalter stehen Sie an und zahlen bar in Dirham, und einen Guide bekommen Sie dort nicht. Hier ist es eine Kartenzahlung, ein Audioguide in Ihrer Sprache, WhatsApp-Support und kostenlose Stornierung bis zum Versand Ihres Codes."
     },
     "guidedTour": {
       "includes": [
@@ -38,7 +40,8 @@
         null,
         "Offizielles Ticket inklusive"
       ]
-    }
+    },
+    "trustViatorPartner": "Offizieller Viator-Partner"
   },
   "ticketDetail": {
     "proceedToCheckout": "Weiter zur Buchung →",
@@ -57,9 +60,11 @@
       },
       null,
       {
+        "title": "Ihre Daten bleiben bei uns",
         "desc": "Wenn Sie Ihre E-Mail angeben, wird sie nur für Besuchstipps verwendet — niemals verkauft. Ihre Buchung wird sicher bei uns abgeschlossen; Kartenzahlungen werden von PayPal abgewickelt und wir speichern Ihre Kartendaten nie."
       }
-    ]
+    ],
+    "title": "Warum bei uns buchen?"
   },
   "faqPage": {
     "ctaBody": "Unabhängiger Buchungsservice · Offizielles Ticket inklusive · Kostenlose Stornierung",

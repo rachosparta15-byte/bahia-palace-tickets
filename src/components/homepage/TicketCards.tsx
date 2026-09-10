@@ -8,6 +8,9 @@ import { Check, ArrowRight, Clock, Star, ShieldCheck, Headphones } from 'lucide-
 import Image from 'next/image';
 import { TICKET_PRICES } from '@/lib/ticket-data';
 import { buyingPathPriceLabel, TEASER_PRICE_ENABLED } from '@/config/pricing';
+import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
+
+const WHATSAPP_MESSAGE = 'Hi, I have a question about visiting Bahia Palace';
 
 const TICKET_IMAGES = {
   'visitor-pack':        '/images/ticket-skip-the-line.webp',
@@ -83,6 +86,12 @@ export function TicketCards({ overrides = {} }: Props) {
   const t = useTranslations('tickets');
   const router = useRouter();
   const { enabled: paymentsEnabled } = usePaymentsFlags();
+
+  // null when NEXT_PUBLIC_WHATSAPP_NUMBER is unset — see the read below,
+  // where the <wa> tag inside whatsappNote falls back to plain text instead
+  // of a dead link.
+  const whatsappNumber = getWhatsAppNumber();
+  const whatsappUrl = whatsappNumber ? buildWhatsAppUrl(whatsappNumber, WHATSAPP_MESSAGE) : null;
 
   const allKeys: TicketKey[] = ['visitorPack', 'skipTheLine', 'guidedTour', 'privateTour', 'combo'];
 
@@ -167,6 +176,15 @@ export function TicketCards({ overrides = {} }: Props) {
             const hasAudioGuide = includes.some((item) => /audio ?guide|audioguide/i.test(item));
 
             const isSkipTheLineViator = slug === 'skip-the-line';
+            // null in paid mode (messages/paid/<locale>.json explicitly
+            // overrides this to null — see mergeMessages.ts), since that
+            // mode already promises WhatsApp support inside includes[2].
+            // Every other card has no key here at all, so this is read
+            // only under isSkipTheLineViator below. t.raw for the
+            // existence check (need the null itself, not a thrown error
+            // or a rendered fallback); t.rich below does the actual render.
+            const hasWhatsappNote =
+              isSkipTheLineViator && (t.raw(`${key}.whatsappNote` as any) as string | null) !== null;
 
             return (
               // .spin-ring (globals.css) — see the long comment on this
@@ -280,6 +298,27 @@ export function TicketCards({ overrides = {} }: Props) {
                     )
                   ) : (
                     <div className="flex-1" aria-hidden="true" />
+                  )}
+
+                  {/* Same muted-note style as audioGuideValueNote below. */}
+                  {hasWhatsappNote && (
+                    <p className="-mt-3 mb-5 text-[10px] leading-snug text-[rgba(245,232,204,0.55)]">
+                      {t.rich(`${key}.whatsappNote` as any, {
+                        wa: (chunks) =>
+                          whatsappUrl ? (
+                            <a
+                              href={whatsappUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="underline underline-offset-2"
+                            >
+                              {chunks}
+                            </a>
+                          ) : (
+                            <>{chunks}</>
+                          ),
+                      })}
+                    </p>
                   )}
 
                   {/* Price + CTA */}
