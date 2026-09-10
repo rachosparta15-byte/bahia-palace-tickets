@@ -39,7 +39,8 @@
         null,
         "Billet officiel inclus"
       ]
-    }
+    },
+    "trustViatorPartner": "Partenaire officiel Viator"
   },
   "ticketDetail": {
     "proceedToCheckout": "Continuer vers la réservation →",
@@ -61,7 +62,8 @@
         "title": "Vos Données Restent Chez Nous",
         "desc": "Si vous partagez votre e-mail, il ne sert qu'à vous envoyer des conseils de visite — jamais vendu. Votre réservation est finalisée en toute sécurité chez nous ; les paiements par carte sont traités par PayPal et nous ne conservons jamais vos données de carte."
       }
-    ]
+    ],
+    "title": "Pourquoi Réserver chez Nous ?"
   },
   "faqPage": {
     "ctaBody": "Service de réservation indépendant · Billet officiel inclus · Annulation gratuite",

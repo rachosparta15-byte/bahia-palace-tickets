@@ -39,7 +39,8 @@
         null,
         "Offizielles Ticket inklusive"
       ]
-    }
+    },
+    "trustViatorPartner": "Offizieller Viator-Partner"
   },
   "ticketDetail": {
     "proceedToCheckout": "Weiter zur Buchung →",
@@ -61,7 +62,8 @@
         "title": "Ihre Daten bleiben bei uns",
         "desc": "Wenn Sie Ihre E-Mail angeben, wird sie nur für Besuchstipps verwendet — niemals verkauft. Ihre Buchung wird sicher bei uns abgeschlossen; Kartenzahlungen werden von PayPal abgewickelt und wir speichern Ihre Kartendaten nie."
       }
-    ]
+    ],
+    "title": "Warum bei uns buchen?"
   },
   "faqPage": {
     "ctaBody": "Unabhängiger Buchungsservice · Offizielles Ticket inklusive · Kostenlose Stornierung",

@@ -39,7 +39,8 @@
         null,
         "Official ticket included"
       ]
-    }
+    },
+    "trustViatorPartner": "Official Viator partner"
   },
   "ticketDetail": {
     "proceedToCheckout": "Continue to booking →",
@@ -61,7 +62,8 @@
         "title": "Your Data Stays With Us",
         "desc": "If you share your email, it's only used to send visit tips — never sold. Your booking is completed securely with us; card payments are handled by PayPal and we never store your card details."
       }
-    ]
+    ],
+    "title": "Why Book With Us?"
   },
   "faqPage": {
     "ctaBody": "Independent booking service · Official ticket included · Free cancellation",

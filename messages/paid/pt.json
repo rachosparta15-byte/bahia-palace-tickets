@@ -39,7 +39,8 @@
         null,
         "Bilhete oficial incluído"
       ]
-    }
+    },
+    "trustViatorPartner": "Parceiro oficial Viator"
   },
   "ticketDetail": {
     "proceedToCheckout": "Continuar para a reserva →",
@@ -61,7 +62,8 @@
         "title": "Os seus dados ficam connosco",
         "desc": "Se partilhar o seu e-mail, é usado apenas para enviar sugestões de visita — nunca é vendido. A reserva é concluída connosco em segurança; os pagamentos com cartão são tratados pelo PayPal e nunca guardamos os dados do seu cartão."
       }
-    ]
+    ],
+    "title": "Porquê reservar connosco?"
   },
   "footer": {
     "disclaimer": "visitbahiapalace.com é um serviço de reservas independente. Não estamos associados ao Palácio da Bahia nem ao Ministério da Cultura marroquino. Os bilhetes de entrada também podem ser comprados directamente ao Ministério em <portal>e-services.minculture.gov.ma</portal>."

@@ -39,7 +39,8 @@
         null,
         "Biglietto ufficiale incluso"
       ]
-    }
+    },
+    "trustViatorPartner": "Partner ufficiale Viator"
   },
   "ticketDetail": {
     "proceedToCheckout": "Continua verso la prenotazione →",
@@ -61,7 +62,8 @@
         "title": "I Tuoi Dati Restano con Noi",
         "desc": "Se condividi la tua email, la usiamo solo per inviarti consigli di visita — mai venduta. La tua prenotazione viene completata in sicurezza con noi; i pagamenti con carta sono gestiti da PayPal e non conserviamo mai i dati della carta."
       }
-    ]
+    ],
+    "title": "Perché Prenotare con Noi?"
   },
   "faqPage": {
     "ctaBody": "Servizio di prenotazione indipendente · Biglietto ufficiale incluso · Cancellazione gratuita",
