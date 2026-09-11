@@ -14,15 +14,17 @@ import {
   MAD_TO_EUR_RATE_CHECKED_ON,
   formatEUR,
   formatEURAmount,
+  VIATOR_PRICES_USD,
+  formatDisplayPrice,
 } from '@/config/pricing';
-import { TICKET_PRICES } from '@/lib/ticket-data';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 
-const ENTRY_PRICE_EUR = TICKET_PRICES['skip-the-line'];
+// Viator's own USD price — see VIATOR_PRICES_USD for why this isn't EUR.
+const SKIP_THE_LINE_PRICE = VIATOR_PRICES_USD['skip-the-line']!;
+const GUIDED_TOUR_PRICE = VIATOR_PRICES_USD['guided-tour']!;
+const PRIVATE_TOUR_PRICE = VIATOR_PRICES_USD['private-tour']!;
 /** A MAD figure converted at the pinned rate, for the euro column. */
 const madToEur = (mad: number) => formatEUR(Math.round(mad * MAD_TO_EUR_RATE * 100));
-const GUIDED_TOUR_PLANNED_PRICE_EUR = TICKET_PRICES['guided-tour'];
-const PRIVATE_TOUR_PLANNED_PRICE_EUR = TICKET_PRICES['private-tour'];
 
 export const revalidate = 86400;
 
@@ -55,9 +57,9 @@ function getPriceSchema(locale: string) {
     url: `${BASE}/${locale}/entrance-fee`,
     offers: [
       { '@type': 'Offer', name: 'Standard Entry (gate)',     price: (OFFICIAL_DOOR_PRICE_EUR_CENTS / 100).toFixed(2), priceCurrency: 'EUR', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
-      { '@type': 'Offer', name: 'Skip-the-Line (online)',   price: ENTRY_PRICE_EUR.toFixed(2), priceCurrency: 'EUR', availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
-      { '@type': 'Offer', name: 'Guided Tour (online)',      price: String(GUIDED_TOUR_PLANNED_PRICE_EUR), priceCurrency: 'EUR', availability: 'https://schema.org/PreOrder', ...DIGITAL_TICKET_OFFER_EXTRAS },
-      { '@type': 'Offer', name: 'Private Tour (online)',     price: String(PRIVATE_TOUR_PLANNED_PRICE_EUR), priceCurrency: 'EUR', availability: 'https://schema.org/PreOrder', ...DIGITAL_TICKET_OFFER_EXTRAS },
+      { '@type': 'Offer', name: 'Skip-the-Line (online)',   price: SKIP_THE_LINE_PRICE.amount.toFixed(2), priceCurrency: SKIP_THE_LINE_PRICE.currency, availability: 'https://schema.org/InStock', ...DIGITAL_TICKET_OFFER_EXTRAS },
+      { '@type': 'Offer', name: 'Guided Tour (online)',      price: GUIDED_TOUR_PRICE.amount.toFixed(2), priceCurrency: GUIDED_TOUR_PRICE.currency, availability: 'https://schema.org/PreOrder', ...DIGITAL_TICKET_OFFER_EXTRAS },
+      { '@type': 'Offer', name: 'Private Tour (online)',     price: PRIVATE_TOUR_PRICE.amount.toFixed(2), priceCurrency: PRIVATE_TOUR_PRICE.currency, availability: 'https://schema.org/PreOrder', ...DIGITAL_TICKET_OFFER_EXTRAS },
     ],
   };
 }
@@ -111,8 +113,8 @@ export default async function EntranceFeePage({ params }: Props) {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {[
             { label: 'Standard Entry', mad: `${OFFICIAL_DOOR_PRICE_MAD} MAD`, usd: `≈ ${madToEur(OFFICIAL_DOOR_PRICE_MAD)}`, note: 'At the gate — queue included', highlight: false },
-            { label: 'Skip-the-Line', mad: `€${ENTRY_PRICE_EUR.toFixed(2)}`, usd: paymentsEnabled ? 'Official ticket + digital guide + support' : 'Same as gate price — no fee added', note: paymentsEnabled ? 'Free cancellation via WhatsApp' : 'No ticket-office queue', highlight: true },
-            { label: 'Guided Tour', mad: `From €${GUIDED_TOUR_PLANNED_PRICE_EUR}`, usd: 'Incl. entry + expert guide', note: 'Entry + 90-min English tour', highlight: false },
+            { label: 'Skip-the-Line', mad: formatDisplayPrice(SKIP_THE_LINE_PRICE), usd: paymentsEnabled ? 'Official ticket + digital guide + support' : 'Same as gate price — no fee added', note: paymentsEnabled ? 'Free cancellation via WhatsApp' : 'No ticket-office queue', highlight: true },
+            { label: 'Guided Tour', mad: `From ${formatDisplayPrice(GUIDED_TOUR_PRICE)}`, usd: 'Incl. entry + expert guide', note: 'Entry + 90-min English tour', highlight: false },
           ].map(({ label, mad, usd, note, highlight }) => (
             <div key={label} className={`rounded-2xl border p-6 text-center ${highlight ? 'bg-[#C4452D] border-[#C4452D] text-white shadow-[0_8px_32px_rgba(196,69,45,0.3)]' : 'bg-[#251A0F] border-[rgba(232,163,61,0.13)]'}`}>
               <p className={`text-xs font-bold uppercase tracking-widest mb-3 ${highlight ? 'text-white/70' : 'text-[#C4A882]'}`}>{label}</p>
@@ -136,9 +138,9 @@ export default async function EntranceFeePage({ params }: Props) {
               { category: 'Foreign children (7–13)', price: '50 MAD', usd: madToEur(50), note: 'Official Ministry of Culture rate' },
               { category: 'Children under 7', price: 'Free', usd: 'Free', note: 'No ticket required' },
               { category: 'Moroccan adults', price: '30 MAD', usd: madToEur(30), note: 'Valid Moroccan ID required' },
-              { category: 'Skip-the-Line (online)', price: `€${ENTRY_PRICE_EUR.toFixed(2)}`, usd: `€${ENTRY_PRICE_EUR.toFixed(2)}`, note: paymentsEnabled ? 'Official ticket + digital guide included' : 'No fee added — same as gate price' },
-              { category: 'Guided Tour (online)', price: `From €${GUIDED_TOUR_PLANNED_PRICE_EUR}`, usd: `€${GUIDED_TOUR_PLANNED_PRICE_EUR}`, note: 'Entry + 90-min expert English guide' },
-              { category: 'Private Tour (online)', price: `From €${PRIVATE_TOUR_PLANNED_PRICE_EUR}`, usd: `€${PRIVATE_TOUR_PLANNED_PRICE_EUR}`, note: 'Entry + exclusive private guide' },
+              { category: 'Skip-the-Line (online)', price: formatDisplayPrice(SKIP_THE_LINE_PRICE), usd: formatDisplayPrice(SKIP_THE_LINE_PRICE), note: paymentsEnabled ? 'Official ticket + digital guide included' : 'No fee added — same as gate price' },
+              { category: 'Guided Tour (online)', price: `From ${formatDisplayPrice(GUIDED_TOUR_PRICE)}`, usd: formatDisplayPrice(GUIDED_TOUR_PRICE), note: 'Entry + 90-min expert English guide' },
+              { category: 'Private Tour (online)', price: `From ${formatDisplayPrice(PRIVATE_TOUR_PRICE)}`, usd: formatDisplayPrice(PRIVATE_TOUR_PRICE), note: 'Entry + exclusive private guide' },
             ].map(({ category, price, note }) => (
               <div key={category} className="grid grid-cols-3 px-6 py-4 text-sm">
                 <span className="font-semibold text-[#F5E8CC]">{category}</span>

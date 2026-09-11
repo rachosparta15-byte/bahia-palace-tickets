@@ -10,6 +10,7 @@ import { ReviewsCarousel } from '@/components/homepage/ReviewsCarousel';
 import { BASE, DIGITAL_TICKET_OFFER_EXTRAS, buildBreadcrumbSchema } from '@/lib/seo';
 import { TICKET_PRICES } from '@/lib/ticket-data';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
+import { displayPriceFor, formatDisplayPrice, type TicketSlug } from '@/config/pricing';
 
 export type TicketKey = 'skipTheLine' | 'guidedTour' | 'privateTour' | 'combo';
 
@@ -105,6 +106,10 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
   const { enabled: paymentsEnabled } = getPublicPaymentsFlags();
   const heroImg      = HERO_IMAGES[ticketKey];
   const gallery      = GALLERY_IMAGES[ticketKey];
+  // Viator's own USD price for the four live affiliate products; falls back
+  // to the `price` prop (EUR) only for a slug with no Viator listing, e.g.
+  // combo-saadian-tombs. Currency and symbol always travel together.
+  const displayPrice = displayPriceFor(slug as TicketSlug, price);
 
   const pageUrl = `${BASE}/${locale}/tickets/${slug}`;
 
@@ -119,8 +124,8 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
     offers: {
       '@type': 'Offer',
       url: pageUrl,
-      priceCurrency: 'EUR',
-      price: price.toFixed(2),
+      priceCurrency: displayPrice.currency,
+      price: displayPrice.amount.toFixed(2),
       priceValidUntil: '2026-12-31',
       availability: 'https://schema.org/InStock',
       seller: { '@type': 'Organization', name: 'Bahia Palace Tickets' },
@@ -194,7 +199,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
               <div>
                 <p className="text-[10px] text-[#C4A882] uppercase tracking-wide">{t('from')}</p>
                 <p className="text-2xl font-bold text-[#C4452D] leading-none">
-                  €{price.toFixed(2)}
+                  {formatDisplayPrice(displayPrice)}
                   <span className="text-sm font-normal text-[#C4A882] ms-1">{t('perPerson')}</span>
                 </p>
               </div>
@@ -384,7 +389,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
                     </h3>
                     <p className="text-sm text-[#C4A882] mb-3 leading-snug">{relTagline}</p>
                     <p className="text-[#C4452D] font-bold" style={{ fontFamily: 'var(--font-heading)' }}>
-                      {t('from')} ${rel.price}
+                      {t('from')} {formatDisplayPrice(displayPriceFor(rel.slug as TicketSlug, rel.price))}
                       <span className="text-xs font-normal text-[#C4A882] ms-1">{t('perPerson')}</span>
                     </p>
                   </div>

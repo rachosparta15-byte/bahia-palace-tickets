@@ -4,7 +4,9 @@ import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { JsonLd } from '@/components/seo/JsonLd';
 import type { Metadata } from 'next';
 import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
-import { SKIP_THE_LINE_PRICE_EUR } from '@/config/pricing';
+import { VIATOR_PRICES_USD } from '@/config/pricing';
+
+const SKIP_THE_LINE_PRICE = VIATOR_PRICES_USD['skip-the-line']!;
 
 export const revalidate = 86400;
 
@@ -131,8 +133,8 @@ export default async function TicketsPage({ params }: Props) {
           brand: { '@type': 'Brand', name: 'Bahia Palace Tickets' },
           offers: {
             '@type': 'Offer',
-            price: SKIP_THE_LINE_PRICE_EUR.toFixed(2),
-            priceCurrency: 'EUR',
+            price: SKIP_THE_LINE_PRICE.amount.toFixed(2),
+            priceCurrency: SKIP_THE_LINE_PRICE.currency,
             availability: 'https://schema.org/InStock',
             url: `${BASE}/${locale}/tickets/skip-the-line`,
             ...DIGITAL_TICKET_OFFER_EXTRAS,

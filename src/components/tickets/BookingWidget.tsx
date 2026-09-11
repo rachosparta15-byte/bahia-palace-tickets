@@ -5,7 +5,14 @@ import { CheckCircle2, MessageCircle } from 'lucide-react';
 import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { usePaymentsFlags } from '@/components/layout/PaymentsFlagsProvider';
-import { OFFICIAL_DOOR_PRICE_MAD, OFFICIAL_DOOR_PRICE_EUR_CENTS, formatEUR } from '@/config/pricing';
+import {
+  OFFICIAL_DOOR_PRICE_MAD,
+  OFFICIAL_DOOR_PRICE_EUR_CENTS,
+  formatEUR,
+  displayPriceFor,
+  formatDisplayPrice,
+  type TicketSlug,
+} from '@/config/pricing';
 
 interface BookingWidgetProps {
   price: number;
@@ -24,6 +31,9 @@ export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
   // site sells packages above the gate price and carries paid partner links, so
   // that claim is untrue of the site regardless of what this page hands off to.
   const { enabled: paymentsEnabled } = usePaymentsFlags();
+  // Viator's own USD price for the four live affiliate products; falls back
+  // to the `price` prop (EUR) for a slug with no Viator listing.
+  const displayPrice = displayPriceFor(slug as TicketSlug, price);
 
   const whatsappNumber = getWhatsAppNumber();
   const whatsappUrl = whatsappNumber
@@ -49,7 +59,7 @@ export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
           <p className="text-xs text-[#C4A882] uppercase tracking-wide mb-1">{tt('from')}</p>
           <p className="text-4xl font-bold text-[#C4452D] leading-none tabular-nums lining-nums"
              style={{ fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif', fontVariantNumeric: 'lining-nums tabular-nums' }}>
-            €{price.toFixed(2)}
+            {formatDisplayPrice(displayPrice)}
             <span className="text-sm font-normal text-[#C4A882] ms-1.5 block sm:inline">{tt('perPerson')}</span>
           </p>
         </div>
@@ -69,7 +79,7 @@ export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
             </div>
             <div className="flex items-center justify-between text-xs text-[#C4A882] mb-2.5">
               <span>Our price, all in</span>
-              <span className="font-semibold text-[#8FA63C]">€{price.toFixed(2)}</span>
+              <span className="font-semibold text-[#8FA63C]">{formatDisplayPrice(displayPrice)}</span>
             </div>
             <p className="text-[11px] text-[#C4A882]/80 leading-relaxed border-t border-[rgba(232,163,61,0.12)] pt-2.5">
               This is Viator&apos;s price, not ours — we don&apos;t add anything to it. It covers the official entry, an audio guide in your language, and free cancellation up to 24 hours before. You can also buy at the gate for {OFFICIAL_DOOR_PRICE_MAD} MAD, in cash, after the queue.

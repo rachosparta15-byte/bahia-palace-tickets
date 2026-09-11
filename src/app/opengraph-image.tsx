@@ -1,5 +1,7 @@
 import { ImageResponse } from 'next/og';
-import { SKIP_THE_LINE_PRICE_EUR } from '@/config/pricing';
+import { VIATOR_PRICES_USD, formatDisplayPrice } from '@/config/pricing';
+
+const SKIP_THE_LINE_PRICE = VIATOR_PRICES_USD['skip-the-line']!;
 
 export const runtime = 'edge';
 export const alt = 'Bahia Palace Tickets — Skip the Line in Marrakech';
@@ -64,7 +66,7 @@ export default function OGImage() {
           padding: '12px 32px', borderRadius: 50,
           display: 'flex',
         }}>
-          From €{SKIP_THE_LINE_PRICE_EUR.toFixed(2)} per person
+          From {formatDisplayPrice(SKIP_THE_LINE_PRICE)} per person
         </div>
       </div>
     ),

@@ -90,6 +90,33 @@ export const OFFICIAL_DOOR_PRICE_EUR_CENTS = Math.round(
   OFFICIAL_DOOR_PRICE_MAD * MAD_TO_EUR_RATE * 100
 );
 
+// ─────────────────────────────────────────────────────────────────────
+// Currency-aware display price
+// ─────────────────────────────────────────────────────────────────────
+/**
+ * Every price rendered on the site carries its own currency now, so a bare
+ * number can no longer be printed with the wrong symbol. Two unrelated price
+ * families live in this file: the EUR figures below (ADULT_PRICE_EUR_CENTS,
+ * VISITOR_PACK_PRICE_EUR_CENTS, CHILD_PRICE_EUR_CENTS) price the dormant
+ * self-fulfilled Visitor Pack, charged in EUR whenever payments resume.
+ * VIATOR_PRICES_USD, further down, is what Viator actually charges today for
+ * the four live affiliate products — in USD, Viator's own currency. They are
+ * deliberately not derived from one another.
+ */
+export type Currency = 'USD' | 'EUR';
+
+export interface DisplayPrice {
+  amount: number;
+  currency: Currency;
+}
+
+const CURRENCY_SYMBOL: Record<Currency, string> = { USD: '$', EUR: '€' };
+
+/** A DisplayPrice as "$13.00" / "€12.99" — the only place a symbol is chosen. */
+export function formatDisplayPrice(p: DisplayPrice): string {
+  return `${CURRENCY_SYMBOL[p.currency]}${p.amount.toFixed(2)}`;
+}
+
 /** Official child door price (50 MAD) in EUR cents, at the same pinned rate. */
 export const OFFICIAL_CHILD_DOOR_PRICE_EUR_CENTS = Math.round(
   OFFICIAL_CHILD_DOOR_PRICE_MAD * MAD_TO_EUR_RATE * 100
@@ -131,20 +158,6 @@ export type TicketSlug =
   | 'combo-saadian-tombs'
   | 'visitor-pack';
 
-/** What we actually charge for the only currently live product. */
-/**
- * What we charge per person, in EUR cents. One price, one product.
- *
- * This replaced two overlapping entries — a USD "skip-the-line" and a EUR
- * "visitor pack" — that bundled the same 100 MAD official ticket at different
- * prices in different currencies. It covers the official ticket, the
- * multilingual audio guide, support and WhatsApp.
- */
-export const ENTRY_PRICE_EUR_CENTS = ADULT_PRICE_EUR_CENTS;
-
-/** @deprecated Use ENTRY_PRICE_EUR_CENTS. Kept so nothing silently reads a stale USD number. */
-export const SKIP_THE_LINE_PRICE_EUR = ENTRY_PRICE_EUR_CENTS / 100;
-
 // guided-tour, private-tour, and combo-saadian-tombs are not yet live (see
 // TICKET_LIVE in ticket-data.ts) — these are the prices already committed
 // to in each product's own /tickets/<slug> page (and, before this file
@@ -171,8 +184,13 @@ export const SKIP_THE_LINE_PRICE_EUR = ENTRY_PRICE_EUR_CENTS / 100;
  * page went on showing the old figure long after this constant changed. They
  * still are, in about forty strings across fourteen files — changing this
  * number means sweeping those too, which is the whole reason for the warning.
+ *
+ * Deliberately ADULT_PRICE_EUR_CENTS directly, not shared with skip-the-line
+ * through a middleman constant: skip-the-line's live price is now Viator's
+ * own USD figure (VIATOR_PRICES_USD below), a different product on a
+ * different rail, and the two must never move together by accident again.
  */
-export const VISITOR_PACK_PRICE_EUR_CENTS = ENTRY_PRICE_EUR_CENTS;
+export const VISITOR_PACK_PRICE_EUR_CENTS = ADULT_PRICE_EUR_CENTS;
 
 /**
  * The transparent cost breakdown shown on the price card AND at checkout.
@@ -319,16 +337,53 @@ export function buyingPathPriceLabel(): string {
 /** Max visitors per single Visitor Pack order. */
 export const VISITOR_PACK_MAX_VISITORS = 20;
 
-/** Every price on the site, in euro. Nothing here is quoted in any other currency. */
+/**
+ * The legacy self-fulfilled booking backend's prices, in euro — feeds the old
+ * /api/bookings + BookingForm.tsx path and the TicketType DB fallback in
+ * /book/[slug]. That backend stays EUR and untouched; it is not what a
+ * visitor actually sees today.
+ *
+ * NO LONGER "every price on the site": skip-the-line, guided-tour,
+ * private-tour and private-guide-only are live Viator affiliate products now,
+ * and what a visitor actually sees for them is VIATOR_PRICES_USD below, in
+ * USD, Viator's own currency — not this map. combo-saadian-tombs has no
+ * Viator listing yet and stays on this EUR placeholder for both display and
+ * backend, unchanged, until it does.
+ */
 export const TICKET_PRICES_EUR: Record<TicketSlug, number> = {
-  'skip-the-line':       ENTRY_PRICE_EUR_CENTS / 100,
+  // Same euro figure as the dormant Visitor Pack (ADULT_PRICE_EUR_CENTS) —
+  // both are the self-fulfilled product's economics, kept for the backend
+  // only. The live display price for this slug is VIATOR_PRICES_USD below.
+  'skip-the-line':       ADULT_PRICE_EUR_CENTS / 100,
   // Not yet live (see TICKET_LIVE in ticket-data.ts). These were USD figures
   // and are converted at 0.88 pending the owner setting real euro prices.
+  // Backend-only now — see VIATOR_PRICES_USD for the live display price.
   'guided-tour':         25,
   'private-tour':        66,
   // Private Tour's price (66) minus the official ticket it bundles — this
   // one does not, so the visitor arranges entry separately.
   'private-guide-only':  55,
   'combo-saadian-tombs': 16,
-  'visitor-pack':        ENTRY_PRICE_EUR_CENTS / 100,
+  'visitor-pack':        ADULT_PRICE_EUR_CENTS / 100,
 };
+
+/**
+ * What Viator actually charges today, per adult, for the four live affiliate
+ * products — in USD, Viator's own currency. This is the single source of
+ * truth for every visitor-facing price on these four products; the EUR
+ * figures above are backend-only and must never be displayed for these slugs.
+ *
+ * Not wired to update automatically — re-check against the live Viator page
+ * occasionally and update here only.
+ */
+export const VIATOR_PRICES_USD: Partial<Record<TicketSlug, DisplayPrice>> = {
+  'skip-the-line':      { amount: 13.00, currency: 'USD' },
+  'guided-tour':        { amount: 23.83, currency: 'USD' },
+  'private-guide-only': { amount: 17.75, currency: 'USD' },
+  'private-tour':       { amount: 65.38, currency: 'USD' },
+};
+
+/** VIATOR_PRICES_USD entry for a slug, or a EUR fallback for slugs with none (combo-saadian-tombs). */
+export function displayPriceFor(slug: TicketSlug, eurFallback: number): DisplayPrice {
+  return VIATOR_PRICES_USD[slug] ?? { amount: eurFallback, currency: 'EUR' };
+}
