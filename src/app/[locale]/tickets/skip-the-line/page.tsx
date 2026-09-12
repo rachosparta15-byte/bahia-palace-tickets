@@ -43,6 +43,16 @@ const META: Record<string, { title: string; description: string }> = {
     title: `Entrada Sin Cola Palacio Bahía 2026 | Evita la cola`,
     description: `Evita la cola en el Palacio Bahía. Entrada, audioguía digital y ayuda por WhatsApp, con cancelación gratuita hasta que la enviemos.`,
   },
+  // ar and pt were missing, so both served the English title on the page whose
+  // entire subject is buying a ticket. Arabic is this site's strongest locale.
+  ar: {
+    title: `تذكرة تخطّي الطابور لقصر الباهية 2026 | بلا انتظار`,
+    description: `تجنّب طابور التذاكر في قصر الباهية. دخول بلا انتظار مع دليل صوتي رقمي يبقى على هاتفك، ودعم عبر واتساب.`,
+  },
+  pt: {
+    title: `Bilhete Sem Fila Palácio Bahia 2026 | Evite a fila`,
+    description: `Evite a fila no Palácio Bahia. Entrada sem esperar, com audioguia digital que fica no seu telemóvel e apoio por WhatsApp.`,
+  },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

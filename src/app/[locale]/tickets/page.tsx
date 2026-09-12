@@ -68,6 +68,19 @@ const TICKETS_META: Record<string, { title: string; description: string }> = {
   es: { title: `Precios entradas Palacio Bahía 2026 — Tarifas incluidas`, description: `La entrada al Palacio Bahía cuesta 100 MAD en taquilla. Con nosotros: entrada oficial a tu nombre, audioguía y ayuda por WhatsApp. Cancelación gratuita.` },
   de: { title: `Bahia Palast Ticketpreise 2026 — Preise & Leistungen`, description: `Der Eintritt zum Bahia-Palast kostet vor Ort 100 MAD. Bei uns: offizielles Ticket auf Ihren Namen, Audioguide und WhatsApp-Support. Kostenlose Stornierung.` },
   it: { title: `Prezzi biglietti Palazzo Bahia 2026 — Tariffe e servizi`, description: `L'ingresso al Palazzo Bahia costa 100 MAD in loco. Da noi: biglietto ufficiale a tuo nome, audioguida e assistenza WhatsApp. Cancellazione gratuita.` },
+  /*
+   * ar and pt were absent, so both served the English title and description
+   * under URLs that hreflang declares as Arabic and Portuguese. Arabic is this
+   * site's best-converting locale in Search Console — /ar is the top page by
+   * clicks — and it was being handed an English result for the page type whose
+   * French equivalent converts at 22%.
+   *
+   * The wording follows the affiliate reality, not the pack: we do not sell
+   * this ticket, Viator does, and the audio guide is what the price above the
+   * gate fee buys.
+   */
+  ar: { title: `أسعار تذاكر قصر الباهية 2026 — الرسوم وما تشمله`, description: `دخول قصر الباهية 100 درهم عند الشبّاك. قارن بين الدخول العادي، وتذكرة تخطّي الطابور مع دليل صوتي رقمي، والجولات المرشدة — بالدرهم وباليورو.` },
+  pt: { title: `Preços dos Bilhetes do Palácio Bahia 2026 — O que inclui`, description: `A entrada no Palácio Bahia custa 100 MAD na bilheteira. Compare a entrada normal, o bilhete sem fila com audioguia digital e as visitas guiadas, em dirhams e euros.` },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -81,12 +94,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+/** Same gap as TICKETS_META above: ar and pt fell through to the English H1. */
 const H1_LABELS: Record<string, string> = {
   en: 'Bahia Palace Tickets 2026',
   fr: 'Billets Palais Bahia 2026',
   es: 'Entradas Palacio Bahia 2026',
   de: 'Bahia Palast Tickets 2026',
   it: 'Biglietti Palazzo Bahia 2026',
+  ar: 'تذاكر قصر الباهية 2026',
+  pt: 'Bilhetes Palácio Bahia 2026',
 };
 
 export default async function TicketsPage({ params }: Props) {
