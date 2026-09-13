@@ -73,28 +73,6 @@ const HERO_SRCSET =
  */
 const HERO_SIZES = '50vw';
 
-/**
- * Ties an em-dash to the word before it.
- *
- * The heading wraps to three lines in the hero's 672px column, and the break
- * landed in the space BEFORE the dash, so line two opened with
- * "— Morocco's most". A dash starting a line reads as a mistake rather than
- * as punctuation, and at 3.6rem it is the first thing the eye lands on.
- *
- * Replacing only the space before the dash with U+00A0 makes "Marrakech —" one
- * unbreakable token; the ordinary space after the dash still takes the break,
- * so the line ends on the dash instead of starting with it. Applied at render
- * rather than stored in the message files, because a non-breaking space is
- * invisible in JSON and the next person to edit these strings would delete it
- * without knowing it was there.
- *
- * Locale-agnostic: every translation of this heading uses the same spaced
- * em-dash, Arabic included.
- */
-function tieDash(text: string): string {
-  return text.replace(/ — /g, ' — ');
-}
-
 async function getTemp(): Promise<number | null> {
   try {
     const res = await fetch(
@@ -272,17 +250,55 @@ export async function Hero() {
               * paragraph it always was.
               */}
             <h1 className="hero-title leading-none">
+              {/*
+                * The name sits in its own panel; the claim sits under it.
+                *
+                * These were one run of text joined by an em-dash, which made the
+                * searchable half — the palace and the city — typographically
+                * indistinguishable from the marketing half, and put a dash at a
+                * wrap point where it kept landing at the start of a line.
+                *
+                * Splitting them solves both: the panel marks the entity as the
+                * subject of the page rather than the first words of a sentence,
+                * and with the two halves on their own lines the dash has nothing
+                * left to do, so it is gone rather than patched around.
+                *
+                * Logical properties throughout (padding-inline, border-inline-
+                * start, the 100deg gradient mirrored by `dir`) so the panel fades
+                * away from the text's starting edge in Arabic as well as English.
+                */}
               <span
-                className="block text-white"
+                className="inline-block text-white"
                 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: 'clamp(1.9rem, 5vw, 3.6rem)',
                   fontWeight: 600,
-                  lineHeight: 1.0,
+                  lineHeight: 1.15,
                   letterSpacing: '-0.02em',
+                  paddingInline: '0.34em',
+                  paddingBlock: '0.10em 0.16em',
+                  borderRadius: '0.24em',
+                  borderInlineStart: '2px solid rgba(232, 163, 61, 0.55)',
+                  background:
+                    'linear-gradient(100deg, rgba(232,163,61,0.20) 0%, rgba(232,163,61,0.09) 48%, rgba(232,163,61,0.015) 100%)',
+                  boxShadow: '0 2px 28px rgba(232, 163, 61, 0.09)',
+                  backdropFilter: 'blur(3px)',
+                  WebkitBackdropFilter: 'blur(3px)',
                 }}
               >
-                {tieDash(t('title'))}
+                {t('title')}
+              </span>
+              <span
+                className="block text-[#F5E8CC]/85 mt-3"
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'clamp(1.45rem, 3.6vw, 2.5rem)',
+                  fontWeight: 400,
+                  lineHeight: 1.1,
+                  letterSpacing: '-0.01em',
+                }}
+              >
+                {t('titleClaim')}
               </span>
             </h1>
             <p

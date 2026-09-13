@@ -890,7 +890,8 @@
   "heroBanner": {
     "outside": "<deg></deg> fuori",
     "coolNoQueue": "Palazzo fresco, senza fila",
-    "title": "Palazzo Bahia, Marrakech — il palazzo più bello del Marocco",
+    "title": "Palazzo Bahia, Marrakech",
+    "titleClaim": "Il palazzo più bello del Marocco",
     "subtitle": "Chiamato <em>Bahia</em> — «la splendente» in arabo"
   },
   "trustStrip": {

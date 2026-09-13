@@ -298,7 +298,8 @@
   "heroBanner": {
     "outside": "<deg></deg> lá fora",
     "coolNoQueue": "Palácio fresco, sem fila",
-    "title": "Palácio da Bahia, Marraquexe — o palácio mais belo de Marrocos",
+    "title": "Palácio da Bahia, Marraquexe",
+    "titleClaim": "O palácio mais belo de Marrocos",
     "subtitle": "Chamado <em>Bahia</em> — «a resplandecente» em árabe"
   },
   "story": {

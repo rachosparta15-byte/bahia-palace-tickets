@@ -890,7 +890,8 @@
   "heroBanner": {
     "outside": "<deg></deg> draußen",
     "coolNoQueue": "Kühler Palast, keine Schlange",
-    "title": "Bahia-Palast, Marrakesch — Marokkos schönster Palast",
+    "title": "Bahia-Palast, Marrakesch",
+    "titleClaim": "Marokkos schönster Palast",
     "subtitle": "<em>Bahia</em> genannt — arabisch für „die Strahlende“"
   },
   "trustStrip": {
