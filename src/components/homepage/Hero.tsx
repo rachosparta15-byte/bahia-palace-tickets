@@ -73,6 +73,28 @@ const HERO_SRCSET =
  */
 const HERO_SIZES = '50vw';
 
+/**
+ * Ties an em-dash to the word before it.
+ *
+ * The heading wraps to three lines in the hero's 672px column, and the break
+ * landed in the space BEFORE the dash, so line two opened with
+ * "— Morocco's most". A dash starting a line reads as a mistake rather than
+ * as punctuation, and at 3.6rem it is the first thing the eye lands on.
+ *
+ * Replacing only the space before the dash with U+00A0 makes "Marrakech —" one
+ * unbreakable token; the ordinary space after the dash still takes the break,
+ * so the line ends on the dash instead of starting with it. Applied at render
+ * rather than stored in the message files, because a non-breaking space is
+ * invisible in JSON and the next person to edit these strings would delete it
+ * without knowing it was there.
+ *
+ * Locale-agnostic: every translation of this heading uses the same spaced
+ * em-dash, Arabic included.
+ */
+function tieDash(text: string): string {
+  return text.replace(/ — /g, ' — ');
+}
+
 async function getTemp(): Promise<number | null> {
   try {
     const res = await fetch(
@@ -260,7 +282,7 @@ export async function Hero() {
                   letterSpacing: '-0.02em',
                 }}
               >
-                {t('title')}
+                {tieDash(t('title'))}
               </span>
             </h1>
             <p
