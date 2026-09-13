@@ -16,7 +16,6 @@ import { ScamBanner } from '@/components/homepage/ScamBanner';
 import { FinalCTA } from '@/components/homepage/FinalCTA';
 import { NearbyMonuments } from '@/components/homepage/NearbyMonuments';
 import { BlogPreview } from '@/components/homepage/BlogPreview';
-import { ArticleTicker } from '@/components/homepage/ArticleTicker';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { BASE, buildAlternates, buildOG, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
@@ -235,7 +234,23 @@ export default async function HomePage({ params }: Props) {
       <WhyBookAhead />
       <WhyBookUs />
       <ReviewsCarousel />
-      <ArticleTicker locale={locale} />
+      {/*
+        * <ArticleTicker /> used to sit here, directly above this.
+        *
+        * Both read the same getBlogPosts() static array — two posts in English
+        * — so the scrolling strip and the card grid below it advertised the
+        * same two articles to the same visitor, one after the other. The strip
+        * additionally rendered its list twice for the marquee wrap, which made
+        * it the same two articles three times on one page.
+        *
+        * BlogPreview is the one that survives: it carries the excerpt, the
+        * category and the read time, i.e. a reason to click. The ticker carried
+        * the title and nothing else.
+        *
+        * If the home page is ever meant to surface more than three articles,
+        * the fix is a wider source for BlogPreview, not a second component
+        * showing the same rows in a different shape.
+        */}
       <BlogPreview />
       <FaqSection />
       <ScamBanner />
