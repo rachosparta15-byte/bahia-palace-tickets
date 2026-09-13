@@ -5,7 +5,20 @@ import { verifyAdminToken, ADMIN_COOKIE } from './lib/auth';
 
 const intlMiddleware = createMiddleware(routing);
 
-const SUPPORTED = ['en', 'fr', 'it', 'de', 'es'] as const;
+/*
+ * Derived from the router, not written out again.
+ *
+ * This was a hand-kept list of five and the site has had seven locales since
+ * Arabic and Portuguese were added, so this function — the one that decides
+ * where a visitor lands on their first request — could not return either of
+ * them. A browser set to Portuguese was sent to /en, and a NEXT_LOCALE=pt
+ * cookie set by the visitor's own language switch was read back, found to be
+ * "unsupported", and ignored on every subsequent visit.
+ *
+ * Arabic is this site's best-converting locale in Search Console, and it was
+ * unreachable by language detection the entire time.
+ */
+const SUPPORTED = routing.locales;
 type Locale = (typeof SUPPORTED)[number];
 
 const BOT_RE =

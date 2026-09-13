@@ -84,7 +84,19 @@ const nextConfig = {
     '/*': ['./prisma/dev.db'],
   },
   async redirects() {
-    const LOCALES    = ['en', 'fr', 'it', 'de', 'es'];
+    /*
+     * All seven, not the five this listed. Arabic and Portuguese were added to
+     * the router but never here, so none of the redirects below applied to
+     * them: /ar/tickets/guided-tour rendered a 200 page for a product that
+     * does not exist, and /pt/terms answered instead of 308ing to
+     * /pt/legal/terms — the legal document reachable at two URLs in one
+     * language, which is the exact duplication the LEGAL_MOVES block exists
+     * to prevent.
+     *
+     * Kept as a literal because this file is .mjs and cannot import the TS
+     * router. It must stay in sync with src/i18n/routing.ts.
+     */
+    const LOCALES    = ['en', 'fr', 'it', 'de', 'es', 'ar', 'pt'];
 
     /*
      * The junk slugs /blog/z, /blog/test and /blog/xdxxxxxxxx were redirected

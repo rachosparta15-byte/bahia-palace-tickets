@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import prisma from '@/lib/db';
-import { BASE } from '@/lib/seo';
+import { BASE, hreflangMap } from '@/lib/seo';
 import { getAllSlugs, getBlogPost } from '@/lib/blog';
 import { HISTORY_HREFLANG, HISTORY_SLUGS } from '@/lib/blog-hreflang';
 import { isRedirectedInLocale } from '@/lib/blog-redirects';
@@ -102,7 +102,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         changeFrequency: freq,
         priority,
         alternates: {
-          languages: Object.fromEntries(LOCALES.map(l => [l, `${BASE}/${l}${path}`])),
+          languages: hreflangMap(LOCALES, l => `${BASE}/${l}${path}`),
         },
       });
     }
@@ -117,7 +117,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         changeFrequency: 'monthly',
         priority: 0.90,
         alternates: {
-          languages: Object.fromEntries(LOCALES.map(l => [l, `${BASE}/${l}/tickets/${slug}`])),
+          languages: hreflangMap(LOCALES, l => `${BASE}/${l}/tickets/${slug}`),
         },
       });
     }
@@ -138,8 +138,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   } catch { /* DB unavailable at sitemap generation time */ }
 
   // History posts use different slugs per locale — hardcode their cross-slug hreflang
-  const historyLanguages = Object.fromEntries(
-    Object.entries(HISTORY_HREFLANG).map(([l, s]) => [l, `${BASE}/${l}/blog/${s}`])
+  const historyLanguages = hreflangMap(
+    Object.keys(HISTORY_HREFLANG),
+    l => `${BASE}/${l}/blog/${HISTORY_HREFLANG[l]}`,
   );
 
   if (dbPosts.length > 0) {
@@ -160,7 +161,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       const isHistory = HISTORY_SLUGS.has(group[0].slug);
       const languages = isHistory
         ? historyLanguages
-        : Object.fromEntries(group.map(p => [p.locale, `${BASE}/${p.locale}/blog/${p.slug}`]));
+        : hreflangMap(group.map(p => p.locale), l => `${BASE}/${l}/blog/${group[0].slug}`);
       for (const post of group) {
         entries.push({
           url: `${BASE}/${post.locale}/blog/${post.slug}`,
@@ -172,14 +173,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }
     }
   } else {
-    // Static fallback — all slugs defined in blog.ts, all 5 locales
+    // Static fallback — all slugs defined in blog.ts, across every locale
     for (const slug of getAllSlugs()) {
-      const languages: Record<string, string> = {};
-      for (const locale of LOCALES) {
-        if (getBlogPost(locale, slug) && !isRedirectedInLocale(locale, slug)) {
-          languages[locale] = `${BASE}/${locale}/blog/${slug}`;
-        }
-      }
+      const livePostLocales = LOCALES.filter(
+        locale => getBlogPost(locale, slug) && !isRedirectedInLocale(locale, slug),
+      );
+      const languages = hreflangMap(livePostLocales, l => `${BASE}/${l}/blog/${slug}`);
       for (const locale of LOCALES) {
         if (!getBlogPost(locale, slug) || isRedirectedInLocale(locale, slug)) continue;
         entries.push({
