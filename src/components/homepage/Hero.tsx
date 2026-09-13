@@ -227,32 +227,36 @@ export async function Hero() {
         <div className="max-w-6xl mx-auto w-full">
           <div className="max-w-2xl">
             {/*
-              * The eyebrow is a <p>, not the first line of the <h1>.
+              * One h1, and the thing people search for is in it.
               *
-              * All three of these used to sit inside the heading, joined by
-              * sr-only separators, so the accessible name and the string Google
-              * reads as this page's h1 was:
+              * This was three elements in one heading — an eyebrow, a headline
+              * and a subtitle, joined by sr-only separators — so the accessible
+              * name, and the string Google reads as this page's h1, was:
               *
               *   "Bahia Palace · Marrakech — Step inside Morocco's most
               *    beautiful palace Named Bahia — Arabic for the brilliant one"
               *
-              * Sixteen words of poetry on the site's most important page, with
-              * no word anyone searches for in any of them. The h1 is now the
-              * headline alone; the eyebrow and the subtitle keep their exact
-              * position and styling, but as the paragraphs they always were.
+              * Sixteen words on the site's most important page. The eyebrow was
+              * the only part containing a term anyone searches for, and it was
+              * set in 12px uppercase above the headline.
+              *
+              * So the two merged: the entity leads, the claim follows, one
+              * heading. The line is ~33% longer than the old headline, hence the
+              * smaller clamp ceiling — it wraps to two or three lines in the
+              * 672px column instead of one or two, which is also why the CTA
+              * below now sits higher on a 375px viewport rather than lower.
+              *
+              * The subtitle keeps its exact position and styling as the
+              * paragraph it always was.
               */}
-            <p className="text-[#E8A33D] text-xs sm:text-sm font-bold tracking-[0.3em] uppercase mb-2 sm:mb-3"
-              style={{ fontFamily: 'var(--font-body)' }}>
-              {t('eyebrow')}
-            </p>
             <h1 className="hero-title leading-none">
               <span
                 className="block text-white"
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(2.2rem, 7vw, 5.2rem)',
+                  fontSize: 'clamp(1.9rem, 5vw, 3.6rem)',
                   fontWeight: 600,
-                  lineHeight: 0.95,
+                  lineHeight: 1.0,
                   letterSpacing: '-0.02em',
                 }}
               >
