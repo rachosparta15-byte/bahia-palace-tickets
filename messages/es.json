@@ -547,7 +547,7 @@
     "tagline": "La forma más fácil de visitar el Palacio Bahia.",
     "tickets": "Entradas",
     "skipTheLine": "Sin Colas",
-    "viewAllTickets": "Ver todos los billetes",
+    "viewAllTickets": "Entradas Palacio Bahía",
     "openingHours": "Horario de apertura",
     "entranceFee": "Precio de entrada",
     "explore": "Explorar",
@@ -890,8 +890,8 @@
   "heroBanner": {
     "outside": "<deg></deg> fuera",
     "coolNoQueue": "Palacio fresco, sin cola",
-    "eyebrow": "Palacio Bahía · Marrakech",
-    "title": "Entra en el palacio más bello de Marruecos",
+    "title": "Palacio Bahía, Marrakech",
+    "titleClaim": "El palacio más bello de Marruecos",
     "subtitle": "Llamado <em>Bahía</em> — «la brillante» en árabe"
   },
   "trustStrip": {

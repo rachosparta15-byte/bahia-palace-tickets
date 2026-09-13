@@ -298,8 +298,8 @@
   "heroBanner": {
     "outside": "<deg></deg> lá fora",
     "coolNoQueue": "Palácio fresco, sem fila",
-    "eyebrow": "Palácio da Bahia · Marraquexe",
-    "title": "Entre no palácio mais bonito de Marrocos",
+    "title": "Palácio da Bahia, Marraquexe",
+    "titleClaim": "O palácio mais belo de Marrocos",
     "subtitle": "Chamado <em>Bahia</em> — «a resplandecente» em árabe"
   },
   "story": {
@@ -521,7 +521,7 @@
     "tagline": "A maneira mais simples de visitar o Palácio da Bahia.",
     "tickets": "Bilhetes",
     "skipTheLine": "Entrada sem fila",
-    "viewAllTickets": "Ver todos os bilhetes",
+    "viewAllTickets": "Bilhetes Palácio Bahia",
     "openingHours": "Horários",
     "entranceFee": "Preço de entrada",
     "explore": "Explorar",

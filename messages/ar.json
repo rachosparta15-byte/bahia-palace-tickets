@@ -298,8 +298,8 @@
   "heroBanner": {
     "outside": "<deg></deg> في الخارج",
     "coolNoQueue": "قصر بارد، بلا طابور",
-    "eyebrow": "قصر الباهية · مراكش",
-    "title": "ادخل أجمل قصر في المغرب",
+    "title": "قصر الباهية، مراكش",
+    "titleClaim": "أجمل قصر في المغرب",
     "subtitle": "بناه <em>الوزير الأكبر</em> لزوجته، وسمّاه الباهية"
   },
   "story": {
@@ -521,7 +521,7 @@
     "tagline": "أسهل طريقة لزيارة قصر الباهية.",
     "tickets": "التذاكر",
     "skipTheLine": "دخول بلا انتظار",
-    "viewAllTickets": "كل التذاكر",
+    "viewAllTickets": "تذاكر قصر الباهية",
     "openingHours": "المواعيد",
     "entranceFee": "ثمن الدخول",
     "explore": "استكشف",

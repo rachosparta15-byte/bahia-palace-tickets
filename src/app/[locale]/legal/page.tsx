@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
+import { buildAlternates } from '@/lib/seo';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { Link } from '@/i18n/navigation';
 import { getLegalBundle, getLegalDocs } from '@/content/legal';
@@ -28,6 +29,10 @@ export async function generateMetadata({
     title: `${bundle.notice.title} — Visit Bahia Palace`,
     description: bundle.terms.lede.slice(0, 155),
     robots: 'noindex, follow',
+    // Self-referential. noindex keeps it out of the index; it does not excuse
+    // telling Google the alternate of this page is the home page, which is
+    // what it inherited from the layout before.
+    alternates: buildAlternates(locale, '/legal'),
   };
 }
 

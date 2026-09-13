@@ -31,12 +31,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: t('headline'),
     description: t('subheadline'),
     metadataBase: new URL(BASE),
-    alternates: {
-      languages: {
-        ...Object.fromEntries(routing.locales.map((l) => [l, `${BASE}/${l}`])),
-        'x-default': `${BASE}/en`,
-      },
-    },
+    /*
+     * No `alternates` here on purpose.
+     *
+     * This used to carry the full hreflang set for the HOME page. Next merges
+     * metadata one top-level key at a time, so any page that set its own
+     * alternates replaced it cleanly — and any page that did not inherited a
+     * block announcing that the alternate of, say, /en/legal/refunds is the
+     * German HOME page. A crawl found /en/unsubscribe and all nine legal
+     * documents doing exactly that, each with no canonical of its own.
+     *
+     * A layout cannot know the path it is wrapping, so it cannot produce a
+     * correct hreflang set for an arbitrary child. Emitting nothing and letting
+     * each page declare its own (via buildAlternates) is the only version that
+     * is right everywhere: wrong hreflang is worse than absent hreflang,
+     * because Google acts on it.
+     */
     openGraph: {
       locale,
       siteName: 'Bahia Palace Tickets',

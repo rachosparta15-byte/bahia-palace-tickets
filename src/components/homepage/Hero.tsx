@@ -52,7 +52,7 @@ const TEASER_POINT_KEYS = [
 
 /** The hero's own srcset, declared once and used by both the preload and the img. */
 const HERO_SRCSET =
-  '/images/hero-bg-640.webp 640w, /images/hero-bg-1024.webp 1024w, /images/hero-bg-1600.webp 1600w';
+  '/images/hero-bg-640.webp 640w, /images/hero-bg-1024.webp 1024w, /images/hero-bg-1200.webp 1200w';
 
 /**
  * Deliberately half the layout width, and the img and the preload must both
@@ -132,14 +132,25 @@ export async function Hero() {
         <div className="absolute inset-0 hero-ken-burns">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           {/*
-            One 1600x900 file used to go to every device, phone included, where
-            it is the LCP element — 255 KB on a throttled mobile connection,
-            which was most of the 5.5s LCP this page measured at.
+            The LCP element, so its weight is the page's mobile score.
 
-            It sits under two dark gradients (92% and 68%) and a zellige
-            overlay, so its detail is never actually seen. That makes low
-            quality the right answer rather than a compromise: 640w at q62 is
-            36 KB and is indistinguishable once the overlays are on top.
+            The previous photograph was a dim interior under 92%/68% gradients,
+            and the note here argued — correctly, for that picture — that low
+            quality was free because the detail was never seen: 640w at q62 was
+            36 KB and indistinguishable under the overlays.
+
+            That reasoning does not transfer. This courtyard photograph was
+            chosen for its colour, the gradients have been lightened so it is
+            actually visible, and it is dense with zellige, which is close to
+            worst case for WebP. The same 640w is 60 KB at q72; q62 only reaches
+            55 KB, so there is little left to win and visible detail to lose.
+            The 24 KB over the old file is the cost of a picture the visitor is
+            meant to look at.
+
+            Source is 1200x896, centre-cropped to 16:9. That makes 1200w the
+            honest ceiling — the old 1600w entry is gone rather than upscaled,
+            and `sizes` of 50vw means desktop asks for ~960px and takes 1024w
+            anyway.
 
             `sizes` is HERO_SIZES, not the 100vw this box actually occupies —
             see the note on that constant for why, and change both it and the
@@ -151,17 +162,30 @@ export async function Hero() {
             src="/images/hero-bg-1024.webp"
             srcSet={HERO_SRCSET}
             sizes={HERO_SIZES}
-            width={1600}
-            height={900}
-            alt="Bahia Palace interior courtyard with zellige tiles and arched columns"
+            width={1200}
+            height={675}
+            alt="Visitors in the tiled courtyard of Bahia Palace, Marrakech, beside green-painted doors and carved cedar arches"
             className="w-full h-full object-cover"
             fetchPriority="high"
             decoding="sync"
           />
         </div>
-        {/* Dual gradient overlays — deeper on dark theme */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#160D06]/92 via-[#160D06]/68 to-[#160D06]/30" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#160D06]/45 via-transparent to-[#160D06]/70" />
+{/*
+          * Dual gradient overlays, lightened for the current photograph.
+          *
+          * These were 92/68/30 and 45/70, tuned for a dim interior shot whose
+          * detail — as the note on the img says — was never actually seen. The
+          * courtyard photograph replacing it is the opposite: its whole value is
+          * colour, the green doors, the zellige and the visitors, and at 92% on
+          * the left all of that turned to mud.
+          *
+          * Still heaviest where the words are and lightest on the right, because
+          * white text over a bright photograph is a contrast problem before it is
+          * a taste one. The left stop stays high enough to carry the h1 and the
+          * subtitle; the right opens up so the picture is visible as a picture.
+          */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#160D06]/88 via-[#160D06]/58 to-[#160D06]/15" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#160D06]/32 via-transparent to-[#160D06]/62" />
         {/* Zellige tessellation over the hero image — same interlocking khatem grid as body */}
         <div
           className="absolute inset-0 pointer-events-none"
@@ -226,39 +250,94 @@ export async function Hero() {
       <div className="relative z-20 px-6 pt-4 sm:pt-8 pb-14 sm:pb-20">
         <div className="max-w-6xl mx-auto w-full">
           <div className="max-w-2xl">
-            <h1 className="hero-title mb-4 sm:mb-6 leading-none">
-              <span className="block text-[#E8A33D] text-xs sm:text-sm font-bold tracking-[0.3em] uppercase mb-2 sm:mb-3"
-                style={{ fontFamily: 'var(--font-body)' }}>
-                {t('eyebrow')}
-              </span>
-              <span className="sr-only"> — </span>
+            {/*
+              * One h1, and the thing people search for is in it.
+              *
+              * This was three elements in one heading — an eyebrow, a headline
+              * and a subtitle, joined by sr-only separators — so the accessible
+              * name, and the string Google reads as this page's h1, was:
+              *
+              *   "Bahia Palace · Marrakech — Step inside Morocco's most
+              *    beautiful palace Named Bahia — Arabic for the brilliant one"
+              *
+              * Sixteen words on the site's most important page. The eyebrow was
+              * the only part containing a term anyone searches for, and it was
+              * set in 12px uppercase above the headline.
+              *
+              * So the two merged: the entity leads, the claim follows, one
+              * heading. The line is ~33% longer than the old headline, hence the
+              * smaller clamp ceiling — it wraps to two or three lines in the
+              * 672px column instead of one or two, which is also why the CTA
+              * below now sits higher on a 375px viewport rather than lower.
+              *
+              * The subtitle keeps its exact position and styling as the
+              * paragraph it always was.
+              */}
+            <h1 className="hero-title leading-none">
+              {/*
+                * The name sits in its own panel; the claim sits under it.
+                *
+                * These were one run of text joined by an em-dash, which made the
+                * searchable half — the palace and the city — typographically
+                * indistinguishable from the marketing half, and put a dash at a
+                * wrap point where it kept landing at the start of a line.
+                *
+                * Splitting them solves both: the panel marks the entity as the
+                * subject of the page rather than the first words of a sentence,
+                * and with the two halves on their own lines the dash has nothing
+                * left to do, so it is gone rather than patched around.
+                *
+                * Logical properties throughout (padding-inline, border-inline-
+                * start, the 100deg gradient mirrored by `dir`) so the panel fades
+                * away from the text's starting edge in Arabic as well as English.
+                */}
               <span
-                className="block text-white"
+                className="inline-block text-white"
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(2.2rem, 7vw, 5.2rem)',
+                  fontSize: 'clamp(1.9rem, 5vw, 3.6rem)',
                   fontWeight: 600,
-                  lineHeight: 0.95,
+                  lineHeight: 1.15,
                   letterSpacing: '-0.02em',
+                  paddingInline: '0.34em',
+                  paddingBlock: '0.10em 0.16em',
+                  borderRadius: '0.24em',
+                  borderInlineStart: '2px solid rgba(232, 163, 61, 0.55)',
+                  background:
+                    'linear-gradient(100deg, rgba(232,163,61,0.20) 0%, rgba(232,163,61,0.09) 48%, rgba(232,163,61,0.015) 100%)',
+                  boxShadow: '0 2px 28px rgba(232, 163, 61, 0.09)',
+                  backdropFilter: 'blur(3px)',
+                  WebkitBackdropFilter: 'blur(3px)',
                 }}
               >
                 {t('title')}
               </span>
-              <span className="sr-only"> </span>
               <span
-                className="block mt-3"
+                className="block text-[#F5E8CC]/85 mt-3"
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(1.1rem, 3vw, 2rem)',
-                  fontStyle: 'italic',
-                  fontWeight: 300,
-                  letterSpacing: '0.02em',
-                  color: 'rgba(245, 232, 204, 0.65)',
+                  fontSize: 'clamp(1.45rem, 3.6vw, 2.5rem)',
+                  fontWeight: 400,
+                  lineHeight: 1.1,
+                  letterSpacing: '-0.01em',
                 }}
               >
-                {t.rich('subtitle', { em: (c) => <em>{c}</em> })}
+                {t('titleClaim')}
               </span>
             </h1>
+            <p
+              className="block mt-3 mb-4 sm:mb-6"
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(1.1rem, 3vw, 2rem)',
+                fontStyle: 'italic',
+                fontWeight: 300,
+                letterSpacing: '0.02em',
+                color: 'rgba(245, 232, 204, 0.65)',
+              }}
+            >
+              {t.rich('subtitle', { em: (c) => <em>{c}</em> })}
+            </p>
 
             {/*
              * The price and the buy action, in the hero.

@@ -8,7 +8,7 @@ import { Clock, ArrowRight, User } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import prisma from '@/lib/db';
 import type { Metadata } from 'next';
-import { BASE, buildAlternates, buildBreadcrumbSchema } from '@/lib/seo';
+import { BASE, buildAlternates, buildBreadcrumbSchema, hreflangMap } from '@/lib/seo';
 import { getBlogPost } from '@/lib/blog';
 import { HISTORY_HREFLANG, HISTORY_SLUGS } from '@/lib/blog-hreflang';
 import { livePostFilter, isLive } from '@/lib/blog-schedule';
@@ -44,8 +44,9 @@ async function dbQuery<T>(label: string, fn: () => Promise<T>): Promise<T | unde
 // Google then dutifully crawls and reports as broken.
 async function buildBlogAlternates(locale: string, slug: string) {
   if (HISTORY_SLUGS.has(slug)) {
-    const languages = Object.fromEntries(
-      Object.entries(HISTORY_HREFLANG).map(([l, s]) => [l, `${BASE}/${l}/blog/${s}`])
+    const languages = hreflangMap(
+      Object.keys(HISTORY_HREFLANG),
+      l => `${BASE}/${l}/blog/${HISTORY_HREFLANG[l]}`,
     );
     languages['x-default'] = `${BASE}/en/blog/${HISTORY_HREFLANG.en}`;
     return { canonical: `${BASE}/${locale}/blog/${slug}`, languages };
@@ -60,8 +61,7 @@ async function buildBlogAlternates(locale: string, slug: string) {
   }
   if (!presentLocales.includes(locale)) presentLocales.push(locale);
 
-  const languages: Record<string, string> = {};
-  for (const l of presentLocales) languages[l] = `${BASE}/${l}/blog/${slug}`;
+  const languages = hreflangMap(presentLocales, l => `${BASE}/${l}/blog/${slug}`);
   if (presentLocales.includes('en')) languages['x-default'] = `${BASE}/en/blog/${slug}`;
 
   return { canonical: `${BASE}/${locale}/blog/${slug}`, languages };

@@ -8,9 +8,55 @@ export const BASE = _url.origin; // always https://www.visitbahiapalace.com
 
 import { locales as LOCALES } from '@/i18n/routing';
 
+/**
+ * The hreflang code(s) each route locale claims.
+ *
+ * A route segment and an hreflang code are not the same thing, and `pt` is
+ * where that stopped being a distinction without a difference. Declared as
+ * bare `pt`, the page is offered to every Portuguese speaker — including
+ * Brazil, where "Bahia" is a state of 15 million people and the results for
+ * it are about somewhere else entirely. Our /pt page loses that fight on
+ * every query, and the impressions it spends losing are not free.
+ *
+ * There is one Portuguese page and it is written in European Portuguese
+ * ("bilheteira", "Marraquexe"), so both regional codes point at it rather
+ * than one of them 404ing. pt-PT is the honest primary; pt-BR is claimed so
+ * a Brazilian searcher who wants the Marrakech palace still reaches a
+ * Portuguese page instead of being handed the English one.
+ *
+ * Anything not listed here claims its own code, which is the right default
+ * for a language with no regional ambiguity worth splitting.
+ */
+const HREFLANG_CODES: Record<string, readonly string[]> = {
+  pt: ['pt-PT', 'pt-BR'],
+};
+
+/** Every hreflang code a route locale answers to. */
+export function hreflangCodesFor(locale: string): readonly string[] {
+  return HREFLANG_CODES[locale] ?? [locale];
+}
+
+/**
+ * Maps route locales to the `languages` shape Next expects, expanding any
+ * locale that claims more than one code. Shared by buildAlternates and the
+ * sitemap so the two cannot drift.
+ */
+export function hreflangMap(
+  localesToInclude: readonly string[],
+  hrefFor: (locale: string) => string,
+): Record<string, string> {
+  const langs: Record<string, string> = {};
+  for (const l of localesToInclude) {
+    for (const code of hreflangCodesFor(l)) langs[code] = hrefFor(l);
+  }
+  return langs;
+}
+
 export function buildAlternates(locale: string, path: string) {
-  const langs: Record<string, string> = { 'x-default': `${BASE}/en${path}` };
-  for (const l of LOCALES) langs[l] = `${BASE}/${l}${path}`;
+  const langs: Record<string, string> = {
+    'x-default': `${BASE}/en${path}`,
+    ...hreflangMap(LOCALES, (l) => `${BASE}/${l}${path}`),
+  };
   return { canonical: `${BASE}/${locale}${path}`, languages: langs };
 }
 

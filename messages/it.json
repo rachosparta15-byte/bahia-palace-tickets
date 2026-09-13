@@ -233,7 +233,7 @@
     "tagline": "Il modo più semplice per visitare il Palazzo Bahia.",
     "tickets": "Biglietti",
     "skipTheLine": "Salta Fila",
-    "viewAllTickets": "Vedi tutti i biglietti",
+    "viewAllTickets": "Biglietti Palazzo Bahia",
     "openingHours": "Orari di apertura",
     "entranceFee": "Prezzo del biglietto",
     "explore": "Esplora",
@@ -890,8 +890,8 @@
   "heroBanner": {
     "outside": "<deg></deg> fuori",
     "coolNoQueue": "Palazzo fresco, senza fila",
-    "eyebrow": "Palazzo Bahia · Marrakech",
-    "title": "Entra nel palazzo più bello del Marocco",
+    "title": "Palazzo Bahia, Marrakech",
+    "titleClaim": "Il palazzo più bello del Marocco",
     "subtitle": "Chiamato <em>Bahia</em> — «la splendente» in arabo"
   },
   "trustStrip": {
