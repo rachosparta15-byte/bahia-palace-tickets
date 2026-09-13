@@ -47,27 +47,42 @@ const TICKETS_META: Record<string, { title: string; description: string }> = {
    * none of it is cut off.
    */
   /*
-   * THIS PAGE HAS NO CHECKOUT. /visitor-pack does, and it is the only page on
-   * the site that does. So the two must not chase the same words: three pages
-   * here — home, this one and /visitor-pack — all opened on "Bahia Palace
-   * Tickets", which leaves Google to pick one and rank the other two below it.
+   * This page owns the bare phrase "Bahia Palace tickets".
    *
-   * The split, by what the searcher is trying to do:
-   *   /visitor-pack  buying    "book Bahia Palace tickets"  — has the checkout
-   *   /tickets       comparing "Bahia Palace ticket prices" — this page
-   *   /[locale]      visiting  "Bahia Palace hours, guide"  — the home page
+   * It did not, until now. Three pages — home, this one and /visitor-pack —
+   * all opened on that phrase, and the overlap was resolved by splitting them
+   * by intent and handing the buy-intent words to /visitor-pack, on the
+   * reasoning that the page which can take the money should own them. The note
+   * that did it was explicit that this was a guess: "Which page deserves the
+   * bare phrase ... is a question the Search Console query list would settle,
+   * and it has not been read yet."
    *
-   * Giving the buy-intent words to the page that can actually take the money is
-   * the defensible default. Which page deserves the bare phrase "Bahia Palace
-   * tickets" is a question the Search Console query list would settle, and it
-   * has not been read yet — this removes the overlap rather than guessing at
-   * the ranking.
+   * The query list has now been read, and it settles it the other way.
+   *
+   *   bahia palace tickets     pos 10.9   160 impressions   3 clicks
+   *
+   * Every other commercial query on this site sits between position 2 and 5 and
+   * converts at 10-50%: palacio de la bahia entradas 50% at 2.5, prix palais
+   * bahia 12.5% at 5.7. This one query is the outlier, and it is the outlier
+   * because the page pointed at it was deliberately aimed elsewhere.
+   *
+   * The page it was handed to cannot rank at all. /visitor-pack has returned
+   * `noindex, nofollow` and the title "Not Found" since 2026-08-22, when PayPal
+   * permanently deactivated the account behind the checkout (PAYMENTS_HALTED in
+   * lib/payments/guard.ts, hardcoded above the env var). It is also dropped
+   * from the sitemap while payments are off. So the phrase was not moved to a
+   * better page; it was moved to a page that no longer exists as far as a
+   * crawler is concerned, and nothing has held it since.
+   *
+   * There is no cannibalisation risk in taking it back for exactly that reason.
+   * If a processor ever replaces PayPal and /visitor-pack becomes indexable
+   * again, this split is worth revisiting — with the query list, not a guess.
    */
-  en: { title: `Bahia Palace Ticket Prices 2026 — Fees & What's Included`, description: `Bahia Palace entry is 100 MAD at the gate. Book with us for the official ticket in your name, an audio guide and WhatsApp support. Free cancellation.` },
-  fr: { title: `Tarifs billets Palais Bahia 2026 — Prix et contenu`, description: `L'entrée du Palais Bahia coûte 100 MAD sur place. Réservez chez nous : billet officiel à votre nom, audioguide et assistance WhatsApp. Annulation gratuite.` },
-  es: { title: `Precios entradas Palacio Bahía 2026 — Tarifas incluidas`, description: `La entrada al Palacio Bahía cuesta 100 MAD en taquilla. Con nosotros: entrada oficial a tu nombre, audioguía y ayuda por WhatsApp. Cancelación gratuita.` },
-  de: { title: `Bahia Palast Ticketpreise 2026 — Preise & Leistungen`, description: `Der Eintritt zum Bahia-Palast kostet vor Ort 100 MAD. Bei uns: offizielles Ticket auf Ihren Namen, Audioguide und WhatsApp-Support. Kostenlose Stornierung.` },
-  it: { title: `Prezzi biglietti Palazzo Bahia 2026 — Tariffe e servizi`, description: `L'ingresso al Palazzo Bahia costa 100 MAD in loco. Da noi: biglietto ufficiale a tuo nome, audioguida e assistenza WhatsApp. Cancellazione gratuita.` },
+  en: { title: `Bahia Palace Tickets 2026 — Prices, Fees & What's Included`, description: `Bahia Palace entry is 100 MAD at the gate. Book with us for the official ticket in your name, an audio guide and WhatsApp support. Free cancellation.` },
+  fr: { title: `Billets Palais Bahia 2026 — Tarifs, prix et contenu`, description: `L'entrée du Palais Bahia coûte 100 MAD sur place. Réservez chez nous : billet officiel à votre nom, audioguide et assistance WhatsApp. Annulation gratuite.` },
+  es: { title: `Entradas Palacio Bahía 2026 — Precios y tarifas incluidas`, description: `La entrada al Palacio Bahía cuesta 100 MAD en taquilla. Con nosotros: entrada oficial a tu nombre, audioguía y ayuda por WhatsApp. Cancelación gratuita.` },
+  de: { title: `Bahia Palast Tickets 2026 — Preise & Leistungen`, description: `Der Eintritt zum Bahia-Palast kostet vor Ort 100 MAD. Bei uns: offizielles Ticket auf Ihren Namen, Audioguide und WhatsApp-Support. Kostenlose Stornierung.` },
+  it: { title: `Biglietti Palazzo Bahia 2026 — Prezzi, tariffe e servizi`, description: `L'ingresso al Palazzo Bahia costa 100 MAD in loco. Da noi: biglietto ufficiale a tuo nome, audioguida e assistenza WhatsApp. Cancellazione gratuita.` },
   /*
    * ar and pt were absent, so both served the English title and description
    * under URLs that hreflang declares as Arabic and Portuguese. Arabic is this
@@ -79,8 +94,8 @@ const TICKETS_META: Record<string, { title: string; description: string }> = {
    * this ticket, Viator does, and the audio guide is what the price above the
    * gate fee buys.
    */
-  ar: { title: `أسعار تذاكر قصر الباهية 2026 — الرسوم وما تشمله`, description: `دخول قصر الباهية 100 درهم عند الشبّاك. قارن بين الدخول العادي، وتذكرة تخطّي الطابور مع دليل صوتي رقمي، والجولات المرشدة — بالدرهم وباليورو.` },
-  pt: { title: `Preços dos Bilhetes do Palácio Bahia 2026 — O que inclui`, description: `A entrada no Palácio Bahia custa 100 MAD na bilheteira. Compare a entrada normal, o bilhete sem fila com audioguia digital e as visitas guiadas, em dirhams e euros.` },
+  ar: { title: `تذاكر قصر الباهية 2026 — الأسعار والرسوم وما تشمله`, description: `دخول قصر الباهية 100 درهم عند الشبّاك. قارن بين الدخول العادي، وتذكرة تخطّي الطابور مع دليل صوتي رقمي، والجولات المرشدة — بالدرهم وباليورو.` },
+  pt: { title: `Bilhetes do Palácio Bahia 2026 — Preços e o que inclui`, description: `A entrada no Palácio Bahia custa 100 MAD na bilheteira. Compare a entrada normal, o bilhete sem fila com audioguia digital e as visitas guiadas, em dirhams e euros.` },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -93,6 +108,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: buildOG(meta.title, meta.description, locale, '/tickets'),
   };
 }
+
+/*
+ * The opening paragraph, which this page did not have.
+ *
+ * It went breadcrumb -> h1 -> pricing grid, so the only prose above the fold
+ * was the heading itself. That is thin against the home page's sixteen
+ * sections, and it left the page ranking for "bahia palace tickets" without
+ * containing the phrase anywhere a reader could see it.
+ *
+ * One paragraph, first sentence carrying the phrase naturally, and every fact
+ * in it already on the page below: the 100 MAD gate price and the daily hours.
+ * Nothing here is a new claim, so nothing here can drift from facts.ts.
+ */
+const INTRO: Record<string, string> = {
+  en: `Bahia Palace tickets cost 100 MAD (about €9) at the gate, and the palace is open every day from 9:00 to 17:00. Below is what each ticket includes, what you pay, and how to avoid the queue at the ticket window.`,
+  fr: `Les billets du Palais Bahia coûtent 100 MAD (environ 9 €) sur place, et le palais est ouvert tous les jours de 9h à 17h. Voici ce que comprend chaque billet, ce que vous payez, et comment éviter la file au guichet.`,
+  es: `Las entradas del Palacio Bahía cuestan 100 MAD (unos 9 €) en taquilla, y el palacio abre todos los días de 9:00 a 17:00. Aquí tienes qué incluye cada entrada, cuánto pagas y cómo evitar la cola.`,
+  de: `Bahia Palast Tickets kosten vor Ort 100 MAD (rund 9 €), und der Palast ist täglich von 9 bis 17 Uhr geöffnet. Hier steht, was jedes Ticket enthält, was Sie zahlen und wie Sie die Warteschlange am Schalter vermeiden.`,
+  it: `I biglietti per il Palazzo Bahia costano 100 MAD (circa 9 €) in loco, e il palazzo è aperto tutti i giorni dalle 9:00 alle 17:00. Qui trovi cosa include ogni biglietto, quanto paghi e come evitare la fila.`,
+  ar: `تذاكر قصر الباهية ثمنها 100 درهم (حوالي 9 يورو) عند الشبّاك، والقصر مفتوح يومياً من 9:00 إلى 17:00. هنا تجد ما تشمله كل تذكرة، وكم تدفع، وكيف تتفادى طابور شبّاك التذاكر.`,
+  pt: `Os bilhetes do Palácio Bahia custam 100 MAD (cerca de 9 €) na bilheteira, e o palácio está aberto todos os dias das 9:00 às 17:00. Abaixo encontra o que cada bilhete inclui, quanto paga e como evitar a fila.`,
+};
 
 /** Same gap as TICKETS_META above: ar and pt fell through to the English H1. */
 const H1_LABELS: Record<string, string> = {
@@ -109,6 +146,7 @@ export default async function TicketsPage({ params }: Props) {
   const { locale } = await params;
   const tb = await getTranslations({ locale, namespace: 'breadcrumb' });
   const h1 = H1_LABELS[locale] ?? H1_LABELS.en;
+  const intro = INTRO[locale] ?? INTRO.en;
 
   const ticketsSchema = {
     '@context': 'https://schema.org',
@@ -179,6 +217,9 @@ export default async function TicketsPage({ params }: Props) {
           >
             {h1}
           </h1>
+          <p className="mt-4 max-w-3xl text-[#C4A882] leading-relaxed">
+            {intro}
+          </p>
         </div>
       </div>
       <TicketSection />
