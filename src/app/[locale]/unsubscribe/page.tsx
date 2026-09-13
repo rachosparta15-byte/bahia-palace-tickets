@@ -1,7 +1,29 @@
+import type { Metadata } from 'next';
+
 import prisma from '@/lib/db';
 import { tokenMatches } from '@/lib/follow-up';
 
 export const dynamic = 'force-dynamic';
+
+/*
+ * This page had no generateMetadata at all, and on a route that takes an email
+ * address and a token in the query string that is not a cosmetic gap.
+ *
+ * With nothing of its own it inherited the locale layout's defaults, which are
+ * written for the home page: the home page's title, the home page's hreflang
+ * set pointing at `/`, no canonical of its own — and `index, follow`. A live
+ * crawl found it was the one indexable page on the site emitting
+ * "Bahia Palace Marrakech — Visitor Guide & Skip-the-Line Tickets" as its
+ * title, competing with the actual home page under a URL whose only purpose is
+ * to be opened once from an email and never seen again.
+ *
+ * noindex is the whole fix. A one-click opt-out has no business in a search
+ * index, and `follow` is kept so the nav links out of it still carry.
+ */
+export const metadata: Metadata = {
+  title: 'Unsubscribe',
+  robots: { index: false, follow: true },
+};
 
 /**
  * The opt-out the follow-up emails promise.

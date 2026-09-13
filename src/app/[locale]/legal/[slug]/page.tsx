@@ -5,6 +5,7 @@ import { getTranslations } from 'next-intl/server';
 import { LegalPage } from '@/components/legal/LegalPage';
 import { getLegalDoc, isLegalSlug, legalSlugs } from '@/content/legal';
 import { locales } from '@/i18n/routing';
+import { buildAlternates } from '@/lib/seo';
 
 /**
  * A legal document on visitbahiapalace.com.
@@ -39,6 +40,8 @@ export async function generateMetadata({
     title: `${doc.title} — Visit Bahia Palace`,
     description: doc.lede.slice(0, 155),
     robots: 'noindex, follow',
+    // Self-referential, for the reason in the sibling hub page.
+    alternates: buildAlternates(locale, `/legal/${slug}`),
   };
 }
 
