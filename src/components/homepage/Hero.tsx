@@ -52,7 +52,7 @@ const TEASER_POINT_KEYS = [
 
 /** The hero's own srcset, declared once and used by both the preload and the img. */
 const HERO_SRCSET =
-  '/images/hero-bg-640.webp 640w, /images/hero-bg-1024.webp 1024w, /images/hero-bg-1600.webp 1600w';
+  '/images/hero-bg-640.webp 640w, /images/hero-bg-1024.webp 1024w, /images/hero-bg-1200.webp 1200w';
 
 /**
  * Deliberately half the layout width, and the img and the preload must both
@@ -132,14 +132,25 @@ export async function Hero() {
         <div className="absolute inset-0 hero-ken-burns">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           {/*
-            One 1600x900 file used to go to every device, phone included, where
-            it is the LCP element — 255 KB on a throttled mobile connection,
-            which was most of the 5.5s LCP this page measured at.
+            The LCP element, so its weight is the page's mobile score.
 
-            It sits under two dark gradients (92% and 68%) and a zellige
-            overlay, so its detail is never actually seen. That makes low
-            quality the right answer rather than a compromise: 640w at q62 is
-            36 KB and is indistinguishable once the overlays are on top.
+            The previous photograph was a dim interior under 92%/68% gradients,
+            and the note here argued — correctly, for that picture — that low
+            quality was free because the detail was never seen: 640w at q62 was
+            36 KB and indistinguishable under the overlays.
+
+            That reasoning does not transfer. This courtyard photograph was
+            chosen for its colour, the gradients have been lightened so it is
+            actually visible, and it is dense with zellige, which is close to
+            worst case for WebP. The same 640w is 60 KB at q72; q62 only reaches
+            55 KB, so there is little left to win and visible detail to lose.
+            The 24 KB over the old file is the cost of a picture the visitor is
+            meant to look at.
+
+            Source is 1200x896, centre-cropped to 16:9. That makes 1200w the
+            honest ceiling — the old 1600w entry is gone rather than upscaled,
+            and `sizes` of 50vw means desktop asks for ~960px and takes 1024w
+            anyway.
 
             `sizes` is HERO_SIZES, not the 100vw this box actually occupies —
             see the note on that constant for why, and change both it and the
@@ -151,17 +162,30 @@ export async function Hero() {
             src="/images/hero-bg-1024.webp"
             srcSet={HERO_SRCSET}
             sizes={HERO_SIZES}
-            width={1600}
-            height={900}
-            alt="Bahia Palace interior courtyard with zellige tiles and arched columns"
+            width={1200}
+            height={675}
+            alt="Visitors in the tiled courtyard of Bahia Palace, Marrakech, beside green-painted doors and carved cedar arches"
             className="w-full h-full object-cover"
             fetchPriority="high"
             decoding="sync"
           />
         </div>
-        {/* Dual gradient overlays — deeper on dark theme */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#160D06]/92 via-[#160D06]/68 to-[#160D06]/30" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#160D06]/45 via-transparent to-[#160D06]/70" />
+{/*
+          * Dual gradient overlays, lightened for the current photograph.
+          *
+          * These were 92/68/30 and 45/70, tuned for a dim interior shot whose
+          * detail — as the note on the img says — was never actually seen. The
+          * courtyard photograph replacing it is the opposite: its whole value is
+          * colour, the green doors, the zellige and the visitors, and at 92% on
+          * the left all of that turned to mud.
+          *
+          * Still heaviest where the words are and lightest on the right, because
+          * white text over a bright photograph is a contrast problem before it is
+          * a taste one. The left stop stays high enough to carry the h1 and the
+          * subtitle; the right opens up so the picture is visible as a picture.
+          */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#160D06]/88 via-[#160D06]/58 to-[#160D06]/15" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#160D06]/32 via-transparent to-[#160D06]/62" />
         {/* Zellige tessellation over the hero image — same interlocking khatem grid as body */}
         <div
           className="absolute inset-0 pointer-events-none"
