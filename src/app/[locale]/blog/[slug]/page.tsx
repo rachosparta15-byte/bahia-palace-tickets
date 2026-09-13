@@ -4,6 +4,8 @@ import { Link } from '@/i18n/navigation';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { AdSlot } from '@/components/ads/AdSlot';
+import { ADSENSE_SLOTS, adsAllowed } from '@/config/adsense';
 import { Clock, ArrowRight, User } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import prisma from '@/lib/db';
@@ -401,6 +403,23 @@ export default async function BlogPostPage({ params }: Props) {
                 {t('bookCta')} <ArrowRight size={14} />
               </LeadButton>
             </div>
+
+            {/*
+              * The only ad placement on the site, and it sits BELOW the booking
+              * CTA on purpose.
+              *
+              * An AdSense click is worth roughly $0.05-0.30; a Viator booking
+              * averages ~$3.40 and the commercial pages convert at 10-50%. So an
+              * ad anywhere it can intercept booking intent loses money by being
+              * clicked. Here the reader has finished the article and already
+              * passed the CTA — this is leftover attention, not diverted
+              * attention.
+              *
+              * Production domain only — adsAllowed() is false on previews and in
+              * dev, where an impression would be invalid traffic against an
+              * account that is still awaiting approval.
+              */}
+            <AdSlot slot={adsAllowed() ? ADSENSE_SLOTS.blogPost : undefined} className="mt-10" />
           </article>
 
           {/* Sidebar */}

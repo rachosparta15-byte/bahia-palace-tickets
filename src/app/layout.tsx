@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { getLocale } from 'next-intl/server';
 import { dirFor } from '@/i18n/routing';
 import { BASE } from '@/lib/seo';
+import { ADSENSE_CLIENT } from '@/config/adsense';
 import { Analytics } from '@vercel/analytics/next';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import Script from 'next/script';
@@ -129,10 +130,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             first attempt, most likely because the root domain 302s to /en
             and that checker may not follow redirects; the meta-tag method
             is checked on whichever URL actually renders, redirect or not. */}
-        <meta name="google-adsense-account" content="ca-pub-1898580718776547" />
+        <meta name="google-adsense-account" content={ADSENSE_CLIENT} />
         <Script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1898580718776547"
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
           crossOrigin="anonymous"
           strategy="beforeInteractive"
         />
