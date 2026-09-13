@@ -226,12 +226,26 @@ export async function Hero() {
       <div className="relative z-20 px-6 pt-4 sm:pt-8 pb-14 sm:pb-20">
         <div className="max-w-6xl mx-auto w-full">
           <div className="max-w-2xl">
-            <h1 className="hero-title mb-4 sm:mb-6 leading-none">
-              <span className="block text-[#E8A33D] text-xs sm:text-sm font-bold tracking-[0.3em] uppercase mb-2 sm:mb-3"
-                style={{ fontFamily: 'var(--font-body)' }}>
-                {t('eyebrow')}
-              </span>
-              <span className="sr-only"> — </span>
+            {/*
+              * The eyebrow is a <p>, not the first line of the <h1>.
+              *
+              * All three of these used to sit inside the heading, joined by
+              * sr-only separators, so the accessible name and the string Google
+              * reads as this page's h1 was:
+              *
+              *   "Bahia Palace · Marrakech — Step inside Morocco's most
+              *    beautiful palace Named Bahia — Arabic for the brilliant one"
+              *
+              * Sixteen words of poetry on the site's most important page, with
+              * no word anyone searches for in any of them. The h1 is now the
+              * headline alone; the eyebrow and the subtitle keep their exact
+              * position and styling, but as the paragraphs they always were.
+              */}
+            <p className="text-[#E8A33D] text-xs sm:text-sm font-bold tracking-[0.3em] uppercase mb-2 sm:mb-3"
+              style={{ fontFamily: 'var(--font-body)' }}>
+              {t('eyebrow')}
+            </p>
+            <h1 className="hero-title leading-none">
               <span
                 className="block text-white"
                 style={{
@@ -244,21 +258,20 @@ export async function Hero() {
               >
                 {t('title')}
               </span>
-              <span className="sr-only"> </span>
-              <span
-                className="block mt-3"
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(1.1rem, 3vw, 2rem)',
-                  fontStyle: 'italic',
-                  fontWeight: 300,
-                  letterSpacing: '0.02em',
-                  color: 'rgba(245, 232, 204, 0.65)',
-                }}
-              >
-                {t.rich('subtitle', { em: (c) => <em>{c}</em> })}
-              </span>
             </h1>
+            <p
+              className="block mt-3 mb-4 sm:mb-6"
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(1.1rem, 3vw, 2rem)',
+                fontStyle: 'italic',
+                fontWeight: 300,
+                letterSpacing: '0.02em',
+                color: 'rgba(245, 232, 204, 0.65)',
+              }}
+            >
+              {t.rich('subtitle', { em: (c) => <em>{c}</em> })}
+            </p>
 
             {/*
              * The price and the buy action, in the hero.
