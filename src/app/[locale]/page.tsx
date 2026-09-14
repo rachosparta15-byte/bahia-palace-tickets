@@ -56,31 +56,31 @@ interface Props {
  */
 const HOME_META: Record<string, { title: string; description: string }> = {
   en: {
-    title: `Bahia Palace Tickets & Hours 2026 — Skip the Queue`,
+    title: `Bahia Palace Marrakech 2026 — Hours, Prices & Visitor Guide`,
     description: `Bahia Palace entry is 100 MAD (~€9). Open daily 9:00–17:00. Prices for adults and children, how to skip the 45-minute queue, and what to see inside.`,
   },
   fr: {
-    title: `Palais Bahia Marrakech — Billets & Tarifs 2026`,
+    title: `Palais Bahia Marrakech 2026 — Horaires, Tarifs & Guide`,
     description: `Entrée Palais Bahia : 100 MAD (~9 €). Ouvert 9h–17h tous les jours. Tarifs adultes et enfants, et comment éviter 45 minutes de file.`,
   },
   es: {
-    title: `Palacio Bahía Marrakech — Entradas, Precios y Horarios 2026`,
+    title: `Palacio Bahía Marrakech 2026 — Horarios, Precios y Guía`,
     description: `Entrada al Palacio Bahía: 100 MAD (~9 €). Abierto a diario de 9:00 a 17:00. Precios para adultos y niños, y cómo evitar 45 min de cola.`,
   },
   de: {
-    title: `Bahia Palast Marrakesch — Tickets & Preise 2026`,
+    title: `Bahia Palast Marrakesch 2026 — Öffnungszeiten & Preise`,
     description: `Eintritt Bahia-Palast: 100 MAD (~9 €). Täglich 9–17 Uhr. Preise für Erwachsene und Kinder, und wie Sie 45 Minuten Warteschlange vermeiden.`,
   },
   ar: {
-    title: `قصر الباهية مراكش — التذاكر والأسعار والمواعيد 2026`,
+    title: `قصر الباهية مراكش 2026 — المواعيد والأسعار ودليل الزيارة`,
     description: `كل ما تحتاجه لزيارة قصر الباهية في مراكش: الدخول 100 درهم (30 درهماً للمغاربة والمقيمين)، المواعيد يومياً من 9:00 إلى 5:00، وكيف تتفادى طابور شبّاك التذاكر.`,
   },
   pt: {
-    title: `Palácio da Bahia Marraquexe — Bilhetes & Preços 2026`,
+    title: `Palácio da Bahia Marraquexe 2026 — Horários e Preços`,
     description: `Tudo para visitar o Palácio da Bahia em Marraquexe: entrada oficial de 100 MAD, aberto todos os dias das 9:00 às 17:00, e como evitar a fila da bilheteira.`,
   },
   it: {
-    title: `Palazzo Bahia Marrakech — Biglietti, Prezzi e Orari 2026`,
+    title: `Palazzo Bahia Marrakech 2026 — Orari, Prezzi e Guida`,
     description: `Ingresso Palazzo Bahia: 100 MAD (~9 €). Aperto 9:00–17:00 ogni giorno. Prezzi per adulti e bambini, e come evitare 45 min di fila.`,
   },
 };
