@@ -30,14 +30,14 @@ export const revalidate = 86400;
 
 const META: Record<string, { title: string; description: string }> = {
   en: { title: `Bahia Palace Entrance Fee 2026 — 100 MAD, Under 7 Free`, description: `Bahia Palace entry is 100 MAD for foreign adults, 50 MAD for children 7–13, free under 7, 30 MAD for Moroccans. Opening hours and the real queue.` },
-  fr: { title: `Tarif Palais Bahia 2026 — 100 MAD, gratuit avant 7 ans`, description: `L'entrée du Palais Bahia coûte 100 MAD pour les adultes étrangers, 50 MAD de 7 à 13 ans, gratuit avant 7 ans, 30 MAD pour les Marocains. Horaires inclus.` },
-  es: { title: `Precio Entrada Palacio Bahía 2026 — 100 MAD, gratis hasta 7`, description: `La entrada al Palacio Bahía cuesta 100 MAD para adultos extranjeros, 50 MAD de 7 a 13 años, gratis hasta los 7 y 30 MAD para marroquíes. Horarios y cola real.` },
-  de: { title: `Bahia Palast Eintritt 2026 — 100 MAD, unter 7 frei`, description: `Der Eintritt zum Bahia-Palast kostet 100 MAD für ausländische Erwachsene, 50 MAD von 7 bis 13, frei unter 7, 30 MAD für Marokkaner. Mit Öffnungszeiten.` },
-  it: { title: `Prezzo Palazzo Bahia 2026 — 100 MAD, gratis sotto i 7`, description: `L'ingresso al Palazzo Bahia costa 100 MAD per adulti stranieri, 50 MAD dai 7 ai 13 anni, gratis sotto i 7, 30 MAD per i marocchini. Con orari e coda.` },
+  fr: { title: `Tarif Palais Bahia 2026 — 100 MAD, gratuit moins de 7 ans`, description: `L'entrée du Palais Bahia coûte 100 MAD pour les adultes étrangers, 50 MAD de 7 à 13 ans, gratuit pour les moins de 7 ans, 30 MAD pour les Marocains.` },
+  es: { title: `Entrada Palacio Bahía 2026 — 100 MAD, gratis menores de 7`, description: `La entrada al Palacio Bahía cuesta 100 MAD para adultos extranjeros, 50 MAD de 7 a 13 años, gratis para menores de 7 y 30 MAD para marroquíes.` },
+  de: { title: `Bahia Palast Eintritt 2026 — 100 MAD, unter 7 Jahren frei`, description: `Der Eintritt zum Bahia-Palast kostet 100 MAD für ausländische Erwachsene, 50 MAD von 7 bis 13 Jahren, unter 7 Jahren frei, 30 MAD für Marokkaner.` },
+  it: { title: `Prezzo Palazzo Bahia 2026 — 100 MAD, gratis sotto i 7 anni`, description: `L'ingresso al Palazzo Bahia costa 100 MAD per adulti stranieri, 50 MAD dai 7 ai 13 anni, gratis sotto i 7 anni, 30 MAD per i marocchini.` },
   // ar and pt were missing entirely, so both fell back to the English title on
   // the page that ranks best on this site.
   ar: { title: `ثمن دخول قصر الباهية 2026 — 100 درهم، مجانًا دون 7 سنوات`, description: `دخول قصر الباهية 100 درهم للبالغين الأجانب، و50 درهمًا للأطفال من 7 إلى 13، ومجانًا دون السابعة، و30 درهمًا للمغاربة. مع أوقات الفتح وواقع الطابور.` },
-  pt: { title: `Preço de Entrada no Palácio Bahia 2026 — 100 MAD`, description: `A entrada no Palácio Bahia custa 100 MAD para adultos estrangeiros, 50 MAD dos 7 aos 13 anos, grátis até aos 7 e 30 MAD para marroquinos. Com horários e fila.` },
+  pt: { title: `Preço de Entrada no Palácio Bahia 2026 — 100 MAD`, description: `A entrada no Palácio Bahia custa 100 MAD para adultos estrangeiros, 50 MAD dos 7 aos 13 anos, grátis para menores de 7 anos e 30 MAD para marroquinos.` },
 };
 
 /**
