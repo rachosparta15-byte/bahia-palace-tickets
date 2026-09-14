@@ -4,7 +4,14 @@ import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { JsonLd } from '@/components/seo/JsonLd';
 import type { Metadata } from 'next';
 import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
-import { VIATOR_PRICES_USD } from '@/config/pricing';
+import {
+  VIATOR_PRICES_USD,
+  OFFICIAL_DOOR_PRICE_MAD,
+  OFFICIAL_CHILD_DOOR_PRICE_MAD,
+  CHILD_AGE_MIN,
+  CHILD_AGE_MAX,
+} from '@/config/pricing';
+import { TICKETS_CONTENT } from './content';
 
 const SKIP_THE_LINE_PRICE = VIATOR_PRICES_USD['skip-the-line']!;
 
@@ -142,11 +149,38 @@ const H1_LABELS: Record<string, string> = {
   pt: 'Bilhetes Palácio Bahia 2026',
 };
 
+/**
+ * Fills the {adult} / {child} / {ageMin} / {ageMax} placeholders from
+ * config/pricing.ts. Prose never carries a figure of its own: the entrance-fee
+ * metadata already drifted away from that page's own table once, and it told
+ * Spanish and Portuguese families a seven-year-old was free when they pay.
+ */
+function fillPrices(text: string): string {
+  return text
+    .replace(/\{adult\}/g, String(OFFICIAL_DOOR_PRICE_MAD))
+    .replace(/\{child\}/g, String(OFFICIAL_CHILD_DOOR_PRICE_MAD))
+    .replace(/\{ageMin\}/g, String(CHILD_AGE_MIN))
+    .replace(/\{ageMax\}/g, String(CHILD_AGE_MAX));
+}
+
+/** `**bold**` only. The copy needs to lead three paragraphs with a bold label
+ *  and nothing more, so this stays a split rather than a markdown dependency. */
+function renderEmphasis(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith('**') && part.endsWith('**') ? (
+      <strong key={i} className="text-[#F5E8CC] font-semibold">{part.slice(2, -2)}</strong>
+    ) : (
+      part
+    ),
+  );
+}
+
 export default async function TicketsPage({ params }: Props) {
   const { locale } = await params;
   const tb = await getTranslations({ locale, namespace: 'breadcrumb' });
   const h1 = H1_LABELS[locale] ?? H1_LABELS.en;
   const intro = INTRO[locale] ?? INTRO.en;
+  const body  = TICKETS_CONTENT[locale] ?? TICKETS_CONTENT.en;
 
   const ticketsSchema = {
     '@context': 'https://schema.org',
@@ -202,6 +236,23 @@ export default async function TicketsPage({ params }: Props) {
     <div className="min-h-screen bg-[#1C1108]">
       <JsonLd data={ticketsSchema} />
       <JsonLd data={buildBreadcrumbSchema(locale, [{ name: tb('home'), path: '' }, { name: tb('tickets') }])} />
+      {/*
+        * FAQPage built from the questions this page actually renders, with the
+        * same fillPrices() applied — markup that quotes a different figure from
+        * the visible answer is the kind of mismatch a rich result gets pulled
+        * for, and it would quote a stale price besides.
+        */}
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: body.faq.map((item) => ({
+            '@type': 'Question',
+            name: item.q,
+            acceptedAnswer: { '@type': 'Answer', text: fillPrices(item.a) },
+          })),
+        }}
+      />
       <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] px-6 py-8">
         <div className="max-w-6xl mx-auto">
           <Breadcrumb
@@ -223,6 +274,47 @@ export default async function TicketsPage({ params }: Props) {
         </div>
       </div>
       <TicketSection />
+
+      {/*
+        * The prose half of the page.
+        *
+        * It sits BELOW the ticket grid on purpose: someone who arrived ready to
+        * buy should not have to scroll past an essay to reach the cards, and
+        * someone still deciding reads on. Headings are h2/h3 under the page's
+        * single h1, so the outline is a real hierarchy rather than styled text.
+        */}
+      <div className="max-w-3xl mx-auto px-6 py-14">
+        {body.sections.map((section) => (
+          <section key={section.heading} className="mb-10">
+            <h2
+              className="text-[#F5E8CC] font-bold mb-4"
+              style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.35rem, 2.6vw, 1.8rem)' }}
+            >
+              {section.heading}
+            </h2>
+            {section.paragraphs.map((paragraph, i) => (
+              <p key={i} className="text-[#C4A882] leading-relaxed mb-4">
+                {renderEmphasis(fillPrices(paragraph))}
+              </p>
+            ))}
+          </section>
+        ))}
+
+        <section>
+          <h2
+            className="text-[#F5E8CC] font-bold mb-5"
+            style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.35rem, 2.6vw, 1.8rem)' }}
+          >
+            {body.faqHeading}
+          </h2>
+          {body.faq.map((item) => (
+            <div key={item.q} className="mb-6">
+              <h3 className="text-[#F5E8CC] font-semibold mb-2">{item.q}</h3>
+              <p className="text-[#C4A882] leading-relaxed">{fillPrices(item.a)}</p>
+            </div>
+          ))}
+        </section>
+      </div>
     </div>
   );
 }
