@@ -6,6 +6,8 @@ import { ArrowRight, Clock, ShieldCheck, CheckCircle2, RotateCcw, Award } from '
 import { LeadButton } from '@/components/layout/LeadButton';
 import { AffiliateDisclosure } from '@/components/ui/AffiliateDisclosure';
 import { TICKET_PRICES } from '@/lib/ticket-data';
+import { formatDisplayPrice, viatorPriceFor } from '@/config/pricing';
+import { useViatorCurrency } from '@/components/ui/ViatorPrice';
 
 /**
  * The other three products, browsable side by side — deliberately separate
@@ -15,7 +17,7 @@ import { TICKET_PRICES } from '@/lib/ticket-data';
  * only reads prices and names, and leaves selling to LeadButton.
  */
 // Cheapest to most expensive ($13 → $17.75 → $23.83 → $65.38) — see
-// VIATOR_PRICES below for the actual figures this ordering has to track.
+// VIATOR_PRICES_USD in config/pricing for the figures this ordering tracks.
 const OPTION_SLUGS = ['skip-the-line', 'private-guide-only', 'guided-tour', 'private-tour'] as const;
 
 const OPTION_NAME_KEYS: Record<(typeof OPTION_SLUGS)[number], string> = {
@@ -57,18 +59,6 @@ const VIATOR_LINKS: Partial<Record<(typeof OPTION_SLUGS)[number], string>> = {
     'https://www.viator.com/tours/Marrakech/Marrakech-Highlights-Private-4hr-City-Tour/d5408-326890P2?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-opt-privatetour',
 };
 
-/**
- * The price actually charged on the matched Viator page, in Viator's own
- * currency (USD) — never converted to EUR here, so this can never say a
- * currency the visitor isn't actually charged. Re-check against the live
- * Viator page occasionally; these are not wired to update automatically.
- */
-const VIATOR_PRICES: Partial<Record<(typeof OPTION_SLUGS)[number], string>> = {
-  'skip-the-line':       '$13.00',
-  'guided-tour':         '$23.83',
-  'private-guide-only':  '$17.75',
-  'private-tour':        '$65.38',
-};
 
 /**
  * One photograph per product, reused from the same shoot as TicketCards
@@ -85,6 +75,7 @@ const IMAGE: Record<(typeof OPTION_SLUGS)[number], string> = {
 };
 
 export function TicketOptions() {
+  const currency = useViatorCurrency();
   const t = useTranslations('tickets');
 
   return (
@@ -148,7 +139,10 @@ export function TicketOptions() {
             const duration = t(`${nameKey}.duration` as any);
 
             const viatorHref  = VIATOR_LINKS[slug];
-            const viatorPrice = VIATOR_PRICES[slug];
+            // Viator's own figure in the visitor's currency, from config/pricing
+            // (VIATOR_PRICES_USD / VIATOR_PRICES_EUR) — never a conversion.
+            const viatorPriceValue = viatorPriceFor(slug, currency);
+            const viatorPrice = viatorPriceValue ? formatDisplayPrice(viatorPriceValue) : undefined;
 
             // Two different providers cannot show two different prices on
             // the same card — where a Viator match exists, the whole card

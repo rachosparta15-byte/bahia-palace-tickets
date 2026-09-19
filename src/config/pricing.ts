@@ -1,6 +1,9 @@
 // Single source of truth for every price displayed on the site.
 // Update a number here — not in individual pages, components, blog
-// templates, or JSON-LD generators.
+// templates, or JSON-LD generators. (Viator's prices are the exception: they
+// live in viator-prices.json and update themselves; see VIATOR_PRICES_USD.)
+
+import viatorPrices from './viator-prices.json';
 
 /** Official Bahia Palace door price, set by Morocco's Ministry of Culture. */
 export const OFFICIAL_DOOR_PRICE_MAD = 100;
@@ -368,20 +371,67 @@ export const TICKET_PRICES_EUR: Record<TicketSlug, number> = {
 };
 
 /**
- * What Viator actually charges today, per adult, for the four live affiliate
- * products — in USD, Viator's own currency. This is the single source of
- * truth for every visitor-facing price on these four products; the EUR
- * figures above are backend-only and must never be displayed for these slugs.
+ * What Viator charges today, per adult, for the four live affiliate products,
+ * in USD and in EUR — each as Viator itself prices it in that currency, never
+ * one converted from the other. Viator shows euros to eurozone visitors, so a
+ * card that says € must carry Viator's own euro figure or it promises a price
+ * the visitor will not see at checkout. Together these are the single source
+ * of truth for every visitor-facing price on these products; the backend EUR
+ * figures above are not Viator's and must never be displayed for these slugs.
  *
- * Not wired to update automatically — re-check against the live Viator page
- * occasionally and update here only.
+ * The figures live in viator-prices.json, refreshed daily from the Viator
+ * Partner API by scripts/sync-viator-prices.mjs (GitHub Actions). They are the
+ * REGULAR prices: a temporary Viator offer is stored apart (usdOffer/eurOffer)
+ * and not displayed, so the site never keeps advertising an offer that ended.
  */
-export const VIATOR_PRICES_USD: Partial<Record<TicketSlug, DisplayPrice>> = {
-  'skip-the-line':      { amount: 13.00, currency: 'USD' },
-  'guided-tour':        { amount: 23.83, currency: 'USD' },
-  'private-guide-only': { amount: 17.75, currency: 'USD' },
-  'private-tour':       { amount: 65.38, currency: 'USD' },
-};
+type ViatorEntry = (typeof viatorPrices.products)[keyof typeof viatorPrices.products];
+const viatorEntries = Object.entries(viatorPrices.products) as [TicketSlug, ViatorEntry][];
+
+export const VIATOR_PRICES_USD: Partial<Record<TicketSlug, DisplayPrice>> = Object.fromEntries(
+  viatorEntries.map(([slug, p]) => [slug, { amount: p.usd, currency: 'USD' }]),
+);
+
+export const VIATOR_PRICES_EUR: Partial<Record<TicketSlug, DisplayPrice>> = Object.fromEntries(
+  viatorEntries.map(([slug, p]) => [slug, { amount: p.eur, currency: 'EUR' }]),
+);
+
+/**
+ * Whether a Viator rating is good enough to show a visitor. The sync records
+ * every rating so we can follow them; a weak or thin one (skip-the-line had
+ * 2 reviews at 2.5★ on 2026-09-19) must never be displayed, as it would cost
+ * bookings rather than earn them. Nothing displays ratings yet; anything that
+ * does in future goes through this.
+ */
+export function viatorRatingToShow(slug: TicketSlug): { rating: number; reviews: number } | null {
+  const p = viatorPrices.products[slug as keyof typeof viatorPrices.products];
+  if (!p || p.rating == null || p.reviews == null) return null;
+  return p.reviews >= 10 && p.rating >= 4 ? { rating: p.rating, reviews: p.reviews } : null;
+}
+
+/**
+ * Time zones of the countries that use the euro. Read in the visitor's
+ * browser (Intl), so the choice costs no server work and cached pages stay
+ * shared. Anyone else keeps USD, Viator's default currency — including the
+ * UK and Switzerland, whose own currencies we do not carry.
+ */
+const EUROZONE_TIME_ZONES = new Set([
+  'Europe/Amsterdam', 'Europe/Andorra', 'Europe/Athens', 'Europe/Berlin', 'Europe/Bratislava',
+  'Europe/Brussels', 'Europe/Busingen', 'Europe/Dublin', 'Europe/Helsinki', 'Europe/Lisbon',
+  'Europe/Ljubljana', 'Europe/Luxembourg', 'Europe/Madrid', 'Europe/Malta', 'Europe/Monaco',
+  'Europe/Nicosia', 'Asia/Nicosia', 'Asia/Famagusta', 'Europe/Paris', 'Europe/Riga', 'Europe/Rome',
+  'Europe/San_Marino', 'Europe/Sofia', 'Europe/Tallinn', 'Europe/Vatican', 'Europe/Vienna',
+  'Europe/Vilnius', 'Europe/Zagreb', 'Europe/Podgorica', 'Europe/Mariehamn',
+  'Atlantic/Azores', 'Atlantic/Canary', 'Atlantic/Madeira', 'Africa/Ceuta',
+]);
+
+export function currencyForTimeZone(timeZone: string | undefined): Currency {
+  return timeZone && EUROZONE_TIME_ZONES.has(timeZone) ? 'EUR' : 'USD';
+}
+
+/** The Viator price of a slug in the given currency, if Viator sells it. */
+export function viatorPriceFor(slug: TicketSlug, currency: Currency): DisplayPrice | undefined {
+  return (currency === 'EUR' ? VIATOR_PRICES_EUR : VIATOR_PRICES_USD)[slug];
+}
 
 /** VIATOR_PRICES_USD entry for a slug, or a EUR fallback for slugs with none (combo-saadian-tombs). */
 export function displayPriceFor(slug: TicketSlug, eurFallback: number): DisplayPrice {

@@ -1,0 +1,45 @@
+# Refreshes src/config/viator-prices.json from the Viator Partner API once a
+# day. A changed file is committed to main, which Vercel deploys. A failed run
+# (API down, or a price jump the script refuses to apply) changes nothing on
+# the site and GitHub emails the repository owner.
+name: Sync Viator prices
+
+on:
+  schedule:
+    - cron: '17 5 * * *'   # daily, 05:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-viator-prices
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch prices from Viator
+        env:
+          VIATOR_API_KEY: ${{ secrets.VIATOR_API_KEY }}
+        run: node scripts/sync-viator-prices.mjs
+
+      - name: Commit if prices changed
+        if: always()
+        run: |
+          if git diff --quiet -- src/config/viator-prices.json; then
+            echo "No price changes."
+            exit 0
+          fi
+          git config user.name "viator-price-sync"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/config/viator-prices.json
+          git commit -m "prices: sync Viator prices ($(date -u +%F))"
+          git push

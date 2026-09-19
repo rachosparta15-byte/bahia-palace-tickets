@@ -3,6 +3,8 @@
 import { useTranslations } from 'next-intl';
 import { useRouter } from '@/i18n/navigation';
 import { LeadButton } from '@/components/layout/LeadButton';
+import { formatDisplayPrice, viatorPriceFor } from '@/config/pricing';
+import { useViatorCurrency } from '@/components/ui/ViatorPrice';
 import { usePaymentsFlags } from '@/components/layout/PaymentsFlagsProvider';
 import { Check, ArrowRight, Clock, Star, ShieldCheck, Headphones } from 'lucide-react';
 import Image from 'next/image';
@@ -63,7 +65,6 @@ const TICKET_HREF: Record<string, string> = {
  */
 const SKIP_THE_LINE_VIATOR_URL =
   'https://www.viator.com/tours/Marrakech/Marrakech-Bahia-Palace-Skip-the-Line-Ticket-With-Audio-Guide/d5408-5670595P2?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-ticketcards';
-const SKIP_THE_LINE_VIATOR_PRICE = '$13.00';
 
 /**
  * NOTE on the admin panel: skip-the-line and visitor-pack liveness is decided
@@ -83,6 +84,8 @@ interface Props {
 }
 
 export function TicketCards({ overrides = {} }: Props) {
+  // Viator's own skip-the-line price, in the visitor's currency (config/pricing).
+  const skipTheLineViatorPrice = formatDisplayPrice(viatorPriceFor('skip-the-line', useViatorCurrency())!);
   const t = useTranslations('tickets');
   const router = useRouter();
   const { enabled: paymentsEnabled } = usePaymentsFlags();
@@ -346,7 +349,7 @@ export function TicketCards({ overrides = {} }: Props) {
                               Viator price it now actually charges — see
                               SKIP_THE_LINE_VIATOR_URL above. */}
                           {isSkipTheLineViator
-                            ? SKIP_THE_LINE_VIATOR_PRICE
+                            ? skipTheLineViatorPrice
                             : slug === 'visitor-pack'
                               ? buyingPathPriceLabel()
                               : `€${price.toFixed(2)}`}

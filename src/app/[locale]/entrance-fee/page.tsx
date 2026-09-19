@@ -1,4 +1,5 @@
 import { LeadButton } from '@/components/layout/LeadButton';
+import { ViatorPrice } from '@/components/ui/ViatorPrice';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE, DIGITAL_TICKET_OFFER_EXTRAS } from '@/lib/seo';
@@ -355,8 +356,8 @@ export default async function EntranceFeePage({ params }: Props) {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {[
             { label: t.cardStandard, mad: `${OFFICIAL_DOOR_PRICE_MAD} MAD`, usd: `≈ ${madToEur(OFFICIAL_DOOR_PRICE_MAD)}`, note: t.cardStandardNote, highlight: false },
-            { label: t.cardSkip, mad: formatDisplayPrice(SKIP_THE_LINE_PRICE), usd: t.cardSkipSub, note: t.cardSkipNote, highlight: true },
-            { label: t.cardGuided, mad: `${formatDisplayPrice(GUIDED_TOUR_PRICE)}`, usd: t.cardGuidedSub, note: t.cardGuidedNote, highlight: false },
+            { label: t.cardSkip, mad: <ViatorPrice slug="skip-the-line" />, usd: t.cardSkipSub, note: t.cardSkipNote, highlight: true },
+            { label: t.cardGuided, mad: <ViatorPrice slug="guided-tour" />, usd: t.cardGuidedSub, note: t.cardGuidedNote, highlight: false },
           ].map(({ label, mad, usd, note, highlight }) => (
             <div key={label} className={`rounded-2xl border p-6 text-center ${highlight ? 'bg-[#C4452D] border-[#C4452D] text-white shadow-[0_8px_32px_rgba(196,69,45,0.3)]' : 'bg-[#251A0F] border-[rgba(232,163,61,0.13)]'}`}>
               <p className={`text-xs font-bold uppercase tracking-widest mb-3 ${highlight ? 'text-white/70' : 'text-[#C4A882]'}`}>{label}</p>
@@ -380,9 +381,9 @@ export default async function EntranceFeePage({ params }: Props) {
               { category: t.rowChildren, price: '50 MAD', usd: madToEur(50), note: t.rowChildrenNote },
               { category: t.rowUnder7, price: t.rowUnder7Price, usd: t.rowUnder7Price, note: t.rowUnder7Note },
               { category: t.rowMoroccan, price: '30 MAD', usd: madToEur(30), note: t.rowMoroccanNote },
-              { category: t.rowSkip, price: formatDisplayPrice(SKIP_THE_LINE_PRICE), usd: formatDisplayPrice(SKIP_THE_LINE_PRICE), note: t.rowSkipNote },
-              { category: t.rowGuided, price: formatDisplayPrice(GUIDED_TOUR_PRICE), usd: formatDisplayPrice(GUIDED_TOUR_PRICE), note: t.rowGuidedNote },
-              { category: t.rowPrivate, price: formatDisplayPrice(PRIVATE_TOUR_PRICE), usd: formatDisplayPrice(PRIVATE_TOUR_PRICE), note: t.rowPrivateNote },
+              { category: t.rowSkip, price: <ViatorPrice slug="skip-the-line" />, usd: formatDisplayPrice(SKIP_THE_LINE_PRICE), note: t.rowSkipNote },
+              { category: t.rowGuided, price: <ViatorPrice slug="guided-tour" />, usd: formatDisplayPrice(GUIDED_TOUR_PRICE), note: t.rowGuidedNote },
+              { category: t.rowPrivate, price: <ViatorPrice slug="private-tour" />, usd: formatDisplayPrice(PRIVATE_TOUR_PRICE), note: t.rowPrivateNote },
             ].map(({ category, price, note }) => (
               <div key={category} className="grid grid-cols-3 px-6 py-4 text-sm">
                 <span className="font-semibold text-[#F5E8CC]">{category}</span>

@@ -9,10 +9,10 @@ import {
   OFFICIAL_DOOR_PRICE_MAD,
   OFFICIAL_DOOR_PRICE_EUR_CENTS,
   formatEUR,
-  displayPriceFor,
   formatDisplayPrice,
   type TicketSlug,
 } from '@/config/pricing';
+import { useDisplayPrice } from '@/components/ui/ViatorPrice';
 
 interface BookingWidgetProps {
   price: number;
@@ -31,9 +31,10 @@ export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
   // site sells packages above the gate price and carries paid partner links, so
   // that claim is untrue of the site regardless of what this page hands off to.
   const { enabled: paymentsEnabled } = usePaymentsFlags();
-  // Viator's own USD price for the four live affiliate products; falls back
-  // to the `price` prop (EUR) for a slug with no Viator listing.
-  const displayPrice = displayPriceFor(slug as TicketSlug, price);
+  // Viator's own price for the four live affiliate products, in the
+  // visitor's currency (EUR in the eurozone, USD elsewhere); falls back to the
+  // `price` prop (EUR) for a slug with no Viator listing.
+  const displayPrice = useDisplayPrice(slug as TicketSlug, price);
 
   const whatsappNumber = getWhatsAppNumber();
   const whatsappUrl = whatsappNumber
