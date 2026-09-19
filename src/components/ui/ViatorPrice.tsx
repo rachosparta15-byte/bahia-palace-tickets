@@ -11,12 +11,12 @@ import {
 } from '@/config/pricing';
 
 const subscribe = () => () => {};
-const clientCurrency = (): Currency => currencyForTimeZone(Intl.DateTimeFormat().resolvedOptions().timeZone);
+const clientCurrency = (): Currency =>
+  currencyForTimeZone(Intl.DateTimeFormat().resolvedOptions().timeZone, navigator.language);
 const serverCurrency = (): Currency => 'USD';
 
 /**
- * The visitor's display currency for Viator prices: EUR in the eurozone, USD
- * elsewhere. The server (and the first client render) always says USD, so the
+ * The visitor's display currency for Viator prices (see currencyForTimeZone). The server (and the first client render) always says USD, so the
  * cached HTML is the same for everyone and hydration never mismatches; React
  * then re-renders with the browser's answer.
  */

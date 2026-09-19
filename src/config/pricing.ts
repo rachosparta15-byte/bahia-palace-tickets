@@ -424,8 +424,21 @@ const EUROZONE_TIME_ZONES = new Set([
   'Atlantic/Azores', 'Atlantic/Canary', 'Atlantic/Madeira', 'Africa/Ceuta',
 ]);
 
-export function currencyForTimeZone(timeZone: string | undefined): Currency {
-  return timeZone && EUROZONE_TIME_ZONES.has(timeZone) ? 'EUR' : 'USD';
+/** Morocco's time zones: a phone set here is usually a visitor already in Marrakech. */
+const MOROCCO_TIME_ZONES = new Set(['Africa/Casablanca', 'Africa/El_Aaiun']);
+
+/**
+ * EUR in the eurozone, USD elsewhere. In Morocco the time zone says nothing
+ * about where the visitor comes from (tourists' phones switch to local time),
+ * so the browser language decides: English speakers get USD, everyone else
+ * (French, Spanish, German, Italian visitors, and Moroccans) EUR.
+ */
+export function currencyForTimeZone(timeZone: string | undefined, language?: string): Currency {
+  if (timeZone && EUROZONE_TIME_ZONES.has(timeZone)) return 'EUR';
+  if (timeZone && MOROCCO_TIME_ZONES.has(timeZone)) {
+    return language && !language.toLowerCase().startsWith('en') ? 'EUR' : 'USD';
+  }
+  return 'USD';
 }
 
 /** The Viator price of a slug in the given currency, if Viator sells it. */
