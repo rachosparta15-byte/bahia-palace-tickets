@@ -23,6 +23,13 @@ import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 // Viator's own USD price — see VIATOR_PRICES_USD for why this isn't EUR.
 const SKIP_THE_LINE_PRICE = VIATOR_PRICES_USD['skip-the-line']!;
 const GUIDED_TOUR_PRICE = VIATOR_PRICES_USD['guided-tour']!;
+
+/* Viator products for the two cards below, tagged so bookings from this page
+   are told apart from the home page's in the partner dashboard. */
+const SKIP_THE_LINE_URL =
+  'https://www.viator.com/tours/Marrakech/Marrakech-Bahia-Palace-Skip-the-Line-Ticket-With-Audio-Guide/d5408-5670595P2?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-entrancefee-skipline';
+const GUIDED_TOUR_URL =
+  'https://www.viator.com/tours/Marrakech/Marrakech-Saadian-Tombs-Bahia-Palace-Medina-and-Souk-Tour/d5408-467170P4?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-entrancefee-guided';
 const PRIVATE_TOUR_PRICE = VIATOR_PRICES_USD['private-tour']!;
 /** A MAD figure converted at the pinned rate, for the euro column. */
 const madToEur = (mad: number) => formatEUR(Math.round(mad * MAD_TO_EUR_RATE * 100));
@@ -66,6 +73,7 @@ type Copy = {
   cardStandard: string; cardStandardSub: string; cardStandardNote: string;
   cardSkip: string; cardSkipSub: string; cardSkipNote: string;
   cardGuided: string; cardGuidedSub: string; cardGuidedNote: string;
+  cardCta: string;
   breakdownH2: string;
   rowAdults: string; rowAdultsNote: string;
   rowChildren: string; rowChildrenNote: string;
@@ -89,6 +97,7 @@ const COPY: Record<string, Copy> = {
     cardStandard: 'Standard Entry', cardStandardSub: '', cardStandardNote: 'At the gate — queue included',
     cardSkip: 'Skip-the-Line', cardSkipSub: 'Entry without queueing + digital audio guide', cardSkipNote: 'No ticket-office queue',
     cardGuided: 'Guided Tour', cardGuidedSub: 'Incl. entry + expert guide', cardGuidedNote: 'Entry + 90-min English tour',
+    cardCta: 'Check availability',
     breakdownH2: 'Bahia Palace Ticket Price Breakdown 2026',
     rowAdults: 'Foreign adults', rowAdultsNote: 'Gate price — long queues possible',
     rowChildren: 'Foreign children (7–13)', rowChildrenNote: 'Official Ministry of Culture rate',
@@ -115,6 +124,7 @@ const COPY: Record<string, Copy> = {
     cardStandard: 'Entrée standard', cardStandardSub: '', cardStandardNote: 'Au guichet — file d’attente comprise',
     cardSkip: 'Coupe-file', cardSkipSub: 'Entrée sans file + audioguide numérique', cardSkipNote: 'Sans file au guichet',
     cardGuided: 'Visite guidée', cardGuidedSub: 'Entrée + guide expert inclus', cardGuidedNote: 'Entrée + visite de 90 min en anglais',
+    cardCta: 'Voir les disponibilités',
     breakdownH2: 'Détail des tarifs du Palais Bahia 2026',
     rowAdults: 'Adultes étrangers', rowAdultsNote: 'Prix au guichet — longues files possibles',
     rowChildren: 'Enfants étrangers (7–13 ans)', rowChildrenNote: 'Tarif officiel du ministère de la Culture',
@@ -141,6 +151,7 @@ const COPY: Record<string, Copy> = {
     cardStandard: 'Entrada estándar', cardStandardSub: '', cardStandardNote: 'En taquilla — cola incluida',
     cardSkip: 'Sin colas', cardSkipSub: 'Entrada sin cola + audioguía digital', cardSkipNote: 'Sin cola en la taquilla',
     cardGuided: 'Visita guiada', cardGuidedSub: 'Entrada + guía experto incluidos', cardGuidedNote: 'Entrada + visita de 90 min en inglés',
+    cardCta: 'Ver disponibilidad',
     breakdownH2: 'Desglose de precios del Palacio Bahía 2026',
     rowAdults: 'Adultos extranjeros', rowAdultsNote: 'Precio en taquilla — posibles colas largas',
     rowChildren: 'Niños extranjeros (7–13)', rowChildrenNote: 'Tarifa oficial del Ministerio de Cultura',
@@ -167,6 +178,7 @@ const COPY: Record<string, Copy> = {
     cardStandard: 'Standardeintritt', cardStandardSub: '', cardStandardNote: 'An der Kasse — Warteschlange inklusive',
     cardSkip: 'Skip-the-Line', cardSkipSub: 'Eintritt ohne Anstehen + digitaler Audioguide', cardSkipNote: 'Keine Schlange am Ticketschalter',
     cardGuided: 'Führung', cardGuidedSub: 'Inkl. Eintritt + Experten-Guide', cardGuidedNote: 'Eintritt + 90-minütige Führung auf Englisch',
+    cardCta: 'Verfügbarkeit prüfen',
     breakdownH2: 'Ticketpreise Bahia-Palast 2026 im Detail',
     rowAdults: 'Ausländische Erwachsene', rowAdultsNote: 'Kassenpreis — lange Schlangen möglich',
     rowChildren: 'Ausländische Kinder (7–13)', rowChildrenNote: 'Offizieller Tarif des Kulturministeriums',
@@ -193,6 +205,7 @@ const COPY: Record<string, Copy> = {
     cardStandard: 'Ingresso standard', cardStandardSub: '', cardStandardNote: 'Alla biglietteria — fila inclusa',
     cardSkip: 'Salta-fila', cardSkipSub: 'Ingresso senza fila + audioguida digitale', cardSkipNote: 'Nessuna fila alla biglietteria',
     cardGuided: 'Visita guidata', cardGuidedSub: 'Ingresso + guida esperta inclusi', cardGuidedNote: 'Ingresso + visita di 90 min in inglese',
+    cardCta: 'Vedi disponibilità',
     breakdownH2: 'Dettaglio dei prezzi del Palazzo Bahia 2026',
     rowAdults: 'Adulti stranieri', rowAdultsNote: 'Prezzo alla biglietteria — possibili lunghe file',
     rowChildren: 'Bambini stranieri (7–13)', rowChildrenNote: 'Tariffa ufficiale del Ministero della Cultura',
@@ -219,6 +232,7 @@ const COPY: Record<string, Copy> = {
     cardStandard: 'الدخول العادي', cardStandardSub: '', cardStandardNote: 'عند الشبّاك — الطابور محسوب',
     cardSkip: 'تخطّي الطابور', cardSkipSub: 'دخول بلا طابور + دليل صوتي رقمي', cardSkipNote: 'بلا طابور عند شبّاك التذاكر',
     cardGuided: 'جولة مرشدة', cardGuidedSub: 'تشمل الدخول ومرشدًا خبيرًا', cardGuidedNote: 'الدخول + جولة 90 دقيقة بالإنجليزية',
+    cardCta: 'تحقق من التوفر',
     breakdownH2: 'تفصيل أسعار تذاكر قصر الباهية 2026',
     rowAdults: 'البالغون الأجانب', rowAdultsNote: 'ثمن الشبّاك — قد تطول الطوابير',
     rowChildren: 'الأطفال الأجانب (7–13)', rowChildrenNote: 'التعريفة الرسمية لوزارة الثقافة',
@@ -245,6 +259,7 @@ const COPY: Record<string, Copy> = {
     cardStandard: 'Entrada normal', cardStandardSub: '', cardStandardNote: 'Na bilheteira — fila incluída',
     cardSkip: 'Sem fila', cardSkipSub: 'Entrada sem fila + audioguia digital', cardSkipNote: 'Sem fila na bilheteira',
     cardGuided: 'Visita guiada', cardGuidedSub: 'Inclui entrada + guia especializado', cardGuidedNote: 'Entrada + visita de 90 min em inglês',
+    cardCta: 'Ver disponibilidade',
     breakdownH2: 'Detalhe dos preços do Palácio Bahia 2026',
     rowAdults: 'Adultos estrangeiros', rowAdultsNote: 'Preço na bilheteira — filas longas possíveis',
     rowChildren: 'Crianças estrangeiras (7–13)', rowChildrenNote: 'Tarifa oficial do Ministério da Cultura',
@@ -352,20 +367,51 @@ export default async function EntranceFeePage({ params }: Props) {
 
       <div className="max-w-4xl mx-auto px-6 py-12 space-y-10">
 
-        {/* Price cards */}
+        {/*
+          Price cards. The two Viator products are the whole card as a link, with
+          a visible button so it reads as clickable rather than as a poster. The
+          standard 100 MAD card is not a link: that is the ministry's gate price,
+          and we do not sell it.
+        */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {[
-            { label: t.cardStandard, mad: `${OFFICIAL_DOOR_PRICE_MAD} MAD`, usd: `≈ ${madToEur(OFFICIAL_DOOR_PRICE_MAD)}`, note: t.cardStandardNote, highlight: false },
-            { label: t.cardSkip, mad: <ViatorPrice slug="skip-the-line" />, usd: t.cardSkipSub, note: t.cardSkipNote, highlight: true },
-            { label: t.cardGuided, mad: <ViatorPrice slug="guided-tour" />, usd: t.cardGuidedSub, note: t.cardGuidedNote, highlight: false },
-          ].map(({ label, mad, usd, note, highlight }) => (
-            <div key={label} className={`rounded-2xl border p-6 text-center ${highlight ? 'bg-[#C4452D] border-[#C4452D] text-white shadow-[0_8px_32px_rgba(196,69,45,0.3)]' : 'bg-[#251A0F] border-[rgba(232,163,61,0.13)]'}`}>
-              <p className={`text-xs font-bold uppercase tracking-widest mb-3 ${highlight ? 'text-white/70' : 'text-[#C4A882]'}`}>{label}</p>
-              <p className={`text-3xl font-bold mb-1 ${highlight ? 'text-white' : 'text-[#C4452D]'}`} style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}>{mad}</p>
-              <p className={`text-sm mb-3 ${highlight ? 'text-white/80' : 'text-[#C4A882]'}`}>{usd}</p>
-              <p className={`text-xs ${highlight ? 'text-white/60' : 'text-[#C4A882]'}`}>{note}</p>
-            </div>
-          ))}
+            { label: t.cardStandard, mad: `${OFFICIAL_DOOR_PRICE_MAD} MAD`, usd: `≈ ${madToEur(OFFICIAL_DOOR_PRICE_MAD)}`, note: t.cardStandardNote, highlight: false, href: null },
+            { label: t.cardSkip, mad: <ViatorPrice slug="skip-the-line" />, usd: t.cardSkipSub, note: t.cardSkipNote, highlight: true, href: SKIP_THE_LINE_URL },
+            { label: t.cardGuided, mad: <ViatorPrice slug="guided-tour" />, usd: t.cardGuidedSub, note: t.cardGuidedNote, highlight: false, href: GUIDED_TOUR_URL },
+          ].map(({ label, mad, usd, note, highlight, href }) => {
+            const body = (
+              <>
+                <p className={`text-xs font-bold uppercase tracking-widest mb-3 ${highlight ? 'text-white/70' : 'text-[#C4A882]'}`}>{label}</p>
+                <p className={`text-3xl font-bold mb-1 ${highlight ? 'text-white' : 'text-[#C4452D]'}`} style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}>{mad}</p>
+                <p className={`text-sm mb-3 ${highlight ? 'text-white/80' : 'text-[#C4A882]'}`}>{usd}</p>
+                <p className={`text-xs ${highlight ? 'text-white/60' : 'text-[#C4A882]'}`}>{note}</p>
+              </>
+            );
+            const shell = `rounded-2xl border p-6 text-center ${highlight ? 'bg-[#C4452D] border-[#C4452D] text-white shadow-[0_8px_32px_rgba(196,69,45,0.3)]' : 'bg-[#251A0F] border-[rgba(232,163,61,0.13)]'}`;
+            if (!href) {
+              return <div key={label} className={shell}>{body}</div>;
+            }
+            return (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="sponsored nofollow noopener"
+                className={`${shell} group flex flex-col transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E8A33D] motion-reduce:transform-none motion-reduce:transition-none`}
+              >
+                {body}
+                <span
+                  className={`mt-4 inline-flex items-center justify-center gap-1.5 rounded-lg px-4 py-2.5 text-sm font-bold transition-colors ${
+                    highlight
+                      ? 'bg-white text-[#C4452D] group-hover:bg-white/90'
+                      : 'bg-[#C4452D] text-white group-hover:bg-[#A93825]'
+                  }`}
+                >
+                  {t.cardCta} <span aria-hidden>→</span>
+                </span>
+              </a>
+            );
+          })}
         </div>
 
         {/* Detailed breakdown */}
