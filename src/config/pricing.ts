@@ -441,6 +441,25 @@ export function currencyForTimeZone(timeZone: string | undefined, language?: str
   return 'USD';
 }
 
+/*
+ * Locales whose readers are, in practice, always euro readers: France,
+ * Spain, Germany, Italy and Portugal all use it. English and Arabic are the
+ * two we cannot decide from the language alone — English readers are in the
+ * US, the UK and Australia as much as in Europe, and Arabic readers are in
+ * Morocco as much as in the Gulf — so those keep the time-zone rule.
+ */
+const EUR_PAGE_LOCALES = new Set(['fr', 'es', 'de', 'it', 'pt']);
+
+/**
+ * The currency for a page. The language the visitor chose to read in beats
+ * the language their browser happens to be set to: somebody reading the
+ * French page wants euros even if their Chrome is in English.
+ */
+export function currencyForPage(locale: string | undefined, timeZone: string | undefined, language?: string): Currency {
+  if (locale && EUR_PAGE_LOCALES.has(locale)) return 'EUR';
+  return currencyForTimeZone(timeZone, language);
+}
+
 /** The Viator price of a slug in the given currency, if Viator sells it. */
 export function viatorPriceFor(slug: TicketSlug, currency: Currency): DisplayPrice | undefined {
   return (currency === 'EUR' ? VIATOR_PRICES_EUR : VIATOR_PRICES_USD)[slug];
