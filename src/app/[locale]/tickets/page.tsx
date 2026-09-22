@@ -85,11 +85,11 @@ const TICKETS_META: Record<string, { title: string; description: string }> = {
    * If a processor ever replaces PayPal and /visitor-pack becomes indexable
    * again, this split is worth revisiting — with the query list, not a guess.
    */
-  en: { title: `Bahia Palace Tickets 2026 — Prices, Fees & What's Included`, description: `Bahia Palace entry is 100 MAD at the gate. Book with us for the official ticket in your name, an audio guide and WhatsApp support. Free cancellation.` },
-  fr: { title: `Billets Palais Bahia 2026 — Tarifs, prix et contenu`, description: `L'entrée du Palais Bahia coûte 100 MAD sur place. Réservez chez nous : billet officiel à votre nom, audioguide et assistance WhatsApp. Annulation gratuite.` },
-  es: { title: `Entradas Palacio Bahía 2026 — Precios y tarifas incluidas`, description: `La entrada al Palacio Bahía cuesta 100 MAD en taquilla. Con nosotros: entrada oficial a tu nombre, audioguía y ayuda por WhatsApp. Cancelación gratuita.` },
-  de: { title: `Bahia Palast Tickets 2026 — Preise & Leistungen`, description: `Der Eintritt zum Bahia-Palast kostet vor Ort 100 MAD. Bei uns: offizielles Ticket auf Ihren Namen, Audioguide und WhatsApp-Support. Kostenlose Stornierung.` },
-  it: { title: `Biglietti Palazzo Bahia 2026 — Prezzi, tariffe e servizi`, description: `L'ingresso al Palazzo Bahia costa 100 MAD in loco. Da noi: biglietto ufficiale a tuo nome, audioguida e assistenza WhatsApp. Cancellazione gratuita.` },
+  en: { title: `Bahia Palace Tickets 2026 — Prices, Fees & What's Included`, description: `Bahia Palace entry is 100 MAD at the gate. Compare standard entry, the skip-the-line ticket with a digital audio guide, and guided tours, in dirhams and euros.` },
+  fr: { title: `Billets Palais Bahia 2026 — Tarifs, prix et contenu`, description: `L'entrée du Palais Bahia coûte 100 MAD sur place. Comparez l'entrée simple, le coupe-file avec audioguide et les visites guidées, en dirhams et en euros.` },
+  es: { title: `Entradas Palacio Bahía 2026 — Precios y tarifas incluidas`, description: `La entrada al Palacio Bahía cuesta 100 MAD en taquilla. Compara la entrada normal, el billete sin colas con audioguía y las visitas guiadas, en dirhams y euros.` },
+  de: { title: `Bahia Palast Tickets 2026 — Preise & Leistungen`, description: `Der Eintritt zum Bahia-Palast kostet vor Ort 100 MAD. Vergleichen Sie Standardeintritt, Skip-the-Line mit Audioguide und Führungen, in Dirham und Euro.` },
+  it: { title: `Biglietti Palazzo Bahia 2026 — Prezzi, tariffe e servizi`, description: `L'ingresso al Palazzo Bahia costa 100 MAD in loco. Confronta l'ingresso standard, il salta-fila con audioguida e le visite guidate, in dirham ed euro.` },
   /*
    * ar and pt were absent, so both served the English title and description
    * under URLs that hreflang declares as Arabic and Portuguese. Arabic is this
@@ -102,7 +102,7 @@ const TICKETS_META: Record<string, { title: string; description: string }> = {
    * gate fee buys.
    */
   ar: { title: `تذاكر قصر الباهية 2026 — الأسعار والرسوم وما تشمله`, description: `دخول قصر الباهية 100 درهم عند الشبّاك. قارن بين الدخول العادي، وتذكرة تخطّي الطابور مع دليل صوتي رقمي، والجولات المرشدة — بالدرهم وباليورو.` },
-  pt: { title: `Bilhetes do Palácio Bahia 2026 — Preços e o que inclui`, description: `A entrada no Palácio Bahia custa 100 MAD na bilheteira. Compare a entrada normal, o bilhete sem fila com audioguia digital e as visitas guiadas, em dirhams e euros.` },
+  pt: { title: `Bilhetes do Palácio Bahia 2026 — Preços e o que inclui`, description: `A entrada no Palácio Bahia custa 100 MAD na bilheteira. Compare a entrada normal, o bilhete sem fila com audioguia e as visitas guiadas, em dirhams e euros.` },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
