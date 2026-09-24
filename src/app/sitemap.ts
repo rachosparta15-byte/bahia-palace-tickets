@@ -3,6 +3,8 @@ import prisma from '@/lib/db';
 import { BASE, hreflangMap } from '@/lib/seo';
 import { getAllSlugs, getBlogPost } from '@/lib/blog';
 import { HISTORY_HREFLANG, HISTORY_SLUGS } from '@/lib/blog-hreflang';
+import { canonicalisedElsewhere } from '@/lib/blog-canonicals';
+import { legalSlugs } from '@/content/legal';
 import { isRedirectedInLocale } from '@/lib/blog-redirects';
 import { locales } from '@/i18n/routing';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
@@ -68,7 +70,6 @@ const TICKET_SLUGS = [
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [];
-  const now = new Date();
 
   /*
    * Pages that go noindex when payments are off must leave the sitemap with
@@ -98,9 +99,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     for (const locale of LOCALES) {
       entries.push({
         url: `${BASE}/${locale}${path}`,
-        lastModified: now,
         changeFrequency: freq,
         priority,
+        alternates: {
+          languages: hreflangMap(LOCALES, l => `${BASE}/${l}${path}`),
+        },
+      });
+    }
+  }
+
+  /*
+   * The legal pages, which every page links to in its footer and which the
+   * sitemap has never mentioned. /legal is the index; the nine documents sit
+   * under it. Their slugs come from src/content/legal so a new document is
+   * submitted the moment it exists.
+   */
+  for (const path of ['/legal', ...legalSlugs.map(s => `/legal/${s}`)]) {
+    for (const locale of LOCALES) {
+      entries.push({
+        url: `${BASE}/${locale}${path}`,
+        changeFrequency: 'yearly',
+        priority: 0.3,
         alternates: {
           languages: hreflangMap(LOCALES, l => `${BASE}/${l}${path}`),
         },
@@ -113,7 +132,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     for (const locale of LOCALES) {
       entries.push({
         url: `${BASE}/${locale}/tickets/${slug}`,
-        lastModified: now,
         changeFrequency: 'monthly',
         priority: 0.90,
         alternates: {
@@ -152,7 +170,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
      * sitemap: the four locales where the history article has a native slug,
      * plus the English mousawama URL whose Arabic twin is still published.
      */
-    for (const post of dbPosts.filter(p => !isRedirectedInLocale(p.locale, p.slug))) {
+    for (const post of dbPosts.filter(
+      p => !isRedirectedInLocale(p.locale, p.slug) && !canonicalisedElsewhere(p.slug),
+    )) {
       const group = bySlug.get(post.slug) ?? [];
       group.push(post);
       bySlug.set(post.slug, group);
@@ -175,6 +195,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   } else {
     // Static fallback — all slugs defined in blog.ts, across every locale
     for (const slug of getAllSlugs()) {
+      if (canonicalisedElsewhere(slug)) continue;
       const livePostLocales = LOCALES.filter(
         locale => getBlogPost(locale, slug) && !isRedirectedInLocale(locale, slug),
       );
@@ -183,7 +204,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         if (!getBlogPost(locale, slug) || isRedirectedInLocale(locale, slug)) continue;
         entries.push({
           url: `${BASE}/${locale}/blog/${slug}`,
-          lastModified: now,
           changeFrequency: 'monthly',
           priority: 0.65,
           alternates: { languages },

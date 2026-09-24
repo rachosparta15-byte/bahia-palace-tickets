@@ -14,6 +14,7 @@ import { BASE, buildAlternates, buildBreadcrumbSchema, hreflangMap } from '@/lib
 import { getBlogPost } from '@/lib/blog';
 import { HISTORY_HREFLANG, HISTORY_SLUGS } from '@/lib/blog-hreflang';
 import { livePostFilter, isLive } from '@/lib/blog-schedule';
+import { STATIC_PAGE_CANONICALS } from '@/lib/blog-canonicals';
 
 const ALL_LOCALES = ['en', 'fr', 'it', 'de', 'es'];
 
@@ -125,10 +126,9 @@ function extractFaqSchema(html: string) {
 
 export const revalidate = 3600;
 
-const STATIC_PAGE_CANONICALS: Record<string, string> = {
-  'bahia-palace-opening-hours-2026': '/opening-hours',
-  'bahia-palace-entrance-fee-2026':  '/entrance-fee',
-};
+// STATIC_PAGE_CANONICALS moved to src/lib/blog-canonicals.ts, so the sitemap
+// reads the same list and stops submitting the URLs this page points away
+// from. Imported at the top; behaviour here is unchanged.
 
 type NormalizedPost = {
   id: string;
