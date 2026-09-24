@@ -280,16 +280,16 @@ const posts: BlogPost[] = [
     locale: 'en',
     category: 'practical',
     title: 'Bahia Palace Entrance Fee 2026: Adult, Child & Group Prices',
-    excerpt: 'Bahia Palace entrance fee: 100 MAD (~€9) per adult, 2026. Children under 7 enter free. What\'s included, who gets discounts, and how to skip the 45-min door queue.',
+    excerpt: 'Bahia Palace entrance fee: 100 MAD (~€9) per adult, 2026. Children under 7 enter free, 7 to 13 pay 50 MAD. What\'s included, who gets discounts, and how to skip the 45-min door queue.',
     readTime: 9,
     publishedAt: '2026-06-21',
     body: [
-      `<p><strong>TL;DR:</strong> The standard Bahia Palace entrance fee is 100 MAD — approximately €9 or $10 USD — for adult visitors in 2026. Children under 7 enter free. Children 7 and over pay the adult rate. No student or senior discount applies to foreign visitors. Pre-booking online skips the door queue, which runs 30–45 minutes in peak season.</p>
+      `<p><strong>TL;DR:</strong> The standard Bahia Palace entrance fee is 100 MAD — approximately €9 or $10 USD — for adult visitors in 2026. Children under 7 enter free and children aged 7 to 13 pay 50 MAD. No student or senior discount applies to foreign visitors. Pre-booking online skips the door queue, which runs 30–45 minutes in peak season.</p>
 
 <h2>What Is the Standard Bahia Palace Entrance Fee in 2026?</h2>
 <p>The adult entrance fee for Bahia Palace is 100 MAD in 2026 — set by Morocco's Ministry of Culture and applied uniformly to all foreign visitors regardless of nationality. At current exchange rates that is approximately €9, $10 USD, or £8 GBP. Morocco welcomed a record 17.4 million international tourists in 2024 (<a href="https://www.visitmorocco.com" rel="noopener noreferrer">Office National Marocain du Tourisme</a>), and Bahia Palace consistently ranks among the country's most visited cultural monuments. At 100 MAD, it remains one of the better-value heritage sites in Marrakech relative to what you get inside.</p>
 
-<table><thead><tr><th>Visitor Type</th><th>Price (MAD)</th><th>Approx. EUR</th></tr></thead><tbody><tr><td>Adult (foreign visitor)</td><td>100 MAD</td><td>~€9.36</td></tr><tr><td>Child under 7</td><td>Free</td><td>Free</td></tr><tr><td>Child 7 and over</td><td>100 MAD</td><td>~€9.36</td></tr></tbody></table>
+<table><thead><tr><th>Visitor Type</th><th>Price (MAD)</th><th>Approx. EUR</th></tr></thead><tbody><tr><td>Adult (foreign visitor)</td><td>100 MAD</td><td>~€9.36</td></tr><tr><td>Child under 7</td><td>Free</td><td>Free</td></tr><tr><td>Child 7–13 (foreign visitor)</td><td>50 MAD</td><td>~€4.68</td></tr><tr><td>Child 14 and over</td><td>100 MAD</td><td>~€9.36</td></tr></tbody></table>
 
 <p>Currency conversions are approximate as of mid-2026. The Moroccan dirham (MAD) is a closed currency — you cannot purchase dirhams before arriving in Morocco. Exchange at your hotel, an ATM on arrival, or a bureau de change in Marrakech's city centre.</p>
 
@@ -325,7 +325,7 @@ const posts: BlogPost[] = [
 
 <p><strong>Children under 7:</strong> Free admission with no ticket required. This applies regardless of nationality or when you visit.</p>
 
-<p><strong>Children 7 and over:</strong> Pay the standard adult rate of 100 MAD. No reduced child or teenager ticket exists for foreign visitors.</p>
+<p><strong>Children 7 to 13:</strong> Pay 50 MAD, half the adult rate. The ministry counts them separately from adults at the window. From 14, the full 100 MAD applies.</p>
 
 <p><strong>Students:</strong> No student discount applies to international visitors at Bahia Palace. Moroccan students with a valid national student card may be eligible for a concessionary rate at the official cashier — present your card on arrival and ask.</p>
 
@@ -354,7 +354,7 @@ const posts: BlogPost[] = [
 <h2>Frequently Asked Questions</h2>
 
 <h3>How much is Bahia Palace entrance fee in 2026?</h3>
-<p>The standard adult entrance fee for Bahia Palace is 100 MAD in 2026 — approximately €9, $10 USD, or £8 GBP at current exchange rates. This price is set by Morocco's Ministry of Culture and applies uniformly to all foreign adult visitors. Children under 7 enter free. Children aged 7 and over pay the standard adult rate of 100 MAD.</p>
+<p>The standard adult entrance fee for Bahia Palace is 100 MAD in 2026 — approximately €9, $10 USD, or £8 GBP at current exchange rates. This price is set by Morocco's Ministry of Culture and applies uniformly to all foreign adult visitors. Children under 7 enter free. Foreign children aged 7 to 13 pay 50 MAD, half the adult rate.</p>
 
 <h3>Can I book Bahia Palace tickets online in advance?</h3>
 <p>Yes. Visitbahiapalace.com — an independent ticket booking platform, not the official palace management — offers pre-booked Bahia Palace entry tickets with priority access. You receive a mobile QR code by email immediately after booking; present it at the priority entrance to skip the queue entirely. Free cancellation is available up to 24 hours before your visit. Online pre-booking is strongly recommended during peak season (March–May, September–October) when the door queue runs 30–45 minutes.</p>
@@ -363,7 +363,7 @@ const posts: BlogPost[] = [
 <p>Yes. Bahia Palace is 100 MAD (approximately €9), while Majorelle Garden is 150 MAD (approximately €14) — 50% more expensive. Bahia Palace also offers a longer visit (75–90 minutes of content) compared to Majorelle Garden (typically 45–60 minutes). For visitors primarily interested in Moroccan cultural heritage and architecture, Bahia Palace delivers more content per dirham.</p>
 
 <h3>Are children free at Bahia Palace?</h3>
-<p>Children under 7 years of age enter Bahia Palace completely free of charge. No ticket is required for this age group. Children aged 7 and over pay the standard adult rate of 100 MAD. There is no reduced-price child ticket for older children or teenagers.</p>
+<p>Children under 7 years of age enter Bahia Palace completely free of charge. No ticket is required for this age group. Foreign children aged 7 to 13 pay 50 MAD, half the adult rate; from 14 they pay the full 100 MAD.</p>
 
 <h3>Is there a photography fee at Bahia Palace?</h3>
 <p>No. Personal photography — including smartphones, compact cameras, and mirrorless cameras — is permitted throughout the palace at no extra charge as part of the standard 100 MAD entrance fee. Tripods are generally discouraged inside the enclosed rooms but tolerated in the open courtyards. Commercial photography, professional video production, and drone flights require a separate permit from Morocco's Ministry of Culture, arranged in advance.</p>
