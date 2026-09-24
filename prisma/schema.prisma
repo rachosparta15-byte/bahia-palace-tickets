@@ -1,3 +1,36 @@
+// HOW TO CHANGE THIS SCHEMA
+//
+// The Vercel build no longer touches any database. It used to run
+// `prisma db push --accept-data-loss` on every deploy. That command was
+// scoped to a local file by an inline DATABASE_URL, so it could not reach
+// production — but deleting the prefix in front of it would have pointed
+// --accept-data-loss at the live Turso database, and a build step nobody
+// reads is a bad place to keep that one edit. It also did nothing the build
+// needed: production reads Turso, and prisma/dev.db is committed.
+//
+// So a schema change is now a deliberate, two-step act:
+//
+//   1. Edit this file, then create the migration locally against the local
+//      SQLite database (.env.local already points there):
+//
+//        npx prisma migrate dev --name what_you_changed
+//
+//      That writes prisma/migrations/<timestamp>_what_you_changed/ and
+//      regenerates the client. Commit both.
+//
+//   2. Apply it to production, once, from your own machine, reading the
+//      credentials from .env.prod — the file Next.js never auto-loads:
+//
+//        npx dotenv -e .env.prod -- npx prisma migrate deploy
+//
+//      `migrate deploy` runs only migrations that have not run yet. It has
+//      no --accept-data-loss equivalent: if a migration would lose data it
+//      fails and says so, which is the point.
+//
+// Never run `prisma db push` against .env.prod. push reshapes the database
+// without writing a migration, so there is no record of what changed and no
+// way back.
+
 generator client {
   provider = "prisma-client"
   output   = "../src/generated/prisma"
