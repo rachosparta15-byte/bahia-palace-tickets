@@ -108,42 +108,25 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
   const heroImg      = HERO_IMAGES[ticketKey];
   const gallery      = GALLERY_IMAGES[ticketKey];
 
-  const pageUrl = `${BASE}/${locale}/tickets/${slug}`;
-
   /*
-   * This said we were the seller, at a price that was Viator's.
+   * There is no Product schema here any more, on purpose.
    *
-   * The home page had already been corrected: these tickets are booked and
-   * charged by Viator, so the structured data has to name Viator, and our own
-   * shipping and return terms (DIGITAL_TICKET_OFFER_EXTRAS) do not apply to a
-   * resold offer — Viator's do, and we do not state them. This page was
-   * missed, so Google was told "Bahia Palace Tickets sells this for USD 13.00"
-   * on the one page whose visible text says "Booked with Viator".
+   * It used to say we were the seller, at a price that was Viator's. That was
+   * corrected first — Viator named as seller, the price and our own shipping
+   * and return terms removed — but a Product with an Offer still claims this
+   * page sells something, and it does not: the button goes to viator.com and
+   * the badge above it says "Booked with Viator". Google's structured-data
+   * policy treats marking up a product you do not sell as misleading, and a
+   * manual action would cost far more than the rich result this no longer
+   * produces anyway (there is no price left to show).
    *
-   * No price, on the owner's instruction. Viator's is the real price, but it
-   * moves, and a figure Google cached weeks ago sitting beside a different
-   * figure on the booking page is worse than no figure at all. The cost is the
-   * price line in the search result, which is a presentation choice; the
-   * seller was a correctness one.
+   * Organization and BreadcrumbList stay. Do not add Product, Offer,
+   * OfferShippingDetails or MerchantReturnPolicy back to this page while the
+   * booking is Viator's.
    */
-  const productSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name,
-    description: tagline,
-    image: `${BASE}${heroImg}`,
-    url: pageUrl,
-    offers: {
-      '@type': 'Offer',
-      url: pageUrl,
-      availability: 'https://schema.org/InStock',
-      seller: { '@type': 'Organization', name: 'Viator' },
-    },
-  };
 
   return (
     <div className="bg-[#1C1108] min-h-screen">
-      <JsonLd data={productSchema} />
       <JsonLd data={buildBreadcrumbSchema(locale, [
         { name: tb('home'), path: '' },
         { name: tb('tickets'), path: '/tickets' },
