@@ -25,33 +25,33 @@ interface Props {
 const META: Record<string, { title: string; description: string }> = {
   en: {
     title: `Bahia Palace Skip-the-Line Tickets 2026 | Skip the Queue`,
-    description: `Skip the ticket queue at Bahia Palace. Entry ticket, digital audio guide and WhatsApp support, with free cancellation until we send it.`,
+    description: `Skip the ticket-office queue at Bahia Palace: official entry and an audio guide in your language, free cancellation up to 24 hours before. Book online.`,
   },
   fr: {
     title: `Billet Coupe-File Palais Bahia 2026 | Évitez la file`,
-    description: `Évitez la file au Palais Bahia. Billet d'entrée, audioguide numérique et assistance WhatsApp, annulation gratuite jusqu'à l'envoi.`,
+    description: `Évitez la file au Palais Bahia : billet officiel et audioguide dans votre langue, annulation gratuite jusqu'à 24 h avant. Réservez en ligne.`,
   },
   de: {
     title: `Bahia Palast Skip-the-Line Ticket 2026 | Ohne Anstehen`,
-    description: `Umgehen Sie die Warteschlange am Bahia-Palast. Eintrittsticket, digitaler Audioguide und WhatsApp-Support, kostenlos stornierbar bis zum Versand.`,
+    description: `Ohne Anstehen in den Bahia-Palast: offizielles Ticket und Audioguide in Ihrer Sprache, bis 24 Stunden vorher kostenlos stornierbar. Online buchen.`,
   },
   it: {
     title: `Biglietto Salta-Fila Palazzo Bahia 2026 | Niente coda`,
-    description: `Salta la fila al Palazzo Bahia. Biglietto, audioguida digitale e assistenza WhatsApp, cancellazione gratuita fino all’invio.`,
+    description: `Salta la coda alla biglietteria del Palazzo Bahia: biglietto ufficiale e audioguida nella tua lingua, cancellazione gratuita fino a 24 ore prima.`,
   },
   es: {
     title: `Entrada Sin Cola Palacio Bahía 2026 | Evita la cola`,
-    description: `Evita la cola en el Palacio Bahía. Entrada, audioguía digital y ayuda por WhatsApp, con cancelación gratuita hasta que la enviemos.`,
+    description: `Evita la cola de taquillas del Palacio Bahía: entrada oficial y audioguía en tu idioma, cancelación gratuita hasta 24 horas antes. Reserva online.`,
   },
   // ar and pt were missing, so both served the English title on the page whose
   // entire subject is buying a ticket. Arabic is this site's strongest locale.
   ar: {
     title: `تذكرة تخطّي الطابور لقصر الباهية 2026 | بلا انتظار`,
-    description: `تجنّب طابور التذاكر في قصر الباهية. دخول بلا انتظار مع دليل صوتي رقمي يبقى على هاتفك، ودعم عبر واتساب.`,
+    description: `تجنّب طابور شبّاك التذاكر في قصر الباهية: تذكرة رسمية ودليل صوتي بلغتك، وإلغاء مجاني حتى 24 ساعة قبل الزيارة. احجز الآن عبر الإنترنت.`,
   },
   pt: {
     title: `Bilhete Sem Fila Palácio Bahia 2026 | Evite a fila`,
-    description: `Evite a fila no Palácio Bahia. Entrada sem esperar, com audioguia digital que fica no seu telemóvel e apoio por WhatsApp.`,
+    description: `Evite a fila das bilheteiras no Palácio Bahia: bilhete oficial e audioguia na sua língua, cancelamento gratuito até 24 horas antes. Reserve online.`,
   },
 };
 

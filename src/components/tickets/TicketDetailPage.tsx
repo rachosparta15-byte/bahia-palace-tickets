@@ -7,10 +7,10 @@ import { BookingWidget } from './BookingWidget';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { ReviewsCarousel } from '@/components/homepage/ReviewsCarousel';
-import { BASE, DIGITAL_TICKET_OFFER_EXTRAS, buildBreadcrumbSchema } from '@/lib/seo';
+import { BASE, buildBreadcrumbSchema } from '@/lib/seo';
 import { TICKET_PRICES } from '@/lib/ticket-data';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
-import { displayPriceFor, type TicketSlug } from '@/config/pricing';
+import type { TicketSlug } from '@/config/pricing';
 import { ViatorPrice } from '@/components/ui/ViatorPrice';
 
 export type TicketKey = 'skipTheLine' | 'guidedTour' | 'privateTour' | 'combo';
@@ -107,13 +107,25 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
   const { enabled: paymentsEnabled } = getPublicPaymentsFlags();
   const heroImg      = HERO_IMAGES[ticketKey];
   const gallery      = GALLERY_IMAGES[ticketKey];
-  // Viator's own USD price for the four live affiliate products; falls back
-  // to the `price` prop (EUR) only for a slug with no Viator listing, e.g.
-  // combo-saadian-tombs. Currency and symbol always travel together.
-  const displayPrice = displayPriceFor(slug as TicketSlug, price);
 
   const pageUrl = `${BASE}/${locale}/tickets/${slug}`;
 
+  /*
+   * This said we were the seller, at a price that was Viator's.
+   *
+   * The home page had already been corrected: these tickets are booked and
+   * charged by Viator, so the structured data has to name Viator, and our own
+   * shipping and return terms (DIGITAL_TICKET_OFFER_EXTRAS) do not apply to a
+   * resold offer — Viator's do, and we do not state them. This page was
+   * missed, so Google was told "Bahia Palace Tickets sells this for USD 13.00"
+   * on the one page whose visible text says "Booked with Viator".
+   *
+   * No price, on the owner's instruction. Viator's is the real price, but it
+   * moves, and a figure Google cached weeks ago sitting beside a different
+   * figure on the booking page is worse than no figure at all. The cost is the
+   * price line in the search result, which is a presentation choice; the
+   * seller was a correctness one.
+   */
   const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -121,16 +133,11 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
     description: tagline,
     image: `${BASE}${heroImg}`,
     url: pageUrl,
-    brand: { '@type': 'Brand', name: 'Bahia Palace Tickets' },
     offers: {
       '@type': 'Offer',
       url: pageUrl,
-      priceCurrency: displayPrice.currency,
-      price: displayPrice.amount.toFixed(2),
-      priceValidUntil: '2026-12-31',
       availability: 'https://schema.org/InStock',
-      seller: { '@type': 'Organization', name: 'Bahia Palace Tickets' },
-      ...DIGITAL_TICKET_OFFER_EXTRAS,
+      seller: { '@type': 'Organization', name: 'Viator' },
     },
   };
 
