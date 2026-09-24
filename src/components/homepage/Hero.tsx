@@ -96,6 +96,7 @@ export async function Hero() {
    * it obvious.
    */
   const t = await getTranslations('heroBanner');
+  const tFooter = await getTranslations('footer');
   const tt = await getTranslations('tickets');
   const ti = await getTranslations('visitorPack.inclusions');
   // Un-namespaced, because the three teaser lines are pulled from different
@@ -337,6 +338,18 @@ export async function Hero() {
               }}
             >
               {t.rich('subtitle', { em: (c) => <em>{c}</em> })}
+            </p>
+
+            {/*
+             * Who we are, under the h1 and under the subtitle — never above
+             * them. Somebody arriving from a search for "bahia palace tickets"
+             * should be able to see in one line that this is not the palace's
+             * own site, and where the official one is. Putting it first would
+             * change what the page opens with, which is the one thing not
+             * worth risking on a page that ranks.
+             */}
+            <p className="mb-4 text-[11px] leading-relaxed text-[#C4A882]/70 sm:mb-6 sm:text-xs">
+              {tFooter('independentNotice')}
             </p>
 
             {/*

@@ -22,7 +22,7 @@
     "instant": "100% Independent",
     "freeCancellation": "Transparent Pricing",
     "mobile": "Verified Info",
-    "secure": "Official Tickets Only"
+    "secure": "Genuine tickets only"
   },
   "tickets": {
     "title": "Choose Your Bahia Palace Experience",
@@ -563,10 +563,11 @@
     "cookies": "Cookie Policy",
     "editorial": "Editorial",
     "contact": "Contact",
-    "copyright": "© {year} Bahia Palace Tickets. All rights reserved.",
-    "paymentNote": "Official tickets · Booked with Viator",
+    "copyright": "© {year} visitbahiapalace.com – Independent guide. All rights reserved.",
+    "paymentNote": "Genuine 100 MAD entry ticket · Booked via Viator",
     "disclaimer": "visitbahiapalace.com is an independent visitor information and booking service. We are not affiliated with the official Bahia Palace or the Moroccan Ministry of Culture. Entry tickets can also be bought directly from the Ministry at <portal>e-services.minculture.gov.ma</portal>.",
-    "network": "Part of an independent network of Morocco monument guides."
+    "network": "Part of an independent network of Morocco monument guides.",
+    "independentNotice": "Independent guide — not the official Bahia Palace website. Official tickets: e-services.minculture.gov.ma"
   },
   "whatsapp": {
     "tooltip": "Chat with us",

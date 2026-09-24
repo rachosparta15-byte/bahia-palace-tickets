@@ -31,7 +31,7 @@
     "instant": "100% independentes",
     "freeCancellation": "Preço transparente",
     "mobile": "Informação verificada",
-    "secure": "Só bilhetes oficiais"
+    "secure": "Só bilhetes autênticos"
   },
   "cta": {
     "title": "Já leu sobre ele. Agora entre.",
@@ -538,10 +538,11 @@
     "cookies": "Política de cookies",
     "editorial": "Política editorial",
     "contact": "Contacto",
-    "copyright": "© {year} Bahia Palace Tickets. Todos os direitos reservados.",
-    "paymentNote": "Bilhetes oficiais · Reservado com Viator",
+    "copyright": "© {year} visitbahiapalace.com – Guia independente. Todos os direitos reservados.",
+    "paymentNote": "Bilhete de entrada autêntico de 100 MAD · Reservado via Viator",
     "network": "Parte de uma rede independente de guias de monumentos de Marrocos.",
-    "disclaimer": "O visitbahiapalace.com é um serviço independente de informação e reservas. Não estamos associados ao Palácio da Bahia oficial nem ao Ministério da Cultura de Marrocos. Os bilhetes de entrada também podem ser comprados directamente ao Ministério em <portal>e-services.minculture.gov.ma</portal>."
+    "disclaimer": "O visitbahiapalace.com é um serviço independente de informação e reservas. Não estamos associados ao Palácio da Bahia oficial nem ao Ministério da Cultura de Marrocos. Os bilhetes de entrada também podem ser comprados directamente ao Ministério em <portal>e-services.minculture.gov.ma</portal>.",
+    "independentNotice": "Guia independente — não é o site oficial do Palácio da Bahia. Bilhetes oficiais: e-services.minculture.gov.ma"
   },
   "ticketDetail": {
     "includes": "O que está incluído",

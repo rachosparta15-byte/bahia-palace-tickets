@@ -31,7 +31,7 @@
     "instant": "مستقلّون تماماً",
     "freeCancellation": "ثمن شفّاف",
     "mobile": "معلومات موثّقة",
-    "secure": "تذاكر رسمية فقط"
+    "secure": "تذاكر أصلية فقط"
   },
   "cta": {
     "title": "قرأت عنه. الآن ادخله.",
@@ -538,10 +538,11 @@
     "cookies": "سياسة ملفات تعريف الارتباط",
     "editorial": "السياسة التحريرية",
     "contact": "اتصل بنا",
-    "copyright": "© {year} Bahia Palace Tickets. جميع الحقوق محفوظة.",
-    "paymentNote": "تذاكر رسمية · الحجز عبر Viator",
+    "copyright": "© {year} visitbahiapalace.com – دليل مستقل. جميع الحقوق محفوظة.",
+    "paymentNote": "تذكرة دخول أصلية بـ100 درهم · الحجز عبر Viator",
     "network": "جزء من شبكة مستقلة لأدلّة معالم المغرب.",
-    "disclaimer": "visitbahiapalace.com خدمة مستقلة لمعلومات الزوّار والحجز. لسنا تابعين لقصر الباهية الرسمي ولا لوزارة الثقافة المغربية. ويمكن أيضاً شراء تذاكر الدخول مباشرةً من الوزارة على <portal>e-services.minculture.gov.ma</portal>."
+    "disclaimer": "visitbahiapalace.com خدمة مستقلة لمعلومات الزوّار والحجز. لسنا تابعين لقصر الباهية الرسمي ولا لوزارة الثقافة المغربية. ويمكن أيضاً شراء تذاكر الدخول مباشرةً من الوزارة على <portal>e-services.minculture.gov.ma</portal>.",
+    "independentNotice": "دليل مستقل — لسنا الموقع الرسمي لقصر الباهية. التذاكر الرسمية: e-services.minculture.gov.ma"
   },
   "ticketDetail": {
     "includes": "ما هو مشمول",

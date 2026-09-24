@@ -22,7 +22,7 @@
     "instant": "100 % Indépendant",
     "freeCancellation": "Prix Transparent",
     "mobile": "Infos Vérifiées",
-    "secure": "Billets Officiels Uniquement"
+    "secure": "Billets authentiques uniquement"
   },
   "tickets": {
     "title": "Choisissez votre Expérience au Palais Bahia",
@@ -250,10 +250,11 @@
     "cookies": "Politique Cookies",
     "editorial": "Éditorial",
     "contact": "Contact",
-    "copyright": "© {year} Bahia Palace Tickets. Tous droits réservés.",
-    "paymentNote": "Billets officiels · Réservé via Viator",
+    "copyright": "© {year} visitbahiapalace.com – Guide indépendant. Tous droits réservés.",
+    "paymentNote": "Billet d'entrée authentique à 100 MAD · Réservé via Viator",
     "disclaimer": "visitbahiapalace.com est un service indépendant d’information et de réservation. Nous ne sommes affiliés ni au palais de la Bahia ni au ministère marocain de la Culture. Les billets d’entrée peuvent aussi être achetés directement auprès du ministère sur <portal>e-services.minculture.gov.ma</portal>.",
-    "network": "Membre d'un réseau indépendant de guides des monuments du Maroc."
+    "network": "Membre d'un réseau indépendant de guides des monuments du Maroc.",
+    "independentNotice": "Guide indépendant — pas le site officiel du Palais Bahia. Billets officiels : e-services.minculture.gov.ma"
   },
   "whatsapp": {
     "tooltip": "Discutez avec nous",
