@@ -208,7 +208,6 @@ function renderEmphasis(text: string) {
 export default async function TicketsPage({ params }: Props) {
   const { locale } = await params;
   const tb = await getTranslations({ locale, namespace: 'breadcrumb' });
-  const tFooter = await getTranslations({ locale, namespace: 'footer' });
   const h1 = H1_LABELS[locale] ?? H1_LABELS.en;
   const intro = INTRO[locale] ?? INTRO.en;
   const body  = TICKETS_CONTENT[locale] ?? TICKETS_CONTENT.en;
@@ -301,16 +300,6 @@ export default async function TicketsPage({ params }: Props) {
           </h1>
           <p className="mt-4 max-w-3xl text-[#C4A882] leading-relaxed">
             {intro}
-          </p>
-          {/*
-           * Under the h1 and under the intro, never above. This is the page
-           * that ranks for "bahia palace tickets", so somebody landing here
-           * should see in one line that this is not the palace's own site and
-           * where the official one is — without changing what the page opens
-           * with.
-           */}
-          <p className="mt-3 max-w-3xl text-[11px] leading-relaxed text-[#C4A882]/70 sm:text-xs">
-            {tFooter('independentNotice')}
           </p>
         </div>
       </div>
