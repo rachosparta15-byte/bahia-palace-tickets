@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
+import { familyFor } from '@/lib/blog-hreflang';
 import { useRouter } from '@/i18n/navigation';
 import { Menu, X, Globe, ChevronDown, AlertTriangle, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -42,8 +43,28 @@ export function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  /*
+   * Switching language keeps the path, which is right for every page except a
+   * blog post whose slug was translated.
+   *
+   * Sixteen posts have a native slug per language, so carrying the French
+   * slug into /de produced a URL that does not exist — and it answers 200
+   * with the site's default title, no h1 and no canonical, which is a soft
+   * 404 for the reader and for Google. familyFor() knows those sixteen; every
+   * other path is unchanged.
+   *
+   * If a family has no version in the language being switched to ("Marrakech,
+   * the red city" is fr/it/de only), the switch falls back to the blog index
+   * in that language rather than to a page that is not there.
+   */
   const switchLocale = (newLocale: Locale) => {
-    router.replace(pathname, { locale: newLocale });
+    let target = pathname;
+    const match = pathname.match(/^\/blog\/(.+)$/);
+    if (match) {
+      const family = familyFor(match[1]);
+      if (family) target = family[newLocale] ? `/blog/${family[newLocale]}` : '/blog';
+    }
+    router.replace(target, { locale: newLocale });
     setLangOpen(false);
     setMenuOpen(false);
   };

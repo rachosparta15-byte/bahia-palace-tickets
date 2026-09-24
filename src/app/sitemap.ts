@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import prisma from '@/lib/db';
 import { BASE, hreflangMap } from '@/lib/seo';
 import { getAllSlugs, getBlogPost } from '@/lib/blog';
-import { HISTORY_HREFLANG, HISTORY_SLUGS } from '@/lib/blog-hreflang';
+import { familyFor } from '@/lib/blog-hreflang';
 import { canonicalisedElsewhere } from '@/lib/blog-canonicals';
 import { legalSlugs } from '@/content/legal';
 import { isRedirectedInLocale } from '@/lib/blog-redirects';
@@ -155,12 +155,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   } catch { /* DB unavailable at sitemap generation time */ }
 
-  // History posts use different slugs per locale — hardcode their cross-slug hreflang
-  const historyLanguages = hreflangMap(
-    Object.keys(HISTORY_HREFLANG),
-    l => `${BASE}/${l}/blog/${HISTORY_HREFLANG[l]}`,
-  );
-
   if (dbPosts.length > 0) {
     // DB path — preserve hreflang across only the locales that exist in the DB
     const bySlug = new Map<string, typeof dbPosts>();
@@ -178,9 +172,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       bySlug.set(post.slug, group);
     }
     for (const group of bySlug.values()) {
-      const isHistory = HISTORY_SLUGS.has(group[0].slug);
-      const languages = isHistory
-        ? historyLanguages
+      // A translated slug is grouped from the family table; everything else
+      // by the locales the same slug is published in.
+      const family = familyFor(group[0].slug);
+      const languages = family
+        ? hreflangMap(Object.keys(family), l => `${BASE}/${l}/blog/${family[l]}`)
         : hreflangMap(group.map(p => p.locale), l => `${BASE}/${l}/blog/${group[0].slug}`);
       for (const post of group) {
         entries.push({
@@ -199,7 +195,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       const livePostLocales = LOCALES.filter(
         locale => getBlogPost(locale, slug) && !isRedirectedInLocale(locale, slug),
       );
-      const languages = hreflangMap(livePostLocales, l => `${BASE}/${l}/blog/${slug}`);
+      const fbFamily = familyFor(slug);
+      const languages = fbFamily
+        ? hreflangMap(Object.keys(fbFamily), l => `${BASE}/${l}/blog/${fbFamily[l]}`)
+        : hreflangMap(livePostLocales, l => `${BASE}/${l}/blog/${slug}`);
       for (const locale of LOCALES) {
         if (!getBlogPost(locale, slug) || isRedirectedInLocale(locale, slug)) continue;
         entries.push({

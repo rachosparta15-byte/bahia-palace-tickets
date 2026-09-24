@@ -12,7 +12,7 @@ import prisma from '@/lib/db';
 import type { Metadata } from 'next';
 import { BASE, buildAlternates, buildBreadcrumbSchema, hreflangMap } from '@/lib/seo';
 import { getBlogPost } from '@/lib/blog';
-import { HISTORY_HREFLANG, HISTORY_SLUGS } from '@/lib/blog-hreflang';
+import { familyFor } from '@/lib/blog-hreflang';
 import { livePostFilter, isLive } from '@/lib/blog-schedule';
 import { STATIC_PAGE_CANONICALS } from '@/lib/blog-canonicals';
 
@@ -46,12 +46,21 @@ async function dbQuery<T>(label: string, fn: () => Promise<T>): Promise<T | unde
 // path for every locale" assumption produces alternate links to 404s, which
 // Google then dutifully crawls and reports as broken.
 async function buildBlogAlternates(locale: string, slug: string) {
-  if (HISTORY_SLUGS.has(slug)) {
+  /*
+   * A post whose slug was translated cannot be grouped by matching the slug,
+   * so its family is looked up. This covers the history article and the four
+   * others confirmed in blog-hreflang.ts.
+   */
+  const family = familyFor(slug);
+  if (family) {
     const languages = hreflangMap(
-      Object.keys(HISTORY_HREFLANG),
-      l => `${BASE}/${l}/blog/${HISTORY_HREFLANG[l]}`,
+      Object.keys(family),
+      l => `${BASE}/${l}/blog/${family[l]}`,
     );
-    languages['x-default'] = `${BASE}/en/blog/${HISTORY_HREFLANG.en}`;
+    // x-default only when an English version exists. "Marrakech, the red
+    // city" runs in fr, it and de alone, and naming a default that is not
+    // published would point Google at a 404.
+    if (family.en) languages['x-default'] = `${BASE}/en/blog/${family.en}`;
     return { canonical: `${BASE}/${locale}/blog/${slug}`, languages };
   }
 
