@@ -1171,5 +1171,22 @@
     "ctaTitle": "Prenota online i biglietti per il Palazzo Bahia",
     "ctaBody": "Salta la fila all'ingresso. Mostra il biglietto sul telefono ed entra subito.",
     "ctaBtn": "Prenota i biglietti online"
+  },
+  "editorialPage": {
+    "h1": "Abdellah — scrittore di viaggio e fotografo a Marrakech",
+    "sub": "Chi scrive gli articoli di visitbahiapalace.com — e come.",
+    "role": "Scrittore di viaggio · visitbahiapalace.com",
+    "based": "Marrakech, Marocco",
+    "photography": "Fotografie originali",
+    "firstHand": "Esperienza locale diretta",
+    "bio": "Abdellah è uno scrittore di viaggio che vive a Marrakech. Ha visitato il Palazzo Bahia di persona e lo ha fotografato lui stesso. Scrive gli articoli di visitbahiapalace.com partendo dalla sua esperienza della città, e ogni fotografia attribuita a visitbahiapalace.com è sua, scattata sul posto.",
+    "approachTitle": "Linea editoriale",
+    "approach1": "Ogni articolo di visitbahiapalace.com nasce da una conoscenza diretta del palazzo e della medina che lo circonda. Prezzi, orari e consigli pratici vengono verificati sul campo, e quando qualcosa cambia l’articolo viene aggiornato.",
+    "approach2": "Il sito racconta il Palazzo Bahia dal punto di vista di chi lo visita: come arrivarci, cosa succede all’ingresso, quali sale contano e perché, e quale accompagnamento serve davvero prima e durante la visita. Si estende alla medina meridionale — Tombe saadiane, Mellah — quando quei luoghi aiutano a capire il Bahia.",
+    "approach3": "Le affermazioni storiche e architettoniche citano fonti verificabili. Ogni cifra porta accanto la sua fonte. Nulla è inventato e nulla è stimato senza dirlo.",
+    "independenceTitle": "Dichiarazione di indipendenza",
+    "independenceBody": "visitbahiapalace.com è una guida indipendente per i visitatori. Non è affiliata al monumento del Palazzo Bahia, al Ministero della Cultura del Marocco né ad alcun ente pubblico. Gli articoli, i prezzi e le opinioni qui pubblicati sono la valutazione personale di Abdellah, non una posizione ufficiale.",
+    "contactTitle": "Correzioni e richieste stampa",
+    "contactBody": "Se noti un errore, hai una domanda per la stampa o vuoi raccontare la tua esperienza al Palazzo Bahia, scrivi direttamente. Le correzioni sui fatti hanno la precedenza e vengono pubblicate in fretta."
   }
 }

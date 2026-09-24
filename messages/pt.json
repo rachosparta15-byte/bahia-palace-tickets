@@ -941,5 +941,22 @@
     "ctaTitle": "Reserve online os bilhetes para o Palácio da Bahia",
     "ctaBody": "Evite a fila à entrada. Mostre o bilhete no telemóvel e entre diretamente.",
     "ctaBtn": "Reservar bilhetes online"
+  },
+  "editorialPage": {
+    "h1": "Abdellah — escritor de viagens e fotógrafo em Marraquexe",
+    "sub": "Quem escreve os artigos de visitbahiapalace.com — e como.",
+    "role": "Escritor de viagens · visitbahiapalace.com",
+    "based": "Marraquexe, Marrocos",
+    "photography": "Fotografia própria",
+    "firstHand": "Experiência local em primeira mão",
+    "bio": "Abdellah é um escritor de viagens que vive em Marraquexe. Visitou o Palácio da Bahia pessoalmente e fotografou-o ele próprio. Escreve os artigos de visitbahiapalace.com a partir da sua experiência de viver na cidade, e cada fotografia atribuída a visitbahiapalace.com é sua, tirada no local.",
+    "approachTitle": "Abordagem editorial",
+    "approach1": "Cada artigo de visitbahiapalace.com parte de um conhecimento direto do palácio e da medina em redor. Preços, horários e conselhos práticos são confrontados com a realidade e, quando alguma coisa muda no terreno, o artigo é atualizado.",
+    "approach2": "O site trata o Palácio da Bahia do ponto de vista de quem o visita: como lá chegar, o que acontece à entrada, que salas importam e porquê, e que acompanhamento ajuda mesmo antes e durante a visita. Estende-se ao sul da medina — Túmulos saadianos, Mellah — quando esses lugares esclarecem a visita ao Bahia.",
+    "approach3": "As afirmações históricas e arquitetónicas citam fontes verificáveis. Cada número traz a sua fonte ao lado. Nada é inventado e nada é estimado sem que isso seja dito.",
+    "independenceTitle": "Nota de independência",
+    "independenceBody": "visitbahiapalace.com é um guia de visita independente. Não está associado ao monumento do Palácio da Bahia, ao Ministério da Cultura de Marrocos nem a qualquer organismo público. Os artigos, os preços e as opiniões aqui publicados são a avaliação pessoal de Abdellah e não uma posição oficial.",
+    "contactTitle": "Correções e pedidos de imprensa",
+    "contactBody": "Se encontrar um erro, tiver uma questão de imprensa ou quiser partilhar a sua própria experiência no Palácio da Bahia, escreva diretamente. As correções de factos têm prioridade e são publicadas depressa."
   }
 }

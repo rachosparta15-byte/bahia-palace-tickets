@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function EditorialPage({ params }: Props) {
   const { locale } = await params;
+  const t = await getTranslations('editorialPage');
   const tb = await getTranslations('breadcrumb');
 
   const personSchema = {
@@ -74,10 +75,10 @@ export default async function EditorialPage({ params }: Props) {
               className="text-white font-bold leading-tight"
               style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 5vw, 3rem)' }}
             >
-              Abdellah — Marrakech Travel Writer & Photographer
+              {t('h1')}
             </h1>
             <p className="text-white/80 mt-2 text-lg max-w-2xl">
-              Who writes the articles on visitbahiapalace.com — and how.
+              {t('sub')}
             </p>
           </div>
         </div>
@@ -102,29 +103,26 @@ export default async function EditorialPage({ params }: Props) {
                 Abdellah
               </h2>
               <p className="text-[#C4452D] text-sm font-semibold uppercase tracking-wider mb-4">
-                Travel Writer · visitbahiapalace.com
+                {t('role')}
               </p>
 
               <div className="flex flex-wrap gap-4 text-sm text-[#C4A882] mb-6">
                 <span className="flex items-center gap-1.5">
                   <MapPin size={14} className="text-[#E8A33D]" />
-                  Marrakech, Morocco
+                  {t('based')}
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Camera size={14} className="text-[#E8A33D]" />
-                  Original photography
+                  {t('photography')}
                 </span>
                 <span className="flex items-center gap-1.5">
                   <PenLine size={14} className="text-[#E8A33D]" />
-                  First-hand local experience
+                  {t('firstHand')}
                 </span>
               </div>
 
               <p className="text-[#C4A882] leading-relaxed text-lg">
-                Abdellah is a Marrakech-based travel writer who has personally visited Bahia Palace
-                and photographed it himself. He writes the articles on visitbahiapalace.com based on
-                first-hand local experience living in Marrakech, and all photographs credited to
-                visitbahiapalace.com are his own original work taken on-site.
+                {t('bio')}
               </p>
             </div>
           </div>
@@ -136,25 +134,17 @@ export default async function EditorialPage({ params }: Props) {
             style={{ fontFamily: 'Cormorant Garamond, serif' }}
             className="text-2xl font-bold text-[#F5E8CC] mb-6"
           >
-            Editorial approach
+            {t('approachTitle')}
           </h2>
           <div className="space-y-4 text-[#C4A882] leading-relaxed">
             <p>
-              Every article on visitbahiapalace.com is written from direct knowledge of the palace and
-              the surrounding medina. Prices, opening hours, and practical advice are verified against
-              current conditions. When things change on the ground, the articles are updated to reflect
-              that reality.
+              {t('approach1')}
             </p>
             <p>
-              The site covers Bahia Palace from the perspective of an independent visitor: how to get
-              there, what to expect at the entrance, which rooms are most significant and why, and what
-              kind of guidance actually helps before and during a visit. Coverage extends to the wider
-              southern medina (Saadian Tombs, Mellah quarter) where those sites directly relate to a
-              Bahia Palace visit.
+              {t('approach2')}
             </p>
             <p>
-              Historical and architectural claims cite verifiable sources. Wherever a statistic appears,
-              the source is linked inline. No information is fabricated or estimated without disclosure.
+              {t('approach3')}
             </p>
           </div>
         </section>
@@ -165,13 +155,10 @@ export default async function EditorialPage({ params }: Props) {
             style={{ fontFamily: 'Cormorant Garamond, serif' }}
             className="text-xl font-bold text-[#F5E8CC] mb-3"
           >
-            Independence notice
+            {t('independenceTitle')}
           </h2>
           <p className="text-[#C4A882] leading-relaxed">
-            visitbahiapalace.com is an independent visitor information and ticket platform. It is not
-            affiliated with the Bahia Palace monument, the Moroccan Ministry of Culture, or any
-            official government body. The articles, prices, and opinions on this site represent
-            Abdellah's independent assessment, not an official position.
+            {t('independenceBody')}
           </p>
         </section>
 
@@ -182,12 +169,10 @@ export default async function EditorialPage({ params }: Props) {
               style={{ fontFamily: 'Cormorant Garamond, serif' }}
               className="text-2xl font-bold mb-2"
             >
-              Corrections &amp; press enquiries
+              {t('contactTitle')}
             </h2>
             <p className="text-white/80 leading-relaxed text-sm">
-              If you spot an error, have a press question, or want to share first-hand experience about
-              visiting Bahia Palace, reach out directly. Factual corrections are prioritised and
-              published promptly.
+              {t('contactBody')}
             </p>
           </div>
           <a

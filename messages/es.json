@@ -1171,5 +1171,22 @@
     "ctaTitle": "Reserva online tus entradas al Palacio Bahía",
     "ctaBody": "Evita la cola en la entrada. Enseña la entrada en el móvil y pasa directamente.",
     "ctaBtn": "Reservar entradas online"
+  },
+  "editorialPage": {
+    "h1": "Abdellah — escritor de viajes y fotógrafo en Marrakech",
+    "sub": "Quién escribe los artículos de visitbahiapalace.com — y cómo.",
+    "role": "Escritor de viajes · visitbahiapalace.com",
+    "based": "Marrakech, Marruecos",
+    "photography": "Fotografía propia",
+    "firstHand": "Experiencia local de primera mano",
+    "bio": "Abdellah es un escritor de viajes afincado en Marrakech. Ha visitado el Palacio Bahía él mismo y lo ha fotografiado él mismo. Escribe los artículos de visitbahiapalace.com a partir de su experiencia viviendo en la ciudad, y cada fotografía atribuida a visitbahiapalace.com es suya, tomada sobre el terreno.",
+    "approachTitle": "Enfoque editorial",
+    "approach1": "Cada artículo de visitbahiapalace.com parte de un conocimiento directo del palacio y de la medina que lo rodea. Los precios, los horarios y los consejos prácticos se contrastan con la realidad, y cuando algo cambia sobre el terreno el artículo se actualiza.",
+    "approach2": "La web aborda el Palacio Bahía desde el punto de vista de quien lo visita: cómo llegar, qué ocurre en la entrada, qué salas importan y por qué, y qué acompañamiento ayuda de verdad antes y durante la visita. Se extiende al sur de la medina — Tumbas saadíes, Mellah — cuando esos lugares iluminan la visita al Bahía.",
+    "approach3": "Las afirmaciones históricas y arquitectónicas citan fuentes comprobables. Cada cifra lleva su fuente al lado. Nada se inventa, y nada se estima sin decirlo.",
+    "independenceTitle": "Aviso de independencia",
+    "independenceBody": "visitbahiapalace.com es una guía de visita independiente. No está afiliada al monumento del Palacio Bahía, ni al Ministerio de Cultura de Marruecos, ni a ningún organismo público. Los artículos, los precios y las opiniones que aquí aparecen son la valoración personal de Abdellah, no una posición oficial.",
+    "contactTitle": "Correcciones y consultas de prensa",
+    "contactBody": "Si detectas un error, tienes una consulta de prensa o quieres contar tu propia experiencia en el Palacio Bahía, escribe directamente. Las correcciones de datos son prioritarias y se publican enseguida."
   }
 }

@@ -1171,5 +1171,22 @@
     "ctaTitle": "Réservez vos billets pour le Palais Bahia en ligne",
     "ctaBody": "Évitez la file à l'entrée. Montrez votre billet sur votre téléphone et entrez directement.",
     "ctaBtn": "Réserver mes billets en ligne"
+  },
+  "editorialPage": {
+    "h1": "Abdellah — auteur de voyage et photographe à Marrakech",
+    "sub": "Qui écrit les articles de visitbahiapalace.com — et comment.",
+    "role": "Auteur de voyage · visitbahiapalace.com",
+    "based": "Marrakech, Maroc",
+    "photography": "Photographies originales",
+    "firstHand": "Expérience locale de première main",
+    "bio": "Abdellah est un auteur de voyage installé à Marrakech. Il a visité le Palais Bahia lui-même et l'a photographié lui-même. Il écrit les articles de visitbahiapalace.com à partir de son expérience de la ville, et chaque photographie créditée à visitbahiapalace.com est la sienne, prise sur place.",
+    "approachTitle": "Approche éditoriale",
+    "approach1": "Chaque article de visitbahiapalace.com est écrit à partir d'une connaissance directe du palais et de la médina qui l'entoure. Les tarifs, les horaires et les conseils pratiques sont vérifiés sur le terrain, et l'article est mis à jour dès que quelque chose change.",
+    "approach2": "Le site aborde le Palais Bahia du point de vue du visiteur : comment y aller, ce qui se passe à l'entrée, quelles salles comptent et pourquoi, et quel accompagnement aide vraiment avant et pendant la visite. Il s'étend au sud de la médina — Tombeaux saadiens, Mellah — quand ces lieux éclairent une visite du Bahia.",
+    "approach3": "Les affirmations historiques et architecturales citent des sources vérifiables. Chaque chiffre est accompagné de sa source. Rien n'est inventé, et rien n'est estimé sans le dire.",
+    "independenceTitle": "Avis d'indépendance",
+    "independenceBody": "visitbahiapalace.com est un guide de visite indépendant. Il n'est affilié ni au monument du Palais Bahia, ni au ministère marocain de la Culture, ni à aucun organisme public. Les articles, les tarifs et les avis publiés ici sont l'appréciation personnelle d'Abdellah, et non une position officielle.",
+    "contactTitle": "Corrections et demandes presse",
+    "contactBody": "Si vous repérez une erreur, avez une question presse ou souhaitez partager votre propre expérience du Palais Bahia, écrivez directement. Les corrections factuelles passent en premier et sont publiées rapidement."
   }
 }
