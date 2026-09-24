@@ -4,6 +4,7 @@ import { Breadcrumb } from '@/components/tickets/Breadcrumb';
 import { buildAlternates, buildOG, buildBreadcrumbSchema, BASE } from '@/lib/seo';
 import { MapPin, Navigation, Clock, ArrowRight, Car, Footprints } from 'lucide-react';
 import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
 export const revalidate = 86400;
 
@@ -50,19 +51,21 @@ function getLocationSchema(locale: string) {
 
 export default async function LocationPage({ params }: Props) {
   const { locale } = await params;
+  const t  = await getTranslations('locationPage');
+  const tb = await getTranslations('breadcrumb');
   return (
     <div className="min-h-screen bg-[#1C1108]">
       <JsonLd data={getLocationSchema(locale)} />
-      <JsonLd data={buildBreadcrumbSchema(locale, [{ name: 'Home', path: '' }, { name: 'Location & Directions' }])} />
+      <JsonLd data={buildBreadcrumbSchema(locale, [{ name: tb('home'), path: '' }, { name: t('breadcrumb') }])} />
 
       <div className="bg-[#251A0F] border-b border-[rgba(232,163,61,0.15)] text-white px-6 py-12 md:px-10">
         <div className="max-w-4xl mx-auto">
-          <Breadcrumb variant="light" items={[{ label: 'Home', href: '/' }, { label: 'Location & Directions' }]} />
+          <Breadcrumb variant="light" items={[{ label: tb('home'), href: '/' }, { label: t('breadcrumb') }]} />
           <h1 className="mt-6 font-bold text-white" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 4vw, 2.75rem)' }}>
-            How to Get to Bahia Palace Marrakech
+            {t('h1')}
           </h1>
           <p className="mt-3 text-white/75 text-lg max-w-2xl">
-            Bahia Palace is located in the heart of Marrakech Medina. Here&apos;s everything you need to know to get there — by foot, taxi, or calèche.
+            {t('intro')}
           </p>
         </div>
       </div>
@@ -73,11 +76,11 @@ export default async function LocationPage({ params }: Props) {
         <div className="bg-[#251A0F] rounded-2xl border border-[rgba(232,163,61,0.13)] p-6 flex gap-4">
           <MapPin size={24} className="text-[#C4452D] shrink-0 mt-1" />
           <div>
-            <h2 className="font-bold text-[#F5E8CC] mb-1" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem' }}>Bahia Palace Address</h2>
+            <h2 className="font-bold text-[#F5E8CC] mb-1" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem' }}>{t('addressTitle')}</h2>
             <p className="text-[#C4A882] text-sm leading-relaxed">
               <strong className="text-[#F5E8CC]">Rue Riad Zitoun el Jedid</strong><br />
               Marrakech Medina, 40000<br />
-              Morocco
+              {t('country')}
             </p>
             <a
               href="https://maps.google.com/?q=Bahia+Palace+Marrakech"
@@ -85,7 +88,7 @@ export default async function LocationPage({ params }: Props) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-sm text-[#3B65C8] font-semibold mt-3 hover:underline"
             >
-              <Navigation size={13} /> Open in Google Maps
+              <Navigation size={13} /> {t('openInMaps')}
             </a>
           </div>
         </div>
@@ -93,35 +96,35 @@ export default async function LocationPage({ params }: Props) {
         {/* Getting there options */}
         <div>
           <h2 className="text-2xl font-bold text-[#F5E8CC] mb-5" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
-            Getting to Bahia Palace from Jemaa el-Fnaa
+            {t('gettingThereTitle')}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
               {
                 icon: Footprints,
-                title: 'On Foot',
+                title: t('footTitle'),
                 time: '10–15 min',
-                cost: 'Free',
-                desc: 'Walk south from Jemaa el-Fnaa through the souks. Follow signs for "Palais Bahia." Scenic route through the medina.',
-                tip: 'Best option — enjoy the medina atmosphere',
+                cost: t('free'),
+                desc: t('footDesc'),
+                tip: t('footTip'),
                 color: '#8FA63C',
               },
               {
                 icon: Car,
-                title: 'Petit Taxi',
+                title: t('taxiTitle'),
                 time: '5 min',
                 cost: '15–25 MAD',
-                desc: 'Abundant red petits taxis in Marrakech. Ask for "Palais Bahia" or "Riad Zitoun el Jedid." Insist on the meter.',
-                tip: 'Negotiate price before departure — no meter = agree first',
+                desc: t('taxiDesc'),
+                tip: t('taxiTip'),
                 color: '#C4452D',
               },
               {
                 icon: Navigation,
-                title: 'Calèche (horse carriage)',
+                title: t('calecheTitle'),
                 time: '10 min',
                 cost: '50–80 MAD',
-                desc: 'Authentic Marrakech experience. Calèches wait near Jemaa el-Fnaa. Negotiate a round-trip price.',
-                tip: 'Tourist experience — negotiate firmly',
+                desc: t('calecheDesc'),
+                tip: t('calecheTip'),
                 color: '#E8A33D',
               },
             ].map(({ icon: Icon, title, time, cost, desc, tip, color }) => (
@@ -149,23 +152,23 @@ export default async function LocationPage({ params }: Props) {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Bahia Palace Marrakech location map"
+            title={t('mapTitle')}
           />
         </div>
 
         {/* Landmarks nearby */}
         <div>
           <h2 className="text-2xl font-bold text-[#F5E8CC] mb-4" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
-            Nearby Landmarks & Walking Distances
+            {t('landmarksTitle')}
           </h2>
           <div className="bg-[#251A0F] rounded-xl border border-[rgba(232,163,61,0.13)] divide-y divide-[rgba(232,163,61,0.10)]">
             {[
-              { from: 'Jemaa el-Fnaa', distance: '750 m', time: '10 min walk' },
-              { from: 'Saadian Tombs', distance: '500 m', time: '7 min walk' },
-              { from: 'El Badi Palace', distance: '800 m', time: '10 min walk' },
-              { from: 'Mellah (Jewish Quarter)', distance: '300 m', time: '4 min walk' },
-              { from: 'Marrakech train station', distance: '3.5 km', time: '15 min taxi' },
-              { from: 'Marrakech Menara Airport', distance: '6 km', time: '20 min taxi' },
+              { from: t('lmJemaa'), distance: '750 m', time: t('walkMin', { n: 10 }) },
+              { from: t('lmSaadian'), distance: '500 m', time: t('walkMin', { n: 7 }) },
+              { from: t('lmBadi'), distance: '800 m', time: t('walkMin', { n: 10 }) },
+              { from: t('lmMellah'), distance: '300 m', time: t('walkMin', { n: 4 }) },
+              { from: t('lmStation'), distance: '3.5 km', time: t('taxiMin', { n: 15 }) },
+              { from: t('lmAirport'), distance: '6 km', time: t('taxiMin', { n: 20 }) },
             ].map(({ from, distance, time }) => (
               <div key={from} className="flex items-center justify-between px-5 py-3 text-sm">
                 <span className="text-[#F5E8CC] font-medium">{from}</span>
@@ -181,13 +184,13 @@ export default async function LocationPage({ params }: Props) {
         {/* CTA */}
         <div className="bg-[#251A0F] border border-[rgba(232,163,61,0.15)] rounded-2xl p-8 text-center">
           <h2 className="text-[#F5E8CC] font-bold text-2xl mb-3" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
-            Book Your Bahia Palace Tickets Online
+            {t('ctaTitle')}
           </h2>
           <p className="text-[#C4A882] text-sm mb-5 max-w-md mx-auto">
-            Skip the queue at the entrance. Show your mobile ticket and walk straight in.
+            {t('ctaBody')}
           </p>
           <LeadButton ticketType="skip-the-line" className="inline-flex items-center gap-2 bg-[#C4452D] hover:bg-[#a83826] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
-            Book Bahia Palace Tickets Online <ArrowRight size={16} />
+            {t('ctaBtn')} <ArrowRight size={16} />
           </LeadButton>
         </div>
       </div>
