@@ -88,6 +88,16 @@ const META: Record<string, { title: string; description: string; heading: string
     intro: 'Descubre el Palacio Bahia antes de tu visita. Nuestros vídeos están grabados en el interior del palacio y captan los patios de zellige, los techos de cedro tallado a mano y los detalles sutiles que las fotos no transmiten.',
     noVideos: 'Vídeos próximamente.',
   },
+  /*
+   * title is the English one, unchanged — see the note in the gallery page.
+   */
+  pt: {
+    title: 'Bahia Palace Videos 2026 | Watch Before Visiting Marrakech',
+    description: 'Veja vídeos filmados dentro do Palácio da Bahia, em Marraquexe — pátios de zellige, tetos de cedro entalhado e o ambiente de um dos monumentos mais bonitos de Marrocos.',
+    heading: 'O Palácio da Bahia em vídeo',
+    intro: 'Conheça o Palácio da Bahia antes de chegar. Os nossos vídeos são filmados dentro do palácio e mostram os pátios de zellige, os tetos de cedro entalhados à mão e os pormenores silenciosos que as fotografias não apanham. Veja por onde vai andar.',
+    noVideos: 'Vídeos em breve. Volte depois da sua visita.',
+  },
 };
 
 interface Props { params: Promise<{ locale: string }> }

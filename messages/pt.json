@@ -837,5 +837,44 @@
     "s_gardens_n2": "Sente-se um quarto de hora. O ruído da medina desvanece-se e o palácio torna-se outro edifício.",
     "s_gardens_story": "O palácio propriamente dito ocupa quase {built} hectares. Os {total} hectares citados por toda a parte incluem o agdal, o pomar murado à volta do qual a propriedade foi construída.",
     "heroCta": "Ver a planta do palácio"
+  },
+  "faqPage": {
+    "title": "Perguntas frequentes",
+    "subtitle": "Tudo o que precisa de saber para visitar o Palácio da Bahia",
+    "categories": {
+      "booking": "Reserva e pagamento",
+      "tickets": "Bilhetes e entrada",
+      "palace": "Sobre o palácio",
+      "service": "O nosso serviço",
+      "safety": "Segurança e prático"
+    },
+    "all": "Todas as perguntas",
+    "stillNeedHelp": "Ainda tem alguma dúvida?",
+    "whatsappUs": "Fale connosco por WhatsApp →",
+    "ctaSkip": "Evite as duas horas de fila",
+    "ctaTitle": "Planeie a sua visita ao Palácio da Bahia",
+    "ctaBody": "Bilhete autêntico · Audioguia incluído · Cancelamento gratuito até enviarmos o seu código",
+    "ctaBtn": "Ver todas as opções de bilhete",
+    "teamAvail": "Respondemos rapidamente a todos os pedidos de reserva."
+  },
+  "safetyGuide": {
+    "badge": "Segurança do viajante",
+    "title": "Visite Marraquexe com cabeça — evite as burlas mais comuns",
+    "subtitle": "Marraquexe é uma cidade extraordinária. Como qualquer grande destino turístico, tem um pequeno número de burlas dirigidas a visitantes. Conhecê-las de antemão é o que faz a diferença.",
+    "topScams": "As 10 burlas a conhecer",
+    "howToAvoid": "Como evitá-la",
+    "practicalTips": "10 conselhos práticos de segurança",
+    "emergencyTitle": "Contactos de emergência",
+    "emergencyNote": "Guarde-os antes de viajar",
+    "ctaTitle": "Reserve numa fonte de confiança",
+    "ctaBody": "A forma mais segura de comprar bilhetes para o Palácio da Bahia é online, antes de chegar. Sem vendedores de rua, sem angariadores que se dizem \"oficiais\".",
+    "ctaBtn": "Reserve o seu bilhete autêntico →",
+    "contributeTitle": "Já foi vítima de uma burla?",
+    "contributeBody": "Ajude outros viajantes partilhando o que lhe aconteceu. Escreva-nos por WhatsApp e acrescentamos o caso a este guia (de forma anónima).",
+    "theScam": "A burla",
+    "reassurance": "A zona do Palácio da Bahia é geralmente muito segura durante o dia. Quase tudo o que se segue é insistência a vender, não perigo.",
+    "trustStrip": "Escrito por locais em Marraquexe · Atualizado em {month} {year} · {count} burlas descritas",
+    "ctaScamTicket": "Evite o risco — o bilhete oficial e o audioguia, comprados em seu nome.",
+    "faqQuestion": "{title} — é mesmo uma burla em Marraquexe e como a evito?"
   }
 }

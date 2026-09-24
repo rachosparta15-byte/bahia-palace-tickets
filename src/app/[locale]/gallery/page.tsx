@@ -56,6 +56,19 @@ const META: Record<string, { title: string; description: string; heading: string
     bookBtn: 'Prenota biglietti salta-fila',
     collection: 'Sfoglia la collezione',
   },
+  /*
+   * title is the English one, unchanged: the rule for this pass is that no
+   * <title> moves in any locale. Everything the reader sees is Portuguese.
+   */
+  pt: {
+    title: 'Bahia Palace Photos — 50+ HD Images of the Palace & Gardens',
+    description: 'Veja mais de 50 fotografias em alta qualidade do Palácio da Bahia, em Marraquexe: os pátios, os tetos pintados, os jardins e os mosaicos. Conheça o palácio ao pormenor antes da visita.',
+    heading: 'Galeria de fotos do Palácio da Bahia',
+    sub: 'Mosaicos de zellige, tetos de cedro entalhado, pátios imensos — veja cada canto antes de chegar.',
+    bookCta: 'Pronto para ver ao vivo?',
+    bookBtn: 'Reservar bilhetes sem fila',
+    collection: 'Percorrer a coleção',
+  },
 };
 
 interface Props { params: Promise<{ locale: string }> }
