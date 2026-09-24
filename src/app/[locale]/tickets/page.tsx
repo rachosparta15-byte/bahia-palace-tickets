@@ -84,12 +84,42 @@ const TICKETS_META: Record<string, { title: string; description: string }> = {
    * There is no cannibalisation risk in taking it back for exactly that reason.
    * If a processor ever replaces PayPal and /visitor-pack becomes indexable
    * again, this split is worth revisiting — with the query list, not a guess.
+   *
+   * ── Second pass, on 28 days of page data for the same query ──
+   *
+   * Taking the phrase back worked: it has moved from position 10.9 to 8.1.
+   * What that pass missed is that /visitor-pack was never the only rival.
+   * Three other pages are still answering the same query:
+   *
+   *   /en                        155 impressions   pos 11.8   0 clicks
+   *   /en/entrance-fee           148 impressions   pos  9.9   3 clicks
+   *   /en/tickets/skip-the-line  138 impressions   pos 11.3   1 click
+   *   /en/tickets                113 impressions   pos  8.1   0 clicks
+   *
+   * 554 impressions, four clicks, and the page that ranks best is the one
+   * Google shows least — the signature of a site that has not said which page
+   * is the answer. The locales with only one page in the running are where it
+   * ranks: /de/tickets at 3.5, /es/tickets at 5.5. Same domain, same age, same
+   * authority; the difference is that English is arguing with itself.
+   *
+   * The cause was in the metadata. All three of /, /tickets and /entrance-fee
+   * opened their description on the same sentence — "Bahia Palace entry is
+   * 100 MAD" — and all three carried a price word in the title.
+   *
+   * So this page keeps the buy-intent phrase and gives up the price. It is now
+   * about where to buy and which ticket to choose; how much it costs belongs
+   * to /entrance-fee, which is written for exactly that and says so in its
+   * title.
+   *
+   * The home page title is deliberately left alone: it is the riskiest string
+   * on the site to change and no query list for it has been read. That is the
+   * rule this file already states, applied to itself.
    */
-  en: { title: `Bahia Palace Tickets 2026 — Prices, Fees & What's Included`, description: `Bahia Palace entry is 100 MAD at the gate. Compare standard entry, the skip-the-line ticket with a digital audio guide, and guided tours, in dirhams and euros.` },
-  fr: { title: `Billets Palais Bahia 2026 — Tarifs, prix et contenu`, description: `L'entrée du Palais Bahia coûte 100 MAD sur place. Comparez l'entrée simple, le coupe-file avec audioguide et les visites guidées, en dirhams et en euros.` },
-  es: { title: `Entradas Palacio Bahía 2026 — Precios y tarifas incluidas`, description: `La entrada al Palacio Bahía cuesta 100 MAD en taquilla. Compara la entrada normal, el billete sin colas con audioguía y las visitas guiadas, en dirhams y euros.` },
-  de: { title: `Bahia Palast Tickets 2026 — Preise & Leistungen`, description: `Der Eintritt zum Bahia-Palast kostet vor Ort 100 MAD. Vergleichen Sie Standardeintritt, Skip-the-Line mit Audioguide und Führungen, in Dirham und Euro.` },
-  it: { title: `Biglietti Palazzo Bahia 2026 — Prezzi, tariffe e servizi`, description: `L'ingresso al Palazzo Bahia costa 100 MAD in loco. Confronta l'ingresso standard, il salta-fila con audioguida e le visite guidate, in dirham ed euro.` },
+  en: { title: `Bahia Palace Tickets 2026 — Where to Buy and What's Included`, description: `Where to buy Bahia Palace tickets: at the gate, online in advance, or with a guided tour. What each option includes, and how long the door queue really runs.` },
+  fr: { title: `Billets Palais Bahia 2026 — Où les acheter et ce qu'ils incluent`, description: `Où acheter ses billets pour le Palais Bahia : sur place, en ligne à l'avance ou avec une visite guidée. Ce que chaque option comprend et la durée réelle de la file.` },
+  es: { title: `Entradas Palacio Bahía 2026 — Dónde comprarlas y qué incluyen`, description: `Dónde comprar las entradas del Palacio Bahía: en taquilla, online por adelantado o con una visita guiada. Qué incluye cada opción y cuánto dura de verdad la cola.` },
+  de: { title: `Bahia Palast Tickets 2026 — Wo kaufen und was enthalten ist`, description: `Wo Sie Tickets für den Bahia-Palast bekommen: vor Ort, online im Voraus oder mit einer Führung. Was jede Option enthält und wie lang die Schlange wirklich ist.` },
+  it: { title: `Biglietti Palazzo Bahia 2026 — Dove comprarli e cosa includono`, description: `Dove acquistare i biglietti per il Palazzo Bahia: in loco, online in anticipo o con una visita guidata. Cosa include ogni opzione e quanto dura davvero la coda.` },
   /*
    * ar and pt were absent, so both served the English title and description
    * under URLs that hreflang declares as Arabic and Portuguese. Arabic is this
@@ -101,8 +131,8 @@ const TICKETS_META: Record<string, { title: string; description: string }> = {
    * this ticket, Viator does, and the audio guide is what the price above the
    * gate fee buys.
    */
-  ar: { title: `تذاكر قصر الباهية 2026 — الأسعار والرسوم وما تشمله`, description: `دخول قصر الباهية 100 درهم عند الشبّاك. قارن بين الدخول العادي، وتذكرة تخطّي الطابور مع دليل صوتي رقمي، والجولات المرشدة — بالدرهم وباليورو.` },
-  pt: { title: `Bilhetes do Palácio Bahia 2026 — Preços e o que inclui`, description: `A entrada no Palácio Bahia custa 100 MAD na bilheteira. Compare a entrada normal, o bilhete sem fila com audioguia e as visitas guiadas, em dirhams e euros.` },
+  ar: { title: `تذاكر قصر الباهية 2026 — من أين تشتريها وما الذي تشمله`, description: `من أين تشتري تذاكر قصر الباهية: من الشبّاك، أو عبر الإنترنت مسبقاً، أو ضمن جولة مرشدة. ما الذي يشمله كل خيار، وكم يطول طابور الباب فعلياً.` },
+  pt: { title: `Bilhetes do Palácio Bahia 2026 — Onde comprar e o que incluem`, description: `Onde comprar bilhetes para o Palácio Bahia: na bilheteira, online com antecedência ou com uma visita guiada. O que cada opção inclui e quanto dura mesmo a fila.` },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
