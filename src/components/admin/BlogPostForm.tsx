@@ -25,8 +25,36 @@ interface Props {
 const LOCALES    = ['en', 'fr', 'it', 'de', 'es'];
 const CATEGORIES = ['visit-tips', 'history', 'safety', 'practical', 'comparisons'];
 
+/*
+ * Suggests the slug for a NEW post, from the title typed above it.
+ *
+ * It used to go straight from the title to /[^a-z0-9]+/ → '-', which deletes
+ * every accented letter instead of carrying it across. Titles in French,
+ * Spanish and Italian came out mangled, and the URLs are still live:
+ *
+ *   créateurs → cr-ateurs     bahía → bah-a      l'âme → l-me
+ *   guía      → gu-a          più   → pi-        éviter → viter
+ *
+ * NFD splits a letter into its base plus its accent mark, and the
+ * ̀-ͯ range then removes only the marks, so é becomes e rather than
+ * nothing. The German ß and the Scandinavian ø have no decomposition, so they
+ * are mapped by hand before that.
+ *
+ * Existing posts cannot change: this runs in the admin form, in the browser,
+ * and the slug it suggests is stored on save. Nothing regenerates a slug from
+ * a title afterwards — no other file calls this.
+ */
 function slugify(str: string) {
-  return str.toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  return str
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/ß/g, 'ss')
+    .replace(/[øœ]/g, (c) => (c === 'ø' ? 'o' : 'oe'))
+    .replace(/æ/g, 'ae')
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
 }
 
 const inputCls = 'w-full border border-[#D4BC96] rounded-lg px-4 py-2.5 text-sm text-[#3D2817] focus:outline-none focus:ring-2 focus:ring-[#C4452D]/30 focus:border-[#C4452D] transition-colors bg-white';
