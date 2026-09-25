@@ -156,7 +156,7 @@ export function Header() {
         <nav className="hidden lg:flex items-center gap-7">
           {navLinks.map(({ href, label }) => (
             <Link key={href} href={href}
-              className="text-sm font-medium text-white/75 hover:text-[#E8A33D] transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:right-0 after:h-px after:bg-[#E8A33D] after:scale-x-0 hover:after:scale-x-100 after:transition-transform">
+              className="whitespace-nowrap text-sm font-medium text-white/75 hover:text-[#E8A33D] transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:right-0 after:h-px after:bg-[#E8A33D] after:scale-x-0 hover:after:scale-x-100 after:transition-transform">
               {label}
             </Link>
           ))}
@@ -208,21 +208,21 @@ export function Header() {
           {paymentsEnabled ? (
             <LeadButton
               ticketType="skip-the-line"
-              className="trust-badge-glow inline-flex items-center gap-2 bg-[#E8A33D] hover:bg-[#F0B84E] text-[#1C1108] font-semibold px-3 py-2.5 rounded-lg transition-colors text-xs sm:text-sm sm:px-4 sm:py-2"
+              className="trust-badge-glow inline-flex shrink-0 items-center gap-2 whitespace-nowrap bg-[#E8A33D] hover:bg-[#F0B84E] text-[#1C1108] font-semibold px-3 py-2.5 rounded-lg transition-colors text-xs sm:text-sm sm:px-4 sm:py-2"
             >
               {t('bookNow')}
             </LeadButton>
           ) : pathname === '/' ? (
             <a
               href="#ticket-options"
-              className="trust-badge-glow inline-flex items-center gap-2 bg-[#E8A33D] hover:bg-[#F0B84E] text-[#1C1108] font-semibold px-3 py-2.5 rounded-lg transition-colors text-xs sm:text-sm sm:px-4 sm:py-2"
+              className="trust-badge-glow inline-flex shrink-0 items-center gap-2 whitespace-nowrap bg-[#E8A33D] hover:bg-[#F0B84E] text-[#1C1108] font-semibold px-3 py-2.5 rounded-lg transition-colors text-xs sm:text-sm sm:px-4 sm:py-2"
             >
               {t('bookNow')}
             </a>
           ) : (
             <Link
               href="/#ticket-options"
-              className="trust-badge-glow inline-flex items-center gap-2 bg-[#E8A33D] hover:bg-[#F0B84E] text-[#1C1108] font-semibold px-3 py-2.5 rounded-lg transition-colors text-xs sm:text-sm sm:px-4 sm:py-2"
+              className="trust-badge-glow inline-flex shrink-0 items-center gap-2 whitespace-nowrap bg-[#E8A33D] hover:bg-[#F0B84E] text-[#1C1108] font-semibold px-3 py-2.5 rounded-lg transition-colors text-xs sm:text-sm sm:px-4 sm:py-2"
             >
               {t('bookNow')}
             </Link>
