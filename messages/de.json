@@ -1196,5 +1196,10 @@
     "untilClose": "bis",
     "lastEntry": "letzter Einlass",
     "opensAt": "öffnet um"
+  },
+  "languageNotice": {
+    "available": "Diese Seite gibt es auch auf Deutsch.",
+    "view": "Auf Deutsch lesen",
+    "backToArabic": "عرض الصفحة بالعربية"
   }
 }

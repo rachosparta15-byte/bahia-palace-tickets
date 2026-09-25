@@ -966,5 +966,10 @@
     "untilClose": "até às",
     "lastEntry": "última entrada",
     "opensAt": "abre às"
+  },
+  "languageNotice": {
+    "available": "Esta página também está em português.",
+    "view": "Ler em português",
+    "backToArabic": "عرض الصفحة بالعربية"
   }
 }

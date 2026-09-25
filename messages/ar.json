@@ -927,5 +927,10 @@
     "untilClose": "حتى",
     "lastEntry": "آخر دخول",
     "opensAt": "يفتح على"
+  },
+  "languageNotice": {
+    "available": "هذه الصفحة متوفّرة بالعربية.",
+    "view": "اقرأها بالعربية",
+    "backToArabic": "عرض الصفحة بالعربية"
   }
 }

@@ -1194,5 +1194,10 @@
     "untilClose": "until",
     "lastEntry": "last entry",
     "opensAt": "opens"
+  },
+  "languageNotice": {
+    "available": "This page is also available in English.",
+    "view": "Read in English",
+    "backToArabic": "عرض الصفحة بالعربية"
   }
 }

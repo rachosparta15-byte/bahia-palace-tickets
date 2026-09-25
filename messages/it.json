@@ -1196,5 +1196,10 @@
     "untilClose": "fino alle",
     "lastEntry": "ultimo ingresso",
     "opensAt": "apre alle"
+  },
+  "languageNotice": {
+    "available": "Questa pagina è disponibile in italiano.",
+    "view": "Leggi in italiano",
+    "backToArabic": "عرض الصفحة بالعربية"
   }
 }

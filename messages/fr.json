@@ -1196,5 +1196,10 @@
     "untilClose": "jusqu’à",
     "lastEntry": "dernière entrée",
     "opensAt": "ouvre à"
+  },
+  "languageNotice": {
+    "available": "Cette page existe aussi en français.",
+    "view": "Lire en français",
+    "backToArabic": "عرض الصفحة بالعربية"
   }
 }

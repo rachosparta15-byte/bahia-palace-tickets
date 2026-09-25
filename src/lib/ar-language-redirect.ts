@@ -36,10 +36,23 @@
  * matching language — means DO NOT REDIRECT. The page stays as it is.
  */
 
-const BOT_PATTERN =
+/*
+ * Exported, because the redirect is not the only thing that must leave a
+ * crawler alone. LanguageNotice renders an offer in another language on this
+ * same page, and Googlebot runs JavaScript: without this check it saw a line
+ * of English and a link to /en injected into the Arabic page. Two copies of
+ * this list would eventually disagree, and the copy that fell behind would be
+ * the one deciding what Google sees.
+ */
+export const BOT_PATTERN =
   'bot|crawl|spider|preview|lighthouse|headless|pagespeed|Googlebot|Google-InspectionTool|' +
   'GoogleOther|AdsBot-Google|Mediapartners-Google|Storebot-Google|bingbot|Applebot|DuckDuckBot|' +
   'YandexBot|Baiduspider|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Slackbot';
+
+/** True for any declared crawler, so callers can decline to change the page. */
+export function isCrawler(userAgent: string): boolean {
+  return new RegExp(BOT_PATTERN, 'i').test(userAgent || '');
+}
 
 /** The locales a visitor can be sent to. Arabic is the page they are on. */
 const TARGETS = ['fr', 'en', 'it', 'es', 'de', 'pt'];
