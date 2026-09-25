@@ -957,5 +957,17 @@
     "independenceBody": "visitbahiapalace.com é um guia de visita independente. Não está associado ao monumento do Palácio da Bahia, ao Ministério da Cultura de Marrocos nem a qualquer organismo público. Os artigos, os preços e as opiniões aqui publicados são a avaliação pessoal de Abdellah e não uma posição oficial.",
     "contactTitle": "Correções e pedidos de imprensa",
     "contactBody": "Se encontrar um erro, tiver uma questão de imprensa ou quiser partilhar a sua própria experiência no Palácio da Bahia, escreva diretamente. As correções de factos têm prioridade e são publicadas depressa."
+  },
+  "visitingToday": {
+    "openNow": "Aberto agora",
+    "closingSoon": "Fecha em breve",
+    "afterLastEntry": "A última entrada de hoje já passou",
+    "closedNow": "Fechado neste momento",
+    "opensAt": "Abre às",
+    "lastEntry": "Última entrada",
+    "timeLeft": "faltam {time} para entrar",
+    "queueNote": "A fila à entrada demora 30 a 45 minutos em época alta. Com o bilhete no telemóvel, salta-a.",
+    "cta": "Reservar — bilhete no telemóvel",
+    "directions": "Como chegar"
   }
 }

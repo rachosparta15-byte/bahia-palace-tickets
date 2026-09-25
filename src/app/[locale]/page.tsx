@@ -5,6 +5,7 @@ import { StorySection } from '@/components/homepage/StorySection';
 import { PalaceStatStrip } from '@/components/homepage/PalaceStatStrip';
 import { HighlightsSection } from '@/components/homepage/HighlightsSection';
 import { PracticalBar } from '@/components/homepage/PracticalBar';
+import { VisitingToday } from '@/components/homepage/VisitingToday';
 import { TrustStrip } from '@/components/homepage/TrustStrip';
 import { TicketSection } from '@/components/homepage/TicketSection';
 import { TicketOptions } from '@/components/homepage/TicketOptions';
@@ -103,12 +104,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+/*
+ * The skip-the-line product, without a campaign: VisitingToday sets one per
+ * visitor so the knowledge-panel traffic can be told apart from the rest.
+ */
+const SKIP_THE_LINE_TODAY_URL =
+  'https://www.viator.com/tours/Marrakech/Marrakech-Bahia-Palace-Skip-the-Line-Ticket-With-Audio-Guide/d5408-5670595P2?pid=P00316815&mcid=42383&medium=link';
+
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   // Drives which offer the structured data advertises — see `offers` below.
   const { enabled: paymentsEnabled } = getPublicPaymentsFlags();
 
   const tf   = await getTranslations({ locale, namespace: 'faq' });
+  const tVisit = await getTranslations({ locale, namespace: 'visitingToday' });
   const faqs = tf.raw('items') as Array<{ question: string; answer: string }>;
 
   const faqSchema = {
@@ -248,6 +257,33 @@ export default async function HomePage({ params }: Props) {
       <JsonLd data={faqSchema} />
       <JsonLd data={breadcrumb} />
       <Hero />
+      {/*
+        Directly under the hero, so it is the first thing after the headline
+        on a phone — which is the device the knowledge panel's "Website"
+        button opens on, for a visitor who is usually already in Marrakech.
+
+        Under, not above: the <h1> lives in Hero and stays the first heading
+        in document order. If this ever needs to appear higher on mobile,
+        that is CSS order in the parent, never a move in the markup.
+      */}
+      <div className="mx-auto max-w-5xl px-4 pt-6 sm:px-6">
+        <VisitingToday
+          locale={locale}
+          strings={{
+            openNow: tVisit('openNow'),
+            closingSoon: tVisit('closingSoon'),
+            afterLastEntry: tVisit('afterLastEntry'),
+            closedNow: tVisit('closedNow'),
+            opensAt: tVisit('opensAt'),
+            lastEntry: tVisit('lastEntry'),
+            timeLeft: tVisit('timeLeft'),
+            queueNote: tVisit('queueNote'),
+            cta: tVisit('cta'),
+            directions: tVisit('directions'),
+          }}
+          ticketUrl={SKIP_THE_LINE_TODAY_URL}
+        />
+      </div>
       <StorySection />
       <PalaceStatStrip />
       <HighlightsSection />

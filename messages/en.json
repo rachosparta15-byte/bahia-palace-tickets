@@ -1185,5 +1185,17 @@
     "independenceBody": "visitbahiapalace.com is an independent visitor guide. It is not affiliated with the Bahia Palace monument, with the Moroccan Ministry of Culture, or with any government body. The articles, prices and opinions here are Abdellah’s own assessment, not an official position.",
     "contactTitle": "Corrections & press enquiries",
     "contactBody": "If you spot an error, have a press question, or want to share your own experience of visiting Bahia Palace, write directly. Factual corrections come first and are published quickly."
+  },
+  "visitingToday": {
+    "openNow": "Open now",
+    "closingSoon": "Closing soon",
+    "afterLastEntry": "Last entry has passed for today",
+    "closedNow": "Closed right now",
+    "opensAt": "Opens at",
+    "lastEntry": "Last entry",
+    "timeLeft": "{time} left to get in",
+    "queueNote": "The queue at the door runs 30–45 minutes in peak season. A ticket bought on your phone skips it.",
+    "cta": "Book now — mobile ticket",
+    "directions": "Directions"
   }
 }

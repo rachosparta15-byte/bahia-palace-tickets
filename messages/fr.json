@@ -1187,5 +1187,17 @@
     "independenceBody": "visitbahiapalace.com est un guide de visite indépendant. Il n'est affilié ni au monument du Palais Bahia, ni au ministère marocain de la Culture, ni à aucun organisme public. Les articles, les tarifs et les avis publiés ici sont l'appréciation personnelle d'Abdellah, et non une position officielle.",
     "contactTitle": "Corrections et demandes presse",
     "contactBody": "Si vous repérez une erreur, avez une question presse ou souhaitez partager votre propre expérience du Palais Bahia, écrivez directement. Les corrections factuelles passent en premier et sont publiées rapidement."
+  },
+  "visitingToday": {
+    "openNow": "Ouvert maintenant",
+    "closingSoon": "Ferme bientôt",
+    "afterLastEntry": "Dernière entrée dépassée pour aujourd’hui",
+    "closedNow": "Fermé en ce moment",
+    "opensAt": "Ouvre à",
+    "lastEntry": "Dernière entrée",
+    "timeLeft": "il reste {time} pour entrer",
+    "queueNote": "La file à l’entrée dure 30 à 45 minutes en haute saison. Un billet acheté sur votre téléphone vous en dispense.",
+    "cta": "Réserver — billet mobile",
+    "directions": "Itinéraire"
   }
 }

@@ -1187,5 +1187,17 @@
     "independenceBody": "visitbahiapalace.com es una guía de visita independiente. No está afiliada al monumento del Palacio Bahía, ni al Ministerio de Cultura de Marruecos, ni a ningún organismo público. Los artículos, los precios y las opiniones que aquí aparecen son la valoración personal de Abdellah, no una posición oficial.",
     "contactTitle": "Correcciones y consultas de prensa",
     "contactBody": "Si detectas un error, tienes una consulta de prensa o quieres contar tu propia experiencia en el Palacio Bahía, escribe directamente. Las correcciones de datos son prioritarias y se publican enseguida."
+  },
+  "visitingToday": {
+    "openNow": "Abierto ahora",
+    "closingSoon": "Cierra pronto",
+    "afterLastEntry": "La última entrada de hoy ya ha pasado",
+    "closedNow": "Cerrado en este momento",
+    "opensAt": "Abre a las",
+    "lastEntry": "Última entrada",
+    "timeLeft": "quedan {time} para entrar",
+    "queueNote": "La cola en la puerta dura de 30 a 45 minutos en temporada alta. Con la entrada en el móvil te la saltas.",
+    "cta": "Reservar — entrada en el móvil",
+    "directions": "Cómo llegar"
   }
 }

@@ -1187,5 +1187,17 @@
     "independenceBody": "visitbahiapalace.com ist ein unabhängiger Besucherführer. Die Seite gehört weder zum Bahia-Palast noch zum marokkanischen Kulturministerium noch zu einer staatlichen Stelle. Artikel, Preise und Einschätzungen hier sind Abdellahs eigene Bewertung und keine offizielle Position.",
     "contactTitle": "Korrekturen und Presseanfragen",
     "contactBody": "Wenn Sie einen Fehler entdecken, eine Presseanfrage haben oder Ihre eigene Erfahrung mit dem Bahia-Palast teilen möchten, schreiben Sie direkt. Sachliche Korrekturen haben Vorrang und werden schnell veröffentlicht."
+  },
+  "visitingToday": {
+    "openNow": "Jetzt geöffnet",
+    "closingSoon": "Schließt bald",
+    "afterLastEntry": "Letzter Einlass für heute vorbei",
+    "closedNow": "Gerade geschlossen",
+    "opensAt": "Öffnet um",
+    "lastEntry": "Letzter Einlass",
+    "timeLeft": "noch {time} bis zum Einlass",
+    "queueNote": "Die Schlange am Eingang dauert in der Hochsaison 30–45 Minuten. Mit einem Ticket auf dem Handy entfällt sie.",
+    "cta": "Jetzt buchen — Ticket aufs Handy",
+    "directions": "Route"
   }
 }
