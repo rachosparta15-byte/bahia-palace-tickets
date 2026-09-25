@@ -54,6 +54,33 @@ interface Props {
  *    page yet, and it also has to agree with the JSON-LD offer and the card
  *    statement.
  */
+/*
+ * What the palace IS, in the reader's language.
+ *
+ * This was one English sentence written into the schema and sent to Google on
+ * all seven locales — the same fault the hero and the consent banner had.
+ * Google reads `description` for the blurb it can show beside a result, so an
+ * Italian searcher was offered an English sentence about the palace.
+ *
+ * LocalBusiness below already took its description from HOME_META per locale.
+ * This one entity was simply missed.
+ *
+ * Deliberately the same substance as the English it replaces — 19th century,
+ * Islamic architecture, zellige, quiet gardens — and recast rather than
+ * rendered clause by clause, because each has to read as though a speaker of
+ * that language wrote it. No new claim: every fact here already appears
+ * elsewhere on the site.
+ */
+const ATTRACTION_DESCRIPTION: Record<string, string> = {
+  en: 'A 19th-century Moroccan palace in the heart of Marrakech, known for its Islamic architecture, its zellige tilework and its quiet gardens.',
+  fr: 'Palais marocain du XIXe siècle au cœur de Marrakech, réputé pour son architecture islamique, ses zelliges et ses jardins paisibles.',
+  it: 'Palazzo marocchino dell’Ottocento nel cuore di Marrakech, celebre per l’architettura islamica, gli zellige e i giardini tranquilli.',
+  de: 'Marokkanischer Palast aus dem 19. Jahrhundert mitten in Marrakesch, bekannt für seine islamische Architektur, seine Zellige-Mosaike und seine stillen Gärten.',
+  es: 'Palacio marroquí del siglo XIX en el corazón de Marrakech, célebre por su arquitectura islámica, sus zellige y sus jardines apacibles.',
+  pt: 'Palácio marroquino do século XIX no coração de Marraquexe, conhecido pela arquitetura islâmica, pelos zellige e pelos jardins tranquilos.',
+  ar: 'قصر مغربي من القرن التاسع عشر في قلب مراكش، مشهور بعمارته الإسلامية وزليجه وحدائقه الهادئة.',
+};
+
 const HOME_META: Record<string, { title: string; description: string }> = {
   en: {
     title: `Bahia Palace Marrakech 2026 — Hours, Prices & Visitor Guide`,
@@ -125,7 +152,7 @@ export default async function HomePage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'TouristAttraction',
     name: 'Bahia Palace',
-    description: 'A stunning 19th-century Moroccan palace in Marrakech, showcasing exquisite Islamic architecture, zellige tilework, and tranquil gardens.',
+    description: ATTRACTION_DESCRIPTION[locale] ?? ATTRACTION_DESCRIPTION.en,
     url: `${BASE}/${locale}`,
     image: `${BASE}/og-image.jpg`,
     address: {
