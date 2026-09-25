@@ -1189,13 +1189,10 @@
   "visitingToday": {
     "openNow": "Open now",
     "closingSoon": "Closing soon",
-    "afterLastEntry": "Last entry has passed for today",
-    "closedNow": "Closed right now",
-    "opensAt": "Opens at",
-    "lastEntry": "Last entry",
-    "timeLeft": "{time} left to get in",
-    "queueNote": "The queue at the door runs 30–45 minutes in peak season. A ticket bought on your phone skips it.",
-    "cta": "Book now — mobile ticket",
-    "directions": "Directions"
+    "afterLastEntry": "Last entry has passed",
+    "closedNow": "Closed now",
+    "untilClose": "until",
+    "lastEntry": "last entry",
+    "opensAt": "opens"
   }
 }

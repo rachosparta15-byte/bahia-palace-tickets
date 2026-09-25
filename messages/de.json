@@ -1189,15 +1189,12 @@
     "contactBody": "Wenn Sie einen Fehler entdecken, eine Presseanfrage haben oder Ihre eigene Erfahrung mit dem Bahia-Palast teilen möchten, schreiben Sie direkt. Sachliche Korrekturen haben Vorrang und werden schnell veröffentlicht."
   },
   "visitingToday": {
-    "openNow": "Jetzt geöffnet",
+    "openNow": "Geöffnet",
     "closingSoon": "Schließt bald",
-    "afterLastEntry": "Letzter Einlass für heute vorbei",
-    "closedNow": "Gerade geschlossen",
-    "opensAt": "Öffnet um",
-    "lastEntry": "Letzter Einlass",
-    "timeLeft": "noch {time} bis zum Einlass",
-    "queueNote": "Die Schlange am Eingang dauert in der Hochsaison 30–45 Minuten. Mit einem Ticket auf dem Handy entfällt sie.",
-    "cta": "Jetzt buchen — Ticket aufs Handy",
-    "directions": "Route"
+    "afterLastEntry": "Letzter Einlass vorbei",
+    "closedNow": "Geschlossen",
+    "untilClose": "bis",
+    "lastEntry": "letzter Einlass",
+    "opensAt": "öffnet um"
   }
 }
