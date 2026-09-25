@@ -1,7 +1,6 @@
 import { preload } from 'react-dom';
 import { getTranslations } from 'next-intl/server';
-import { ArrowRight, Sun, Ticket, Check, QrCode, Play, Route } from 'lucide-react';
-import { Link } from '@/i18n/navigation';
+import { ArrowRight, Sun, Ticket, Check, QrCode } from 'lucide-react';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { LiveVisitStatus } from '@/components/homepage/LiveVisitStatus';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
@@ -417,53 +416,23 @@ export async function Hero() {
                   {tt('audioGuideValueNote')}
                 </p>
                 {/*
-                  * Both secondary actions share one flex row.
+                  * The two secondary buttons that used to sit here — the video
+                  * and the palace plan — are gone, and both pages are now in
+                  * the header nav instead.
                   *
-                  * They were two loose inline-flex links with only a top
-                  * margin. Side by side that put them edge to edge with no gap
-                  * at all, and each carried its own mt-3, so when they did wrap
-                  * onto separate lines the spacing was inconsistent. One
-                  * wrapping row with a gap handles both cases, and the gap is
-                  * direction-agnostic so Arabic gets it too.
+                  * The hero was offering four actions at once. On a phone that
+                  * is a wall of buttons above the fold, and three of them lead
+                  * away from the one thing this page is for. A hero that asks
+                  * for four decisions gets none.
+                  *
+                  * The nav is the better home for them anyway: it renders on
+                  * every page, so each went from a single home-page link to a
+                  * site-wide one. That move came FIRST, deliberately — /videos
+                  * had no other rendered link anywhere, and removing this
+                  * button before adding the nav entry would have orphaned it.
+                  *
+                  * The room they leave is for the booking calendar.
                   */}
-                <div className="mt-3 flex flex-wrap items-center gap-3">
-                  {/* The video promo used to live in a persistent bar fixed
-                      under the header on every page; moved here, next to the
-                      button it's actually meant to support. Terracotta and
-                      sized like Get Tickets: a video link reads as a button,
-                      not fine print, and the colour says what kind before the
-                      label does. */}
-                  <Link
-                    href="/videos"
-                    className="inline-flex min-h-[48px] items-center gap-2 rounded-lg bg-[#C4452D] px-6 text-sm font-semibold text-white transition-colors hover:bg-[#A33824] sm:text-base"
-                  >
-                    <Play size={18} className="fill-current shrink-0" />
-                    {tRoot('videos.promoBar')}
-                  </Link>
-                {/* The third hero action, and the only one that is neither a
-                    purchase nor a video: the plan of the circuit.
-
-                    Majorelle blue rather than a fourth shade of gold. It is
-                    already in the palette as --color-accent and was sitting
-                    unused, it is the blue Marrakech is known for, and it is the
-                    one hue here that cannot be mistaken for the ticket button
-                    beside it. Three actions in three colours read as three
-                    different kinds of thing, which is the point.
-
-                    The hex is the style guide's Majorelle (#2E4A7B), not the
-                    --color-majorelle token (#3B65C8). The two disagree in this
-                    codebase, and rendered side by side against the hero's warm
-                    ground the token reads as a generic web blue that competes
-                    with the two buttons above it, while the muted value sits
-                    back and reads as the third-tier action it is. */}
-                  <Link
-                    href="/plan"
-                    className="inline-flex min-h-[48px] items-center gap-2 rounded-lg bg-[#2E4A7B] px-6 text-sm font-semibold text-white transition-colors hover:bg-[#3A5C96] sm:text-base"
-                  >
-                    <Route size={18} className="shrink-0" />
-                    {tRoot('palacePlan.heroCta')}
-                  </Link>
-                </div>
               </div>
 
               {paymentsEnabled && (
