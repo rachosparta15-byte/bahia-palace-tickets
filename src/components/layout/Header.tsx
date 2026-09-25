@@ -69,9 +69,26 @@ export function Header() {
     setMenuOpen(false);
   };
 
+  /*
+   * One list, rendered twice — the desktop bar and the mobile menu — so an
+   * entry added here appears in both.
+   *
+   * /plan and /videos joined it when the hero lost its two secondary buttons.
+   * That was not a tidy-up: /videos had no other rendered link anywhere on the
+   * site. The promo bar under the header still contains one, but the layout
+   * mounts it as a decorative strip, which returns before reaching the link.
+   * Removing the hero button alone would have left the page in the sitemap and
+   * linked from nothing — which is how a page quietly stops being crawled.
+   *
+   * In the header they are better off than they were: it renders on every
+   * page, so one entry here replaces a single home-page link with a site-wide
+   * one. They sit after the pages that sell and before the ones about us.
+   */
   const navLinks = [
     { href: '/tickets', label: t('tickets'), style: 'normal' },
     { href: '/gallery', label: t('gallery'), style: 'normal' },
+    { href: '/plan',    label: t('plan'),    style: 'normal' },
+    { href: '/videos',  label: t('videos'),  style: 'normal' },
     { href: '/blog',    label: t('blog'),    style: 'normal' },
     { href: '/faq',     label: t('faq'),     style: 'normal' },
     { href: '/about',   label: t('about'),   style: 'normal' },
