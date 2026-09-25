@@ -224,6 +224,27 @@ export default async function HomePage({ params }: Props) {
     touristType: ['History enthusiasts', 'Architecture lovers', 'Cultural tourists'],
   };
 
+  /*
+   * This site, described as what it is.
+   *
+   * It used to carry the palace's street address, the palace's coordinates and
+   * the palace's opening hours. Read plainly, that said this business sits
+   * inside Bahia Palace at Rue Riad Zitoun el Jedid and shuts at five. It does
+   * not. It is a website; it has no door on that street and it does not close
+   * in the evening.
+   *
+   * Those three fields produced nothing. There is no rating here, no price, no
+   * rich result that depended on them — they were invisible output carrying the
+   * one claim on this page that misdescribed reality. Zero upside, real
+   * downside: asymmetric, so they go.
+   *
+   * THE TouristAttraction BLOCK ABOVE IS DELIBERATELY UNTOUCHED, address, geo,
+   * hours and all. A page about Bahia Palace carrying structured data about
+   * Bahia Palace is exactly what that markup is for, and it is what earns this
+   * site its place in the knowledge panel. The distinction is the whole point:
+   * describing the monument is honest, claiming to BE a business inside it is
+   * not.
+   */
   const localBusiness = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -231,33 +252,7 @@ export default async function HomePage({ params }: Props) {
     description: HOME_META[locale]?.description ?? HOME_META.en.description,
     url: `${BASE}/${locale}`,
     image: `${BASE}/og-image.jpg`,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Rue Riad Zitoun el Jedid',
-      addressLocality: 'Marrakech',
-      addressRegion: 'Marrakech-Safi',
-      postalCode: '40000',
-      addressCountry: 'MA',
-    },
-    geo: { '@type': 'GeoCoordinates', latitude: 31.6226, longitude: -7.9842 },
     priceRange: '$$',
-    openingHoursSpecification: [
-      /*
-       * Nine to five, every day, Friday included.
-       *
-       * This listed Friday as 09:00-12:00 and 14:00-17:00, which told Google
-       * the palace shuts over Friday lunchtime. The Ministry of Culture, which
-       * runs it, publishes "Horaires de visite: 9h-17h" with no Friday
-       * exception at all:
-       *   https://e-services.minculture.gov.ma/en/tickets/palais-bahia
-       *   read 2026-09-25
-       *
-       * Google shows these hours beside the result and in the knowledge panel,
-       * so the old entry turned away visitors searching on the busiest day of
-       * the week.
-       */
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '09:00', closes: '17:00' },
-    ],
   };
 
   const breadcrumb = {
