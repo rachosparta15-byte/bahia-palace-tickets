@@ -142,9 +142,21 @@ export default async function HomePage({ params }: Props) {
       longitude: -7.9842,
     },
     openingHoursSpecification: [
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Saturday','Sunday'], opens: '09:00', closes: '17:00' },
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Friday'], opens: '09:00', closes: '12:00' },
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Friday'], opens: '14:00', closes: '17:00' },
+      /*
+       * Nine to five, every day, Friday included.
+       *
+       * This listed Friday as 09:00-12:00 and 14:00-17:00, which told Google
+       * the palace shuts over Friday lunchtime. The Ministry of Culture, which
+       * runs it, publishes "Horaires de visite: 9h-17h" with no Friday
+       * exception at all:
+       *   https://e-services.minculture.gov.ma/en/tickets/palais-bahia
+       *   read 2026-09-25
+       *
+       * Google shows these hours beside the result and in the knowledge panel,
+       * so the old entry turned away visitors searching on the busiest day of
+       * the week.
+       */
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '09:00', closes: '17:00' },
     ],
     // Structured data must advertise the price a visitor can actually pay —
     // this is what Google shows in search results. When the pack is live it
@@ -203,9 +215,21 @@ export default async function HomePage({ params }: Props) {
     geo: { '@type': 'GeoCoordinates', latitude: 31.6226, longitude: -7.9842 },
     priceRange: '$$',
     openingHoursSpecification: [
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Saturday','Sunday'], opens: '09:00', closes: '17:00' },
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Friday'], opens: '09:00', closes: '12:00' },
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Friday'], opens: '14:00', closes: '17:00' },
+      /*
+       * Nine to five, every day, Friday included.
+       *
+       * This listed Friday as 09:00-12:00 and 14:00-17:00, which told Google
+       * the palace shuts over Friday lunchtime. The Ministry of Culture, which
+       * runs it, publishes "Horaires de visite: 9h-17h" with no Friday
+       * exception at all:
+       *   https://e-services.minculture.gov.ma/en/tickets/palais-bahia
+       *   read 2026-09-25
+       *
+       * Google shows these hours beside the result and in the knowledge panel,
+       * so the old entry turned away visitors searching on the busiest day of
+       * the week.
+       */
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '09:00', closes: '17:00' },
     ],
   };
 

@@ -54,9 +54,21 @@ function getHoursSchema(locale: string) {
     name: 'Bahia Palace',
     url: `${BASE}/${locale}/opening-hours`,
     openingHoursSpecification: [
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Saturday','Sunday'], opens: '09:00', closes: '17:00' },
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Friday'], opens: '09:00', closes: '12:00' },
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Friday'], opens: '14:00', closes: '17:00' },
+      /*
+       * Nine to five, every day, Friday included.
+       *
+       * This listed Friday as 09:00-12:00 and 14:00-17:00, which told Google
+       * the palace shuts over Friday lunchtime. The Ministry of Culture, which
+       * runs it, publishes "Horaires de visite: 9h-17h" with no Friday
+       * exception at all:
+       *   https://e-services.minculture.gov.ma/en/tickets/palais-bahia
+       *   read 2026-09-25
+       *
+       * Google shows these hours beside the result and in the knowledge panel,
+       * so the old entry turned away visitors searching on the busiest day of
+       * the week.
+       */
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '09:00', closes: '17:00' },
     ],
     address: { '@type': 'PostalAddress', streetAddress: 'Rue Riad Zitoun el Jedid', addressLocality: 'Marrakech', addressCountry: 'MA' },
   };
@@ -95,7 +107,7 @@ export default async function OpeningHoursPage({ params }: Props) {
           <div className="divide-y divide-[rgba(232,163,61,0.12)]">
             {[
               { day: t('monThu'), hours: '9:00 AM – 5:00 PM', status: 'open' },
-              { day: t('friday'), hours: '9:00 AM – 12:00 PM', status: 'partial', note: t('fridayNote') },
+              { day: t('friday'), hours: '9:00 AM – 5:00 PM', status: 'open', note: t('fridayNote') },
               { day: t('satSun'), hours: '9:00 AM – 5:00 PM', status: 'open' },
             ].map(({ day, hours, status, note }) => (
               <div key={day} className="flex items-center justify-between px-6 py-4">
