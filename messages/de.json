@@ -1200,7 +1200,8 @@
   "languageNotice": {
     "available": "Diese Seite gibt es auch auf Deutsch.",
     "view": "Auf Deutsch lesen",
-    "backToArabic": "عرض الصفحة بالعربية"
+    "backToArabic": "عرض الصفحة بالعربية",
+    "close": "Schließen"
   },
   "cookieBanner": {
     "label": "Cookie-Einwilligung",

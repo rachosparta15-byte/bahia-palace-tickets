@@ -970,7 +970,8 @@
   "languageNotice": {
     "available": "Esta página também está em português.",
     "view": "Ler em português",
-    "backToArabic": "عرض الصفحة بالعربية"
+    "backToArabic": "عرض الصفحة بالعربية",
+    "close": "Fechar"
   },
   "cookieBanner": {
     "label": "Consentimento de cookies",

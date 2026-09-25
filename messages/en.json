@@ -1198,7 +1198,8 @@
   "languageNotice": {
     "available": "This page is also available in English.",
     "view": "Read in English",
-    "backToArabic": "عرض الصفحة بالعربية"
+    "backToArabic": "عرض الصفحة بالعربية",
+    "close": "Dismiss"
   },
   "cookieBanner": {
     "label": "Cookie consent",

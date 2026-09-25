@@ -104,6 +104,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             locale={locale}
             offers={offers}
             arabicLabel={tNotice('backToArabic')}
+            closeLabel={tNotice('close')}
           />
           {children}
         </main>

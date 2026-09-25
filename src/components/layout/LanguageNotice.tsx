@@ -1,7 +1,7 @@
 'use client';
 
-import { useSyncExternalStore } from 'react';
-import { Languages } from 'lucide-react';
+import { useState, useSyncExternalStore } from 'react';
+import { Languages, X } from 'lucide-react';
 import { isCrawler } from '@/lib/ar-language-redirect';
 
 /*
@@ -94,23 +94,65 @@ function wasRedirectedHere(): boolean {
   }
 }
 
+/*
+ * Quiet, and closable.
+ *
+ * The first version was a full-width bar with the type size of body copy,
+ * sitting above the hero and pushing the whole page down. Seen on a phone
+ * that is wrong in proportion to what it does: the line exists for an Arabic
+ * speaker whose phone is set to French, and almost everybody who sees it is a
+ * French or English tourist who will never use it. They got a strip of script
+ * they cannot read, on every page, with no way to be rid of it.
+ *
+ * So: one compact line, and an × that ends it for the session. Small enough
+ * to ignore, still legible to the one person it is for — making it any
+ * smaller would fail them, which is the other half of the mistake.
+ */
 const BAR =
-  'flex flex-wrap items-center justify-center gap-x-2 gap-y-1 border-b border-[rgba(232,163,61,0.18)] bg-[#1C1309] px-4 py-2 text-center text-sm text-[#C4A882]';
-const LINK = 'font-semibold text-[#E8A33D] underline underline-offset-4 hover:text-[#F5E8CC]';
+  'flex items-center justify-center gap-x-2 border-b border-[rgba(232,163,61,0.14)] bg-[#1C1309] px-3 py-1.5 text-center text-xs text-[#C4A882]';
+const LINK = 'font-semibold text-[#E8A33D] underline underline-offset-2 hover:text-[#F5E8CC]';
+const CLOSE =
+  'ms-auto shrink-0 rounded p-1 text-[#C4A882]/70 transition-colors hover:text-[#F5E8CC]';
+
+const DISMISSED_KEY = 'langNoticeDismissed';
+
+function alreadyDismissed(): boolean {
+  try {
+    return sessionStorage.getItem(DISMISSED_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
 
 export function LanguageNotice({
   locale,
   offers,
   arabicLabel,
+  closeLabel,
 }: {
   locale: string;
   /** Only passed on /ar: one entry per language this site publishes. */
   offers?: Record<string, LanguageOffer>;
   /** Always Arabic, because the person who needs it reads Arabic. */
   arabicLabel: string;
+  /** For the close button, in the language of the page it sits on. */
+  closeLabel: string;
 }) {
   const isClient = useIsClient();
-  if (!isClient) return null;
+  // Set only by the close button, so this is genuine React state. The session
+  // remembers it too, for the pages after this one.
+  const [closed, setClosed] = useState(false);
+
+  const dismiss = () => {
+    try {
+      sessionStorage.setItem(DISMISSED_KEY, '1');
+    } catch {
+      // Nothing can be stored; it closes here and returns on the next page.
+    }
+    setClosed(true);
+  };
+
+  if (!isClient || closed || alreadyDismissed()) return null;
   // A crawler is shown the page as it stands, in both modes.
   if (typeof navigator !== 'undefined' && isCrawler(navigator.userAgent)) return null;
 
@@ -123,11 +165,14 @@ export function LanguageNotice({
     const offer = offers[target];
     return (
       <div className={BAR} dir="ltr" lang={target}>
-        <Languages size={15} className="shrink-0 text-[#E8A33D]" aria-hidden />
-        <span>{offer.available}</span>
+        <Languages size={13} className="shrink-0 text-[#E8A33D]" aria-hidden />
+        <span className="truncate">{offer.available}</span>
         <a href={href} className={LINK}>
           {offer.view}
         </a>
+        <button type="button" onClick={dismiss} aria-label={closeLabel} className={CLOSE}>
+          <X size={14} aria-hidden />
+        </button>
       </div>
     );
   }
@@ -144,10 +189,13 @@ export function LanguageNotice({
   const sep = href.includes('?') ? '&' : '?';
   return (
     <div className={BAR} dir="rtl" lang="ar">
-      <Languages size={15} className="shrink-0 text-[#E8A33D]" aria-hidden />
+      <Languages size={13} className="shrink-0 text-[#E8A33D]" aria-hidden />
       <a href={`${href}${sep}lang=ar`} className={LINK}>
         {arabicLabel}
       </a>
+      <button type="button" onClick={dismiss} aria-label={closeLabel} className={CLOSE}>
+        <X size={14} aria-hidden />
+      </button>
     </div>
   );
 }
