@@ -884,7 +884,7 @@
     "monThu": "Segunda – quinta",
     "friday": "Sexta-feira",
     "satSun": "Sábado – domingo",
-    "fridayNote": "Encerra para a oração de sexta-feira",
+    "fridayNote": "O mesmo horário dos outros dias",
     "ramadanTitle": "Horários durante o Ramadão",
     "ramadanBody": "Durante o Ramadão o Palácio da Bahia altera o horário: normalmente <b>9:00 – 16:00</b>, com variações consoante o ano. O palácio pode encerrar em alguns feriados religiosos. Confirme sempre no local antes de se deslocar.",
     "ramadanDates": "Ramadão de 2026, datas aproximadas: 18 de fevereiro – 19 de março de 2026",
@@ -957,5 +957,25 @@
     "independenceBody": "visitbahiapalace.com é um guia de visita independente. Não está associado ao monumento do Palácio da Bahia, ao Ministério da Cultura de Marrocos nem a qualquer organismo público. Os artigos, os preços e as opiniões aqui publicados são a avaliação pessoal de Abdellah e não uma posição oficial.",
     "contactTitle": "Correções e pedidos de imprensa",
     "contactBody": "Se encontrar um erro, tiver uma questão de imprensa ou quiser partilhar a sua própria experiência no Palácio da Bahia, escreva diretamente. As correções de factos têm prioridade e são publicadas depressa."
+  },
+  "visitingToday": {
+    "openNow": "Aberto",
+    "closingSoon": "Fecha em breve",
+    "afterLastEntry": "Última entrada já passou",
+    "closedNow": "Fechado",
+    "untilClose": "até às",
+    "lastEntry": "última entrada",
+    "opensAt": "abre às"
+  },
+  "languageNotice": {
+    "available": "Esta página também está em português.",
+    "view": "Ler em português",
+    "backToArabic": "عرض الصفحة بالعربية"
+  },
+  "cookieBanner": {
+    "label": "Consentimento de cookies",
+    "text": "Usamos cookies para melhorar a sua experiência e analisar o tráfego do site. Para mais detalhes, consulte a nossa <link>política de cookies</link>.",
+    "decline": "Recusar",
+    "accept": "Aceitar cookies"
   }
 }

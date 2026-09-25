@@ -1114,7 +1114,7 @@
     "monThu": "Montag – Donnerstag",
     "friday": "Freitag",
     "satSun": "Samstag – Sonntag",
-    "fridayNote": "Schließt zum Freitagsgebet",
+    "fridayNote": "Gleiche Zeiten wie an allen anderen Tagen",
     "ramadanTitle": "Öffnungszeiten im Ramadan",
     "ramadanBody": "Im Ramadan ändert der Bahia-Palast seine Zeiten: in der Regel <b>9:00 – 16:00 Uhr</b>, je nach Jahr etwas abweichend. An einzelnen religiösen Feiertagen kann der Palast geschlossen sein. Prüfen Sie es vor Ort, bevor Sie hinfahren.",
     "ramadanDates": "Ramadan 2026, ungefähre Daten: 18. Februar – 19. März 2026",
@@ -1187,5 +1187,25 @@
     "independenceBody": "visitbahiapalace.com ist ein unabhängiger Besucherführer. Die Seite gehört weder zum Bahia-Palast noch zum marokkanischen Kulturministerium noch zu einer staatlichen Stelle. Artikel, Preise und Einschätzungen hier sind Abdellahs eigene Bewertung und keine offizielle Position.",
     "contactTitle": "Korrekturen und Presseanfragen",
     "contactBody": "Wenn Sie einen Fehler entdecken, eine Presseanfrage haben oder Ihre eigene Erfahrung mit dem Bahia-Palast teilen möchten, schreiben Sie direkt. Sachliche Korrekturen haben Vorrang und werden schnell veröffentlicht."
+  },
+  "visitingToday": {
+    "openNow": "Geöffnet",
+    "closingSoon": "Schließt bald",
+    "afterLastEntry": "Letzter Einlass vorbei",
+    "closedNow": "Geschlossen",
+    "untilClose": "bis",
+    "lastEntry": "letzter Einlass",
+    "opensAt": "öffnet um"
+  },
+  "languageNotice": {
+    "available": "Diese Seite gibt es auch auf Deutsch.",
+    "view": "Auf Deutsch lesen",
+    "backToArabic": "عرض الصفحة بالعربية"
+  },
+  "cookieBanner": {
+    "label": "Cookie-Einwilligung",
+    "text": "Wir verwenden Cookies, um Ihr Erlebnis zu verbessern und die Zugriffe auf die Website auszuwerten. Einzelheiten finden Sie in unserer <link>Cookie-Richtlinie</link>.",
+    "decline": "Ablehnen",
+    "accept": "Cookies akzeptieren"
   }
 }

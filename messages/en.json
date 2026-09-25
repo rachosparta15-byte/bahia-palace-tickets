@@ -1112,7 +1112,7 @@
     "monThu": "Monday – Thursday",
     "friday": "Friday",
     "satSun": "Saturday – Sunday",
-    "fridayNote": "Closes for Friday prayer",
+    "fridayNote": "Same hours as every other day",
     "ramadanTitle": "Bahia Palace Ramadan Hours",
     "ramadanBody": "During Ramadan, Bahia Palace adjusts its schedule. Opening hours are typically <b>9:00 AM – 4:00 PM</b>, with some variation depending on the year. The palace may be closed on certain religious holidays. Always verify locally before your visit during Ramadan.",
     "ramadanDates": "Ramadan 2026 approximate dates: February 18 – March 19, 2026",
@@ -1185,5 +1185,25 @@
     "independenceBody": "visitbahiapalace.com is an independent visitor guide. It is not affiliated with the Bahia Palace monument, with the Moroccan Ministry of Culture, or with any government body. The articles, prices and opinions here are Abdellah’s own assessment, not an official position.",
     "contactTitle": "Corrections & press enquiries",
     "contactBody": "If you spot an error, have a press question, or want to share your own experience of visiting Bahia Palace, write directly. Factual corrections come first and are published quickly."
+  },
+  "visitingToday": {
+    "openNow": "Open now",
+    "closingSoon": "Closing soon",
+    "afterLastEntry": "Last entry has passed",
+    "closedNow": "Closed now",
+    "untilClose": "until",
+    "lastEntry": "last entry",
+    "opensAt": "opens"
+  },
+  "languageNotice": {
+    "available": "This page is also available in English.",
+    "view": "Read in English",
+    "backToArabic": "عرض الصفحة بالعربية"
+  },
+  "cookieBanner": {
+    "label": "Cookie consent",
+    "text": "We use cookies to improve your experience and analyse site traffic. See our <link>Cookie Policy</link> for details.",
+    "decline": "Decline",
+    "accept": "Accept cookies"
   }
 }

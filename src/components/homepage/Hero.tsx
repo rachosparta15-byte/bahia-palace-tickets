@@ -1,8 +1,9 @@
 import { preload } from 'react-dom';
 import { getTranslations } from 'next-intl/server';
-import { ArrowRight, Sun, Landmark, Ticket, Check, QrCode, Play, Route } from 'lucide-react';
+import { ArrowRight, Sun, Ticket, Check, QrCode, Play, Route } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { LeadButton } from '@/components/layout/LeadButton';
+import { LiveVisitStatus } from '@/components/homepage/LiveVisitStatus';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 import { buyingPathPriceLabel, TEASER_PRICE_ENABLED } from '@/config/pricing';
 
@@ -96,6 +97,7 @@ export async function Hero() {
    * it obvious.
    */
   const t = await getTranslations('heroBanner');
+  const tVisit = await getTranslations('visitingToday');
   const tt = await getTranslations('tickets');
   const ti = await getTranslations('visitorPack.inclusions');
   // Un-namespaced, because the three teaser lines are pulled from different
@@ -221,12 +223,25 @@ export async function Hero() {
                 </span>
               </div>
               <ArrowRight size={14} className="text-white/25 shrink-0" />
-              <div className="flex items-center gap-2">
-                <Landmark size={16} className="text-[#27906E] shrink-0 sm:w-5 sm:h-5" />
-                <span className="text-white text-xs sm:text-base font-semibold whitespace-nowrap">
-                  {t('coolNoQueue')}
-                </span>
-              </div>
+              {/*
+                * "A cool palace, no queue" was true of every day at every
+                * hour, which is another way of saying it told the reader
+                * nothing. It is now the fallback behind a live status —
+                * shown on the server, without JavaScript, and until a real
+                * clock answers. See LiveVisitStatus for who that matters to.
+                */}
+              <LiveVisitStatus
+                fallback={t('coolNoQueue')}
+                strings={{
+                  openNow: tVisit('openNow'),
+                  closingSoon: tVisit('closingSoon'),
+                  afterLastEntry: tVisit('afterLastEntry'),
+                  closedNow: tVisit('closedNow'),
+                  untilClose: tVisit('untilClose'),
+                  lastEntry: tVisit('lastEntry'),
+                  opensAt: tVisit('opensAt'),
+                }}
+              />
             </div>
           </div>
         </div>

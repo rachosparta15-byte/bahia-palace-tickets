@@ -3,6 +3,8 @@ import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Header } from '@/components/layout/Header';
+import { LanguageNotice } from '@/components/layout/LanguageNotice';
+import { ViatorArrival } from '@/components/analytics/ViatorArrival';
 import { VideoPromoBar } from '@/components/layout/VideoPromoBar';
 import { Footer } from '@/components/layout/Footer';
 import { MobileBottomNav } from '@/components/layout/MobileBottomNav';
@@ -64,6 +66,25 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const messages = await getMessages();
 
+  /*
+   * The offers shown ON the Arabic page, each in its own language.
+   *
+   * Read from the other catalogues rather than the current one, which is the
+   * whole point: a French speaker looking at /ar has to be addressed in
+   * French or the line tells them nothing. Only built for /ar, so the other
+   * six locales pay nothing for it.
+   */
+  const tNotice = await getTranslations({ locale, namespace: 'languageNotice' });
+  let offers: Record<string, { available: string; view: string }> | undefined;
+  if (locale === 'ar') {
+    offers = {};
+    for (const target of routing.locales) {
+      if (target === 'ar') continue;
+      const tt = await getTranslations({ locale: target, namespace: 'languageNotice' });
+      offers[target] = { available: tt('available'), view: tt('view') };
+    }
+  }
+
   // Booleans only — no key material reaches the client. Ticket CTAs use this
   // to decide between the official portal and our own Visitor Pack checkout.
   const paymentsFlags = getPublicPaymentsFlags();
@@ -77,7 +98,15 @@ export default async function LocaleLayout({ children, params }: Props) {
             video" link moved into the Hero, next to Get Tickets, so this
             is purely a decorative divider under the header. */}
         <VideoPromoBar variant="C" decorative />
-        <main className="flex-1 pt-[96px]">{children}</main>
+        <main className="flex-1 pt-[96px]">
+          {/* Client-rendered, so nothing here reaches the crawled HTML. */}
+          <LanguageNotice
+            locale={locale}
+            offers={offers}
+            arabicLabel={tNotice('backToArabic')}
+          />
+          {children}
+        </main>
         <Footer />
         {/* Prevents fixed bottom nav from obscuring the footer on mobile */}
         <div
@@ -87,6 +116,9 @@ export default async function LocaleLayout({ children, params }: Props) {
         />
         <MobileBottomNav />
         <CookieBanner />
+        {/* Renders nothing; tags outbound Viator clicks with how the
+            visitor reached the site. See the component for why. */}
+        <ViatorArrival />
         <Analytics />
       </div>
      </PaymentsFlagsProvider>

@@ -1114,7 +1114,7 @@
     "monThu": "Lunes – jueves",
     "friday": "Viernes",
     "satSun": "Sábado – domingo",
-    "fridayNote": "Cierra para la oración del viernes",
+    "fridayNote": "El mismo horario que el resto de la semana",
     "ramadanTitle": "Horario durante el Ramadán",
     "ramadanBody": "Durante el Ramadán el Palacio Bahía cambia su horario: normalmente <b>9:00 – 16:00</b>, con variaciones según el año. El palacio puede cerrar en algunas festividades religiosas. Confírmalo siempre sobre el terreno antes de ir.",
     "ramadanDates": "Ramadán 2026, fechas aproximadas: 18 de febrero – 19 de marzo de 2026",
@@ -1187,5 +1187,25 @@
     "independenceBody": "visitbahiapalace.com es una guía de visita independiente. No está afiliada al monumento del Palacio Bahía, ni al Ministerio de Cultura de Marruecos, ni a ningún organismo público. Los artículos, los precios y las opiniones que aquí aparecen son la valoración personal de Abdellah, no una posición oficial.",
     "contactTitle": "Correcciones y consultas de prensa",
     "contactBody": "Si detectas un error, tienes una consulta de prensa o quieres contar tu propia experiencia en el Palacio Bahía, escribe directamente. Las correcciones de datos son prioritarias y se publican enseguida."
+  },
+  "visitingToday": {
+    "openNow": "Abierto",
+    "closingSoon": "Cierra pronto",
+    "afterLastEntry": "Última entrada pasada",
+    "closedNow": "Cerrado",
+    "untilClose": "hasta las",
+    "lastEntry": "última entrada",
+    "opensAt": "abre a las"
+  },
+  "languageNotice": {
+    "available": "Esta página también está en español.",
+    "view": "Leer en español",
+    "backToArabic": "عرض الصفحة بالعربية"
+  },
+  "cookieBanner": {
+    "label": "Consentimiento de cookies",
+    "text": "Usamos cookies para mejorar tu experiencia y analizar el tráfico del sitio. Consulta nuestra <link>política de cookies</link> para más detalles.",
+    "decline": "Rechazar",
+    "accept": "Aceptar cookies"
   }
 }
