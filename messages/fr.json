@@ -1201,5 +1201,11 @@
     "available": "Cette page existe aussi en français.",
     "view": "Lire en français",
     "backToArabic": "عرض الصفحة بالعربية"
+  },
+  "cookieBanner": {
+    "label": "Consentement aux cookies",
+    "text": "Nous utilisons des cookies pour améliorer votre expérience et mesurer l’audience du site. Pour en savoir plus, consultez notre <link>politique relative aux cookies</link>.",
+    "decline": "Refuser",
+    "accept": "Accepter les cookies"
   }
 }

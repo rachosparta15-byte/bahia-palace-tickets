@@ -1201,5 +1201,11 @@
     "available": "Questa pagina è disponibile in italiano.",
     "view": "Leggi in italiano",
     "backToArabic": "عرض الصفحة بالعربية"
+  },
+  "cookieBanner": {
+    "label": "Consenso ai cookie",
+    "text": "Usiamo i cookie per migliorare la tua esperienza e analizzare il traffico del sito. Per i dettagli vedi la nostra <link>informativa sui cookie</link>.",
+    "decline": "Rifiuta",
+    "accept": "Accetta i cookie"
   }
 }

@@ -1199,5 +1199,11 @@
     "available": "This page is also available in English.",
     "view": "Read in English",
     "backToArabic": "عرض الصفحة بالعربية"
+  },
+  "cookieBanner": {
+    "label": "Cookie consent",
+    "text": "We use cookies to improve your experience and analyse site traffic. See our <link>Cookie Policy</link> for details.",
+    "decline": "Decline",
+    "accept": "Accept cookies"
   }
 }

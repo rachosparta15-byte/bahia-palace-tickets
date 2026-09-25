@@ -1201,5 +1201,11 @@
     "available": "Diese Seite gibt es auch auf Deutsch.",
     "view": "Auf Deutsch lesen",
     "backToArabic": "عرض الصفحة بالعربية"
+  },
+  "cookieBanner": {
+    "label": "Cookie-Einwilligung",
+    "text": "Wir verwenden Cookies, um Ihr Erlebnis zu verbessern und die Zugriffe auf die Website auszuwerten. Einzelheiten finden Sie in unserer <link>Cookie-Richtlinie</link>.",
+    "decline": "Ablehnen",
+    "accept": "Cookies akzeptieren"
   }
 }
