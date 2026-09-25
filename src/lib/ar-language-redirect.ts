@@ -54,6 +54,19 @@ export function isCrawler(userAgent: string): boolean {
   return new RegExp(BOT_PATTERN, 'i').test(userAgent || '');
 }
 
+/*
+ * Where the session's arrival is recorded, read by ViatorArrival to tell a
+ * knowledge-panel sale from any other.
+ *
+ * It is written HERE, not in the React component, because of the order things
+ * happen in. This script runs in <head> and calls location.replace before
+ * hydration; by the time a component could look, the visitor is already on
+ * /fr and the only honest answer it could give is "arrived at /fr" — which
+ * loses precisely the journey worth measuring. Recorded before the decision,
+ * so it survives the redirect.
+ */
+export const ARRIVAL_KEY = 'arrivalSource';
+
 /** The locales a visitor can be sent to. Arabic is the page they are on. */
 const TARGETS = ['fr', 'en', 'it', 'es', 'de', 'pt'];
 
@@ -64,6 +77,7 @@ const TARGETS = ['fr', 'en', 'it', 'es', 'de', 'pt'];
 export const AR_LANGUAGE_REDIRECT = `(function(){try{
 var p=location.pathname.replace(/\\/$/,'');
 if(p!=='/ar')return;
+try{if(!sessionStorage.getItem('${ARRIVAL_KEY}'))sessionStorage.setItem('${ARRIVAL_KEY}',/[?&]utm_source=google_maps/.test(location.search)?'maps':'ar')}catch(e){}
 if(/[?&]lang=ar(?:&|$)/.test(location.search))return;
 if(new RegExp('${BOT_PATTERN}','i').test(navigator.userAgent||''))return;
 var r=document.referrer;

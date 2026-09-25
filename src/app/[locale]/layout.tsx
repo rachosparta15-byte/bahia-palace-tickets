@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Header } from '@/components/layout/Header';
 import { LanguageNotice } from '@/components/layout/LanguageNotice';
+import { ViatorArrival } from '@/components/analytics/ViatorArrival';
 import { VideoPromoBar } from '@/components/layout/VideoPromoBar';
 import { Footer } from '@/components/layout/Footer';
 import { MobileBottomNav } from '@/components/layout/MobileBottomNav';
@@ -115,6 +116,9 @@ export default async function LocaleLayout({ children, params }: Props) {
         />
         <MobileBottomNav />
         <CookieBanner />
+        {/* Renders nothing; tags outbound Viator clicks with how the
+            visitor reached the site. See the component for why. */}
+        <ViatorArrival />
         <Analytics />
       </div>
      </PaymentsFlagsProvider>
