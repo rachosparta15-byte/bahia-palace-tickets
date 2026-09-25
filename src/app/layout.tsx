@@ -6,6 +6,7 @@ import { ADSENSE_CLIENT } from '@/config/adsense';
 import { Analytics } from '@vercel/analytics/next';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import Script from 'next/script';
+import { AR_LANGUAGE_REDIRECT } from '@/lib/ar-language-redirect';
 import { Playfair_Display, Cormorant_Garamond, DM_Sans, Amiri } from 'next/font/google';
 import './globals.css';
 
@@ -131,6 +132,23 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             and that checker may not follow redirects; the meta-tag method
             is checked on whichever URL actually renders, redirect or not. */}
         <meta name="google-adsense-account" content={ADSENSE_CLIENT} />
+        {/*
+          On /ar only, and only in the server HTML of /ar.
+          Every other locale's document is byte-for-byte what it was before.
+
+          A raw <script>, not next/script: this has to run before the first
+          paint or the visitor sees the Arabic page flash past on the way to
+          their own. next/script defers even at beforeInteractive, which is
+          too late for that.
+
+          See src/lib/ar-language-redirect.ts for what it does and, more
+          importantly, for the two guards that keep Googlebot on the Arabic
+          page — /ar's ranking is what delivers these visitors, so a redirect
+          the crawler follows would destroy the thing it is rescuing.
+        */}
+        {locale === 'ar' && (
+          <script dangerouslySetInnerHTML={{ __html: AR_LANGUAGE_REDIRECT }} />
+        )}
         <Script
           async
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
