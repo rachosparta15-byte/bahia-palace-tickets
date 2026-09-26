@@ -1,7 +1,8 @@
 import { preload } from 'react-dom';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { ArrowRight, Sun, Ticket, Check, QrCode } from 'lucide-react';
 import { LeadButton } from '@/components/layout/LeadButton';
+import { HeroBooking } from '@/components/homepage/HeroBooking';
 import { LiveVisitStatus } from '@/components/homepage/LiveVisitStatus';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 import { buyingPathPriceLabel, TEASER_PRICE_ENABLED } from '@/config/pricing';
@@ -95,7 +96,10 @@ export async function Hero() {
    * right-to-left with an English headline sitting in it, which is what made
    * it obvious.
    */
+  const locale = await getLocale();
   const t = await getTranslations('heroBanner');
+  const tDate = await getTranslations('datePicker');
+  const tBook = await getTranslations('heroBooking');
   const tVisit = await getTranslations('visitingToday');
   const tt = await getTranslations('tickets');
   const ti = await getTranslations('visitorPack.inclusions');
@@ -127,7 +131,19 @@ export async function Hero() {
 
   const temp = await getTemp();
   return (
-    <section className="relative flex flex-col overflow-hidden min-h-[260px] sm:min-h-0 bg-[#160D06]">
+    /*
+      No overflow-hidden on the section.
+
+      It was clipping the date picker's calendar: the panel opens downward out
+      of the hero and was cut off at the section's edge, showing two month
+      headings and a row of weekday initials with no days under them.
+      
+      It was also redundant. The Ken Burns background has its own
+      overflow-hidden on the absolutely positioned wrapper below, which is what
+      actually contains the scaling image — this one was clipping everything
+      else for a job already being done one level down.
+    */
+    <section className="relative flex flex-col min-h-[260px] sm:min-h-0 bg-[#160D06]">
       {/* Background image — Ken Burns */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 hero-ken-burns">
@@ -381,8 +397,16 @@ export async function Hero() {
                     angle rather than a rotating clipped element; see that
                     class's comment for why the ticket cards needed this
                     version specifically. */}
-                <div className="spin-ring inline-block rounded-lg">
-                  {paymentsEnabled ? (
+                {/*
+                  * With our own checkout live the hero sells the Visitor Pack
+                  * directly, and the date is asked for later, in that flow.
+                  * With payments off every sale is a hand-off to a
+                  * marketplace — and then the date has to be asked HERE,
+                  * because it decides which marketplace can serve it. See
+                  * booking-partners.ts.
+                  */}
+                {paymentsEnabled ? (
+                  <div className="spin-ring inline-block rounded-lg">
                     <LeadButton
                       ticketType="visitor-pack"
                       ctaLocation="hero"
@@ -393,18 +417,25 @@ export async function Hero() {
                       {tt('bookNow')}
                       <QrCode size={16} aria-hidden="true" className="opacity-80" />
                     </LeadButton>
-                  ) : (
-                    <a
-                      href="#ticket-options"
-                      id="ticket-book-btn"
-                      className="btn-primary relative min-h-[48px] text-sm sm:text-base"
-                    >
-                      <Ticket size={18} aria-hidden="true" />
-                      {tt('bookNow')}
-                      <QrCode size={16} aria-hidden="true" className="opacity-80" />
-                    </a>
-                  )}
-                </div>
+                  </div>
+                ) : (
+                  <HeroBooking
+                    locale={locale}
+                    strings={{
+                      field: tDate('field'),
+                      prompt: tBook('prompt'),
+                      today: tDate('today'),
+                      tomorrow: tDate('tomorrow'),
+                      previousMonth: tDate('previousMonth'),
+                      nextMonth: tDate('nextMonth'),
+                      cta: tt('bookNow'),
+                      ctaFor: tBook('ctaFor'),
+                      checkAvailability: tBook('checkAvailability'),
+                      whenToday: tBook('whenToday'),
+                      whenTomorrow: tBook('whenTomorrow'),
+                    }}
+                  />
+                )}
                 {/* Justifies the price the same way as its match on
                     TicketCards — audio guide included is why no human guide
                     is needed. Serif italic + text-shine so it reads as a

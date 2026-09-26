@@ -145,7 +145,9 @@
     "optionsView": "Voir",
     "optionsLabel": "Le palais",
     "optionsFeatured": "C’est celle que prennent la plupart des visiteurs",
-    "optionsBookThis": "Réserver cette entrée"
+    "optionsBookThis": "Réserver cette entrée",
+    "availableFrom": "Disponible à partir du {date}",
+    "bookableToday": "Disponible à votre date"
   },
   "whyUs": {
     "title": "Ce que nous faisons — et ce que nous ne faisons pas",
@@ -887,7 +889,8 @@
     "today": "Aujourd'hui",
     "tomorrow": "Demain",
     "previousMonth": "Mois précédent",
-    "nextMonth": "Mois suivant"
+    "nextMonth": "Mois suivant",
+    "field": "Date de visite"
   },
   "heroBanner": {
     "outside": "<deg></deg> dehors",
@@ -1210,5 +1213,12 @@
     "text": "Nous utilisons des cookies pour améliorer votre expérience et mesurer l’audience du site. Pour en savoir plus, consultez notre <link>politique relative aux cookies</link>.",
     "decline": "Refuser",
     "accept": "Accepter les cookies"
+  },
+  "heroBooking": {
+    "ctaFor": "Billets pour {when}",
+    "checkAvailability": "Vérifier les disponibilités",
+    "whenToday": "aujourd'hui",
+    "whenTomorrow": "demain",
+    "prompt": "Vous venez quel jour ?"
   }
 }

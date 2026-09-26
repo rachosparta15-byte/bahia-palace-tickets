@@ -1,8 +1,14 @@
 'use client';
 
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
-import { ArrowRight, Clock, ShieldCheck, CheckCircle2, RotateCcw, Award } from 'lucide-react';
+import {
+  GETYOURGUIDE_URL,
+  VIATOR_LEAD_TIME_DAYS,
+  daysUntil,
+} from '@/config/booking-partners';
+import { useChosenDate, useToday } from '@/config/chosen-date';
+import { useLocale, useTranslations } from 'next-intl';
+import { ArrowRight, CalendarClock, Clock, ShieldCheck, CheckCircle2, RotateCcw, Award } from 'lucide-react';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { AffiliateDisclosure } from '@/components/ui/AffiliateDisclosure';
 import { TICKET_PRICES } from '@/lib/ticket-data';
@@ -77,6 +83,34 @@ const IMAGE: Record<(typeof OPTION_SLUGS)[number], string> = {
 export function TicketOptions() {
   const currency = useViatorCurrency();
   const t = useTranslations('tickets');
+  const locale = useLocale();
+  /*
+   * The date chosen in the hero, a screen above. Null until the visitor
+   * touches the calendar — and while it is null every card behaves exactly as
+   * it always has, which is what keeps this safe.
+   */
+  const chosenDate = useChosenDate();
+  /* Today from a store, not from the clock: see useToday for why. */
+  const today = useToday();
+  const daysAhead =
+    chosenDate && today ? daysUntil(chosenDate, new Date(`${today}T12:00:00`)) : null;
+  /*
+   * Viator has nothing this soon. Observed once, by hand — see
+   * booking-partners.ts for why that is stated rather than hidden.
+   */
+  const tooSoonForViator =
+    daysAhead !== null && daysAhead >= 0 && daysAhead < VIATOR_LEAD_TIME_DAYS;
+  /*
+   * The first day Viator can serve, named rather than implied.
+   *
+   * Derived from the store's `today`, not from a fresh clock reading, so this
+   * whole component renders from values it was given.
+   */
+  const viatorEarliest = today
+    ? new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'long' }).format(
+        new Date(new Date(`${today}T12:00:00`).getTime() + VIATOR_LEAD_TIME_DAYS * 86_400_000),
+      )
+    : '';
 
   return (
     <section id="ticket-options" className="relative overflow-hidden scroll-mt-24 bg-[#160D06] py-16">
@@ -138,7 +172,23 @@ export function TicketOptions() {
             const name     = t(`${nameKey}.name` as any).replace(/-/g, '‑');
             const duration = t(`${nameKey}.duration` as any);
 
-            const viatorHref  = VIATOR_LINKS[slug];
+            /*
+             * skip-the-line is the one product that exists on both
+             * marketplaces, so it is the only card that can move. When the
+             * chosen day is sooner than Viator can serve, its link goes to
+             * the GetYourGuide listing of the same experience instead.
+             *
+             * The other three have no GetYourGuide equivalent. They keep
+             * their Viator links and say, on the card, the first day those
+             * links can actually be used — option (b) of the two weighed:
+             * a card that disappears reads as a broken page, a card that
+             * explains itself reads as an answer.
+             */
+            const switchedToGyg =
+              slug === 'skip-the-line' && tooSoonForViator && Boolean(GETYOURGUIDE_URL);
+            const unavailableOnDate =
+              tooSoonForViator && !switchedToGyg && Boolean(VIATOR_LINKS[slug]);
+            const viatorHref  = switchedToGyg ? GETYOURGUIDE_URL : VIATOR_LINKS[slug];
             // Viator's own figure in the visitor's currency, from config/pricing
             // (VIATOR_PRICES_USD / VIATOR_PRICES_EUR) — never a conversion.
             const viatorPriceValue = viatorPriceFor(slug, currency);
@@ -189,6 +239,29 @@ export function TicketOptions() {
                   <p className="mt-1.5 text-[9px] leading-snug text-[rgba(245,232,204,0.45)] lg:text-[11px]">
                     {note}
                   </p>
+
+                  {/*
+                    * The answer to the date the visitor chose.
+                    *
+                    * Amber for "not on that day, but here is when", green for
+                    * "yes" — and the words carry it too, because colour alone
+                    * is not a message to anybody who cannot see the
+                    * difference. Nothing renders until a date has been chosen,
+                    * so a visitor who never touches the calendar sees the card
+                    * exactly as it has always looked.
+                    */}
+                  {unavailableOnDate && (
+                    <p className="mt-1.5 flex items-center gap-1 text-[9px] font-semibold leading-snug text-[#E8A33D] lg:text-[11px]">
+                      <CalendarClock size={11} className="shrink-0" aria-hidden />
+                      {t('availableFrom', { date: viatorEarliest })}
+                    </p>
+                  )}
+                  {switchedToGyg && (
+                    <p className="mt-1.5 flex items-center gap-1 text-[9px] font-semibold leading-snug text-[#8FA63C] lg:text-[11px]">
+                      <CalendarClock size={11} className="shrink-0" aria-hidden />
+                      {t('bookableToday')}
+                    </p>
+                  )}
 
                   {/* Stacked on narrow cards: the price needs its full width
                       to render ("$13.00" was getting squeezed under 40px next

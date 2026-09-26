@@ -144,7 +144,9 @@
     "optionsView": "View",
     "optionsLabel": "The palace",
     "optionsFeatured": "Most visitors take this one",
-    "optionsBookThis": "Book this entry"
+    "optionsBookThis": "Book this entry",
+    "availableFrom": "Available from {date}",
+    "bookableToday": "Available for your date"
   },
   "ticketDetail": {
     "includes": "What's included",
@@ -885,7 +887,8 @@
     "today": "Today",
     "tomorrow": "Tomorrow",
     "previousMonth": "Previous month",
-    "nextMonth": "Next month"
+    "nextMonth": "Next month",
+    "field": "Visit date"
   },
   "heroBanner": {
     "outside": "<deg></deg> outside",
@@ -1208,5 +1211,12 @@
     "text": "We use cookies to improve your experience and analyse site traffic. See our <link>Cookie Policy</link> for details.",
     "decline": "Decline",
     "accept": "Accept cookies"
+  },
+  "heroBooking": {
+    "ctaFor": "Tickets for {when}",
+    "checkAvailability": "Check availability",
+    "whenToday": "today",
+    "whenTomorrow": "tomorrow",
+    "prompt": "When are you visiting?"
   }
 }

@@ -173,9 +173,24 @@ export function DatePicker({
     [locale]
   );
 
-  // Weekday initials straight from Intl, so we never ship a translation table.
+  /*
+   * Weekday initials straight from Intl, so we never ship a translation table.
+   *
+   * 'narrow', not 'short'. The header used to take the short name and cut it
+   * to two characters, which is right for English, French, Italian, German and
+   * Spanish and wrong for the two that matter most here:
+   *
+   *   Arabic       every weekday is الأحد, الاثنين, الثلاثاء … so the first two
+   *                characters are ال for all seven. The row read
+   *                "ال ال ال ال ال ال ال" and told the reader nothing.
+   *   Portuguese   segunda/sexta both cut to "se", quarta/quinta both to "qu".
+   *
+   * 'narrow' is what the locale itself uses for a calendar header — ح ن ث ر خ
+   * ج س in Arabic, S T Q Q S S D in Portuguese — so no slicing is needed and
+   * no locale is a special case.
+   */
   const weekdayNames = useMemo(() => {
-    const fmt = new Intl.DateTimeFormat(locale, { weekday: 'short' });
+    const fmt = new Intl.DateTimeFormat(locale, { weekday: 'narrow' });
     // 2024-01-01 was a Monday; walk seven days from the locale's week start.
     const monday = new Date(2024, 0, 1);
     return Array.from({ length: 7 }, (_, i) =>
@@ -192,12 +207,31 @@ export function DatePicker({
    * On the one field where a misread costs the customer a non-refundable
    * ticket for the wrong day, the order is fixed and the same for everyone.
    */
+  /*
+   * The chosen date, written the way the reader writes dates.
+   *
+   * This was a hard-coded dd/mm/yyyy, identical in all seven languages. Two
+   * problems with that, and the second is the expensive one:
+   *
+   *   - it is the wrong order for an American reader, who sees 09/25 and
+   *     05/09 the other way round, and this field decides which day they turn
+   *     up. A wrong visit date is non-refundable once the QR ships.
+   *   - a bare numeric string cannot be misread aloud but it can be misread
+   *     silently, and nothing about it says which number is the month.
+   *
+   * Naming the month removes the ambiguity in every locale at once, and Intl
+   * already knows the order, the separator and the script — including Arabic,
+   * where the numerals and the direction both differ.
+   */
   const selectedLabel = useMemo(() => {
     if (!selected) return null;
-    const dd = String(selected.getDate()).padStart(2, '0');
-    const mm = String(selected.getMonth() + 1).padStart(2, '0');
-    return `${dd}/${mm}/${selected.getFullYear()}`;
-  }, [selected]);
+    return new Intl.DateTimeFormat(locale, {
+      weekday: 'short',
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    }).format(selected);
+  }, [selected, locale]);
 
   const isDisabled = (d: Date) => d < minDate;
   const isSameDay = (a: Date, b: Date) =>
@@ -246,7 +280,7 @@ export function DatePicker({
         <div
           role="dialog"
           aria-label={labels.field}
-          className="absolute left-0 right-0 z-50 mt-2 max-h-[70vh] overflow-y-auto rounded-xl border border-[rgba(232,163,61,0.25)] bg-[#251A0F] p-4 shadow-[0_12px_32px_rgba(0,0,0,0.55)] sm:right-auto sm:max-h-none sm:w-[min(34rem,calc(100vw-3rem))] sm:overflow-visible"
+          className="absolute start-0 end-0 z-50 mt-2 max-h-[70vh] overflow-y-auto rounded-xl border border-[rgba(232,163,61,0.25)] bg-[#251A0F] p-4 shadow-[0_12px_32px_rgba(0,0,0,0.55)] sm:end-auto sm:max-h-none sm:w-[min(34rem,calc(100vw-3rem))] sm:overflow-visible"
         >
           {/* Month navigation. The arrows move the pair, so "next" goes from
               [Aug, Sep] to [Sep, Oct] rather than sliding a single pane. */}
@@ -292,7 +326,7 @@ export function DatePicker({
                       aria-hidden="true"
                       className="py-1 text-center text-[10px] font-semibold uppercase tracking-wide text-[#C4A882]/60"
                     >
-                      {w.slice(0, 2)}
+                      {w}
                     </span>
                   ))}
                 </div>

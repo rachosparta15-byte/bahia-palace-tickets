@@ -53,7 +53,8 @@
     "today": "اليوم",
     "tomorrow": "غداً",
     "previousMonth": "الشهر السابق",
-    "nextMonth": "الشهر التالي"
+    "nextMonth": "الشهر التالي",
+    "field": "تاريخ الزيارة"
   },
   "faq": {
     "title": "أسئلة شائعة",
@@ -431,7 +432,9 @@
     "optionsView": "اعرض",
     "optionsLabel": "القصر",
     "optionsFeatured": "هذا ما يختاره معظم الزوار",
-    "optionsBookThis": "احجز هذا الدخول"
+    "optionsBookThis": "احجز هذا الدخول",
+    "availableFrom": "متوفّر ابتداءً من {date}",
+    "bookableToday": "متوفّر في هذا التاريخ"
   },
   "whyUs": {
     "title": "ما الذي نقوم به — وما لا نقوم به",
@@ -941,5 +944,12 @@
     "text": "نستعمل ملفات تعريف الارتباط لتحسين تجربتك وقياس زيارات الموقع. للتفاصيل، طالع <link>سياسة ملفات تعريف الارتباط</link>.",
     "decline": "رفض",
     "accept": "موافق"
+  },
+  "heroBooking": {
+    "ctaFor": "تذاكر {when}",
+    "checkAvailability": "تحقّق من التوفّر",
+    "whenToday": "اليوم",
+    "whenTomorrow": "غدا",
+    "prompt": "متى تنوي الزيارة؟"
   }
 }

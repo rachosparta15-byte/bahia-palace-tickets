@@ -145,7 +145,9 @@
     "optionsView": "Vedi",
     "optionsLabel": "Il palazzo",
     "optionsFeatured": "È quella scelta dalla maggior parte dei visitatori",
-    "optionsBookThis": "Prenota questo ingresso"
+    "optionsBookThis": "Prenota questo ingresso",
+    "availableFrom": "Disponibile dal {date}",
+    "bookableToday": "Disponibile per la tua data"
   },
   "whyUs": {
     "title": "Cosa facciamo — e cosa non facciamo",
@@ -887,7 +889,8 @@
     "today": "Oggi",
     "tomorrow": "Domani",
     "previousMonth": "Mese precedente",
-    "nextMonth": "Mese successivo"
+    "nextMonth": "Mese successivo",
+    "field": "Data della visita"
   },
   "heroBanner": {
     "outside": "<deg></deg> fuori",
@@ -1210,5 +1213,12 @@
     "text": "Usiamo i cookie per migliorare la tua esperienza e analizzare il traffico del sito. Per i dettagli vedi la nostra <link>informativa sui cookie</link>.",
     "decline": "Rifiuta",
     "accept": "Accetta i cookie"
+  },
+  "heroBooking": {
+    "ctaFor": "Biglietti per {when}",
+    "checkAvailability": "Verifica disponibilità",
+    "whenToday": "oggi",
+    "whenTomorrow": "domani",
+    "prompt": "Quando vieni?"
   }
 }

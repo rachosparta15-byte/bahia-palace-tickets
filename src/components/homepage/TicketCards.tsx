@@ -1,6 +1,12 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import {
+  GETYOURGUIDE_URL,
+  VIATOR_LEAD_TIME_DAYS,
+  daysUntil,
+} from '@/config/booking-partners';
+import { useChosenDate, useToday } from '@/config/chosen-date';
 import { useRouter } from '@/i18n/navigation';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { formatDisplayPrice, viatorPriceFor } from '@/config/pricing';
@@ -83,7 +89,22 @@ interface Props {
   overrides?: Record<string, TicketOverride>;
 }
 
+/*
+ * Where the skip-the-line card points, for the date the visitor chose.
+ *
+ * Null date — nobody has touched the calendar — means the Viator link this
+ * card has always used. Every unknown leaves behaviour exactly as it was.
+ */
 export function TicketCards({ overrides = {} }: Props) {
+  const chosenDate = useChosenDate();
+  const today = useToday();
+  const daysAhead =
+    chosenDate && today ? daysUntil(chosenDate, new Date(`${today}T12:00:00`)) : null;
+  const skipTheLineHref =
+    GETYOURGUIDE_URL && daysAhead !== null && daysAhead >= 0 && daysAhead < VIATOR_LEAD_TIME_DAYS
+      ? GETYOURGUIDE_URL
+      : SKIP_THE_LINE_VIATOR_URL;
+
   // Viator's own skip-the-line price, in the visitor's currency (config/pricing).
   const skipTheLineViatorPrice = formatDisplayPrice(viatorPriceFor('skip-the-line', useViatorCurrency())!);
   const t = useTranslations('tickets');
@@ -201,7 +222,18 @@ export function TicketCards({ overrides = {} }: Props) {
                 <div
                   onClick={() => {
                     if (isSkipTheLineViator) {
-                      window.open(SKIP_THE_LINE_VIATOR_URL, '_blank', 'noopener,noreferrer');
+                      /*
+                       * The same date routing as TicketOptions below.
+                       *
+                       * This section is the FIRST set of cards a visitor
+                       * reaches, and it was still sending everyone to Viator
+                       * whatever date the hero had been given — so the hero
+                       * could say "Tickets for today" while the card directly
+                       * under it opened the one shop that does not sell for
+                       * today. Two card sections disagreeing about the same
+                       * product is worse than neither of them knowing.
+                       */
+                      window.open(skipTheLineHref, '_blank', 'noopener,noreferrer');
                       return;
                     }
                     router.push((TICKET_HREF[slug] ?? `/tickets/${slug}`) as any);

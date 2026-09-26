@@ -53,7 +53,8 @@
     "today": "Hoje",
     "tomorrow": "Amanhã",
     "previousMonth": "Mês anterior",
-    "nextMonth": "Mês seguinte"
+    "nextMonth": "Mês seguinte",
+    "field": "Data da visita"
   },
   "faq": {
     "title": "Perguntas frequentes",
@@ -431,7 +432,9 @@
     "optionsView": "Ver",
     "optionsLabel": "O palácio",
     "optionsFeatured": "É a escolha da maioria dos visitantes",
-    "optionsBookThis": "Reservar esta entrada"
+    "optionsBookThis": "Reservar esta entrada",
+    "availableFrom": "Disponível a partir de {date}",
+    "bookableToday": "Disponível na sua data"
   },
   "whyUs": {
     "title": "O que fazemos — e o que não fazemos",
@@ -980,5 +983,12 @@
     "text": "Usamos cookies para melhorar a sua experiência e analisar o tráfego do site. Para mais detalhes, consulte a nossa <link>política de cookies</link>.",
     "decline": "Recusar",
     "accept": "Aceitar cookies"
+  },
+  "heroBooking": {
+    "ctaFor": "Bilhetes para {when}",
+    "checkAvailability": "Ver disponibilidade",
+    "whenToday": "hoje",
+    "whenTomorrow": "amanhã",
+    "prompt": "Em que dia vem?"
   }
 }
