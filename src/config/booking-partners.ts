@@ -85,7 +85,7 @@
  * extra click, which is a great deal cheaper than "not available".
  */
 export const GETYOURGUIDE_URL =
-  'https://www.getyourguide.com/marrakesh-l208/marrakech-bahia-palace-entry-ticket-with-digital-audioguide-t1149727/?partner_id=4UUBCAN&utm_medium=online_publisher&cmp=visitbahiapalace-herocalendar';
+  '';
 
 /**
  * How many days ahead Viator's earliest bookable date sits.
