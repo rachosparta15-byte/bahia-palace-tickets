@@ -80,6 +80,34 @@ export type HeroBookingStrings = {
  */
 const CTA_STYLE: 'date' | 'check' | 'get' = 'date';
 
+/*
+ * Scroll so the options section starts just under the header.
+ *
+ * The plain anchor lands it 230px down the screen, which leaves a slice of
+ * the section above still showing — a cut-off card and half a price, which
+ * reads as a broken page rather than an arrival. That 230 is two rules
+ * stacking: `scroll-padding-top: 134px` on html, which every other anchor on
+ * the site relies on, plus `scroll-mt-24` on the section itself.
+ *
+ * Neither is wrong on its own, and neither is touched. This button scrolls
+ * itself instead, measuring the header rather than assuming its height, so a
+ * change to the header cannot silently break the landing.
+ *
+ * The href stays a real anchor, so without JavaScript the browser still gets
+ * there — just at the old position. Progressive, not required.
+ */
+function scrollToOptions(event: React.MouseEvent<HTMLAnchorElement>): void {
+  const target = document.getElementById('ticket-options');
+  if (!target) return; // nothing to scroll to: let the anchor try
+  event.preventDefault();
+  const header = document.querySelector('header');
+  const offset = (header?.getBoundingClientRect().height ?? 80) + 8;
+  window.scrollTo({
+    top: target.getBoundingClientRect().top + window.scrollY - offset,
+    behavior: 'smooth',
+  });
+}
+
 export function HeroBooking({
   locale,
   strings,
@@ -191,7 +219,19 @@ export function HeroBooking({
      * shares — a shared component should not grow an option for one caller's
      * layout.
      */
-    <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-end">
+    /*
+     * Closer to the subtitle than it was, and no closer.
+     *
+     * At mt-6/mt-8 the block sat in its own pocket of space, far enough from
+     * the line above to read as a separate section rather than the next thing
+     * to do.
+     *
+     * The margin here was only half of it: the subtitle above carries its own
+     * bottom margin, and the two stacked. Both were cut — this one to almost
+     * nothing, the subtitle's by half — so the question now follows the
+     * headline block instead of sitting apart from it.
+     */
+    <div className="mt-0 flex flex-col gap-3 sm:mt-2 sm:flex-row sm:items-end">
       <div className="w-full sm:w-auto sm:min-w-[15rem]">
         {/*
           * A question, not a caption.
@@ -257,7 +297,8 @@ export function HeroBooking({
         * So the button confirms the date and moves them one step down the
         * page. The partner hand-off happens from the card they choose.
         *
-        * The date is remembered for that next step — see rememberDate.
+        * The date is published for that next step, and the scroll is done by
+        * hand — see scrollToOptions for why the plain anchor was not enough.
         *
         * Same ring and same id as the button this replaces: StickyMobileCTA
         * watches #ticket-book-btn to decide whether to show the mobile bar,
@@ -267,7 +308,10 @@ export function HeroBooking({
         <a
           href="#ticket-options"
           id="ticket-book-btn"
-          onClick={() => setChosenDate(date)}
+          onClick={(event) => {
+            setChosenDate(date);
+            scrollToOptions(event);
+          }}
           className="btn-primary relative min-h-[3.25rem] w-full justify-center text-sm sm:w-auto sm:text-base"
         >
           <Ticket size={18} aria-hidden="true" />

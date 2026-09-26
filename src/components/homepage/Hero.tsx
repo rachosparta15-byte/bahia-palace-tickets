@@ -215,7 +215,25 @@ export async function Hero() {
       </div>
 
       {/* TOP — badge pill */}
-      <div className="hero-badge relative z-10 pt-16 sm:pt-24 pb-3 sm:pb-4 px-6">
+      {/*
+        Top padding cut in half on phones.
+
+        On a 360px screen the headline wraps to three lines and the subtitle to
+        two, and the whole block ran past the fixed bottom bar — the Get
+        Tickets button sat 54px underneath it, invisible until you scrolled.
+        Reported from a real iPhone XR, where the same thing happens for the
+        same reason.
+
+        64px of padding here sat on top of the 96px the layout already gives
+        <main> to clear the fixed header, so the badge started 160px down a
+        screen about 640px tall. Desktop keeps its 96px; it has the room.
+
+        Trimmed in two passes, because the first was measured and was not
+        enough: 54px hidden, then 22px, then clear. Typography was left alone
+        throughout — the headline is the most valuable element on the page and
+        shrinking it to win 20px would be paying in the wrong currency.
+      */}
+      <div className="hero-badge relative z-10 pt-6 sm:pt-24 pb-1 sm:pb-4 px-6">
         <div className="max-w-6xl mx-auto flex justify-center">
           <div className="relative inline-flex p-[3px] rounded-full overflow-hidden">
             <div
@@ -277,7 +295,9 @@ export async function Hero() {
        * Both fixes are here on purpose: the padding keeps content out of the
        * wave's reach, the z-index means a decoration can never win again.
        */}
-      <div className="relative z-20 px-6 pt-4 sm:pt-8 pb-14 sm:pb-20">
+      {/* Bottom padding likewise: 56px of empty hero below the CTA is space a
+          phone does not have, and it was pushing the button off screen. */}
+      <div className="relative z-20 px-6 pt-3 sm:pt-8 pb-4 sm:pb-20">
         <div className="max-w-6xl mx-auto w-full">
           <div className="max-w-2xl">
             {/*
@@ -356,7 +376,9 @@ export async function Hero() {
               </span>
             </h1>
             <p
-              className="block mt-3 mb-4 sm:mb-6"
+              /* mb halved: it stacked with the booking row's own top margin,
+                 and together they pushed the question a section away. */
+              className="block mt-3 mb-2 sm:mb-3"
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(1.1rem, 3vw, 2rem)',
