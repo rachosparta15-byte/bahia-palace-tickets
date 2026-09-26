@@ -163,11 +163,63 @@ appears on `/ar` and on no other locale.
    the query "maroc" — 38,257 impressions, **zero** clicks. Losing those is
    success, not a regression. Watch clicks and bookings, not impressions.
 
+## Then: the booking calendar (2026-09-26)
+
+The same visitor, one step further along. They were reaching the site, in
+their own language, and then being told the ticket was not available: the
+Viator product does not sell for the same day, which is exactly the day this
+traffic wants.
+
+The hero now asks for the date, the CTA repeats it back, and both card
+sections route their skip-the-line link by it — GetYourGuide for today, Viator
+from tomorrow. The three products with no GetYourGuide equivalent say on the
+card which day they can first be used.
+
+`src/config/booking-partners.ts` holds the whole decision, including the kill
+switch: empty `GETYOURGUIDE_URL` and every date routes to Viator again.
+
+Three older defects in the shared DatePicker surfaced while checking this in
+seven languages and are fixed: weekday initials sliced to two characters (every
+Arabic day read "ال"), a hard-coded dd/mm/yyyy an American reader sees the
+wrong way round, and a panel positioned with left/right so Arabic opened it off
+the side of the screen. The checkout uses the same component and gets all three.
+
 ## Still open
 
-- **Nearby monuments** (step 4 of the brief) — not built. It needs product
-  data that does not exist in the repo, and inventing it is not an option.
-- **The Viator API key still needs rotating.** It was pasted into a chat in an
-  earlier session and has not been changed since.
-- The knowledge-panel link itself, which is the root fix and is yours to
-  change, not the code's.
+**In the code, and mine:**
+
+- **Nearby monuments** (step 4 of the original brief) — not built. It needs
+  product data that does not exist in the repo, and inventing it is not an
+  option. Say which products to link and it can be built.
+- **`VIATOR_LEAD_TIME_DAYS` is an observation, not a published rule.** It is 1
+  because Viator refused the same day twice and sold tomorrow both times. Open
+  the Viator product every couple of weeks, look at the earliest selectable
+  day, and correct the number if it has moved. The robust version asks both
+  APIs instead; Viator has one and we hold a key, GetYourGuide's needs partner
+  approval.
+- **GetYourGuide covers one product.** The other three are Viator-only, so for
+  a same-day visitor they are unbookable and say so. A GetYourGuide equivalent
+  for any of them would close that gap.
+- **The CTA wording is untested.** `CTA_STYLE` in HeroBooking switches between
+  the date-echoing label now live, "Check availability", and the old "Get
+  Tickets". Every Viator click carries a campaign, so two weeks on either
+  setting answers which sells better.
+- Optional tidy: the `LocalBusiness` entity could be typed `Organization`,
+  which is what this site actually is. No rich result depends on it.
+
+**Yours, and not code:**
+
+- **Rotate the Viator API key.** Pasted into a chat in an earlier session and
+  unchanged since. Oldest item on this list.
+- **The knowledge-panel link.** A Maps edit was submitted on 2026-09-25 to
+  point it at the site root instead of /ar; Google reviews these itself and
+  may take weeks or refuse. Nothing depends on it — the redirect delivers
+  those visitors either way.
+- **The two-day conversion test.** Watch Viator AND GetYourGuide together.
+  Viator's own number will fall because some sales moved, and reading it alone
+  would show a loss where there was a gain. Only same-day visitors are
+  affected at all.
+
+**A working note:** `next dev` does not pick up changes to `messages/*.json`
+in this project — new keys render as raw names like `heroBooking.ctaFor` and
+survive a restart. Verify against `next build && next start` instead.
