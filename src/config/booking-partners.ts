@@ -49,12 +49,43 @@
  * 16:30, which is the third independent source to agree with what this site
  * publishes.
  *
- * partner_id is GetYourGuide's affiliate parameter. Nothing here is guessed:
- * the id comes from the owner's partner account and the activity URL from
- * GetYourGuide's own listing.
+ * NOT ASSEMBLED BY HAND. This is what GetYourGuide's own link builder
+ * produces — partner dashboard, Tools → Links, with the campaign name typed
+ * into its campaign field. The first version of this was built from the
+ * activity URL plus partner_id and was missing utm_medium, which their
+ * builder adds and which is not documented anywhere public.
+ *
+ * `cmp` is their campaign parameter, so bookings from this link show up under
+ * Campaigns in their Analytics rather than as untagged traffic.
+ *
+ * Regenerate it from that tool rather than editing it here: the city slug is
+ * "marrakesh" while the product name says "marrakech", which looks like a
+ * typo worth fixing and is not one.
+ *
+ * ── IT LANDS ON A LISTING, NOT THE PRODUCT PAGE. THIS IS SETTLED. ──
+ *
+ * GetYourGuide redirects it to /s?…&et=1149727&lc=208 — a search page for
+ * Marrakech with this activity first and highlighted. Do not go looking for
+ * the cause again. It was chased down and the answer is that partner_id does
+ * it, on this account:
+ *
+ *   product URL, no parameters                  -> product page
+ *   product URL + partner_id                    -> listing
+ *   product URL + partner_id + date             -> listing
+ *   city slug corrected + partner_id            -> listing
+ *   their own link builder's output (this one)  -> listing
+ *
+ * Tested by hand by the owner in a real browser, because GetYourGuide refuses
+ * automated ones outright.
+ *
+ * It is accepted rather than worked around. partner_id, utm_medium and cmp all
+ * survive the redirect, so the commission and the campaign are intact; the
+ * right product is first on the page; and the listing also shows the guided
+ * tours, which are exactly what Viator cannot sell for today. The cost is one
+ * extra click, which is a great deal cheaper than "not available".
  */
 export const GETYOURGUIDE_URL =
-  'https://www.getyourguide.com/marrakesh-l208/marrakech-bahia-palace-entry-ticket-with-digital-audioguide-t1149727/?partner_id=4UUBCAN&cmp=visitbahiapalace-herocalendar';
+  'https://www.getyourguide.com/marrakesh-l208/marrakech-bahia-palace-entry-ticket-with-digital-audioguide-t1149727/?partner_id=4UUBCAN&utm_medium=online_publisher&cmp=visitbahiapalace-herocalendar';
 
 /**
  * How many days ahead Viator's earliest bookable date sits.
