@@ -1,5 +1,5 @@
 {
-  "checked": "2026-09-26",
+  "checked": "2026-09-27",
   "products": {
     "skip-the-line": {
       "code": "5670595P2",
@@ -21,8 +21,8 @@
     },
     "private-guide-only": {
       "code": "199649P3",
-      "usd": 17.42,
-      "eur": 15,
+      "usd": 16.26,
+      "eur": 14,
       "usdOffer": null,
       "eurOffer": null,
       "rating": 4.97,
