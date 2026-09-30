@@ -15,6 +15,21 @@ import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 import type { Metadata } from 'next';
 import { BASE } from '@/lib/seo';
 
+/** Translation namespaces read by browser components; see LocaleLayout. */
+const CLIENT_NAMESPACES = [
+  'affiliate',
+  'contactPage',
+  'cookieBanner',
+  'cta',
+  'datePicker',
+  'nav',
+  'ticketDetail',
+  'tickets',
+  'whatsapp',
+] as const;
+/** visitorPack is large and mostly server-rendered; these are its client parts. */
+const VISITOR_PACK_CLIENT_KEYS = ['form', 'hero', 'inclusions', 'testMode'] as const;
+
 interface Props {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
@@ -64,7 +79,33 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound();
   }
 
-  const messages = await getMessages();
+  /*
+   * Only the namespaces a browser component reads.
+   *
+   * This passed the whole catalogue — 80 KB of English, more in German — to
+   * NextIntlClientProvider, which serialises it into the RSC payload of every
+   * page. Server components never needed it there: they call
+   * getTranslations() on the server. Lighthouse, 30 Sept 2026, mobile: the
+   * home page HTML was 288 KB, 170 KB of it RSC payload, and the document's
+   * own script work was 1.7 s of main thread on a hero that had downloaded
+   * in half a second.
+   *
+   * The list is every useTranslations() namespace reachable from a
+   * 'use client' file, found by walking the import graph (a shared component
+   * with no directive runs in the browser when a client file imports it;
+   * AffiliateDisclosure is the one such case). A client component that starts
+   * using a new namespace must add it here, or it renders its keys.
+   */
+  const all = await getMessages();
+  const messages = Object.fromEntries(
+    CLIENT_NAMESPACES.filter((ns) => ns in all).map((ns) => [ns, all[ns]]),
+  );
+  messages.visitorPack = Object.fromEntries(
+    VISITOR_PACK_CLIENT_KEYS.filter((k) => all.visitorPack && k in all.visitorPack).map((k) => [
+      k,
+      (all.visitorPack as Record<string, unknown>)[k],
+    ]),
+  );
 
   /*
    * The offers shown ON the Arabic page, each in its own language.
