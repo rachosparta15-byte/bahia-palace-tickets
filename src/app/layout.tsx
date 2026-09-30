@@ -2,10 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import { getLocale } from 'next-intl/server';
 import { dirFor } from '@/i18n/routing';
 import { BASE } from '@/lib/seo';
-import { ADSENSE_CLIENT } from '@/config/adsense';
 import { Analytics } from '@vercel/analytics/next';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
-import Script from 'next/script';
 import { AR_LANGUAGE_REDIRECT } from '@/lib/ar-language-redirect';
 import { Playfair_Display, Cormorant_Garamond, DM_Sans, Amiri } from 'next/font/google';
 import './globals.css';
@@ -126,12 +124,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
       <head>
-        {/* AdSense site-verification — two methods, both harmless to keep
-            together. The script-tag method's own crawler check failed on
-            first attempt, most likely because the root domain 302s to /en
-            and that checker may not follow redirects; the meta-tag method
-            is checked on whichever URL actually renders, redirect or not. */}
-        <meta name="google-adsense-account" content={ADSENSE_CLIENT} />
         {/*
           On /ar only, and only in the server HTML of /ar.
           Every other locale's document is byte-for-byte what it was before.
@@ -149,12 +141,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         {locale === 'ar' && (
           <script dangerouslySetInnerHTML={{ __html: AR_LANGUAGE_REDIRECT }} />
         )}
-        <Script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-          crossOrigin="anonymous"
-          strategy="beforeInteractive"
-        />
       </head>
       <body className={`${playfair.variable} ${cormorant.variable} ${dmSans.variable} ${amiri.variable}`}>
         <script
