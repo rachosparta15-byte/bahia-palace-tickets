@@ -327,13 +327,23 @@
 /* ────────────────────────────────────────────────
    HERO ANIMATIONS
    ──────────────────────────────────────────────── */
+/*
+ * Slide only, no fade.
+ *
+ * These started at opacity 0 and, with `both`, held it through their delay.
+ * Chrome does not count invisible content as painted, so the badge and the
+ * h1 — the first things a visitor reads — only reached First Contentful
+ * Paint once the animation had lifted them, and under Lighthouse's throttled
+ * CPU that was well after the text had arrived. The movement stays; the
+ * words are visible from the first frame.
+ */
 @keyframes fadeSlideDown {
-  from { opacity: 0; transform: translateY(-12px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { transform: translateY(-12px); }
+  to   { transform: translateY(0); }
 }
 @keyframes fadeSlideUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { transform: translateY(24px); }
+  to   { transform: translateY(0); }
 }
 @keyframes spinSlow {
   to { transform: rotate(360deg); }
