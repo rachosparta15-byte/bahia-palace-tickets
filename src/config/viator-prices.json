@@ -1,27 +1,27 @@
 {
-  "checked": "2026-10-02",
+  "checked": "2026-10-03",
   "products": {
     "skip-the-line": {
       "code": "5670595P2",
       "usd": 13,
-      "eur": 11.73,
+      "eur": 11.76,
       "usdOffer": null,
       "eurOffer": null,
-      "rating": 2.75,
-      "reviews": 4
+      "rating": 3.17,
+      "reviews": 6
     },
     "guided-tour": {
       "code": "467170P4",
       "usd": 23.83,
-      "eur": 21.49,
+      "eur": 21.55,
       "usdOffer": 15.01,
-      "eurOffer": 13.54,
+      "eurOffer": 13.58,
       "rating": 4.61,
       "reviews": 44
     },
     "private-guide-only": {
       "code": "199649P3",
-      "usd": 16.05,
+      "usd": 16.06,
       "eur": 14,
       "usdOffer": null,
       "eurOffer": null,
