@@ -5,6 +5,7 @@ import { GETYOURGUIDE_URL } from '@/config/booking-partners';
 import {
   type BookingMode,
   DEFAULT_BOOKING_MODE,
+  ENTRY_TICKET_VIATOR_CODE,
   gygLeadDays,
   parseBookingMode,
 } from '@/lib/booking-mode';
@@ -16,9 +17,9 @@ import {
  * Two jobs:
  *  - the date-aware ticket cards read useGygLeadDays() to decide, for the
  *    date the visitor picked, whether to link GetYourGuide or Viator;
- *  - in all_gyg mode, every other Viator link on the site (header button,
- *    entrance-fee page, mobile bar...) is switched to GetYourGuide at the
- *    moment it is clicked, so no page has to know about the setting.
+ *  - in all_gyg mode, every other link to the Viator ENTRY TICKET (header
+ *    button, entrance-fee page, mobile bar...) is switched to GetYourGuide
+ *    at the moment it is clicked. Tour links are left on Viator.
  */
 const BookingModeContext = createContext<BookingMode>(DEFAULT_BOOKING_MODE);
 
@@ -67,7 +68,10 @@ export function BookingModeProvider({ children }: { children: React.ReactNode })
       const anchor = target.closest('a[href]');
       if (!(anchor instanceof HTMLAnchorElement)) return;
       try {
-        if (!/(^|\.)viator\.com$/i.test(new URL(anchor.href).hostname)) return;
+        // Only the entry ticket moves: tour links stay on Viator.
+        const url = new URL(anchor.href);
+        if (!/(^|\.)viator\.com$/i.test(url.hostname)) return;
+        if (!url.pathname.includes(ENTRY_TICKET_VIATOR_CODE)) return;
       } catch {
         return;
       }

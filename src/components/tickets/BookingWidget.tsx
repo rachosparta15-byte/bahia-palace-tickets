@@ -24,7 +24,8 @@ interface BookingWidgetProps {
 }
 
 export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
-  const bookingMode = useBookingMode();
+  // Only the entry ticket moves to GetYourGuide in all_gyg mode.
+  const ticketOnGyg = useBookingMode() === 'all_gyg' && slug === 'skip-the-line';
   const t  = useTranslations('ticketDetail');
   const tt = useTranslations('tickets');
   // OFF → portal hand-off, so the gate-price breakdown below is the honest
@@ -87,7 +88,7 @@ export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
               <span className="font-semibold text-[#8FA63C]">{formatDisplayPrice(displayPrice)}</span>
             </div>
             <p className="text-[11px] text-[#C4A882]/80 leading-relaxed border-t border-[rgba(232,163,61,0.12)] pt-2.5">
-              {bookingMode === 'all_gyg' ? (
+              {ticketOnGyg ? (
                 // GetYourGuide sells this ticket non-refundable (its product page, 2026-10-04).
                 <>This is GetYourGuide&apos;s price, not ours — we don&apos;t add anything to it. It covers the official entry and an audio guide in your language; GetYourGuide sells this ticket non-refundable. You can also buy at the gate for {OFFICIAL_DOOR_PRICE_MAD} MAD, in cash, after the queue.</>
               ) : (
@@ -117,7 +118,7 @@ export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
 
         {/* Trust badges */}
         <div className="space-y-1.5 mb-5">
-          {([t('instantConfirm'), partnerText(t('freeCancelNote'), bookingMode === 'all_gyg'), t('mobileTicket')] as string[]).map((item) => (
+          {([t('instantConfirm'), partnerText(t('freeCancelNote'), ticketOnGyg), t('mobileTicket')] as string[]).map((item) => (
             <div key={item} className="flex items-center gap-2 text-xs text-[#C4A882]">
               <CheckCircle2 size={13} className="text-[#8FA63C] shrink-0" />
               {item}

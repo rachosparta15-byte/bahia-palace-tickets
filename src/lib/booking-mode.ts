@@ -9,7 +9,8 @@
  *
  *   normal      today on GetYourGuide, every later day on Viator
  *   three_days  today and the next two days on GetYourGuide, later on Viator
- *   all_gyg     every button on GetYourGuide, whatever the date
+ *   all_gyg     the ENTRY TICKET on GetYourGuide for every date; the tours
+ *               (guided, private) stay on Viator, which still sells them
  *
  * Shared by the server route and the client provider, so nothing here may
  * import the database.
@@ -32,7 +33,7 @@ export const DEFAULT_BOOKING_MODE: BookingMode = 'three_days';
 export const BOOKING_MODES: Array<{ value: BookingMode; label: string }> = [
   { value: 'normal', label: 'Normal: today on GetYourGuide, other days on Viator' },
   { value: 'three_days', label: 'Today + next 2 days on GetYourGuide, later days on Viator' },
-  { value: 'all_gyg', label: 'Everything on GetYourGuide (all buttons, all dates)' },
+  { value: 'all_gyg', label: 'Entry ticket on GetYourGuide for all dates (tours stay on Viator)' },
 ];
 
 export function parseBookingMode(value: unknown): BookingMode {
@@ -50,6 +51,18 @@ export function gygLeadDays(mode: BookingMode): number {
   if (mode === 'three_days') return 3;
   return VIATOR_LEAD_TIME_DAYS;
 }
+
+/**
+ * Days, counted from today, that Viator cannot sell the TOURS for. In
+ * all_gyg mode only the entry ticket moves, so the tours keep the normal
+ * lead time; in three_days mode the supplier gap applies to them too.
+ */
+export function viatorTourLeadDays(mode: BookingMode): number {
+  return mode === 'all_gyg' ? VIATOR_LEAD_TIME_DAYS : gygLeadDays(mode);
+}
+
+/** Viator product code of the entry ticket: the only link all_gyg moves. */
+export const ENTRY_TICKET_VIATOR_CODE = '5670595P2';
 
 /**
  * A partner sentence, naming the partner the button actually goes to.

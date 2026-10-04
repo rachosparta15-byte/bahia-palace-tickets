@@ -7,7 +7,7 @@ import {
 } from '@/config/booking-partners';
 import { useChosenDate, useToday } from '@/config/chosen-date';
 import { useBookingMode, useGygLeadDays } from '@/components/layout/BookingModeProvider';
-import { partnerPriceFor, partnerText } from '@/lib/booking-mode';
+import { partnerPriceFor, partnerText, viatorTourLeadDays } from '@/lib/booking-mode';
 import { useLocale, useTranslations } from 'next-intl';
 import { ArrowRight, CalendarClock, Clock, ShieldCheck, CheckCircle2, RotateCcw, Award } from 'lucide-react';
 import { LeadButton } from '@/components/layout/LeadButton';
@@ -103,17 +103,22 @@ export function TicketOptions() {
   // choice in /admin/settings (lib/booking-mode.ts).
   const gygDays = useGygLeadDays();
   const allOnGyg = useBookingMode() === 'all_gyg' && Boolean(GETYOURGUIDE_URL);
+  const tourLeadDays = viatorTourLeadDays(useBookingMode());
+  // Entry ticket: goes to GetYourGuide for this date?
+  const ticketToGyg =
+    allOnGyg || (daysAhead !== null && daysAhead >= 0 && daysAhead < gygDays);
+  // Tours: is this date too soon for Viator?
   const tooSoonForViator =
-    daysAhead !== null && daysAhead >= 0 && daysAhead < gygDays;
+    daysAhead !== null && daysAhead >= 0 && daysAhead < tourLeadDays;
   /*
    * The first day Viator can serve, named rather than implied.
    *
    * Derived from the store's `today`, not from a fresh clock reading, so this
    * whole component renders from values it was given.
    */
-  const viatorEarliest = today && Number.isFinite(gygDays)
+  const viatorEarliest = today
     ? new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'long' }).format(
-        new Date(new Date(`${today}T12:00:00`).getTime() + gygDays * 86_400_000),
+        new Date(new Date(`${today}T12:00:00`).getTime() + tourLeadDays * 86_400_000),
       )
     : '';
 
@@ -147,6 +152,8 @@ export function TicketOptions() {
               { Icon: CheckCircle2,  key: 'trustInstantConfirm' },
               { Icon: RotateCcw,     key: 'trustFreeCancel' },
               { Icon: Award,         key: 'trustViatorPartner' },
+            // The entry ticket on GetYourGuide is non-refundable: no blanket
+            // free-cancellation badge while it is sold there.
             ].filter(({ key }) => !(allOnGyg && key === 'trustFreeCancel')).map(({ Icon, key }, i) => (
               <span
                 key={key}
@@ -154,7 +161,7 @@ export function TicketOptions() {
                 style={{ animationDelay: `${i * 0.3}s` }}
               >
                 <Icon size={12} className="shrink-0 sm:size-[14px]" />
-                {partnerText(t(key as any), allOnGyg)}
+                {key === 'trustViatorPartner' && allOnGyg ? t(key as any).replace(/Viator/g, 'GetYourGuide/Viator') : t(key as any)}
               </span>
             ))}
           </div>
@@ -191,9 +198,9 @@ export function TicketOptions() {
              */
             // In all_gyg mode every card with a Viator link goes to
             // GetYourGuide's listing, which shows the tours under the ticket.
-            const switchedToGyg = allOnGyg
-              ? Boolean(VIATOR_LINKS[slug])
-              : slug === 'skip-the-line' && tooSoonForViator && Boolean(GETYOURGUIDE_URL);
+            // Only the entry ticket ever goes to GetYourGuide; tours stay on Viator.
+            const switchedToGyg =
+              slug === 'skip-the-line' && ticketToGyg && Boolean(GETYOURGUIDE_URL);
             const unavailableOnDate =
               tooSoonForViator && !switchedToGyg && Boolean(VIATOR_LINKS[slug]);
             const viatorHref  = switchedToGyg ? GETYOURGUIDE_URL : VIATOR_LINKS[slug];
@@ -264,7 +271,7 @@ export function TicketOptions() {
                       {t('availableFrom', { date: viatorEarliest })}
                     </p>
                   )}
-                  {switchedToGyg && tooSoonForViator && (
+                  {switchedToGyg && daysAhead !== null && (
                     <p className="mt-1.5 flex items-center gap-1 text-[9px] font-semibold leading-snug text-[#8FA63C] lg:text-[11px]">
                       <CalendarClock size={11} className="shrink-0" aria-hidden />
                       {t('bookableToday')}
