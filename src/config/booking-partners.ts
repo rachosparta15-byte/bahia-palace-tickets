@@ -84,6 +84,13 @@
  * tours, which are exactly what Viator cannot sell for today. The cost is one
  * extra click, which is a great deal cheaper than "not available".
  */
+/**
+ * What GetYourGuide charges for that ticket, per adult, as its product page
+ * showed it on 2026-10-04 ("From $13" / "From €11", reduced from $17 / €15).
+ * It sells it NON-REFUNDABLE. Re-check both when the page changes.
+ */
+export const GETYOURGUIDE_PRICE = { usd: 13, eur: 11 } as const;
+
 export const GETYOURGUIDE_URL ='https://www.getyourguide.com/marrakesh-l208/marrakech-bahia-palace-entry-ticket-with-digital-audioguide-t1149727/?partner_id=4UUBCAN&utm_medium=online_publisher&cmp=visitbahiapalace-herocalendar';
 
 /**

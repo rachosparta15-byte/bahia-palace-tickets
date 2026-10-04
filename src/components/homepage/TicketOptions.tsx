@@ -7,7 +7,7 @@ import {
 } from '@/config/booking-partners';
 import { useChosenDate, useToday } from '@/config/chosen-date';
 import { useBookingMode, useGygLeadDays } from '@/components/layout/BookingModeProvider';
-import { partnerText } from '@/lib/booking-mode';
+import { partnerPriceFor, partnerText } from '@/lib/booking-mode';
 import { useLocale, useTranslations } from 'next-intl';
 import { ArrowRight, CalendarClock, Clock, ShieldCheck, CheckCircle2, RotateCcw, Award } from 'lucide-react';
 import { LeadButton } from '@/components/layout/LeadButton';
@@ -199,7 +199,7 @@ export function TicketOptions() {
             const viatorHref  = switchedToGyg ? GETYOURGUIDE_URL : VIATOR_LINKS[slug];
             // Viator's own figure in the visitor's currency, from config/pricing
             // (VIATOR_PRICES_USD / VIATOR_PRICES_EUR) — never a conversion.
-            const viatorPriceValue = viatorPriceFor(slug, currency);
+            const viatorPriceValue = partnerPriceFor(slug, currency, switchedToGyg);
             const viatorPrice = viatorPriceValue ? formatDisplayPrice(viatorPriceValue) : undefined;
 
             // Two different providers cannot show two different prices on

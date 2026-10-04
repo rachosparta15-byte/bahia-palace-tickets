@@ -14,7 +14,8 @@
  * Shared by the server route and the client provider, so nothing here may
  * import the database.
  */
-import { VIATOR_LEAD_TIME_DAYS } from '@/config/booking-partners';
+import { GETYOURGUIDE_PRICE, VIATOR_LEAD_TIME_DAYS } from '@/config/booking-partners';
+import { viatorPriceFor, type DisplayPrice, type TicketSlug } from '@/config/pricing';
 
 export type BookingMode = 'normal' | 'three_days' | 'all_gyg';
 
@@ -61,4 +62,22 @@ export function gygLeadDays(mode: BookingMode): number {
  */
 export function partnerText(text: string, toGetYourGuide: boolean): string {
   return toGetYourGuide ? text.replace(/Viator/g, 'GetYourGuide') : text;
+}
+
+/**
+ * The price to show for a product, given where its button goes. Only the
+ * skip-the-line ticket exists on GetYourGuide; everything else keeps the
+ * Viator figure.
+ */
+export function partnerPriceFor(
+  slug: TicketSlug,
+  currency: 'USD' | 'EUR',
+  toGetYourGuide: boolean,
+): DisplayPrice | undefined {
+  if (toGetYourGuide && slug === 'skip-the-line') {
+    return currency === 'EUR'
+      ? { amount: GETYOURGUIDE_PRICE.eur, currency: 'EUR' }
+      : { amount: GETYOURGUIDE_PRICE.usd, currency: 'USD' };
+  }
+  return viatorPriceFor(slug, currency);
 }

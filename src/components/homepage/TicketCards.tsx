@@ -1,7 +1,7 @@
 'use client';
 
 import { useGygLeadDays } from '@/components/layout/BookingModeProvider';
-import { partnerText } from '@/lib/booking-mode';
+import { partnerPriceFor, partnerText } from '@/lib/booking-mode';
 
 import { useTranslations } from 'next-intl';
 import {
@@ -113,7 +113,7 @@ export function TicketCards({ overrides = {} }: Props) {
   const skipToGyg = skipTheLineHref === GETYOURGUIDE_URL;
 
   // Viator's own skip-the-line price, in the visitor's currency (config/pricing).
-  const skipTheLineViatorPrice = formatDisplayPrice(viatorPriceFor('skip-the-line', useViatorCurrency())!);
+  const skipTheLineViatorPrice = formatDisplayPrice(partnerPriceFor('skip-the-line', useViatorCurrency(), skipToGyg)!);
   const t = useTranslations('tickets');
   const router = useRouter();
   const { enabled: paymentsEnabled } = usePaymentsFlags();

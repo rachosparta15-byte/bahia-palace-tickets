@@ -1,6 +1,8 @@
 'use client';
 
 import { useSyncExternalStore } from 'react';
+import { useBookingMode } from '@/components/layout/BookingModeProvider';
+import { partnerPriceFor } from '@/lib/booking-mode';
 import {
   currencyForPage,
   formatDisplayPrice,
@@ -35,12 +37,14 @@ export function useViatorCurrency(): Currency {
  */
 export function useDisplayPrice(slug: TicketSlug, eurFallback: number): DisplayPrice {
   const currency = useViatorCurrency();
-  return viatorPriceFor(slug, currency) ?? { amount: eurFallback, currency: 'EUR' };
+  const toGyg = useBookingMode() === 'all_gyg';
+  return partnerPriceFor(slug, currency, toGyg) ?? { amount: eurFallback, currency: 'EUR' };
 }
 
 /** A price in the visitor's currency, for server components to drop in. */
 export function ViatorPrice({ slug, eurFallback }: { slug: TicketSlug; eurFallback?: number }) {
   const currency = useViatorCurrency();
-  const price = viatorPriceFor(slug, currency) ?? (eurFallback !== undefined ? { amount: eurFallback, currency: 'EUR' as const } : undefined);
+  const toGyg = useBookingMode() === 'all_gyg';
+  const price = partnerPriceFor(slug, currency, toGyg) ?? (eurFallback !== undefined ? { amount: eurFallback, currency: 'EUR' as const } : undefined);
   return <>{price ? formatDisplayPrice(price) : null}</>;
 }

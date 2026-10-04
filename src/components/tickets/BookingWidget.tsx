@@ -87,7 +87,12 @@ export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
               <span className="font-semibold text-[#8FA63C]">{formatDisplayPrice(displayPrice)}</span>
             </div>
             <p className="text-[11px] text-[#C4A882]/80 leading-relaxed border-t border-[rgba(232,163,61,0.12)] pt-2.5">
-              This is Viator&apos;s price, not ours — we don&apos;t add anything to it. It covers the official entry, an audio guide in your language, and free cancellation up to 24 hours before. You can also buy at the gate for {OFFICIAL_DOOR_PRICE_MAD} MAD, in cash, after the queue.
+              {bookingMode === 'all_gyg' ? (
+                // GetYourGuide sells this ticket non-refundable (its product page, 2026-10-04).
+                <>This is GetYourGuide&apos;s price, not ours — we don&apos;t add anything to it. It covers the official entry and an audio guide in your language; GetYourGuide sells this ticket non-refundable. You can also buy at the gate for {OFFICIAL_DOOR_PRICE_MAD} MAD, in cash, after the queue.</>
+              ) : (
+                <>This is Viator&apos;s price, not ours — we don&apos;t add anything to it. It covers the official entry, an audio guide in your language, and free cancellation up to 24 hours before. You can also buy at the gate for {OFFICIAL_DOOR_PRICE_MAD} MAD, in cash, after the queue.</>
+              )}
             </p>
           </div>
         )}
