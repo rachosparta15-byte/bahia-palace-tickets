@@ -324,7 +324,11 @@ export function TicketCards({ overrides = {} }: Props) {
                         {includes.map((item: string, j: number) => (
                           <li key={j} className="flex items-start gap-1.5 text-xs text-[#C4A882]">
                             <Check size={12} className="text-[#8FA63C] mt-0.5 shrink-0" />
-                            {isSkipTheLineViator ? partnerText(item, skipToGyg) : item}
+                            {isSkipTheLineViator
+                              ? skipToGyg && j === 3
+                                ? t('gygNonRefundable')
+                                : partnerText(item, skipToGyg)
+                              : item}
                           </li>
                         ))}
                       </ul>
@@ -333,7 +337,11 @@ export function TicketCards({ overrides = {} }: Props) {
                         {includes.map((item: string, j: number) => (
                           <li key={j} className="flex items-start gap-1.5 text-xs text-[#C4A882]">
                             <Check size={12} className="text-[#8FA63C] mt-0.5 shrink-0" />
-                            {isSkipTheLineViator ? partnerText(item, skipToGyg) : item}
+                            {isSkipTheLineViator
+                              ? skipToGyg && j === 3
+                                ? t('gygNonRefundable')
+                                : partnerText(item, skipToGyg)
+                              : item}
                           </li>
                         ))}
                       </ul>

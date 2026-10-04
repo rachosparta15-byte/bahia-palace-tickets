@@ -139,7 +139,7 @@ export function TicketOptions() {
           >
             {t('optionsTitle')}
           </h2>
-          <p className="text-[rgba(245,232,204,0.6)] max-w-2xl mx-auto leading-relaxed text-xs">{partnerText(t('optionsSubtitle'), allOnGyg)}</p>
+          <p className="text-[rgba(245,232,204,0.6)] max-w-2xl mx-auto leading-relaxed text-xs">{allOnGyg ? t('optionsSubtitleGyg') : t('optionsSubtitle')}</p>
 
           <div className="mt-6 grid grid-cols-2 gap-1.5 sm:flex sm:flex-wrap sm:justify-center sm:gap-2.5">
             {[
@@ -147,7 +147,7 @@ export function TicketOptions() {
               { Icon: CheckCircle2,  key: 'trustInstantConfirm' },
               { Icon: RotateCcw,     key: 'trustFreeCancel' },
               { Icon: Award,         key: 'trustViatorPartner' },
-            ].map(({ Icon, key }, i) => (
+            ].filter(({ key }) => !(allOnGyg && key === 'trustFreeCancel')).map(({ Icon, key }, i) => (
               <span
                 key={key}
                 className="trust-badge-glow flex items-center justify-center gap-1 rounded-full bg-[#E8A33D] px-2 py-1.5 text-center text-[0.56rem] font-bold leading-tight text-[#1C1108] sm:justify-start sm:gap-1.5 sm:px-3 sm:text-[0.64rem]"

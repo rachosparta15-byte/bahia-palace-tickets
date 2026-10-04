@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import { ModeText } from '@/components/layout/ModeText';
 import { CheckCircle, Ban, Smartphone, ShieldCheck } from 'lucide-react';
 
 export function TrustStrip() {
@@ -19,17 +20,22 @@ export function TrustStrip() {
         className="flex items-center gap-2.5 overflow-x-auto px-4 max-w-6xl mx-auto sm:justify-center"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        {items.map(({ icon: Icon, label, color }, i) => (
-          <div key={i} className="contents">
-            <div className="flex items-center gap-1.5 shrink-0 text-[11px] font-medium text-[#F5E8CC]">
-              <Icon size={12} style={{ color }} className="shrink-0" />
-              <span className="whitespace-nowrap">{label}</span>
+        {items.map(({ icon: Icon, label, color }, i) => {
+          const item = (
+            <div key={i} className="contents">
+              <div className="flex items-center gap-1.5 shrink-0 text-[11px] font-medium text-[#F5E8CC]">
+                <Icon size={12} style={{ color }} className="shrink-0" />
+                <span className="whitespace-nowrap">{label}</span>
+              </div>
+              {i < items.length - 1 && (
+                <div className="w-px h-3 bg-[rgba(232,163,61,0.20)] shrink-0" />
+              )}
             </div>
-            {i < items.length - 1 && (
-              <div className="w-px h-3 bg-[rgba(232,163,61,0.20)] shrink-0" />
-            )}
-          </div>
-        ))}
+          );
+          // Item 1 is "free cancel": not true of GetYourGuide's ticket, so it
+          // is left out while every button goes there.
+          return i === 1 ? <ModeText key={i} normal={item} gyg={null} /> : item;
+        })}
       </div>
     </section>
   );

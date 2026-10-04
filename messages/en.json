@@ -146,7 +146,10 @@
     "optionsFeatured": "Most visitors take this one",
     "optionsBookThis": "Book this entry",
     "availableFrom": "Available from {date}",
-    "bookableToday": "Available for your date"
+    "bookableToday": "Available for your date",
+    "gygNonRefundable": "Non-refundable once booked (GetYourGuide terms)",
+    "optionsSubtitleGyg": "The same entry ticket as the gate, booked through GetYourGuide — and a local you can message.",
+    "whyOnlineGyg": "At the gate you queue and pay cash in dirhams, and nobody hands you a guide. Here it is one card payment, an audio guide in your own language and WhatsApp support."
   },
   "ticketDetail": {
     "includes": "What's included",

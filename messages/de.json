@@ -147,7 +147,10 @@
     "optionsFeatured": "Die Wahl der meisten Besucher",
     "optionsBookThis": "Diesen Eintritt buchen",
     "availableFrom": "Verfügbar ab {date}",
-    "bookableToday": "Für Ihr Datum verfügbar"
+    "bookableToday": "Für Ihr Datum verfügbar",
+    "gygNonRefundable": "Nach der Buchung nicht erstattbar (GetYourGuide-Bedingungen)",
+    "optionsSubtitleGyg": "Dasselbe Eintrittsticket wie am Schalter, gebucht über GetYourGuide — und ein Einheimischer, dem Sie schreiben können.",
+    "whyOnlineGyg": "Am Schalter stehen Sie an und zahlen bar in Dirham, und einen Guide bekommen Sie dort nicht. Hier ist es eine Kartenzahlung, ein Audioguide in Ihrer Sprache und WhatsApp-Support."
   },
   "whyUs": {
     "title": "Was wir tun — und was wir nicht tun",

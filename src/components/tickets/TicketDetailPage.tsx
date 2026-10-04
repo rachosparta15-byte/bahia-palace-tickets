@@ -1,4 +1,6 @@
 import { getTranslations, getLocale } from 'next-intl/server';
+import { ModeText } from '@/components/layout/ModeText';
+import { partnerText } from '@/lib/booking-mode';
 import Image from 'next/image';
 import { Check, X, MapPin, Clock, ChevronDown, ArrowRight, Zap, ShieldCheck } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
@@ -82,6 +84,17 @@ function ComingSoonWidget({ ticketName }: { ticketName: string }) {
       </div>
     </div>
   );
+}
+
+
+/*
+ * The skip-the-line includes name Viator and promise its free cancellation.
+ * While every button goes to GetYourGuide, line 2 names GetYourGuide and
+ * line 3 says the ticket is non-refundable (its product page, 2026-10-04).
+ */
+function includeLine(ticketKey: TicketKey, item: string, i: number, nonRefundable: string) {
+  if (ticketKey !== 'skipTheLine' || (i !== 2 && i !== 3)) return item;
+  return <ModeText normal={item} gyg={i === 3 ? nonRefundable : partnerText(item, true)} />;
 }
 
 export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
@@ -174,14 +187,14 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
           <div className="max-w-6xl mx-auto px-5 py-5 space-y-4">
             <div className="flex items-start gap-2.5 bg-[#E8A33D]/08 rounded-xl px-4 py-3">
               <Zap size={13} className="text-[#E8A33D] mt-0.5 shrink-0" />
-              <p className="text-xs text-[#E8A33D] leading-snug font-semibold">{whyOnline}</p>
+              <p className="text-xs text-[#E8A33D] leading-snug font-semibold">{ticketKey === 'skipTheLine' ? <ModeText normal={whyOnline} gyg={t('whyOnlineGyg')} /> : whyOnline}</p>
             </div>
 
             <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5">
               {includes.slice(0, 4).map((item, i) => (
                 <li key={i} className="flex items-start gap-1.5 text-xs text-[#C4A882]">
                   <Check size={12} className="text-[#8FA63C] mt-0.5 shrink-0" />
-                  {item}
+                  {includeLine(ticketKey, item, i, t('gygNonRefundable'))}
                 </li>
               ))}
             </ul>
@@ -262,7 +275,7 @@ export async function TicketDetailPage({ ticketKey, slug, price }: Props) {
                   {includes.map((item, i) => (
                     <li key={i} className="flex items-start gap-2.5 text-sm text-[#C4A882]">
                       <Check size={15} className="text-[#8FA63C] mt-0.5 shrink-0" />
-                      {item}
+                      {includeLine(ticketKey, item, i, t('gygNonRefundable'))}
                     </li>
                   ))}
                 </ul>

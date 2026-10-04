@@ -434,7 +434,10 @@
     "optionsFeatured": "É a escolha da maioria dos visitantes",
     "optionsBookThis": "Reservar esta entrada",
     "availableFrom": "Disponível a partir de {date}",
-    "bookableToday": "Disponível na sua data"
+    "bookableToday": "Disponível na sua data",
+    "gygNonRefundable": "Não reembolsável após a reserva (condições da GetYourGuide)",
+    "optionsSubtitleGyg": "O mesmo bilhete de entrada da bilheteira, reservado através da GetYourGuide — e um local a quem escrever.",
+    "whyOnlineGyg": "Na bilheteira espera na fila, paga em dirhams e ninguém lhe dá um guia. Aqui é um só pagamento com cartão, um audioguia na sua língua e apoio por WhatsApp."
   },
   "whyUs": {
     "title": "O que fazemos — e o que não fazemos",

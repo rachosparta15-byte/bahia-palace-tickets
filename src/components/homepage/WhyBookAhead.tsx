@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { ModeText } from '@/components/layout/ModeText';
 import { useTranslations } from 'next-intl';
 import { ArrowRight } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
@@ -102,11 +103,15 @@ export function WhyBookAhead() {
                 {t('aheadTitle')}
               </h3>
               <ul className="mt-2.5 space-y-1.5">
-                {ahead.map((line) => (
-                  <li key={line} className="text-sm leading-relaxed text-[#FAF3E7]">
-                    {line}
-                  </li>
-                ))}
+                {ahead.map((line, i) => {
+                  const li = (
+                    <li key={line} className="text-sm leading-relaxed text-[#FAF3E7]">
+                      {line}
+                    </li>
+                  );
+                  // ahead2 promises free cancellation: not true of GetYourGuide's ticket.
+                  return i === 1 ? <ModeText key={line} normal={li} gyg={null} /> : li;
+                })}
               </ul>
             </div>
           </div>
