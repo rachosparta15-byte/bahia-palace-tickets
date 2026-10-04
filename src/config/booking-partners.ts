@@ -106,9 +106,10 @@ export const GETYOURGUIDE_URL ='https://www.getyourguide.com/marrakesh-l208/marr
  * open the Viator product, look at the earliest selectable day, and set this
  * to how many days ahead that is.
  */
-// TEMPORARY (2026-10-04): the Viator supplier closed today and the next two days.
-// Back to 1 when it reopens them.
-export const VIATOR_LEAD_TIME_DAYS = 3;
+// The NORMAL lead time. When the supplier closes extra days, the owner now
+// switches the mode in /admin/settings ("Booking partner") instead of editing
+// this number: see lib/booking-mode.ts.
+export const VIATOR_LEAD_TIME_DAYS = 1;
 
 /** Local calendar date as YYYY-MM-DD. Never round-trips through UTC. */
 function toISODate(d: Date): string {

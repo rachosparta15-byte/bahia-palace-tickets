@@ -1,9 +1,10 @@
 'use client';
 
+import { useGygLeadDays } from '@/components/layout/BookingModeProvider';
+
 import { useTranslations } from 'next-intl';
 import {
   GETYOURGUIDE_URL,
-  VIATOR_LEAD_TIME_DAYS,
   daysUntil,
 } from '@/config/booking-partners';
 import { useChosenDate, useToday } from '@/config/chosen-date';
@@ -96,12 +97,15 @@ interface Props {
  * card has always used. Every unknown leaves behaviour exactly as it was.
  */
 export function TicketCards({ overrides = {} }: Props) {
+  // Days that go to GetYourGuide: the owner's choice in /admin/settings.
+  const gygDays = useGygLeadDays();
   const chosenDate = useChosenDate();
   const today = useToday();
   const daysAhead =
     chosenDate && today ? daysUntil(chosenDate, new Date(`${today}T12:00:00`)) : null;
   const skipTheLineHref =
-    GETYOURGUIDE_URL && daysAhead !== null && daysAhead >= 0 && daysAhead < VIATOR_LEAD_TIME_DAYS
+    GETYOURGUIDE_URL &&
+    (gygDays === Number.POSITIVE_INFINITY || (daysAhead !== null && daysAhead >= 0 && daysAhead < gygDays))
       ? GETYOURGUIDE_URL
       : SKIP_THE_LINE_VIATOR_URL;
 

@@ -3,10 +3,10 @@
 import Image from 'next/image';
 import {
   GETYOURGUIDE_URL,
-  VIATOR_LEAD_TIME_DAYS,
   daysUntil,
 } from '@/config/booking-partners';
 import { useChosenDate, useToday } from '@/config/chosen-date';
+import { useBookingMode, useGygLeadDays } from '@/components/layout/BookingModeProvider';
 import { useLocale, useTranslations } from 'next-intl';
 import { ArrowRight, CalendarClock, Clock, ShieldCheck, CheckCircle2, RotateCcw, Award } from 'lucide-react';
 import { LeadButton } from '@/components/layout/LeadButton';
@@ -98,17 +98,21 @@ export function TicketOptions() {
    * Viator has nothing this soon. Observed once, by hand — see
    * booking-partners.ts for why that is stated rather than hidden.
    */
+  // Days that go to GetYourGuide, and whether everything does: the owner's
+  // choice in /admin/settings (lib/booking-mode.ts).
+  const gygDays = useGygLeadDays();
+  const allOnGyg = useBookingMode() === 'all_gyg' && Boolean(GETYOURGUIDE_URL);
   const tooSoonForViator =
-    daysAhead !== null && daysAhead >= 0 && daysAhead < VIATOR_LEAD_TIME_DAYS;
+    daysAhead !== null && daysAhead >= 0 && daysAhead < gygDays;
   /*
    * The first day Viator can serve, named rather than implied.
    *
    * Derived from the store's `today`, not from a fresh clock reading, so this
    * whole component renders from values it was given.
    */
-  const viatorEarliest = today
+  const viatorEarliest = today && Number.isFinite(gygDays)
     ? new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'long' }).format(
-        new Date(new Date(`${today}T12:00:00`).getTime() + VIATOR_LEAD_TIME_DAYS * 86_400_000),
+        new Date(new Date(`${today}T12:00:00`).getTime() + gygDays * 86_400_000),
       )
     : '';
 
@@ -184,8 +188,11 @@ export function TicketOptions() {
              * a card that disappears reads as a broken page, a card that
              * explains itself reads as an answer.
              */
-            const switchedToGyg =
-              slug === 'skip-the-line' && tooSoonForViator && Boolean(GETYOURGUIDE_URL);
+            // In all_gyg mode every card with a Viator link goes to
+            // GetYourGuide's listing, which shows the tours under the ticket.
+            const switchedToGyg = allOnGyg
+              ? Boolean(VIATOR_LINKS[slug])
+              : slug === 'skip-the-line' && tooSoonForViator && Boolean(GETYOURGUIDE_URL);
             const unavailableOnDate =
               tooSoonForViator && !switchedToGyg && Boolean(VIATOR_LINKS[slug]);
             const viatorHref  = switchedToGyg ? GETYOURGUIDE_URL : VIATOR_LINKS[slug];
@@ -256,7 +263,7 @@ export function TicketOptions() {
                       {t('availableFrom', { date: viatorEarliest })}
                     </p>
                   )}
-                  {switchedToGyg && (
+                  {switchedToGyg && tooSoonForViator && (
                     <p className="mt-1.5 flex items-center gap-1 text-[9px] font-semibold leading-snug text-[#8FA63C] lg:text-[11px]">
                       <CalendarClock size={11} className="shrink-0" aria-hidden />
                       {t('bookableToday')}

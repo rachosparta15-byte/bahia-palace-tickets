@@ -1,10 +1,13 @@
 ﻿import prisma from '@/lib/db';
 import { SettingsForm } from '@/components/admin/SettingsForm';
+import { BOOKING_MODE_KEY, BOOKING_MODES, DEFAULT_BOOKING_MODE } from '@/lib/booking-mode';
 import { ChangePasswordForm } from '@/components/admin/ChangePasswordForm';
 
 export const dynamic = 'force-dynamic';
 
-const SETTING_META: Record<string, { label: string; group: string; type?: string; placeholder?: string }> = {
+const SETTING_META: Record<string, { label: string; group: string; type?: string; placeholder?: string; options?: Array<{ value: string; label: string }> }> = {
+  // Where every ticket button sends visitors. Takes effect on the site within a minute.
+  [BOOKING_MODE_KEY]:  { label: 'Booking partner (ticket buttons)', group: 'Booking', type: 'select', options: BOOKING_MODES },
   whatsapp_number:     { label: 'WhatsApp Number',           group: 'Contact',  type: 'tel',  placeholder: '+212 6XX XXX XXX' },
   contact_phone:       { label: 'Phone Number',              group: 'Contact',  type: 'tel',  placeholder: '+212 6XX XXX XXX' },
   contact_email:       { label: 'Contact Email',             group: 'Contact',  type: 'email' },
@@ -46,10 +49,14 @@ export default async function SettingsPage() {
   const map: Record<string, string> = Object.fromEntries(settings.map(s => [s.key, s.value]));
 
   // group
-  const grouped: Record<string, Array<{ key: string; value: string; label: string; type?: string; placeholder?: string }>> = {};
+  const grouped: Record<string, Array<{ key: string; value: string; label: string; type?: string; placeholder?: string; options?: Array<{ value: string; label: string }> }>> = {};
   for (const [key, meta] of Object.entries(SETTING_META)) {
     if (!grouped[meta.group]) grouped[meta.group] = [];
-    grouped[meta.group].push({ key, value: map[key] ?? '', label: meta.label, type: meta.type, placeholder: meta.placeholder });
+    grouped[meta.group].push({
+      key,
+      value: map[key] ?? (key === BOOKING_MODE_KEY ? DEFAULT_BOOKING_MODE : ''),
+      label: meta.label, type: meta.type, placeholder: meta.placeholder, options: meta.options,
+    });
   }
 
   return (

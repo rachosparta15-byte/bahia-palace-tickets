@@ -8,6 +8,7 @@ interface SettingField {
   label: string;
   type?: string;
   placeholder?: string;
+  options?: Array<{ value: string; label: string }>;
 }
 
 interface Props {
@@ -47,13 +48,25 @@ export function SettingsForm({ grouped }: Props) {
             {fields.map(f => (
               <div key={f.key}>
                 <label className="block text-xs font-semibold text-[#5C3D20] uppercase tracking-wide mb-1.5">{f.label}</label>
-                <input
-                  type={f.type ?? 'text'}
-                  value={values[f.key] ?? ''}
-                  onChange={e => set(f.key, e.target.value)}
-                  placeholder={f.placeholder}
-                  className={inputCls}
-                />
+                {f.type === 'select' && f.options ? (
+                  <select
+                    value={values[f.key] ?? ''}
+                    onChange={e => set(f.key, e.target.value)}
+                    className={inputCls}
+                  >
+                    {f.options.map(o => (
+                      <option key={o.value} value={o.value}>{o.label}</option>
+                    ))}
+                  </select>
+                ) : (
+                  <input
+                    type={f.type ?? 'text'}
+                    value={values[f.key] ?? ''}
+                    onChange={e => set(f.key, e.target.value)}
+                    placeholder={f.placeholder}
+                    className={inputCls}
+                  />
+                )}
               </div>
             ))}
           </div>

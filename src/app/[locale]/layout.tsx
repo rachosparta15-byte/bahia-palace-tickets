@@ -11,6 +11,7 @@ import { MobileBottomNav } from '@/components/layout/MobileBottomNav';
 import { CookieBanner } from '@/components/layout/CookieBanner';
 import { Analytics } from '@/components/analytics/Analytics';
 import { PaymentsFlagsProvider } from '@/components/layout/PaymentsFlagsProvider';
+import { BookingModeProvider } from '@/components/layout/BookingModeProvider';
 import { getPublicPaymentsFlags } from '@/lib/payments/guard';
 import type { Metadata } from 'next';
 import { BASE } from '@/lib/seo';
@@ -133,6 +134,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
      <PaymentsFlagsProvider value={paymentsFlags}>
+      {/* The owner's booking-partner choice from /admin/settings. */}
+      <BookingModeProvider>
       <div className="flex flex-col min-h-screen">
         <Header />
         {/* Just the gold/zellige strip now — the interactive "watch the
@@ -163,6 +166,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <ViatorArrival />
         <Analytics />
       </div>
+      </BookingModeProvider>
      </PaymentsFlagsProvider>
     </NextIntlClientProvider>
   );
