@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import { PartnerText } from '@/components/layout/PartnerText';
 import { Zap, Shield, MapPin, Lock } from 'lucide-react';
 import { OrnamentDivider } from '@/components/ui/ZelligePattern';
 import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
@@ -58,7 +59,7 @@ export function WhyBookUs() {
                   className="text-[#F5E8CC] mb-2"
                   style={{ fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 700 }}
                 >
-                  {item.title}
+                  <PartnerText text={item.title} />
                 </h3>
                 <p className="text-[#C4A882] text-sm leading-relaxed">
                   {i === 3
@@ -77,7 +78,7 @@ export function WhyBookUs() {
                             <>{chunks}</>
                           ),
                       })
-                    : item.desc}
+                    : <PartnerText text={item.desc} />}
                 </p>
               </div>
             );

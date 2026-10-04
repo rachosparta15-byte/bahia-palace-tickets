@@ -1,5 +1,8 @@
 'use client';
 
+import { useBookingMode } from '@/components/layout/BookingModeProvider';
+import { partnerText } from '@/lib/booking-mode';
+
 import { useTranslations } from 'next-intl';
 import { CheckCircle2, MessageCircle } from 'lucide-react';
 import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
@@ -21,6 +24,7 @@ interface BookingWidgetProps {
 }
 
 export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
+  const bookingMode = useBookingMode();
   const t  = useTranslations('ticketDetail');
   const tt = useTranslations('tickets');
   // OFF → portal hand-off, so the gate-price breakdown below is the honest
@@ -108,7 +112,7 @@ export function BookingWidget({ price, slug, ticketName }: BookingWidgetProps) {
 
         {/* Trust badges */}
         <div className="space-y-1.5 mb-5">
-          {([t('instantConfirm'), t('freeCancelNote'), t('mobileTicket')] as string[]).map((item) => (
+          {([t('instantConfirm'), partnerText(t('freeCancelNote'), bookingMode === 'all_gyg'), t('mobileTicket')] as string[]).map((item) => (
             <div key={item} className="flex items-center gap-2 text-xs text-[#C4A882]">
               <CheckCircle2 size={13} className="text-[#8FA63C] shrink-0" />
               {item}

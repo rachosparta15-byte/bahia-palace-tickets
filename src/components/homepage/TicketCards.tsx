@@ -1,6 +1,7 @@
 'use client';
 
 import { useGygLeadDays } from '@/components/layout/BookingModeProvider';
+import { partnerText } from '@/lib/booking-mode';
 
 import { useTranslations } from 'next-intl';
 import {
@@ -108,6 +109,8 @@ export function TicketCards({ overrides = {} }: Props) {
     (gygDays === Number.POSITIVE_INFINITY || (daysAhead !== null && daysAhead >= 0 && daysAhead < gygDays))
       ? GETYOURGUIDE_URL
       : SKIP_THE_LINE_VIATOR_URL;
+  // The skip-the-line card's copy names the partner its button goes to.
+  const skipToGyg = skipTheLineHref === GETYOURGUIDE_URL;
 
   // Viator's own skip-the-line price, in the visitor's currency (config/pricing).
   const skipTheLineViatorPrice = formatDisplayPrice(viatorPriceFor('skip-the-line', useViatorCurrency())!);
@@ -321,7 +324,7 @@ export function TicketCards({ overrides = {} }: Props) {
                         {includes.map((item: string, j: number) => (
                           <li key={j} className="flex items-start gap-1.5 text-xs text-[#C4A882]">
                             <Check size={12} className="text-[#8FA63C] mt-0.5 shrink-0" />
-                            {item}
+                            {isSkipTheLineViator ? partnerText(item, skipToGyg) : item}
                           </li>
                         ))}
                       </ul>
@@ -330,7 +333,7 @@ export function TicketCards({ overrides = {} }: Props) {
                         {includes.map((item: string, j: number) => (
                           <li key={j} className="flex items-start gap-1.5 text-xs text-[#C4A882]">
                             <Check size={12} className="text-[#8FA63C] mt-0.5 shrink-0" />
-                            {item}
+                            {isSkipTheLineViator ? partnerText(item, skipToGyg) : item}
                           </li>
                         ))}
                       </ul>
@@ -403,7 +406,7 @@ export function TicketCards({ overrides = {} }: Props) {
                       <div onClick={(e) => e.stopPropagation()}>
                         {isSkipTheLineViator ? (
                           <a
-                            href={SKIP_THE_LINE_VIATOR_URL}
+                            href={skipTheLineHref}
                             target="_blank"
                             rel="noopener noreferrer sponsored"
                             className="trust-badge-glow flex items-center gap-2 bg-[#E8A33D] hover:bg-[#F0B84E] text-[#1C1108] font-semibold px-5 py-3 rounded-xl transition-all text-sm whitespace-nowrap"
@@ -444,7 +447,7 @@ export function TicketCards({ overrides = {} }: Props) {
                       {slug === 'visitor-pack'
                         ? 'Official entry ticket included — no queue at the booth'
                         : isSkipTheLineViator
-                          ? t('priceNotePartnerAudio')
+                          ? partnerText(t('priceNotePartnerAudio'), skipToGyg)
                           : 'Official ticket included — free cancellation'}
                     </div>
                   </div>

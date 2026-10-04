@@ -7,6 +7,7 @@ import {
 } from '@/config/booking-partners';
 import { useChosenDate, useToday } from '@/config/chosen-date';
 import { useBookingMode, useGygLeadDays } from '@/components/layout/BookingModeProvider';
+import { partnerText } from '@/lib/booking-mode';
 import { useLocale, useTranslations } from 'next-intl';
 import { ArrowRight, CalendarClock, Clock, ShieldCheck, CheckCircle2, RotateCcw, Award } from 'lucide-react';
 import { LeadButton } from '@/components/layout/LeadButton';
@@ -138,7 +139,7 @@ export function TicketOptions() {
           >
             {t('optionsTitle')}
           </h2>
-          <p className="text-[rgba(245,232,204,0.6)] max-w-2xl mx-auto leading-relaxed text-xs">{t('optionsSubtitle')}</p>
+          <p className="text-[rgba(245,232,204,0.6)] max-w-2xl mx-auto leading-relaxed text-xs">{partnerText(t('optionsSubtitle'), allOnGyg)}</p>
 
           <div className="mt-6 grid grid-cols-2 gap-1.5 sm:flex sm:flex-wrap sm:justify-center sm:gap-2.5">
             {[
@@ -153,7 +154,7 @@ export function TicketOptions() {
                 style={{ animationDelay: `${i * 0.3}s` }}
               >
                 <Icon size={12} className="shrink-0 sm:size-[14px]" />
-                {t(key as any)}
+                {partnerText(t(key as any), allOnGyg)}
               </span>
             ))}
           </div>
@@ -213,9 +214,9 @@ export function TicketOptions() {
             // match (a general city tour), which keeps the plain partner
             // note; own-sold products keep their own note.
             const note = slug === 'skip-the-line' && viatorHref
-              ? t('priceNotePartnerAudio')
+              ? partnerText(t('priceNotePartnerAudio'), switchedToGyg)
               : viatorHref
-                ? t('priceNotePartner')
+                ? partnerText(t('priceNotePartner'), switchedToGyg)
                 : t('priceNoteOwn');
 
             const cardInner = (

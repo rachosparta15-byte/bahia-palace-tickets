@@ -1,4 +1,5 @@
 import { SITE } from '@/config/site';
+import { PartnerText } from '@/components/layout/PartnerText';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
@@ -193,7 +194,7 @@ export function Footer() {
           <p className="text-[#C4A882] text-xs">{t('copyright', { year })}</p>
           <p className="text-[#C4A882] text-xs flex items-center gap-1.5">
             <span>🔒</span>
-            {t('paymentNote')}
+            <PartnerText text={t('paymentNote')} />
           </p>
         </div>
       </div>

@@ -49,3 +49,16 @@ export function gygLeadDays(mode: BookingMode): number {
   if (mode === 'three_days') return 3;
   return VIATOR_LEAD_TIME_DAYS;
 }
+
+/**
+ * A partner sentence, naming the partner the button actually goes to.
+ *
+ * The card copy says "sent by Viator", "Viator policy", "booked through
+ * Viator" in seven languages. When the button goes to GetYourGuide the same
+ * sentence must name GetYourGuide, and swapping the brand inside the
+ * translated string keeps every language right without a second set of
+ * translations. The brand is a proper noun, spelled the same in all of them.
+ */
+export function partnerText(text: string, toGetYourGuide: boolean): string {
+  return toGetYourGuide ? text.replace(/Viator/g, 'GetYourGuide') : text;
+}
