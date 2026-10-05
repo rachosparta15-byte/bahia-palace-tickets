@@ -150,7 +150,10 @@
     "bookableToday": "Disponible à votre date",
     "gygNonRefundable": "Non remboursable une fois réservé (conditions GetYourGuide)",
     "optionsSubtitleGyg": "Le même billet d'entrée qu'au guichet, réservé via GetYourGuide — et un local à qui écrire.",
-    "whyOnlineGyg": "Au guichet, il faut faire la queue et payer en espèces, en dirhams, et personne ne vous remet d’audioguide. Ici : un seul paiement par carte, un audioguide dans votre langue et l’assistance WhatsApp."
+    "whyOnlineGyg": "Au guichet, il faut faire la queue et payer en espèces, en dirhams, et personne ne vous remet d’audioguide. Ici : un seul paiement par carte, un audioguide dans votre langue et l’assistance WhatsApp.",
+    "badgeMobileTicket": "Billet sur mobile",
+    "badgeAvailableNow": "Disponible immédiatement",
+    "badgeNoPrinting": "Pas besoin d’imprimer"
   },
   "whyUs": {
     "title": "Ce que nous faisons — et ce que nous ne faisons pas",

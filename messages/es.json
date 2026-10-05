@@ -150,7 +150,10 @@
     "bookableToday": "Disponible en tu fecha",
     "gygNonRefundable": "No reembolsable una vez reservado (condiciones de GetYourGuide)",
     "optionsSubtitleGyg": "La misma entrada que en taquilla, reservada a través de GetYourGuide — y un local al que escribir.",
-    "whyOnlineGyg": "En taquilla hay que hacer cola y pagar en efectivo, en dírhams, y nadie le da una audioguía. Aquí es un solo pago con tarjeta, una audioguía en su idioma y asistencia por WhatsApp."
+    "whyOnlineGyg": "En taquilla hay que hacer cola y pagar en efectivo, en dírhams, y nadie le da una audioguía. Aquí es un solo pago con tarjeta, una audioguía en su idioma y asistencia por WhatsApp.",
+    "badgeMobileTicket": "Entrada en el móvil",
+    "badgeAvailableNow": "Disponible al instante",
+    "badgeNoPrinting": "No hace falta imprimir"
   },
   "ticketDetail": {
     "includes": "Qué incluye",

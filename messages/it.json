@@ -150,7 +150,10 @@
     "bookableToday": "Disponibile per la tua data",
     "gygNonRefundable": "Non rimborsabile dopo la prenotazione (condizioni GetYourGuide)",
     "optionsSubtitleGyg": "Lo stesso biglietto d'ingresso della biglietteria, prenotato tramite GetYourGuide — e una persona del posto a cui scrivere.",
-    "whyOnlineGyg": "Alla biglietteria fai la fila e paghi in contanti, in dirham, e nessuno ti dà un’audioguida. Qui è un solo pagamento con carta, un’audioguida nella tua lingua e assistenza WhatsApp."
+    "whyOnlineGyg": "Alla biglietteria fai la fila e paghi in contanti, in dirham, e nessuno ti dà un’audioguida. Qui è un solo pagamento con carta, un’audioguida nella tua lingua e assistenza WhatsApp.",
+    "badgeMobileTicket": "Biglietto sul cellulare",
+    "badgeAvailableNow": "Disponibile subito",
+    "badgeNoPrinting": "Nessuna stampa necessaria"
   },
   "whyUs": {
     "title": "Cosa facciamo — e cosa non facciamo",

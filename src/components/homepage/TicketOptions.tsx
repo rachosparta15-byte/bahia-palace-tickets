@@ -9,7 +9,7 @@ import { useChosenDate, useToday } from '@/config/chosen-date';
 import { useBookingMode, useGygLeadDays } from '@/components/layout/BookingModeProvider';
 import { partnerPriceFor, partnerText, viatorTourLeadDays } from '@/lib/booking-mode';
 import { useLocale, useTranslations } from 'next-intl';
-import { ArrowRight, CalendarClock, Clock, ShieldCheck, CheckCircle2, RotateCcw, Award } from 'lucide-react';
+import { ArrowRight, CalendarClock, Clock, Smartphone, Zap, Printer } from 'lucide-react';
 import { LeadButton } from '@/components/layout/LeadButton';
 import { AffiliateDisclosure } from '@/components/ui/AffiliateDisclosure';
 import { TICKET_PRICES } from '@/lib/ticket-data';
@@ -146,25 +146,27 @@ export function TicketOptions() {
           </h2>
           <p className="text-[rgba(245,232,204,0.6)] max-w-2xl mx-auto leading-relaxed text-xs">{allOnGyg ? t('optionsSubtitleGyg') : t('optionsSubtitle')}</p>
 
-          <div className="mt-6 grid grid-cols-2 gap-1.5 sm:flex sm:flex-wrap sm:justify-center sm:gap-2.5">
+          {/* What the visitor gets with the ticket, the three points GetYourGuide
+              puts under its own listing. True of the Viator ticket as well, so
+              shown in every booking mode. Icon in a gold disc, label beside it
+              (under it on phones, where three fit side by side). */}
+          <ul className="mt-6 grid grid-cols-3 gap-2 sm:flex sm:justify-center sm:gap-8">
             {[
-              { Icon: ShieldCheck,   key: 'trustSecurePayment' },
-              { Icon: CheckCircle2,  key: 'trustInstantConfirm' },
-              { Icon: RotateCcw,     key: 'trustFreeCancel' },
-              { Icon: Award,         key: 'trustViatorPartner' },
-            // The entry ticket on GetYourGuide is non-refundable: no blanket
-            // free-cancellation badge while it is sold there.
-            ].filter(({ key }) => !(allOnGyg && key === 'trustFreeCancel')).map(({ Icon, key }, i) => (
-              <span
-                key={key}
-                className="trust-badge-glow flex items-center justify-center gap-1 rounded-full bg-[#E8A33D] px-2 py-1.5 text-center text-[0.56rem] font-bold leading-tight text-[#1C1108] sm:justify-start sm:gap-1.5 sm:px-3 sm:text-[0.64rem]"
-                style={{ animationDelay: `${i * 0.3}s` }}
-              >
-                <Icon size={12} className="shrink-0 sm:size-[14px]" />
-                {key === 'trustViatorPartner' && allOnGyg ? t(key as any).replace(/Viator/g, 'GetYourGuide/Viator') : t(key as any)}
-              </span>
+              { Icon: Smartphone, key: 'badgeMobileTicket' },
+              { Icon: Zap,        key: 'badgeAvailableNow' },
+              { Icon: Printer,    key: 'badgeNoPrinting' },
+            ].map(({ Icon, key }) => (
+              <li key={key} className="flex flex-col items-center gap-1.5 text-center sm:flex-row sm:gap-2.5 sm:text-start">
+                <span
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E8A33D] text-[#1C1108] shadow-[0_0_16px_rgba(232,163,61,0.35)]"
+                  aria-hidden
+                >
+                  <Icon size={19} strokeWidth={2.2} />
+                </span>
+                <span className="text-[11px] font-semibold leading-tight text-[#F5E8CC] sm:text-sm">{t(key as any)}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
 
         {/* Vertical cards — photo, then name/duration/note, then price + CTA
