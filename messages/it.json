@@ -34,7 +34,7 @@
     "bookNow": "Vedi i biglietti",
     "learnMore": "Scopri di più",
     "optionsTitle": "Scegli come\nvivere la Bahia",
-    "optionsSubtitle": "Lo stesso biglietto d'ingresso della biglietteria, prenotato tramite Viator — con cancellazione gratuita e una persona del posto a cui scrivere.",
+    "optionsSubtitle": "Prenota in un minuto, entra con il telefono — e una persona del posto risponde alle tue domande su WhatsApp.",
     "instantViator": "Oppure prenota subito tramite il nostro partner Viator",
     "skipTheLine": {
       "name": "Ingresso Salta Fila",
@@ -149,11 +149,17 @@
     "availableFrom": "Disponibile dal {date}",
     "bookableToday": "Disponibile per la tua data",
     "gygNonRefundable": "Non rimborsabile dopo la prenotazione (condizioni GetYourGuide)",
-    "optionsSubtitleGyg": "Lo stesso biglietto d'ingresso della biglietteria, prenotato tramite GetYourGuide — e una persona del posto a cui scrivere.",
+    "optionsSubtitleGyg": "Prenota in un minuto, entra con il telefono — e una persona del posto risponde alle tue domande su WhatsApp.",
     "whyOnlineGyg": "Alla biglietteria fai la fila e paghi in contanti, in dirham, e nessuno ti dà un’audioguida. Qui è un solo pagamento con carta, un’audioguida nella tua lingua e assistenza WhatsApp.",
     "badgeMobileTicket": "Biglietto sul cellulare",
     "badgeAvailableNow": "Disponibile subito",
-    "badgeNoPrinting": "Nessuna stampa necessaria"
+    "badgeNoPrinting": "Nessuna stampa necessaria",
+    "todayOpen": "Aperto oggi fino alle {close} · ultimo ingresso {last}",
+    "todayClosing": "Ultimo ingresso alle {last} — mancano {left}",
+    "todayAfter": "L'ultimo ingresso di oggi è passato",
+    "todayClosed": "Apre alle {open}",
+    "todayCtaNow": "Prenota ora e mostra il QR sul telefono all'ingresso",
+    "todayCtaTomorrow": "Prenota ora per domani"
   },
   "whyUs": {
     "title": "Cosa facciamo — e cosa non facciamo",

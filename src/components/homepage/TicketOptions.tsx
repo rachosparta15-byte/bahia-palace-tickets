@@ -11,6 +11,7 @@ import { partnerPriceFor, partnerText, viatorTourLeadDays } from '@/lib/booking-
 import { useLocale, useTranslations } from 'next-intl';
 import { ArrowRight, CalendarClock, Clock, Smartphone, Zap, Printer } from 'lucide-react';
 import { LeadButton } from '@/components/layout/LeadButton';
+import { TodayBookingLine } from '@/components/homepage/TodayBookingLine';
 import { AffiliateDisclosure } from '@/components/ui/AffiliateDisclosure';
 import { TICKET_PRICES } from '@/lib/ticket-data';
 import { formatDisplayPrice, viatorPriceFor } from '@/config/pricing';
@@ -144,7 +145,9 @@ export function TicketOptions() {
           >
             {t('optionsTitle')}
           </h2>
-          <p className="text-[rgba(245,232,204,0.6)] max-w-2xl mx-auto leading-relaxed text-xs">{allOnGyg ? t('optionsSubtitleGyg') : t('optionsSubtitle')}</p>
+          <p className="text-[rgba(245,232,204,0.6)] max-w-2xl mx-auto leading-relaxed text-xs">{t('optionsSubtitle')}</p>
+          {/* Today's state of the palace and what to do about it — see the component. */}
+          <TodayBookingLine />
 
           {/* What the visitor gets with the ticket, the three points GetYourGuide
               puts under its own listing. True of the Viator ticket as well, so

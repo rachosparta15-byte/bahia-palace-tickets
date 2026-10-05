@@ -34,7 +34,7 @@
     "bookNow": "Voir les billets",
     "learnMore": "En savoir plus",
     "optionsTitle": "Choisissez comment\nvivre la Bahia",
-    "optionsSubtitle": "Le même billet d'entrée qu'au guichet, réservé via Viator — annulation gratuite et un local à qui écrire.",
+    "optionsSubtitle": "Réservez en une minute, entrez avec votre téléphone — et un local répond à vos questions sur WhatsApp.",
     "instantViator": "Ou réservez instantanément via notre partenaire Viator",
     "skipTheLine": {
       "name": "Entrée Coupe-File",
@@ -149,11 +149,17 @@
     "availableFrom": "Disponible à partir du {date}",
     "bookableToday": "Disponible à votre date",
     "gygNonRefundable": "Non remboursable une fois réservé (conditions GetYourGuide)",
-    "optionsSubtitleGyg": "Le même billet d'entrée qu'au guichet, réservé via GetYourGuide — et un local à qui écrire.",
+    "optionsSubtitleGyg": "Réservez en une minute, entrez avec votre téléphone — et un local répond à vos questions sur WhatsApp.",
     "whyOnlineGyg": "Au guichet, il faut faire la queue et payer en espèces, en dirhams, et personne ne vous remet d’audioguide. Ici : un seul paiement par carte, un audioguide dans votre langue et l’assistance WhatsApp.",
     "badgeMobileTicket": "Billet sur mobile",
     "badgeAvailableNow": "Disponible immédiatement",
-    "badgeNoPrinting": "Pas besoin d’imprimer"
+    "badgeNoPrinting": "Pas besoin d’imprimer",
+    "todayOpen": "Ouvert aujourd'hui jusqu'à {close} · dernière entrée {last}",
+    "todayClosing": "Dernière entrée à {last} — encore {left}",
+    "todayAfter": "La dernière entrée est passée pour aujourd'hui",
+    "todayClosed": "Ouvre à {open}",
+    "todayCtaNow": "Réservez maintenant, montrez le QR sur votre téléphone à l'entrée",
+    "todayCtaTomorrow": "Réservez dès maintenant pour demain"
   },
   "whyUs": {
     "title": "Ce que nous faisons — et ce que nous ne faisons pas",

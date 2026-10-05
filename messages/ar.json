@@ -322,7 +322,7 @@
     "bookNow": "احصل على التذاكر",
     "learnMore": "اعرف المزيد",
     "optionsTitle": "اختر كيف\nتعيش الباهية",
-    "optionsSubtitle": "نفس تذكرة الدخول التي تُباع عند الشباك، محجوزة عبر Viator — إلغاء مجاني ومرشد محلي يمكنك مراسلته.",
+    "optionsSubtitle": "احجز في دقيقة، وادخل بهاتفك — وشخص محلي يجيب عن أسئلتك عبر واتساب.",
     "instantViator": "أو احجز فورًا عبر شريكنا Viator",
     "skipTheLine": {
       "name": "دخول بلا انتظار",
@@ -436,11 +436,17 @@
     "availableFrom": "متوفّر ابتداءً من {date}",
     "bookableToday": "متوفّر في هذا التاريخ",
     "gygNonRefundable": "غير قابل للاسترداد بعد الحجز (شروط GetYourGuide)",
-    "optionsSubtitleGyg": "نفس تذكرة الدخول التي تُباع عند الشباك، محجوزة عبر GetYourGuide — ومرشد محلي يمكنك مراسلته.",
+    "optionsSubtitleGyg": "احجز في دقيقة، وادخل بهاتفك — وشخص محلي يجيب عن أسئلتك عبر واتساب.",
     "whyOnlineGyg": "عند الباب تقف في الطابور، ولا أحد يعطيك دليلاً. هنا دفعة واحدة بالبطاقة، ودليل صوتي بلغتك، ودعم عبر واتساب.",
     "badgeMobileTicket": "تذكرة على الهاتف",
     "badgeAvailableNow": "متوفرة فورًا",
-    "badgeNoPrinting": "لا حاجة للطباعة"
+    "badgeNoPrinting": "لا حاجة للطباعة",
+    "todayOpen": "مفتوح اليوم حتى {close} · آخر دخول {last}",
+    "todayClosing": "آخر دخول على {last} — باقي {left}",
+    "todayAfter": "انتهى آخر دخول لهذا اليوم",
+    "todayClosed": "يفتح على {open}",
+    "todayCtaNow": "احجز الآن وأظهر رمز QR على هاتفك عند الباب",
+    "todayCtaTomorrow": "احجز الآن لزيارة الغد"
   },
   "whyUs": {
     "title": "ما الذي نقوم به — وما لا نقوم به",

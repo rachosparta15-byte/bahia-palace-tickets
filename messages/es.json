@@ -34,7 +34,7 @@
     "bookNow": "Ver entradas",
     "learnMore": "Saber más",
     "optionsTitle": "Elige cómo\nvivir la Bahia",
-    "optionsSubtitle": "La misma entrada que en taquilla, reservada a través de Viator — cancelación gratuita y un local al que escribir.",
+    "optionsSubtitle": "Reserve en un minuto, entre con su móvil — y una persona de aquí responde a sus preguntas por WhatsApp.",
     "instantViator": "O reserve al instante a través de nuestro socio Viator",
     "skipTheLine": {
       "name": "Entrada Sin Colas",
@@ -149,11 +149,17 @@
     "availableFrom": "Disponible desde el {date}",
     "bookableToday": "Disponible en tu fecha",
     "gygNonRefundable": "No reembolsable una vez reservado (condiciones de GetYourGuide)",
-    "optionsSubtitleGyg": "La misma entrada que en taquilla, reservada a través de GetYourGuide — y un local al que escribir.",
+    "optionsSubtitleGyg": "Reserve en un minuto, entre con su móvil — y una persona de aquí responde a sus preguntas por WhatsApp.",
     "whyOnlineGyg": "En taquilla hay que hacer cola y pagar en efectivo, en dírhams, y nadie le da una audioguía. Aquí es un solo pago con tarjeta, una audioguía en su idioma y asistencia por WhatsApp.",
     "badgeMobileTicket": "Entrada en el móvil",
     "badgeAvailableNow": "Disponible al instante",
-    "badgeNoPrinting": "No hace falta imprimir"
+    "badgeNoPrinting": "No hace falta imprimir",
+    "todayOpen": "Abierto hoy hasta las {close} · última entrada {last}",
+    "todayClosing": "Última entrada a las {last} — quedan {left}",
+    "todayAfter": "Ya pasó la última entrada de hoy",
+    "todayClosed": "Abre a las {open}",
+    "todayCtaNow": "Reserve ahora y muestre el QR en su móvil en la entrada",
+    "todayCtaTomorrow": "Reserve ahora para mañana"
   },
   "ticketDetail": {
     "includes": "Qué incluye",

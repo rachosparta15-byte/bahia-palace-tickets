@@ -322,7 +322,7 @@
     "bookNow": "Comprar bilhetes",
     "learnMore": "Saber mais",
     "optionsTitle": "Escolha como\nviver a Bahia",
-    "optionsSubtitle": "O mesmo bilhete de entrada da bilheteira, reservado através da Viator — com cancelamento gratuito e um local a quem escrever.",
+    "optionsSubtitle": "Reserve num minuto, entre com o telemóvel — e alguém de cá responde às suas perguntas no WhatsApp.",
     "instantViator": "Ou reserve já através do nosso parceiro Viator",
     "skipTheLine": {
       "name": "Entrada sem fila",
@@ -436,11 +436,17 @@
     "availableFrom": "Disponível a partir de {date}",
     "bookableToday": "Disponível na sua data",
     "gygNonRefundable": "Não reembolsável após a reserva (condições da GetYourGuide)",
-    "optionsSubtitleGyg": "O mesmo bilhete de entrada da bilheteira, reservado através da GetYourGuide — e um local a quem escrever.",
+    "optionsSubtitleGyg": "Reserve num minuto, entre com o telemóvel — e alguém de cá responde às suas perguntas no WhatsApp.",
     "whyOnlineGyg": "Na bilheteira espera na fila, paga em dirhams e ninguém lhe dá um guia. Aqui é um só pagamento com cartão, um audioguia na sua língua e apoio por WhatsApp.",
     "badgeMobileTicket": "Bilhete no telemóvel",
     "badgeAvailableNow": "Disponível de imediato",
-    "badgeNoPrinting": "Não é preciso imprimir"
+    "badgeNoPrinting": "Não é preciso imprimir",
+    "todayOpen": "Aberto hoje até às {close} · última entrada {last}",
+    "todayClosing": "Última entrada às {last} — faltam {left}",
+    "todayAfter": "A última entrada de hoje já passou",
+    "todayClosed": "Abre às {open}",
+    "todayCtaNow": "Reserve agora e mostre o QR no telemóvel à entrada",
+    "todayCtaTomorrow": "Reserve agora para amanhã"
   },
   "whyUs": {
     "title": "O que fazemos — e o que não fazemos",

@@ -34,7 +34,7 @@
     "bookNow": "Get Tickets",
     "learnMore": "Learn More",
     "optionsTitle": "Choose how you\nexperience Bahia",
-    "optionsSubtitle": "The same entry ticket as the gate, booked through Viator — with free cancellation and a local you can message.",
+    "optionsSubtitle": "Book in a minute, walk in with your phone — and a local answers your questions on WhatsApp.",
     "instantViator": "Or book instantly via our partner Viator",
     "skipTheLine": {
       "name": "Skip-the-Line Entry",
@@ -148,11 +148,17 @@
     "availableFrom": "Available from {date}",
     "bookableToday": "Available for your date",
     "gygNonRefundable": "Non-refundable once booked (GetYourGuide terms)",
-    "optionsSubtitleGyg": "The same entry ticket as the gate, booked through GetYourGuide — and a local you can message.",
+    "optionsSubtitleGyg": "Book in a minute, walk in with your phone — and a local answers your questions on WhatsApp.",
     "whyOnlineGyg": "At the gate you queue and pay cash in dirhams, and nobody hands you a guide. Here it is one card payment, an audio guide in your own language and WhatsApp support.",
     "badgeMobileTicket": "Mobile ticket",
     "badgeAvailableNow": "Available immediately",
-    "badgeNoPrinting": "No printing required"
+    "badgeNoPrinting": "No printing required",
+    "todayOpen": "Open today until {close} · last entry {last}",
+    "todayClosing": "Last entry at {last} — {left} left",
+    "todayAfter": "Last entry has passed for today",
+    "todayClosed": "Opens at {open}",
+    "todayCtaNow": "Book now, show the QR on your phone at the door",
+    "todayCtaTomorrow": "Book now for tomorrow"
   },
   "ticketDetail": {
     "includes": "What's included",
