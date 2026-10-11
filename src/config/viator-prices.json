@@ -1,10 +1,10 @@
 {
-  "checked": "2026-10-10",
+  "checked": "2026-10-11",
   "products": {
     "skip-the-line": {
       "code": "5670595P2",
       "usd": 14.55,
-      "eur": 13.21,
+      "eur": 13.22,
       "usdOffer": null,
       "eurOffer": null,
       "rating": 3.5,
@@ -13,9 +13,9 @@
     "guided-tour": {
       "code": "467170P4",
       "usd": 23.83,
-      "eur": 21.63,
+      "eur": 21.65,
       "usdOffer": 15.01,
-      "eurOffer": 13.62,
+      "eurOffer": 13.63,
       "rating": 4.61,
       "reviews": 44
     },
