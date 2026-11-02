@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "products": {
     "skip-the-line": {
       "code": "5670595P2",
@@ -21,12 +21,12 @@
     },
     "private-guide-only": {
       "code": "199649P3",
-      "usd": 15.93,
+      "usd": 15.94,
       "eur": 14,
       "usdOffer": null,
       "eurOffer": null,
-      "rating": 4.94,
-      "reviews": 35
+      "rating": 4.92,
+      "reviews": 36
     },
     "private-tour": {
       "code": "326890P2",
