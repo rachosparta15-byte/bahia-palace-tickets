@@ -109,7 +109,7 @@ export function OfferEditForm({ card, defaults }: { card: CardForm; defaults: Of
         </label>
       </Section>
 
-      <Section title="Text (English page)">
+      <Section title="Text (shown in every language, as you write it)">
         {field({ k: "title", label: "Title" })}
         {featured && field({ k: "tagline", label: "Subtitle" })}
         {field({ k: "duration", label: "Duration line", help: 'For example "Self-guided • ~1–2 hours".' })}

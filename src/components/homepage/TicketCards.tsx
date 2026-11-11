@@ -3,7 +3,7 @@
 import { useGygLeadDays } from '@/components/layout/BookingModeProvider';
 import { partnerPriceFor, partnerText } from '@/lib/booking-mode';
 
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import {
   GETYOURGUIDE_URL,
   daysUntil,
@@ -96,10 +96,9 @@ interface Props {
  * card has always used. Every unknown leaves behaviour exactly as it was.
  */
 export function TicketCards({ overrides = {}, offers = [] }: Props) {
-  const locale = useLocale();
-  // Text edits from the admin are written in English and apply to the English
-  // page only; the other languages keep their translations.
-  const isEnglish = locale === 'en';
+  // A text edited in /admin/offers shows in every language: once the owner
+  // has turned a card into another product, its old translation would name
+  // the wrong thing. Fields left empty keep their translations.
   // The built-in large card (pack or skip-the-line, whichever is live), and
   // the cards the owner added to this section.
   const featuredRow = offers.find((o) => o.section === 'featured' && o.productKey === FEATURED_PRODUCT_KEY);
@@ -213,9 +212,8 @@ export function TicketCards({ overrides = {}, offers = [] }: Props) {
             const custom   = key === null;
             const slug     = custom ? row!.id : TICKET_SLUGS[key];
             const ov: TicketOverride = custom ? {} : overrides[slug] ?? {};
-            // A text edit counts on the English page, or everywhere for a card
-            // the owner added (it has no translation to fall back on).
-            const text = (v: string | null | undefined) => (custom || isEnglish ? filled(v) : null);
+            // An edited text replaces the translation in every language.
+            const text = (v: string | null | undefined) => filled(v);
             const removed = (v: string | null | undefined) => v === HIDE_MARK;
             const price   = ov.price   ?? (custom ? 0 : TICKET_PRICES[slug as keyof typeof TICKET_PRICES]);
             const imgSrc  = filled(row?.imageUrl)

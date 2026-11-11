@@ -69,9 +69,9 @@ export function TicketOptions({ offers = [] }: { offers?: OfferCardData[] }) {
   const currency = useViatorCurrency();
   const t = useTranslations('tickets');
   const locale = useLocale();
-  // Text edits from /admin/offers are English and apply to the English page;
-  // price, link, photo, order and visibility apply to every language.
-  const isEnglish = locale === 'en';
+  // A text edited in /admin/offers shows in every language: once the owner
+  // has turned a card into another product, its old translation would name
+  // the wrong thing. Fields left empty keep their translations.
   type Entry = { slug: (typeof OPTION_SLUGS)[number] | null; row: OfferCardData | undefined; order: number };
   const entries: Entry[] = [
     ...OPTION_SLUGS.map((slug, i) => {
@@ -181,7 +181,7 @@ export function TicketOptions({ offers = [] }: { offers?: OfferCardData[] }) {
             const custom = builtIn === null;
             const slug = (builtIn ?? 'skip-the-line') as (typeof OPTION_SLUGS)[number];
             const cardKey = custom ? row!.id : builtIn;
-            const text = (v: string | null | undefined) => (custom || isEnglish ? filled(v) : null);
+            const text = (v: string | null | undefined) => filled(v);
             const editedHref = filled(row?.buttonUrl);
             const nameKey = OPTION_NAME_KEYS[slug];
             // A regular "-" is a valid line-break point to a browser, so

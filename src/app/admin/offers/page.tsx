@@ -29,8 +29,8 @@ export default async function AdminOffersPage() {
         Homepage offers
       </h1>
       <p className="text-sm text-[#8B6344] mt-1 mb-8">
-        Edit the ticket cards on the homepage: text, price, link and photo. Text edits show on the English page; the
-        other languages keep their translations. Price, link, photo, order and hiding apply to every language.
+        Edit the ticket cards on the homepage: text, price, link and photo. Everything you edit shows in every language
+        (texts as you write them). Fields you leave empty keep the site's own text, translated.
       </p>
 
       {SECTIONS.map((section) => {
