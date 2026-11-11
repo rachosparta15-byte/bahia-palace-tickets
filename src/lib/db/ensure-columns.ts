@@ -35,6 +35,33 @@ import prisma from './index';
  * open what they bought. `IF NOT EXISTS` makes this a no-op once real.
  */
 const TABLES: readonly string[] = [
+  /*
+   * OfferCard: the homepage ticket cards the owner edits in /admin/offers.
+   * Created here as well as by its migration so the first admin visit after
+   * a deploy makes the table, with no manual step against production.
+   */
+  `CREATE TABLE IF NOT EXISTS "OfferCard" (
+     "id" TEXT NOT NULL PRIMARY KEY,
+     "section" TEXT NOT NULL,
+     "productKey" TEXT,
+     "sortOrder" INTEGER NOT NULL DEFAULT 0,
+     "hidden" BOOLEAN NOT NULL DEFAULT false,
+     "title" TEXT,
+     "tagline" TEXT,
+     "duration" TEXT,
+     "includes" TEXT,
+     "note" TEXT,
+     "price" TEXT,
+     "priceNote" TEXT,
+     "buttonUrl" TEXT,
+     "imageUrl" TEXT,
+     "ribbon" TEXT,
+     "badge" TEXT,
+     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+     "updatedAt" DATETIME NOT NULL
+   )`,
+  `CREATE UNIQUE INDEX IF NOT EXISTS "OfferCard_section_productKey_key"
+     ON "OfferCard"("section", "productKey")`,
   `CREATE TABLE IF NOT EXISTS "GuideActivation" (
      "id" TEXT NOT NULL PRIMARY KEY,
      "tokenId" TEXT NOT NULL,

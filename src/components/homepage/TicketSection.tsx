@@ -1,5 +1,6 @@
 import prisma from '@/lib/db';
 import { TicketCards } from './TicketCards';
+import { getOfferCards } from '@/lib/offer-cards';
 
 export type TicketOverride = {
   price: number;
@@ -22,5 +23,6 @@ export async function TicketSection() {
   } catch {
     // table empty or not seeded — fall through to hardcoded defaults in TicketCards
   }
-  return <TicketCards overrides={overrides} />;
+  const offers = await getOfferCards();
+  return <TicketCards overrides={overrides} offers={offers} />;
 }

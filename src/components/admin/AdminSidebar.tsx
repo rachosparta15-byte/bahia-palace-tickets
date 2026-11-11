@@ -15,6 +15,7 @@ const NAV_GROUPS = [
     items: [
       { href: '/admin',         label: 'Dashboard',    icon: LayoutDashboard, style: 'normal'  },
       { href: '/admin/tickets', label: 'Tickets',      icon: Ticket,          style: 'normal'  },
+      { href: '/admin/offers',  label: 'Homepage offers', icon: Ticket,       style: 'normal'  },
       { href: '/admin/blog',    label: 'Blog',         icon: FileText,        style: 'normal'  },
       { href: '/admin/safety',  label: 'Safety Tips',  icon: ShieldAlert,     style: 'warning' },
       { href: '/admin/reviews', label: 'Reviews',      icon: Star,            style: 'normal'  },

@@ -418,3 +418,35 @@ model TicketType {
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 }
+
+/// A ticket card on the homepage, as set in /admin/offers.
+///
+/// `section` is 'featured' (the large card, TicketCards) or 'grid' (the
+/// four-up grid, TicketOptions). A row with `productKey` edits one of the
+/// built-in cards; a row without one is a card the owner added. Every text
+/// field is optional: empty means "keep what the site shows today", so an
+/// untouched row changes nothing. Text overrides apply to the English page
+/// only (other languages keep their translations); price, link, photo,
+/// visibility and order apply to every language.
+model OfferCard {
+  id         String   @id @default(cuid())
+  section    String
+  productKey String?
+  sortOrder  Int      @default(0)
+  hidden     Boolean  @default(false)
+  title      String?
+  tagline    String?
+  duration   String?
+  includes   String?
+  note       String?
+  price      String?
+  priceNote  String?
+  buttonUrl  String?
+  imageUrl   String?
+  ribbon     String?
+  badge      String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([section, productKey])
+}

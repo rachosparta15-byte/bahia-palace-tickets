@@ -3,7 +3,7 @@
 import { useGygLeadDays } from '@/components/layout/BookingModeProvider';
 import { partnerPriceFor, partnerText } from '@/lib/booking-mode';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import {
   GETYOURGUIDE_URL,
   daysUntil,
@@ -19,16 +19,13 @@ import Image from 'next/image';
 import { TICKET_PRICES } from '@/lib/ticket-data';
 import { buyingPathPriceLabel, TEASER_PRICE_ENABLED } from '@/config/pricing';
 import { getWhatsAppNumber, buildWhatsAppUrl } from '@/lib/whatsapp';
+import { FEATURED_IMAGES, FEATURED_PRODUCT_KEY, FEATURED_SKIP_THE_LINE_URL, HIDE_MARK } from '@/config/offer-defaults';
+import { filled, lines, type OfferCardData } from '@/lib/offer-card-utils';
 
 const WHATSAPP_MESSAGE = 'Hi, I have a question about visiting Bahia Palace';
 
-const TICKET_IMAGES = {
-  'visitor-pack':        '/images/ticket-skip-the-line.webp',
-  'skip-the-line':       '/images/ticket-skip-the-line.webp',
-  'guided-tour':         '/images/gallery/bahia-palace-octagonal-cedar-ceiling-carved-wood.jpg',
-  'private-tour':        '/images/gallery/bahia-palace-grand-courtyard-balcony-view-fountain.jpg',
-  'combo-saadian-tombs': '/images/gallery/bahia-palace-inner-courtyard-central-fountain-stucco.jpg',
-};
+// Shared with /admin/offers, which shows the owner these same defaults.
+const TICKET_IMAGES = FEATURED_IMAGES;
 
 /**
  * Which products appear on the homepage.
@@ -71,8 +68,7 @@ const TICKET_HREF: Record<string, string> = {
  * price, as its match in TicketOptions (VIATOR_LINKS['skip-the-line'] there).
  * Keep both URLs in sync if this one ever changes.
  */
-const SKIP_THE_LINE_VIATOR_URL =
-  'https://www.viator.com/tours/Marrakech/Marrakech-Bahia-Palace-Skip-the-Line-Ticket-With-Audio-Guide/d5408-5670595P2?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-ticketcards';
+const SKIP_THE_LINE_VIATOR_URL = FEATURED_SKIP_THE_LINE_URL;
 
 /**
  * NOTE on the admin panel: skip-the-line and visitor-pack liveness is decided
@@ -89,6 +85,8 @@ interface TicketOverride {
 
 interface Props {
   overrides?: Record<string, TicketOverride>;
+  /** The owner's edits from /admin/offers (section 'featured'). */
+  offers?: OfferCardData[];
 }
 
 /*
@@ -97,7 +95,15 @@ interface Props {
  * Null date — nobody has touched the calendar — means the Viator link this
  * card has always used. Every unknown leaves behaviour exactly as it was.
  */
-export function TicketCards({ overrides = {} }: Props) {
+export function TicketCards({ overrides = {}, offers = [] }: Props) {
+  const locale = useLocale();
+  // Text edits from the admin are written in English and apply to the English
+  // page only; the other languages keep their translations.
+  const isEnglish = locale === 'en';
+  // The built-in large card (pack or skip-the-line, whichever is live), and
+  // the cards the owner added to this section.
+  const featuredRow = offers.find((o) => o.section === 'featured' && o.productKey === FEATURED_PRODUCT_KEY);
+  const addedRows = offers.filter((o) => o.section === 'featured' && !o.productKey && !o.hidden);
   // Days that go to GetYourGuide: the owner's choice in /admin/settings.
   const gygDays = useGygLeadDays();
   const chosenDate = useChosenDate();
@@ -142,6 +148,8 @@ export function TicketCards({ overrides = {} }: Props) {
   const liveKeys = allKeys.filter((key) => {
     const slug = TICKET_SLUGS[key];
 
+    // Hidden from /admin/offers: neither form of the large card shows.
+    if ((slug === 'visitor-pack' || slug === 'skip-the-line') && featuredRow?.hidden) return false;
     if (slug === 'visitor-pack') return paymentsEnabled;
     if (slug === 'skip-the-line') return !paymentsEnabled;
 
@@ -149,7 +157,17 @@ export function TicketCards({ overrides = {} }: Props) {
     return overrides[slug]?.live ?? TICKET_LIVE[slug as keyof typeof TICKET_LIVE];
   });
 
-  const isSingle = liveKeys.length === 1;
+  type Entry = { key: TicketKey | null; row: OfferCardData | undefined; order: number };
+  const entries: Entry[] = [
+    ...liveKeys.map((key) => ({
+      key,
+      row: TICKET_SLUGS[key] === 'visitor-pack' || TICKET_SLUGS[key] === 'skip-the-line' ? featuredRow : undefined,
+      order: featuredRow?.sortOrder ?? 0,
+    })),
+    ...addedRows.map((row) => ({ key: null, row, order: row.sortOrder })),
+  ].sort((a, b) => a.order - b.order);
+
+  const isSingle = entries.length === 1;
 
   return (
     /*
@@ -191,22 +209,31 @@ export function TicketCards({ overrides = {} }: Props) {
             ? 'flex justify-center'
             : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5'
         }>
-          {liveKeys.map((key) => {
-            const slug    = TICKET_SLUGS[key];
-            const ov      = overrides[slug] ?? {};
-            const price   = ov.price   ?? TICKET_PRICES[slug as keyof typeof TICKET_PRICES];
-            const imgSrc  = (ov.imageUrl && ov.imageUrl.length > 0)
-                              ? ov.imageUrl
-                              : TICKET_IMAGES[slug as keyof typeof TICKET_IMAGES];
-            const name      = t(`${key}.name`      as any);
-            const tagline   = t(`${key}.tagline`   as any);
-            const duration  = t(`${key}.duration`  as any);
-            const includes  = (t.raw(`${key}.includes` as any) as string[]);
+          {entries.map(({ key, row }) => {
+            const custom   = key === null;
+            const slug     = custom ? row!.id : TICKET_SLUGS[key];
+            const ov: TicketOverride = custom ? {} : overrides[slug] ?? {};
+            // A text edit counts on the English page, or everywhere for a card
+            // the owner added (it has no translation to fall back on).
+            const text = (v: string | null | undefined) => (custom || isEnglish ? filled(v) : null);
+            const removed = (v: string | null | undefined) => v === HIDE_MARK;
+            const price   = ov.price   ?? (custom ? 0 : TICKET_PRICES[slug as keyof typeof TICKET_PRICES]);
+            const imgSrc  = filled(row?.imageUrl)
+                              ?? ((ov.imageUrl && ov.imageUrl.length > 0)
+                                ? ov.imageUrl
+                                : TICKET_IMAGES[slug as keyof typeof TICKET_IMAGES] ?? TICKET_IMAGES['skip-the-line']);
+            const name      = text(row?.title)    ?? (custom ? '' : t(`${key}.name`      as any));
+            const tagline   = text(row?.tagline)  ?? (custom ? '' : t(`${key}.tagline`   as any));
+            const duration  = text(row?.duration) ?? (custom ? '' : t(`${key}.duration`  as any));
+            const includesEdited = text(row?.includes) !== null;
+            const includes  = includesEdited ? lines(row!.includes) : custom ? [] : (t.raw(`${key}.includes` as any) as string[]);
             // Only badge it when the product's own includes list actually
             // says so — never a claim independent of the real data.
             const hasAudioGuide = includes.some((item) => /audio ?guide|audioguide/i.test(item));
 
-            const isSkipTheLineViator = slug === 'skip-the-line';
+            // Set in /admin/offers: the button goes there, whatever the date.
+            const editedHref = filled(row?.buttonUrl);
+            const isSkipTheLineViator = !custom && slug === 'skip-the-line';
             // null in paid mode (messages/paid/<locale>.json explicitly
             // overrides this to null — see mergeMessages.ts), since that
             // mode already promises WhatsApp support inside includes[2].
@@ -216,6 +243,27 @@ export function TicketCards({ overrides = {} }: Props) {
             // or a rendered fallback); t.rich below does the actual render.
             const hasWhatsappNote =
               isSkipTheLineViator && (t.raw(`${key}.whatsappNote` as any) as string | null) !== null;
+
+            // The ribbon and the badge: an edit replaces them, "-" removes them.
+            const ribbon = removed(row?.ribbon) ? null : filled(row?.ribbon) ?? (custom ? null : 'Available Now');
+            const badge = removed(row?.badge)
+              ? null
+              : text(row?.badge) ?? (!custom && hasAudioGuide ? t('audioGuideBadge') : null);
+            const priceText = filled(row?.price);
+            const priceNote = removed(row?.priceNote)
+              ? null
+              : text(row?.priceNote) ?? (isSkipTheLineViator ? t('audioGuideValueNote') : null);
+            const bottomNote = removed(row?.note)
+              ? null
+              : text(row?.note)
+                ?? (custom
+                  ? null
+                  : slug === 'visitor-pack'
+                    ? 'Official entry ticket included — no queue at the booth'
+                    : isSkipTheLineViator
+                      ? partnerText(t('priceNotePartnerAudio'), skipToGyg)
+                      : 'Official ticket included — free cancellation');
+            const buttonClass = 'trust-badge-glow flex items-center gap-2 bg-[#E8A33D] hover:bg-[#F0B84E] text-[#1C1108] font-semibold px-5 py-3 rounded-xl transition-all text-sm whitespace-nowrap';
 
             return (
               // .spin-ring (globals.css) — see the long comment on this
@@ -228,6 +276,11 @@ export function TicketCards({ overrides = {} }: Props) {
               >
                 <div
                   onClick={() => {
+                    if (editedHref) {
+                      window.open(editedHref, '_blank', 'noopener,noreferrer');
+                      return;
+                    }
+                    if (custom) return;
                     if (isSkipTheLineViator) {
                       /*
                        * The same date routing as TicketOptions below.
@@ -266,16 +319,18 @@ export function TicketCards({ overrides = {} }: Props) {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#160D06]/40" />
 
                   {/* Available Now ribbon */}
+                  {ribbon && (
                   <div className="absolute top-4 left-0 bg-[#C4452D] text-white text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-e-full flex items-center gap-1.5 shadow-lg">
-                    <Star size={9} className="fill-current" /> Available Now
+                    <Star size={9} className="fill-current" /> {ribbon}
                   </div>
+                  )}
 
                   {/* Audio guide badge — only rendered when the product's own
                       includes list names one (see hasAudioGuide above), so
                       this can never claim it for a product that doesn't. */}
-                  {hasAudioGuide && (
+                  {badge && (
                     <div className="absolute bottom-3 left-3 bg-[#E8A33D] text-[#1C1108] text-[10px] font-bold uppercase tracking-wide px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
-                      <Headphones size={11} className="shrink-0" /> {t('audioGuideBadge')}
+                      <Headphones size={11} className="shrink-0" /> {badge}
                     </div>
                   )}
                 </div>
@@ -300,14 +355,16 @@ export function TicketCards({ overrides = {} }: Props) {
                       product's NAME, which is what identifies it. What the pack
                       contains is stated once, at the payment step, beside the
                       real total. */}
-                  {!TEASER_PRICE_ENABLED && (
+                  {!TEASER_PRICE_ENABLED && tagline && (
                     <p className="text-[#C4A882] text-sm mb-3 leading-snug">{tagline}</p>
                   )}
 
+                  {duration && (
                   <div className="flex items-center gap-1.5 text-xs text-[#8FA63C] mb-4">
                     <Clock size={12} />
                     <span>{duration}</span>
                   </div>
+                  )}
 
                   {/* The ticked list is held back to the payment step during
                       the teaser test — the price sits directly beneath it in
@@ -324,7 +381,7 @@ export function TicketCards({ overrides = {} }: Props) {
                         {includes.map((item: string, j: number) => (
                           <li key={j} className="flex items-start gap-1.5 text-xs text-[#C4A882]">
                             <Check size={12} className="text-[#8FA63C] mt-0.5 shrink-0" />
-                            {isSkipTheLineViator
+                            {isSkipTheLineViator && !includesEdited
                               ? skipToGyg && j === 3
                                 ? t('gygNonRefundable')
                                 : partnerText(item, skipToGyg)
@@ -337,7 +394,7 @@ export function TicketCards({ overrides = {} }: Props) {
                         {includes.map((item: string, j: number) => (
                           <li key={j} className="flex items-start gap-1.5 text-xs text-[#C4A882]">
                             <Check size={12} className="text-[#8FA63C] mt-0.5 shrink-0" />
-                            {isSkipTheLineViator
+                            {isSkipTheLineViator && !includesEdited
                               ? skipToGyg && j === 3
                                 ? t('gygNonRefundable')
                                 : partnerText(item, skipToGyg)
@@ -395,7 +452,11 @@ export function TicketCards({ overrides = {} }: Props) {
                               screen as a 100 DH hero. skip-the-line reads the
                               Viator price it now actually charges — see
                               SKIP_THE_LINE_VIATOR_URL above. */}
-                          {isSkipTheLineViator
+                          {priceText
+                            ? priceText
+                            : custom
+                            ? ''
+                            : isSkipTheLineViator
                             ? skipTheLineViatorPrice
                             : slug === 'visitor-pack'
                               ? buyingPathPriceLabel()
@@ -405,14 +466,26 @@ export function TicketCards({ overrides = {} }: Props) {
                             unless the reason is right under it — the audio
                             guide is *why* no human guide is needed, which is
                             the comparison a visitor is actually making. */}
-                        {isSkipTheLineViator && (
+                        {priceNote && (
                           <div className="mt-0.5 text-[10px] leading-snug text-[rgba(245,232,204,0.55)]">
-                            {t('audioGuideValueNote')}
+                            {priceNote}
                           </div>
                         )}
                       </div>
                       <div onClick={(e) => e.stopPropagation()}>
-                        {isSkipTheLineViator ? (
+                        {editedHref || custom ? (
+                          editedHref ? (
+                            <a
+                              href={editedHref}
+                              target="_blank"
+                              rel="noopener noreferrer sponsored"
+                              className={buttonClass}
+                            >
+                              {t('bookNow')}
+                              <ArrowRight size={14} />
+                            </a>
+                          ) : null
+                        ) : isSkipTheLineViator ? (
                           <a
                             href={skipTheLineHref}
                             target="_blank"
@@ -450,14 +523,12 @@ export function TicketCards({ overrides = {} }: Props) {
                         portal at all — it books and charges through Viator,
                         same as its match below in TicketOptions, so it reads
                         the identical partner note instead. */}
+                    {bottomNote && (
                     <div className={`flex items-center gap-1.5 mt-3 text-[11px] text-[#C4A882] ${isSingle ? 'hidden sm:flex' : ''}`}>
                       <ShieldCheck size={12} className="text-[#8FA63C]" />
-                      {slug === 'visitor-pack'
-                        ? 'Official entry ticket included — no queue at the booth'
-                        : isSkipTheLineViator
-                          ? partnerText(t('priceNotePartnerAudio'), skipToGyg)
-                          : 'Official ticket included — free cancellation'}
+                      {bottomNote}
                     </div>
+                    )}
                   </div>
                 </div>
                 </div>

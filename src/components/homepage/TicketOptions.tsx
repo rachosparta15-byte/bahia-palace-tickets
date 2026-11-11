@@ -16,6 +16,8 @@ import { AffiliateDisclosure } from '@/components/ui/AffiliateDisclosure';
 import { TICKET_PRICES } from '@/lib/ticket-data';
 import { formatDisplayPrice, viatorPriceFor } from '@/config/pricing';
 import { useViatorCurrency } from '@/components/ui/ViatorPrice';
+import { GRID_IMAGES, GRID_NAME_KEYS, GRID_SLUGS, GRID_VIATOR_LINKS, HIDE_MARK } from '@/config/offer-defaults';
+import { filled, type OfferCardData } from '@/lib/offer-card-utils';
 
 /**
  * The other three products, browsable side by side — deliberately separate
@@ -26,14 +28,9 @@ import { useViatorCurrency } from '@/components/ui/ViatorPrice';
  */
 // Cheapest to most expensive ($13 → $17.75 → $23.83 → $65.38) — see
 // VIATOR_PRICES_USD in config/pricing for the figures this ordering tracks.
-const OPTION_SLUGS = ['skip-the-line', 'private-guide-only', 'guided-tour', 'private-tour'] as const;
+const OPTION_SLUGS = GRID_SLUGS;
 
-const OPTION_NAME_KEYS: Record<(typeof OPTION_SLUGS)[number], string> = {
-  'skip-the-line':      'skipTheLine',
-  'guided-tour':        'guidedTour',
-  'private-guide-only': 'privateGuideOnly',
-  'private-tour':       'privateTour',
-};
+const OPTION_NAME_KEYS = GRID_NAME_KEYS;
 
 /**
  * Viator affiliate links — the booking path while PAYMENTS_HALTED is true
@@ -56,16 +53,7 @@ const OPTION_NAME_KEYS: Record<(typeof OPTION_SLUGS)[number], string> = {
  * option this product name promises — and "Entrance fee - Bahia palace
  * €10.00 per person" as a separate, explicit line.
  */
-const VIATOR_LINKS: Partial<Record<(typeof OPTION_SLUGS)[number], string>> = {
-  'skip-the-line':
-    'https://www.viator.com/tours/Marrakech/Marrakech-Bahia-Palace-Skip-the-Line-Ticket-With-Audio-Guide/d5408-5670595P2?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-opt-skipline',
-  'guided-tour':
-    'https://www.viator.com/tours/Marrakech/Marrakech-Saadian-Tombs-Bahia-Palace-Medina-and-Souk-Tour/d5408-467170P4?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-opt-expert',
-  'private-guide-only':
-    'https://www.viator.com/tours/Marrakech/Marrakech-local-guide-historical-tour/d5408-199649P3?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-opt-privateguide',
-  'private-tour':
-    'https://www.viator.com/tours/Marrakech/Marrakech-Highlights-Private-4hr-City-Tour/d5408-326890P2?pid=P00316815&mcid=42383&medium=link&campaign=visitbahiapalace-opt-privatetour',
-};
+const VIATOR_LINKS = GRID_VIATOR_LINKS;
 
 
 /**
@@ -75,17 +63,25 @@ const VIATOR_LINKS: Partial<Record<(typeof OPTION_SLUGS)[number], string>> = {
  * empty room is the honest image for a *private* guide; the crowded
  * courtyard shot (also in the gallery) would undercut the word "private".
  */
-const IMAGE: Record<(typeof OPTION_SLUGS)[number], string> = {
-  'skip-the-line':      '/images/ticket-skip-the-line.webp',
-  'guided-tour':        '/images/gallery/bahia-palace-octagonal-cedar-ceiling-carved-wood.jpg',
-  'private-guide-only': '/images/gallery/bahia-palace-grand-reception-room.webp',
-  'private-tour':       '/images/gallery/bahia-palace-grand-courtyard-balcony-view-fountain.jpg',
-};
+const IMAGE = GRID_IMAGES;
 
-export function TicketOptions() {
+export function TicketOptions({ offers = [] }: { offers?: OfferCardData[] }) {
   const currency = useViatorCurrency();
   const t = useTranslations('tickets');
   const locale = useLocale();
+  // Text edits from /admin/offers are English and apply to the English page;
+  // price, link, photo, order and visibility apply to every language.
+  const isEnglish = locale === 'en';
+  type Entry = { slug: (typeof OPTION_SLUGS)[number] | null; row: OfferCardData | undefined; order: number };
+  const entries: Entry[] = [
+    ...OPTION_SLUGS.map((slug, i) => {
+      const row = offers.find((o) => o.section === 'grid' && o.productKey === slug);
+      return { slug, row, order: row ? row.sortOrder : i };
+    }).filter((e) => !e.row?.hidden),
+    ...offers
+      .filter((o) => o.section === 'grid' && !o.productKey && !o.hidden)
+      .map((row) => ({ slug: null, row, order: row.sortOrder })),
+  ].sort((a, b) => a.order - b.order);
   /*
    * The date chosen in the hero, a screen above. Null until the visitor
    * touches the calendar — and while it is null every card behaves exactly as
@@ -181,13 +177,18 @@ export function TicketOptions() {
             trust signal that got the site flagged under AdSense's
             Misrepresentation policy before — see AffiliateDisclosure. */}
         <div className="grid auto-rows-fr grid-cols-2 gap-3 sm:gap-6">
-          {OPTION_SLUGS.map((slug) => {
+          {entries.map(({ slug: builtIn, row }) => {
+            const custom = builtIn === null;
+            const slug = (builtIn ?? 'skip-the-line') as (typeof OPTION_SLUGS)[number];
+            const cardKey = custom ? row!.id : builtIn;
+            const text = (v: string | null | undefined) => (custom || isEnglish ? filled(v) : null);
+            const editedHref = filled(row?.buttonUrl);
             const nameKey = OPTION_NAME_KEYS[slug];
             // A regular "-" is a valid line-break point to a browser, so
             // "Coupe-File" was splitting into "Coupe-" / "File" once the
             // column narrowed. U+2011 reads identically but never breaks.
-            const name     = t(`${nameKey}.name` as any).replace(/-/g, '‑');
-            const duration = t(`${nameKey}.duration` as any);
+            const name     = (text(row?.title) ?? (custom ? '' : t(`${nameKey}.name` as any))).replace(/-/g, '‑');
+            const duration = text(row?.duration) ?? (custom ? '' : t(`${nameKey}.duration` as any));
 
             /*
              * skip-the-line is the one product that exists on both
@@ -204,11 +205,12 @@ export function TicketOptions() {
             // In all_gyg mode every card with a Viator link goes to
             // GetYourGuide's listing, which shows the tours under the ticket.
             // Only the entry ticket ever goes to GetYourGuide; tours stay on Viator.
+            // A link set in /admin/offers is used as it is, whatever the date.
             const switchedToGyg =
-              slug === 'skip-the-line' && ticketToGyg && Boolean(GETYOURGUIDE_URL);
+              !custom && !editedHref && slug === 'skip-the-line' && ticketToGyg && Boolean(GETYOURGUIDE_URL);
             const unavailableOnDate =
-              tooSoonForViator && !switchedToGyg && Boolean(VIATOR_LINKS[slug]);
-            const viatorHref  = switchedToGyg ? GETYOURGUIDE_URL : VIATOR_LINKS[slug];
+              !custom && !editedHref && tooSoonForViator && !switchedToGyg && Boolean(VIATOR_LINKS[slug]);
+            const viatorHref  = editedHref ?? (custom ? undefined : switchedToGyg ? GETYOURGUIDE_URL : VIATOR_LINKS[slug]);
             // Viator's own figure in the visitor's currency, from config/pricing
             // (VIATOR_PRICES_USD / VIATOR_PRICES_EUR) — never a conversion.
             const viatorPriceValue = partnerPriceFor(slug, currency, switchedToGyg);
@@ -218,24 +220,26 @@ export function TicketOptions() {
             // the same card — where a Viator match exists, the whole card
             // (price included) reflects what Viator actually charges, in
             // Viator's own currency.
-            const priceLabel = viatorPrice ?? `€${TICKET_PRICES[slug].toFixed(2)}`;
+            const priceLabel = filled(row?.price) ?? (custom ? '' : viatorPrice ?? `€${TICKET_PRICES[slug].toFixed(2)}`);
 
             // skip-the-line's Viator listing is specifically "...Ticket With
             // Audio Guide" and lists it under What's Included — a real
             // inclusion worth naming. Not true of the private-tour Viator
             // match (a general city tour), which keeps the plain partner
             // note; own-sold products keep their own note.
-            const note = slug === 'skip-the-line' && viatorHref
+            const note = row?.note === HIDE_MARK
+              ? null
+              : text(row?.note) ?? (custom ? null : slug === 'skip-the-line' && viatorHref
               ? partnerText(t('priceNotePartnerAudio'), switchedToGyg)
               : viatorHref
                 ? partnerText(t('priceNotePartner'), switchedToGyg)
-                : t('priceNoteOwn');
+                : t('priceNoteOwn'));
 
             const cardInner = (
               <>
                 <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden">
                   <Image
-                    src={IMAGE[slug]}
+                    src={filled(row?.imageUrl) ?? IMAGE[slug]}
                     alt={name}
                     fill
                     sizes="(max-width: 1023px) 50vw, 25vw"
@@ -251,14 +255,18 @@ export function TicketOptions() {
                     {name}
                   </h3>
 
+                  {duration && (
                   <span className="mt-1.5 flex items-center gap-1 text-[9px] text-[rgba(245,232,204,0.55)] lg:text-[11px]">
                     <Clock size={11} className="shrink-0 text-[#E8A33D]" />
                     {duration}
                   </span>
+                  )}
 
+                  {note && (
                   <p className="mt-1.5 text-[9px] leading-snug text-[rgba(245,232,204,0.45)] lg:text-[11px]">
                     {note}
                   </p>
+                  )}
 
                   {/*
                     * The answer to the date the visitor chose.
@@ -328,7 +336,7 @@ export function TicketOptions() {
               // reproducible, survived contain:paint and will-change, so
               // this card uses the technique that structurally can't have
               // that failure mode instead of chasing the cause further.
-              <div key={slug} className="spin-ring h-full rounded-2xl">
+              <div key={cardKey} className="spin-ring h-full rounded-2xl">
                 {viatorHref ? (
                   <a
                     href={viatorHref}
@@ -338,6 +346,8 @@ export function TicketOptions() {
                   >
                     {cardInner}
                   </a>
+                ) : custom ? (
+                  <div className={cardClass}>{cardInner}</div>
                 ) : (
                   <LeadButton ticketType={slug} ctaLocation="ticket_options" className={cardClass}>
                     {cardInner}
