@@ -11,6 +11,8 @@
  *   three_days  today and the next two days on GetYourGuide, later on Viator
  *   all_gyg     the ENTRY TICKET on GetYourGuide for every date; the tours
  *               (guided, private) stay on Viator, which still sells them
+ *   all_viator  everything on Viator for every date, today included (the
+ *               owner's choice: Viator may answer "not available" for today)
  *
  * Shared by the server route and the client provider, so nothing here may
  * import the database.
@@ -18,7 +20,7 @@
 import { GETYOURGUIDE_PRICE, VIATOR_LEAD_TIME_DAYS } from '@/config/booking-partners';
 import { viatorPriceFor, type DisplayPrice, type TicketSlug } from '@/config/pricing';
 
-export type BookingMode = 'normal' | 'three_days' | 'all_gyg';
+export type BookingMode = 'normal' | 'three_days' | 'all_gyg' | 'all_viator';
 
 export const BOOKING_MODE_KEY = 'booking_partner_mode';
 
@@ -31,13 +33,14 @@ export const BOOKING_MODE_KEY = 'booking_partner_mode';
 export const DEFAULT_BOOKING_MODE: BookingMode = 'three_days';
 
 export const BOOKING_MODES: Array<{ value: BookingMode; label: string }> = [
+  { value: 'all_viator', label: 'All dates on Viator (today included)' },
   { value: 'normal', label: 'Normal: today on GetYourGuide, other days on Viator' },
   { value: 'three_days', label: 'Today + next 2 days on GetYourGuide, later days on Viator' },
-  { value: 'all_gyg', label: 'Entry ticket on GetYourGuide for all dates (tours stay on Viator)' },
+  { value: 'all_gyg', label: 'All dates on GetYourGuide (entry ticket; tours stay on Viator, GetYourGuide does not sell them)' },
 ];
 
 export function parseBookingMode(value: unknown): BookingMode {
-  return value === 'normal' || value === 'three_days' || value === 'all_gyg'
+  return value === 'normal' || value === 'three_days' || value === 'all_gyg' || value === 'all_viator'
     ? value
     : DEFAULT_BOOKING_MODE;
 }
@@ -48,6 +51,7 @@ export function parseBookingMode(value: unknown): BookingMode {
  */
 export function gygLeadDays(mode: BookingMode): number {
   if (mode === 'all_gyg') return Number.POSITIVE_INFINITY;
+  if (mode === 'all_viator') return 0;
   if (mode === 'three_days') return 3;
   return VIATOR_LEAD_TIME_DAYS;
 }
@@ -58,6 +62,8 @@ export function gygLeadDays(mode: BookingMode): number {
  * lead time; in three_days mode the supplier gap applies to them too.
  */
 export function viatorTourLeadDays(mode: BookingMode): number {
+  // all_viator: no date is "too soon", every card keeps its Viator link.
+  if (mode === 'all_viator') return 0;
   return mode === 'all_gyg' ? VIATOR_LEAD_TIME_DAYS : gygLeadDays(mode);
 }
 
